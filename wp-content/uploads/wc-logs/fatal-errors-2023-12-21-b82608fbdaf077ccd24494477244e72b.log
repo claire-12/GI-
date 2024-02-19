@@ -1,0 +1,42 @@
+2023-12-21T09:38:13+00:00 CRITICAL Uncaught TypeError: call_user_func(): Argument #1 ($callback) must be a valid callback, function "bbp_get_form_reply asdasd_content" not found or invalid function name in /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/common/template.php:1884
+Stack trace:
+#0 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/common/template.php(1846): bbp_get_the_content()
+#1 /datadrive/cabling-webshop/wp-content/themes/cabling/bbpress/form-reply.php(73): bbp_the_content()
+#2 /datadrive/cabling-webshop/wp-includes/template.php(792): require('...')
+#3 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/template-functions.php(103): load_template()
+#4 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/template-functions.php(41): bbp_locate_template()
+#5 /datadrive/cabling-webshop/wp-content/themes/cabling/bbpress/content-single-topic.php(45): bbp_get_template_part()
+#6 /datadrive/cabling-webshop/wp-includes/template.php(792): require('...')
+#7 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/template-functions.php(103): load_template()
+#8 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/template-functions.php(41): bbp_locate_template()
+#9 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/common/shortcodes.php(342): bbp_get_template_part()
+#10 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/theme-compat.php(680): BBP_Shortcodes->display_topic()
+#11 /datadrive/cabling-webshop/wp-includes/class-wp-hook.php(324): bbp_template_include_theme_compat()
+#12 /datadrive/cabling-webshop/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#13 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/sub-actions.php(477): apply_filters()
+#14 /datadrive/cabling-webshop/wp-includes/class-wp-hook.php(324): bbp_template_include()
+#15 /datadrive/cabling-webshop/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#16 /datadrive/cabling-webshop/wp-includes/template-loader.php(104): apply_filters()
+#17 /datadrive/cabling-webshop/wp-blog-header.php(19): require_once('...')
+#18 /datadrive/cabling-webshop/index.php(17): require('...')
+#19 {main}
+  thrown in /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/common/template.php on line 1884
+
+2023-12-21T10:38:20+00:00 CRITICAL Uncaught Error: Call to undefined function get_topic_related() in /datadrive/cabling-webshop/wp-content/themes/cabling/bbpress/content-single-topic.php:53
+Stack trace:
+#0 /datadrive/cabling-webshop/wp-includes/template.php(792): require()
+#1 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/template-functions.php(103): load_template()
+#2 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/template-functions.php(41): bbp_locate_template()
+#3 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/common/shortcodes.php(342): bbp_get_template_part()
+#4 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/theme-compat.php(680): BBP_Shortcodes->display_topic()
+#5 /datadrive/cabling-webshop/wp-includes/class-wp-hook.php(324): bbp_template_include_theme_compat()
+#6 /datadrive/cabling-webshop/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#7 /datadrive/cabling-webshop/wp-content/plugins/bbpress/includes/core/sub-actions.php(477): apply_filters()
+#8 /datadrive/cabling-webshop/wp-includes/class-wp-hook.php(324): bbp_template_include()
+#9 /datadrive/cabling-webshop/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#10 /datadrive/cabling-webshop/wp-includes/template-loader.php(104): apply_filters()
+#11 /datadrive/cabling-webshop/wp-blog-header.php(19): require_once('...')
+#12 /datadrive/cabling-webshop/index.php(17): require('...')
+#13 {main}
+  thrown in /datadrive/cabling-webshop/wp-content/themes/cabling/bbpress/content-single-topic.php on line 53
+

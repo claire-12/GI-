@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="168.63.37.239" id="9dc80c77-368e-41cc-989d-d23ff0f77897" port="22" customName="webshop devb" nameFormat="CUSTOM" username="minh" useOpenSSHConfig="true">
+        <option name="customName" value="webshop devb" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

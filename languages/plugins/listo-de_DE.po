@@ -1,0 +1,2581 @@
+# Translation of Plugins - Listo - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - Listo - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-12-09 18:42:14+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - Listo - Stable (latest release)\n"
+
+#: modules/cu-subdivisions.php:28
+msgctxt "cu_subdivisions"
+msgid "Villa Clara"
+msgstr "Villa Clara"
+
+#: modules/cu-subdivisions.php:27
+msgctxt "cu_subdivisions"
+msgid "Santiago de Cuba"
+msgstr "Santiago de Cuba"
+
+#: modules/cu-subdivisions.php:26
+msgctxt "cu_subdivisions"
+msgid "Sancti Spíritus"
+msgstr "Sancti Spíritus"
+
+#: modules/cu-subdivisions.php:25
+msgctxt "cu_subdivisions"
+msgid "Pinar del Río"
+msgstr "Pinar del Río"
+
+#: modules/cu-subdivisions.php:24
+msgctxt "cu_subdivisions"
+msgid "Mayabeque"
+msgstr "Mayabeque"
+
+#: modules/cu-subdivisions.php:23
+msgctxt "cu_subdivisions"
+msgid "Matanzas"
+msgstr "Matanzas"
+
+#: modules/cu-subdivisions.php:22
+msgctxt "cu_subdivisions"
+msgid "Las Tunas"
+msgstr "Las Tunas"
+
+#: modules/cu-subdivisions.php:21
+msgctxt "cu_subdivisions"
+msgid "La Habana"
+msgstr "La Habana"
+
+#: modules/cu-subdivisions.php:20
+msgctxt "cu_subdivisions"
+msgid "Isla de la Juventud"
+msgstr "Isla de la Juventud"
+
+#: modules/cu-subdivisions.php:19
+msgctxt "cu_subdivisions"
+msgid "Holguín"
+msgstr "Holguín"
+
+#: modules/cu-subdivisions.php:18
+msgctxt "cu_subdivisions"
+msgid "Guantánamo"
+msgstr "Guantánamo"
+
+#: rest-api.php:35
+msgid "The requested list was not found."
+msgstr "Die angeforderte Liste wurde nicht gefunden."
+
+#: modules/us-subdivisions.php:65
+msgctxt "us_subdivisions"
+msgid "Vermont"
+msgstr "Vermont"
+
+#: modules/us-subdivisions.php:62
+msgctxt "us_subdivisions"
+msgid "Utah"
+msgstr "Utah"
+
+#: modules/us-subdivisions.php:60
+msgctxt "us_subdivisions"
+msgid "Texas"
+msgstr "Texas"
+
+#: modules/us-subdivisions.php:59
+msgctxt "us_subdivisions"
+msgid "Tennessee"
+msgstr "Tennessee"
+
+#: modules/us-subdivisions.php:58
+msgctxt "us_subdivisions"
+msgid "South Dakota"
+msgstr "South Dakota"
+
+#: modules/us-subdivisions.php:57
+msgctxt "us_subdivisions"
+msgid "South Carolina"
+msgstr "South Carolina"
+
+#: modules/us-subdivisions.php:56
+msgctxt "us_subdivisions"
+msgid "Rhode Island"
+msgstr "Rhode Island"
+
+#: modules/us-subdivisions.php:55
+msgctxt "us_subdivisions"
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: modules/us-subdivisions.php:54
+msgctxt "us_subdivisions"
+msgid "Pennsylvania"
+msgstr "Pennsylvania"
+
+#: modules/us-subdivisions.php:53
+msgctxt "us_subdivisions"
+msgid "Oregon"
+msgstr "Oregon"
+
+#: modules/us-subdivisions.php:52
+msgctxt "us_subdivisions"
+msgid "Oklahoma"
+msgstr "Oklahoma"
+
+#: modules/us-subdivisions.php:51
+msgctxt "us_subdivisions"
+msgid "Ohio"
+msgstr "Ohio"
+
+#: modules/us-subdivisions.php:49
+msgctxt "us_subdivisions"
+msgid "Nevada"
+msgstr "Nevada"
+
+#: modules/us-subdivisions.php:48
+msgctxt "us_subdivisions"
+msgid "New Mexico"
+msgstr "New Mexico"
+
+#: modules/us-subdivisions.php:47
+msgctxt "us_subdivisions"
+msgid "New Jersey"
+msgstr "New Jersey"
+
+#: modules/us-subdivisions.php:46
+msgctxt "us_subdivisions"
+msgid "New Hampshire"
+msgstr "New Hampshire"
+
+#: modules/us-subdivisions.php:45
+msgctxt "us_subdivisions"
+msgid "Nebraska"
+msgstr "Nebraska"
+
+#: modules/us-subdivisions.php:44
+msgctxt "us_subdivisions"
+msgid "North Dakota"
+msgstr "North Dakota"
+
+#: modules/us-subdivisions.php:43
+msgctxt "us_subdivisions"
+msgid "North Carolina"
+msgstr "North Carolina"
+
+#: modules/us-subdivisions.php:42
+msgctxt "us_subdivisions"
+msgid "Montana"
+msgstr "Montana"
+
+#: modules/us-subdivisions.php:41
+msgctxt "us_subdivisions"
+msgid "Mississippi"
+msgstr "Mississippi"
+
+#: modules/us-subdivisions.php:39
+msgctxt "us_subdivisions"
+msgid "Missouri"
+msgstr "Missouri"
+
+#: modules/us-subdivisions.php:38
+msgctxt "us_subdivisions"
+msgid "Minnesota"
+msgstr "Minnesota"
+
+#: modules/us-subdivisions.php:37
+msgctxt "us_subdivisions"
+msgid "Michigan"
+msgstr "Michigan"
+
+#: modules/us-subdivisions.php:36
+msgctxt "us_subdivisions"
+msgid "Maine"
+msgstr "Maine"
+
+#: modules/us-subdivisions.php:35
+msgctxt "us_subdivisions"
+msgid "Maryland"
+msgstr "Maryland"
+
+#: modules/us-subdivisions.php:34
+msgctxt "us_subdivisions"
+msgid "Massachusetts"
+msgstr "Massachusetts"
+
+#: modules/us-subdivisions.php:33
+msgctxt "us_subdivisions"
+msgid "Louisiana"
+msgstr "Louisiana"
+
+#: modules/us-subdivisions.php:32
+msgctxt "us_subdivisions"
+msgid "Kentucky"
+msgstr "Kentucky"
+
+#: modules/us-subdivisions.php:31
+msgctxt "us_subdivisions"
+msgid "Kansas"
+msgstr "Kansas"
+
+#: modules/us-subdivisions.php:30
+msgctxt "us_subdivisions"
+msgid "Indiana"
+msgstr "Indiana"
+
+#: modules/us-subdivisions.php:29
+msgctxt "us_subdivisions"
+msgid "Illinois"
+msgstr "Illinois"
+
+#: modules/us-subdivisions.php:28
+msgctxt "us_subdivisions"
+msgid "Idaho"
+msgstr "Idaho"
+
+#: modules/us-subdivisions.php:27
+msgctxt "us_subdivisions"
+msgid "Iowa"
+msgstr "Iowa"
+
+#: modules/us-subdivisions.php:26
+msgctxt "us_subdivisions"
+msgid "Hawaii"
+msgstr "Hawaii"
+
+#: modules/us-subdivisions.php:25
+msgctxt "us_subdivisions"
+msgid "Guam"
+msgstr "Guam"
+
+#: modules/us-subdivisions.php:23
+msgctxt "us_subdivisions"
+msgid "Florida"
+msgstr "Florida"
+
+#: modules/us-subdivisions.php:22
+msgctxt "us_subdivisions"
+msgid "Delaware"
+msgstr "Delaware"
+
+#: modules/us-subdivisions.php:20
+msgctxt "us_subdivisions"
+msgid "Connecticut"
+msgstr "Connecticut"
+
+#: modules/us-subdivisions.php:19
+msgctxt "us_subdivisions"
+msgid "Colorado"
+msgstr "Colorado"
+
+#: modules/us-subdivisions.php:18
+msgctxt "us_subdivisions"
+msgid "California"
+msgstr "Kalifornien"
+
+#: modules/us-subdivisions.php:17
+msgctxt "us_subdivisions"
+msgid "Arizona"
+msgstr "Arizona"
+
+#: modules/us-subdivisions.php:16
+msgctxt "us_subdivisions"
+msgid "American Samoa"
+msgstr "Amerikanisch-Samoa"
+
+#: modules/us-subdivisions.php:15
+msgctxt "us_subdivisions"
+msgid "Arkansas"
+msgstr "Arkansas"
+
+#: modules/us-subdivisions.php:14
+msgctxt "us_subdivisions"
+msgid "Alabama"
+msgstr "Alabama"
+
+#: modules/us-subdivisions.php:13
+msgctxt "us_subdivisions"
+msgid "Alaska"
+msgstr "Alaska"
+
+#: modules/in-subdivisions.php:48
+msgctxt "in_subdivisions"
+msgid "Puducherry"
+msgstr "Puducherry"
+
+#: modules/in-subdivisions.php:46
+msgctxt "in_subdivisions"
+msgid "Delhi"
+msgstr "Delhi"
+
+#: modules/in-subdivisions.php:44
+msgctxt "in_subdivisions"
+msgid "Dadra and Nagar Haveli"
+msgstr "Dadra und Nagar Haveli"
+
+#: modules/in-subdivisions.php:43
+msgctxt "in_subdivisions"
+msgid "Chandigarh"
+msgstr "Chandigarh"
+
+#: modules/in-subdivisions.php:40
+msgctxt "in_subdivisions"
+msgid "Uttar Pradesh"
+msgstr "Uttar Pradesh"
+
+#: modules/in-subdivisions.php:39
+msgctxt "in_subdivisions"
+msgid "Uttarakhand"
+msgstr "Uttarakhand"
+
+#: modules/in-subdivisions.php:38
+msgctxt "in_subdivisions"
+msgid "Tripura"
+msgstr "Tripura"
+
+#: modules/in-subdivisions.php:37
+msgctxt "in_subdivisions"
+msgid "Telangana"
+msgstr "Telangana"
+
+#: modules/in-subdivisions.php:36
+msgctxt "in_subdivisions"
+msgid "Tamil Nadu"
+msgstr "Tamil Nadu"
+
+#: modules/in-subdivisions.php:35
+msgctxt "in_subdivisions"
+msgid "Sikkim"
+msgstr "Sikkim"
+
+#: modules/in-subdivisions.php:34
+msgctxt "in_subdivisions"
+msgid "Rajasthan"
+msgstr "Rajasthan"
+
+#: modules/in-subdivisions.php:33
+msgctxt "in_subdivisions"
+msgid "Punjab"
+msgstr "Punjab"
+
+#: modules/in-subdivisions.php:32
+msgctxt "in_subdivisions"
+msgid "Odisha"
+msgstr "Odisha"
+
+#: modules/in-subdivisions.php:31
+msgctxt "in_subdivisions"
+msgid "Nagaland"
+msgstr "Nagaland"
+
+#: modules/in-subdivisions.php:30
+msgctxt "in_subdivisions"
+msgid "Mizoram"
+msgstr "Mizoram"
+
+#: modules/in-subdivisions.php:29
+msgctxt "in_subdivisions"
+msgid "Meghalaya"
+msgstr "Meghalaya"
+
+#: modules/in-subdivisions.php:28
+msgctxt "in_subdivisions"
+msgid "Manipur"
+msgstr "Manipur"
+
+#: modules/in-subdivisions.php:27
+msgctxt "in_subdivisions"
+msgid "Maharashtra"
+msgstr "Maharashtra"
+
+#: modules/in-subdivisions.php:26
+msgctxt "in_subdivisions"
+msgid "Madhya Pradesh"
+msgstr "Madhya Pradesh"
+
+#: modules/in-subdivisions.php:25
+msgctxt "in_subdivisions"
+msgid "Kerala"
+msgstr "Kerala"
+
+#: modules/in-subdivisions.php:24
+msgctxt "in_subdivisions"
+msgid "Karnataka"
+msgstr "Karnataka"
+
+#: modules/in-subdivisions.php:23
+msgctxt "in_subdivisions"
+msgid "Jharkhand"
+msgstr "Jharkhand"
+
+#: modules/in-subdivisions.php:22
+msgctxt "in_subdivisions"
+msgid "Jammu and Kashmir"
+msgstr "Jammu und Kashmir"
+
+#: modules/in-subdivisions.php:21
+msgctxt "in_subdivisions"
+msgid "Himachal Pradesh"
+msgstr "Himachal Pradesh"
+
+#: modules/in-subdivisions.php:20
+msgctxt "in_subdivisions"
+msgid "Haryana"
+msgstr "Haryana"
+
+#: modules/in-subdivisions.php:19
+msgctxt "in_subdivisions"
+msgid "Gujarat"
+msgstr "Gujarat"
+
+#: modules/in-subdivisions.php:18
+msgctxt "in_subdivisions"
+msgid "Goa"
+msgstr "Goa"
+
+#: modules/in-subdivisions.php:17
+msgctxt "in_subdivisions"
+msgid "Chhattisgarh"
+msgstr "Chhattisgarh"
+
+#: modules/in-subdivisions.php:16
+msgctxt "in_subdivisions"
+msgid "Bihar"
+msgstr "Bihar"
+
+#: modules/in-subdivisions.php:15
+msgctxt "in_subdivisions"
+msgid "Assam"
+msgstr "Assam"
+
+#: modules/in-subdivisions.php:14
+msgctxt "in_subdivisions"
+msgid "Arunachal Pradesh"
+msgstr "Arunachal Pradesh"
+
+#: modules/in-subdivisions.php:13
+msgctxt "in_subdivisions"
+msgid "Andhra Pradesh"
+msgstr "Andhra Pradesh"
+
+#: modules/currencies.php:169
+msgctxt "currencies"
+msgid "South African rand"
+msgstr "Südafrikanischer Rand"
+
+#: modules/currencies.php:153
+msgctxt "currencies"
+msgid "New Taiwan dollar"
+msgstr "Neuer Taiwan-Dollar"
+
+#: modules/currencies.php:146
+msgctxt "currencies"
+msgid "Thai baht"
+msgstr "Thailändischer Baht"
+
+#: modules/currencies.php:129
+msgctxt "currencies"
+msgid "Serbian dinar"
+msgstr "Serbischer Dinar"
+
+#: modules/currencies.php:123
+msgctxt "currencies"
+msgid "Philippine peso"
+msgstr "Philippinischer Peso"
+
+#: modules/currencies.php:111
+msgctxt "currencies"
+msgid "Malaysian ringgit"
+msgstr "Malaysischer Ringgit"
+
+#: modules/currencies.php:99
+msgctxt "currencies"
+msgid "Moroccan dirham"
+msgstr "Marokkanischer Dirham"
+
+#: modules/currencies.php:82
+msgctxt "currencies"
+msgid "Japanese yen"
+msgstr "Japanischer Yen"
+
+#: modules/currencies.php:76
+msgctxt "currencies"
+msgid "Indian rupee"
+msgstr "Indische Rupie"
+
+#: modules/currencies.php:74
+msgctxt "currencies"
+msgid "Indonesian rupiah"
+msgstr "Indonesische Rupiah"
+
+#: modules/currencies.php:73
+msgctxt "currencies"
+msgid "Hungarian forint"
+msgstr "Ungarischer Forint"
+
+#: modules/currencies.php:59
+msgctxt "currencies"
+msgid "Fiji dollar"
+msgstr "Fidschi-Dollar"
+
+#: modules/currencies.php:58
+msgctxt "currencies"
+msgid "Euro"
+msgstr "Euro"
+
+#: modules/currencies.php:57
+msgctxt "currencies"
+msgid "Ethiopian birr"
+msgstr "Äthiopischer Birr"
+
+#: modules/currencies.php:55
+msgctxt "currencies"
+msgid "Egyptian pound"
+msgstr "Ägyptisches Pfund"
+
+#: modules/currencies.php:50
+msgctxt "currencies"
+msgid "Czech koruna"
+msgstr "Tschechische Krone"
+
+#: modules/currencies.php:46
+msgctxt "currencies"
+msgid "Colombian peso"
+msgstr "Kolumbianischer Peso"
+
+#: modules/currencies.php:44
+msgctxt "currencies"
+msgid "Chilean peso"
+msgstr "Chilenischer Peso"
+
+#: modules/currencies.php:41
+msgctxt "currencies"
+msgid "Canadian dollar"
+msgstr "Kanadischer Dollar"
+
+#: modules/currencies.php:34
+msgctxt "currencies"
+msgid "Boliviano"
+msgstr "Boliviano"
+
+#: modules/currencies.php:33
+msgctxt "currencies"
+msgid "Brunei dollar"
+msgstr "Brunei-Dollar"
+
+#: modules/currencies.php:29
+msgctxt "currencies"
+msgid "Bulgarian lev"
+msgstr "Bulgarischer Lew"
+
+#: modules/currencies.php:23
+msgctxt "currencies"
+msgid "Australian dollar"
+msgstr "Australischer Dollar"
+
+#: modules/currencies.php:22
+msgctxt "currencies"
+msgid "Argentine peso"
+msgstr "Argentinischer Peso"
+
+#: modules/currencies.php:18
+msgctxt "currencies"
+msgid "Albanian lek"
+msgstr "Albanischer Lek"
+
+#: modules/countries.php:259
+msgctxt "countries"
+msgid "South Africa"
+msgstr "Südafrika"
+
+#: modules/countries.php:257
+msgctxt "countries"
+msgid "Samoa"
+msgstr "Samoa"
+
+#: modules/countries.php:254
+msgctxt "countries"
+msgid "Viet Nam"
+msgstr "Vietnam"
+
+#: modules/countries.php:251
+msgctxt "countries"
+msgid "Venezuela, Bolivarian Republic of"
+msgstr "Venezuela"
+
+#: modules/countries.php:250
+msgctxt "countries"
+msgid "Saint Vincent and the Grenadines"
+msgstr "St. Vincent und die Grenadinen"
+
+#: modules/countries.php:248
+msgctxt "countries"
+msgid "Uzbekistan"
+msgstr "Usbekistan"
+
+#: modules/countries.php:246
+msgctxt "countries"
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: modules/countries.php:243
+msgctxt "countries"
+msgid "Uganda"
+msgstr "Uganda"
+
+#: modules/countries.php:242
+msgctxt "countries"
+msgid "Tanzania, United Republic of"
+msgstr "Tansania"
+
+#: modules/countries.php:240
+msgctxt "countries"
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: modules/countries.php:239
+msgctxt "countries"
+msgid "Turkey"
+msgstr "Türkei"
+
+#: modules/countries.php:238
+msgctxt "countries"
+msgid "Tunisia"
+msgstr "Tunesien"
+
+#: modules/countries.php:237
+msgctxt "countries"
+msgid "Trinidad and Tobago"
+msgstr "Trinidad und Tobago"
+
+#: modules/countries.php:236
+msgctxt "countries"
+msgid "Tonga"
+msgstr "Tonga"
+
+#: modules/countries.php:234
+msgctxt "countries"
+msgid "Turkmenistan"
+msgstr "Turkmenistan"
+
+#: modules/countries.php:233
+msgctxt "countries"
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: modules/countries.php:232
+msgctxt "countries"
+msgid "Tajikistan"
+msgstr "Tadschikistan"
+
+#: modules/countries.php:231
+msgctxt "countries"
+msgid "Thailand"
+msgstr "Thailand"
+
+#: modules/countries.php:230
+msgctxt "countries"
+msgid "Togo"
+msgstr "Togo"
+
+#: modules/countries.php:229
+msgctxt "countries"
+msgid "Chad"
+msgstr "Tschad"
+
+#: modules/countries.php:227
+msgctxt "countries"
+msgid "Syrian Arab Republic"
+msgstr "Syrien"
+
+#: modules/countries.php:226
+msgctxt "countries"
+msgid "Seychelles"
+msgstr "Seychellen"
+
+#: modules/countries.php:224
+msgctxt "countries"
+msgid "Swaziland"
+msgstr "Swasiland"
+
+#: modules/countries.php:223
+msgctxt "countries"
+msgid "Sweden"
+msgstr "Schweden"
+
+#: modules/countries.php:221
+msgctxt "countries"
+msgid "Slovakia"
+msgstr "Slowakei"
+
+#: modules/countries.php:220
+msgctxt "countries"
+msgid "Suriname"
+msgstr "Suriname"
+
+#: modules/countries.php:219
+msgctxt "countries"
+msgid "Sao Tome and Principe"
+msgstr "São Tomé und Príncipe"
+
+#: modules/countries.php:218
+msgctxt "countries"
+msgid "South Sudan"
+msgstr "Südsudan"
+
+#: modules/countries.php:217
+msgctxt "countries"
+msgid "Serbia"
+msgstr "Serbien"
+
+#: modules/countries.php:215
+msgctxt "countries"
+msgid "Somalia"
+msgstr "Somalia"
+
+#: modules/countries.php:214
+msgctxt "countries"
+msgid "San Marino"
+msgstr "San Marino"
+
+#: modules/countries.php:213
+msgctxt "countries"
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: modules/countries.php:212
+msgctxt "countries"
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+#: modules/countries.php:210
+msgctxt "countries"
+msgid "Svalbard and Jan Mayen"
+msgstr "Svalbard und Jan Mayen"
+
+#: modules/countries.php:207
+msgctxt "countries"
+msgid "Singapore"
+msgstr "Singapur"
+
+#: modules/countries.php:206
+msgctxt "countries"
+msgid "Senegal"
+msgstr "Senegal"
+
+#: modules/countries.php:205
+msgctxt "countries"
+msgid "Sudan"
+msgstr "Sudan"
+
+#: modules/countries.php:204
+msgctxt "countries"
+msgid "Saudi Arabia"
+msgstr "Saudi-Arabien"
+
+#: modules/countries.php:203
+msgctxt "countries"
+msgid "Rwanda"
+msgstr "Ruanda"
+
+#: modules/countries.php:201
+msgctxt "countries"
+msgid "Romania"
+msgstr "Rumänien"
+
+#: modules/countries.php:199
+msgctxt "countries"
+msgid "Qatar"
+msgstr "Katar"
+
+#: modules/countries.php:198
+msgctxt "countries"
+msgid "French Polynesia"
+msgstr "Französisch-Polynesien"
+
+#: modules/countries.php:197
+msgctxt "countries"
+msgid "Palestine, State of"
+msgstr "Palästina"
+
+#: modules/countries.php:196
+msgctxt "countries"
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: modules/countries.php:195
+msgctxt "countries"
+msgid "Portugal"
+msgstr "Portugal"
+
+#: modules/countries.php:193
+msgctxt "countries"
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: modules/countries.php:191
+msgctxt "countries"
+msgid "Papua New Guinea"
+msgstr "Papua-Neuguinea"
+
+#: modules/countries.php:190
+msgctxt "countries"
+msgid "Palau"
+msgstr "Palau"
+
+#: modules/countries.php:189
+msgctxt "countries"
+msgid "Philippines"
+msgstr "Philippinen"
+
+#: modules/countries.php:188
+msgctxt "countries"
+msgid "Peru"
+msgstr "Peru"
+
+#: modules/countries.php:186
+msgctxt "countries"
+msgid "Panama"
+msgstr "Panama"
+
+#: modules/countries.php:185
+msgctxt "countries"
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: modules/countries.php:184
+msgctxt "countries"
+msgid "Oman"
+msgstr "Oman"
+
+#: modules/countries.php:183
+msgctxt "countries"
+msgid "New Zealand"
+msgstr "Neuseeland"
+
+#: modules/countries.php:182
+msgctxt "countries"
+msgid "Nauru"
+msgstr "Nauru"
+
+#: modules/countries.php:181
+msgctxt "countries"
+msgid "Nepal"
+msgstr "Nepal"
+
+#: modules/countries.php:180
+msgctxt "countries"
+msgid "Norway"
+msgstr "Norwegen"
+
+#: modules/countries.php:179
+msgctxt "countries"
+msgid "Netherlands"
+msgstr "Niederlande"
+
+#: modules/countries.php:178
+msgctxt "countries"
+msgid "Niue"
+msgstr "Niue"
+
+#: modules/countries.php:177
+msgctxt "countries"
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: modules/countries.php:176
+msgctxt "countries"
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: modules/countries.php:175
+msgctxt "countries"
+msgid "Norfolk Island"
+msgstr "Norfolkinsel"
+
+#: modules/countries.php:174
+msgctxt "countries"
+msgid "Niger"
+msgstr "Niger"
+
+#: modules/countries.php:173
+msgctxt "countries"
+msgid "New Caledonia"
+msgstr "Neukaledonien"
+
+#: modules/currencies.php:171
+msgctxt "currencies"
+msgid "Zimbabwe dollar"
+msgstr "Simbabwe-Dollar"
+
+#: modules/countries.php:261
+msgctxt "countries"
+msgid "Zimbabwe"
+msgstr "Simbabwe"
+
+#: modules/currencies.php:170
+msgctxt "currencies"
+msgid "Zambian kwacha"
+msgstr "Sambischer Kwacha"
+
+#: modules/countries.php:260
+msgctxt "countries"
+msgid "Zambia"
+msgstr "Sambia"
+
+#: modules/currencies.php:168
+msgctxt "currencies"
+msgid "Yemeni rial"
+msgstr "Jemen-Rial"
+
+#: modules/countries.php:258
+msgctxt "countries"
+msgid "Yemen"
+msgstr "Jemen"
+
+#: modules/us-subdivisions.php:69
+msgctxt "us_subdivisions"
+msgid "Wyoming"
+msgstr "Wyoming"
+
+#: modules/us-subdivisions.php:67
+msgctxt "us_subdivisions"
+msgid "Wisconsin"
+msgstr "Wisconsin"
+
+#: modules/us-subdivisions.php:68
+msgctxt "us_subdivisions"
+msgid "West Virginia"
+msgstr "West Virginia"
+
+#: modules/in-subdivisions.php:41
+msgctxt "in_subdivisions"
+msgid "West Bengal"
+msgstr "Westbengalen"
+
+#: modules/us-subdivisions.php:66
+msgctxt "us_subdivisions"
+msgid "Washington"
+msgstr "Washington"
+
+#: modules/countries.php:256
+msgctxt "countries"
+msgid "Wallis and Futuna"
+msgstr "Wallis und Futuna"
+
+#: modules/us-subdivisions.php:63
+msgctxt "us_subdivisions"
+msgid "Virginia"
+msgstr "Virginia"
+
+#. Author of the plugin
+msgid "Takayuki Miyoshi"
+msgstr "Takayuki Miyoshi"
+
+#: modules/countries.php:192
+msgctxt "countries"
+msgid "Poland"
+msgstr "Polen"
+
+#. Plugin Name of the plugin
+msgid "Listo"
+msgstr "Listo"
+
+#: modules/countries.php:255
+msgctxt "countries"
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: modules/currencies.php:162
+msgctxt "currencies"
+msgid "Vanuatu vatu"
+msgstr "Vanuatu-Vatu"
+
+#: modules/us-subdivisions.php:64
+msgctxt "us_subdivisions"
+msgid "Virgin Islands, U.S."
+msgstr "Amerikanische Jungferninseln"
+
+#: modules/countries.php:253
+msgctxt "countries"
+msgid "Virgin Islands, U.S."
+msgstr "Amerikanische Jungferninseln"
+
+#: modules/countries.php:252
+msgctxt "countries"
+msgid "Virgin Islands, British"
+msgstr "Britische Jungferninseln"
+
+#: modules/currencies.php:160
+msgctxt "currencies"
+msgid "Venezuelan bolívar"
+msgstr "Venezolanischer Bolívar"
+
+#: modules/currencies.php:54
+msgctxt "currencies"
+msgid "Algerian dinar"
+msgstr "Algerischer Dinar"
+
+#: modules/countries.php:247
+msgctxt "countries"
+msgid "United States"
+msgstr "Vereinigte Staaten von Amerika"
+
+#: modules/currencies.php:157
+msgctxt "currencies"
+msgid "United States dollar"
+msgstr "US-Dollar"
+
+#: modules/countries.php:244
+msgctxt "countries"
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#: modules/currencies.php:151
+msgctxt "currencies"
+msgid "Turkish lira"
+msgstr "Türkische Lira"
+
+#: modules/currencies.php:149
+msgctxt "currencies"
+msgid "Tunisian dinar"
+msgstr "Tunesischer Dinar"
+
+#: modules/currencies.php:144
+msgctxt "currencies"
+msgid "Syrian pound"
+msgstr "Syrische Lira"
+
+#: modules/currencies.php:43
+msgctxt "currencies"
+msgid "Swiss franc"
+msgstr "Schweizer Franken"
+
+#: modules/currencies.php:136
+msgctxt "currencies"
+msgid "Swedish krona/kronor"
+msgstr "Schwedische Krone"
+
+#: modules/countries.php:222
+msgctxt "countries"
+msgid "Slovenia"
+msgstr "Slowenien"
+
+#: modules/currencies.php:94
+msgctxt "currencies"
+msgid "Sri Lankan rupee"
+msgstr "Sri-Lanka-Rupie"
+
+#: modules/currencies.php:142
+msgctxt "currencies"
+msgid "South Sudanese pound"
+msgstr "Südsudanesisches Pfund"
+
+#: modules/currencies.php:88
+msgctxt "currencies"
+msgid "South Korean won"
+msgstr "Südkoreanischer Won"
+
+#: modules/currencies.php:137
+msgctxt "currencies"
+msgid "Singapore dollar"
+msgstr "Singapur-Dollar"
+
+#: modules/countries.php:225
+msgctxt "countries"
+msgid "Sint Maarten (Dutch part)"
+msgstr "Sint Maarten (niederländischer Teil)"
+
+#: modules/countries.php:211
+msgctxt "countries"
+msgid "Solomon Islands"
+msgstr "Salomonen"
+
+#: modules/currencies.php:133
+msgctxt "currencies"
+msgid "Solomon Islands dollar"
+msgstr "Salomonen-Dollar"
+
+#: modules/currencies.php:140
+msgctxt "currencies"
+msgid "Somali shilling"
+msgstr "Somalia-Schilling"
+
+#: modules/currencies.php:139
+msgctxt "currencies"
+msgid "Sierra Leonean leone"
+msgstr "Sierra-leonischer Leone"
+
+#: modules/currencies.php:134
+msgctxt "currencies"
+msgid "Seychelles rupee"
+msgstr "Seychellen-Rupie"
+
+#: modules/currencies.php:143
+msgctxt "currencies"
+msgid "São Tomé and Príncipe dobra"
+msgstr "São-toméischer Dobra"
+
+#: modules/currencies.php:132
+msgctxt "currencies"
+msgid "Saudi riyal"
+msgstr "Saudi-Riyal"
+
+#: modules/currencies.php:163
+msgctxt "currencies"
+msgid "Samoan tala"
+msgstr "Samoanischer Tala"
+
+#: modules/countries.php:216
+msgctxt "countries"
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint-Pierre und Miquelon"
+
+#: modules/currencies.php:131
+msgctxt "currencies"
+msgid "Rwandan franc"
+msgstr "Ruanda-Franc"
+
+#: modules/currencies.php:138
+msgctxt "currencies"
+msgid "Saint Helena pound"
+msgstr "St.-Helena-Pfund"
+
+#: modules/currencies.php:130
+msgctxt "currencies"
+msgid "Russian ruble"
+msgstr "Russischer Rubel"
+
+#: modules/countries.php:202
+msgctxt "countries"
+msgid "Russian Federation"
+msgstr "Russland"
+
+#: modules/currencies.php:127
+msgctxt "currencies"
+msgid "Qatari riyal"
+msgstr "Katar-Riyal"
+
+#: modules/countries.php:200
+msgctxt "countries"
+msgid "Réunion"
+msgstr "Réunion"
+
+#: modules/currencies.php:128
+msgctxt "currencies"
+msgid "Romanian new leu"
+msgstr "Rumänischer Leu"
+
+#: modules/countries.php:209
+msgctxt "countries"
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr "St. Helena, Ascension und Tristan da Cunha"
+
+#: modules/currencies.php:161
+msgctxt "currencies"
+msgid "Vietnamese dong"
+msgstr "Vietnamesischer Đồng"
+
+#: modules/currencies.php:158
+msgctxt "currencies"
+msgid "Uruguayan peso"
+msgstr "Uruguayischer Peso"
+
+#: modules/currencies.php:16
+msgctxt "currencies"
+msgid "United Arab Emirates dirham"
+msgstr "VAE-Dirham"
+
+#: modules/currencies.php:155
+msgctxt "currencies"
+msgid "Ukrainian hryvnia"
+msgstr "Ukrainische Hrywnja"
+
+#: modules/us-subdivisions.php:40
+msgctxt "us_subdivisions"
+msgid "Northern Mariana Islands"
+msgstr "Nördliche Marianen"
+
+#: modules/currencies.php:87
+msgctxt "currencies"
+msgid "North Korean won"
+msgstr "Nordkoreanischer Won"
+
+#: modules/currencies.php:118
+msgctxt "currencies"
+msgid "New Zealand dollar"
+msgstr "Neuseeland-Dollar"
+
+#: modules/currencies.php:115
+msgctxt "currencies"
+msgid "Nicaraguan córdoba"
+msgstr "Nicaraguanischer Córdoba Oro"
+
+#: modules/currencies.php:148
+msgctxt "currencies"
+msgid "Turkmenistani manat"
+msgstr "Turkmenistan-Manat"
+
+#: modules/countries.php:228
+msgctxt "countries"
+msgid "Turks and Caicos Islands"
+msgstr "Turks- und Caicosinseln"
+
+#: modules/currencies.php:156
+msgctxt "currencies"
+msgid "Ugandan shilling"
+msgstr "Uganda-Schilling"
+
+#: modules/currencies.php:150
+msgctxt "currencies"
+msgid "Tongan paʻanga"
+msgstr "Tongaische paʻanga"
+
+#: modules/countries.php:241
+msgctxt "countries"
+msgid "Taiwan, Province of China"
+msgstr "Taiwan"
+
+#: modules/currencies.php:147
+msgctxt "currencies"
+msgid "Tajikistani somoni"
+msgstr "Tadschikischer Somoni"
+
+#: modules/currencies.php:145
+msgctxt "currencies"
+msgid "Swazi lilangeni"
+msgstr "Swasiländischer Lilangeni"
+
+#: modules/countries.php:235
+msgctxt "countries"
+msgid "Timor-Leste"
+msgstr "Osttimor"
+
+#: modules/currencies.php:152
+msgctxt "currencies"
+msgid "Trinidad and Tobago dollar"
+msgstr "Trinidad-und-Tobago-Dollar"
+
+#: modules/currencies.php:154
+msgctxt "currencies"
+msgid "Tanzanian shilling"
+msgstr "Tansania-Schilling"
+
+#: modules/currencies.php:135
+msgctxt "currencies"
+msgid "Sudanese pound"
+msgstr "Sudanesisches Pfund"
+
+#: modules/currencies.php:141
+msgctxt "currencies"
+msgid "Surinamese dollar"
+msgstr "Suriname-Dollar"
+
+#: modules/countries.php:208
+msgctxt "countries"
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "Südgeorgien und die Südlichen Sandwichinseln"
+
+#: modules/currencies.php:61
+msgctxt "currencies"
+msgid "Pound sterling"
+msgstr "Pfund Sterling"
+
+#: modules/currencies.php:125
+msgctxt "currencies"
+msgid "Polish złoty"
+msgstr "Polnischer Złoty"
+
+#: modules/countries.php:187
+msgctxt "countries"
+msgid "Pitcairn"
+msgstr "Pitcairninseln"
+
+#: modules/currencies.php:120
+msgctxt "currencies"
+msgid "Panamanian balboa"
+msgstr "Panamaischer Balboa"
+
+#: modules/currencies.php:119
+msgctxt "currencies"
+msgid "Omani rial"
+msgstr "Omanischer Rial"
+
+#: modules/currencies.php:17
+msgctxt "currencies"
+msgid "Afghan afghani"
+msgstr "Afghanischer Afghani"
+
+#: modules/currencies.php:114
+msgctxt "currencies"
+msgid "Nigerian naira"
+msgstr "Nigerianische Naira"
+
+#: modules/currencies.php:159
+msgctxt "currencies"
+msgid "Uzbekistan som"
+msgstr "Usbekischer Soʻm"
+
+#: modules/us-subdivisions.php:50
+msgctxt "us_subdivisions"
+msgid "New York"
+msgstr "New York"
+
+#: modules/currencies.php:116
+msgctxt "currencies"
+msgid "Norwegian krone"
+msgstr "Norwegische Krone"
+
+#: modules/currencies.php:126
+msgctxt "currencies"
+msgid "Paraguayan guaraní"
+msgstr "Paraguayischer Guaraní"
+
+#: modules/currencies.php:124
+msgctxt "currencies"
+msgid "Pakistani rupee"
+msgstr "Pakistanische Rupie"
+
+#: modules/currencies.php:121
+msgctxt "currencies"
+msgid "Peruvian nuevo sol"
+msgstr "Peruanischer Sol"
+
+#: modules/in-subdivisions.php:42
+msgctxt "in_subdivisions"
+msgid "Andaman and Nicobar Islands"
+msgstr "Andamanen und Nikobaren"
+
+#: modules/currencies.php:103
+msgctxt "currencies"
+msgid "Myanma kyat"
+msgstr "Myanmar-Kyat"
+
+#: modules/currencies.php:112
+msgctxt "currencies"
+msgid "Mozambican metical"
+msgstr "Mosambikanischer Metical"
+
+#: modules/currencies.php:104
+msgctxt "currencies"
+msgid "Mongolian tugrik"
+msgstr "Mongolischer Tögrög"
+
+#: modules/currencies.php:100
+msgctxt "currencies"
+msgid "Moldovan leu"
+msgstr "Moldawischer Leu"
+
+#: modules/currencies.php:110
+msgctxt "currencies"
+msgid "Mexican peso"
+msgstr "Mexikanischer Peso"
+
+#: modules/currencies.php:107
+msgctxt "currencies"
+msgid "Mauritian rupee"
+msgstr "Mauritius-Rupie"
+
+#: modules/currencies.php:97
+msgctxt "currencies"
+msgid "Lithuanian litas"
+msgstr "Litauischer Litas"
+
+#: modules/in-subdivisions.php:47
+msgctxt "in_subdivisions"
+msgid "Lakshadweep"
+msgstr "Lakshadweep"
+
+#: modules/countries.php:194
+msgctxt "countries"
+msgid "Korea, Democratic People's Republic of"
+msgstr "Nordkorea"
+
+#: modules/currencies.php:83
+msgctxt "currencies"
+msgid "Kenyan shilling"
+msgstr "Kenia-Schilling"
+
+#: modules/currencies.php:77
+msgctxt "currencies"
+msgid "Iraqi dinar"
+msgstr "Irakischer Dinar"
+
+#: modules/currencies.php:78
+msgctxt "currencies"
+msgid "Iranian rial"
+msgstr "Iranischer Rial"
+
+#: modules/currencies.php:79
+msgctxt "currencies"
+msgid "Icelandic króna"
+msgstr "Isländische Krone"
+
+#: modules/currencies.php:68
+msgctxt "currencies"
+msgid "Guyanese dollar"
+msgstr "Guyana-Dollar"
+
+#: modules/currencies.php:69
+msgctxt "currencies"
+msgid "Hong Kong dollar"
+msgstr "Hongkong-Dollar"
+
+#: modules/currencies.php:56
+msgctxt "currencies"
+msgid "Eritrean nakfa"
+msgstr "Eritreischer Nakfa"
+
+#: modules/currencies.php:52
+msgctxt "currencies"
+msgid "Danish krone"
+msgstr "Dänische Krone"
+
+#: modules/currencies.php:71
+msgctxt "currencies"
+msgid "Croatian kuna"
+msgstr "Kroatische Kuna"
+
+#: modules/currencies.php:47
+msgctxt "currencies"
+msgid "Costa Rican colon"
+msgstr "Costa-Rica-Colón"
+
+#: modules/currencies.php:35
+msgctxt "currencies"
+msgid "Brazilian real"
+msgstr "Brasilianischer Real"
+
+#: modules/currencies.php:27
+msgctxt "currencies"
+msgid "Barbados dollar"
+msgstr "Barbados-Dollar"
+
+#: modules/currencies.php:30
+msgctxt "currencies"
+msgid "Bahraini dinar"
+msgstr "Bahrain-Dinar"
+
+#: modules/currencies.php:36
+msgctxt "currencies"
+msgid "Bahamian dollar"
+msgstr "Bahama-Dollar"
+
+#: modules/currencies.php:25
+msgctxt "currencies"
+msgid "Azerbaijani manat"
+msgstr "Aserbaidschan-Manat"
+
+#: modules/currencies.php:24
+msgctxt "currencies"
+msgid "Aruban florin"
+msgstr "Aruba-Florin"
+
+#: modules/currencies.php:19
+msgctxt "currencies"
+msgid "Armenian dram"
+msgstr "Armenischer Dram"
+
+#: modules/currencies.php:90
+msgctxt "currencies"
+msgid "Cayman Islands dollar"
+msgstr "Kaiman-Dollar"
+
+#: modules/currencies.php:49
+msgctxt "currencies"
+msgid "Cape Verde escudo"
+msgstr "Kap-Verde-Escudo"
+
+#: modules/in-subdivisions.php:45
+msgctxt "in_subdivisions"
+msgid "Daman and Diu"
+msgstr "Daman und Diu"
+
+#: modules/us-subdivisions.php:24
+msgctxt "us_subdivisions"
+msgid "Georgia"
+msgstr "Georgia"
+
+#: modules/us-subdivisions.php:21
+msgctxt "us_subdivisions"
+msgid "District of Columbia"
+msgstr "Washington, D.C."
+
+#: modules/currencies.php:166
+msgctxt "currencies"
+msgid "CFA franc BCEAO"
+msgstr "CFA-Franc BCEAO"
+
+#: modules/currencies.php:102
+msgctxt "currencies"
+msgid "Macedonian denar"
+msgstr "Mazedonischer Denar"
+
+#: modules/currencies.php:105
+msgctxt "currencies"
+msgid "Macanese pataca"
+msgstr "Macau-Pataca"
+
+#: modules/currencies.php:98
+msgctxt "currencies"
+msgid "Libyan dinar"
+msgstr "Libyscher Dinar"
+
+#: modules/currencies.php:96
+msgctxt "currencies"
+msgid "Lesotho loti"
+msgstr "Lesothischer Loti"
+
+#: modules/currencies.php:95
+msgctxt "currencies"
+msgid "Liberian dollar"
+msgstr "Liberianischer Dollar"
+
+#: modules/currencies.php:93
+msgctxt "currencies"
+msgid "Lebanese pound"
+msgstr "Libanesisches Pfund"
+
+#: modules/currencies.php:92
+msgctxt "currencies"
+msgid "Lao kip"
+msgstr "Laotischer Kip"
+
+#: modules/currencies.php:89
+msgctxt "currencies"
+msgid "Kuwaiti dinar"
+msgstr "Kuwait-Dinar"
+
+#: modules/currencies.php:86
+msgctxt "currencies"
+msgid "Comoro franc"
+msgstr "Komoren-Franc"
+
+#: modules/currencies.php:85
+msgctxt "currencies"
+msgid "Cambodian riel"
+msgstr "Kambodschanischer Riel"
+
+#: modules/currencies.php:81
+msgctxt "currencies"
+msgid "Jordanian dinar"
+msgstr "Jordanischer Dinar"
+
+#: modules/currencies.php:80
+msgctxt "currencies"
+msgid "Jamaican dollar"
+msgstr "Jamaika-Dollar"
+
+#: modules/currencies.php:67
+msgctxt "currencies"
+msgid "Guatemalan quetzal"
+msgstr "Guatemaltekischer Quetzal"
+
+#: modules/currencies.php:66
+msgctxt "currencies"
+msgid "Guinean franc"
+msgstr "Guinea-Franc"
+
+#: modules/currencies.php:64
+msgctxt "currencies"
+msgid "Gibraltar pound"
+msgstr "Gibraltar-Pfund"
+
+#: modules/currencies.php:62
+msgctxt "currencies"
+msgid "Georgian lari"
+msgstr "Georgischer Lari"
+
+#: modules/currencies.php:60
+msgctxt "currencies"
+msgid "Falkland Islands pound"
+msgstr "Falkland-Pfund"
+
+#: modules/currencies.php:53
+msgctxt "currencies"
+msgid "Dominican peso"
+msgstr "Dominikanischer Peso"
+
+#: modules/currencies.php:51
+msgctxt "currencies"
+msgid "Djiboutian franc"
+msgstr "Dschibuti-Franc"
+
+#: modules/currencies.php:48
+msgctxt "currencies"
+msgid "Cuban peso"
+msgstr "Kubanischer Peso"
+
+#: modules/currencies.php:42
+msgctxt "currencies"
+msgid "Congolese franc"
+msgstr "Kongo-Franc"
+
+#: modules/currencies.php:40
+msgctxt "currencies"
+msgid "Belize dollar"
+msgstr "Belize-Dollar"
+
+#: modules/currencies.php:38
+msgctxt "currencies"
+msgid "Botswana pula"
+msgstr "Botswanischer Pula"
+
+#: modules/currencies.php:32
+msgctxt "currencies"
+msgid "Bermudian dollar"
+msgstr "Bermuda-Dollar"
+
+#: modules/currencies.php:31
+msgctxt "currencies"
+msgid "Burundian franc"
+msgstr "Burundi-Franc"
+
+#: modules/currencies.php:20
+msgctxt "currencies"
+msgid "Netherlands Antillean guilder"
+msgstr "Antillen-Gulden"
+
+#: modules/currencies.php:165
+msgctxt "currencies"
+msgid "East Caribbean dollar"
+msgstr "Ostkaribischer Dollar"
+
+#: modules/currencies.php:164
+msgctxt "currencies"
+msgid "CFA franc BEAC"
+msgstr "CFA-Franc BEAC"
+
+#: modules/currencies.php:117
+msgctxt "currencies"
+msgid "Nepalese rupee"
+msgstr "Nepalesische Rupie"
+
+#: modules/currencies.php:113
+msgctxt "currencies"
+msgid "Namibian dollar"
+msgstr "Namibia-Dollar"
+
+#: modules/currencies.php:109
+msgctxt "currencies"
+msgid "Malawian kwacha"
+msgstr "Malawi-Kwacha"
+
+#: modules/currencies.php:75
+msgctxt "currencies"
+msgid "Israeli new shekel"
+msgstr "Israelischer Schekel"
+
+#. Description of the plugin
+msgid "Listo is a simple plugin that supplies commonly used lists to other plugins and themes."
+msgstr "Listo ist ein schlichtes Plugin, das häufig verwendete Listen anderen Plugins und Themes zur Verfügung stellt."
+
+#: modules/currencies.php:45
+msgctxt "currencies"
+msgid "Chinese yuan"
+msgstr "Chinesischer Renminbi"
+
+#: modules/currencies.php:70
+msgctxt "currencies"
+msgid "Honduran lempira"
+msgstr "Hondurischer Lempira"
+
+#: modules/currencies.php:72
+msgctxt "currencies"
+msgid "Haitian gourde"
+msgstr "Haitianische Gourde"
+
+#: modules/currencies.php:65
+msgctxt "currencies"
+msgid "Gambian dalasi"
+msgstr "Gambischer Dalasi"
+
+#: modules/currencies.php:122
+msgctxt "currencies"
+msgid "Papua New Guinean kina"
+msgstr "Papua-Neuguinea-Kina"
+
+#: modules/currencies.php:91
+msgctxt "currencies"
+msgid "Kazakhstani tenge"
+msgstr "Kasachischer Tenge"
+
+#: modules/currencies.php:84
+msgctxt "currencies"
+msgid "Kyrgyzstani som"
+msgstr "Kirgisischer Som"
+
+#: modules/currencies.php:63
+msgctxt "currencies"
+msgid "Ghanaian cedi"
+msgstr "Ghana-Cedi"
+
+#: modules/currencies.php:21
+msgctxt "currencies"
+msgid "Angolan kwanza"
+msgstr "Angolanischer Kwanza"
+
+#: modules/currencies.php:108
+msgctxt "currencies"
+msgid "Maldivian rufiyaa"
+msgstr "Malediven-Rufiyaa"
+
+#: modules/currencies.php:101
+msgctxt "currencies"
+msgid "Malagasy ariary"
+msgstr "Madagaskar-Ariary"
+
+#: modules/currencies.php:37
+msgctxt "currencies"
+msgid "Bhutanese ngultrum"
+msgstr "Bhutanesischer Ngultrum"
+
+#: modules/currencies.php:28
+msgctxt "currencies"
+msgid "Bangladeshi taka"
+msgstr "Bangladesh-Taka"
+
+#: modules/currencies.php:106
+msgctxt "currencies"
+msgid "Mauritanian ouguiya"
+msgstr "Mauritanischer Ouguiya"
+
+#: modules/currencies.php:26
+msgctxt "currencies"
+msgid "Bosnia and Herzegovina convertible mark"
+msgstr "Bosnische konvertible Mark"
+
+#: modules/currencies.php:167
+msgctxt "currencies"
+msgid "CFP franc (franc Pacifique)"
+msgstr "CFP-Franc"
+
+#. Author URI of the plugin
+msgid "https://ideasilo.wordpress.com/"
+msgstr "https://ideasilo.wordpress.com/"
+
+#. Plugin URI of the plugin
+msgid "https://contactform7.com/listo/"
+msgstr "https://contactform7.com/listo/"
+
+#: modules/us-subdivisions.php:61
+msgctxt "us_subdivisions"
+msgid "United States Minor Outlying Islands"
+msgstr "Kleinere abgelegene Inseln der Vereinigten Staaten"
+
+#: modules/countries.php:245
+msgctxt "countries"
+msgid "United States Minor Outlying Islands"
+msgstr "Kleinere abgelegene Inseln der Vereinigten Staaten"
+
+#: modules/countries.php:249
+msgctxt "countries"
+msgid "Holy See (Vatican City State)"
+msgstr "Heiliger Stuhl (Staat Vatikanstadt)"
+
+#: modules/currencies.php:39
+msgctxt "currencies"
+msgid "Belarusian ruble"
+msgstr "Belarussischer Rubel"
+
+#: modules/countries.php:171
+msgctxt "countries"
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: modules/countries.php:169
+msgctxt "countries"
+msgid "Malawi"
+msgstr "Malawi"
+
+#: modules/countries.php:168
+msgctxt "countries"
+msgid "Mauritius"
+msgstr "Mauritius"
+
+#: modules/countries.php:167
+msgctxt "countries"
+msgid "Martinique"
+msgstr "Martinique"
+
+#: modules/countries.php:166
+msgctxt "countries"
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: modules/countries.php:165
+msgctxt "countries"
+msgid "Mauritania"
+msgstr "Mauretanien"
+
+#: modules/countries.php:164
+msgctxt "countries"
+msgid "Mozambique"
+msgstr "Mosambik"
+
+#: modules/countries.php:162
+msgctxt "countries"
+msgid "Mongolia"
+msgstr "Mongolei"
+
+#: modules/countries.php:161
+msgctxt "countries"
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: modules/countries.php:160
+msgctxt "countries"
+msgid "Myanmar"
+msgstr "Myanmar"
+
+#: modules/countries.php:159
+msgctxt "countries"
+msgid "Malta"
+msgstr "Malta"
+
+#: modules/countries.php:158
+msgctxt "countries"
+msgid "Mali"
+msgstr "Mali"
+
+#: modules/countries.php:155
+msgctxt "countries"
+msgid "Mexico"
+msgstr "Mexiko"
+
+#: modules/countries.php:154
+msgctxt "countries"
+msgid "Maldives"
+msgstr "Malediven"
+
+#: modules/countries.php:153
+msgctxt "countries"
+msgid "Madagascar"
+msgstr "Madagaskar"
+
+#: modules/countries.php:151
+msgctxt "countries"
+msgid "Monaco"
+msgstr "Monaco"
+
+#: modules/countries.php:150
+msgctxt "countries"
+msgid "Morocco"
+msgstr "Marokko"
+
+#: modules/countries.php:148
+msgctxt "countries"
+msgid "Macao"
+msgstr "Macau"
+
+#: modules/countries.php:147
+msgctxt "countries"
+msgid "Latvia"
+msgstr "Lettland"
+
+#: modules/countries.php:146
+msgctxt "countries"
+msgid "Luxembourg"
+msgstr "Luxemburg"
+
+#: modules/countries.php:145
+msgctxt "countries"
+msgid "Lithuania"
+msgstr "Litauen"
+
+#: modules/countries.php:144
+msgctxt "countries"
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: modules/countries.php:142
+msgctxt "countries"
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: modules/countries.php:141
+msgctxt "countries"
+msgid "Saint Lucia"
+msgstr "St. Lucia"
+
+#: modules/countries.php:140
+msgctxt "countries"
+msgid "Libya"
+msgstr "Libyen"
+
+#: modules/countries.php:139
+msgctxt "countries"
+msgid "Liberia"
+msgstr "Liberia"
+
+#: modules/countries.php:138
+msgctxt "countries"
+msgid "Lebanon"
+msgstr "Libanon"
+
+#: modules/countries.php:136
+msgctxt "countries"
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: modules/countries.php:134
+msgctxt "countries"
+msgid "Saint Kitts and Nevis"
+msgstr "St. Kitts und Nevis"
+
+#: modules/countries.php:133
+msgctxt "countries"
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: modules/countries.php:132
+msgctxt "countries"
+msgid "Cambodia"
+msgstr "Kambodscha"
+
+#: modules/countries.php:131
+msgctxt "countries"
+msgid "Kyrgyzstan"
+msgstr "Kirgisistan"
+
+#: modules/countries.php:130
+msgctxt "countries"
+msgid "Kenya"
+msgstr "Kenia"
+
+#: modules/countries.php:129
+msgctxt "countries"
+msgid "Kazakhstan"
+msgstr "Kasachstan"
+
+#: modules/countries.php:128
+msgctxt "countries"
+msgid "Japan"
+msgstr "Japan"
+
+#: modules/countries.php:127
+msgctxt "countries"
+msgid "Jordan"
+msgstr "Jordanien"
+
+#: modules/countries.php:126
+msgctxt "countries"
+msgid "Jersey"
+msgstr "Jersey"
+
+#: modules/countries.php:125
+msgctxt "countries"
+msgid "Jamaica"
+msgstr "Jamaika"
+
+#: modules/countries.php:124
+msgctxt "countries"
+msgid "Italy"
+msgstr "Italien"
+
+#: modules/countries.php:123
+msgctxt "countries"
+msgid "Israel"
+msgstr "Israel"
+
+#: modules/countries.php:122
+msgctxt "countries"
+msgid "Iceland"
+msgstr "Island"
+
+#: modules/countries.php:121
+msgctxt "countries"
+msgid "Iraq"
+msgstr "Irak"
+
+#: modules/countries.php:117
+msgctxt "countries"
+msgid "India"
+msgstr "Indien"
+
+#: modules/countries.php:116
+msgctxt "countries"
+msgid "Isle of Man"
+msgstr "Isle of Man"
+
+#: modules/countries.php:115
+msgctxt "countries"
+msgid "Indonesia"
+msgstr "Indonesien"
+
+#: modules/countries.php:114
+msgctxt "countries"
+msgid "Hungary"
+msgstr "Ungarn"
+
+#: modules/countries.php:113
+msgctxt "countries"
+msgid "Haiti"
+msgstr "Haiti"
+
+#: modules/countries.php:112
+msgctxt "countries"
+msgid "Croatia"
+msgstr "Kroatien"
+
+#: modules/countries.php:111
+msgctxt "countries"
+msgid "Honduras"
+msgstr "Honduras"
+
+#: modules/countries.php:110
+msgctxt "countries"
+msgid "Heard Island and McDonald Islands"
+msgstr "Heard und McDonaldinseln"
+
+#: modules/countries.php:109
+msgctxt "countries"
+msgid "Hong Kong"
+msgstr "Hongkong"
+
+#: modules/countries.php:108
+msgctxt "countries"
+msgid "Guyana"
+msgstr "Guyana"
+
+#: modules/countries.php:107
+msgctxt "countries"
+msgid "Guam"
+msgstr "Guam"
+
+#: modules/countries.php:106
+msgctxt "countries"
+msgid "French Guiana"
+msgstr "Französisch-Guayana"
+
+#: modules/countries.php:105
+msgctxt "countries"
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: modules/countries.php:104
+msgctxt "countries"
+msgid "Greenland"
+msgstr "Grönland"
+
+#: modules/countries.php:103
+msgctxt "countries"
+msgid "Grenada"
+msgstr "Grenada"
+
+#: modules/countries.php:102
+msgctxt "countries"
+msgid "Greece"
+msgstr "Griechenland"
+
+#: modules/countries.php:101
+msgctxt "countries"
+msgid "Equatorial Guinea"
+msgstr "Äquatorialguinea"
+
+#: modules/countries.php:100
+msgctxt "countries"
+msgid "Guinea-Bissau"
+msgstr "Guinea-Bissau"
+
+#: modules/countries.php:99
+msgctxt "countries"
+msgid "Gambia"
+msgstr "Gambia"
+
+#: modules/countries.php:98
+msgctxt "countries"
+msgid "Guadeloupe"
+msgstr "Guadeloupe"
+
+#: modules/countries.php:97
+msgctxt "countries"
+msgid "Guinea"
+msgstr "Guinea"
+
+#: modules/countries.php:96
+msgctxt "countries"
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: modules/countries.php:95
+msgctxt "countries"
+msgid "Ghana"
+msgstr "Ghana"
+
+#: modules/countries.php:94
+msgctxt "countries"
+msgid "Guernsey"
+msgstr "Guernsey"
+
+#: modules/countries.php:93
+msgctxt "countries"
+msgid "Georgia"
+msgstr "Georgien"
+
+#: modules/countries.php:91
+msgctxt "countries"
+msgid "Gabon"
+msgstr "Gabun"
+
+#: modules/countries.php:88
+msgctxt "countries"
+msgid "France"
+msgstr "Frankreich"
+
+#: modules/countries.php:86
+msgctxt "countries"
+msgid "Fiji"
+msgstr "Fidschi"
+
+#: modules/countries.php:85
+msgctxt "countries"
+msgid "Finland"
+msgstr "Finnland"
+
+#: modules/countries.php:84
+msgctxt "countries"
+msgid "Ethiopia"
+msgstr "Äthiopien"
+
+#: modules/countries.php:83
+msgctxt "countries"
+msgid "Estonia"
+msgstr "Estland"
+
+#: modules/countries.php:82
+msgctxt "countries"
+msgid "Spain"
+msgstr "Spanien"
+
+#: modules/countries.php:80
+msgctxt "countries"
+msgid "Eritrea"
+msgstr "Eritrea"
+
+#: modules/countries.php:79
+msgctxt "countries"
+msgid "Egypt"
+msgstr "Ägypten"
+
+#: modules/countries.php:78
+msgctxt "countries"
+msgid "Ecuador"
+msgstr "Ecuador"
+
+#: modules/countries.php:77
+msgctxt "countries"
+msgid "Algeria"
+msgstr "Algerien"
+
+#: modules/countries.php:76
+msgctxt "countries"
+msgid "Dominican Republic"
+msgstr "Dominikanische Republik"
+
+#: modules/countries.php:75
+msgctxt "countries"
+msgid "Denmark"
+msgstr "Dänemark"
+
+#: modules/countries.php:74
+msgctxt "countries"
+msgid "Dominica"
+msgstr "Dominica"
+
+#: modules/countries.php:70
+msgctxt "countries"
+msgid "Cyprus"
+msgstr "Zypern"
+
+#: modules/countries.php:67
+msgctxt "countries"
+msgid "Curaçao"
+msgstr "Curaçao"
+
+#: modules/countries.php:66
+msgctxt "countries"
+msgid "Cuba"
+msgstr "Kuba"
+
+#: modules/countries.php:65
+msgctxt "countries"
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: modules/countries.php:64
+msgctxt "countries"
+msgid "Cape Verde"
+msgstr "Kap Verde"
+
+#: modules/countries.php:63
+msgctxt "countries"
+msgid "Comoros"
+msgstr "Komoren"
+
+#: modules/countries.php:62
+msgctxt "countries"
+msgid "Colombia"
+msgstr "Kolumbien"
+
+#: modules/countries.php:61
+msgctxt "countries"
+msgid "Cook Islands"
+msgstr "Cookinseln"
+
+#: modules/countries.php:60
+msgctxt "countries"
+msgid "Congo"
+msgstr "Kongo"
+
+#: modules/countries.php:58
+msgctxt "countries"
+msgid "Cameroon"
+msgstr "Kamerun"
+
+#: modules/countries.php:57
+msgctxt "countries"
+msgid "Côte d'Ivoire"
+msgstr "Elfenbeinküste"
+
+#: modules/countries.php:56
+msgctxt "countries"
+msgid "China"
+msgstr "China"
+
+#: modules/countries.php:55
+msgctxt "countries"
+msgid "Chile"
+msgstr "Chile"
+
+#: modules/countries.php:54
+msgctxt "countries"
+msgid "Switzerland"
+msgstr "Schweiz"
+
+#: modules/countries.php:52
+msgctxt "countries"
+msgid "Canada"
+msgstr "Kanada"
+
+#: modules/countries.php:51
+msgctxt "countries"
+msgid "Central African Republic"
+msgstr "Zentralafrikanische Republik"
+
+#: modules/countries.php:50
+msgctxt "countries"
+msgid "Botswana"
+msgstr "Botswana"
+
+#: modules/countries.php:49
+msgctxt "countries"
+msgid "Bouvet Island"
+msgstr "Bouvetinsel"
+
+#: modules/countries.php:48
+msgctxt "countries"
+msgid "Bhutan"
+msgstr "Bhutan"
+
+#: modules/countries.php:46
+msgctxt "countries"
+msgid "Barbados"
+msgstr "Barbados"
+
+#: modules/countries.php:45
+msgctxt "countries"
+msgid "Brazil"
+msgstr "Brasilien"
+
+#: modules/countries.php:43
+msgctxt "countries"
+msgid "Bermuda"
+msgstr "Bermuda"
+
+#: modules/countries.php:42
+msgctxt "countries"
+msgid "Belize"
+msgstr "Belize"
+
+#: modules/countries.php:41
+msgctxt "countries"
+msgid "Belarus"
+msgstr "Weißrussland"
+
+#: modules/countries.php:39
+msgctxt "countries"
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnien und Herzegowina"
+
+#: modules/countries.php:38
+msgctxt "countries"
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: modules/countries.php:36
+msgctxt "countries"
+msgid "Bulgaria"
+msgstr "Bulgarien"
+
+#: modules/countries.php:35
+msgctxt "countries"
+msgid "Bangladesh"
+msgstr "Bangladesch"
+
+#: modules/countries.php:34
+msgctxt "countries"
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: modules/countries.php:32
+msgctxt "countries"
+msgid "Benin"
+msgstr "Benin"
+
+#: modules/countries.php:31
+msgctxt "countries"
+msgid "Belgium"
+msgstr "Belgien"
+
+#: modules/countries.php:30
+msgctxt "countries"
+msgid "Burundi"
+msgstr "Burundi"
+
+#: modules/countries.php:29
+msgctxt "countries"
+msgid "Azerbaijan"
+msgstr "Aserbaidschan"
+
+#: modules/countries.php:28
+msgctxt "countries"
+msgid "Austria"
+msgstr "Österreich"
+
+#: modules/countries.php:27
+msgctxt "countries"
+msgid "Australia"
+msgstr "Australien"
+
+#: modules/countries.php:26
+msgctxt "countries"
+msgid "Antigua and Barbuda"
+msgstr "Antigua und Barbuda"
+
+#: modules/countries.php:25
+msgctxt "countries"
+msgid "French Southern Territories"
+msgstr "Französische Süd- und Antarktisgebiete"
+
+#: modules/countries.php:23
+msgctxt "countries"
+msgid "American Samoa"
+msgstr "Amerikanisch-Samoa"
+
+#: modules/countries.php:22
+msgctxt "countries"
+msgid "Armenia"
+msgstr "Armenien"
+
+#: modules/countries.php:21
+msgctxt "countries"
+msgid "Argentina"
+msgstr "Argentinien"
+
+#: modules/countries.php:20
+msgctxt "countries"
+msgid "United Arab Emirates"
+msgstr "Vereinigte Arabische Emirate"
+
+#: modules/countries.php:19
+msgctxt "countries"
+msgid "Andorra"
+msgstr "Andorra"
+
+#: modules/countries.php:18
+msgctxt "countries"
+msgid "Albania"
+msgstr "Albanien"
+
+#: modules/countries.php:81
+msgctxt "countries"
+msgid "Western Sahara"
+msgstr "Westsahara"
+
+#: modules/countries.php:72
+msgctxt "countries"
+msgid "Germany"
+msgstr "Deutschland"
+
+#: modules/countries.php:13
+msgctxt "countries"
+msgid "Aruba"
+msgstr "Aruba"
+
+#: modules/countries.php:16
+msgctxt "countries"
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: modules/countries.php:15
+msgctxt "countries"
+msgid "Angola"
+msgstr "Angola"
+
+#: modules/countries.php:14
+msgctxt "countries"
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+#: modules/countries.php:92
+msgctxt "countries"
+msgid "United Kingdom"
+msgstr "Vereinigtes Königreich"
+
+#: modules/countries.php:143
+msgctxt "countries"
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: modules/countries.php:24
+msgctxt "countries"
+msgid "Antarctica"
+msgstr "Antarktika"
+
+#: modules/countries.php:149
+msgctxt "countries"
+msgid "Saint Martin (French part)"
+msgstr "St. Martin (französischer Teil)"
+
+#: modules/countries.php:40
+msgctxt "countries"
+msgid "Saint Barthélemy"
+msgstr "Saint-Barthélemy"
+
+#: modules/countries.php:163
+msgctxt "countries"
+msgid "Northern Mariana Islands"
+msgstr "Nördliche Marianen"
+
+#: modules/countries.php:17
+msgctxt "countries"
+msgid "Åland Islands"
+msgstr "Åland"
+
+#: modules/countries.php:152
+msgctxt "countries"
+msgid "Moldova, Republic of"
+msgstr "Moldawien"
+
+#: modules/countries.php:172
+msgctxt "countries"
+msgid "Namibia"
+msgstr "Namibia"
+
+#: modules/countries.php:156
+msgctxt "countries"
+msgid "Marshall Islands"
+msgstr "Marshallinseln"
+
+#: modules/countries.php:170
+msgctxt "countries"
+msgid "Malaysia"
+msgstr "Malaysia"
+
+#: modules/countries.php:157
+msgctxt "countries"
+msgid "Macedonia, the former Yugoslav Republic of"
+msgstr "Mazedonien"
+
+#: modules/countries.php:137
+msgctxt "countries"
+msgid "Lao People's Democratic Republic"
+msgstr "Laos"
+
+#: modules/countries.php:135
+msgctxt "countries"
+msgid "Korea, Republic of"
+msgstr "Südkorea"
+
+#: modules/countries.php:119
+msgctxt "countries"
+msgid "Ireland"
+msgstr "Irland"
+
+#: modules/countries.php:120
+msgctxt "countries"
+msgid "Iran, Islamic Republic of"
+msgstr "Iran"
+
+#: modules/countries.php:89
+msgctxt "countries"
+msgid "Faroe Islands"
+msgstr "Färöer"
+
+#: modules/countries.php:87
+msgctxt "countries"
+msgid "Falkland Islands (Malvinas)"
+msgstr "Falklandinseln"
+
+#: modules/countries.php:73
+msgctxt "countries"
+msgid "Djibouti"
+msgstr "Dschibuti"
+
+#: modules/countries.php:71
+msgctxt "countries"
+msgid "Czech Republic"
+msgstr "Tschechien"
+
+#: modules/countries.php:59
+msgctxt "countries"
+msgid "Congo, the Democratic Republic of the"
+msgstr "Kongo"
+
+#: modules/countries.php:68
+msgctxt "countries"
+msgid "Christmas Island"
+msgstr "Weihnachtsinsel"
+
+#: modules/countries.php:69
+msgctxt "countries"
+msgid "Cayman Islands"
+msgstr "Caymaninseln"
+
+#: modules/countries.php:47
+msgctxt "countries"
+msgid "Brunei Darussalam"
+msgstr "Brunei"
+
+#: modules/countries.php:118
+msgctxt "countries"
+msgid "British Indian Ocean Territory"
+msgstr "Britisches Territorium im Indischen Ozean"
+
+#: modules/countries.php:33
+msgctxt "countries"
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr "Karibische Niederlande"
+
+#: modules/countries.php:44
+msgctxt "countries"
+msgid "Bolivia, Plurinational State of"
+msgstr "Bolivien"
+
+#: modules/countries.php:37
+msgctxt "countries"
+msgid "Bahrain"
+msgstr "Bahrain"
+
+#: modules/countries.php:53
+msgctxt "countries"
+msgid "Cocos (Keeling) Islands"
+msgstr "Kokosinseln (Keelinginseln)"
+
+#: modules/countries.php:90
+msgctxt "countries"
+msgid "Micronesia, Federated States of"
+msgstr "Mikronesien, Föderierte Staaten von"

@@ -1,0 +1,37 @@
+[2023-11-29 10:24:36] [index] Dropping post.product 1033089
+[2023-11-29 10:24:36] [indexer] Queued next batch (1)
+[2023-11-29 10:24:39] [index] Dropping post.product 1033012
+[2023-11-29 10:24:39] [indexer] Processing batch (1)
+[2023-11-29 10:24:39] [indexer] Indexing post.product:1033089
+[2023-11-29 10:24:39] [index] Marking [1] post.product 1033089 as indexed
+[2023-11-29 10:24:39] [indexer] Queued next batch (1)
+[2023-11-29 10:24:40] [index] Dropping post.product 1032956
+[2023-11-29 10:24:40] [indexer] Processing batch (1)
+[2023-11-29 10:24:40] [indexer] Indexing post.product:1033012
+[2023-11-29 10:24:40] [index] Marking [1] post.product 1033012 as indexed
+[2023-11-29 10:24:40] [indexer] Queued next batch (1)
+[2023-11-29 10:24:43] [index] Dropping post.product 1032930
+[2023-11-29 10:24:43] [indexer] Processing batch (1)
+[2023-11-29 10:24:43] [indexer] Indexing post.product:1032956
+[2023-11-29 10:24:43] [index] Marking [1] post.product 1032956 as indexed
+[2023-11-29 10:24:44] [indexer] Queued next batch (1)
+[2023-11-29 10:24:45] [index] Dropping post.product 1032775
+[2023-11-29 10:24:45] [indexer] Processing batch (1)
+[2023-11-29 10:24:45] [indexer] Indexing post.product:1032930
+[2023-11-29 10:24:45] [index] Marking [1] post.product 1032930 as indexed
+[2023-11-29 10:24:45] [indexer] Queued next batch (1)
+[2023-11-29 10:24:47] [index] Dropping post.product 1032768
+[2023-11-29 10:24:47] [indexer] Processing batch (1)
+[2023-11-29 10:24:47] [indexer] Indexing post.product:1032775
+[2023-11-29 10:24:47] [index] Marking [1] post.product 1032775 as indexed
+[2023-11-29 10:24:47] [indexer] Queued next batch (1)
+[2023-11-29 10:24:48] [index] Dropping post.product 1032761
+[2023-11-29 10:24:48] [indexer] Processing batch (1)
+[2023-11-29 10:24:48] [indexer] Indexing post.product:1032768
+[2023-11-29 10:24:48] [index] Marking [1] post.product 1032768 as indexed
+[2023-11-29 10:24:48] [indexer] Queued next batch (1)
+[2023-11-29 10:24:49] [index] Dropping post.product 1032754
+[2023-11-29 10:24:49] [indexer] Processing batch (1)
+[2023-11-29 10:24:49] [indexer] Indexing post.product:1032761
+[2023-11-29 10:24:49] [index] Marking [1] post.product 1032761 as indexed
+[2023-11-29 10:24:49] [indexer] Queued next batch (1)

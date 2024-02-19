@@ -1,0 +1,540 @@
+# Translation of Plugins - Enable Media Replace - Stable (latest release) in Swedish
+# This file is distributed under the same license as the Plugins - Enable Media Replace - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-12-11 20:03:43+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: sv_SE\n"
+"Project-Id-Version: Plugins - Enable Media Replace - Stable (latest release)\n"
+
+#: classes/ViewController.php:105
+msgid "This error is shown because you try to move the image to another folder, which already has this file"
+msgstr "Detta fel visas eftersom du försöker flytta bilden till en annan mapp, som redan har denna fil"
+
+#: classes/ViewController.php:123
+msgid "Path: %s is not within basedir reported as: %s"
+msgstr "Sökväg: %s är inte inom ”basedir”, rapporterad som: %s"
+
+#: views/success.php:26
+msgid "( %s ) or %s click here to continue %s"
+msgstr "(%s) eller %s klicka här för att fortsätta %s"
+
+#: views/success.php:25
+msgid "You will be redirect to the image screen in a few seconds."
+msgstr "Du kommer att omdirigeras till bildvyn inom några sekunder."
+
+#: views/success.php:23
+msgid "Try the %sShortPixel Image Optimizer%s plugin!"
+msgstr "Prova tillägget %sShortPixel Image Optimizer%s!"
+
+#: views/success.php:21
+msgid "Did you know that you can also optimize the images on your website to make them load faster?"
+msgstr "Visste du att du även kan optimera bilderna på din webbplats för att få dem att laddas snabbare?"
+
+#: views/success.php:19
+msgid "Your image has been successfully replaced!"
+msgstr "Din bild har ersatts!"
+
+#: views/success.php:17
+msgid "Your image has been replaced!"
+msgstr "Din bild har ersatts!"
+
+#: views/screen.php:231
+msgid "File is offloaded and can't be moved to other directory"
+msgstr "Filen är avlastad och kan inte flyttas till annan katalog"
+
+#: views/screen.php:172
+msgid "Options"
+msgstr "Alternativ"
+
+#: views/screen.php:68
+msgid "\t\t\tYou are about to replace %s in your media library. This will be %spermanent%s. %s You can click on the new image panel and select a file from your computer. You can also drag and drop a file into this window"
+msgstr "\t\t\tDu är på väg att ersätta %s i ditt mediabibliotek. Detta kommer att vara %spermanent%s. %s Du kan klicka på den nya bildpanelen och välja en fil från din dator. Du kan också dra och släppa en fil i detta fönster"
+
+#: views/screen.php:41
+msgid "Drop File"
+msgstr "Släpp fil"
+
+#: views/prepare-remove-background.php:71
+msgid "Replace this image with another one instead!"
+msgstr "Byt ut denna bild mot en annan istället!"
+
+#: views/error.php:30
+msgid "If you need help, please see the plugin %sdocumentation%s. It contains clear solutions to most of the problems you may encounter when using our plugin."
+msgstr "Om du behöver hjälp, se tilläggets %sdokumentation%s. Där finns tydliga lösningar på de flesta problem som kan uppstå när du använder vårt tillägg."
+
+#: views/error.php:26
+msgid "You can return to %s previous page %s"
+msgstr "Du kan gå tillbaka till %s föregående sida %s"
+
+#: views/error.php:18
+msgid "An error occured"
+msgstr "Ett fel uppstod"
+
+#: classes/ViewController.php:141
+msgid "An unknown error has occured"
+msgstr "Ett okänt fel har uppstått"
+
+#: classes/ViewController.php:137
+msgid "Replacement Image could not be downloaded or does not exist"
+msgstr "Ersättningsbild kunde inte laddas ner eller finns inte"
+
+#: classes/ViewController.php:132
+msgid "This can happen when the window is open for a long time and/or there has been a timeout.  You can go back to previous screen and try again. If this happens each time when replacing, contact us"
+msgstr "Detta kan hända om fönstret är öppet under en längre tid och/eller om det har nått en tidsgräns.  Du kan gå tillbaka till föregående vy och försöka igen. Om detta händer varje gång du byter ut, kontakta oss"
+
+#: classes/ViewController.php:131
+msgid "Fail to validate form nonce. Please try again"
+msgstr "Kunde inte bekräfta engångskoden för formuläret. Försök igen"
+
+#: classes/ViewController.php:114
+msgid "Error updating WordPress post in the database"
+msgstr "Fel vid uppdatering av WordPress-inlägg i databasen"
+
+#: classes/ViewController.php:111
+msgid "Copying replacement file to destination failed"
+msgstr "Kopiering av ersättningsfilen till målet misslyckades"
+
+#: classes/ViewController.php:108
+msgid "Something went wrong while writing the file or directory"
+msgstr "Något gick fel när filen eller katalogen skulle skrivas"
+
+#: classes/ViewController.php:104
+msgid "The target file already exists in this directory. Please try another name / directory"
+msgstr "Målfilen finns redan i denna katalog. Försök med ett annat namn/katalog"
+
+#: classes/ViewController.php:101
+msgid "The upload from your browser seem to have failed"
+msgstr "Uppladdningen från din webbläsare verkar ha misslyckats"
+
+#: classes/ViewController.php:98
+msgid "The file upload has been rejected for security reason. WordPress might not allow uploading this extension or filetype"
+msgstr "Filuppladdningen har avvisats av säkerhetsskäl. WordPress kanske inte tillåter uppladdning av denna filtyp"
+
+#: classes/ViewController.php:95
+msgid "Updating the WordPress attachment failed"
+msgstr "Kunde inte uppdatera WordPress-bilagan"
+
+#: classes/ViewController.php:92
+msgid "The custom time format submitted is invalid"
+msgstr "Det angivna anpassade tidsformatet är ogiltigt"
+
+#: classes/ViewController.php:89
+msgid "The form submitted is missing various fields"
+msgstr "I formuläret som skickats in saknas flera fält"
+
+#: classes/ViewController.php:86
+msgid "You don't have permission to edit this image"
+msgstr "Du har inte behörighet att redigera denna bild"
+
+#: classes/ViewController.php:83
+msgid "You don't have permission to upload images. Please refer to your administrator"
+msgstr "Du har inte behörighet att ladda upp bilder. Kontakta din administratör"
+
+#: classes/uihelper.php:426
+msgid "Current"
+msgstr "Nuvarande"
+
+#: classes/uihelper.php:421
+msgid "Click here to upload or drop file in area"
+msgstr "Klicka här för att ladda upp eller släppa fil i område"
+
+#: classes/uihelper.php:418
+msgid "New"
+msgstr "Ny"
+
+#: classes/api.php:75
+msgid "No permission for user"
+msgstr "Ingen behörighet för denna användare"
+
+#: views/prepare-remove-background.php:121
+msgid "Replace"
+msgstr "Ersätt"
+
+#: classes/uihelper.php:426 views/prepare-remove-background.php:120
+msgid "Preview"
+msgstr "Förhandsgranska"
+
+#: views/prepare-remove-background.php:108
+msgid "Opacity:"
+msgstr "Opacitet:"
+
+#: views/prepare-remove-background.php:98
+msgid "Background Color:"
+msgstr "Bakgrundsfärg:"
+
+#: views/prepare-remove-background.php:94
+msgid "If you select this option, the image will have a solid color background and you can choose the color code from the color picker below."
+msgstr "Om du väljer detta alternativ kommer bilden att ha en solid färgbakgrund och du kan välja färgkoden från färgväljaren nedan."
+
+#: views/prepare-remove-background.php:91
+msgid "Solid background"
+msgstr "Solid bakgrund"
+
+#: views/prepare-remove-background.php:85
+msgid "Returns a transparent background if it is a PNG image, or a white one if it is a JPG image."
+msgstr "Returnerar en transparent bakgrund om det är en PNG-bild, eller en vit om det är en JPG-bild."
+
+#: views/prepare-remove-background.php:82
+msgid "Transparent/white background"
+msgstr "Transparent/vit bakgrund"
+
+#: views/prepare-remove-background.php:78
+msgid "If a CDN is used, remember to clear the cache for this image!"
+msgstr "Om en CDN används, kom ihåg att rensa cachen för denna bild!"
+
+#: views/prepare-remove-background.php:75
+msgid "Background Removal Options"
+msgstr "Alternativ för borttagning av bakgrund"
+
+#: views/prepare-remove-background.php:64
+msgid "Report bad background removal"
+msgstr "Rapportera dålig borttagning av bakgrund"
+
+#: views/prepare-remove-background.php:56
+msgid "Remove Media Background"
+msgstr "Ta bort mediabakgrund"
+
+#: views/prepare-remove-background.php:33
+msgid "Hello! %s This is a report of a background removal that did not go well %s Url: {url} %s Settings : {settings} %s Thank you! %s"
+msgstr "Hej!%s Detta är en rapport om en bakgrundsborttagning som inte gick bra %s Url: {url} %s Inställning: {settings} %sTack!  %s"
+
+#: views/prepare-remove-background.php:32
+msgid "Bad remove of background report"
+msgstr "Rapport om misslyckad borttagning av bakgrund"
+
+#: views/screen.php:226
+msgid "Place the newly uploaded file in this folder: "
+msgstr "Placera den nyligen uppladdade filen i denna mapp: "
+
+#: views/screen.php:146
+msgid "Note: This option requires you to upload a file of the same type (%s) as the file you want to replace. The attachment name will remain the same (%s) regardless of what the file you upload is called. If a CDN is used, remember to clear the cache for this image!"
+msgstr "Obs: Detta alternativ kräver att du laddar upp en fil av samma typ (%s) som filen du vill ersätta. Bilagans namn kommer att förbli detsamma (%s) oavsett vad filen du laddar upp heter. Om du använder ett CDN måste du komma ihåg att rensa cachen för denna bild!"
+
+#: views/screen.php:124
+msgid "Remove the background after replacing this image!"
+msgstr "Ta bort bakgrunden efter att ha ersatt denna bild!"
+
+#: views/screen.php:120
+msgid "New! Click here to remove the background of this image!"
+msgstr "Nytt! Klicka här för att ta bort bakgrunden till denna bild!"
+
+#: views/screen.php:76
+msgid "The replacement file does not have the same file type. This can lead to unexpected issues ( %s )"
+msgstr "Ersättningsfilen har inte samma filtyp. Detta kan leda till oväntade problem (%s)"
+
+#: views/screen.php:59
+msgid "Select Replacement Media"
+msgstr "Välj ersättningsmedia"
+
+#: views/do-replace-background.php:56
+msgid "Temp file does not exist"
+msgstr "Temporär fil finns inte"
+
+#: views/do-replace-background.php:16
+msgid "Error while sending form (no key). Please try again."
+msgstr "Fel när formuläret skickades (ingen nyckel). Försök igen."
+
+#: classes/uihelper.php:516
+msgid "%s New Beta Feature! %s %s Enable Media Replace now gives you the ability to remove the background of any image. Try it out in the Media Library: hover over an image and click on Remove Background. Or just click on Remove background from the image editing window! %s  "
+msgstr "%sNy betafunktion!%s%s”Enable Media Replace” ger dig nu möjlighet att ta bort bakgrunden på valfri bild. Testa det i mediabiblioteket: håll muspekaren över en bild och klicka på ”Ta bort bakgrund”. Eller klicka helt enkelt på ”Ta bort bakgrund” från bildredigeringsfönstret!%s  "
+
+#: classes/uihelper.php:465
+msgid "Removing background..."
+msgstr "Tar bort bakgrund …"
+
+#: classes/ViewController.php:117
+msgid "Specificed directory is outside the upload directory. This is not allowed for security reasons"
+msgstr "Specificerad katalog är utanför uppladdningskatalogen. Detta är inte tillåtet av säkerhetsskäl"
+
+#: classes/emr-plugin.php:580
+msgid "Remove  background"
+msgstr "Ta bort bakgrund"
+
+#: classes/emr-plugin.php:534
+msgid "To remove the background, click the link."
+msgstr "För att ta bort bakgrunden, klicka på länken."
+
+#: classes/emr-plugin.php:464
+msgid "To remove the background, click the link and select the options."
+msgstr "För att ta bort bakgrunden, klicka på länken och välj alternativen."
+
+#: classes/emr-plugin.php:171 classes/emr-plugin.php:464
+#: classes/emr-plugin.php:532 classes/emr-plugin.php:534
+msgid "Remove background"
+msgstr "Ta bort bakgrund"
+
+#: classes/api.php:228
+msgid "Download failed"
+msgstr "Nedladdning misslyckades"
+
+#: classes/api.php:217
+msgid "This file seems not available anymore. Please try again"
+msgstr "Denna fil verkar inte vara tillgänglig längre. Försök igen"
+
+#: classes/api.php:193
+msgid "The background could not be removed in a reasonable amount of time. The file might be too big, or the API could be busy. Please try again later!"
+msgstr "Bakgrunden kunde inte tas bort inom rimlig tid. Filen kan vara för stor eller så kan API:et vara upptaget. Försök igen senare!"
+
+#: classes/api.php:68
+msgid "No attachment ID given"
+msgstr "Inget ID för bilaga angivet"
+
+#: build/shortpixel/notices/src/NoticeModel.php:290
+msgid "Dismiss this notice"
+msgstr "Avfärda denna notis"
+
+#: views/upsell.php:146
+msgid "Get Pro"
+msgstr "Skaffa Pro"
+
+#: views/upsell.php:139
+msgid "Envira Gallery activated!"
+msgstr "Envira Gallery aktiverad!"
+
+#: views/upsell.php:137
+msgid "Activate"
+msgstr "Aktivera"
+
+#: views/upsell.php:135
+msgid "Install now"
+msgstr "Installera nu"
+
+#: views/upsell.php:126
+msgid "Create beautiful, fast-loading photo & video galleries for your site in minutes."
+msgstr "Skapa vackra, snabbladdade foto- och videogallerier för din webbplats på några minuter."
+
+#: views/upsell.php:94
+msgid "Shortpixel Adaptive Images activated!"
+msgstr "Shortpixel Adaptive Images aktiverad!"
+
+#: views/upsell.php:80
+msgid "In Minutes"
+msgstr "I minuter"
+
+#: views/upsell.php:79
+msgid "Start Serving %s Optimized, %s Nextgen images %s From a global CDN"
+msgstr "Börja leverera %sbilder optimerade %si de nya filformaten %sfrån ett globalt distributionsnät"
+
+#: views/upsell.php:75
+msgid "ShortPixel Adaptive Images"
+msgstr "ShortPixel Adaptive Images"
+
+#: views/upsell.php:60
+msgid "Shortpixel activated!"
+msgstr "Shortpixel aktiverad!"
+
+#: views/upsell.php:57 views/upsell.php:91
+msgid "ACTIVATE"
+msgstr "AKTIVERA"
+
+#: views/upsell.php:53 views/upsell.php:87
+msgid "INSTALL NOW"
+msgstr "INSTALLERA NU"
+
+#: views/upsell.php:46
+msgid "Optimize all images %s automatically"
+msgstr "Optimera alla bilder %s automatiskt"
+
+#: views/upsell.php:44
+msgid "Is your website slow?"
+msgstr "Är din webbplats långsam?"
+
+#: views/upsell.php:42
+msgid "ShortPixel Image Optimizer"
+msgstr "ShortPixel Image Optimizer"
+
+#: views/do-replace-background.php:21
+msgid "Error in request. Please try again"
+msgstr "Fel i begäran. Försök igen"
+
+#: views/screen.php:206
+msgid "Now"
+msgstr "Nu"
+
+#: views/screen.php:190
+msgid "Replace the date with the current date %s(%s)%s"
+msgstr "Ersätt datumet med nuvarande datum %s(%s)%s"
+
+#: views/screen.php:149
+msgid "If you replace the file with a different filetype, this file might become unreadable and / or cause unexpected issues"
+msgstr "Om du ersätter filen med en annan filtyp kan denna fil bli oläsbar och/eller orsaka oväntade problem"
+
+#: classes/ViewController/ReplaceViewController.php:38
+#: views/do-replace-background.php:27
+msgid "You do not have permission to upload files for this author."
+msgstr "Du har inte behörighet att ladda upp filer för denna författare."
+
+#: classes/external/upgrader_skin.php:81
+msgid "There was an error installing the addon. Please try again."
+msgstr "Det var ett fel vid installationen av utökningen. Försök igen."
+
+#: classes/emr-plugin.php:316
+msgid "Installing ..."
+msgstr "Installerar …"
+
+#: views/screen.php:163
+msgid "Note: If you enable this option, the name and type of the file you are uploading will replace the old file. All links pointing to the current file (%s) will be updated to point to the new file name. (If other websites link directly to the file, those links will no longer work. Be careful!)"
+msgstr "Obs: Om du aktiverar detta alternativ kommer namnet och typen av filen som du laddar upp att ersätta den gamla filen. Alla länkar som pekar på den nuvarande filen (%s) kommer att uppdateras för att peka på det nya filnamnet. (Om andra webbplatser länkar direkt till filen kommer dessa länkar inte längre att fungera. Var försiktig!)"
+
+#: build/shortpixel/notices/src/NoticeModel.php:281
+msgid "Hide Details"
+msgstr "Dölj detaljer"
+
+#: build/shortpixel/notices/src/NoticeModel.php:277
+msgid "See Details"
+msgstr "Se detaljer"
+
+#: classes/emr-plugin.php:620
+msgid "Replaced By"
+msgstr "Ersatt av"
+
+#: classes/ViewController.php:127
+msgid "Specificed new directory does not exist. Path must be a relative path from the upload directory and exist"
+msgstr "Specificerad ny katalog finns inte. Sökvägen måste vara en relativ sökväg från uppladdningskatalogen och finnas"
+
+#: views/screen.php:196
+msgid "Custom Date"
+msgstr "Anpassat datum"
+
+#: views/screen.php:192
+msgid "Set a Custom Date"
+msgstr "Ställ in ett anpassat datum"
+
+#: views/screen.php:191
+msgid "Keep the date %s(%s)%s"
+msgstr "Behåll datumet %s(%s)%s"
+
+#: views/screen.php:188
+msgid "When replacing the media, do you want to:"
+msgstr "När du ersätter media, vill du:"
+
+#: views/screen.php:131
+msgid "Replacement Options"
+msgstr "Ersättningsalternativ"
+
+#: views/screen.php:80
+msgid "The replacement file type does not seem to be allowed by WordPress. This can lead to unexpected issues"
+msgstr "Ersättande filtyp verkar inte tillåtas av WordPress. Detta kan orsaka oväntade problem"
+
+#: views/screen.php:73
+msgid "%s f %s exceeds the maximum upload size for this site."
+msgstr "%s f %s överstiger den maximala filstorleken för uppladdning på den här webbplatsen."
+
+#: views/screen.php:72
+msgid "Maximum file size: <strong>%s</strong>"
+msgstr "Maximal filstorlek: <strong>%s</strong>"
+
+#: views/do-replace-background.php:85
+msgid "File successfully replaced"
+msgstr "Filen har ersatts"
+
+#: build/shortpixel/log/src/DebugItem.php:35
+msgid "[Data]"
+msgstr "[Data]"
+
+#: views/prepare-remove-background.php:122 views/screen.php:243
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: views/screen.php:242
+msgid "Upload"
+msgstr "Ladda upp"
+
+#: views/screen.php:165
+msgid "Please note that if you upload a new image, only the embeds/links of the original size image will be replaced in your posts."
+msgstr "Observera att om du laddar upp en ny bild, kommer endast inbäddningarna/länkarna för bilden i originalstorlek att ersättas i dina inlägg."
+
+#: views/screen.php:160
+msgid "Replace the file, use the new file name, and update all links"
+msgstr "Ersätt filen, använd det nya filnamnet och uppdatera alla länkar"
+
+#: views/screen.php:142
+msgid "Just replace the file"
+msgstr "Ersätt endast filen"
+
+#: views/screen.php:62
+msgid "NOTE: You are about to replace the media file \"%s\". There is no undo. Think about it!"
+msgstr "OBS! Du är på väg att ersätta mediefilen ”%s”. Det går inte att ångra. Tänk på det!"
+
+#: views/screen.php:43
+msgid "Replace Media Upload"
+msgstr "Ladda upp ny fil"
+
+#: classes/emr-plugin.php:609
+msgid "Revised"
+msgstr "Uppdaterad"
+
+#: classes/emr-plugin.php:606
+msgid "M j, Y @ H:i"
+msgstr "j M, Y @ H:i"
+
+#: classes/emr-plugin.php:489 views/screen.php:208
+msgid "Original"
+msgstr "Original"
+
+#: classes/emr-plugin.php:479
+msgid "Thumbnails were not generated"
+msgstr "Inga miniatyrbilder genererades"
+
+#: classes/emr-plugin.php:453 classes/emr-plugin.php:524
+msgid "To replace the current file, click the link and upload a replacement file."
+msgstr "För att ersätta den nuvarande filen, klicka på länken och ladda upp en ersättningsfil."
+
+#: classes/emr-plugin.php:453 classes/emr-plugin.php:524
+msgid "Upload a new file"
+msgstr "Ladda upp en ny fil"
+
+#: classes/emr-plugin.php:170 classes/emr-plugin.php:522
+#: classes/emr-plugin.php:576
+msgid "Replace media"
+msgstr "Ersätt media"
+
+#: classes/emr-plugin.php:438
+msgid "Replaced Thumbnails Preview"
+msgstr "Förhandsvisningen av miniatyrbilder har ersatts"
+
+#: classes/emr-plugin.php:435
+msgid "Replace Media"
+msgstr "Ersätt media"
+
+#: build/shortpixel/replacer/src/Replacer.php:174
+msgid "There was an issue with updating your image URLS: Search and replace have different amount of values. Aborting updating thumbnails"
+msgstr "Ett problem inträffade när URL:er för dina bilder skulle uppdateras. Sök och ersätt innehåller olika antal värden. Avbryter därför uppdateringen av miniatyrbilderna"
+
+#: build/shortpixel/replacer/src/Replacer.php:97
+msgid "Fail Safe :: Source Location returned empty string. Not replacing content"
+msgstr "Felsäkring :: Källplatsen returnerade en tom sträng. Ersätter inte innehåll"
+
+#: build/shortpixel/replacer/src/Replacer.php:90
+msgid "Fail Safe :: Source Location seems to be a directory."
+msgstr "Felsäkring :: Källplatsen verkar vara en katalog."
+
+#: views/screen.php:28
+msgid "You do not have permission to upload files."
+msgstr "Du har inte behörighet att ladda upp filer."
+
+#. Author URI of the plugin
+msgid "https://shortpixel.com"
+msgstr "https://shortpixel.com"
+
+#. Author of the plugin
+msgid "ShortPixel"
+msgstr "ShortPixel"
+
+#. Description of the plugin
+msgid "Enable replacing media files by uploading a new file in the \"Edit Media\" section of the WordPress Media Library."
+msgstr "Aktivera ersättning av mediafiler genom att ladda upp en ny fil i sektionen ”Redigera media” i WordPress mediabibliotek."
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/enable-media-replace/"
+msgstr "https://wordpress.org/plugins/enable-media-replace/"
+
+#. Plugin Name of the plugin
+#: views/error.php:15 views/success.php:15
+msgid "Enable Media Replace"
+msgstr "Enable Media Replace"

@@ -1,0 +1,154 @@
+# Translation of Plugins - Enable Media Replace - Stable (latest release) in Italian
+# This file is distributed under the same license as the Plugins - Enable Media Replace - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-12-24 23:25:21+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: it\n"
+"Project-Id-Version: Plugins - Enable Media Replace - Stable (latest release)\n"
+
+#: build/shortpixel/notices/src/NoticeModel.php:281
+msgid "Hide Details"
+msgstr "Nascondi i dettagli"
+
+#: build/shortpixel/notices/src/NoticeModel.php:277
+msgid "See Details"
+msgstr "Visualizza i dettagli"
+
+#: classes/ViewController.php:127
+msgid "Specificed new directory does not exist. Path must be a relative path from the upload directory and exist"
+msgstr "La nuova directory specificata non esiste. Il percorso deve essere relativo alla cartella uploads e deve esistere"
+
+#: classes/emr-plugin.php:620
+msgid "Replaced By"
+msgstr "Sostituito da"
+
+#: build/shortpixel/replacer/src/Replacer.php:97
+msgid "Fail Safe :: Source Location returned empty string. Not replacing content"
+msgstr "Errore non critico :: La posizione sorgente ha restituito una stringa vuota. Contenuto non sostituito"
+
+#: classes/emr-plugin.php:435
+msgid "Replace Media"
+msgstr "Sostituisci media"
+
+#: classes/emr-plugin.php:489 views/screen.php:208
+msgid "Original"
+msgstr "Originale"
+
+#: build/shortpixel/replacer/src/Replacer.php:90
+msgid "Fail Safe :: Source Location seems to be a directory."
+msgstr "Errore non critico :: La posizione sorgente sembra una directory."
+
+#: build/shortpixel/replacer/src/Replacer.php:174
+msgid "There was an issue with updating your image URLS: Search and replace have different amount of values. Aborting updating thumbnails"
+msgstr "Si è verificato un problema durante l'aggiornamento degli URL dell'immagine: il numero di valori da cercare e da sostituire risulta differente. L'aggiornamento delle miniature è stato annullato"
+
+#: classes/emr-plugin.php:479
+msgid "Thumbnails were not generated"
+msgstr "Le miniature non sono state generate"
+
+#: classes/emr-plugin.php:438
+msgid "Replaced Thumbnails Preview"
+msgstr "Anteprima delle miniature sostituite"
+
+#: build/shortpixel/log/src/DebugItem.php:35
+msgid "[Data]"
+msgstr "[Dati]"
+
+#: views/screen.php:73
+msgid "%s f %s exceeds the maximum upload size for this site."
+msgstr "%s f %s supera la dimensione massima di caricamento per questo sito."
+
+#: views/screen.php:72
+msgid "Maximum file size: <strong>%s</strong>"
+msgstr "Dimensione massima file: <strong>%s</strong>. "
+
+#: views/do-replace-background.php:85
+msgid "File successfully replaced"
+msgstr "File sostituito correttamente"
+
+#: views/screen.php:196
+msgid "Custom Date"
+msgstr "Data personalizzata"
+
+#: views/screen.php:192
+msgid "Set a Custom Date"
+msgstr "Imposta una data personalizzata"
+
+#: views/screen.php:191
+msgid "Keep the date %s(%s)%s"
+msgstr "Mantieni la data %s(%s)%s"
+
+#: views/screen.php:188
+msgid "When replacing the media, do you want to:"
+msgstr "Quando sostituisci i media, vuoi:"
+
+#: views/screen.php:131
+msgid "Replacement Options"
+msgstr "Opzioni sostituzione"
+
+#: views/screen.php:62
+msgid "NOTE: You are about to replace the media file \"%s\". There is no undo. Think about it!"
+msgstr "NOTA: Stai per sostituire il file media \"%s\". Non sarà possibile annullare. Pensaci bene!"
+
+#: classes/emr-plugin.php:606
+msgid "M j, Y @ H:i"
+msgstr "j M Y @ H:i"
+
+#. Author of the plugin
+msgid "ShortPixel"
+msgstr "ShortPixel"
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/enable-media-replace/"
+msgstr "https://wordpress.org/plugins/enable-media-replace/"
+
+#. Author URI of the plugin
+msgid "https://shortpixel.com"
+msgstr "https://shortpixel.com"
+
+#: classes/emr-plugin.php:453 classes/emr-plugin.php:524
+msgid "Upload a new file"
+msgstr "Carica un nuovo file"
+
+#: views/screen.php:28
+msgid "You do not have permission to upload files."
+msgstr "Non hai sufficienti permessi per caricare file."
+
+#: views/screen.php:43
+msgid "Replace Media Upload"
+msgstr "Caricamento file sostitutivo"
+
+#: views/screen.php:142
+msgid "Just replace the file"
+msgstr "Sostituire semplicemente il file"
+
+#: views/screen.php:242
+msgid "Upload"
+msgstr "Carica"
+
+#: views/prepare-remove-background.php:122 views/screen.php:243
+msgid "Cancel"
+msgstr "Annulla"
+
+#. Description of the plugin
+msgid "Enable replacing media files by uploading a new file in the \"Edit Media\" section of the WordPress Media Library."
+msgstr "Abilita la sostituzione dei file multimediali caricando un nuovo file nella sezione \"Modifica media\" della Libreria media di WordPress."
+
+#: classes/emr-plugin.php:609
+msgid "Revised"
+msgstr "Revisionato"
+
+#. Plugin Name of the plugin
+#: views/error.php:15 views/success.php:15
+msgid "Enable Media Replace"
+msgstr "Enable Media Replace"
+
+#: classes/emr-plugin.php:170 classes/emr-plugin.php:522
+#: classes/emr-plugin.php:576
+msgid "Replace media"
+msgstr "Sostituisci media"

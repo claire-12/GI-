@@ -1,0 +1,4586 @@
+# Translation of Plugins - Listo - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Listo - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-03-12 03:11:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Listo - Stable (latest release)\n"
+
+#: modules/cu-subdivisions.php:27
+msgctxt "cu_subdivisions"
+msgid "Villa Clara"
+msgstr "Villa Clara"
+
+#: modules/cu-subdivisions.php:26
+msgctxt "cu_subdivisions"
+msgid "Santiago de Cuba"
+msgstr "Santiago de Cuba"
+
+#: modules/cu-subdivisions.php:25
+msgctxt "cu_subdivisions"
+msgid "Sancti Spíritus"
+msgstr "Sancti Spíritus"
+
+#: modules/cu-subdivisions.php:24
+msgctxt "cu_subdivisions"
+msgid "Pinar del Río"
+msgstr "Pinar del Río"
+
+#: modules/cu-subdivisions.php:23
+msgctxt "cu_subdivisions"
+msgid "Mayabeque"
+msgstr "Mayabeque"
+
+#: modules/cu-subdivisions.php:22
+msgctxt "cu_subdivisions"
+msgid "Matanzas"
+msgstr "Matanzas"
+
+#: modules/cu-subdivisions.php:21
+msgctxt "cu_subdivisions"
+msgid "Las Tunas"
+msgstr "Las Tunas"
+
+#: modules/cu-subdivisions.php:20
+msgctxt "cu_subdivisions"
+msgid "La Habana"
+msgstr "La Habana"
+
+#: modules/cu-subdivisions.php:19
+msgctxt "cu_subdivisions"
+msgid "Isla de la Juventud"
+msgstr "Isla de la Juventud"
+
+#: modules/cu-subdivisions.php:18
+msgctxt "cu_subdivisions"
+msgid "Holguín"
+msgstr "Holguín"
+
+#: modules/cu-subdivisions.php:17
+msgctxt "cu_subdivisions"
+msgid "Guantánamo"
+msgstr "Guantánamo"
+
+#: modules/cu-subdivisions.php:16
+msgctxt "cu_subdivisions"
+msgid "Granma"
+msgstr "Granma"
+
+#: modules/cu-subdivisions.php:15
+msgctxt "cu_subdivisions"
+msgid "Cienfuegos"
+msgstr "Cienfuegos"
+
+#: modules/cu-subdivisions.php:14
+msgctxt "cu_subdivisions"
+msgid "Ciego de Ávila"
+msgstr "Ciego de Ávila"
+
+#: modules/cu-subdivisions.php:13
+msgctxt "cu_subdivisions"
+msgid "Camagüey"
+msgstr "Camagüey"
+
+#: modules/cu-subdivisions.php:12
+msgctxt "cu_subdivisions"
+msgid "Artemisa"
+msgstr "Artemisa"
+
+#: modules/pa-subdivisions.php:24
+msgctxt "pa_subdivisions"
+msgid "Veraguas"
+msgstr "Veraguas"
+
+#: modules/pa-subdivisions.php:23
+msgctxt "pa_subdivisions"
+msgid "Panamá Oeste"
+msgstr "Panamá Oeste"
+
+#: modules/pa-subdivisions.php:22
+msgctxt "pa_subdivisions"
+msgid "Panamá"
+msgstr "Panamá"
+
+#: modules/pa-subdivisions.php:21
+msgctxt "pa_subdivisions"
+msgid "Ngöbe-Buglé"
+msgstr "Ngöbe-Buglé"
+
+#: modules/pa-subdivisions.php:20
+msgctxt "pa_subdivisions"
+msgid "Los Santos"
+msgstr "Los Santos"
+
+#: modules/pa-subdivisions.php:19
+msgctxt "pa_subdivisions"
+msgid "Herrera"
+msgstr "Herrera"
+
+#: modules/pa-subdivisions.php:18
+msgctxt "pa_subdivisions"
+msgid "Guna Yala"
+msgstr "Guna Yala"
+
+#: modules/pa-subdivisions.php:17
+msgctxt "pa_subdivisions"
+msgid "Emberá"
+msgstr "Emberá"
+
+#: modules/pa-subdivisions.php:16
+msgctxt "pa_subdivisions"
+msgid "Darién"
+msgstr "Darién"
+
+#: modules/pa-subdivisions.php:15
+msgctxt "pa_subdivisions"
+msgid "Colón"
+msgstr "Colón"
+
+#: modules/pa-subdivisions.php:14
+msgctxt "pa_subdivisions"
+msgid "Coclé"
+msgstr "Coclé"
+
+#: modules/pa-subdivisions.php:13
+msgctxt "pa_subdivisions"
+msgid "Chiriquí"
+msgstr "Chiriquí"
+
+#: modules/pa-subdivisions.php:12
+msgctxt "pa_subdivisions"
+msgid "Bocas del Toro"
+msgstr "Bocas del Toro"
+
+#: modules/mx-subdivisions.php:43
+msgctxt "mx_subdivisions"
+msgid "Zacatecas"
+msgstr "Zacatecas"
+
+#: modules/mx-subdivisions.php:42
+msgctxt "mx_subdivisions"
+msgid "Yucatán"
+msgstr "Yucatán"
+
+#: modules/mx-subdivisions.php:41
+msgctxt "mx_subdivisions"
+msgid "Veracruz"
+msgstr "Veracruz"
+
+#: modules/mx-subdivisions.php:40
+msgctxt "mx_subdivisions"
+msgid "Tlaxcala"
+msgstr "Tlaxcala"
+
+#: modules/mx-subdivisions.php:39
+msgctxt "mx_subdivisions"
+msgid "Tamaulipas"
+msgstr "Tamaulipas"
+
+#: modules/mx-subdivisions.php:38
+msgctxt "mx_subdivisions"
+msgid "Tabasco"
+msgstr "Tabasco"
+
+#: modules/mx-subdivisions.php:37
+msgctxt "mx_subdivisions"
+msgid "Sonora"
+msgstr "Sonora"
+
+#: modules/mx-subdivisions.php:36
+msgctxt "mx_subdivisions"
+msgid "Sinaloa"
+msgstr "Sinaloa"
+
+#: modules/mx-subdivisions.php:35
+msgctxt "mx_subdivisions"
+msgid "San Luis Potosí"
+msgstr "San Luis Potosí"
+
+#: modules/mx-subdivisions.php:34
+msgctxt "mx_subdivisions"
+msgid "Quintana Roo"
+msgstr "Quintana Roo"
+
+#: modules/mx-subdivisions.php:33
+msgctxt "mx_subdivisions"
+msgid "Querétaro"
+msgstr "Querétaro"
+
+#: modules/mx-subdivisions.php:32
+msgctxt "mx_subdivisions"
+msgid "Puebla"
+msgstr "Puebla"
+
+#: modules/mx-subdivisions.php:31
+msgctxt "mx_subdivisions"
+msgid "Oaxaca"
+msgstr "Oaxaca"
+
+#: modules/mx-subdivisions.php:30
+msgctxt "mx_subdivisions"
+msgid "Nuevo León"
+msgstr "Nuevo León"
+
+#: modules/mx-subdivisions.php:29
+msgctxt "mx_subdivisions"
+msgid "Nayarit"
+msgstr "Nayarit"
+
+#: modules/mx-subdivisions.php:28
+msgctxt "mx_subdivisions"
+msgid "México"
+msgstr "México"
+
+#: modules/mx-subdivisions.php:27
+msgctxt "mx_subdivisions"
+msgid "Morelos"
+msgstr "Morelos"
+
+#: modules/mx-subdivisions.php:26
+msgctxt "mx_subdivisions"
+msgid "Michoacán"
+msgstr "Michoacán"
+
+#: modules/mx-subdivisions.php:25
+msgctxt "mx_subdivisions"
+msgid "Jalisco"
+msgstr "Jalisco"
+
+#: modules/mx-subdivisions.php:24
+msgctxt "mx_subdivisions"
+msgid "Hidalgo"
+msgstr "Hidalgo"
+
+#: modules/mx-subdivisions.php:23
+msgctxt "mx_subdivisions"
+msgid "Guerrero"
+msgstr "Guerrero"
+
+#: modules/mx-subdivisions.php:22
+msgctxt "mx_subdivisions"
+msgid "Guanajuato"
+msgstr "Guanajuato"
+
+#: modules/mx-subdivisions.php:21
+msgctxt "mx_subdivisions"
+msgid "Durango"
+msgstr "Durango"
+
+#: modules/mx-subdivisions.php:20
+msgctxt "mx_subdivisions"
+msgid "Colima"
+msgstr "Colima"
+
+#: modules/mx-subdivisions.php:19
+msgctxt "mx_subdivisions"
+msgid "Coahuila"
+msgstr "Coahuila"
+
+#: modules/mx-subdivisions.php:18
+msgctxt "mx_subdivisions"
+msgid "Ciudad de México"
+msgstr "Ciudad de México"
+
+#: modules/mx-subdivisions.php:17
+msgctxt "mx_subdivisions"
+msgid "Chihuahua"
+msgstr "Chihuahua"
+
+#: modules/mx-subdivisions.php:16
+msgctxt "mx_subdivisions"
+msgid "Chiapas"
+msgstr "Chiapas"
+
+#: modules/mx-subdivisions.php:15
+msgctxt "mx_subdivisions"
+msgid "Campeche"
+msgstr "Campeche"
+
+#: modules/mx-subdivisions.php:14
+msgctxt "mx_subdivisions"
+msgid "Baja California Sur"
+msgstr "Baja California Sur"
+
+#: modules/mx-subdivisions.php:13
+msgctxt "mx_subdivisions"
+msgid "Baja California"
+msgstr "Baja California"
+
+#: modules/mx-subdivisions.php:12
+msgctxt "mx_subdivisions"
+msgid "Aguascalientes"
+msgstr "Aguascalientes"
+
+#: modules/uy-subdivisions.php:30
+msgctxt "uy_subdivisions"
+msgid "Treinta y Tres"
+msgstr "Treinta y Tres"
+
+#: modules/uy-subdivisions.php:29
+msgctxt "uy_subdivisions"
+msgid "Tacuarembó"
+msgstr "Tacuarembó"
+
+#: modules/uy-subdivisions.php:28
+msgctxt "uy_subdivisions"
+msgid "Soriano"
+msgstr "Soriano"
+
+#: modules/uy-subdivisions.php:27
+msgctxt "uy_subdivisions"
+msgid "San José"
+msgstr "San José"
+
+#: modules/uy-subdivisions.php:26
+msgctxt "uy_subdivisions"
+msgid "Salto"
+msgstr "Salto"
+
+#: modules/uy-subdivisions.php:25
+msgctxt "uy_subdivisions"
+msgid "Rocha"
+msgstr "Rocha"
+
+#: modules/uy-subdivisions.php:24
+msgctxt "uy_subdivisions"
+msgid "Rivera"
+msgstr "Rivera"
+
+#: modules/uy-subdivisions.php:23
+msgctxt "uy_subdivisions"
+msgid "Río Negro"
+msgstr "Río Negro"
+
+#: modules/uy-subdivisions.php:22
+msgctxt "uy_subdivisions"
+msgid "Paysandú"
+msgstr "Paysandú"
+
+#: modules/uy-subdivisions.php:21
+msgctxt "uy_subdivisions"
+msgid "Montevideo"
+msgstr "Montevideo"
+
+#: modules/uy-subdivisions.php:20
+msgctxt "uy_subdivisions"
+msgid "Maldonado"
+msgstr "Maldonado"
+
+#: modules/uy-subdivisions.php:19
+msgctxt "uy_subdivisions"
+msgid "Lavalleja"
+msgstr "Lavalleja"
+
+#: modules/uy-subdivisions.php:18
+msgctxt "uy_subdivisions"
+msgid "Florida"
+msgstr "Florida"
+
+#: modules/uy-subdivisions.php:17
+msgctxt "uy_subdivisions"
+msgid "Flores"
+msgstr "Flores"
+
+#: modules/uy-subdivisions.php:16
+msgctxt "uy_subdivisions"
+msgid "Durazno"
+msgstr "Durazno"
+
+#: modules/uy-subdivisions.php:15
+msgctxt "uy_subdivisions"
+msgid "Colonia"
+msgstr "Colonia"
+
+#: modules/uy-subdivisions.php:14
+msgctxt "uy_subdivisions"
+msgid "Cerro Largo"
+msgstr "Cerro Largo"
+
+#: modules/uy-subdivisions.php:13
+msgctxt "uy_subdivisions"
+msgid "Canelones"
+msgstr "Canelones"
+
+#: modules/uy-subdivisions.php:12
+msgctxt "uy_subdivisions"
+msgid "Artigas"
+msgstr "Artigas"
+
+#: modules/co-subdivisions.php:44
+msgctxt "co_subdivisions"
+msgid "Vichada"
+msgstr "Vichada"
+
+#: modules/co-subdivisions.php:43
+msgctxt "co_subdivisions"
+msgid "Vaupés"
+msgstr "Vaupés"
+
+#: modules/co-subdivisions.php:42
+msgctxt "co_subdivisions"
+msgid "Valle del Cauca"
+msgstr "Valle del Cauca"
+
+#: modules/co-subdivisions.php:41
+msgctxt "co_subdivisions"
+msgid "Tolima"
+msgstr "Tolima"
+
+#: modules/co-subdivisions.php:40
+msgctxt "co_subdivisions"
+msgid "Sucre"
+msgstr "Sucre"
+
+#: modules/co-subdivisions.php:39
+msgctxt "co_subdivisions"
+msgid "Santander"
+msgstr "Santander"
+
+#: modules/co-subdivisions.php:38
+msgctxt "co_subdivisions"
+msgid "San Andrés, Providencia y Santa Catalina"
+msgstr "San Andrés, Providencia y Santa Catalina"
+
+#: modules/co-subdivisions.php:37
+msgctxt "co_subdivisions"
+msgid "Risaralda"
+msgstr "Risaralda"
+
+#: modules/co-subdivisions.php:36
+msgctxt "co_subdivisions"
+msgid "Quindío"
+msgstr "Quindío"
+
+#: modules/co-subdivisions.php:35
+msgctxt "co_subdivisions"
+msgid "Putumayo"
+msgstr "Putumayo"
+
+#: modules/co-subdivisions.php:34
+msgctxt "co_subdivisions"
+msgid "Norte de Santander"
+msgstr "Norte de Santander"
+
+#: modules/co-subdivisions.php:33
+msgctxt "co_subdivisions"
+msgid "Nariño"
+msgstr "Nariño"
+
+#: modules/co-subdivisions.php:32
+msgctxt "co_subdivisions"
+msgid "Meta"
+msgstr "Meta"
+
+#: modules/co-subdivisions.php:31
+msgctxt "co_subdivisions"
+msgid "Magdalena"
+msgstr "Magdalena"
+
+#: modules/co-subdivisions.php:30
+msgctxt "co_subdivisions"
+msgid "La Guajira"
+msgstr "La Guajira"
+
+#: modules/co-subdivisions.php:29
+msgctxt "co_subdivisions"
+msgid "Huila"
+msgstr "Huila"
+
+#: modules/co-subdivisions.php:28
+msgctxt "co_subdivisions"
+msgid "Guaviare"
+msgstr "Guaviare"
+
+#: modules/co-subdivisions.php:27
+msgctxt "co_subdivisions"
+msgid "Guainía"
+msgstr "Guainía"
+
+#: modules/co-subdivisions.php:26
+msgctxt "co_subdivisions"
+msgid "Cundinamarca"
+msgstr "Cundinamarca"
+
+#: modules/co-subdivisions.php:25
+msgctxt "co_subdivisions"
+msgid "Córdoba"
+msgstr "Córdoba"
+
+#: modules/co-subdivisions.php:24
+msgctxt "co_subdivisions"
+msgid "Cesar"
+msgstr "Cesar"
+
+#: modules/co-subdivisions.php:23
+msgctxt "co_subdivisions"
+msgid "Cauca"
+msgstr "Cauca"
+
+#: modules/co-subdivisions.php:22
+msgctxt "co_subdivisions"
+msgid "Casanare"
+msgstr "Casanare"
+
+#: modules/co-subdivisions.php:21
+msgctxt "co_subdivisions"
+msgid "Caquetá"
+msgstr "Caquetá"
+
+#: modules/co-subdivisions.php:20
+msgctxt "co_subdivisions"
+msgid "Caldas"
+msgstr "Caldas"
+
+#: modules/co-subdivisions.php:19
+msgctxt "co_subdivisions"
+msgid "Chocó"
+msgstr "Chocó"
+
+#: modules/co-subdivisions.php:18
+msgctxt "co_subdivisions"
+msgid "Boyacá"
+msgstr "Boyacá"
+
+#: modules/co-subdivisions.php:17
+msgctxt "co_subdivisions"
+msgid "Bolívar"
+msgstr "Bolívar"
+
+#: modules/co-subdivisions.php:16
+msgctxt "co_subdivisions"
+msgid "Bogotá"
+msgstr "Bogotá"
+
+#: modules/co-subdivisions.php:15
+msgctxt "co_subdivisions"
+msgid "Atlántico"
+msgstr "Atlántico"
+
+#: modules/co-subdivisions.php:14
+msgctxt "co_subdivisions"
+msgid "Arauca"
+msgstr "Arauca"
+
+#: modules/co-subdivisions.php:13
+msgctxt "co_subdivisions"
+msgid "Antioquia"
+msgstr "Antioquia"
+
+#: modules/co-subdivisions.php:12
+msgctxt "co_subdivisions"
+msgid "Amazonas"
+msgstr "Amazonas"
+
+#: modules/ar-subdivisions.php:35
+msgctxt "ar_subdivisions"
+msgid "Tucumán"
+msgstr "Tucumán"
+
+#: modules/ar-subdivisions.php:34
+msgctxt "ar_subdivisions"
+msgid "Tierra del Fuego"
+msgstr "Tierra del Fuego"
+
+#: modules/ar-subdivisions.php:33
+msgctxt "ar_subdivisions"
+msgid "Santiago del Estero"
+msgstr "Santiago del Estero"
+
+#: modules/ar-subdivisions.php:32
+msgctxt "ar_subdivisions"
+msgid "Santa Fe"
+msgstr "Santa Fe"
+
+#: modules/ar-subdivisions.php:31
+msgctxt "ar_subdivisions"
+msgid "Santa Cruz"
+msgstr "Santa Cruz"
+
+#: modules/ar-subdivisions.php:30
+msgctxt "ar_subdivisions"
+msgid "San Luis"
+msgstr "San Luis"
+
+#: modules/ar-subdivisions.php:29
+msgctxt "ar_subdivisions"
+msgid "San Juan"
+msgstr "San Juan"
+
+#: modules/ar-subdivisions.php:28
+msgctxt "ar_subdivisions"
+msgid "Salta"
+msgstr "Salta"
+
+#: modules/ar-subdivisions.php:27
+msgctxt "ar_subdivisions"
+msgid "Río Negro"
+msgstr "Río Negro"
+
+#: modules/ar-subdivisions.php:26
+msgctxt "ar_subdivisions"
+msgid "Neuquén"
+msgstr "Neuquén"
+
+#: modules/ar-subdivisions.php:25
+msgctxt "ar_subdivisions"
+msgid "Misiones"
+msgstr "Misiones"
+
+#: modules/ar-subdivisions.php:24
+msgctxt "ar_subdivisions"
+msgid "Mendoza"
+msgstr "Mendoza"
+
+#: modules/ar-subdivisions.php:23
+msgctxt "ar_subdivisions"
+msgid "La Rioja"
+msgstr "La Rioja"
+
+#: modules/ar-subdivisions.php:22
+msgctxt "ar_subdivisions"
+msgid "La Pampa"
+msgstr "La Pampa"
+
+#: modules/ar-subdivisions.php:21
+msgctxt "ar_subdivisions"
+msgid "Jujuy"
+msgstr "Jujuy"
+
+#: modules/ar-subdivisions.php:20
+msgctxt "ar_subdivisions"
+msgid "Formosa"
+msgstr "Formosa"
+
+#: modules/ar-subdivisions.php:19
+msgctxt "ar_subdivisions"
+msgid "Entre Ríos"
+msgstr "Entre Ríos"
+
+#: modules/ar-subdivisions.php:18
+msgctxt "ar_subdivisions"
+msgid "Corrientes"
+msgstr "Corrientes"
+
+#: modules/ar-subdivisions.php:17
+msgctxt "ar_subdivisions"
+msgid "Córdoba"
+msgstr "Córdoba"
+
+#: modules/ar-subdivisions.php:16
+msgctxt "ar_subdivisions"
+msgid "Ciudad Autónoma de Buenos Aires"
+msgstr "Ciudad Autónoma de Buenos Aires"
+
+#: modules/ar-subdivisions.php:15
+msgctxt "ar_subdivisions"
+msgid "Chubut"
+msgstr "Chubut"
+
+#: modules/ar-subdivisions.php:14
+msgctxt "ar_subdivisions"
+msgid "Chaco"
+msgstr "Chaco"
+
+#: modules/ar-subdivisions.php:13
+msgctxt "ar_subdivisions"
+msgid "Catamarca"
+msgstr "Catamarca"
+
+#: modules/ar-subdivisions.php:12
+msgctxt "ar_subdivisions"
+msgid "Buenos Aires"
+msgstr "Buenos Aires"
+
+#: modules/do-subdivisions.php:53
+msgctxt "do_subdivisions"
+msgid "Yuma"
+msgstr "Yuma"
+
+#: modules/do-subdivisions.php:52
+msgctxt "do_subdivisions"
+msgid "Valverde"
+msgstr "Valverde"
+
+#: modules/do-subdivisions.php:51
+msgctxt "do_subdivisions"
+msgid "Valdesia"
+msgstr "Valdesia"
+
+#: modules/do-subdivisions.php:50
+msgctxt "do_subdivisions"
+msgid "Sánchez Ramírez"
+msgstr "Sánchez Ramírez"
+
+#: modules/do-subdivisions.php:49
+msgctxt "do_subdivisions"
+msgid "Santo Domingo"
+msgstr "Santo Domingo"
+
+#: modules/do-subdivisions.php:48
+msgctxt "do_subdivisions"
+msgid "Santiago Rodríguez"
+msgstr "Santiago Rodríguez"
+
+#: modules/do-subdivisions.php:47
+msgctxt "do_subdivisions"
+msgid "Santiago"
+msgstr "Santiago"
+
+#: modules/do-subdivisions.php:46
+msgctxt "do_subdivisions"
+msgid "San Pedro de Macorís"
+msgstr "San Pedro de Macorís"
+
+#: modules/do-subdivisions.php:45
+msgctxt "do_subdivisions"
+msgid "San Juan"
+msgstr "San Juan"
+
+#: modules/do-subdivisions.php:44
+msgctxt "do_subdivisions"
+msgid "San José de Ocoa"
+msgstr "San José de Ocoa"
+
+#: modules/do-subdivisions.php:43
+msgctxt "do_subdivisions"
+msgid "San Cristóbal"
+msgstr "San Cristóbal"
+
+#: modules/do-subdivisions.php:42
+msgctxt "do_subdivisions"
+msgid "Samaná"
+msgstr "Samaná"
+
+#: modules/do-subdivisions.php:41
+msgctxt "do_subdivisions"
+msgid "Puerto Plata"
+msgstr "Puerto Plata"
+
+#: modules/do-subdivisions.php:40
+msgctxt "do_subdivisions"
+msgid "Peravia"
+msgstr "Peravia"
+
+#: modules/do-subdivisions.php:39
+msgctxt "do_subdivisions"
+msgid "Pedernales"
+msgstr "Pedernales"
+
+#: modules/do-subdivisions.php:38
+msgctxt "do_subdivisions"
+msgid "Ozama"
+msgstr "Ozama"
+
+#: modules/do-subdivisions.php:37
+msgctxt "do_subdivisions"
+msgid "Monte Plata"
+msgstr "Monte Plata"
+
+#: modules/do-subdivisions.php:36
+msgctxt "do_subdivisions"
+msgid "Monte Cristi"
+msgstr "Monte Cristi"
+
+#: modules/do-subdivisions.php:35
+msgctxt "do_subdivisions"
+msgid "Monseñor Nouel"
+msgstr "Monseñor Nouel"
+
+#: modules/do-subdivisions.php:34
+msgctxt "do_subdivisions"
+msgid "María Trinidad Sánchez"
+msgstr "María Trinidad Sánchez"
+
+#: modules/do-subdivisions.php:33
+msgctxt "do_subdivisions"
+msgid "La Vega"
+msgstr "La Vega"
+
+#: modules/do-subdivisions.php:32
+msgctxt "do_subdivisions"
+msgid "La Romana"
+msgstr "La Romana"
+
+#: modules/do-subdivisions.php:31
+msgctxt "do_subdivisions"
+msgid "La Altagracia"
+msgstr "La Altagracia"
+
+#: modules/do-subdivisions.php:30
+msgctxt "do_subdivisions"
+msgid "Independencia"
+msgstr "Independencia"
+
+#: modules/do-subdivisions.php:29
+msgctxt "do_subdivisions"
+msgid "Higuamo"
+msgstr "Higuamo"
+
+#: modules/do-subdivisions.php:28
+msgctxt "do_subdivisions"
+msgid "Hermanas Mirabal"
+msgstr "Hermanas Mirabal"
+
+#: modules/do-subdivisions.php:27
+msgctxt "do_subdivisions"
+msgid "Hato Mayor"
+msgstr "Hato Mayor"
+
+#: modules/do-subdivisions.php:26
+msgctxt "do_subdivisions"
+msgid "Espaillat"
+msgstr "Espaillat"
+
+#: modules/do-subdivisions.php:25
+msgctxt "do_subdivisions"
+msgid "Enriquillo"
+msgstr "Enriquillo"
+
+#: modules/do-subdivisions.php:24
+msgctxt "do_subdivisions"
+msgid "Elías Piña"
+msgstr "Elías Piña"
+
+#: modules/do-subdivisions.php:23
+msgctxt "do_subdivisions"
+msgid "El Valle"
+msgstr "El Valle"
+
+#: modules/do-subdivisions.php:22
+msgctxt "do_subdivisions"
+msgid "El Seibo"
+msgstr "El Seibo"
+
+#: modules/do-subdivisions.php:21
+msgctxt "do_subdivisions"
+msgid "Duarte"
+msgstr "Duarte"
+
+#: modules/do-subdivisions.php:20
+msgctxt "do_subdivisions"
+msgid "Distrito Nacional (Santo Domingo)"
+msgstr "Distrito Nacional (Santo Domingo)"
+
+#: modules/do-subdivisions.php:19
+msgctxt "do_subdivisions"
+msgid "Dajabón"
+msgstr "Dajabón"
+
+#: modules/do-subdivisions.php:18
+msgctxt "do_subdivisions"
+msgid "Cibao Sur"
+msgstr "Cibao Sur"
+
+#: modules/do-subdivisions.php:17
+msgctxt "do_subdivisions"
+msgid "Cibao Norte"
+msgstr "Cibao Norte"
+
+#: modules/do-subdivisions.php:16
+msgctxt "do_subdivisions"
+msgid "Cibao Noroeste"
+msgstr "Cibao Noroeste"
+
+#: modules/do-subdivisions.php:15
+msgctxt "do_subdivisions"
+msgid "Cibao Nordeste"
+msgstr "Cibao Nordeste"
+
+#: modules/do-subdivisions.php:14
+msgctxt "do_subdivisions"
+msgid "Barahona"
+msgstr "Barahona"
+
+#: modules/do-subdivisions.php:13
+msgctxt "do_subdivisions"
+msgid "Baoruco"
+msgstr "Baoruco"
+
+#: modules/do-subdivisions.php:12
+msgctxt "do_subdivisions"
+msgid "Azua"
+msgstr "Azua"
+
+#: modules/py-subdivisions.php:29
+msgctxt "py_subdivisions"
+msgid "Ñeembucú"
+msgstr "Ñeembucú"
+
+#: modules/py-subdivisions.php:28
+msgctxt "py_subdivisions"
+msgid "San Pedro"
+msgstr "San Pedro"
+
+#: modules/py-subdivisions.php:27
+msgctxt "py_subdivisions"
+msgid "Presidente Hayes"
+msgstr "Presidente Hayes"
+
+#: modules/py-subdivisions.php:26
+msgctxt "py_subdivisions"
+msgid "Paraguarí"
+msgstr "Paraguarí"
+
+#: modules/py-subdivisions.php:25
+msgctxt "py_subdivisions"
+msgid "Misiones"
+msgstr "Misiones"
+
+#: modules/py-subdivisions.php:24
+msgctxt "py_subdivisions"
+msgid "Itapúa"
+msgstr "Itapúa"
+
+#: modules/py-subdivisions.php:23
+msgctxt "py_subdivisions"
+msgid "Guairá"
+msgstr "Guairá"
+
+#: modules/py-subdivisions.php:22
+msgctxt "py_subdivisions"
+msgid "Cordillera"
+msgstr "Cordillera"
+
+#: modules/py-subdivisions.php:21
+msgctxt "py_subdivisions"
+msgid "Concepción"
+msgstr "Concepción"
+
+#: modules/py-subdivisions.php:20
+msgctxt "py_subdivisions"
+msgid "Canindeyú"
+msgstr "Canindeyú"
+
+#: modules/py-subdivisions.php:19
+msgctxt "py_subdivisions"
+msgid "Caazapá"
+msgstr "Caazapá"
+
+#: modules/py-subdivisions.php:18
+msgctxt "py_subdivisions"
+msgid "Caaguazú"
+msgstr "Caaguazú"
+
+#: modules/py-subdivisions.php:17
+msgctxt "py_subdivisions"
+msgid "Boquerón"
+msgstr "Boquerón"
+
+#: modules/py-subdivisions.php:16
+msgctxt "py_subdivisions"
+msgid "Amambay"
+msgstr "Amambay"
+
+#: modules/py-subdivisions.php:15
+msgctxt "py_subdivisions"
+msgid "Alto Paraná"
+msgstr "Alto Paraná"
+
+#: modules/py-subdivisions.php:14
+msgctxt "py_subdivisions"
+msgid "Alto Paraguay"
+msgstr "Alto Paraguay"
+
+#: modules/py-subdivisions.php:13
+msgctxt "py_subdivisions"
+msgid "Central"
+msgstr "Central"
+
+#: modules/py-subdivisions.php:12
+msgctxt "py_subdivisions"
+msgid "Asunción"
+msgstr "Asunción"
+
+#: modules/cl-subdivisions.php:27
+msgctxt "cl_subdivisions"
+msgid "Valparaíso"
+msgstr "Valparaíso"
+
+#: modules/cl-subdivisions.php:26
+msgctxt "cl_subdivisions"
+msgid "Tarapacá"
+msgstr "Tarapacá"
+
+#: modules/cl-subdivisions.php:25
+msgctxt "cl_subdivisions"
+msgid "Región Metropolitana de Santiago"
+msgstr "Región Metropolitana de Santiago"
+
+#: modules/cl-subdivisions.php:24
+msgctxt "cl_subdivisions"
+msgid "Ñuble"
+msgstr "Ñuble"
+
+#: modules/cl-subdivisions.php:23
+msgctxt "cl_subdivisions"
+msgid "Maule"
+msgstr "Maule"
+
+#: modules/cl-subdivisions.php:22
+msgctxt "cl_subdivisions"
+msgid "Magallanes"
+msgstr "Magallanes"
+
+#: modules/cl-subdivisions.php:21
+msgctxt "cl_subdivisions"
+msgid "Los Ríos"
+msgstr "Los Ríos"
+
+#: modules/cl-subdivisions.php:20
+msgctxt "cl_subdivisions"
+msgid "Los Lagos"
+msgstr "Los Lagos"
+
+#: modules/cl-subdivisions.php:19
+msgctxt "cl_subdivisions"
+msgid "Libertador General Bernardo O'Higgins"
+msgstr "Libertador General Bernardo O'Higgins"
+
+#: modules/cl-subdivisions.php:18
+msgctxt "cl_subdivisions"
+msgid "La Araucanía"
+msgstr "La Araucanía"
+
+#: modules/cl-subdivisions.php:17
+msgctxt "cl_subdivisions"
+msgid "Coquimbo"
+msgstr "Coquimbo"
+
+#: modules/cl-subdivisions.php:16
+msgctxt "cl_subdivisions"
+msgid "Biobío"
+msgstr "Biobío"
+
+#: modules/cl-subdivisions.php:15
+msgctxt "cl_subdivisions"
+msgid "Atacama"
+msgstr "Atacama"
+
+#: modules/cl-subdivisions.php:14
+msgctxt "cl_subdivisions"
+msgid "Arica y Parinacota"
+msgstr "Arica y Parinacota"
+
+#: modules/cl-subdivisions.php:13
+msgctxt "cl_subdivisions"
+msgid "Antofagasta"
+msgstr "Antofagasta"
+
+#: modules/cl-subdivisions.php:12
+msgctxt "cl_subdivisions"
+msgid "Aisén del General Carlos Ibañez del Campo"
+msgstr "Aisén del General Carlos Ibañez del Campo"
+
+#: modules/ni-subdivisions.php:28
+msgctxt "ni_subdivisions"
+msgid "Rivas"
+msgstr "Rivas"
+
+#: modules/ni-subdivisions.php:27
+msgctxt "ni_subdivisions"
+msgid "Río San Juan"
+msgstr "Río San Juan"
+
+#: modules/ni-subdivisions.php:26
+msgctxt "ni_subdivisions"
+msgid "Nueva Segovia"
+msgstr "Nueva Segovia"
+
+#: modules/ni-subdivisions.php:25
+msgctxt "ni_subdivisions"
+msgid "Matagalpa"
+msgstr "Matagalpa"
+
+#: modules/ni-subdivisions.php:24
+msgctxt "ni_subdivisions"
+msgid "Masaya"
+msgstr "Masaya"
+
+#: modules/ni-subdivisions.php:23
+msgctxt "ni_subdivisions"
+msgid "Managua"
+msgstr "Managua"
+
+#: modules/ni-subdivisions.php:22
+msgctxt "ni_subdivisions"
+msgid "Madriz"
+msgstr "Madriz"
+
+#: modules/ni-subdivisions.php:21
+msgctxt "ni_subdivisions"
+msgid "León"
+msgstr "León"
+
+#: modules/ni-subdivisions.php:20
+msgctxt "ni_subdivisions"
+msgid "Jinotega"
+msgstr "Jinotega"
+
+#: modules/ni-subdivisions.php:19
+msgctxt "ni_subdivisions"
+msgid "Granada"
+msgstr "Granada"
+
+#: modules/ni-subdivisions.php:18
+msgctxt "ni_subdivisions"
+msgid "Estelí"
+msgstr "Estelí"
+
+#: modules/ni-subdivisions.php:17
+msgctxt "ni_subdivisions"
+msgid "Costa Caribe Sur"
+msgstr "Costa Caribe Sur"
+
+#: modules/ni-subdivisions.php:16
+msgctxt "ni_subdivisions"
+msgid "Costa Caribe Norte"
+msgstr "Costa Caribe Norte"
+
+#: modules/ni-subdivisions.php:15
+msgctxt "ni_subdivisions"
+msgid "Chontales"
+msgstr "Chontales"
+
+#: modules/ni-subdivisions.php:14
+msgctxt "ni_subdivisions"
+msgid "Chinandega"
+msgstr "Chinandega"
+
+#: modules/ni-subdivisions.php:13
+msgctxt "ni_subdivisions"
+msgid "Carazo"
+msgstr "Carazo"
+
+#: modules/ni-subdivisions.php:12
+msgctxt "ni_subdivisions"
+msgid "Boaco"
+msgstr "Boaco"
+
+#: modules/pe-subdivisions.php:37
+msgctxt "pe_subdivisions"
+msgid "Ucayali"
+msgstr "Ucayali"
+
+#: modules/pe-subdivisions.php:36
+msgctxt "pe_subdivisions"
+msgid "Tumbes"
+msgstr "Tumbes"
+
+#: modules/pe-subdivisions.php:35
+msgctxt "pe_subdivisions"
+msgid "Tacna"
+msgstr "Tacna"
+
+#: modules/pe-subdivisions.php:34
+msgctxt "pe_subdivisions"
+msgid "San Martín"
+msgstr "San Martín"
+
+#: modules/pe-subdivisions.php:33
+msgctxt "pe_subdivisions"
+msgid "Puno"
+msgstr "Puno"
+
+#: modules/pe-subdivisions.php:32
+msgctxt "pe_subdivisions"
+msgid "Piura"
+msgstr "Piura"
+
+#: modules/pe-subdivisions.php:31
+msgctxt "pe_subdivisions"
+msgid "Pasco"
+msgstr "Pasco"
+
+#: modules/pe-subdivisions.php:30
+msgctxt "pe_subdivisions"
+msgid "Municipalidad Metropolitana de Lima"
+msgstr "Municipalidad Metropolitana de Lima"
+
+#: modules/pe-subdivisions.php:29
+msgctxt "pe_subdivisions"
+msgid "Moquegua"
+msgstr "Moquegua"
+
+#: modules/pe-subdivisions.php:28
+msgctxt "pe_subdivisions"
+msgid "Madre de Dios"
+msgstr "Madre de Dios"
+
+#: modules/pe-subdivisions.php:27
+msgctxt "pe_subdivisions"
+msgid "Loreto"
+msgstr "Loreto"
+
+#: modules/pe-subdivisions.php:26
+msgctxt "pe_subdivisions"
+msgid "Lima"
+msgstr "Lima"
+
+#: modules/pe-subdivisions.php:25
+msgctxt "pe_subdivisions"
+msgid "Lambayeque"
+msgstr "Lambayeque"
+
+#: modules/pe-subdivisions.php:24
+msgctxt "pe_subdivisions"
+msgid "La Libertad"
+msgstr "La Libertad"
+
+#: modules/pe-subdivisions.php:23
+msgctxt "pe_subdivisions"
+msgid "Junín"
+msgstr "Junín"
+
+#: modules/pe-subdivisions.php:22
+msgctxt "pe_subdivisions"
+msgid "Ica"
+msgstr "Ica"
+
+#: modules/pe-subdivisions.php:21
+msgctxt "pe_subdivisions"
+msgid "Huánuco"
+msgstr "Huánuco"
+
+#: modules/pe-subdivisions.php:20
+msgctxt "pe_subdivisions"
+msgid "Huancavelica"
+msgstr "Huancavelica"
+
+#: modules/pe-subdivisions.php:19
+msgctxt "pe_subdivisions"
+msgid "El Callao"
+msgstr "El Callao"
+
+#: modules/pe-subdivisions.php:18
+msgctxt "pe_subdivisions"
+msgid "Cuzco"
+msgstr "Cuzco"
+
+#: modules/pe-subdivisions.php:17
+msgctxt "pe_subdivisions"
+msgid "Cajamarca"
+msgstr "Cajamarca"
+
+#: modules/pe-subdivisions.php:16
+msgctxt "pe_subdivisions"
+msgid "Ayacucho"
+msgstr "Ayacucho"
+
+#: modules/pe-subdivisions.php:15
+msgctxt "pe_subdivisions"
+msgid "Arequipa"
+msgstr "Arequipa"
+
+#: modules/pe-subdivisions.php:14
+msgctxt "pe_subdivisions"
+msgid "Apurímac"
+msgstr "Apurímac"
+
+#: modules/pe-subdivisions.php:13
+msgctxt "pe_subdivisions"
+msgid "Ancash"
+msgstr "Ancash"
+
+#: modules/pe-subdivisions.php:12
+msgctxt "pe_subdivisions"
+msgid "Amazonas"
+msgstr "Amazonas"
+
+#: modules/ec-subdivisions.php:35
+msgctxt "ec_subdivisions"
+msgid "Zamora Chinchipe"
+msgstr "Zamora Chinchipe"
+
+#: modules/ec-subdivisions.php:34
+msgctxt "ec_subdivisions"
+msgid "Tungurahua"
+msgstr "Tungurahua"
+
+#: modules/ec-subdivisions.php:33
+msgctxt "ec_subdivisions"
+msgid "Sucumbíos"
+msgstr "Sucumbíos"
+
+#: modules/ec-subdivisions.php:32
+msgctxt "ec_subdivisions"
+msgid "Santo Domingo de los Tsáchilas"
+msgstr "Santo Domingo de los Tsáchilas"
+
+#: modules/ec-subdivisions.php:31
+msgctxt "ec_subdivisions"
+msgid "Santa Elena"
+msgstr "Santa Elena"
+
+#: modules/ec-subdivisions.php:30
+msgctxt "ec_subdivisions"
+msgid "Pichincha"
+msgstr "Pichincha"
+
+#: modules/ec-subdivisions.php:29
+msgctxt "ec_subdivisions"
+msgid "Pastaza"
+msgstr "Pastaza"
+
+#: modules/ec-subdivisions.php:28
+msgctxt "ec_subdivisions"
+msgid "Orellana"
+msgstr "Orellana"
+
+#: modules/ec-subdivisions.php:27
+msgctxt "ec_subdivisions"
+msgid "Napo"
+msgstr "Napo"
+
+#: modules/ec-subdivisions.php:26
+msgctxt "ec_subdivisions"
+msgid "Morona Santiago"
+msgstr "Morona Santiago"
+
+#: modules/ec-subdivisions.php:25
+msgctxt "ec_subdivisions"
+msgid "Manabí"
+msgstr "Manabí"
+
+#: modules/ec-subdivisions.php:24
+msgctxt "ec_subdivisions"
+msgid "Los Ríos"
+msgstr "Los Ríos"
+
+#: modules/ec-subdivisions.php:23
+msgctxt "ec_subdivisions"
+msgid "Loja"
+msgstr "Loja"
+
+#: modules/ec-subdivisions.php:22
+msgctxt "ec_subdivisions"
+msgid "Imbabura"
+msgstr "Imbabura"
+
+#: modules/ec-subdivisions.php:21
+msgctxt "ec_subdivisions"
+msgid "Guayas"
+msgstr "Guayas"
+
+#: modules/ec-subdivisions.php:20
+msgctxt "ec_subdivisions"
+msgid "Galápagos"
+msgstr "Galápagos"
+
+#: modules/ec-subdivisions.php:19
+msgctxt "ec_subdivisions"
+msgid "Esmeraldas"
+msgstr "Esmeraldas"
+
+#: modules/ec-subdivisions.php:18
+msgctxt "ec_subdivisions"
+msgid "El Oro"
+msgstr "El Oro"
+
+#: modules/ec-subdivisions.php:17
+msgctxt "ec_subdivisions"
+msgid "Cotopaxi"
+msgstr "Cotopaxi"
+
+#: modules/ec-subdivisions.php:16
+msgctxt "ec_subdivisions"
+msgid "Chimborazo"
+msgstr "Chimborazo"
+
+#: modules/ec-subdivisions.php:15
+msgctxt "ec_subdivisions"
+msgid "Carchi"
+msgstr "Carchi"
+
+#: modules/ec-subdivisions.php:14
+msgctxt "ec_subdivisions"
+msgid "Cañar"
+msgstr "Cañar"
+
+#: modules/ec-subdivisions.php:13
+msgctxt "ec_subdivisions"
+msgid "Bolívar"
+msgstr "Bolívar"
+
+#: modules/ec-subdivisions.php:12
+msgctxt "ec_subdivisions"
+msgid "Azuay"
+msgstr "Azuay"
+
+#: modules/gt-subdivisions.php:33
+msgctxt "gt_subdivisions"
+msgid "Zacapa"
+msgstr "Zacapa"
+
+#: modules/gt-subdivisions.php:32
+msgctxt "gt_subdivisions"
+msgid "Totonicapán"
+msgstr "Totonicapán"
+
+#: modules/gt-subdivisions.php:31
+msgctxt "gt_subdivisions"
+msgid "Suchitepéquez"
+msgstr "Suchitepéquez"
+
+#: modules/gt-subdivisions.php:30
+msgctxt "gt_subdivisions"
+msgid "Sololá"
+msgstr "Sololá"
+
+#: modules/gt-subdivisions.php:29
+msgctxt "gt_subdivisions"
+msgid "Santa Rosa"
+msgstr "Santa Rosa"
+
+#: modules/gt-subdivisions.php:28
+msgctxt "gt_subdivisions"
+msgid "San Marcos"
+msgstr "San Marcos"
+
+#: modules/gt-subdivisions.php:27
+msgctxt "gt_subdivisions"
+msgid "Sacatepéquez"
+msgstr "Sacatepéquez"
+
+#: modules/gt-subdivisions.php:26
+msgctxt "gt_subdivisions"
+msgid "Retalhuleu"
+msgstr "Retalhuleu"
+
+#: modules/gt-subdivisions.php:25
+msgctxt "gt_subdivisions"
+msgid "Quiché"
+msgstr "Quiché"
+
+#: modules/gt-subdivisions.php:24
+msgctxt "gt_subdivisions"
+msgid "Quetzaltenango"
+msgstr "Quetzaltenango"
+
+#: modules/gt-subdivisions.php:23
+msgctxt "gt_subdivisions"
+msgid "Petén"
+msgstr "Petén"
+
+#: modules/gt-subdivisions.php:22
+msgctxt "gt_subdivisions"
+msgid "Jutiapa"
+msgstr "Jutiapa"
+
+#: modules/gt-subdivisions.php:21
+msgctxt "gt_subdivisions"
+msgid "Jalapa"
+msgstr "Jalapa"
+
+#: modules/gt-subdivisions.php:20
+msgctxt "gt_subdivisions"
+msgid "Izabal"
+msgstr "Izabal"
+
+#: modules/gt-subdivisions.php:19
+msgctxt "gt_subdivisions"
+msgid "Huehuetenango"
+msgstr "Huehuetenango"
+
+#: modules/gt-subdivisions.php:18
+msgctxt "gt_subdivisions"
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: modules/gt-subdivisions.php:17
+msgctxt "gt_subdivisions"
+msgid "Escuintla"
+msgstr "Escuintla"
+
+#: modules/gt-subdivisions.php:16
+msgctxt "gt_subdivisions"
+msgid "El Progreso"
+msgstr "El Progreso"
+
+#: modules/gt-subdivisions.php:15
+msgctxt "gt_subdivisions"
+msgid "Chiquimula"
+msgstr "Chiquimula"
+
+#: modules/gt-subdivisions.php:14
+msgctxt "gt_subdivisions"
+msgid "Chimaltenango"
+msgstr "Chimaltenango"
+
+#: modules/gt-subdivisions.php:13
+msgctxt "gt_subdivisions"
+msgid "Baja Verapaz"
+msgstr "Baja Verapaz"
+
+#: modules/gt-subdivisions.php:12
+msgctxt "gt_subdivisions"
+msgid "Alta Verapaz"
+msgstr "Alta Verapaz"
+
+#: modules/br-subdivisions.php:38
+msgctxt "br_subdivisions"
+msgid "Tocantins"
+msgstr "Tocantins"
+
+#: modules/br-subdivisions.php:37
+msgctxt "br_subdivisions"
+msgid "Sergipe"
+msgstr "Sergipe"
+
+#: modules/br-subdivisions.php:36
+msgctxt "br_subdivisions"
+msgid "São Paulo"
+msgstr "São Paulo"
+
+#: modules/br-subdivisions.php:35
+msgctxt "br_subdivisions"
+msgid "Santa Catarina"
+msgstr "Santa Catarina"
+
+#: modules/br-subdivisions.php:34
+msgctxt "br_subdivisions"
+msgid "Roraima"
+msgstr "Roraima"
+
+#: modules/br-subdivisions.php:33
+msgctxt "br_subdivisions"
+msgid "Rondônia"
+msgstr "Rondônia"
+
+#: modules/br-subdivisions.php:32
+msgctxt "br_subdivisions"
+msgid "Rio Grande do Sul"
+msgstr "Rio Grande do Sul"
+
+#: modules/br-subdivisions.php:31
+msgctxt "br_subdivisions"
+msgid "Rio Grande do Norte"
+msgstr "Rio Grande do Norte"
+
+#: modules/br-subdivisions.php:30
+msgctxt "br_subdivisions"
+msgid "Rio de Janeiro"
+msgstr "Rio de Janeiro"
+
+#: modules/br-subdivisions.php:29
+msgctxt "br_subdivisions"
+msgid "Piauí"
+msgstr "Piauí"
+
+#: modules/br-subdivisions.php:28
+msgctxt "br_subdivisions"
+msgid "Pernambuco"
+msgstr "Pernambuco"
+
+#: modules/br-subdivisions.php:27
+msgctxt "br_subdivisions"
+msgid "Paraná"
+msgstr "Paraná"
+
+#: modules/br-subdivisions.php:26
+msgctxt "br_subdivisions"
+msgid "Paraíba"
+msgstr "Paraíba"
+
+#: modules/br-subdivisions.php:25
+msgctxt "br_subdivisions"
+msgid "Pará"
+msgstr "Pará"
+
+#: modules/br-subdivisions.php:24
+msgctxt "br_subdivisions"
+msgid "Minas Gerais"
+msgstr "Minas Gerais"
+
+#: modules/br-subdivisions.php:23
+msgctxt "br_subdivisions"
+msgid "Mato Grosso do Sul"
+msgstr "Mato Grosso do Sul"
+
+#: modules/br-subdivisions.php:22
+msgctxt "br_subdivisions"
+msgid "Mato Grosso"
+msgstr "Mato Grosso"
+
+#: modules/br-subdivisions.php:21
+msgctxt "br_subdivisions"
+msgid "Maranhão"
+msgstr "Maranhão"
+
+#: modules/br-subdivisions.php:20
+msgctxt "br_subdivisions"
+msgid "Goiás"
+msgstr "Goiás"
+
+#: modules/br-subdivisions.php:19
+msgctxt "br_subdivisions"
+msgid "Espírito Santo"
+msgstr "Espírito Santo"
+
+#: modules/br-subdivisions.php:18
+msgctxt "br_subdivisions"
+msgid "Distrito Federal"
+msgstr "Distrito Federal"
+
+#: modules/br-subdivisions.php:17
+msgctxt "br_subdivisions"
+msgid "Ceará"
+msgstr "Ceará"
+
+#: modules/br-subdivisions.php:16
+msgctxt "br_subdivisions"
+msgid "Bahia"
+msgstr "Bahia"
+
+#: modules/br-subdivisions.php:15
+msgctxt "br_subdivisions"
+msgid "Amazonas"
+msgstr "Amazonas"
+
+#: modules/br-subdivisions.php:14
+msgctxt "br_subdivisions"
+msgid "Amapá"
+msgstr "Amapá"
+
+#: modules/br-subdivisions.php:13
+msgctxt "br_subdivisions"
+msgid "Alagoas"
+msgstr "Alagoas"
+
+#: modules/br-subdivisions.php:12
+msgctxt "br_subdivisions"
+msgid "Acre"
+msgstr "Acre"
+
+#: modules/sv-subdivisions.php:25
+msgctxt "sv_subdivisions"
+msgid "Usulután"
+msgstr "Usulután"
+
+#: modules/sv-subdivisions.php:24
+msgctxt "sv_subdivisions"
+msgid "Sonsonate"
+msgstr "Sonsonate"
+
+#: modules/sv-subdivisions.php:23
+msgctxt "sv_subdivisions"
+msgid "Santa Ana"
+msgstr "Santa Ana"
+
+#: modules/sv-subdivisions.php:22
+msgctxt "sv_subdivisions"
+msgid "San Vicente"
+msgstr "San Vicente"
+
+#: modules/sv-subdivisions.php:21
+msgctxt "sv_subdivisions"
+msgid "San Salvador"
+msgstr "San Salvador"
+
+#: modules/sv-subdivisions.php:20
+msgctxt "sv_subdivisions"
+msgid "San Miguel"
+msgstr "San Miguel"
+
+#: modules/sv-subdivisions.php:19
+msgctxt "sv_subdivisions"
+msgid "Morazán"
+msgstr "Morazán"
+
+#: modules/sv-subdivisions.php:18
+msgctxt "sv_subdivisions"
+msgid "La Unión"
+msgstr "La Unión"
+
+#: modules/sv-subdivisions.php:17
+msgctxt "sv_subdivisions"
+msgid "La Paz"
+msgstr "La Paz"
+
+#: modules/sv-subdivisions.php:16
+msgctxt "sv_subdivisions"
+msgid "La Libertad"
+msgstr "La Libertad"
+
+#: modules/sv-subdivisions.php:15
+msgctxt "sv_subdivisions"
+msgid "Cuscatlán"
+msgstr "Cuscatlán"
+
+#: modules/sv-subdivisions.php:14
+msgctxt "sv_subdivisions"
+msgid "Chalatenango"
+msgstr "Chalatenango"
+
+#: modules/sv-subdivisions.php:13
+msgctxt "sv_subdivisions"
+msgid "Cabañas"
+msgstr "Cabañas"
+
+#: modules/sv-subdivisions.php:12
+msgctxt "sv_subdivisions"
+msgid "Ahuachapán"
+msgstr "Ahuachapán"
+
+#: modules/ve-subdivisions.php:36
+msgctxt "ve_subdivisions"
+msgid "Zulia"
+msgstr "Zulia"
+
+#: modules/ve-subdivisions.php:35
+msgctxt "ve_subdivisions"
+msgid "Yaracuy"
+msgstr "Yaracuy"
+
+#: modules/ve-subdivisions.php:34
+msgctxt "ve_subdivisions"
+msgid "Vargas"
+msgstr "Vargas"
+
+#: modules/ve-subdivisions.php:33
+msgctxt "ve_subdivisions"
+msgid "Trujillo"
+msgstr "Trujillo"
+
+#: modules/ve-subdivisions.php:32
+msgctxt "ve_subdivisions"
+msgid "Táchira"
+msgstr "Táchira"
+
+#: modules/ve-subdivisions.php:31
+msgctxt "ve_subdivisions"
+msgid "Sucre"
+msgstr "Sucre"
+
+#: modules/ve-subdivisions.php:30
+msgctxt "ve_subdivisions"
+msgid "Portuguesa"
+msgstr "Portuguesa"
+
+#: modules/ve-subdivisions.php:29
+msgctxt "ve_subdivisions"
+msgid "Nueva Esparta"
+msgstr "Nueva Esparta"
+
+#: modules/ve-subdivisions.php:28
+msgctxt "ve_subdivisions"
+msgid "Monagas"
+msgstr "Monagas"
+
+#: modules/ve-subdivisions.php:27
+msgctxt "ve_subdivisions"
+msgid "Miranda"
+msgstr "Miranda"
+
+#: modules/ve-subdivisions.php:26
+msgctxt "ve_subdivisions"
+msgid "Mérida"
+msgstr "Mérida"
+
+#: modules/ve-subdivisions.php:25
+msgctxt "ve_subdivisions"
+msgid "Lara"
+msgstr "Lara"
+
+#: modules/ve-subdivisions.php:24
+msgctxt "ve_subdivisions"
+msgid "Guárico"
+msgstr "Guárico"
+
+#: modules/ve-subdivisions.php:23
+msgctxt "ve_subdivisions"
+msgid "Falcón"
+msgstr "Falcón"
+
+#: modules/ve-subdivisions.php:22
+msgctxt "ve_subdivisions"
+msgid "Distrito Capital"
+msgstr "Distrito Capital"
+
+#: modules/ve-subdivisions.php:21
+msgctxt "ve_subdivisions"
+msgid "Dependencias Federales"
+msgstr "Dependencias Federales"
+
+#: modules/ve-subdivisions.php:20
+msgctxt "ve_subdivisions"
+msgid "Delta Amacuro"
+msgstr "Delta Amacuro"
+
+#: modules/ve-subdivisions.php:19
+msgctxt "ve_subdivisions"
+msgid "Cojedes"
+msgstr "Cojedes"
+
+#: modules/ve-subdivisions.php:18
+msgctxt "ve_subdivisions"
+msgid "Carabobo"
+msgstr "Carabobo"
+
+#: modules/ve-subdivisions.php:17
+msgctxt "ve_subdivisions"
+msgid "Bolívar"
+msgstr "Bolívar"
+
+#: modules/ve-subdivisions.php:16
+msgctxt "ve_subdivisions"
+msgid "Barinas"
+msgstr "Barinas"
+
+#: modules/ve-subdivisions.php:15
+msgctxt "ve_subdivisions"
+msgid "Aragua"
+msgstr "Aragua"
+
+#: modules/ve-subdivisions.php:14
+msgctxt "ve_subdivisions"
+msgid "Apure"
+msgstr "Apure"
+
+#: modules/ve-subdivisions.php:13
+msgctxt "ve_subdivisions"
+msgid "Anzoátegui"
+msgstr "Anzoátegui"
+
+#: modules/ve-subdivisions.php:12
+msgctxt "ve_subdivisions"
+msgid "Amazonas"
+msgstr "Amazonas"
+
+#: modules/hn-subdivisions.php:29
+msgctxt "hn_subdivisions"
+msgid "Yoro"
+msgstr "Yoro"
+
+#: modules/hn-subdivisions.php:28
+msgctxt "hn_subdivisions"
+msgid "Valle"
+msgstr "Valle"
+
+#: modules/hn-subdivisions.php:27
+msgctxt "hn_subdivisions"
+msgid "Santa Bárbara"
+msgstr "Santa Bárbara"
+
+#: modules/hn-subdivisions.php:26
+msgctxt "hn_subdivisions"
+msgid "Olancho"
+msgstr "Olancho"
+
+#: modules/hn-subdivisions.php:25
+msgctxt "hn_subdivisions"
+msgid "Ocotepeque"
+msgstr "Ocotepeque"
+
+#: modules/hn-subdivisions.php:24
+msgctxt "hn_subdivisions"
+msgid "Lempira"
+msgstr "Lempira"
+
+#: modules/hn-subdivisions.php:23
+msgctxt "hn_subdivisions"
+msgid "La Paz"
+msgstr "La Paz"
+
+#: modules/hn-subdivisions.php:22
+msgctxt "hn_subdivisions"
+msgid "Islas de la Bahía"
+msgstr "Islas de la Bahía"
+
+#: modules/hn-subdivisions.php:21
+msgctxt "hn_subdivisions"
+msgid "Intibucá"
+msgstr "Intibucá"
+
+#: modules/hn-subdivisions.php:20
+msgctxt "hn_subdivisions"
+msgid "Gracias a Dios"
+msgstr "Gracias a Dios"
+
+#: modules/hn-subdivisions.php:19
+msgctxt "hn_subdivisions"
+msgid "Francisco Morazán"
+msgstr "Francisco Morazán"
+
+#: modules/hn-subdivisions.php:18
+msgctxt "hn_subdivisions"
+msgid "El Paraíso"
+msgstr "El Paraíso"
+
+#: modules/hn-subdivisions.php:17
+msgctxt "hn_subdivisions"
+msgid "Cortés"
+msgstr "Cortés"
+
+#: modules/hn-subdivisions.php:16
+msgctxt "hn_subdivisions"
+msgid "Copán"
+msgstr "Copán"
+
+#: modules/hn-subdivisions.php:15
+msgctxt "hn_subdivisions"
+msgid "Comayagua"
+msgstr "Comayagua"
+
+#: modules/hn-subdivisions.php:14
+msgctxt "hn_subdivisions"
+msgid "Colón"
+msgstr "Colón"
+
+#: modules/hn-subdivisions.php:13
+msgctxt "hn_subdivisions"
+msgid "Choluteca"
+msgstr "Choluteca"
+
+#: modules/hn-subdivisions.php:12
+msgctxt "hn_subdivisions"
+msgid "Atlántida"
+msgstr "Atlántida"
+
+#: modules/ht-subdivisions.php:21
+msgctxt "ht_subdivisions"
+msgid "Sud-Est"
+msgstr "Sud-Est"
+
+#: modules/ht-subdivisions.php:20
+msgctxt "ht_subdivisions"
+msgid "Sud"
+msgstr "Sud"
+
+#: modules/ht-subdivisions.php:19
+msgctxt "ht_subdivisions"
+msgid "Ouest"
+msgstr "Ouest"
+
+#: modules/ht-subdivisions.php:18
+msgctxt "ht_subdivisions"
+msgid "Nord-Ouest"
+msgstr "Nord-Ouest"
+
+#: modules/ht-subdivisions.php:17
+msgctxt "ht_subdivisions"
+msgid "Nord-Est"
+msgstr "Nord-Est"
+
+#: modules/ht-subdivisions.php:16
+msgctxt "ht_subdivisions"
+msgid "Nord"
+msgstr "Nord"
+
+#: modules/ht-subdivisions.php:15
+msgctxt "ht_subdivisions"
+msgid "Nippes"
+msgstr "Nippes"
+
+#: modules/ht-subdivisions.php:14
+msgctxt "ht_subdivisions"
+msgid "Grande’Anse"
+msgstr "Grande’Anse"
+
+#: modules/ht-subdivisions.php:13
+msgctxt "ht_subdivisions"
+msgid "Centre"
+msgstr "Centre"
+
+#: modules/ht-subdivisions.php:12
+msgctxt "ht_subdivisions"
+msgid "Artibonite"
+msgstr "Artibonite"
+
+#: modules/cr-subdivisions.php:18
+msgctxt "cr_subdivisions"
+msgid "San José"
+msgstr "San José"
+
+#: modules/cr-subdivisions.php:17
+msgctxt "cr_subdivisions"
+msgid "Puntarenas"
+msgstr "Puntarenas"
+
+#: modules/cr-subdivisions.php:16
+msgctxt "cr_subdivisions"
+msgid "Limón"
+msgstr "Limón"
+
+#: modules/cr-subdivisions.php:15
+msgctxt "cr_subdivisions"
+msgid "Heredia"
+msgstr "Heredia"
+
+#: modules/cr-subdivisions.php:14
+msgctxt "cr_subdivisions"
+msgid "Guanacaste"
+msgstr "Guanacaste"
+
+#: modules/cr-subdivisions.php:13
+msgctxt "cr_subdivisions"
+msgid "Cartago"
+msgstr "Cartago"
+
+#: modules/cr-subdivisions.php:12
+msgctxt "cr_subdivisions"
+msgid "Alajuela"
+msgstr "Alajuela"
+
+#: modules/bo-subdivisions.php:20
+msgctxt "bo_subdivisions"
+msgid "Tarija"
+msgstr "Tarija"
+
+#: modules/bo-subdivisions.php:19
+msgctxt "bo_subdivisions"
+msgid "Santa Cruz"
+msgstr "Santa Cruz"
+
+#: modules/bo-subdivisions.php:18
+msgctxt "bo_subdivisions"
+msgid "Potosí"
+msgstr "Potosí"
+
+#: modules/bo-subdivisions.php:17
+msgctxt "bo_subdivisions"
+msgid "Pando"
+msgstr "Pando"
+
+#: modules/bo-subdivisions.php:16
+msgctxt "bo_subdivisions"
+msgid "Oruro"
+msgstr "Oruro"
+
+#: modules/bo-subdivisions.php:15
+msgctxt "bo_subdivisions"
+msgid "La Paz"
+msgstr "La Paz"
+
+#: modules/bo-subdivisions.php:14
+msgctxt "bo_subdivisions"
+msgid "El Beni"
+msgstr "El Beni"
+
+#: modules/bo-subdivisions.php:13
+msgctxt "bo_subdivisions"
+msgid "Chuquisaca"
+msgstr "Chuquisaca"
+
+#: modules/bo-subdivisions.php:12
+msgctxt "bo_subdivisions"
+msgid "Cochabamba"
+msgstr "Cochabamba"
+
+#. Author URI of the plugin
+msgid "https://ideasilo.wordpress.com/"
+msgstr "https://ideasilo.wordpress.com/"
+
+#. Author of the plugin
+msgid "Takayuki Miyoshi"
+msgstr "Takayuki Miyoshi"
+
+#. Description of the plugin
+msgid "Listo is a simple plugin that supplies commonly used lists to other plugins and themes."
+msgstr "Listo es un plugin sencillo que proporciona listas de uso común a otros plugins y temas."
+
+#. Plugin URI of the plugin
+msgid "https://contactform7.com/listo/"
+msgstr "https://contactform7.com/listo/"
+
+#. Plugin Name of the plugin
+msgid "Listo"
+msgstr "Listo"
+
+#: rest-api.php:35
+msgid "The requested list was not found."
+msgstr "La lista solicitada no se ha encontrado"
+
+#: modules/us-subdivisions.php:68
+msgctxt "us_subdivisions"
+msgid "Wyoming"
+msgstr "Wyoming"
+
+#: modules/us-subdivisions.php:67
+msgctxt "us_subdivisions"
+msgid "West Virginia"
+msgstr "Virginia del Oeste"
+
+#: modules/us-subdivisions.php:66
+msgctxt "us_subdivisions"
+msgid "Wisconsin"
+msgstr "Wisconsin"
+
+#: modules/us-subdivisions.php:65
+msgctxt "us_subdivisions"
+msgid "Washington"
+msgstr "Washington"
+
+#: modules/us-subdivisions.php:64
+msgctxt "us_subdivisions"
+msgid "Vermont"
+msgstr "Vermont"
+
+#: modules/us-subdivisions.php:63
+msgctxt "us_subdivisions"
+msgid "Virgin Islands, U.S."
+msgstr "Islas Vírgenes, Estados Unidos"
+
+#: modules/us-subdivisions.php:62
+msgctxt "us_subdivisions"
+msgid "Virginia"
+msgstr "Virginia"
+
+#: modules/us-subdivisions.php:61
+msgctxt "us_subdivisions"
+msgid "Utah"
+msgstr "Utah"
+
+#: modules/us-subdivisions.php:60
+msgctxt "us_subdivisions"
+msgid "United States Minor Outlying Islands"
+msgstr "Islas Menores Exteriores de Estados Unidos"
+
+#: modules/us-subdivisions.php:59
+msgctxt "us_subdivisions"
+msgid "Texas"
+msgstr "Texas"
+
+#: modules/us-subdivisions.php:58
+msgctxt "us_subdivisions"
+msgid "Tennessee"
+msgstr "Tennessee"
+
+#: modules/us-subdivisions.php:57
+msgctxt "us_subdivisions"
+msgid "South Dakota"
+msgstr "Dakota del sur"
+
+#: modules/us-subdivisions.php:56
+msgctxt "us_subdivisions"
+msgid "South Carolina"
+msgstr "Carolina del sur"
+
+#: modules/us-subdivisions.php:55
+msgctxt "us_subdivisions"
+msgid "Rhode Island"
+msgstr "Rhode Island"
+
+#: modules/us-subdivisions.php:54
+msgctxt "us_subdivisions"
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: modules/us-subdivisions.php:53
+msgctxt "us_subdivisions"
+msgid "Pennsylvania"
+msgstr "Pennsylvania"
+
+#: modules/us-subdivisions.php:52
+msgctxt "us_subdivisions"
+msgid "Oregon"
+msgstr "Oregon"
+
+#: modules/us-subdivisions.php:51
+msgctxt "us_subdivisions"
+msgid "Oklahoma"
+msgstr "Oklahoma"
+
+#: modules/us-subdivisions.php:50
+msgctxt "us_subdivisions"
+msgid "Ohio"
+msgstr "Ohio"
+
+#: modules/us-subdivisions.php:49
+msgctxt "us_subdivisions"
+msgid "New York"
+msgstr "Nueva York"
+
+#: modules/us-subdivisions.php:48
+msgctxt "us_subdivisions"
+msgid "Nevada"
+msgstr "Nevada"
+
+#: modules/us-subdivisions.php:47
+msgctxt "us_subdivisions"
+msgid "New Mexico"
+msgstr "Nuevo México"
+
+#: modules/us-subdivisions.php:46
+msgctxt "us_subdivisions"
+msgid "New Jersey"
+msgstr "Nueva Jersey"
+
+#: modules/us-subdivisions.php:45
+msgctxt "us_subdivisions"
+msgid "New Hampshire"
+msgstr "New Hampshire"
+
+#: modules/us-subdivisions.php:44
+msgctxt "us_subdivisions"
+msgid "Nebraska"
+msgstr "Nebraska"
+
+#: modules/us-subdivisions.php:43
+msgctxt "us_subdivisions"
+msgid "North Dakota"
+msgstr "Dakota del Norte"
+
+#: modules/us-subdivisions.php:42
+msgctxt "us_subdivisions"
+msgid "North Carolina"
+msgstr "Carolina del norte"
+
+#: modules/us-subdivisions.php:41
+msgctxt "us_subdivisions"
+msgid "Montana"
+msgstr "Montana"
+
+#: modules/us-subdivisions.php:40
+msgctxt "us_subdivisions"
+msgid "Mississippi"
+msgstr "Mississippi"
+
+#: modules/us-subdivisions.php:39
+msgctxt "us_subdivisions"
+msgid "Northern Mariana Islands"
+msgstr "Islas Marianas del norte"
+
+#: modules/us-subdivisions.php:38
+msgctxt "us_subdivisions"
+msgid "Missouri"
+msgstr "Missouri"
+
+#: modules/us-subdivisions.php:37
+msgctxt "us_subdivisions"
+msgid "Minnesota"
+msgstr "Minnesota"
+
+#: modules/us-subdivisions.php:36
+msgctxt "us_subdivisions"
+msgid "Michigan"
+msgstr "Michigan"
+
+#: modules/us-subdivisions.php:35
+msgctxt "us_subdivisions"
+msgid "Maine"
+msgstr "Maine"
+
+#: modules/us-subdivisions.php:34
+msgctxt "us_subdivisions"
+msgid "Maryland"
+msgstr "Maryland"
+
+#: modules/us-subdivisions.php:33
+msgctxt "us_subdivisions"
+msgid "Massachusetts"
+msgstr "Massachusetts"
+
+#: modules/us-subdivisions.php:32
+msgctxt "us_subdivisions"
+msgid "Louisiana"
+msgstr "Louisiana"
+
+#: modules/us-subdivisions.php:31
+msgctxt "us_subdivisions"
+msgid "Kentucky"
+msgstr "Kentucky"
+
+#: modules/us-subdivisions.php:30
+msgctxt "us_subdivisions"
+msgid "Kansas"
+msgstr "Kansas"
+
+#: modules/us-subdivisions.php:29
+msgctxt "us_subdivisions"
+msgid "Indiana"
+msgstr "Indiana"
+
+#: modules/us-subdivisions.php:28
+msgctxt "us_subdivisions"
+msgid "Illinois"
+msgstr "Illinois"
+
+#: modules/us-subdivisions.php:27
+msgctxt "us_subdivisions"
+msgid "Idaho"
+msgstr "Idaho"
+
+#: modules/us-subdivisions.php:26
+msgctxt "us_subdivisions"
+msgid "Iowa"
+msgstr "Iowa"
+
+#: modules/us-subdivisions.php:25
+msgctxt "us_subdivisions"
+msgid "Hawaii"
+msgstr "Hawái"
+
+#: modules/us-subdivisions.php:24
+msgctxt "us_subdivisions"
+msgid "Guam"
+msgstr "Guam"
+
+#: modules/us-subdivisions.php:23
+msgctxt "us_subdivisions"
+msgid "Georgia"
+msgstr "Georgia"
+
+#: modules/us-subdivisions.php:22
+msgctxt "us_subdivisions"
+msgid "Florida"
+msgstr "Florida"
+
+#: modules/us-subdivisions.php:21
+msgctxt "us_subdivisions"
+msgid "Delaware"
+msgstr "Delaware"
+
+#: modules/us-subdivisions.php:20
+msgctxt "us_subdivisions"
+msgid "District of Columbia"
+msgstr "Distrito de Columbia"
+
+#: modules/us-subdivisions.php:19
+msgctxt "us_subdivisions"
+msgid "Connecticut"
+msgstr "Connecticut"
+
+#: modules/us-subdivisions.php:18
+msgctxt "us_subdivisions"
+msgid "Colorado"
+msgstr "Colorado"
+
+#: modules/us-subdivisions.php:17
+msgctxt "us_subdivisions"
+msgid "California"
+msgstr "California"
+
+#: modules/us-subdivisions.php:16
+msgctxt "us_subdivisions"
+msgid "Arizona"
+msgstr "Arizona"
+
+#: modules/us-subdivisions.php:15
+msgctxt "us_subdivisions"
+msgid "American Samoa"
+msgstr "Samoa Americana"
+
+#: modules/us-subdivisions.php:14
+msgctxt "us_subdivisions"
+msgid "Arkansas"
+msgstr "Arkansas"
+
+#: modules/us-subdivisions.php:13
+msgctxt "us_subdivisions"
+msgid "Alabama"
+msgstr "Alabama"
+
+#: modules/us-subdivisions.php:12
+msgctxt "us_subdivisions"
+msgid "Alaska"
+msgstr "Alaska"
+
+#: modules/in-subdivisions.php:47
+msgctxt "in_subdivisions"
+msgid "Puducherry"
+msgstr "Pondicherry"
+
+#: modules/in-subdivisions.php:46
+msgctxt "in_subdivisions"
+msgid "Lakshadweep"
+msgstr "Laquedivas"
+
+#: modules/in-subdivisions.php:45
+msgctxt "in_subdivisions"
+msgid "Delhi"
+msgstr "Delhi"
+
+#: modules/in-subdivisions.php:44
+msgctxt "in_subdivisions"
+msgid "Daman and Diu"
+msgstr "Damán y Diu"
+
+#: modules/in-subdivisions.php:43
+msgctxt "in_subdivisions"
+msgid "Dadra and Nagar Haveli"
+msgstr "Dadra y Nagar Haveli"
+
+#: modules/in-subdivisions.php:42
+msgctxt "in_subdivisions"
+msgid "Chandigarh"
+msgstr "Chandigarh"
+
+#: modules/in-subdivisions.php:41
+msgctxt "in_subdivisions"
+msgid "Andaman and Nicobar Islands"
+msgstr "Islas Andamán y Nicobar"
+
+#: modules/in-subdivisions.php:40
+msgctxt "in_subdivisions"
+msgid "West Bengal"
+msgstr "Bengala Occidental"
+
+#: modules/in-subdivisions.php:39
+msgctxt "in_subdivisions"
+msgid "Uttar Pradesh"
+msgstr "Uttar Pradesh"
+
+#: modules/in-subdivisions.php:38
+msgctxt "in_subdivisions"
+msgid "Uttarakhand"
+msgstr "Uttarakhand"
+
+#: modules/in-subdivisions.php:37
+msgctxt "in_subdivisions"
+msgid "Tripura"
+msgstr "Tripura"
+
+#: modules/in-subdivisions.php:36
+msgctxt "in_subdivisions"
+msgid "Telangana"
+msgstr "Telangana"
+
+#: modules/in-subdivisions.php:35
+msgctxt "in_subdivisions"
+msgid "Tamil Nadu"
+msgstr "Tamil Nadu"
+
+#: modules/in-subdivisions.php:34
+msgctxt "in_subdivisions"
+msgid "Sikkim"
+msgstr "Sikkim"
+
+#: modules/in-subdivisions.php:33
+msgctxt "in_subdivisions"
+msgid "Rajasthan"
+msgstr "Rajastán"
+
+#: modules/in-subdivisions.php:32
+msgctxt "in_subdivisions"
+msgid "Punjab"
+msgstr "Punyab"
+
+#: modules/in-subdivisions.php:31
+msgctxt "in_subdivisions"
+msgid "Odisha"
+msgstr "Odisha"
+
+#: modules/in-subdivisions.php:30
+msgctxt "in_subdivisions"
+msgid "Nagaland"
+msgstr "Nagaland"
+
+#: modules/in-subdivisions.php:29
+msgctxt "in_subdivisions"
+msgid "Mizoram"
+msgstr "Mizoram"
+
+#: modules/in-subdivisions.php:28
+msgctxt "in_subdivisions"
+msgid "Meghalaya"
+msgstr "Megalaya"
+
+#: modules/in-subdivisions.php:27
+msgctxt "in_subdivisions"
+msgid "Manipur"
+msgstr "Manipur"
+
+#: modules/in-subdivisions.php:26
+msgctxt "in_subdivisions"
+msgid "Maharashtra"
+msgstr "Maharashtra"
+
+#: modules/in-subdivisions.php:25
+msgctxt "in_subdivisions"
+msgid "Madhya Pradesh"
+msgstr "Madhya Pradesh"
+
+#: modules/in-subdivisions.php:24
+msgctxt "in_subdivisions"
+msgid "Kerala"
+msgstr "Kerala"
+
+#: modules/in-subdivisions.php:23
+msgctxt "in_subdivisions"
+msgid "Karnataka"
+msgstr "Karnataka"
+
+#: modules/in-subdivisions.php:22
+msgctxt "in_subdivisions"
+msgid "Jharkhand"
+msgstr "Jharkhand"
+
+#: modules/in-subdivisions.php:21
+msgctxt "in_subdivisions"
+msgid "Jammu and Kashmir"
+msgstr "Jammu y Cachemira"
+
+#: modules/in-subdivisions.php:20
+msgctxt "in_subdivisions"
+msgid "Himachal Pradesh"
+msgstr "Himachal Pradesh"
+
+#: modules/in-subdivisions.php:19
+msgctxt "in_subdivisions"
+msgid "Haryana"
+msgstr "Haryana"
+
+#: modules/in-subdivisions.php:18
+msgctxt "in_subdivisions"
+msgid "Gujarat"
+msgstr "Guyarat"
+
+#: modules/in-subdivisions.php:17
+msgctxt "in_subdivisions"
+msgid "Goa"
+msgstr "Goa"
+
+#: modules/in-subdivisions.php:16
+msgctxt "in_subdivisions"
+msgid "Chhattisgarh"
+msgstr "Chhattisgarh"
+
+#: modules/in-subdivisions.php:15
+msgctxt "in_subdivisions"
+msgid "Bihar"
+msgstr "Bihar"
+
+#: modules/in-subdivisions.php:14
+msgctxt "in_subdivisions"
+msgid "Assam"
+msgstr "Assam"
+
+#: modules/in-subdivisions.php:13
+msgctxt "in_subdivisions"
+msgid "Arunachal Pradesh"
+msgstr "Arunachal Pradesh"
+
+#: modules/in-subdivisions.php:12
+msgctxt "in_subdivisions"
+msgid "Andhra Pradesh"
+msgstr "Andhra Pradesh"
+
+#: modules/currencies.php:170
+msgctxt "currencies"
+msgid "Zimbabwe dollar"
+msgstr "Dólar zimbabuense"
+
+#: modules/currencies.php:169
+msgctxt "currencies"
+msgid "Zambian kwacha"
+msgstr "Kwacha zambiano"
+
+#: modules/currencies.php:168
+msgctxt "currencies"
+msgid "South African rand"
+msgstr "Rand surafricano"
+
+#: modules/currencies.php:167
+msgctxt "currencies"
+msgid "Yemeni rial"
+msgstr "Rial Yemení"
+
+#: modules/currencies.php:166
+msgctxt "currencies"
+msgid "CFP franc (franc Pacifique)"
+msgstr "Franco CFP"
+
+#: modules/currencies.php:165
+msgctxt "currencies"
+msgid "CFA franc BCEAO"
+msgstr "Franco CFA BCEAO"
+
+#: modules/currencies.php:164
+msgctxt "currencies"
+msgid "East Caribbean dollar"
+msgstr "Dólar del Caribe Oriental"
+
+#: modules/currencies.php:163
+msgctxt "currencies"
+msgid "CFA franc BEAC"
+msgstr "Franco CFA BEAC"
+
+#: modules/currencies.php:162
+msgctxt "currencies"
+msgid "Samoan tala"
+msgstr "Tala de Samoa"
+
+#: modules/currencies.php:161
+msgctxt "currencies"
+msgid "Vanuatu vatu"
+msgstr "Vatu vanuatuense"
+
+#: modules/currencies.php:160
+msgctxt "currencies"
+msgid "Vietnamese dong"
+msgstr "Dong vietnamita"
+
+#: modules/currencies.php:159
+msgctxt "currencies"
+msgid "Venezuelan bolívar"
+msgstr "Bolívar venezolano"
+
+#: modules/currencies.php:158
+msgctxt "currencies"
+msgid "Uzbekistan som"
+msgstr "Som uzbeko"
+
+#: modules/currencies.php:157
+msgctxt "currencies"
+msgid "Uruguayan peso"
+msgstr "Peso uruguayo"
+
+#: modules/currencies.php:156
+msgctxt "currencies"
+msgid "United States dollar"
+msgstr "Dólar estadounidense"
+
+#: modules/currencies.php:155
+msgctxt "currencies"
+msgid "Ugandan shilling"
+msgstr "Chelín ugandés"
+
+#: modules/currencies.php:154
+msgctxt "currencies"
+msgid "Ukrainian hryvnia"
+msgstr "Grivna ucraniana"
+
+#: modules/currencies.php:153
+msgctxt "currencies"
+msgid "Tanzanian shilling"
+msgstr "Chelín tanzano"
+
+#: modules/currencies.php:152
+msgctxt "currencies"
+msgid "New Taiwan dollar"
+msgstr "Nuevo dólar taiwanés"
+
+#: modules/currencies.php:151
+msgctxt "currencies"
+msgid "Trinidad and Tobago dollar"
+msgstr "Dólar de Trinidad y Tobago"
+
+#: modules/currencies.php:150
+msgctxt "currencies"
+msgid "Turkish lira"
+msgstr "Lira turca"
+
+#: modules/currencies.php:149
+msgctxt "currencies"
+msgid "Tongan paʻanga"
+msgstr "Dólar tongano"
+
+#: modules/currencies.php:148
+msgctxt "currencies"
+msgid "Tunisian dinar"
+msgstr "Dinar tunecino"
+
+#: modules/currencies.php:147
+msgctxt "currencies"
+msgid "Turkmenistani manat"
+msgstr "Manat turcomano"
+
+#: modules/currencies.php:146
+msgctxt "currencies"
+msgid "Tajikistani somoni"
+msgstr "Somoni tayiko"
+
+#: modules/currencies.php:145
+msgctxt "currencies"
+msgid "Thai baht"
+msgstr "Baht tailandés"
+
+#: modules/currencies.php:144
+msgctxt "currencies"
+msgid "Swazi lilangeni"
+msgstr "Swazi lilangeni"
+
+#: modules/currencies.php:143
+msgctxt "currencies"
+msgid "Syrian pound"
+msgstr "Libra síria"
+
+#: modules/currencies.php:142
+msgctxt "currencies"
+msgid "São Tomé and Príncipe dobra"
+msgstr "Dobra santotomense"
+
+#: modules/currencies.php:141
+msgctxt "currencies"
+msgid "South Sudanese pound"
+msgstr "Libra sursudanesa"
+
+#: modules/currencies.php:140
+msgctxt "currencies"
+msgid "Surinamese dollar"
+msgstr "Dólar surinamés"
+
+#: modules/currencies.php:139
+msgctxt "currencies"
+msgid "Somali shilling"
+msgstr "Chelín somalí"
+
+#: modules/currencies.php:138
+msgctxt "currencies"
+msgid "Sierra Leonean leone"
+msgstr "Leone"
+
+#: modules/currencies.php:137
+msgctxt "currencies"
+msgid "Saint Helena pound"
+msgstr "Libra de Santa Elena"
+
+#: modules/currencies.php:136
+msgctxt "currencies"
+msgid "Singapore dollar"
+msgstr "Dólar de Singapur"
+
+#: modules/currencies.php:135
+msgctxt "currencies"
+msgid "Swedish krona/kronor"
+msgstr "Corona sueca"
+
+#: modules/currencies.php:134
+msgctxt "currencies"
+msgid "Sudanese pound"
+msgstr "Libra sudanesa"
+
+#: modules/currencies.php:133
+msgctxt "currencies"
+msgid "Seychelles rupee"
+msgstr "Rupia de Seychelles"
+
+#: modules/currencies.php:132
+msgctxt "currencies"
+msgid "Solomon Islands dollar"
+msgstr "Dólar de las Islas Salomón"
+
+#: modules/currencies.php:131
+msgctxt "currencies"
+msgid "Saudi riyal"
+msgstr "Riyal saudí"
+
+#: modules/currencies.php:130
+msgctxt "currencies"
+msgid "Rwandan franc"
+msgstr "Franco ruandés"
+
+#: modules/currencies.php:129
+msgctxt "currencies"
+msgid "Russian ruble"
+msgstr "Rublo ruso"
+
+#: modules/currencies.php:128
+msgctxt "currencies"
+msgid "Serbian dinar"
+msgstr "Dinar serbio"
+
+#: modules/currencies.php:127
+msgctxt "currencies"
+msgid "Romanian new leu"
+msgstr "Leu rumano"
+
+#: modules/currencies.php:126
+msgctxt "currencies"
+msgid "Qatari riyal"
+msgstr "Riyal qatarí"
+
+#: modules/currencies.php:125
+msgctxt "currencies"
+msgid "Paraguayan guaraní"
+msgstr "Guaraní paraguayo"
+
+#: modules/currencies.php:124
+msgctxt "currencies"
+msgid "Polish złoty"
+msgstr "Zloty polaco"
+
+#: modules/currencies.php:123
+msgctxt "currencies"
+msgid "Pakistani rupee"
+msgstr "Rupia pakistaní"
+
+#: modules/currencies.php:122
+msgctxt "currencies"
+msgid "Philippine peso"
+msgstr "Peso filipino"
+
+#: modules/currencies.php:121
+msgctxt "currencies"
+msgid "Papua New Guinean kina"
+msgstr "Kina de Papúa Nueva Guinea"
+
+#: modules/currencies.php:120
+msgctxt "currencies"
+msgid "Peruvian nuevo sol"
+msgstr "Nuevo sol peruano"
+
+#: modules/currencies.php:119
+msgctxt "currencies"
+msgid "Panamanian balboa"
+msgstr "Balboa panameño"
+
+#: modules/currencies.php:118
+msgctxt "currencies"
+msgid "Omani rial"
+msgstr "Rial omaní"
+
+#: modules/currencies.php:117
+msgctxt "currencies"
+msgid "New Zealand dollar"
+msgstr "Dólar neozelandés"
+
+#: modules/currencies.php:116
+msgctxt "currencies"
+msgid "Nepalese rupee"
+msgstr "Rupia nepalí"
+
+#: modules/currencies.php:115
+msgctxt "currencies"
+msgid "Norwegian krone"
+msgstr "Corona noruega"
+
+#: modules/currencies.php:114
+msgctxt "currencies"
+msgid "Nicaraguan córdoba"
+msgstr "Córdoba nicaragüense"
+
+#: modules/currencies.php:113
+msgctxt "currencies"
+msgid "Nigerian naira"
+msgstr "Naira nigeriana"
+
+#: modules/currencies.php:112
+msgctxt "currencies"
+msgid "Namibian dollar"
+msgstr "Dólar namibio"
+
+#: modules/currencies.php:111
+msgctxt "currencies"
+msgid "Mozambican metical"
+msgstr "Metical mozambiqueño"
+
+#: modules/currencies.php:110
+msgctxt "currencies"
+msgid "Malaysian ringgit"
+msgstr "Ringgit malayo"
+
+#: modules/currencies.php:109
+msgctxt "currencies"
+msgid "Mexican peso"
+msgstr "Peso mexicano"
+
+#: modules/currencies.php:108
+msgctxt "currencies"
+msgid "Malawian kwacha"
+msgstr "Kwacha de Malawi"
+
+#: modules/currencies.php:107
+msgctxt "currencies"
+msgid "Maldivian rufiyaa"
+msgstr "Rupia de Maldivas"
+
+#: modules/currencies.php:106
+msgctxt "currencies"
+msgid "Mauritian rupee"
+msgstr "Rupia de Mauricio"
+
+#: modules/currencies.php:105
+msgctxt "currencies"
+msgid "Mauritanian ouguiya"
+msgstr "Uguiya mauritana"
+
+#: modules/currencies.php:104
+msgctxt "currencies"
+msgid "Macanese pataca"
+msgstr "Pataca macaense"
+
+#: modules/currencies.php:103
+msgctxt "currencies"
+msgid "Mongolian tugrik"
+msgstr "Tugrik mongol"
+
+#: modules/currencies.php:102
+msgctxt "currencies"
+msgid "Myanma kyat"
+msgstr "Myanma kyat"
+
+#: modules/currencies.php:101
+msgctxt "currencies"
+msgid "Macedonian denar"
+msgstr "Denar macedonio"
+
+#: modules/currencies.php:100
+msgctxt "currencies"
+msgid "Malagasy ariary"
+msgstr "Ariary malgache"
+
+#: modules/currencies.php:99
+msgctxt "currencies"
+msgid "Moldovan leu"
+msgstr "Leu moldavo"
+
+#: modules/currencies.php:98
+msgctxt "currencies"
+msgid "Moroccan dirham"
+msgstr "Dírham marroquí"
+
+#: modules/currencies.php:97
+msgctxt "currencies"
+msgid "Libyan dinar"
+msgstr "Dinar libio"
+
+#: modules/currencies.php:96
+msgctxt "currencies"
+msgid "Lithuanian litas"
+msgstr "Litas lituana"
+
+#: modules/currencies.php:95
+msgctxt "currencies"
+msgid "Lesotho loti"
+msgstr "Loti de Lesoto"
+
+#: modules/currencies.php:94
+msgctxt "currencies"
+msgid "Liberian dollar"
+msgstr "Dólar liberiano"
+
+#: modules/currencies.php:93
+msgctxt "currencies"
+msgid "Sri Lankan rupee"
+msgstr "Rupia de Sri Lanka"
+
+#: modules/currencies.php:92
+msgctxt "currencies"
+msgid "Lebanese pound"
+msgstr "Libra libanesa"
+
+#: modules/currencies.php:91
+msgctxt "currencies"
+msgid "Lao kip"
+msgstr "Kip laosiano"
+
+#: modules/currencies.php:90
+msgctxt "currencies"
+msgid "Kazakhstani tenge"
+msgstr "Tenge kazajo"
+
+#: modules/currencies.php:89
+msgctxt "currencies"
+msgid "Cayman Islands dollar"
+msgstr "Dólar de las Islas Caimán"
+
+#: modules/currencies.php:88
+msgctxt "currencies"
+msgid "Kuwaiti dinar"
+msgstr "Dinar kuwaití"
+
+#: modules/currencies.php:87
+msgctxt "currencies"
+msgid "South Korean won"
+msgstr "Won surcoreano"
+
+#: modules/currencies.php:86
+msgctxt "currencies"
+msgid "North Korean won"
+msgstr "Won norcoreano"
+
+#: modules/currencies.php:85
+msgctxt "currencies"
+msgid "Comoro franc"
+msgstr "Franco comorense"
+
+#: modules/currencies.php:84
+msgctxt "currencies"
+msgid "Cambodian riel"
+msgstr "Riel camboyano"
+
+#: modules/currencies.php:83
+msgctxt "currencies"
+msgid "Kyrgyzstani som"
+msgstr "Som kirguís"
+
+#: modules/currencies.php:82
+msgctxt "currencies"
+msgid "Kenyan shilling"
+msgstr "Chelín keniano"
+
+#: modules/currencies.php:81
+msgctxt "currencies"
+msgid "Japanese yen"
+msgstr "Yen japonés"
+
+#: modules/currencies.php:80
+msgctxt "currencies"
+msgid "Jordanian dinar"
+msgstr "Dinar jordano"
+
+#: modules/currencies.php:79
+msgctxt "currencies"
+msgid "Jamaican dollar"
+msgstr "Dólar jamaicano"
+
+#: modules/currencies.php:78
+msgctxt "currencies"
+msgid "Icelandic króna"
+msgstr "Corona islandesa"
+
+#: modules/currencies.php:77
+msgctxt "currencies"
+msgid "Iranian rial"
+msgstr "Rial iraní"
+
+#: modules/currencies.php:76
+msgctxt "currencies"
+msgid "Iraqi dinar"
+msgstr "Dinar iraquí"
+
+#: modules/currencies.php:75
+msgctxt "currencies"
+msgid "Indian rupee"
+msgstr "Rupia india"
+
+#: modules/currencies.php:74
+msgctxt "currencies"
+msgid "Israeli new shekel"
+msgstr "Nuevo séquel israelí"
+
+#: modules/currencies.php:73
+msgctxt "currencies"
+msgid "Indonesian rupiah"
+msgstr "Rupia indonesia"
+
+#: modules/currencies.php:72
+msgctxt "currencies"
+msgid "Hungarian forint"
+msgstr "Florín húngaro"
+
+#: modules/currencies.php:71
+msgctxt "currencies"
+msgid "Haitian gourde"
+msgstr "Gourde haitiano"
+
+#: modules/currencies.php:70
+msgctxt "currencies"
+msgid "Croatian kuna"
+msgstr "Kuna croata"
+
+#: modules/currencies.php:69
+msgctxt "currencies"
+msgid "Honduran lempira"
+msgstr "Lempira hondureña"
+
+#: modules/currencies.php:68
+msgctxt "currencies"
+msgid "Hong Kong dollar"
+msgstr "Dólar de Hong Kong"
+
+#: modules/currencies.php:67
+msgctxt "currencies"
+msgid "Guyanese dollar"
+msgstr "Dólar guyanés"
+
+#: modules/currencies.php:66
+msgctxt "currencies"
+msgid "Guatemalan quetzal"
+msgstr "Quetzal guatemalteco"
+
+#: modules/currencies.php:65
+msgctxt "currencies"
+msgid "Guinean franc"
+msgstr "Franco guineano"
+
+#: modules/currencies.php:64
+msgctxt "currencies"
+msgid "Gambian dalasi"
+msgstr "Dalasi de Gambia"
+
+#: modules/currencies.php:63
+msgctxt "currencies"
+msgid "Gibraltar pound"
+msgstr "Libra gibraltareña"
+
+#: modules/currencies.php:62
+msgctxt "currencies"
+msgid "Ghanaian cedi"
+msgstr "Cedí ghanés"
+
+#: modules/currencies.php:61
+msgctxt "currencies"
+msgid "Georgian lari"
+msgstr "Lari georgiano"
+
+#: modules/currencies.php:60
+msgctxt "currencies"
+msgid "Pound sterling"
+msgstr "Libra esterlina"
+
+#: modules/currencies.php:59
+msgctxt "currencies"
+msgid "Falkland Islands pound"
+msgstr "Libra malvinense"
+
+#: modules/currencies.php:58
+msgctxt "currencies"
+msgid "Fiji dollar"
+msgstr "Dólar de Islas Fiji"
+
+#: modules/currencies.php:57
+msgctxt "currencies"
+msgid "Euro"
+msgstr "Euro"
+
+#: modules/currencies.php:56
+msgctxt "currencies"
+msgid "Ethiopian birr"
+msgstr "Birr etíope"
+
+#: modules/currencies.php:55
+msgctxt "currencies"
+msgid "Eritrean nakfa"
+msgstr "Nafka eritreo"
+
+#: modules/currencies.php:54
+msgctxt "currencies"
+msgid "Egyptian pound"
+msgstr "Libra egipcia"
+
+#: modules/currencies.php:53
+msgctxt "currencies"
+msgid "Algerian dinar"
+msgstr "Dinar argelino"
+
+#: modules/currencies.php:52
+msgctxt "currencies"
+msgid "Dominican peso"
+msgstr "Peso dominicano"
+
+#: modules/currencies.php:51
+msgctxt "currencies"
+msgid "Danish krone"
+msgstr "Corona danesa"
+
+#: modules/currencies.php:50
+msgctxt "currencies"
+msgid "Djiboutian franc"
+msgstr "Franco de Djibouti"
+
+#: modules/currencies.php:49
+msgctxt "currencies"
+msgid "Czech koruna"
+msgstr "Corona checa"
+
+#: modules/currencies.php:48
+msgctxt "currencies"
+msgid "Cape Verde escudo"
+msgstr "Escudo caboverdiano"
+
+#: modules/currencies.php:47
+msgctxt "currencies"
+msgid "Cuban peso"
+msgstr "Peso cubano"
+
+#: modules/currencies.php:46
+msgctxt "currencies"
+msgid "Costa Rican colon"
+msgstr "Colón costarricense"
+
+#: modules/currencies.php:45
+msgctxt "currencies"
+msgid "Colombian peso"
+msgstr "Peso colombiano"
+
+#: modules/currencies.php:44
+msgctxt "currencies"
+msgid "Chinese yuan"
+msgstr "Yuan chino"
+
+#: modules/currencies.php:43
+msgctxt "currencies"
+msgid "Chilean peso"
+msgstr "Peso chileno"
+
+#: modules/currencies.php:42
+msgctxt "currencies"
+msgid "Swiss franc"
+msgstr "Franco suizo"
+
+#: modules/currencies.php:41
+msgctxt "currencies"
+msgid "Congolese franc"
+msgstr "Franco congoleño"
+
+#: modules/currencies.php:40
+msgctxt "currencies"
+msgid "Canadian dollar"
+msgstr "Dolar canadiense"
+
+#: modules/currencies.php:39
+msgctxt "currencies"
+msgid "Belize dollar"
+msgstr "Dólar beliceño"
+
+#: modules/currencies.php:38
+msgctxt "currencies"
+msgid "Belarusian ruble"
+msgstr "Rublo bielorruso"
+
+#: modules/currencies.php:37
+msgctxt "currencies"
+msgid "Botswana pula"
+msgstr "Pula de Botsuana"
+
+#: modules/currencies.php:36
+msgctxt "currencies"
+msgid "Bhutanese ngultrum"
+msgstr "Ngultrum butanés"
+
+#: modules/currencies.php:35
+msgctxt "currencies"
+msgid "Bahamian dollar"
+msgstr "Dólar bahameño"
+
+#: modules/currencies.php:34
+msgctxt "currencies"
+msgid "Brazilian real"
+msgstr "Real brasileño"
+
+#: modules/currencies.php:33
+msgctxt "currencies"
+msgid "Boliviano"
+msgstr "Boliviano"
+
+#: modules/currencies.php:32
+msgctxt "currencies"
+msgid "Brunei dollar"
+msgstr "Dólar de Brunei"
+
+#: modules/currencies.php:31
+msgctxt "currencies"
+msgid "Bermudian dollar"
+msgstr "Dólar bermudeño"
+
+#: modules/currencies.php:30
+msgctxt "currencies"
+msgid "Burundian franc"
+msgstr "Franco burundiano"
+
+#: modules/currencies.php:29
+msgctxt "currencies"
+msgid "Bahraini dinar"
+msgstr "Dinar bareiní"
+
+#: modules/currencies.php:28
+msgctxt "currencies"
+msgid "Bulgarian lev"
+msgstr "Lev búlgaro"
+
+#: modules/currencies.php:27
+msgctxt "currencies"
+msgid "Bangladeshi taka"
+msgstr "Taka bangladesí"
+
+#: modules/currencies.php:26
+msgctxt "currencies"
+msgid "Barbados dollar"
+msgstr "Dólar de Barbados"
+
+#: modules/currencies.php:25
+msgctxt "currencies"
+msgid "Bosnia and Herzegovina convertible mark"
+msgstr "Marco convertible de Bosnia-Herzegovina"
+
+#: modules/currencies.php:24
+msgctxt "currencies"
+msgid "Azerbaijani manat"
+msgstr "Manat azerbaiyano"
+
+#: modules/currencies.php:23
+msgctxt "currencies"
+msgid "Aruban florin"
+msgstr "Florín arubeño"
+
+#: modules/currencies.php:22
+msgctxt "currencies"
+msgid "Australian dollar"
+msgstr "Dólar australiano"
+
+#: modules/currencies.php:21
+msgctxt "currencies"
+msgid "Argentine peso"
+msgstr "Peso argentino"
+
+#: modules/currencies.php:20
+msgctxt "currencies"
+msgid "Angolan kwanza"
+msgstr "Kwanza angoleño"
+
+#: modules/currencies.php:19
+msgctxt "currencies"
+msgid "Netherlands Antillean guilder"
+msgstr "Florín neerlandés"
+
+#: modules/currencies.php:18
+msgctxt "currencies"
+msgid "Armenian dram"
+msgstr "Dram armenio"
+
+#: modules/currencies.php:17
+msgctxt "currencies"
+msgid "Albanian lek"
+msgstr "Lek albanés"
+
+#: modules/currencies.php:16
+msgctxt "currencies"
+msgid "Afghan afghani"
+msgstr "Afgani afgano"
+
+#: modules/currencies.php:15
+msgctxt "currencies"
+msgid "United Arab Emirates dirham"
+msgstr "Dírham de los Emiratos Árabes Unidos"
+
+#: modules/countries.php:260
+msgctxt "countries"
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+#: modules/countries.php:259
+msgctxt "countries"
+msgid "Zambia"
+msgstr "Zambia"
+
+#: modules/countries.php:258
+msgctxt "countries"
+msgid "South Africa"
+msgstr "Sudáfrica"
+
+#: modules/countries.php:257
+msgctxt "countries"
+msgid "Yemen"
+msgstr "Yemen"
+
+#: modules/countries.php:256
+msgctxt "countries"
+msgid "Samoa"
+msgstr "Samoa"
+
+#: modules/countries.php:255
+msgctxt "countries"
+msgid "Wallis and Futuna"
+msgstr "Wallis y Futuna"
+
+#: modules/countries.php:254
+msgctxt "countries"
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: modules/countries.php:253
+msgctxt "countries"
+msgid "Viet Nam"
+msgstr "Vietnam"
+
+#: modules/countries.php:252
+msgctxt "countries"
+msgid "Virgin Islands, U.S."
+msgstr "Islas Vírgenes de los Estados Unidos"
+
+#: modules/countries.php:251
+msgctxt "countries"
+msgid "Virgin Islands, British"
+msgstr "Islas Vírgenes Británicas"
+
+#: modules/countries.php:250
+msgctxt "countries"
+msgid "Venezuela, Bolivarian Republic of"
+msgstr "Venezuela"
+
+#: modules/countries.php:249
+msgctxt "countries"
+msgid "Saint Vincent and the Grenadines"
+msgstr "San Vicente y las Granadinas"
+
+#: modules/countries.php:248
+msgctxt "countries"
+msgid "Holy See (Vatican City State)"
+msgstr "Ciudad del Vaticano"
+
+#: modules/countries.php:247
+msgctxt "countries"
+msgid "Uzbekistan"
+msgstr "Uzbekistán"
+
+#: modules/countries.php:246
+msgctxt "countries"
+msgid "United States"
+msgstr "Estados Unidos de América"
+
+#: modules/countries.php:245
+msgctxt "countries"
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: modules/countries.php:244
+msgctxt "countries"
+msgid "United States Minor Outlying Islands"
+msgstr "Islas Ultramarinas Menores de Estados Unidos"
+
+#: modules/countries.php:243
+msgctxt "countries"
+msgid "Ukraine"
+msgstr "Ucrania"
+
+#: modules/countries.php:242
+msgctxt "countries"
+msgid "Uganda"
+msgstr "Uganda"
+
+#: modules/countries.php:241
+msgctxt "countries"
+msgid "Tanzania, United Republic of"
+msgstr "Tanzania"
+
+#: modules/countries.php:240
+msgctxt "countries"
+msgid "Taiwan, Province of China"
+msgstr "Taiwán"
+
+#: modules/countries.php:239
+msgctxt "countries"
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: modules/countries.php:238
+msgctxt "countries"
+msgid "Turkey"
+msgstr "Turquía"
+
+#: modules/countries.php:237
+msgctxt "countries"
+msgid "Tunisia"
+msgstr "Tunez"
+
+#: modules/countries.php:236
+msgctxt "countries"
+msgid "Trinidad and Tobago"
+msgstr "Trinidad y Tobago"
+
+#: modules/countries.php:235
+msgctxt "countries"
+msgid "Tonga"
+msgstr "Tonga"
+
+#: modules/countries.php:234
+msgctxt "countries"
+msgid "Timor-Leste"
+msgstr "Timor Oriental"
+
+#: modules/countries.php:233
+msgctxt "countries"
+msgid "Turkmenistan"
+msgstr "Turkmenistan"
+
+#: modules/countries.php:232
+msgctxt "countries"
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: modules/countries.php:231
+msgctxt "countries"
+msgid "Tajikistan"
+msgstr "Tadjikistán"
+
+#: modules/countries.php:230
+msgctxt "countries"
+msgid "Thailand"
+msgstr "Tailandia"
+
+#: modules/countries.php:229
+msgctxt "countries"
+msgid "Togo"
+msgstr "Togo"
+
+#: modules/countries.php:228
+msgctxt "countries"
+msgid "Chad"
+msgstr "Chad"
+
+#: modules/countries.php:227
+msgctxt "countries"
+msgid "Turks and Caicos Islands"
+msgstr "Islas Turcas y Caicos"
+
+#: modules/countries.php:226
+msgctxt "countries"
+msgid "Syrian Arab Republic"
+msgstr "Siria"
+
+#: modules/countries.php:225
+msgctxt "countries"
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: modules/countries.php:224
+msgctxt "countries"
+msgid "Sint Maarten (Dutch part)"
+msgstr "Sint Maarten"
+
+#: modules/countries.php:223
+msgctxt "countries"
+msgid "Swaziland"
+msgstr "Swazilandia"
+
+#: modules/countries.php:222
+msgctxt "countries"
+msgid "Sweden"
+msgstr "Suecia"
+
+#: modules/countries.php:221
+msgctxt "countries"
+msgid "Slovenia"
+msgstr "Eslovenia"
+
+#: modules/countries.php:220
+msgctxt "countries"
+msgid "Slovakia"
+msgstr "Eslovaquia"
+
+#: modules/countries.php:219
+msgctxt "countries"
+msgid "Suriname"
+msgstr "Surinám"
+
+#: modules/countries.php:218
+msgctxt "countries"
+msgid "Sao Tome and Principe"
+msgstr "Santo Tomé y Príncipe"
+
+#: modules/countries.php:217
+msgctxt "countries"
+msgid "South Sudan"
+msgstr "Sudán del Sur"
+
+#: modules/countries.php:216
+msgctxt "countries"
+msgid "Serbia"
+msgstr "Serbia"
+
+#: modules/countries.php:215
+msgctxt "countries"
+msgid "Saint Pierre and Miquelon"
+msgstr "San Pedro y Miquelón"
+
+#: modules/countries.php:214
+msgctxt "countries"
+msgid "Somalia"
+msgstr "Somalia"
+
+#: modules/countries.php:213
+msgctxt "countries"
+msgid "San Marino"
+msgstr "San Marino"
+
+#: modules/countries.php:212
+msgctxt "countries"
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: modules/countries.php:211
+msgctxt "countries"
+msgid "Sierra Leone"
+msgstr "Sierra Leona"
+
+#: modules/countries.php:210
+msgctxt "countries"
+msgid "Solomon Islands"
+msgstr "Solomon Islands"
+
+#: modules/countries.php:209
+msgctxt "countries"
+msgid "Svalbard and Jan Mayen"
+msgstr "Svalbard y Jan Mayen"
+
+#: modules/countries.php:208
+msgctxt "countries"
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr "Santa Elena"
+
+#: modules/countries.php:207
+msgctxt "countries"
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "Islas Georgias del Sur y Sandwich del Sur"
+
+#: modules/countries.php:206
+msgctxt "countries"
+msgid "Singapore"
+msgstr "Singapur"
+
+#: modules/countries.php:205
+msgctxt "countries"
+msgid "Senegal"
+msgstr "Senegal"
+
+#: modules/countries.php:204
+msgctxt "countries"
+msgid "Sudan"
+msgstr "Sudán"
+
+#: modules/countries.php:203
+msgctxt "countries"
+msgid "Saudi Arabia"
+msgstr "Arabia Saudita"
+
+#: modules/countries.php:202
+msgctxt "countries"
+msgid "Rwanda"
+msgstr "Ruanda"
+
+#: modules/countries.php:201
+msgctxt "countries"
+msgid "Russian Federation"
+msgstr "Rusia"
+
+#: modules/countries.php:200
+msgctxt "countries"
+msgid "Romania"
+msgstr "Rumanía"
+
+#: modules/countries.php:199
+msgctxt "countries"
+msgid "Réunion"
+msgstr "Reunión"
+
+#: modules/countries.php:198
+msgctxt "countries"
+msgid "Qatar"
+msgstr "Qatar"
+
+#: modules/countries.php:197
+msgctxt "countries"
+msgid "French Polynesia"
+msgstr "Polinesia Francesa"
+
+#: modules/countries.php:196
+msgctxt "countries"
+msgid "Palestine, State of"
+msgstr "Palestina"
+
+#: modules/countries.php:195
+msgctxt "countries"
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: modules/countries.php:194
+msgctxt "countries"
+msgid "Portugal"
+msgstr "Portugal"
+
+#: modules/countries.php:193
+msgctxt "countries"
+msgid "Korea, Democratic People's Republic of"
+msgstr "Corea del Norte"
+
+#: modules/countries.php:192
+msgctxt "countries"
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: modules/countries.php:191
+msgctxt "countries"
+msgid "Poland"
+msgstr "Polonia"
+
+#: modules/countries.php:190
+msgctxt "countries"
+msgid "Papua New Guinea"
+msgstr "Papúa Nueva Guinea"
+
+#: modules/countries.php:189
+msgctxt "countries"
+msgid "Palau"
+msgstr "Palau"
+
+#: modules/countries.php:188
+msgctxt "countries"
+msgid "Philippines"
+msgstr "Filipinas"
+
+#: modules/countries.php:187
+msgctxt "countries"
+msgid "Peru"
+msgstr "Perú"
+
+#: modules/countries.php:186
+msgctxt "countries"
+msgid "Pitcairn"
+msgstr "Pitcairn"
+
+#: modules/countries.php:185
+msgctxt "countries"
+msgid "Panama"
+msgstr "Panamá"
+
+#: modules/countries.php:184
+msgctxt "countries"
+msgid "Pakistan"
+msgstr "Pakistán"
+
+#: modules/countries.php:183
+msgctxt "countries"
+msgid "Oman"
+msgstr "Omán"
+
+#: modules/countries.php:182
+msgctxt "countries"
+msgid "New Zealand"
+msgstr "Nueva Zelanda"
+
+#: modules/countries.php:181
+msgctxt "countries"
+msgid "Nauru"
+msgstr "Nauru"
+
+#: modules/countries.php:180
+msgctxt "countries"
+msgid "Nepal"
+msgstr "Nepal"
+
+#: modules/countries.php:179
+msgctxt "countries"
+msgid "Norway"
+msgstr "Norway"
+
+#: modules/countries.php:178
+msgctxt "countries"
+msgid "Netherlands"
+msgstr "Países Bajos"
+
+#: modules/countries.php:177
+msgctxt "countries"
+msgid "Niue"
+msgstr "Niue"
+
+#: modules/countries.php:176
+msgctxt "countries"
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: modules/countries.php:175
+msgctxt "countries"
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: modules/countries.php:174
+msgctxt "countries"
+msgid "Norfolk Island"
+msgstr "Norfolk Island"
+
+#: modules/countries.php:173
+msgctxt "countries"
+msgid "Niger"
+msgstr "Niger"
+
+#: modules/countries.php:172
+msgctxt "countries"
+msgid "New Caledonia"
+msgstr "Nueva Caledonia"
+
+#: modules/countries.php:171
+msgctxt "countries"
+msgid "Namibia"
+msgstr "Namibia"
+
+#: modules/countries.php:170
+msgctxt "countries"
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: modules/countries.php:169
+msgctxt "countries"
+msgid "Malaysia"
+msgstr "Malasia"
+
+#: modules/countries.php:168
+msgctxt "countries"
+msgid "Malawi"
+msgstr "Malawi"
+
+#: modules/countries.php:167
+msgctxt "countries"
+msgid "Mauritius"
+msgstr "Mauricio"
+
+#: modules/countries.php:166
+msgctxt "countries"
+msgid "Martinique"
+msgstr "Martinica"
+
+#: modules/countries.php:165
+msgctxt "countries"
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: modules/countries.php:164
+msgctxt "countries"
+msgid "Mauritania"
+msgstr "Mauritania"
+
+#: modules/countries.php:163
+msgctxt "countries"
+msgid "Mozambique"
+msgstr "Mozambique"
+
+#: modules/countries.php:162
+msgctxt "countries"
+msgid "Northern Mariana Islands"
+msgstr "Islas Marianas del Norte"
+
+#: modules/countries.php:161
+msgctxt "countries"
+msgid "Mongolia"
+msgstr "Mongolia"
+
+#: modules/countries.php:160
+msgctxt "countries"
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: modules/countries.php:159
+msgctxt "countries"
+msgid "Myanmar"
+msgstr "Birmania"
+
+#: modules/countries.php:158
+msgctxt "countries"
+msgid "Malta"
+msgstr "Malta"
+
+#: modules/countries.php:157
+msgctxt "countries"
+msgid "Mali"
+msgstr "Mali"
+
+#: modules/countries.php:156
+msgctxt "countries"
+msgid "Macedonia, the former Yugoslav Republic of"
+msgstr "Macedônia"
+
+#: modules/countries.php:155
+msgctxt "countries"
+msgid "Marshall Islands"
+msgstr "Islas Marshall"
+
+#: modules/countries.php:154
+msgctxt "countries"
+msgid "Mexico"
+msgstr "Mexico"
+
+#: modules/countries.php:153
+msgctxt "countries"
+msgid "Maldives"
+msgstr "Islas Maldivas"
+
+#: modules/countries.php:152
+msgctxt "countries"
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: modules/countries.php:151
+msgctxt "countries"
+msgid "Moldova, Republic of"
+msgstr "Moldavia"
+
+#: modules/countries.php:150
+msgctxt "countries"
+msgid "Monaco"
+msgstr "Monaco"
+
+#: modules/countries.php:149
+msgctxt "countries"
+msgid "Morocco"
+msgstr "Marruecos"
+
+#: modules/countries.php:148
+msgctxt "countries"
+msgid "Saint Martin (French part)"
+msgstr "San Martín (Francia)"
+
+#: modules/countries.php:147
+msgctxt "countries"
+msgid "Macao"
+msgstr "Macao"
+
+#: modules/countries.php:146
+msgctxt "countries"
+msgid "Latvia"
+msgstr "Letonia"
+
+#: modules/countries.php:145
+msgctxt "countries"
+msgid "Luxembourg"
+msgstr "Luxemburgo"
+
+#: modules/countries.php:144
+msgctxt "countries"
+msgid "Lithuania"
+msgstr "Lituania"
+
+#: modules/countries.php:143
+msgctxt "countries"
+msgid "Lesotho"
+msgstr "Lesoto"
+
+#: modules/countries.php:142
+msgctxt "countries"
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: modules/countries.php:141
+msgctxt "countries"
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: modules/countries.php:140
+msgctxt "countries"
+msgid "Saint Lucia"
+msgstr "Santa Lucía"
+
+#: modules/countries.php:139
+msgctxt "countries"
+msgid "Libya"
+msgstr "Libia"
+
+#: modules/countries.php:138
+msgctxt "countries"
+msgid "Liberia"
+msgstr "Liberia"
+
+#: modules/countries.php:137
+msgctxt "countries"
+msgid "Lebanon"
+msgstr "Lebanon"
+
+#: modules/countries.php:136
+msgctxt "countries"
+msgid "Lao People's Democratic Republic"
+msgstr "República Popular Democrática de Laos"
+
+#: modules/countries.php:135
+msgctxt "countries"
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: modules/countries.php:134
+msgctxt "countries"
+msgid "Korea, Republic of"
+msgstr "Corea del Sur"
+
+#: modules/countries.php:133
+msgctxt "countries"
+msgid "Saint Kitts and Nevis"
+msgstr "Saint Kitts and Nevis"
+
+#: modules/countries.php:132
+msgctxt "countries"
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: modules/countries.php:131
+msgctxt "countries"
+msgid "Cambodia"
+msgstr "Camboya"
+
+#: modules/countries.php:130
+msgctxt "countries"
+msgid "Kyrgyzstan"
+msgstr "Kirgizstán"
+
+#: modules/countries.php:129
+msgctxt "countries"
+msgid "Kenya"
+msgstr "Kenia"
+
+#: modules/countries.php:128
+msgctxt "countries"
+msgid "Kazakhstan"
+msgstr "Kazajistán"
+
+#: modules/countries.php:127
+msgctxt "countries"
+msgid "Japan"
+msgstr "Japón"
+
+#: modules/countries.php:126
+msgctxt "countries"
+msgid "Jordan"
+msgstr "Jordania"
+
+#: modules/countries.php:125
+msgctxt "countries"
+msgid "Jersey"
+msgstr "Jersey"
+
+#: modules/countries.php:124
+msgctxt "countries"
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: modules/countries.php:123
+msgctxt "countries"
+msgid "Italy"
+msgstr "Italia"
+
+#: modules/countries.php:122
+msgctxt "countries"
+msgid "Israel"
+msgstr "Israel"
+
+#: modules/countries.php:121
+msgctxt "countries"
+msgid "Iceland"
+msgstr "Islandia"
+
+#: modules/countries.php:120
+msgctxt "countries"
+msgid "Iraq"
+msgstr "Irak"
+
+#: modules/countries.php:119
+msgctxt "countries"
+msgid "Iran, Islamic Republic of"
+msgstr "Irán, República Islámica de"
+
+#: modules/countries.php:118
+msgctxt "countries"
+msgid "Ireland"
+msgstr "Irlanda"
+
+#: modules/countries.php:117
+msgctxt "countries"
+msgid "British Indian Ocean Territory"
+msgstr "Territorio Británico del Océano Índico"
+
+#: modules/countries.php:116
+msgctxt "countries"
+msgid "India"
+msgstr "India"
+
+#: modules/countries.php:115
+msgctxt "countries"
+msgid "Isle of Man"
+msgstr "Isla de Man"
+
+#: modules/countries.php:114
+msgctxt "countries"
+msgid "Indonesia"
+msgstr "Indonesia"
+
+#: modules/countries.php:113
+msgctxt "countries"
+msgid "Hungary"
+msgstr "Hungría"
+
+#: modules/countries.php:112
+msgctxt "countries"
+msgid "Haiti"
+msgstr "Haití"
+
+#: modules/countries.php:111
+msgctxt "countries"
+msgid "Croatia"
+msgstr "Croacia"
+
+#: modules/countries.php:110
+msgctxt "countries"
+msgid "Honduras"
+msgstr "Honduras"
+
+#: modules/countries.php:109
+msgctxt "countries"
+msgid "Heard Island and McDonald Islands"
+msgstr "Islas Heard y McDonald"
+
+#: modules/countries.php:108
+msgctxt "countries"
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: modules/countries.php:107
+msgctxt "countries"
+msgid "Guyana"
+msgstr "Guyana"
+
+#: modules/countries.php:106
+msgctxt "countries"
+msgid "Guam"
+msgstr "Guam"
+
+#: modules/countries.php:105
+msgctxt "countries"
+msgid "French Guiana"
+msgstr "Guayana Francesa"
+
+#: modules/countries.php:104
+msgctxt "countries"
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: modules/countries.php:103
+msgctxt "countries"
+msgid "Greenland"
+msgstr "Groenlandia"
+
+#: modules/countries.php:102
+msgctxt "countries"
+msgid "Grenada"
+msgstr "Granada"
+
+#: modules/countries.php:101
+msgctxt "countries"
+msgid "Greece"
+msgstr "Grecia"
+
+#: modules/countries.php:100
+msgctxt "countries"
+msgid "Equatorial Guinea"
+msgstr "Guinea Ecuatorial"
+
+#: modules/countries.php:99
+msgctxt "countries"
+msgid "Guinea-Bissau"
+msgstr "Guinea-Bissau"
+
+#: modules/countries.php:98
+msgctxt "countries"
+msgid "Gambia"
+msgstr "Gambia"
+
+#: modules/countries.php:97
+msgctxt "countries"
+msgid "Guadeloupe"
+msgstr "Guadalupe"
+
+#: modules/countries.php:96
+msgctxt "countries"
+msgid "Guinea"
+msgstr "Guinea"
+
+#: modules/countries.php:95
+msgctxt "countries"
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: modules/countries.php:94
+msgctxt "countries"
+msgid "Ghana"
+msgstr "Ghana"
+
+#: modules/countries.php:93
+msgctxt "countries"
+msgid "Guernsey"
+msgstr "Guernsey"
+
+#: modules/countries.php:92
+msgctxt "countries"
+msgid "Georgia"
+msgstr "Georgia"
+
+#: modules/countries.php:91
+msgctxt "countries"
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+#: modules/countries.php:90
+msgctxt "countries"
+msgid "Gabon"
+msgstr "Gabon"
+
+#: modules/countries.php:89
+msgctxt "countries"
+msgid "Micronesia, Federated States of"
+msgstr "Micronesia"
+
+#: modules/countries.php:88
+msgctxt "countries"
+msgid "Faroe Islands"
+msgstr "Islas Feroe"
+
+#: modules/countries.php:87
+msgctxt "countries"
+msgid "France"
+msgstr "Francia"
+
+#: modules/countries.php:86
+msgctxt "countries"
+msgid "Falkland Islands (Malvinas)"
+msgstr "Islas Malvinas"
+
+#: modules/countries.php:85
+msgctxt "countries"
+msgid "Fiji"
+msgstr "Fiji"
+
+#: modules/countries.php:84
+msgctxt "countries"
+msgid "Finland"
+msgstr "Finlandia"
+
+#: modules/countries.php:83
+msgctxt "countries"
+msgid "Ethiopia"
+msgstr "Etiopía"
+
+#: modules/countries.php:82
+msgctxt "countries"
+msgid "Estonia"
+msgstr "Estonia"
+
+#: modules/countries.php:81
+msgctxt "countries"
+msgid "Spain"
+msgstr "España"
+
+#: modules/countries.php:80
+msgctxt "countries"
+msgid "Western Sahara"
+msgstr "Sahara Occidental"
+
+#: modules/countries.php:79
+msgctxt "countries"
+msgid "Eritrea"
+msgstr "Eritrea"
+
+#: modules/countries.php:78
+msgctxt "countries"
+msgid "Egypt"
+msgstr "Egipto"
+
+#: modules/countries.php:77
+msgctxt "countries"
+msgid "Ecuador"
+msgstr "Ecuador"
+
+#: modules/countries.php:76
+msgctxt "countries"
+msgid "Algeria"
+msgstr "Argelia"
+
+#: modules/countries.php:75
+msgctxt "countries"
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+#: modules/countries.php:74
+msgctxt "countries"
+msgid "Denmark"
+msgstr "Dinamarca"
+
+#: modules/countries.php:73
+msgctxt "countries"
+msgid "Dominica"
+msgstr "Dominica"
+
+#: modules/countries.php:72
+msgctxt "countries"
+msgid "Djibouti"
+msgstr "Yibuti"
+
+#: modules/countries.php:71
+msgctxt "countries"
+msgid "Germany"
+msgstr "Alemania"
+
+#: modules/countries.php:70
+msgctxt "countries"
+msgid "Czech Republic"
+msgstr "República Checa"
+
+#: modules/countries.php:69
+msgctxt "countries"
+msgid "Cyprus"
+msgstr "Chipre"
+
+#: modules/countries.php:68
+msgctxt "countries"
+msgid "Cayman Islands"
+msgstr "Islas Caimán"
+
+#: modules/countries.php:67
+msgctxt "countries"
+msgid "Christmas Island"
+msgstr "Isla de Navidad"
+
+#: modules/countries.php:66
+msgctxt "countries"
+msgid "Curaçao"
+msgstr "Curazao"
+
+#: modules/countries.php:65
+msgctxt "countries"
+msgid "Cuba"
+msgstr "Cuba"
+
+#: modules/countries.php:64
+msgctxt "countries"
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: modules/countries.php:63
+msgctxt "countries"
+msgid "Cape Verde"
+msgstr "Cabo Verde"
+
+#: modules/countries.php:62
+msgctxt "countries"
+msgid "Comoros"
+msgstr "Comoras"
+
+#: modules/countries.php:61
+msgctxt "countries"
+msgid "Colombia"
+msgstr "Colombia"
+
+#: modules/countries.php:60
+msgctxt "countries"
+msgid "Cook Islands"
+msgstr "Islas Cook"
+
+#: modules/countries.php:59
+msgctxt "countries"
+msgid "Congo"
+msgstr "Congo"
+
+#: modules/countries.php:58
+msgctxt "countries"
+msgid "Congo, the Democratic Republic of the"
+msgstr "Congo, República Democrática del"
+
+#: modules/countries.php:57
+msgctxt "countries"
+msgid "Cameroon"
+msgstr "Camerún"
+
+#: modules/countries.php:56
+msgctxt "countries"
+msgid "Côte d'Ivoire"
+msgstr "Costa de Marfil"
+
+#: modules/countries.php:55
+msgctxt "countries"
+msgid "China"
+msgstr "China"
+
+#: modules/countries.php:54
+msgctxt "countries"
+msgid "Chile"
+msgstr "Chile"
+
+#: modules/countries.php:53
+msgctxt "countries"
+msgid "Switzerland"
+msgstr "Suiza"
+
+#: modules/countries.php:52
+msgctxt "countries"
+msgid "Cocos (Keeling) Islands"
+msgstr "Islas Cocos (Keeling)"
+
+#: modules/countries.php:51
+msgctxt "countries"
+msgid "Canada"
+msgstr "Canada"
+
+#: modules/countries.php:50
+msgctxt "countries"
+msgid "Central African Republic"
+msgstr "República Centroafricana"
+
+#: modules/countries.php:49
+msgctxt "countries"
+msgid "Botswana"
+msgstr "Botsuana"
+
+#: modules/countries.php:48
+msgctxt "countries"
+msgid "Bouvet Island"
+msgstr "Isla Bouvet"
+
+#: modules/countries.php:47
+msgctxt "countries"
+msgid "Bhutan"
+msgstr "Bhután"
+
+#: modules/countries.php:46
+msgctxt "countries"
+msgid "Brunei Darussalam"
+msgstr "Brunéi"
+
+#: modules/countries.php:45
+msgctxt "countries"
+msgid "Barbados"
+msgstr "Barbados"
+
+#: modules/countries.php:44
+msgctxt "countries"
+msgid "Brazil"
+msgstr "Brasil"
+
+#: modules/countries.php:43
+msgctxt "countries"
+msgid "Bolivia, Plurinational State of"
+msgstr "Bolivia"
+
+#: modules/countries.php:42
+msgctxt "countries"
+msgid "Bermuda"
+msgstr "Islas Bermudas"
+
+#: modules/countries.php:41
+msgctxt "countries"
+msgid "Belize"
+msgstr "Belice"
+
+#: modules/countries.php:40
+msgctxt "countries"
+msgid "Belarus"
+msgstr "Bielorrusia"
+
+#: modules/countries.php:39
+msgctxt "countries"
+msgid "Saint Barthélemy"
+msgstr "San Bartolomé"
+
+#: modules/countries.php:38
+msgctxt "countries"
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnia and Herzegovina"
+
+#: modules/countries.php:37
+msgctxt "countries"
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: modules/countries.php:36
+msgctxt "countries"
+msgid "Bahrain"
+msgstr "Bahrein"
+
+#: modules/countries.php:35
+msgctxt "countries"
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+#: modules/countries.php:34
+msgctxt "countries"
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: modules/countries.php:33
+msgctxt "countries"
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: modules/countries.php:32
+msgctxt "countries"
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr "Bonaire, San Eustaquio y Saba"
+
+#: modules/countries.php:31
+msgctxt "countries"
+msgid "Benin"
+msgstr "Benín"
+
+#: modules/countries.php:30
+msgctxt "countries"
+msgid "Belgium"
+msgstr "Bélgica"
+
+#: modules/countries.php:29
+msgctxt "countries"
+msgid "Burundi"
+msgstr "Burundi"
+
+#: modules/countries.php:28
+msgctxt "countries"
+msgid "Azerbaijan"
+msgstr "Azerbayán"
+
+#: modules/countries.php:27
+msgctxt "countries"
+msgid "Austria"
+msgstr "Austria"
+
+#: modules/countries.php:26
+msgctxt "countries"
+msgid "Australia"
+msgstr "Australia"
+
+#: modules/countries.php:25
+msgctxt "countries"
+msgid "Antigua and Barbuda"
+msgstr "Antigua and Barbuda"
+
+#: modules/countries.php:24
+msgctxt "countries"
+msgid "French Southern Territories"
+msgstr "Territorios Australes y Antárticas Franceses"
+
+#: modules/countries.php:23
+msgctxt "countries"
+msgid "Antarctica"
+msgstr "Antarctica"
+
+#: modules/countries.php:22
+msgctxt "countries"
+msgid "American Samoa"
+msgstr "Samoa Americana"
+
+#: modules/countries.php:21
+msgctxt "countries"
+msgid "Armenia"
+msgstr "Armenia"
+
+#: modules/countries.php:20
+msgctxt "countries"
+msgid "Argentina"
+msgstr "Argentina"
+
+#: modules/countries.php:19
+msgctxt "countries"
+msgid "United Arab Emirates"
+msgstr "Emiratos Árabes Unidos"
+
+#: modules/countries.php:18
+msgctxt "countries"
+msgid "Andorra"
+msgstr "Andorra"
+
+#: modules/countries.php:17
+msgctxt "countries"
+msgid "Albania"
+msgstr "Albania"
+
+#: modules/countries.php:16
+msgctxt "countries"
+msgid "Åland Islands"
+msgstr "Islas de Åland"
+
+#: modules/countries.php:15
+msgctxt "countries"
+msgid "Anguilla"
+msgstr "Anguila"
+
+#: modules/countries.php:14
+msgctxt "countries"
+msgid "Angola"
+msgstr "Angola"
+
+#: modules/countries.php:13
+msgctxt "countries"
+msgid "Afghanistan"
+msgstr "Afganistán"
+
+#: modules/countries.php:12
+msgctxt "countries"
+msgid "Aruba"
+msgstr "Aruba"

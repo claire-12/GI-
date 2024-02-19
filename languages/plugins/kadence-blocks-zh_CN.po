@@ -1,0 +1,914 @@
+# Translation of Plugins - Gutenberg Blocks by Kadence Blocks – Page Builder Features - Stable (latest release) in Chinese (China)
+# This file is distributed under the same license as the Plugins - Gutenberg Blocks by Kadence Blocks – Page Builder Features - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-10-09 02:30:49+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: zh_CN\n"
+"Project-Id-Version: Plugins - Gutenberg Blocks by Kadence Blocks – Page Builder Features - Stable (latest release)\n"
+
+#: dist/settings/class-kadence-blocks-settings.php:827
+msgid "Upgrade Kadence Blocks"
+msgstr "升级Kadence区块"
+
+#: dist/settings/class-kadence-blocks-settings.php:825
+msgid "Premium Design Library"
+msgstr "高级设计库"
+
+#: dist/settings/class-kadence-blocks-settings.php:823
+msgid "Custom Icons"
+msgstr "自定义图标"
+
+#: dist/settings/class-kadence-blocks-settings.php:821
+msgid "Pro Block Addons"
+msgstr "高级区块附加"
+
+#: dist/settings/class-kadence-blocks-settings.php:820
+msgid "10 Pro Blocks"
+msgstr "10个高级区块"
+
+#: dist/settings/class-kadence-blocks-settings.php:818
+msgid "Kadence Blocks Pro"
+msgstr "Kadence Blocks Pro"
+
+#: dist/settings/class-kadence-blocks-settings.php:554
+msgid "Google Maps API Key"
+msgstr "谷歌地图 API 密钥"
+
+#: dist/settings/class-kadence-blocks-settings.php:881 dist/build/blocks.js:35
+#: dist/plugin/plugin.js:8
+msgid "Advanced Text"
+msgstr "高级文本"
+
+#: dist/init.php:147
+msgid "%s and higher"
+msgstr "%s 或更高版本"
+
+#: dist/settings/class-kadence-blocks-settings.php:922
+msgid "Increase your conversions by adding a sense of urgency to your offering. Pro includes evergreen campaigns as well."
+msgstr "通过为您的产品增加紧迫感来增加您的转化率。专业版还包括常青活动。"
+
+#: dist/settings/class-kadence-blocks-settings.php:917
+msgid "Display a clean grid of posts anywhere on your site, great for your home page where you want to tease your blog."
+msgstr "在您网站上的任何位置显示一个干净的文章网格，非常适合你想丰富博客内容的网站首页。"
+
+#: dist/settings/class-kadence-blocks-settings.php:912
+msgid "Allow your readers to navigate your content easily with a table of contents block. Includes smooth scroll to anchor."
+msgstr "允许您的读者使用内容目录快速浏览内容，并可以平滑滚动到锚点。"
+
+#: dist/settings/class-kadence-blocks-settings.php:894
+msgid "Create a box containing an icon or image and, optionally, a title, description, and learn more text. Style static and hover separately."
+msgstr "创建一个包含图标或图像，可选的标题、描述和了解更多文本的盒子，可以分别设置默认样式和悬停样式。"
+
+#: dist/settings/class-kadence-blocks-settings.php:865
+msgid "Add an extra \"wow\" factor to your site with engaging Lottie animations."
+msgstr "通过引人入胜的Lottie动画为您的网站添加额外的“哇塞”因素。"
+
+#: dist/settings/class-kadence-blocks-settings.php:864
+msgid "Lottie Animations"
+msgstr "Lottie动画"
+
+#: dist/settings/class-kadence-blocks-settings.php:752
+msgid "Manage Lottie Animations"
+msgstr "管理Lottie动画"
+
+#: dist/settings/class-kadence-blocks-settings.php:576
+msgid "Subscribe to Wireframe library"
+msgstr "订阅线框库"
+
+#: dist/init.php:881
+msgid "Lottie Animations imported in Kadence"
+msgstr "已导入Lottie动画到Kadence"
+
+#: dist/init.php:880
+msgctxt "Lottie animation"
+msgid "Lottie Animations"
+msgstr "Lottie动画"
+
+#: dist/class-lottieanimation-post-rest-api.php:67
+msgid "Please enter an animation title"
+msgstr "请输入动画标题"
+
+#: dist/class-lottieanimation-post-rest-api.php:61
+msgid "Lottie animation contains invalid JSON"
+msgstr "Lottie动画包含无效的JSON数据"
+
+#: dist/class-lottieanimation-get-rest-api.php:62
+msgid "Lottie animation file contains invalid json"
+msgstr "Lottie 动画文件包含无效的JSON数据"
+
+#: dist/class-lottieanimation-get-rest-api.php:58
+msgid "Lottie animation not found"
+msgstr "未找到Lottie动画"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:383
+msgid "The Current Post ID."
+msgstr "当前文章ID。"
+
+#. translators: block name
+#: dist/settings/class-kadence-blocks-settings.php:921 dist/build/blocks.js:49
+msgid "Countdown"
+msgstr "计时器"
+
+#: dist/settings/class-kadence-blocks-settings.php:916 dist/build/blocks.js:47
+msgid "Posts"
+msgstr "文章"
+
+#: dist/settings/class-kadence-blocks-settings.php:882 dist/build/blocks.js:35
+msgid "Create a heading or paragraph and define sizes for desktop, tablet and mobile along with font family, colors, etc."
+msgstr "创建一个头或者段落并且为桌面、平板还有手机的字体、颜色等等定义尺寸。"
+
+#: dist/settings/class-kadence-blocks-settings.php:822 dist/build/blocks.js:19
+msgid "Dynamic Content"
+msgstr "动态内容"
+
+#: dist/settings/class-kadence-blocks-settings.php:824 dist/build/blocks.js:1
+#: dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Custom Fonts"
+msgstr "自定义字体"
+
+#. translators: separator between taxonomy terms
+#: dist/templates/entry-loop-taxonomies.php:31
+msgctxt "list item separator"
+msgid " | "
+msgstr " | "
+
+#. translators: separator between taxonomy terms
+#: dist/templates/entry-loop-taxonomies.php:27
+msgctxt "list item separator"
+msgid " - "
+msgstr " - "
+
+#. translators: separator between taxonomy terms
+#: dist/templates/entry-loop-taxonomies.php:23
+msgctxt "list item separator"
+msgid " / "
+msgstr " / "
+
+#: dist/templates/entry-loop-meta.php:157 dist/build/blocks.js:47
+msgid "Comments"
+msgstr "评论"
+
+#: dist/templates/entry-loop-meta.php:155 dist/build/blocks.js:47
+msgid "Comment"
+msgstr "评论"
+
+#. translators: separator between taxonomy terms
+#: dist/templates/entry-loop-meta.php:138
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#: dist/templates/entry-loop-meta.php:28
+msgid "Posted in"
+msgstr "发表在"
+
+#: dist/templates/entry-loop-meta.php:25
+msgid "Updated on"
+msgstr "更新打开"
+
+#: dist/templates/entry-loop-meta.php:22
+msgid "Posted on"
+msgstr "文章打开"
+
+#: dist/templates/entry-loop-meta.php:19 dist/build/blocks.js:47
+msgid "By"
+msgstr "By"
+
+#: dist/templates/entry-loop-footer.php:16 dist/build/blocks.js:47
+msgid "Read More"
+msgstr "查看更多"
+
+#: dist/settings/class-kadence-blocks-settings.php:799
+msgid "Submit a Ticket"
+msgstr "提交一个Ticket"
+
+#: dist/settings/class-kadence-blocks-settings.php:798
+msgid "Have a question, we are happy to help! Get in touch with our support team."
+msgstr "有一个问题，我们很乐意进行帮助！您可以通过我们的支持团队获取帮助。"
+
+#: dist/settings/class-kadence-blocks-settings.php:791
+msgid "Need help? We have a knowledge base full of articles to get you started."
+msgstr "需要帮忙？我们有一个完整的知识库文章能够让你开始。"
+
+#: dist/settings/class-kadence-blocks-settings.php:790
+msgid "Documentation"
+msgstr "文档"
+
+#: dist/settings/class-kadence-blocks-settings.php:785
+msgid "Join our Facebook Group"
+msgstr "加入我们的Facebook 组"
+
+#: dist/settings/class-kadence-blocks-settings.php:784
+msgid "Join our community of fellow kadence users creating effective websites! Share your site, ask a question and help others."
+msgstr "加入我们的社区跟随kadence用户更有效率的网站！分享你的网站，询问问题以及帮助其他人。"
+
+#: dist/settings/class-kadence-blocks-settings.php:783
+msgid "Web Creators Community"
+msgstr "网站创建者社区"
+
+#: dist/settings/class-kadence-blocks-settings.php:565
+msgid "Config Kadence Blocks Cloud"
+msgstr "配置Kadence Blocks 云"
+
+#: dist/settings/class-kadence-blocks-settings.php:543
+msgid "MailerLite API Key"
+msgstr "MailerLite API 密钥"
+
+#: dist/init.php:768 dist/build/blocks.js:19
+msgid "Continue"
+msgstr "继续"
+
+#: dist/init.php:361 dist/init.php:377 dist/init.php:433 dist/init.php:450
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Ultra-Bold 900"
+msgstr "Ultra-Bold 900"
+
+#: dist/init.php:359 dist/init.php:376 dist/init.php:431 dist/init.php:449
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Extra-Bold 800"
+msgstr "Extra-Bold 800"
+
+#: dist/init.php:357 dist/init.php:375 dist/init.php:429 dist/init.php:448
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Bold 700"
+msgstr "Bold 700"
+
+#: dist/init.php:355 dist/init.php:374 dist/init.php:427 dist/init.php:447
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Semi-Bold 600"
+msgstr "Semi-Bold 600"
+
+#: dist/init.php:353 dist/init.php:373 dist/init.php:425 dist/init.php:446
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Medium 500"
+msgstr "Medium 500"
+
+#: dist/init.php:349 dist/init.php:351 dist/init.php:372 dist/init.php:421
+#: dist/init.php:423 dist/init.php:445 dist/build/blocks.js:1
+#: dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Regular"
+msgstr "Regular"
+
+#: dist/init.php:347 dist/init.php:371 dist/init.php:419 dist/init.php:444
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Light 300"
+msgstr "Light 300"
+
+#: dist/init.php:345 dist/init.php:370 dist/init.php:417 dist/init.php:443
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Extra-Light 200"
+msgstr "Extra-Light 200"
+
+#: dist/init.php:343 dist/init.php:369 dist/init.php:415 dist/init.php:442
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/plugin/plugin.js:4
+msgid "Thin 100"
+msgstr "Thin 100"
+
+#: dist/form-ajax.php:439
+msgid "Submission rejected, invalid security token. Reload the page and try again."
+msgstr "提交驳回，无效的安全令牌，重新加载页面并且再试一次。"
+
+#: dist/form-ajax.php:362
+msgid "MailerLite Failed"
+msgstr "MailerLite  失败"
+
+#: dist/form-ajax.php:362
+msgid "MailerLite Misconfiguration"
+msgstr "MailerLite  设定错误"
+
+#: dist/form-ajax.php:358
+msgid "No Response from MailerLite"
+msgstr "没有来自MailerLite的响应"
+
+#: dist/form-ajax.php:76
+msgid "Submission Failed, reCaptcha spam prevention. Please reload your page and try again."
+msgstr "提交失败，reCaptcha 垃圾邮件预防。请重新架子你的页面并且再次尝试。"
+
+#: dist/class-mailerlite-form-rest-api.php:143
+msgid "Query Args for url."
+msgstr "URL的查询参数。"
+
+#: dist/class-mailerlite-form-rest-api.php:133
+msgid "The API Key for Mailerlite account."
+msgstr "Mailerlite 账户的API 密钥。"
+
+#: dist/class-kadence-blocks-table-of-contents.php:846
+#: dist/settings/class-kadence-blocks-settings.php:911 dist/build/blocks.js:39
+msgid "Table of Contents"
+msgstr "目录"
+
+#: dist/class-kadence-blocks-table-of-contents.php:838 dist/build/blocks.js:39
+msgid "Table Of Contents"
+msgstr "目录"
+
+#: dist/class-kadence-blocks-table-of-contents.php:191
+#: dist/class-kadence-blocks-table-of-contents.php:843
+#: dist/class-kadence-blocks-table-of-contents.php:852
+msgid "Collapse Table of Contents"
+msgstr "折叠目录"
+
+#: dist/class-kadence-blocks-table-of-contents.php:190
+#: dist/class-kadence-blocks-table-of-contents.php:843
+#: dist/class-kadence-blocks-table-of-contents.php:852
+msgid "Expand Table of Contents"
+msgstr "扩展目录"
+
+#: dist/class-kadence-blocks-prebuilt-library.php:639
+#: dist/class-kadence-blocks-prebuilt-library.php:645
+msgid "No data"
+msgstr "无数据"
+
+#: dist/class-kadence-blocks-prebuilt-library.php:512
+#: dist/class-kadence-blocks-prebuilt-library.php:535
+#: dist/class-kadence-blocks-prebuilt-library.php:569
+#: dist/class-kadence-blocks-prebuilt-library.php:830
+msgid "No library data"
+msgstr "无库数据"
+
+#: dist/class-kadence-blocks-prebuilt-library.php:443
+msgid "No Connection data"
+msgstr "不链接数据"
+
+#: dist/class-kadence-blocks-posts.php:376
+msgid "No posts"
+msgstr "无文章"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:401
+msgid "Include posts tags."
+msgstr "包括文章标签。"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:396
+msgid "Include posts category."
+msgstr "包括文章分类目录。"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:387
+msgid "Check if using a custom Taxonomy"
+msgstr "检查是否使用了一个自定义的分类法"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:377
+msgid "Number of items to offset in query."
+msgstr "要在查询中偏移的项目数。"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:373
+msgid "Exclude Category."
+msgstr "排除分类目录。"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:368
+msgid "Allow Sticky in Query."
+msgstr "在查询中允许置顶。"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:364
+#: dist/class-kadence-blocks-posts-rest-api.php:392
+msgid "Define Query Order By."
+msgstr "定义查询顺序 By."
+
+#: dist/class-kadence-blocks-posts-rest-api.php:360
+msgid "Define Query Order."
+msgstr "定义查询顺序."
+
+#: dist/class-kadence-blocks-posts-rest-api.php:356
+msgid "Define Type of Query."
+msgstr "定义查询类型."
+
+#: dist/class-kadence-blocks-posts-rest-api.php:350
+msgid "Number of results to return."
+msgstr "返回的结果数量。"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:344
+msgid "Include posts by ID."
+msgstr "通过ID包含的文章。"
+
+#: dist/class-kadence-blocks-posts-rest-api.php:325
+msgid "Limit results to items of a specific post type."
+msgstr "限制items的结果为一个指定的文章类型."
+
+#: dist/class-kadence-blocks-countdown.php:212 dist/build/blocks.js:55
+msgid "Secs"
+msgstr "干燥"
+
+#: dist/class-kadence-blocks-countdown.php:211 dist/build/blocks.js:55
+msgid "Mins"
+msgstr "分钟"
+
+#: dist/class-kadence-blocks-countdown.php:210 dist/build/blocks.js:55
+msgid "Hrs"
+msgstr "小时"
+
+#: dist/class-kadence-blocks-countdown.php:209 dist/build/blocks.js:55
+msgid "Days"
+msgstr "天"
+
+#: dist/class-fluentcrm-form-rest-api.php:158
+#: dist/class-mailerlite-form-rest-api.php:138
+msgid "Actionable endpoint for api call."
+msgstr "Api调用的可操作端点。"
+
+#: dist/class-fluentcrm-form-rest-api.php:132
+msgid "Source"
+msgstr "来源"
+
+#: dist/class-fluentcrm-form-rest-api.php:128
+msgid "Phone"
+msgstr "手机"
+
+#: dist/class-fluentcrm-form-rest-api.php:124
+msgid "Country"
+msgstr "国家"
+
+#: dist/class-fluentcrm-form-rest-api.php:116
+msgid "State"
+msgstr "状态"
+
+#: dist/class-fluentcrm-form-rest-api.php:112
+msgid "City"
+msgstr "城市"
+
+#: dist/class-fluentcrm-form-rest-api.php:108
+msgid "Address Line 2"
+msgstr "地址行2"
+
+#: dist/class-fluentcrm-form-rest-api.php:100
+msgid "Timezone"
+msgstr "时区"
+
+#: dist/class-fluentcrm-form-rest-api.php:96
+msgid "Full Name"
+msgstr "完整名称"
+
+#: dist/class-fluentcrm-form-rest-api.php:84
+msgid "Name Prefix"
+msgstr "名字前缀"
+
+#. Plugin Name of the plugin
+msgid "Kadence Blocks – Gutenberg Blocks for Page Builder Features"
+msgstr "Kadence 区块 - Gutenberg 区块用于 Page Builder 功能"
+
+#: dist/class-fluentcrm-form-rest-api.php:120 dist/build/blocks.js:37
+msgid "Postal Code"
+msgstr "邮政编码"
+
+#: dist/class-fluentcrm-form-rest-api.php:104 dist/build/blocks.js:37
+msgid "Address Line 1"
+msgstr "地址1号线"
+
+#: dist/class-fluentcrm-form-rest-api.php:92 dist/build/blocks.js:37
+msgid "Last Name"
+msgstr "最后一名"
+
+#: dist/class-fluentcrm-form-rest-api.php:88 dist/build/blocks.js:37
+msgid "First Name"
+msgstr "第一名"
+
+#: dist/class-kadence-blocks-frontend.php:1644
+msgid "requires a unique entry and this value has already been used"
+msgstr "需要一个独特的入口，这价值已经被使用"
+
+#: dist/class-kadence-blocks-frontend.php:1643 dist/build/blocks.js:37
+msgid "is not valid"
+msgstr "是不是有效的"
+
+#: dist/class-kadence-blocks-frontend.php:1642
+msgid "does not match"
+msgstr "不匹配"
+
+#: dist/class-kadence-blocks-frontend.php:1641 dist/build/blocks.js:37
+msgid "is required"
+msgstr "需要"
+
+#: dist/class-kadence-blocks-frontend.php:1639 dist/build/blocks.js:39
+msgid "Please fix the errors to proceed"
+msgstr "请修复错误以继续"
+
+#. translators: %s - link to a site.
+#: dist/templates/form-email.php:152
+msgid "Sent from %s"
+msgstr "发送自%s"
+
+#: dist/settings/class-kadence-blocks-settings.php:847
+msgid "Create a contact form or marketing form and style it within the block editor."
+msgstr "创建一个联系表单或营销表单，并在块编辑器中设置样式。"
+
+#: dist/settings/class-kadence-blocks-settings.php:846 dist/build/blocks.js:22
+#: dist/build/blocks.js:39
+msgid "Form"
+msgstr "表单"
+
+#: dist/settings/class-kadence-blocks-settings.php:532
+msgid "Google reCaptcha Secret Key"
+msgstr "谷歌验证码密钥"
+
+#: dist/settings/class-kadence-blocks-settings.php:521
+msgid "Google reCaptcha Site Key"
+msgstr "谷歌验证码网站的关键"
+
+#: dist/settings/class-kadence-blocks-settings.php:510
+msgid "Config Kadence Blocks Global Settings"
+msgstr "Config Kadence区块的全球设置"
+
+#: dist/form-ajax.php:700
+msgid "Data not found"
+msgstr "数据没有发现"
+
+#: dist/form-ajax.php:477 dist/build/blocks.js:37
+msgid "Accept"
+msgstr "接受"
+
+#: dist/form-ajax.php:442
+msgid "No Data"
+msgstr "没有数据"
+
+#: dist/form-ajax.php:442
+msgid "Submission failed"
+msgstr "提交失败"
+
+#: dist/form-ajax.php:439
+msgid "Token invalid"
+msgstr "令无效"
+
+#: dist/form-ajax.php:433
+msgid "Third Party Failed"
+msgstr "第三方失败"
+
+#: dist/form-ajax.php:181
+msgid "Required Field Empty"
+msgstr "所需要的场空"
+
+#: dist/form-ajax.php:107 dist/form-ajax.php:110 dist/form-ajax.php:114
+msgid "reCAPTCHA Failed"
+msgstr "验证码失败"
+
+#: dist/form-ajax.php:100
+msgid "Spam Detected"
+msgstr "垃圾邮件检测"
+
+#: dist/form-ajax.php:100
+msgid "Submission Rejected"
+msgstr "提交拒绝了"
+
+#: dist/form-ajax.php:74 dist/build/blocks.js:39
+msgid "Submission Success, Thanks for getting in touch!"
+msgstr "提交的成功，感谢您取得联系!"
+
+#: dist/form-ajax.php:65 dist/form-ajax.php:206
+msgid "Submission"
+msgstr "提交"
+
+#: dist/form-ajax.php:55
+msgid "Data not Found"
+msgstr "数据没有发现"
+
+#: dist/form-ajax.php:55 dist/form-ajax.php:75 dist/form-ajax.php:700
+#: dist/build/blocks.js:39
+msgid "Submission Failed"
+msgstr "提交失败"
+
+#. Author URI of the plugin
+msgid "https://www.kadencewp.com"
+msgstr "https://www.kadencewp.com"
+
+#. Author of the plugin
+msgid "Kadence WP"
+msgstr "Kadence WP"
+
+#: dist/init.php:340 dist/init.php:368 dist/init.php:412 dist/init.php:441
+#: dist/build/blocks.js:1 dist/build/blocks.js:32 dist/build/blocks.js:35
+#: dist/build/blocks.js:47 dist/plugin/plugin.js:4 dist/plugin/plugin.js:8
+msgid "Inherit"
+msgstr "继承"
+
+#: dist/class-kadence-blocks-frontend.php:1645 dist/build/blocks.js:35
+msgid "Item"
+msgstr "项目"
+
+#: dist/settings/class-kadence-blocks-settings.php:853
+msgid "Photo galleries, carousels, and sliders! Enable custom links, captions, and more. Plus, you can select image sizes."
+msgstr "照片相册，旋转木马，和滑! 启用定义的链接、说明和更多。 此外，您可以选择的图像大小。"
+
+#: dist/settings/class-kadence-blocks-settings.php:852 dist/build/blocks.js:37
+#: dist/plugin/plugin.js:8
+msgid "Advanced Gallery"
+msgstr "高级相册"
+
+#: dist/settings/class-kadence-blocks-settings.php:499
+msgid "Config Kadence Blocks Color Palette"
+msgstr "Config Kadence区块的颜色调色板"
+
+#: dist/settings/class-kadence-blocks-settings.php:244
+msgid "Very dark gray"
+msgstr "非常黑暗灰色的"
+
+#: dist/settings/class-kadence-blocks-settings.php:239
+msgid "Cyan bluish gray"
+msgstr "青蓝灰色的"
+
+#: dist/settings/class-kadence-blocks-settings.php:234
+msgid "Very light gray"
+msgstr "非常浅灰色的"
+
+#: dist/settings/class-kadence-blocks-settings.php:229
+msgid "Vivid cyan blue"
+msgstr "鲜明的青蓝色的"
+
+#: dist/settings/class-kadence-blocks-settings.php:224
+msgid "Pale cyan blue"
+msgstr "浅的青蓝色的"
+
+#: dist/settings/class-kadence-blocks-settings.php:219
+msgid "Vivid green cyan"
+msgstr "绿色的青"
+
+#: dist/settings/class-kadence-blocks-settings.php:214
+msgid "Light green cyan"
+msgstr "淡绿色的青"
+
+#: dist/settings/class-kadence-blocks-settings.php:209
+msgid "Luminous vivid amber"
+msgstr "发光生动的琥珀色"
+
+#: dist/settings/class-kadence-blocks-settings.php:204
+msgid "Luminous vivid orange"
+msgstr "光鲜亮橙色的"
+
+#: dist/settings/class-kadence-blocks-settings.php:199
+msgid "Vivid red"
+msgstr "鲜红"
+
+#: dist/settings/class-kadence-blocks-settings.php:194
+msgid "Pale pink"
+msgstr "浅粉红色"
+
+#: dist/settings/class-kadence-blocks-settings.php:947
+msgid "Nothing to Save"
+msgstr "没有什么拯救"
+
+#: dist/settings/class-kadence-blocks-settings.php:941
+msgid "Missing Content"
+msgstr "缺少内容"
+
+#: dist/settings/class-kadence-blocks-settings.php:938
+msgid "Invalid nonce"
+msgstr "无效的现时"
+
+#: dist/settings/class-kadence-blocks-settings.php:927
+msgid "Create confidence in your brand or product by showing off beautiful unique testimonials, add as a carousel or a grid."
+msgstr "建立信心，在您的品牌产品显示出美丽的唯一推荐，添加作为一个旋转木马或者一个网格。"
+
+#: dist/settings/class-kadence-blocks-settings.php:926 dist/build/blocks.js:22
+#: dist/build/blocks.js:26 dist/build/blocks.js:35 dist/plugin/plugin.js:8
+msgid "Testimonials"
+msgstr "褒奖"
+
+#: dist/settings/class-kadence-blocks-settings.php:906
+msgid "Add beautiful icons to your lists and make them more engaging. Over 1500 icons to choose from and unlimited styles."
+msgstr "添加美丽的图标，以你的名单，并让他们更多的参与。 超过1500个图标选择和无限制的样式。"
+
+#: dist/settings/class-kadence-blocks-settings.php:905 dist/build/blocks.js:35
+#: dist/plugin/plugin.js:8
+msgid "Icon List"
+msgstr "图标列表"
+
+#: dist/settings/class-kadence-blocks-settings.php:900 dist/build/blocks.js:35
+msgid "Create beautiful accordions! Each pane can contain any other block, customize title styles, content background, and borders."
+msgstr "创造美丽的手风琴! 每个区中可能包含的任何其他方框，定制标题式、内容背景，以及边界。"
+
+#: dist/settings/class-kadence-blocks-settings.php:899 dist/build/blocks.js:22
+#: dist/build/blocks.js:35 dist/plugin/plugin.js:8
+msgid "Accordion"
+msgstr "手风琴"
+
+#: dist/settings/class-kadence-blocks-settings.php:893 dist/build/blocks.js:35
+#: dist/plugin/plugin.js:8
+msgid "Info Box"
+msgstr "信息框"
+
+#: dist/settings/class-kadence-blocks-settings.php:761
+msgid "Match the editor width to your sites width."
+msgstr "匹配的编辑宽对网站的宽度。"
+
+#: dist/settings/class-kadence-blocks-settings.php:761
+msgid "Editor Max Widths"
+msgstr "编辑的最大宽度"
+
+#: dist/settings/class-kadence-blocks-settings.php:488
+msgid "Config Kadence Block Settings View"
+msgstr "Config Kadence区块设置图"
+
+#: dist/settings/class-kadence-blocks-settings.php:477
+msgid "Config Kadence Block Defaults"
+msgstr "Config Kadence框默认值"
+
+#: dist/settings/class-kadence-blocks-settings.php:395
+#: dist/settings/class-kadence-blocks-settings.php:401
+#: dist/settings/class-kadence-blocks-settings.php:407
+#: dist/settings/class-kadence-blocks-settings.php:413
+#: dist/settings/class-kadence-blocks-settings.php:419
+#: dist/settings/class-kadence-blocks-settings.php:425
+#: dist/settings/class-kadence-blocks-settings.php:431
+#: dist/settings/class-kadence-blocks-settings.php:437
+#: dist/settings/class-kadence-blocks-settings.php:443
+#: dist/settings/class-kadence-blocks-settings.php:449
+msgid "Setting defaults has moved into Gutenberg, click on the top right corner settings and go to Kadence Blocks Controls"
+msgstr "设定缺省值已经进入古腾堡，点击右上角的设置和去Kadence区块控制"
+
+#: dist/settings/class-kadence-blocks-settings.php:389
+msgid "Default Settings"
+msgstr "默认设置"
+
+#: dist/settings/class-kadence-blocks-settings.php:388
+msgid "Config"
+msgstr "Config"
+
+#: dist/settings/class-kadence-blocks-settings.php:387
+msgid "Updated"
+msgstr "更新"
+
+#: dist/settings/class-kadence-blocks-settings.php:386
+msgid "Updating"
+msgstr "更新"
+
+#: dist/settings/class-kadence-blocks-settings.php:385 dist/build/blocks.js:37
+#: dist/build/blocks.js:39
+msgid "Save"
+msgstr "保存"
+
+#: dist/settings/class-kadence-blocks-settings.php:384
+msgid "Close"
+msgstr "靠近"
+
+#. Description of the plugin
+msgid "Advanced Page Building Blocks for Gutenberg. Create custom column layouts, backgrounds, dual buttons, icons etc."
+msgstr "古腾堡高级页面构建块。创建自定义列布局、背景、双按钮、图标等。"
+
+#. Plugin URI of the plugin
+msgid "https://www.kadencewp.com/product/kadence-gutenberg-blocks/"
+msgstr "https://www.kadencewp.com/product/kadence-gutenberg-blocks/"
+
+#: dist/settings/class-kadence-blocks-settings.php:888
+msgid "Create custom vertical or horizontal tabs with advanced styling controls. Each tab content is an empty canvas able to contain any other blocks."
+msgstr "创建定水平或垂直的标签用高级造型的控制。 每个选项的内容是空白的画布能够包含任何其他模块。"
+
+#: dist/settings/class-kadence-blocks-settings.php:887 dist/build/blocks.js:22
+#: dist/build/blocks.js:35 dist/plugin/plugin.js:8
+msgid "Tabs"
+msgstr "标签"
+
+#: dist/settings/class-kadence-blocks-settings.php:876
+msgid "Easily create a divider and determine the space around it or just create some space in your content."
+msgstr "很容易地创建一个分，并确定周围的空间或者只是创造一些空间，在你的内容。"
+
+#: dist/settings/class-kadence-blocks-settings.php:875 dist/build/blocks.js:19
+#: dist/plugin/plugin.js:4
+msgid "Spacer/Divider"
+msgstr "隔离/器"
+
+#: dist/settings/class-kadence-blocks-settings.php:859
+msgid "Create an advanced button or a row of buttons. Style each one including hover controls plus you can use an icon and display them side by side"
+msgstr "创建一个高级按钮或一行按钮。设置每个图标的样式，包括悬停控件并且您可以使用图标并排显示它们"
+
+#: dist/settings/class-kadence-blocks-settings.php:858 dist/build/blocks.js:19
+#: dist/plugin/plugin.js:8
+msgid "Advanced Button"
+msgstr "高级按钮"
+
+#: dist/settings/class-kadence-blocks-settings.php:870
+msgid "Choose from over 1500+ SVG Icons to add into your page and style the size, colors, background, border, etc."
+msgstr "选择超过1500+SVG标来加入你页和风格的尺寸，颜色，背景下，边界，等等。"
+
+#: dist/settings/class-kadence-blocks-settings.php:869 dist/build/blocks.js:19
+#: dist/build/blocks.js:32 dist/build/blocks.js:35 dist/plugin/plugin.js:8
+msgid "Icon"
+msgstr "图标"
+
+#: dist/settings/class-kadence-blocks-settings.php:841
+msgid "Create rows with nested blocks either in columns or as a container. Give style to your rows with background, overlay, padding, etc."
+msgstr "创建行嵌套的街区既可在列或作为一个容器。 得到的风格你的行背景的重叠，填补，等等。"
+
+#: dist/settings/class-kadence-blocks-settings.php:840 dist/build/blocks.js:32
+#: dist/plugin/plugin.js:8
+msgid "Row Layout"
+msgstr "行局"
+
+#: dist/settings/class-kadence-blocks-settings.php:792
+msgid "Browse Docs"
+msgstr "浏览文档"
+
+#: dist/settings/class-kadence-blocks-settings.php:797
+msgid "Support"
+msgstr "支持"
+
+#: dist/settings/class-kadence-blocks-settings.php:770
+msgid "Save Changes"
+msgstr "保存变化"
+
+#: dist/settings/class-kadence-blocks-settings.php:747
+msgid "Deactivated"
+msgstr "去激活"
+
+#: dist/settings/class-kadence-blocks-settings.php:747
+msgid "Deactivating..."
+msgstr "失..."
+
+#: dist/settings/class-kadence-blocks-settings.php:747
+msgid "Activated"
+msgstr "激活"
+
+#: dist/settings/class-kadence-blocks-settings.php:747
+msgid "Activating..."
+msgstr "激活..."
+
+#: dist/settings/class-kadence-blocks-settings.php:747
+#: dist/settings/class-kadence-blocks-settings.php:749
+msgid "Deactivate"
+msgstr "关闭"
+
+#: dist/settings/class-kadence-blocks-settings.php:746
+#: dist/settings/class-kadence-blocks-settings.php:747
+msgid "Activate"
+msgstr "激活"
+
+#: dist/settings/class-kadence-blocks-settings.php:375
+#: dist/settings/class-kadence-blocks-settings.php:1065 dist/build/blocks.js:19
+#: dist/build/blocks.js:32 dist/build/blocks.js:35 dist/build/blocks.js:37
+msgid "Settings"
+msgstr "设置"
+
+#: dist/settings/class-kadence-blocks-settings.php:763
+msgid "Note: The current active themes \"content_width\" is set to:"
+msgstr "注意：当前活动主题“content_width”设置为："
+
+#: dist/settings/class-kadence-blocks-settings.php:654
+#: dist/settings/class-kadence-blocks-settings.php:666 dist/plugin/plugin.js:8
+msgid "Fullwidth"
+msgstr "全角"
+
+#: dist/settings/class-kadence-blocks-settings.php:653
+#: dist/settings/class-kadence-blocks-settings.php:665 dist/build/blocks.js:47
+#: dist/plugin/plugin.js:1 dist/plugin/plugin.js:8
+msgid "Large"
+msgstr "大"
+
+#: dist/settings/class-kadence-blocks-settings.php:652
+#: dist/settings/class-kadence-blocks-settings.php:664 dist/plugin/plugin.js:1
+msgid "Small"
+msgstr "小"
+
+#: dist/settings/class-kadence-blocks-settings.php:633
+#: dist/settings/class-kadence-blocks-settings.php:642 dist/build/blocks.js:32
+#: dist/build/blocks.js:35 dist/plugin/plugin.js:4 dist/plugin/plugin.js:8
+msgid "px"
+msgstr "px"
+
+#: dist/settings/class-kadence-blocks-settings.php:620
+msgid "Experimental editor CSS for less excess margins in Gutenberg in an attempt to get a closer WYSIWYG editing experience."
+msgstr "实验编CSS少过多边古腾堡在试图获得一个更接近所见即所得的编辑经验。"
+
+#: dist/settings/class-kadence-blocks-settings.php:610
+#: dist/settings/class-kadence-blocks-settings.php:623
+msgid "True"
+msgstr "真的"
+
+#: dist/settings/class-kadence-blocks-settings.php:609
+#: dist/settings/class-kadence-blocks-settings.php:622
+msgid "False"
+msgstr "假"
+
+#: dist/settings/class-kadence-blocks-settings.php:607
+msgid "Allows for changes to the editor width on per page/post basis with preset defaults."
+msgstr "允许修改编辑上的宽度每页/岗位的基础与设定缺省值。"
+
+#: dist/settings/class-kadence-blocks-settings.php:598
+msgid "Enable Editor Width"
+msgstr "使编辑的宽度"
+
+#: dist/settings/class-kadence-blocks-settings.php:596
+msgid "Page Default"
+msgstr "页默认"
+
+#: dist/settings/class-kadence-blocks-settings.php:595
+msgid "Post default"
+msgstr "后默认"
+
+#: dist/settings/class-kadence-blocks-settings.php:593
+msgid "Large Template"
+msgstr "大模板"
+
+#: dist/settings/class-kadence-blocks-settings.php:592
+msgid "Small Template"
+msgstr "小型模板"
+
+#: dist/init.php:598 dist/init.php:625
+#: dist/settings/class-kadence-blocks-settings.php:372
+#: dist/settings/class-kadence-blocks-settings.php:374
+msgid "Kadence Blocks"
+msgstr "Kadence区块"
+
+#: dist/settings/class-kadence-blocks-settings.php:372
+#: dist/settings/class-kadence-blocks-settings.php:374
+#: dist/settings/class-kadence-blocks-settings.php:375
+msgid "Kadence Blocks -  Gutenberg Page Builder Blocks"
+msgstr "Kadence区块-古腾堡页生成器块"

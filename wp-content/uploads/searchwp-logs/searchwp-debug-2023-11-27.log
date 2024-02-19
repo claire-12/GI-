@@ -1,0 +1,7 @@
+[2023-11-27 09:07:41] [index] Dropping post.post 1035340
+[2023-11-27 09:07:41] [indexer] Processing batch (1)
+[2023-11-27 09:07:41] [indexer] Indexing post.product:1031782
+[2023-11-27 09:07:41] [index] Marking [1] post.product 1031782 as indexed
+[2023-11-27 09:07:41] [indexer] Index built
+[2023-11-27 09:07:43] [index] Dropping post.post 1035340
+[2023-11-27 09:07:43] [indexer] Index built

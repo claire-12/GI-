@@ -1,0 +1,36 @@
+# Translation of Plugins - Place Order Without Payment for WooCommerce - Development (trunk) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Place Order Without Payment for WooCommerce - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-04-24 12:40:18+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.7\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Place Order Without Payment for WooCommerce - Development (trunk)\n"
+
+#: wc-place-order-without-payment.php:163
+msgid "Donate"
+msgstr "Donar"
+
+#. Author URI of the plugin
+msgid "https://nitin247.com/"
+msgstr "https://nitin247.com/"
+
+#. Author of the plugin
+msgid "Nitin Prakash"
+msgstr "Nitin Prakash"
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/wc-place-order-without-payment/"
+msgstr "https://es.wordpress.org/plugins/wc-place-order-without-payment/"
+
+#. Description of the plugin
+msgid "Place Order Without Payment for WooCommerce will allow users to place orders directly.This plugin will customize checkout page and offers to direct place order without payment."
+msgstr "Place Order Without Payment for WooCommerce permitirá a los usuarios realizar pedidos directamente. Este plugin personalizará la página de pago y ofrece realizar pedidos directamente sin pago."
+
+#. Plugin Name of the plugin
+msgid "Place Order Without Payment for WooCommerce"
+msgstr "Place Order Without Payment for WooCommerce"

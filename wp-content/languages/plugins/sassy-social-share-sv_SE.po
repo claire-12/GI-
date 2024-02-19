@@ -1,0 +1,1226 @@
+# Translation of Plugins - Social Sharing Plugin &#8211; Sassy Social Share - Development (trunk) in Swedish
+# This file is distributed under the same license as the Plugins - Social Sharing Plugin &#8211; Sassy Social Share - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-10-20 11:13:53+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: sv_SE\n"
+"Project-Id-Version: Plugins - Social Sharing Plugin &#8211; Sassy Social Share - Development (trunk)\n"
+
+#: admin/partials/sassy-social-share-options-page.php:2328
+msgid "Day(s)"
+msgstr "Dag/dagar"
+
+#: admin/partials/sassy-social-share-options-page.php:2327
+msgid "Hour(s)"
+msgstr "Timme/timmar"
+
+#: admin/partials/sassy-social-share-options-page.php:2326
+msgid "Minute(s)"
+msgstr "Minut/minuter"
+
+#: admin/partials/sassy-social-share-options-page.php:2325
+msgid "Second(s)"
+msgstr "Sekund/sekunder"
+
+#: includes/class-sassy-social-share-widgets.php:996
+msgid "left"
+msgstr "vänster"
+
+#: includes/class-sassy-social-share-widgets.php:996
+msgid "right"
+msgstr "höger"
+
+#: public/class-sassy-social-share-public.php:566
+msgid "Total Shares"
+msgstr "Totalt antal delningar"
+
+#: includes/class-sassy-social-share-widgets.php:1115
+msgid "Gab.com URL:"
+msgstr "Gab.com-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:982
+msgid "Offset"
+msgstr "Förskjutning"
+
+#: admin/partials/sassy-social-share-options-page.php:2522
+#: admin/partials/sassy-social-share-options-page.php:2539
+msgid "Import Configuration"
+msgstr "Importera konfiguration"
+
+#: admin/partials/sassy-social-share-options-page.php:2501
+msgid "Export Configuration"
+msgstr "Exportera konfiguration"
+
+#: admin/partials/sassy-social-share-options-page.php:2496
+msgid "Export/Import configuration"
+msgstr "Export/import konfiguration"
+
+#: includes/class-sassy-social-share-widgets.php:1046
+msgid "Parler URL:"
+msgstr "Parler-URL:"
+
+#: admin/class-sassy-social-share-admin.php:396
+msgid "Click to toggle help"
+msgstr "Klicka för att slå på/av hjälp"
+
+#: admin/partials/sassy-social-share-options-page.php:2276
+msgid "Load Javascript only when needed"
+msgstr "Ladda bara JavaScript när det behövs"
+
+#: admin/partials/sassy-social-share-options-page.php:814
+#: admin/partials/sassy-social-share-options-page.php:1584
+msgid "Youtube URL"
+msgstr "YouTube-URL"
+
+#: includes/class-sassy-social-share-widgets.php:964
+msgid "Alignment:"
+msgstr "Justering:"
+
+#: includes/class-sassy-social-share-widgets.php:952
+msgid "Standard"
+msgstr "Standard"
+
+#: includes/class-sassy-social-share-widgets.php:949
+msgid "Type:"
+msgstr "Typ:"
+
+#: includes/class-sassy-social-share-widgets.php:960
+msgid "Top offset:"
+msgstr "Toppen förskjutning:"
+
+#: includes/class-sassy-social-share-widgets.php:955
+msgid "Floating"
+msgstr "Flytande"
+
+#: includes/class-sassy-social-share-widgets.php:1097
+msgid "Whatsapp URL:"
+msgstr "Whatsapp-URL:"
+
+#: admin/partials/sassy-social-share-ssga-plugin-options.php:48
+#: includes/class-sassy-social-share-widgets.php:1033
+msgid "No"
+msgstr "Nej"
+
+#: includes/class-sassy-social-share-widgets.php:241
+#: includes/class-sassy-social-share-widgets.php:243
+#: includes/class-sassy-social-share-widgets.php:479
+msgid "Custom Url"
+msgstr "Anpassad URL"
+
+#: includes/class-sassy-social-share-widgets.php:1079
+msgid "Telegram URL:"
+msgstr "Telegram-URL:"
+
+#: admin/class-sassy-social-share-admin.php:618
+msgid "Configure the Plugin"
+msgstr "Konfigurera tillägget"
+
+#: admin/class-sassy-social-share-admin.php:616
+msgid "Thanks for installing Sassy Social Share plugin"
+msgstr "Tack för att du installerat tillägget Sassy Social Share"
+
+#: includes/class-sassy-social-share-widgets.php:1073
+msgid "MeWe URL:"
+msgstr "MeWe-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1103
+msgid "Xing URL:"
+msgstr "Xing-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1094
+msgid "Vkontakte URL:"
+msgstr "Vkontakte-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1076
+msgid "Odnoklassniki URL:"
+msgstr "Odnoklassniki-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1070
+msgid "Medium URL:"
+msgstr "Medium-URL:"
+
+#: admin/class-sassy-social-share-admin.php:211
+msgid "Disable Standard Sharing interface on this "
+msgstr "Inaktivera standarddelningsgränssnittet på detta"
+
+#: admin/partials/sassy-social-share-options-page.php:2775
+msgid "Why are Twitter shares not appearing even after registering at Twitcount.com?"
+msgstr "Varför visas Twitter-delningar inte ens efter registrering på Twitcount.com?"
+
+#: admin/class-sassy-social-share-admin.php:216
+msgid "Disable Floating Sharing interface on this "
+msgstr "Inaktivera flytande delningsgränssnitt på detta"
+
+#: admin/class-sassy-social-share-admin.php:229
+#: admin/class-sassy-social-share-admin.php:248
+msgid "Starting share count for "
+msgstr "Starta delningsräknare för "
+
+#: includes/class-sassy-social-share-widgets.php:1064
+msgid "Linkedin URL:"
+msgstr "Linkedin-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1106
+msgid "Youtube URL:"
+msgstr "YouTube-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1091
+msgid "Vimeo URL:"
+msgstr "Vimeo-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1088
+msgid "Tumblr URL:"
+msgstr "Tumblr-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1061
+msgid "Github URL:"
+msgstr "Github-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1055
+msgid "Flickr URL:"
+msgstr "Flickr-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1052
+msgid "Behance URL:"
+msgstr "Behance-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1049
+msgid "Pinterest URL:"
+msgstr "Pinterest-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1043
+msgid "Instagram URL:"
+msgstr "Instagram-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1040
+msgid "Twitter URL:"
+msgstr "Twitter-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1037
+msgid "Facebook URL:"
+msgstr "Facebook-URL:"
+
+#: admin/class-sassy-social-share-admin.php:663
+#: admin/class-sassy-social-share-admin.php:690
+#: admin/class-sassy-social-share-admin.php:714
+msgid "Okay"
+msgstr "Okej"
+
+#: includes/class-sassy-social-share-widgets.php:1004
+msgid "Size of icons"
+msgstr "Storlek på ikoner"
+
+#: includes/class-sassy-social-share-widgets.php:1112
+msgid "RSS Feed URL:"
+msgstr "URL för RSS-flöde:"
+
+#: includes/class-sassy-social-share-widgets.php:1006
+msgid "Icon Shape"
+msgstr "Ikonform"
+
+#: includes/class-sassy-social-share-widgets.php:541
+msgid "These icons link to your Social Media accounts"
+msgstr "Dessa ikoner länkar till dina sociala mediakonton"
+
+#: includes/class-sassy-social-share-widgets.php:1058
+msgid "Foursquare URL:"
+msgstr "Foursquare-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:1109
+msgid "Youtube Channel URL:"
+msgstr "URL till YouTube-kanal:"
+
+#: includes/class-sassy-social-share-widgets.php:1067
+msgid "Linkedin Company URL:"
+msgstr "URL till företagets Linkedin:"
+
+#: admin/partials/sassy-social-share-options-page.php:2773
+msgid "Instagram icon is there to send website visitors to the Instagram page of your choice. You can save the desired Instagram handle in \"Instagram Username\" option in \"Standard Interface\" and \"Floating Interface\" sections."
+msgstr "Instagram-ikonen finns för att skicka vidare besökare till en Instagram-sida av ditt val. Du kan spara det önskade Instagram-namnet i \"Instagram användarnamn\"-alternativet i sektionerna \"Standardgränssnitt\" och \"Flytande gränssnitt\"."
+
+#: admin/partials/sassy-social-share-options-page.php:2772
+msgid "Why is Instagram icon redirecting to Instagram website?"
+msgstr "Varför vidarebefordrar Instagram-ikonen till Instagrams webbplats?"
+
+#: admin/partials/sassy-social-share-options-page.php:2336
+msgid "Frequent cache refreshing results in slower loading of pages with share counts enabled. Leave empty to disable cache. More info <a href=\"%s\" target=\"_blank\">here</a>"
+msgstr "Frekvent uppdatering av cache resulterar i långsammare laddning av sidor med delningsräknare aktiverad. Lämna tomt för att inaktivera cache. Mer information <a href=\"%s\" target=\"_blank\">här</a>."
+
+#: includes/class-sassy-social-share-shortcodes.php:260
+#: includes/class-sassy-social-share-widgets.php:74
+#: includes/class-sassy-social-share-widgets.php:326
+#: public/class-sassy-social-share-public.php:111
+msgid "Link copied."
+msgstr "Länk kopierad."
+
+#: admin/partials/sassy-social-share-options-page.php:2703
+msgid "Append myCRED referral ID to the urls being shared"
+msgstr "Lägg till myCRED remiss-ID till URL:er som delas"
+
+#: admin/partials/sassy-social-share-options-page.php:2698
+msgid "myCRED"
+msgstr "myCRED"
+
+#: admin/partials/sassy-social-share-options-page.php:1205
+#: admin/partials/sassy-social-share-options-page.php:1760
+msgid "Search social network"
+msgstr "Sök sociala nätverk"
+
+#: admin/partials/sassy-social-share-options-page.php:884
+#: admin/partials/sassy-social-share-options-page.php:1651
+msgid "HTML ID of the element you want to focus on the webpage, on click of Comment icon."
+msgstr "HTML ID på element du vill fokusera på webbplatsen vid klickning på kommentars-ikon."
+
+#: admin/partials/sassy-social-share-options-page.php:873
+#: admin/partials/sassy-social-share-options-page.php:1640
+msgid "HTML ID of container element of comment form"
+msgstr "HTML ID på behållare med kommentarsformulär"
+
+#: admin/partials/sassy-social-share-options-page.php:26
+msgid "3rd Party Integration"
+msgstr "Tredjepartsintegration"
+
+#: admin/partials/sassy-social-share-options-page.php:2782
+msgid "How to Place Title and Social Share Icons in the Same Row?"
+msgstr "Hur man får titel och delningsikoner på samma rad?"
+
+#: admin/partials/sassy-social-share-options-page.php:2781
+msgid "How to recover the Facebook Comments lost after moving my website to SSL/Https?"
+msgstr "Hur man återskapar Facebook-kommentarer som förlorats när webbplats flyttats till SSL/HTTPS?"
+
+#: admin/partials/sassy-social-share-options-page.php:2780
+msgid "How to show recent Facebook Comments from all over the website in a widget?"
+msgstr "Hur man visar alla Facebook-kommentarer från hela webbplatsen i en widget?"
+
+#: admin/partials/sassy-social-share-options-page.php:2778
+msgid "How to restore Social Share counts lost after moving my website to SSL/Https?"
+msgstr "Hur man återställer delningsräknaren efter att ha flyttat webbplatsen till SSL/HTTPS?"
+
+#: admin/partials/sassy-social-share-options-page.php:2767
+msgid "<strong>Note:</strong> Plugin will not work on local server. You should have an online website for the plugin to function properly."
+msgstr "<strong>Observera:</strong> Tillägget fungerar inte på en lokal server. Du måste ha en publicerad webbplats för att tillägget skall kunna fungera."
+
+#: admin/partials/sassy-social-share-options-page.php:2059
+msgid "Auto-adjust according to screen width (responsive)"
+msgstr "Autojustera utifrån skärmstorlek (responsivitet)"
+
+#: admin/partials/sassy-social-share-about.php:29
+msgid "Translate Plugin"
+msgstr "Översätt tillägg"
+
+#: public/class-sassy-social-share-public.php:328
+msgid "Search for"
+msgstr "Sök efter"
+
+#: public/class-sassy-social-share-public.php:333
+#: public/class-sassy-social-share-public.php:335
+#: public/class-sassy-social-share-public.php:337
+msgid "Archives"
+msgstr "Arkiv"
+
+#: admin/class-sassy-social-share-admin.php:734
+msgid "Settings"
+msgstr "Inställningar"
+
+#: admin/class-sassy-social-share-admin.php:732
+msgid "Add-Ons"
+msgstr "Utökningar"
+
+#: admin/class-sassy-social-share-admin.php:733
+msgid "Support Documentation"
+msgstr "Supportdokumentation"
+
+#: admin/partials/sassy-social-share-options-page.php:805
+#: admin/partials/sassy-social-share-options-page.php:1576
+msgid "Username of the Instagram account you want to redirect users to, on clicking the icon"
+msgstr "Användarnamn på Instagram-kontot du vill vidarebefordra användare till, vid klickning på ikonen"
+
+#: admin/partials/sassy-social-share-options-page.php:794
+#: admin/partials/sassy-social-share-options-page.php:1565
+msgid "Instagram username"
+msgstr "Användarnamn på Instagram"
+
+#: admin/partials/sassy-social-share-options-page.php:2567
+msgid "Enable this option to render sharing icons on AMP pages"
+msgstr "Aktivera detta val för att renderera delningsikoner på AMP-sidor"
+
+#: admin/partials/sassy-social-share-options-page.php:2556
+msgid "Enable sharing on AMP pages"
+msgstr "Aktivera delning på AMP-sidor"
+
+#: admin/partials/sassy-social-share-options-page.php:2551
+msgid "AMP"
+msgstr "AMP"
+
+#: includes/class-sassy-social-share-shortcodes.php:269
+#: includes/class-sassy-social-share-widgets.php:83
+#: includes/class-sassy-social-share-widgets.php:335
+#: public/class-sassy-social-share-public.php:120
+#: public/class-sassy-social-share-public.php:566
+msgid "Share"
+msgstr "﻿Dela"
+
+#: includes/class-sassy-social-share-shortcodes.php:269
+#: includes/class-sassy-social-share-widgets.php:83
+#: includes/class-sassy-social-share-widgets.php:335
+#: public/class-sassy-social-share-public.php:120
+#: public/class-sassy-social-share-public.php:566
+msgid "Shares"
+msgstr "Delningar"
+
+#: admin/partials/sassy-social-share-options-page.php:2793
+msgid "Why are floating sharing/like buttons not appearing at homepage?"
+msgstr "Varför visas inte den flytande delningen/gilla-knappar på startsidan?"
+
+#: admin/partials/sassy-social-share-options-page.php:2792
+msgid "Why is there so much space between like buttons?"
+msgstr "Varför är det så mycket utrymme mellan knapparna?"
+
+#: admin/partials/sassy-social-share-options-page.php:1347
+#: admin/partials/sassy-social-share-options-page.php:1886
+msgid "Excerpts and Posts page"
+msgstr "Utdrag och inläggs-sida"
+
+#: admin/partials/sassy-social-share-options-page.php:2791
+msgid "Why is share count not getting updated?"
+msgstr "Varför uppdateras inte delningsräknaren?"
+
+#: admin/partials/sassy-social-share-options-page.php:2790
+msgid "How to hide arrow after floating sharing bar?"
+msgstr "Hur döljer man pilen efter det flytande delningsfältet?"
+
+#: admin/partials/sassy-social-share-options-page.php:2436
+msgid "Use this to delete short urls saved in database. Handy, if urls of your website have been changed but short urls are still being generated for old urls."
+msgstr "Använd detta för att ta bort korta URL:er som sparats i databasen. Det är händigt om URL:er på din webbplats har ändrats men korta URL:er fortfarande genereras för gamla adresser."
+
+#: admin/partials/sassy-social-share-options-page.php:2429
+msgid "ShortUrl cache cleared successfully."
+msgstr "Cache för kort-URL har rensats."
+
+#: admin/partials/sassy-social-share-options-page.php:2424
+msgid "Clear Bitly Cache"
+msgstr "Rensa bit.ly-cache"
+
+#: admin/partials/sassy-social-share-options-page.php:2380
+msgid "Use default short url permalinks without the need for any additional plugin"
+msgstr "Använd standard kort-URL permalänkar utan några ytterligare tillägg"
+
+#: admin/partials/sassy-social-share-options-page.php:2355
+msgid "Use this to clear cached share counts"
+msgstr "Använd detta för att rensa cachade delningsräknare"
+
+#: admin/partials/sassy-social-share-options-page.php:2348
+msgid "Share Counts cache cleared successfully."
+msgstr "Cache för delningsräknare har rensats."
+
+#: admin/partials/sassy-social-share-options-page.php:2343
+msgid "Clear Share Counts Cache"
+msgstr "Rensa cache för delningsräknare"
+
+#: admin/partials/sassy-social-share-options-page.php:2319
+msgid "Refresh Share Count cache every"
+msgstr "Uppdatera cache för delningsräknare varje"
+
+#: admin/partials/sassy-social-share-options-page.php:2314
+msgid "Share Count Cache"
+msgstr "Cache för delningsräknare"
+
+#: admin/partials/sassy-social-share-options-page.php:2789
+msgid "How to show Whatsapp icon only on mobile devices?"
+msgstr "Hur kan man visa en Whatsapp-ikon enbart på mobila enheter?"
+
+#: admin/partials/sassy-social-share-options-page.php:2788
+msgid "How to customize the look of individual share counts?"
+msgstr "Hur kan man anpassa utseendet på varje individuell delningsräknare?"
+
+#: admin/partials/sassy-social-share-options-page.php:2787
+msgid "How to customize the look of total share counts?"
+msgstr "Hur kan man anpassa utseendet på totala delningsräknare?"
+
+#: admin/partials/sassy-social-share-options-page.php:2779
+msgid "How to integrate Google Analytics with sharing?"
+msgstr "Hur kan man integrera Google Analytics med delning?"
+
+#: admin/partials/sassy-social-share-options-page.php:2066
+msgid "Alignment of horizontal floating interface. Number can be negative too."
+msgstr "Justering av det horisontella, flytande fältet. Värde kan också vara negativt."
+
+#: admin/partials/sassy-social-share-options-page.php:1187
+#: admin/partials/sassy-social-share-options-page.php:1742
+msgid "Select sharing services to show in social share bar"
+msgstr "Välj delningstjänst att visa i verktygsfältet"
+
+#: admin/partials/sassy-social-share-options-page.php:1179
+#: admin/partials/sassy-social-share-options-page.php:1734
+msgid "Select Sharing Services"
+msgstr "Välj delningstjänst"
+
+#: admin/partials/sassy-social-share-about.php:35
+msgid "Customization Options"
+msgstr "Anpassningsalternativ"
+
+#: admin/partials/sassy-social-share-options-page.php:2786
+msgid "How to share specific page?"
+msgstr "Hur delar man en specifik sida?"
+
+#: admin/partials/sassy-social-share-about.php:17
+msgid "Donate"
+msgstr "Donera"
+
+#: admin/partials/sassy-social-share-options-page.php:275
+#: admin/partials/sassy-social-share-options-page.php:600
+#: admin/partials/sassy-social-share-options-page.php:1778
+#: includes/class-sassy-social-share-widgets.php:497
+msgid "Background Color"
+msgstr "Bakgrundsfärg"
+
+#: admin/partials/sassy-social-share-options-page.php:2808
+msgid "Save Changes"
+msgstr "Spara ändringar"
+
+#: admin/partials/sassy-social-share-options-page.php:2445
+#: admin/partials/sassy-social-share-options-page.php:2450
+msgid "Language"
+msgstr "Språk"
+
+#: admin/partials/sassy-social-share-options-page.php:139
+#: admin/partials/sassy-social-share-options-page.php:464
+#: includes/class-sassy-social-share-widgets.php:1008
+msgid "Round"
+msgstr "Rund"
+
+#: admin/partials/sassy-social-share-about.php:4
+msgid "Version"
+msgstr "Version"
+
+#: admin/partials/sassy-social-share-about.php:6
+msgid "by"
+msgstr "av"
+
+#: admin/partials/sassy-social-share-options-page.php:258
+#: admin/partials/sassy-social-share-options-page.php:279
+#: admin/partials/sassy-social-share-options-page.php:299
+#: admin/partials/sassy-social-share-options-page.php:583
+#: admin/partials/sassy-social-share-options-page.php:604
+#: admin/partials/sassy-social-share-options-page.php:623
+msgid "Default"
+msgstr "Standard"
+
+#: admin/partials/sassy-social-share-options-page.php:1341
+#: admin/partials/sassy-social-share-options-page.php:1880
+msgid "Homepage"
+msgstr "Startsida"
+
+#: admin/partials/sassy-social-share-options-page.php:2475
+msgid "Twitter username (without @)"
+msgstr "Användarnamn på Twitter (utan @)"
+
+#: admin/partials/sassy-social-share-options-page.php:737
+#: includes/class-sassy-social-share-widgets.php:941
+msgid "Title"
+msgstr "Rubrik"
+
+#: admin/partials/sassy-social-share-about.php:4
+msgid "About"
+msgstr "Om"
+
+#: includes/class-sassy-social-share-widgets.php:230
+msgid "Title:"
+msgstr "Rubrik:"
+
+#: admin/partials/sassy-social-share-options-page.php:2576
+#: admin/partials/sassy-social-share-options-page.php:2581
+msgid "Custom CSS"
+msgstr "Anpassad CSS"
+
+#: admin/partials/sassy-social-share-options-page.php:2486
+msgid "Provided username will be appended after the content being shared as \"via @USERNAME\". Leave empty if you do not want any username in the content being shared."
+msgstr "Angivet användarnamn läggs till innehållet som delas, t.ex. \"via @ANVÄNDARNAMN\". Lämna blankt om du inte vill visa något användarnamn i innehållet som delas."
+
+#: admin/partials/sassy-social-share-options-page.php:2470
+msgid "Username in sharing"
+msgstr "Användarnamn i delning"
+
+#: admin/partials/sassy-social-share-options-page.php:2461
+msgid "Enter the code of the language you want to use for like buttons. You can find the language codes at <a href=\"%s\" target=\"_blank\">this link</a>. Leave it empty for default language(English)"
+msgstr "Ange koden på språket du vill ha i gilla-knapparna. Du kan hitta din språkkod <a href=\"%s\" target=\"_blank\">här</a>. Lämna blankt för standardspråk (engelska)."
+
+#: admin/partials/sassy-social-share-options-page.php:2399
+msgid "Master control to enable bit.ly url shortening for sharing"
+msgstr "Huvudkontroll för att aktivera URL-förkortning för delning med hjälp av bit.ly"
+
+#: admin/partials/sassy-social-share-options-page.php:2387
+msgid "Enable bit.ly url shortener for sharing"
+msgstr "Aktivera URL-förkortning för delning med bit.ly"
+
+#: admin/partials/sassy-social-share-options-page.php:2369
+msgid "Use shortlinks already installed"
+msgstr "Använd shortlinks som redan är installerat"
+
+#: admin/partials/sassy-social-share-options-page.php:2364
+msgid "Url shortener"
+msgstr "URL-förkortare"
+
+#: admin/partials/sassy-social-share-options-page.php:2305
+msgid "If enabled, plugin options will get deleted when plugin is deleted/uninstalled and you will need to reconfigure the options when you install the plugin next time."
+msgstr "Om aktiverad kommer detta tilläggs alternativ att tas bort när tillägget tas bort/avinstalleras. Du kommer då behöva konfigurera allt igenom om du väljer att installera tillägget på nytt."
+
+#: admin/partials/sassy-social-share-options-page.php:2294
+msgid "Delete all the options on plugin deletion"
+msgstr "Ta bort alla alternativ när tillägget raderas"
+
+#: admin/partials/sassy-social-share-options-page.php:2258
+msgid "Load Javascript files in footer"
+msgstr "Ladda javascript-filer i sidfoten"
+
+#: admin/partials/sassy-social-share-options-page.php:2058
+#: includes/class-sassy-social-share-widgets.php:996
+msgid "%s pixels from %s"
+msgstr "%s pixlar från %s"
+
+#: admin/partials/sassy-social-share-options-page.php:2054
+msgid "Horizontal floating bar position"
+msgstr "Position för det horisontella, flytande fältet"
+
+#: admin/partials/sassy-social-share-options-page.php:2045
+msgid "Stick vertical floating interface horizontally at bottom only when screen is narrower than the width specified"
+msgstr "Klistra det vertikala, flytande fältet vid botten enbart när skärmen är mindre än angiven bredd."
+
+#: admin/partials/sassy-social-share-options-page.php:2038
+#: includes/class-sassy-social-share-widgets.php:990
+msgid "Stick vertical floating interface horizontally at bottom only when screen is narrower than %s pixels"
+msgstr "Klistra det vertikala, flytande fältet vid botten enbart när skärmen är mindre än %s pixlar."
+
+#: admin/partials/sassy-social-share-options-page.php:2034
+msgid "Horizontal floating bar responsiveness"
+msgstr "Responsivitet hos det horisontella, flytande fältet"
+
+#: admin/partials/sassy-social-share-options-page.php:2027
+msgid "Display vertical interface only when screen is wider than the width specified."
+msgstr "Visa det vertikala fältet enbart när skärmen är bredare än angiven bredd."
+
+#: admin/partials/sassy-social-share-options-page.php:2020
+#: includes/class-sassy-social-share-widgets.php:986
+msgid "Display vertical interface only when screen is wider than %s pixels"
+msgstr "Visa det vertikala fältet enbart när skärmen är bredare än %s pixlar."
+
+#: admin/partials/sassy-social-share-options-page.php:2017
+msgid "Vertical floating bar responsiveness"
+msgstr "Responsivitet hos det vertikala, flytande fältet."
+
+#: admin/partials/sassy-social-share-options-page.php:1925
+msgid "Specify the pages where you want to enable vertical Sharing interface"
+msgstr "Ange sidor där du vill använda det vertikala delningsfältet"
+
+#: admin/partials/sassy-social-share-options-page.php:1904
+msgid "BuddyPress group"
+msgstr "BuddyPress-grupp"
+
+#: admin/partials/sassy-social-share-options-page.php:1868
+msgid "Specify a number. Increase in number will shift sharing interface towards bottom and decrease will shift it towards top."
+msgstr "Ange ett värde. Ökande värde flyttar delningsfältet mot botten och minskande värde mot toppen."
+
+#: admin/partials/sassy-social-share-options-page.php:1849
+msgid "Specify a number. Increase in number will shift sharing interface towards left and decrease will shift it towards right. Number can be negative too."
+msgstr "Ange ett värde. Ökande värde flyttar delningsfältet mot vänster och minskade värde mot höger. Värde kan också vara negativt."
+
+#: admin/partials/sassy-social-share-options-page.php:1238
+#: admin/partials/sassy-social-share-options-page.php:1810
+msgid "Horizontal alignment of the sharing interface"
+msgstr "Horisontell justering av delningsfältet"
+
+#: admin/partials/sassy-social-share-options-page.php:1229
+#: includes/class-sassy-social-share-widgets.php:946
+msgid "Center"
+msgstr "Centrera"
+
+#: admin/partials/sassy-social-share-options-page.php:1223
+#: admin/partials/sassy-social-share-options-page.php:1796
+msgid "Horizontal alignment"
+msgstr "Horisontell justering"
+
+#: admin/partials/sassy-social-share-options-page.php:1172
+#: admin/partials/sassy-social-share-options-page.php:1727
+msgid "Drag the icons to rearrange in desired order"
+msgstr "Dra ikonerna för att sortera dem i önskad ordning"
+
+#: admin/partials/sassy-social-share-options-page.php:1102
+#: admin/partials/sassy-social-share-options-page.php:1659
+msgid "Rearrange icons"
+msgstr "Sortera ikoner"
+
+#: admin/partials/sassy-social-share-options-page.php:748
+msgid "The text to display above the sharing interface"
+msgstr "Text att visa ovanför delningsfältet"
+
+#: admin/partials/sassy-social-share-options-page.php:730
+#: admin/partials/sassy-social-share-options-page.php:1557
+msgid "Url to share"
+msgstr "URL att dela"
+
+#: admin/partials/sassy-social-share-options-page.php:723
+#: admin/partials/sassy-social-share-options-page.php:1550
+msgid "Custom url"
+msgstr "Anpassad URL"
+
+#: admin/partials/sassy-social-share-options-page.php:721
+#: admin/partials/sassy-social-share-options-page.php:1548
+#: includes/class-sassy-social-share-widgets.php:240
+#: includes/class-sassy-social-share-widgets.php:478
+msgid "Url of the homepage of your website"
+msgstr "URL till startsidan av din webbplats"
+
+#: admin/partials/sassy-social-share-options-page.php:719
+#: admin/partials/sassy-social-share-options-page.php:1546
+#: includes/class-sassy-social-share-widgets.php:239
+#: includes/class-sassy-social-share-widgets.php:477
+msgid "Url of the webpage where icons are located (default)"
+msgstr "URL till sidan där ikonen finns (standard)"
+
+#: admin/partials/sassy-social-share-options-page.php:714
+#: admin/partials/sassy-social-share-options-page.php:1541
+msgid "Target Url"
+msgstr "Mål-URL"
+
+#: admin/partials/sassy-social-share-options-page.php:704
+msgid "Master control to enable standard sharing"
+msgstr "Huvudkontroll för att aktivera standarddelning"
+
+#: admin/partials/sassy-social-share-options-page.php:693
+msgid "Enable Standard sharing interface"
+msgstr "Aktivera gränssnitt för standarddelning"
+
+#: admin/partials/sassy-social-share-options-page.php:688
+msgid "Standard Sharing Interface Options"
+msgstr "Gränssnittsalternativ för standarddelning"
+
+#: admin/partials/sassy-social-share-options-page.php:375
+msgid "Floating interface theme"
+msgstr "Tema för det flytande gränssnittet"
+
+#: admin/partials/sassy-social-share-options-page.php:348
+#: admin/partials/sassy-social-share-options-page.php:672
+msgid "Position of share counter"
+msgstr "Position på delningsräknare"
+
+#: admin/partials/sassy-social-share-options-page.php:340
+#: admin/partials/sassy-social-share-options-page.php:664
+msgid "Inner Bottom"
+msgstr "Inre botten"
+
+#: admin/partials/sassy-social-share-options-page.php:338
+#: admin/partials/sassy-social-share-options-page.php:662
+msgid "Inner Right"
+msgstr "Inre höger"
+
+#: admin/partials/sassy-social-share-options-page.php:336
+#: admin/partials/sassy-social-share-options-page.php:660
+msgid "Inner Top"
+msgstr "Inre toppen"
+
+#: admin/partials/sassy-social-share-options-page.php:334
+#: admin/partials/sassy-social-share-options-page.php:658
+msgid "Inner Left"
+msgstr "Inre vänster"
+
+#: admin/partials/sassy-social-share-options-page.php:332
+#: admin/partials/sassy-social-share-options-page.php:656
+msgid "Bottom"
+msgstr "Botten"
+
+#: admin/partials/sassy-social-share-options-page.php:330
+#: admin/partials/sassy-social-share-options-page.php:654
+#: admin/partials/sassy-social-share-options-page.php:1230
+#: admin/partials/sassy-social-share-options-page.php:1802
+#: includes/class-sassy-social-share-widgets.php:485
+#: includes/class-sassy-social-share-widgets.php:947
+#: includes/class-sassy-social-share-widgets.php:978
+msgid "Right"
+msgstr "Höger"
+
+#: admin/partials/sassy-social-share-options-page.php:328
+#: admin/partials/sassy-social-share-options-page.php:652
+msgid "Top"
+msgstr "Topp"
+
+#: admin/partials/sassy-social-share-options-page.php:326
+#: admin/partials/sassy-social-share-options-page.php:650
+#: admin/partials/sassy-social-share-options-page.php:1228
+#: admin/partials/sassy-social-share-options-page.php:1801
+#: includes/class-sassy-social-share-widgets.php:484
+#: includes/class-sassy-social-share-widgets.php:945
+#: includes/class-sassy-social-share-widgets.php:971
+msgid "Left"
+msgstr "Vänster"
+
+#: admin/partials/sassy-social-share-options-page.php:321
+#: admin/partials/sassy-social-share-options-page.php:645
+msgid "(applies, if counter enabled)"
+msgstr "(gäller om räknare är aktiverad)"
+
+#: admin/partials/sassy-social-share-options-page.php:321
+#: admin/partials/sassy-social-share-options-page.php:645
+msgid "Counter Position"
+msgstr "Räknares position"
+
+#: admin/partials/sassy-social-share-options-page.php:302
+#: admin/partials/sassy-social-share-options-page.php:307
+#: admin/partials/sassy-social-share-options-page.php:626
+#: admin/partials/sassy-social-share-options-page.php:631
+msgid "Border Color"
+msgstr "Ramfärg"
+
+#: admin/partials/sassy-social-share-options-page.php:301
+#: admin/partials/sassy-social-share-options-page.php:306
+#: admin/partials/sassy-social-share-options-page.php:625
+#: admin/partials/sassy-social-share-options-page.php:630
+msgid "Border Width"
+msgstr "Ramtjocklek"
+
+#: admin/partials/sassy-social-share-options-page.php:294
+#: admin/partials/sassy-social-share-options-page.php:619
+msgid "Border"
+msgstr "Ram"
+
+#: admin/class-sassy-social-share-admin.php:492
+msgid "Settings saved"
+msgstr "Inställningar sparade"
+
+#: admin/class-sassy-social-share-admin.php:242
+msgid "Floating sharing"
+msgstr "Flytande delare"
+
+#: admin/class-sassy-social-share-admin.php:223
+msgid "Standard sharing"
+msgstr "Standarddelare"
+
+#. Plugin Name of the plugin
+#: admin/class-sassy-social-share-admin.php:61
+msgid "Sassy Social Share"
+msgstr "Sassy Social Share"
+
+#: admin/class-sassy-social-share-admin.php:59
+msgid "Sassy Social Share by Heateor"
+msgstr "Sassy Social Share av Heateor"
+
+#. Author of the plugin
+msgid "Team Heateor"
+msgstr "Team Heateor"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.heateor.com"
+msgstr "https://www.heateor.com"
+
+#: public/class-sassy-social-share-public.php:938
+msgid "Providers not selected"
+msgstr "Leverantörer ej valda"
+
+#: public/class-sassy-social-share-public.php:932
+#: public/class-sassy-social-share-public.php:1170
+msgid "Invalid request"
+msgstr "Ogiltig begäran"
+
+#: includes/class-sassy-social-share-widgets.php:482
+#: includes/class-sassy-social-share-widgets.php:943
+msgid "Alignment"
+msgstr "Justering"
+
+#: includes/class-sassy-social-share-widgets.php:469
+msgid "Make sure \"Floating Interface\" is enabled in \"Floating Interface\" section at \"Sassy Social Share\" page."
+msgstr "Säkerställ att \"flytande gränssnitt\" är aktiverat under sektionen \"flytande gränssnitt\" på sidan \"Sassy Social Share\"."
+
+#: includes/class-sassy-social-share-widgets.php:248
+#: includes/class-sassy-social-share-widgets.php:499
+msgid "Hide for logged in users:"
+msgstr "Dölj för inloggade användare"
+
+#: includes/class-sassy-social-share-widgets.php:246
+#: includes/class-sassy-social-share-widgets.php:1125
+msgid "After widget content:"
+msgstr "Efter widgetinnehåll:"
+
+#: includes/class-sassy-social-share-widgets.php:244
+#: includes/class-sassy-social-share-widgets.php:939
+msgid "Before widget content:"
+msgstr "Före widgetinnehåll:"
+
+#: includes/class-sassy-social-share-widgets.php:238
+#: includes/class-sassy-social-share-widgets.php:476
+msgid "Select"
+msgstr "Välj"
+
+#: includes/class-sassy-social-share-widgets.php:236
+#: includes/class-sassy-social-share-widgets.php:474
+msgid "Target Url:"
+msgstr "Mål-URL:"
+
+#: includes/class-sassy-social-share-widgets.php:234
+#: includes/class-sassy-social-share-widgets.php:472
+msgid "Show total shares:"
+msgstr "Visa totalt antal delningar:"
+
+#: includes/class-sassy-social-share-widgets.php:232
+#: includes/class-sassy-social-share-widgets.php:470
+msgid "Show individual share counts:"
+msgstr "Visa individuella delningar:"
+
+#: includes/class-sassy-social-share-widgets.php:229
+msgid "Make sure \"Standard Sharing Interface\" is enabled in \"Standard Interface\" section at \"Sassy Social Share\" page."
+msgstr "Säkerställ att \"Standard delningsgränssnitt\" är aktiverat under sektionen \"Standardgränssnitt\" på sidan \"Sassy Social Share\"."
+
+#: includes/class-sassy-social-share-widgets.php:50
+msgid "Sassy Social Share - Standard Widget"
+msgstr "Sassy Social Share - Standardwidget"
+
+#: admin/partials/sassy-social-share-options-page.php:2785
+msgid "How can I specify minimum sharing count for sharing networks?"
+msgstr "Hur kan jag specificera minsta delningsantal till delningsnätverk?"
+
+#: admin/partials/sassy-social-share-options-page.php:2784
+msgid "How can I disable sharing on particular page/post?"
+msgstr "Hur kan jag inaktivera delning på utvalda sidor eller inlägg?"
+
+#: admin/partials/sassy-social-share-options-page.php:2783
+msgid "How can I show share counts of my website rather than of individual pages/posts?"
+msgstr "Hur kan jag visa delningsräknare på min webbplats snarare än individuella sidor eller inlägg?"
+
+#: admin/partials/sassy-social-share-options-page.php:2592
+msgid "You can specify any additional CSS rules (without &lt;style&gt; tag)"
+msgstr "Du kan ange ytterligare CSS-regler (utan &lt;style&amp;gt; tagg)"
+
+#: admin/partials/sassy-social-share-options-page.php:1245
+msgid "Position with respect to content"
+msgstr "Position med respekt för innehållet"
+
+#: admin/partials/sassy-social-share-options-page.php:314
+#: admin/partials/sassy-social-share-options-page.php:638
+msgid "Icon border"
+msgstr "Ikonram"
+
+#: admin/partials/sassy-social-share-options-page.php:287
+#: admin/partials/sassy-social-share-options-page.php:612
+msgid "Specify the color or hex code (example #cc78e0) for icon background. Save \"transparent\" for transparent background. Leave empty for default. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "Ange färg eller hex-kod (exempelvis #CC78E0) för ikonens bakgrund. Spara \"transparent\" för transparent bakgrund. Lämna tomt för standard. Du kan hämta hex-kod på önskad färg från <a href=\"http://www.colorpicker.com/\" target=\"_blank\">denna länk</a>."
+
+#: admin/partials/sassy-social-share-options-page.php:268
+#: admin/partials/sassy-social-share-options-page.php:593
+msgid "Specify the color or hex code (example #cc78e0) for the logo of icon. Leave empty for default. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "Ange färg eller hex-kod (exempelvis #CC78E0) för logotyp på ikonen. Lämna tomt för standard. Du kan hämta hex-kod på önskad färg från <a href=\"http://www.colorpicker.com/\" target=\"_blank\">denna länk</a>."
+
+#: admin/partials/sassy-social-share-options-page.php:245
+#: admin/partials/sassy-social-share-options-page.php:570
+msgid "Specify a value for rounded corners. More the value, more rounded will the corners be. Leave empty for sharp corners."
+msgstr "Ange ett värde för rundade hörn. Ju större värde, desto mer rundade hörn. Lämna tomt för skarpa hörn."
+
+#: admin/partials/sassy-social-share-options-page.php:234
+#: admin/partials/sassy-social-share-options-page.php:559
+msgid "Border radius (in pixels)"
+msgstr "Ramradie (i pixlar)"
+
+#: admin/partials/sassy-social-share-options-page.php:225
+#: admin/partials/sassy-social-share-options-page.php:550
+msgid "Height of the sharing icons"
+msgstr "Höjd på delningsikoner"
+
+#: admin/partials/sassy-social-share-options-page.php:208
+#: admin/partials/sassy-social-share-options-page.php:533
+msgid "Height (in pixels)"
+msgstr "Höjd (i pixlar)"
+
+#: admin/partials/sassy-social-share-options-page.php:201
+#: admin/partials/sassy-social-share-options-page.php:526
+msgid "Width of the sharing icons"
+msgstr "Bredd på delningsikoner"
+
+#: admin/partials/sassy-social-share-options-page.php:184
+#: admin/partials/sassy-social-share-options-page.php:509
+msgid "Width (in pixels)"
+msgstr "Bredd (i pixlar)"
+
+#: admin/partials/sassy-social-share-options-page.php:175
+#: admin/partials/sassy-social-share-options-page.php:500
+msgid "Size of the sharing icons"
+msgstr "Storlek på delningsikoner"
+
+#: admin/partials/sassy-social-share-options-page.php:158
+#: admin/partials/sassy-social-share-options-page.php:483
+msgid "Size (in pixels)"
+msgstr "Storlek (i pixlar)"
+
+#: admin/partials/sassy-social-share-options-page.php:150
+#: admin/partials/sassy-social-share-options-page.php:475
+msgid "Shape of the sharing icons"
+msgstr "Form på delningsikoner"
+
+#: admin/partials/sassy-social-share-options-page.php:134
+#: admin/partials/sassy-social-share-options-page.php:459
+msgid "Shape"
+msgstr "Form"
+
+#: admin/partials/sassy-social-share-options-page.php:128
+#: admin/partials/sassy-social-share-options-page.php:453
+msgid "Do not forget to save the configuration after making changes by clicking the save button below"
+msgstr "Glöm inte att spara konfigurationen efter att du gjort ändringar. Spara genom att klicka på spara-knappen nedan."
+
+#: admin/partials/sassy-social-share-options-page.php:45
+#: admin/partials/sassy-social-share-options-page.php:380
+msgid "Icon Preview"
+msgstr "Förhandsgranska ikon"
+
+#: admin/partials/sassy-social-share-options-page.php:40
+msgid "Standard interface theme"
+msgstr "Tema för standardgränssnitt"
+
+#: admin/partials/sassy-social-share-options-page.php:31
+#: admin/partials/sassy-social-share-options-page.php:2739
+msgid "Troubleshooter"
+msgstr "Felsökare"
+
+#: admin/partials/sassy-social-share-options-page.php:30
+#: admin/partials/sassy-social-share-options-page.php:2724
+msgid "Shortcode & Widget"
+msgstr "Kortkod och widget"
+
+#: admin/partials/sassy-social-share-options-page.php:21
+msgid "Floating Interface"
+msgstr "Flytande gränssnitt"
+
+#: admin/partials/sassy-social-share-options-page.php:20
+msgid "Standard Interface"
+msgstr "Standardgränssnitt"
+
+#: admin/partials/sassy-social-share-options-page.php:19
+msgid "Theme Selection"
+msgstr "Temaväljare"
+
+#: admin/partials/sassy-social-share-about.php:62
+#: admin/partials/sassy-social-share-about.php:65
+#: admin/partials/sassy-social-share-about.php:66
+#: admin/partials/sassy-social-share-about.php:67
+#: admin/partials/sassy-social-share-about.php:68
+#: admin/partials/sassy-social-share-about.php:69
+msgid "Rate 5-star"
+msgstr "Ge fem stjärnor i omdöme"
+
+#: admin/partials/sassy-social-share-about.php:59
+msgid "Support Us"
+msgstr "Stöd oss"
+
+#: admin/partials/sassy-social-share-about.php:54
+msgid "If you <strong>have any query</strong>, need help regarding <strong>plugin setup</strong>, want <strong>custom features</strong> in the plugin or <strong>have any suggestion</strong> to improve the plugin, just drop an email at <a href=\"mailto:support@heateor.com\">support@heateor.com</a>"
+msgstr "Om du <strong>har några funderingar</strong>, behöver hjälp med <strong>inställningar i tillägget</strong>, vill ha <strong>anpassade funktioner</strong> eller har <strong>förslag</strong> på förbättringar - då får du gärna maila oss på <a href=\"mailto:support@heateor.com\">support@heateor.com</a>"
+
+#: admin/partials/sassy-social-share-about.php:52
+msgid "Need Quick Help?"
+msgstr "Behöver snabbhjälp?"
+
+#: admin/partials/sassy-social-share-options-page.php:1829
+msgid "Specify a number. Increase in number will shift sharing interface towards right and decrease will shift it towards left. Number can be negative too."
+msgstr "Ange ett värde. Ökande värde flyttar gränssnittet mot höger och minskande värde flyttar till vänster. Värdet kan också vara negativt."
+
+#: admin/partials/sassy-social-share-options-page.php:1789
+msgid "Specify the color or hex code (example #cc78e0) for the background of vertical sharing bar. Leave empty for transparent. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "Ange färg eller hex-kod (exempelvis #CC78E0) för bakgrund på vertikalt delningsfält. Lämna tomt för transparent bakgrund. Lämna tomt för standard. Du kan hämta hex-kod på önskad färg från <a href=\"http://www.colorpicker.com/\" target=\"_blank\">denna länk</a>."
+
+#: admin/partials/sassy-social-share-options-page.php:1532
+msgid "Master control to enable floating sharing widget"
+msgstr "Huvudkontroll för att aktivera flytande delningswidget"
+
+#: admin/partials/sassy-social-share-options-page.php:1521
+msgid "Enable Floating sharing interface"
+msgstr "Aktivera flytande delningsfält"
+
+#: admin/partials/sassy-social-share-options-page.php:1516
+msgid "Floating Sharing Interface Options"
+msgstr "Alternativ för flytande delningsfält"
+
+#: admin/partials/sassy-social-share-options-page.php:1464
+#: admin/partials/sassy-social-share-options-page.php:1984
+msgid "If enabled, \"More\" icon will be displayed after selected sharing icons which shows additional sharing networks in popup"
+msgstr "Om aktiverad kommer ikonen \"Mer\" att visas efter valda delningsikoner, som då visar ytterligare nätverk möjliga att dela till."
+
+#: admin/partials/sassy-social-share-options-page.php:1453
+#: admin/partials/sassy-social-share-options-page.php:1973
+msgid "Enable 'More' icon"
+msgstr "Aktivera 'Mer'-ikon"
+
+#: admin/partials/sassy-social-share-options-page.php:1445
+#: admin/partials/sassy-social-share-options-page.php:1965
+msgid "If enabled, total shares will be displayed with sharing icons"
+msgstr "Om aktiverad kommer totala antalet delningar visas med delningsikoner"
+
+#: admin/partials/sassy-social-share-options-page.php:1434
+#: admin/partials/sassy-social-share-options-page.php:1954
+msgid "Show total shares"
+msgstr "Visa totalt antal delningar"
+
+#: admin/partials/sassy-social-share-options-page.php:1426
+#: admin/partials/sassy-social-share-options-page.php:1946
+msgid "If enabled, share counts are displayed above sharing icons."
+msgstr "Om aktiverad visas delningsräknare ovanför delningsikoner."
+
+#: admin/partials/sassy-social-share-options-page.php:1412
+#: admin/partials/sassy-social-share-options-page.php:1932
+msgid "Show share counts"
+msgstr "Visa delningsräknare"
+
+#: admin/partials/sassy-social-share-options-page.php:1405
+msgid "Specify the pages where you want to enable Sharing interface"
+msgstr "Ange sidor som du vill aktivera delningsgränssnitt på"
+
+#: admin/partials/sassy-social-share-options-page.php:1394
+msgid "WooCommerce Thankyou Page"
+msgstr "WooCommerce tack-sida"
+
+#: admin/partials/sassy-social-share-options-page.php:1391
+msgid "WooCommerce Product Page"
+msgstr "WooCommerce produktsida"
+
+#: admin/partials/sassy-social-share-options-page.php:1388
+msgid "After individual product at WooCommerce Shop page"
+msgstr "Efter individuella produkter i din WooCommerce-butik"
+
+#: admin/partials/sassy-social-share-options-page.php:1381
+msgid "BBPress reply"
+msgstr "BBPress-svar"
+
+#: admin/partials/sassy-social-share-options-page.php:1378
+#: admin/partials/sassy-social-share-options-page.php:1915
+msgid "BBPress topic"
+msgstr "BBPress-ämne"
+
+#: admin/partials/sassy-social-share-options-page.php:1375
+#: admin/partials/sassy-social-share-options-page.php:1912
+msgid "BBPress forum"
+msgstr "BBPress-forum"
+
+#: admin/partials/sassy-social-share-options-page.php:1369
+msgid "BuddyPress group (only at top of content)"
+msgstr "BuddyPress-grupp (i toppen ovanför innehåll)"
+
+#: admin/partials/sassy-social-share-options-page.php:1367
+msgid "BuddyPress activity"
+msgstr "BuddyPress-aktivitet"
+
+#: admin/partials/sassy-social-share-options-page.php:1351
+#: admin/partials/sassy-social-share-options-page.php:1890
+msgid "Archive Pages (Category, Tag, Author or Date based pages)"
+msgstr "Arkivsidor (kategori, taggar, författare eller datum)"
+
+#: admin/partials/sassy-social-share-options-page.php:1349
+#: admin/partials/sassy-social-share-options-page.php:1888
+msgid "Category Archives"
+msgstr "Kategoriarkiv"
+
+#: admin/partials/sassy-social-share-options-page.php:1345
+#: admin/partials/sassy-social-share-options-page.php:1884
+msgid "Pages"
+msgstr "Sidor"
+
+#: admin/partials/sassy-social-share-options-page.php:1343
+#: admin/partials/sassy-social-share-options-page.php:1882
+msgid "Posts"
+msgstr "Inlägg"
+
+#: admin/partials/sassy-social-share-options-page.php:1336
+#: admin/partials/sassy-social-share-options-page.php:1875
+msgid "Placement"
+msgstr "Placering"
+
+#: admin/partials/sassy-social-share-options-page.php:1259
+msgid "Specify position of the sharing interface with respect to the content"
+msgstr "Ange position på delningsfält med hänsyn till innehållet"
+
+#: admin/partials/sassy-social-share-options-page.php:1252
+msgid "Bottom of the content"
+msgstr "Botten av innehållet"
+
+#: admin/partials/sassy-social-share-options-page.php:1250
+msgid "Top of the content"
+msgstr "Toppen av innehållet"
+
+#: admin/partials/sassy-social-share-about.php:47
+msgid "Support Forum"
+msgstr "Supportforum"
+
+#: includes/class-sassy-social-share-widgets.php:297
+msgid "Floating sharing widget. Let your website users share content on popular Social networks like Facebook, Twitter, Tumblr, Whatsapp and many more"
+msgstr "Flytande delnings-widget. Låt dina webbplatsanvändare dela innehåll på populära sociala nätverk som Facebook, Twitter, Tumblr, Whatsapp och många fler"
+
+#: admin/partials/sassy-social-share-about.php:41
+msgid "Add-ons"
+msgstr "Utökningar"
+
+#: includes/class-sassy-social-share-widgets.php:495
+msgid "Top Offset"
+msgstr "Toppen förskjutning"
+
+#: includes/class-sassy-social-share-widgets.php:492
+msgid "Right Offset"
+msgstr "Höger förskjutning"
+
+#: includes/class-sassy-social-share-widgets.php:488
+msgid "Left Offset"
+msgstr "Vänster förskjutning"
+
+#: admin/partials/sassy-social-share-options-page.php:1838
+#: includes/class-sassy-social-share-widgets.php:1021
+#: includes/class-sassy-social-share-widgets.php:1023
+msgid "Right offset"
+msgstr "Höger förskjutning"
+
+#: admin/partials/sassy-social-share-options-page.php:1318
+#: admin/partials/sassy-social-share-options-page.php:1857
+msgid "Top offset"
+msgstr "Toppen förskjutning"
+
+#: admin/partials/sassy-social-share-options-page.php:1818
+#: includes/class-sassy-social-share-widgets.php:1021
+#: includes/class-sassy-social-share-widgets.php:1023
+msgid "Left offset"
+msgstr "Vänster förskjutning"
+
+#: admin/partials/sassy-social-share-options-page.php:260
+#: admin/partials/sassy-social-share-options-page.php:280
+#: admin/partials/sassy-social-share-options-page.php:304
+#: admin/partials/sassy-social-share-options-page.php:585
+#: admin/partials/sassy-social-share-options-page.php:605
+#: admin/partials/sassy-social-share-options-page.php:628
+msgid "On Hover"
+msgstr "Vid hovring"
+
+#: admin/partials/sassy-social-share-options-page.php:253
+#: admin/partials/sassy-social-share-options-page.php:578
+msgid "Logo Color"
+msgstr "Loggans färg"
+
+#: admin/partials/sassy-social-share-options-page.php:32
+#: admin/partials/sassy-social-share-options-page.php:2765
+msgid "FAQ"
+msgstr "Vanliga frågor"
+
+#: admin/partials/sassy-social-share-options-page.php:22
+#: admin/partials/sassy-social-share-options-page.php:2235
+msgid "Miscellaneous"
+msgstr "Övrigt"
+
+#: admin/partials/sassy-social-share-about.php:23
+msgid "Plugin Demo"
+msgstr "Demo av tillägget"
+
+#: admin/partials/sassy-social-share-options-page.php:143
+#: admin/partials/sassy-social-share-options-page.php:468
+msgid "Rectangle"
+msgstr "Rektangel"
+
+#: admin/partials/sassy-social-share-options-page.php:141
+#: admin/partials/sassy-social-share-options-page.php:466
+#: includes/class-sassy-social-share-widgets.php:1009
+msgid "Square"
+msgstr "Fyrkant"

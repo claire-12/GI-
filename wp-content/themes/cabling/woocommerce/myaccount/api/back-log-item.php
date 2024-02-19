@@ -1,0 +1,60 @@
+<?php
+if (empty($data))
+    return;
+
+$backlogSingleTable = array(
+    'ordered_quantity' => __('Quantity Ordered', 'cabling'),
+    'open_quantity' => __('Quantity Remaining', 'cabling'),
+    'price_per_unit' => __('Price/Unit', 'cabling'),
+    'price_unit' => __('Unit', 'cabling'),
+    'remaining_value' => __('Remaining Value', 'cabling'),
+    'due_date' => __('Due Date', 'cabling'),
+    'lv_shipping_method' => __('Shipping Method', 'cabling'),
+);
+$backlogMainTable = array(
+    'ponumber' => __('Number', 'cabling'),
+    'customer_part_number' => __('Customer Part', 'cabling'),
+    'parcomaterial' => __('Parco Part', 'cabling'),
+    'parcocompound' => __('Parco Compound', 'cabling'),
+    'sapMaterial' => __('SAP Part', 'cabling'),
+    'ship_date' => __('Parco Ship Date', 'cabling'),
+    'open_quantity' => __('Quantity Remaining', 'cabling'),
+    'remaining_value' => __('Remaining Value', 'cabling'),
+);
+?>
+<div class="table-responsive">
+    <h2 class="table-heading">Purchase orders</h2>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <?php foreach ($backlogMainTable as $name): ?>
+                    <th><?php echo $name ?></th>
+                <?php endforeach ?>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($data as $datum): ?>
+            <tr onclick="showSingleTable('single-<?php echo sanitize_title($datum['ponumber']) ?>')">
+                <?php foreach ($backlogMainTable as $key => $item): ?>
+                    <td><?php echo show_value_from_api($key, $datum[$key]) ?></td>
+                <?php endforeach ?>
+            </tr>
+            <tr id="single-<?php echo sanitize_title($datum['ponumber']) ?>" class="hidden">
+                <?php foreach ($backlogSingleTable as $keyS => $itemS): ?>
+                    <td><?php echo show_value_from_api($keyS, $datum[$keyS]) ?></td>
+                <?php endforeach ?>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+    <table id="table-order-detail" class="table table-bordered text-center hidden">
+        <thead>
+            <tr>
+                <?php foreach ($backlogSingleTable as $nameSingle): ?>
+                    <th><?php echo $nameSingle ?></th>
+                <?php endforeach ?>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>

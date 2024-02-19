@@ -1,0 +1,55 @@
+[2023-12-14 02:52:53] [index] Dropping post.company_news 1033145
+[2023-12-14 02:52:53] [indexer] Processing batch (1)
+[2023-12-14 02:52:53] [indexer] Indexing post.product:1038557
+[2023-12-14 02:52:55] [index] Marking [1] post.product 1038557 as indexed
+[2023-12-14 02:52:56] [indexer] Queued next batch (1)
+[2023-12-14 02:53:05] [index] Dropping post.company_news 1033147
+[2023-12-14 02:53:05] [indexer] Processing batch (1)
+[2023-12-14 02:53:05] [indexer] Indexing post.product:1038559
+[2023-12-14 02:53:07] [index] Marking [1] post.product 1038559 as indexed
+[2023-12-14 02:53:07] [indexer] Queued next batch (1)
+[2023-12-14 02:53:23] [index] Dropping post.company_news 1033144
+[2023-12-14 02:53:23] [indexer] Processing batch (1)
+[2023-12-14 02:53:23] [indexer] Indexing post.product:1038561
+[2023-12-14 02:53:25] [index] Marking [1] post.product 1038561 as indexed
+[2023-12-14 02:53:25] [indexer] Queued next batch (1)
+[2023-12-14 08:23:29] [index] Dropping taxonomy.news-category 7924
+[2023-12-14 08:23:29] [indexer] Processing batch (1)
+[2023-12-14 08:23:29] [indexer] Indexing post.product:1038563
+[2023-12-14 08:23:32] [index] Marking [1] post.product 1038563 as indexed
+[2023-12-14 08:23:32] [indexer] Queued next batch (1)
+[2023-12-14 09:20:16] [index] Dropping post.post 1035340
+[2023-12-14 09:20:16] [indexer] Processing batch (1)
+[2023-12-14 09:20:16] [indexer] Indexing post.product:1038565
+[2023-12-14 09:20:19] [index] Marking [1] post.product 1038565 as indexed
+[2023-12-14 09:20:19] [indexer] Queued next batch (1)
+[2023-12-14 09:20:19] [index] Dropping post.post 1034908
+[2023-12-14 09:20:19] [indexer] Processing batch (1)
+[2023-12-14 09:20:19] [indexer] Indexing post.product:1038573
+[2023-12-14 09:20:19] [index] Marking [1] post.product 1038573 as indexed
+[2023-12-14 09:20:19] [indexer] Queued next batch (1)
+[2023-12-14 09:20:19] [index] Dropping post.post 1034869
+[2023-12-14 09:20:19] [indexer] Processing batch (1)
+[2023-12-14 09:20:19] [indexer] Indexing post.product:1038575
+[2023-12-14 09:20:19] [index] Marking [1] post.product 1038575 as indexed
+[2023-12-14 09:20:19] [indexer] Queued next batch (1)
+[2023-12-14 09:20:20] [index] Dropping post.post 1034816
+[2023-12-14 09:20:20] [indexer] Processing batch (1)
+[2023-12-14 09:20:20] [indexer] Indexing post.product:1038577
+[2023-12-14 09:20:20] [index] Marking [1] post.product 1038577 as indexed
+[2023-12-14 09:20:20] [indexer] Queued next batch (1)
+[2023-12-14 09:20:20] [index] Dropping post.post 260569
+[2023-12-14 09:20:20] [indexer] Processing batch (1)
+[2023-12-14 09:20:20] [indexer] Indexing post.product:1038579
+[2023-12-14 09:20:20] [index] Marking [1] post.product 1038579 as indexed
+[2023-12-14 09:20:20] [indexer] Queued next batch (1)
+[2023-12-14 10:41:10] [index] Dropping taxonomy.learn_category 8529
+[2023-12-14 10:41:10] [indexer] Processing batch (1)
+[2023-12-14 10:41:10] [indexer] Indexing post.product:1038581
+[2023-12-14 10:41:12] [index] Marking [1] post.product 1038581 as indexed
+[2023-12-14 10:41:12] [indexer] Queued next batch (1)
+[2023-12-14 10:42:53] [index] Dropping taxonomy.learn_category 8530
+[2023-12-14 10:42:53] [indexer] Processing batch (1)
+[2023-12-14 10:42:53] [indexer] Indexing post.product:1038583
+[2023-12-14 10:42:55] [index] Marking [1] post.product 1038583 as indexed
+[2023-12-14 10:42:55] [indexer] Queued next batch (1)

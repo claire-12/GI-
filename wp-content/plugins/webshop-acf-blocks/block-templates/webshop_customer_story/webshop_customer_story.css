@@ -1,0 +1,30 @@
+.webshop_customer_story {
+    padding: 50px 0;
+    position: relative;
+}
+.webshop_customer_story img {
+    border-radius: 50%;
+}
+.webshop_customer_story .heading{
+    font-size: 4rem;
+    font-weight: 900;
+}
+.webshop_customer_story .meta-info{
+    margin-top: 15px
+}
+.webshop_customer_story .meta-info p {
+    color:  var(--background-red);
+    margin-bottom: 0;
+    font-style: italic;
+}
+.webshop_customer_story .main-content::before {
+    content: '';
+    height: 60%;
+    background: #fafafa;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,50 @@
+# Translation of Plugins - Contact Form 7 &#8211; Repeatable Fields - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Contact Form 7 &#8211; Repeatable Fields - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-08-10 06:44:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.7\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Contact Form 7 &#8211; Repeatable Fields - Stable (latest release)\n"
+
+#. Author URI of the plugin
+msgid "https://felipeelia.dev/"
+msgstr "https://felipeelia.dev/"
+
+#. Author of the plugin
+msgid "Felipe Elia"
+msgstr "Felipe Elia"
+
+#. Description of the plugin
+msgid "An add-on plugin for Contact Form 7 that adds a repeatable group of fields functionality."
+msgstr "Un plugin de extensión para Contact Form 7 que añade una funcionalidad de grupo repetible de campos."
+
+#. Plugin URI of the plugin
+msgid "https://github.com/felipeelia/cf7-repeatable-fields"
+msgstr "https://github.com/felipeelia/cf7-repeatable-fields"
+
+#. Plugin Name of the plugin
+msgid "Contact Form 7 - Repeatable Fields"
+msgstr "Contact Form 7 - Repeatable Fields"
+
+#. translators: Format to use surrounded by code tag
+#: class-cf7-repeatable-fields.php:82
+msgid "You need to set an ID to this group. Use %s format."
+msgstr "Tienes que establecer una ID para este grupo. Usa el formato %s."
+
+#: cf7-repeatable-fields.php:64
+msgid "Do it now?"
+msgstr "¿Quieres hacerlo ahora?"
+
+#: cf7-repeatable-fields.php:55
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#. translators: 1: Plugin name; 2: Contact Form 7 link
+#: cf7-repeatable-fields.php:53
+msgid "In order to %1$s work, %2$s needs to be installed and activated."
+msgstr "Para que %1$s funcione, %2$s debe  estar instalado y activado."

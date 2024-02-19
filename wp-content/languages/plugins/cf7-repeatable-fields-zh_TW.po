@@ -1,0 +1,50 @@
+# Translation of Plugins - Contact Form 7 &#8211; Repeatable Fields - Stable (latest release) in Chinese (Taiwan)
+# This file is distributed under the same license as the Plugins - Contact Form 7 &#8211; Repeatable Fields - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-05-26 08:04:08+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
+"Language: zh_TW\n"
+"Project-Id-Version: Plugins - Contact Form 7 &#8211; Repeatable Fields - Stable (latest release)\n"
+
+#. Author URI of the plugin
+msgid "https://felipeelia.dev/"
+msgstr "https://felipeelia.dev/"
+
+#. Author of the plugin
+msgid "Felipe Elia"
+msgstr "Felipe Elia"
+
+#. Description of the plugin
+msgid "An add-on plugin for Contact Form 7 that adds a repeatable group of fields functionality."
+msgstr "Contact Form 7 的附加元件外掛，用於為表單新增可重複群組欄位。"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/felipeelia/cf7-repeatable-fields"
+msgstr "https://github.com/felipeelia/cf7-repeatable-fields"
+
+#. Plugin Name of the plugin
+msgid "Contact Form 7 - Repeatable Fields"
+msgstr "Contact Form 7 - Repeatable Fields"
+
+#. translators: Format to use surrounded by code tag
+#: class-cf7-repeatable-fields.php:82
+msgid "You need to set an ID to this group. Use %s format."
+msgstr "必須為這個群組設定 ID。使用 %s 格式。"
+
+#: cf7-repeatable-fields.php:62
+msgid "Do it now?"
+msgstr "立即安裝"
+
+#: cf7-repeatable-fields.php:53
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#. translators: 1: Plugin name; 2: Contact Form 7 link
+#: cf7-repeatable-fields.php:51
+msgid "In order to %1$s work, %2$s needs to be installed and activated."
+msgstr "要讓 %1$s 正常執行，請先安裝並啟用 %2$s。"

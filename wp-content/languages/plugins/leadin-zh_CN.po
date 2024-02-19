@@ -1,0 +1,135 @@
+# Translation of Plugins - HubSpot &#8211; CRM, Email Marketing, Live Chat, Forms &amp; Analytics - Development (trunk) in Chinese (China)
+# This file is distributed under the same license as the Plugins - HubSpot &#8211; CRM, Email Marketing, Live Chat, Forms &amp; Analytics - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-06-08 11:53:35+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: zh_CN\n"
+"Project-Id-Version: Plugins - HubSpot &#8211; CRM, Email Marketing, Live Chat, Forms &amp; Analytics - Development (trunk)\n"
+
+#: src/admin/class-leadinadmin.php:107
+msgid "Reporting"
+msgstr "报表"
+
+#. Author URI of the plugin
+msgid "http://hubspot.com/products/wordpress"
+msgstr "http://hubspot.com/products/wordpress"
+
+#: src/admin/class-deactivationform.php:86
+msgid "Thank you for your feedback. If you would like to tell us more please add your email and we'll get in touch."
+msgstr "感谢您的反馈意见。 如果您想告诉我们更多信息，请添加您的电子邮件，我们会与您取得联系。"
+
+#: src/admin/class-deactivationform.php:55
+msgid "Temporarily disabling or troubleshooting"
+msgstr "暂时禁用或故障排除"
+
+#: src/admin/class-deactivationform.php:51
+msgid "I can't sign up or log in"
+msgstr "我无法注册或登录"
+
+#: src/admin/class-leadinadmin.php:109
+msgid "Lists"
+msgstr "列表"
+
+#: src/admin/class-leadinadmin.php:108
+msgid "Contacts"
+msgstr "联系人"
+
+#: src/admin/class-deactivationform.php:27
+msgid "We're sorry to see you go"
+msgstr "很遗憾您选择离开！"
+
+#: src/admin/class-deactivationform.php:53
+msgid "The plugin isn't working"
+msgstr "插件无法正常工作"
+
+#: src/admin/class-deactivationform.php:54
+msgid "The plugin isn't useful"
+msgstr "该插件没有用"
+
+#: src/admin/class-deactivationform.php:95
+msgid "Submit & deactivate"
+msgstr "提交并停用"
+
+#: src/admin/class-deactivationform.php:100
+msgid "Skip & deactivate"
+msgstr "跳过并停用"
+
+#: src/admin/class-deactivationform.php:79
+msgid "Other"
+msgstr "其它"
+
+#: src/admin/class-deactivationform.php:37
+msgid "If you have a moment, please let us know why you're deactivating the plugin."
+msgstr "如果您有时间，请告诉我们为什么停用该插件。"
+
+#: src/admin/class-deactivationform.php:52
+msgid "I don't want to sign up to HubSpot"
+msgstr "我不想注册HubSpot"
+
+#: src/admin/class-deactivationform.php:81
+msgid "Feedback..."
+msgstr "反馈..."
+
+#: src/admin/class-adminconstants.php:68
+msgid "Sign In"
+msgstr "登录"
+
+#: src/admin/class-adminconstants.php:72
+msgid "Select and embed a HubSpot form"
+msgstr "选择并嵌入HubSpot表单"
+
+#: src/admin/class-adminconstants.php:69
+msgid "Select an existing form"
+msgstr "选择现有的表单"
+
+#: src/admin/class-adminconstants.php:70
+msgid "Select a form"
+msgstr "选择一个表单"
+
+#: src/admin/class-adminconstants.php:71
+msgid "HubSpot Form"
+msgstr "HubSpot 表单"
+
+#: src/admin/class-noticemanager.php:30
+msgid "The HubSpot plugin isn’t connected right now. To use HubSpot tools on your WordPress site, %1$sconnect the plugin now%2$s."
+msgstr "HubSpot插件目前尚未连接。 要在WordPress网站上使用HubSpot工具，请%1$s立即连接插件%2$s。"
+
+#: src/admin/class-adminconstants.php:67 src/admin/class-leadinadmin.php:111
+msgid "Live Chat"
+msgstr "实时聊天"
+
+#: src/admin/class-leadinadmin.php:112 src/admin/class-deactivationform.php:90
+msgid "Email"
+msgstr "电子邮件"
+
+#: src/admin/class-leadinadmin.php:113
+#: src/admin/class-pluginactionsmanager.php:35
+msgid "Settings"
+msgstr "设置"
+
+#. Description of the plugin
+msgid "HubSpot’s official WordPress plugin allows you to add forms, popups, and live chat to your website and integrate with the best WordPress CRM."
+msgstr "HubSpot的官方WordPress插件可让您向您的网站添加表单，弹出窗口和实时聊天，并与最佳的WordPress CRM集成。"
+
+#: src/admin/class-leadinadmin.php:131 src/admin/class-leadinadmin.php:137
+msgid "HubSpot All-In-One Marketing %1$s requires PHP %2$s or higher. Please upgrade WordPress first."
+msgstr "HubSpot All-In-One Marketing %1$s 必需 PHP %2$s 或更高. 请先升级WordPress。"
+
+#. Author of the plugin
+#: src/admin/class-leadinadmin.php:105 src/admin/class-leadinadmin.php:117
+#: src/admin/class-gutenberg.php:35
+msgid "HubSpot"
+msgstr "HubSpot"
+
+#. Plugin URI of the plugin
+msgid "http://www.hubspot.com/integrations/wordpress"
+msgstr "http://www.hubspot.com/integrations/wordpress"
+
+#: src/admin/class-leadinadmin.php:110
+msgid "Forms"
+msgstr "表单"

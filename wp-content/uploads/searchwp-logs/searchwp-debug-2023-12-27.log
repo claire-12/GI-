@@ -1,0 +1,424 @@
+[2023-12-27 02:29:54] [index] Dropping post.product 1066128
+[2023-12-27 02:29:54] [index] Dropping post.product 1066128
+[2023-12-27 02:29:54] [indexer] Processing batch (1)
+[2023-12-27 02:29:54] [indexer] Processing batch (1)
+[2023-12-27 02:29:54] [indexer] Indexing post.product:1055000
+[2023-12-27 02:29:54] [indexer] Indexing post.product:1055000
+[2023-12-27 02:29:57] [index] Marking [1] post.product 1055000 as indexed
+[2023-12-27 02:29:57] [index] Marking [1] post.product 1055000 as indexed
+[2023-12-27 02:29:57] [indexer] Queued next batch (1)
+[2023-12-27 02:29:57] [indexer] Queued next batch (1)
+[2023-12-27 02:30:57] [index] Dropping post.product 1066132
+[2023-12-27 02:30:57] [index] Dropping post.product 1066132
+[2023-12-27 02:30:57] [indexer] Processing batch (1)
+[2023-12-27 02:30:57] [indexer] Processing batch (1)
+[2023-12-27 02:30:57] [indexer] Indexing post.product:1055002
+[2023-12-27 02:30:57] [indexer] Indexing post.product:1055002
+[2023-12-27 02:30:59] [index] Marking [1] post.product 1055002 as indexed
+[2023-12-27 02:30:59] [index] Marking [1] post.product 1055002 as indexed
+[2023-12-27 02:30:59] [indexer] Queued next batch (1)
+[2023-12-27 02:30:59] [indexer] Queued next batch (1)
+[2023-12-27 02:31:18] [index] Dropping post.product 1066132
+[2023-12-27 02:31:18] [index] Dropping post.product 1066132
+[2023-12-27 02:31:18] [indexer] Processing batch (1)
+[2023-12-27 02:31:18] [indexer] Processing batch (1)
+[2023-12-27 02:31:18] [indexer] Indexing post.product:1055004
+[2023-12-27 02:31:18] [indexer] Indexing post.product:1055004
+[2023-12-27 02:31:21] [index] Marking [1] post.product 1055004 as indexed
+[2023-12-27 02:31:21] [index] Marking [1] post.product 1055004 as indexed
+[2023-12-27 02:31:21] [indexer] Queued next batch (1)
+[2023-12-27 02:31:21] [indexer] Queued next batch (1)
+[2023-12-27 02:32:07] [index] Dropping post.product 1066132
+[2023-12-27 02:32:07] [index] Dropping post.product 1066132
+[2023-12-27 02:32:07] [indexer] Processing batch (1)
+[2023-12-27 02:32:07] [indexer] Processing batch (1)
+[2023-12-27 02:32:07] [indexer] Indexing post.product:1055006
+[2023-12-27 02:32:07] [indexer] Indexing post.product:1055006
+[2023-12-27 02:32:10] [index] Marking [1] post.product 1055006 as indexed
+[2023-12-27 02:32:10] [index] Marking [1] post.product 1055006 as indexed
+[2023-12-27 02:32:10] [indexer] Queued next batch (1)
+[2023-12-27 02:32:10] [indexer] Queued next batch (1)
+[2023-12-27 02:32:54] [index] Dropping post.product 1066132
+[2023-12-27 02:32:54] [index] Dropping post.product 1066132
+[2023-12-27 02:32:54] [indexer] Processing batch (1)
+[2023-12-27 02:32:54] [indexer] Processing batch (1)
+[2023-12-27 02:32:54] [indexer] Indexing post.product:1055008
+[2023-12-27 02:32:54] [indexer] Indexing post.product:1055008
+[2023-12-27 02:32:56] [index] Marking [1] post.product 1055008 as indexed
+[2023-12-27 02:32:56] [index] Marking [1] post.product 1055008 as indexed
+[2023-12-27 02:32:56] [indexer] Queued next batch (1)
+[2023-12-27 02:32:56] [indexer] Queued next batch (1)
+[2023-12-27 02:33:32] [index] Dropping post.product 1066132
+[2023-12-27 02:33:32] [index] Dropping post.product 1066132
+[2023-12-27 02:33:32] [indexer] Processing batch (1)
+[2023-12-27 02:33:32] [indexer] Processing batch (1)
+[2023-12-27 02:33:32] [indexer] Indexing post.product:1055010
+[2023-12-27 02:33:32] [indexer] Indexing post.product:1055010
+[2023-12-27 02:33:34] [index] Marking [1] post.product 1055010 as indexed
+[2023-12-27 02:33:34] [index] Marking [1] post.product 1055010 as indexed
+[2023-12-27 02:33:34] [indexer] Queued next batch (1)
+[2023-12-27 02:33:34] [indexer] Queued next batch (1)
+[2023-12-27 02:37:04] [index] Dropping post.product 1031759
+[2023-12-27 02:37:04] [index] Dropping post.product 1031759
+[2023-12-27 02:37:04] [indexer] Processing batch (1)
+[2023-12-27 02:37:04] [indexer] Processing batch (1)
+[2023-12-27 02:37:04] [indexer] Indexing post.product:1055012
+[2023-12-27 02:37:04] [indexer] Indexing post.product:1055012
+[2023-12-27 02:37:06] [index] Marking [1] post.product 1055012 as indexed
+[2023-12-27 02:37:06] [index] Marking [1] post.product 1055012 as indexed
+[2023-12-27 02:37:06] [indexer] Queued next batch (1)
+[2023-12-27 02:37:06] [indexer] Queued next batch (1)
+[2023-12-27 02:37:08] [index] Dropping post.product 1031751
+[2023-12-27 02:37:08] [index] Dropping post.product 1031751
+[2023-12-27 02:37:08] [indexer] Processing batch (1)
+[2023-12-27 02:37:08] [indexer] Processing batch (1)
+[2023-12-27 02:37:08] [indexer] Indexing post.product:1031759
+[2023-12-27 02:37:08] [indexer] Indexing post.product:1031759
+[2023-12-27 02:37:08] [index] Marking [1] post.product 1031759 as indexed
+[2023-12-27 02:37:08] [index] Marking [1] post.product 1031759 as indexed
+[2023-12-27 02:37:08] [indexer] Queued next batch (1)
+[2023-12-27 02:37:08] [indexer] Queued next batch (1)
+[2023-12-27 02:37:08] [index] Dropping post.product 1031748
+[2023-12-27 02:37:08] [index] Dropping post.product 1031748
+[2023-12-27 02:37:08] [indexer] Processing batch (1)
+[2023-12-27 02:37:08] [indexer] Processing batch (1)
+[2023-12-27 02:37:08] [indexer] Indexing post.product:1031751
+[2023-12-27 02:37:08] [indexer] Indexing post.product:1031751
+[2023-12-27 02:37:08] [index] Marking [1] post.product 1031751 as indexed
+[2023-12-27 02:37:08] [index] Marking [1] post.product 1031751 as indexed
+[2023-12-27 02:37:08] [indexer] Queued next batch (1)
+[2023-12-27 02:37:08] [indexer] Queued next batch (1)
+[2023-12-27 02:37:09] [index] Dropping post.product 1031745
+[2023-12-27 02:37:09] [index] Dropping post.product 1031745
+[2023-12-27 02:37:09] [indexer] Processing batch (1)
+[2023-12-27 02:37:09] [indexer] Processing batch (1)
+[2023-12-27 02:37:09] [indexer] Indexing post.product:1031748
+[2023-12-27 02:37:09] [indexer] Indexing post.product:1031748
+[2023-12-27 02:37:09] [index] Marking [1] post.product 1031748 as indexed
+[2023-12-27 02:37:09] [index] Marking [1] post.product 1031748 as indexed
+[2023-12-27 02:37:10] [indexer] Queued next batch (1)
+[2023-12-27 02:37:10] [indexer] Queued next batch (1)
+[2023-12-27 02:37:11] [index] Dropping post.product 1031737
+[2023-12-27 02:37:11] [index] Dropping post.product 1031737
+[2023-12-27 02:37:11] [indexer] Processing batch (1)
+[2023-12-27 02:37:11] [indexer] Processing batch (1)
+[2023-12-27 02:37:11] [indexer] Indexing post.product:1031745
+[2023-12-27 02:37:11] [indexer] Indexing post.product:1031745
+[2023-12-27 02:37:11] [index] Marking [1] post.product 1031745 as indexed
+[2023-12-27 02:37:11] [index] Marking [1] post.product 1031745 as indexed
+[2023-12-27 02:37:11] [indexer] Queued next batch (1)
+[2023-12-27 02:37:11] [indexer] Queued next batch (1)
+[2023-12-27 02:37:12] [index] Dropping post.product 1031735
+[2023-12-27 02:37:12] [index] Dropping post.product 1031735
+[2023-12-27 02:37:12] [indexer] Processing batch (1)
+[2023-12-27 02:37:12] [indexer] Processing batch (1)
+[2023-12-27 02:37:12] [indexer] Indexing post.product:1031737
+[2023-12-27 02:37:12] [indexer] Indexing post.product:1031737
+[2023-12-27 02:37:12] [index] Marking [1] post.product 1031737 as indexed
+[2023-12-27 02:37:12] [index] Marking [1] post.product 1031737 as indexed
+[2023-12-27 02:37:12] [indexer] Queued next batch (1)
+[2023-12-27 02:37:12] [indexer] Queued next batch (1)
+[2023-12-27 02:38:29] [index] Dropping post.product 1031779
+[2023-12-27 02:38:29] [index] Dropping post.product 1031779
+[2023-12-27 02:38:29] [indexer] Processing batch (1)
+[2023-12-27 02:38:29] [indexer] Processing batch (1)
+[2023-12-27 02:38:29] [indexer] Indexing post.product:1031735
+[2023-12-27 02:38:29] [indexer] Indexing post.product:1031735
+[2023-12-27 02:38:32] [index] Marking [1] post.product 1031735 as indexed
+[2023-12-27 02:38:32] [index] Marking [1] post.product 1031735 as indexed
+[2023-12-27 02:38:32] [indexer] Queued next batch (1)
+[2023-12-27 02:38:32] [indexer] Queued next batch (1)
+[2023-12-27 02:38:55] [index] Dropping post.product 1032656
+[2023-12-27 02:38:55] [index] Dropping post.product 1032656
+[2023-12-27 02:38:55] [indexer] Processing batch (1)
+[2023-12-27 02:38:55] [indexer] Processing batch (1)
+[2023-12-27 02:38:55] [indexer] Indexing post.product:1031779
+[2023-12-27 02:38:55] [indexer] Indexing post.product:1031779
+[2023-12-27 02:38:57] [index] Marking [1] post.product 1031779 as indexed
+[2023-12-27 02:38:57] [index] Marking [1] post.product 1031779 as indexed
+[2023-12-27 02:38:58] [indexer] Queued next batch (1)
+[2023-12-27 02:38:58] [indexer] Queued next batch (1)
+[2023-12-27 02:38:58] [index] Dropping post.product 1032649
+[2023-12-27 02:38:58] [index] Dropping post.product 1032649
+[2023-12-27 02:38:58] [indexer] Processing batch (1)
+[2023-12-27 02:38:58] [indexer] Processing batch (1)
+[2023-12-27 02:38:58] [indexer] Indexing post.product:1032656
+[2023-12-27 02:38:58] [indexer] Indexing post.product:1032656
+[2023-12-27 02:38:58] [index] Marking [1] post.product 1032656 as indexed
+[2023-12-27 02:38:58] [index] Marking [1] post.product 1032656 as indexed
+[2023-12-27 02:38:58] [indexer] Queued next batch (1)
+[2023-12-27 02:38:58] [indexer] Queued next batch (1)
+[2023-12-27 02:38:58] [index] Dropping post.product 1032642
+[2023-12-27 02:38:58] [index] Dropping post.product 1032642
+[2023-12-27 02:38:58] [indexer] Processing batch (1)
+[2023-12-27 02:38:58] [indexer] Processing batch (1)
+[2023-12-27 02:38:58] [indexer] Indexing post.product:1032649
+[2023-12-27 02:38:58] [indexer] Indexing post.product:1032649
+[2023-12-27 02:38:58] [index] Marking [1] post.product 1032649 as indexed
+[2023-12-27 02:38:58] [index] Marking [1] post.product 1032649 as indexed
+[2023-12-27 02:38:58] [indexer] Queued next batch (1)
+[2023-12-27 02:38:58] [indexer] Queued next batch (1)
+[2023-12-27 02:39:00] [index] Dropping post.product 1032160
+[2023-12-27 02:39:00] [index] Dropping post.product 1032160
+[2023-12-27 02:39:00] [indexer] Processing batch (1)
+[2023-12-27 02:39:00] [indexer] Processing batch (1)
+[2023-12-27 02:39:00] [indexer] Indexing post.product:1032642
+[2023-12-27 02:39:00] [indexer] Indexing post.product:1032642
+[2023-12-27 02:39:01] [index] Marking [1] post.product 1032642 as indexed
+[2023-12-27 02:39:01] [index] Marking [1] post.product 1032642 as indexed
+[2023-12-27 02:39:01] [indexer] Queued next batch (1)
+[2023-12-27 02:39:01] [indexer] Queued next batch (1)
+[2023-12-27 02:39:26] [index] Dropping post.product 1032160
+[2023-12-27 02:39:26] [index] Dropping post.product 1032160
+[2023-12-27 02:39:26] [indexer] Queued next batch (1)
+[2023-12-27 02:39:26] [indexer] Queued next batch (1)
+[2023-12-27 02:39:26] [index] Dropping post.product 1031782
+[2023-12-27 02:39:26] [index] Dropping post.product 1031782
+[2023-12-27 02:39:26] [indexer] Processing batch (1)
+[2023-12-27 02:39:26] [indexer] Processing batch (1)
+[2023-12-27 02:39:26] [indexer] Indexing post.product:1032160
+[2023-12-27 02:39:26] [indexer] Indexing post.product:1032160
+[2023-12-27 02:39:29] [index] Marking [1] post.product 1032160 as indexed
+[2023-12-27 02:39:29] [index] Marking [1] post.product 1032160 as indexed
+[2023-12-27 02:39:29] [indexer] Queued next batch (1)
+[2023-12-27 02:39:29] [indexer] Queued next batch (1)
+[2023-12-27 02:39:29] [index] Dropping post.product 1031779
+[2023-12-27 02:39:29] [index] Dropping post.product 1031779
+[2023-12-27 02:39:29] [indexer] Processing batch (1)
+[2023-12-27 02:39:29] [indexer] Processing batch (1)
+[2023-12-27 02:39:29] [indexer] Indexing post.product:1031782
+[2023-12-27 02:39:29] [indexer] Indexing post.product:1031782
+[2023-12-27 02:39:29] [index] Marking [1] post.product 1031782 as indexed
+[2023-12-27 02:39:29] [index] Marking [1] post.product 1031782 as indexed
+[2023-12-27 02:39:29] [indexer] Queued next batch (1)
+[2023-12-27 02:39:29] [indexer] Queued next batch (1)
+[2023-12-27 08:41:33] [index] Dropping post.product 1032656
+[2023-12-27 08:41:33] [index] Dropping post.product 1032656
+[2023-12-27 08:41:33] [indexer] Processing batch (1)
+[2023-12-27 08:41:33] [indexer] Processing batch (1)
+[2023-12-27 08:41:33] [indexer] Indexing post.product:1031779
+[2023-12-27 08:41:33] [indexer] Indexing post.product:1031779
+[2023-12-27 08:41:36] [index] Marking [1] post.product 1031779 as indexed
+[2023-12-27 08:41:36] [index] Marking [1] post.product 1031779 as indexed
+[2023-12-27 08:41:36] [indexer] Queued next batch (1)
+[2023-12-27 08:41:36] [indexer] Queued next batch (1)
+[2023-12-27 10:14:54] [index] Dropping post.post 1072835
+[2023-12-27 10:14:54] [index] Dropping post.post 1072835
+[2023-12-27 10:14:54] [indexer] Processing batch (1)
+[2023-12-27 10:14:54] [indexer] Processing batch (1)
+[2023-12-27 10:14:54] [indexer] Indexing post.product:1032656
+[2023-12-27 10:14:54] [indexer] Indexing post.product:1032656
+[2023-12-27 10:14:55] [index] Marking [1] post.product 1032656 as indexed
+[2023-12-27 10:14:55] [index] Marking [1] post.product 1032656 as indexed
+[2023-12-27 10:14:55] [indexer] Queued next batch (1)
+[2023-12-27 10:14:55] [indexer] Queued next batch (1)
+[2023-12-27 10:14:57] [index] Dropping post.post 1048011
+[2023-12-27 10:14:57] [index] Dropping post.post 1048011
+[2023-12-27 10:14:57] [indexer] Processing batch (1)
+[2023-12-27 10:14:57] [indexer] Processing batch (1)
+[2023-12-27 10:14:57] [indexer] Indexing post.product:1055014
+[2023-12-27 10:14:57] [indexer] Indexing post.product:1055014
+[2023-12-27 10:14:57] [index] Marking [1] post.product 1055014 as indexed
+[2023-12-27 10:14:57] [index] Marking [1] post.product 1055014 as indexed
+[2023-12-27 10:14:57] [indexer] Queued next batch (1)
+[2023-12-27 10:14:57] [indexer] Queued next batch (1)
+[2023-12-27 10:14:59] [index] Dropping post.post 1048031
+[2023-12-27 10:14:59] [index] Dropping post.post 1048031
+[2023-12-27 10:14:59] [indexer] Processing batch (1)
+[2023-12-27 10:14:59] [indexer] Processing batch (1)
+[2023-12-27 10:14:59] [indexer] Indexing post.product:1055016
+[2023-12-27 10:14:59] [indexer] Indexing post.product:1055016
+[2023-12-27 10:14:59] [index] Marking [1] post.product 1055016 as indexed
+[2023-12-27 10:14:59] [index] Marking [1] post.product 1055016 as indexed
+[2023-12-27 10:14:59] [indexer] Queued next batch (1)
+[2023-12-27 10:14:59] [indexer] Queued next batch (1)
+[2023-12-27 10:15:00] [index] Dropping post.post 1048029
+[2023-12-27 10:15:00] [index] Dropping post.post 1048029
+[2023-12-27 10:15:00] [indexer] Processing batch (1)
+[2023-12-27 10:15:00] [indexer] Processing batch (1)
+[2023-12-27 10:15:00] [indexer] Indexing post.product:1055018
+[2023-12-27 10:15:00] [indexer] Indexing post.product:1055018
+[2023-12-27 10:15:01] [index] Marking [1] post.product 1055018 as indexed
+[2023-12-27 10:15:01] [index] Marking [1] post.product 1055018 as indexed
+[2023-12-27 10:15:01] [indexer] Queued next batch (1)
+[2023-12-27 10:15:01] [indexer] Queued next batch (1)
+[2023-12-27 10:15:02] [index] Dropping post.post 1048027
+[2023-12-27 10:15:02] [index] Dropping post.post 1048027
+[2023-12-27 10:15:02] [indexer] Processing batch (1)
+[2023-12-27 10:15:02] [indexer] Processing batch (1)
+[2023-12-27 10:15:02] [indexer] Indexing post.product:1055020
+[2023-12-27 10:15:02] [indexer] Indexing post.product:1055020
+[2023-12-27 10:15:02] [index] Marking [1] post.product 1055020 as indexed
+[2023-12-27 10:15:02] [index] Marking [1] post.product 1055020 as indexed
+[2023-12-27 10:15:02] [indexer] Queued next batch (1)
+[2023-12-27 10:15:02] [indexer] Queued next batch (1)
+[2023-12-27 10:15:04] [index] Dropping post.post 1048025
+[2023-12-27 10:15:04] [index] Dropping post.post 1048025
+[2023-12-27 10:15:04] [indexer] Processing batch (1)
+[2023-12-27 10:15:04] [indexer] Processing batch (1)
+[2023-12-27 10:15:04] [indexer] Indexing post.product:1055022
+[2023-12-27 10:15:04] [indexer] Indexing post.product:1055022
+[2023-12-27 10:15:04] [index] Marking [1] post.product 1055022 as indexed
+[2023-12-27 10:15:04] [index] Marking [1] post.product 1055022 as indexed
+[2023-12-27 10:15:04] [indexer] Queued next batch (1)
+[2023-12-27 10:15:04] [indexer] Queued next batch (1)
+[2023-12-27 10:15:12] [index] Dropping post.post 1048023
+[2023-12-27 10:15:12] [index] Dropping post.post 1048023
+[2023-12-27 10:15:12] [indexer] Processing batch (1)
+[2023-12-27 10:15:12] [indexer] Processing batch (1)
+[2023-12-27 10:15:12] [indexer] Indexing post.product:1055024
+[2023-12-27 10:15:12] [indexer] Indexing post.product:1055024
+[2023-12-27 10:15:12] [index] Marking [1] post.product 1055024 as indexed
+[2023-12-27 10:15:12] [index] Marking [1] post.product 1055024 as indexed
+[2023-12-27 10:15:12] [indexer] Queued next batch (1)
+[2023-12-27 10:15:12] [indexer] Queued next batch (1)
+[2023-12-27 10:15:16] [index] Dropping post.post 1048021
+[2023-12-27 10:15:16] [index] Dropping post.post 1048021
+[2023-12-27 10:15:16] [indexer] Processing batch (1)
+[2023-12-27 10:15:16] [indexer] Processing batch (1)
+[2023-12-27 10:15:16] [indexer] Indexing post.product:1055026
+[2023-12-27 10:15:16] [indexer] Indexing post.product:1055026
+[2023-12-27 10:15:17] [index] Marking [1] post.product 1055026 as indexed
+[2023-12-27 10:15:17] [index] Marking [1] post.product 1055026 as indexed
+[2023-12-27 10:15:17] [indexer] Queued next batch (1)
+[2023-12-27 10:15:17] [indexer] Queued next batch (1)
+[2023-12-27 10:15:21] [index] Dropping post.post 1048019
+[2023-12-27 10:15:21] [index] Dropping post.post 1048019
+[2023-12-27 10:15:21] [indexer] Processing batch (1)
+[2023-12-27 10:15:21] [indexer] Processing batch (1)
+[2023-12-27 10:15:21] [indexer] Indexing post.product:1055028
+[2023-12-27 10:15:21] [indexer] Indexing post.product:1055028
+[2023-12-27 10:15:21] [index] Marking [1] post.product 1055028 as indexed
+[2023-12-27 10:15:21] [index] Marking [1] post.product 1055028 as indexed
+[2023-12-27 10:15:21] [indexer] Queued next batch (1)
+[2023-12-27 10:15:21] [indexer] Queued next batch (1)
+[2023-12-27 10:15:31] [index] Dropping post.post 1048017
+[2023-12-27 10:15:31] [index] Dropping post.post 1048017
+[2023-12-27 10:15:31] [indexer] Processing batch (1)
+[2023-12-27 10:15:31] [indexer] Processing batch (1)
+[2023-12-27 10:15:31] [indexer] Indexing post.product:1055030
+[2023-12-27 10:15:31] [indexer] Indexing post.product:1055030
+[2023-12-27 10:15:31] [index] Marking [1] post.product 1055030 as indexed
+[2023-12-27 10:15:31] [index] Marking [1] post.product 1055030 as indexed
+[2023-12-27 10:15:31] [indexer] Queued next batch (1)
+[2023-12-27 10:15:31] [indexer] Queued next batch (1)
+[2023-12-27 10:15:40] [index] Dropping post.post 1048015
+[2023-12-27 10:15:40] [index] Dropping post.post 1048015
+[2023-12-27 10:15:40] [indexer] Processing batch (1)
+[2023-12-27 10:15:40] [indexer] Processing batch (1)
+[2023-12-27 10:15:40] [indexer] Indexing post.product:1055032
+[2023-12-27 10:15:40] [indexer] Indexing post.product:1055032
+[2023-12-27 10:15:40] [index] Marking [1] post.product 1055032 as indexed
+[2023-12-27 10:15:40] [index] Marking [1] post.product 1055032 as indexed
+[2023-12-27 10:15:40] [indexer] Queued next batch (1)
+[2023-12-27 10:15:40] [indexer] Queued next batch (1)
+[2023-12-27 10:15:45] [index] Dropping post.post 1048013
+[2023-12-27 10:15:45] [index] Dropping post.post 1048013
+[2023-12-27 10:15:45] [indexer] Processing batch (1)
+[2023-12-27 10:15:45] [indexer] Processing batch (1)
+[2023-12-27 10:15:45] [indexer] Indexing post.product:1055034
+[2023-12-27 10:15:45] [indexer] Indexing post.product:1055034
+[2023-12-27 10:15:45] [index] Marking [1] post.product 1055034 as indexed
+[2023-12-27 10:15:45] [index] Marking [1] post.product 1055034 as indexed
+[2023-12-27 10:15:45] [indexer] Queued next batch (1)
+[2023-12-27 10:15:45] [indexer] Queued next batch (1)
+[2023-12-27 10:15:50] [index] Dropping post.post 1048009
+[2023-12-27 10:15:50] [index] Dropping post.post 1048009
+[2023-12-27 10:15:50] [indexer] Processing batch (1)
+[2023-12-27 10:15:50] [indexer] Processing batch (1)
+[2023-12-27 10:15:50] [indexer] Indexing post.product:1055036
+[2023-12-27 10:15:50] [indexer] Indexing post.product:1055036
+[2023-12-27 10:15:50] [index] Marking [1] post.product 1055036 as indexed
+[2023-12-27 10:15:50] [index] Marking [1] post.product 1055036 as indexed
+[2023-12-27 10:15:50] [indexer] Queued next batch (1)
+[2023-12-27 10:15:50] [indexer] Queued next batch (1)
+[2023-12-27 10:15:55] [index] Dropping post.post 1048007
+[2023-12-27 10:15:55] [index] Dropping post.post 1048007
+[2023-12-27 10:15:55] [indexer] Processing batch (1)
+[2023-12-27 10:15:55] [indexer] Processing batch (1)
+[2023-12-27 10:15:55] [indexer] Indexing post.product:1055038
+[2023-12-27 10:15:55] [indexer] Indexing post.product:1055038
+[2023-12-27 10:15:55] [index] Marking [1] post.product 1055038 as indexed
+[2023-12-27 10:15:55] [index] Marking [1] post.product 1055038 as indexed
+[2023-12-27 10:15:55] [indexer] Queued next batch (1)
+[2023-12-27 10:15:55] [indexer] Queued next batch (1)
+[2023-12-27 10:16:04] [index] Dropping post.post 1048005
+[2023-12-27 10:16:04] [index] Dropping post.post 1048005
+[2023-12-27 10:16:04] [indexer] Processing batch (1)
+[2023-12-27 10:16:04] [indexer] Processing batch (1)
+[2023-12-27 10:16:04] [indexer] Indexing post.product:1055040
+[2023-12-27 10:16:04] [indexer] Indexing post.product:1055040
+[2023-12-27 10:16:04] [index] Marking [1] post.product 1055040 as indexed
+[2023-12-27 10:16:04] [index] Marking [1] post.product 1055040 as indexed
+[2023-12-27 10:16:05] [indexer] Queued next batch (1)
+[2023-12-27 10:16:05] [indexer] Queued next batch (1)
+[2023-12-27 10:16:09] [index] Dropping post.post 1048003
+[2023-12-27 10:16:09] [index] Dropping post.post 1048003
+[2023-12-27 10:16:09] [indexer] Processing batch (1)
+[2023-12-27 10:16:09] [indexer] Processing batch (1)
+[2023-12-27 10:16:09] [indexer] Indexing post.product:1055042
+[2023-12-27 10:16:09] [indexer] Indexing post.product:1055042
+[2023-12-27 10:16:09] [index] Marking [1] post.product 1055042 as indexed
+[2023-12-27 10:16:09] [index] Marking [1] post.product 1055042 as indexed
+[2023-12-27 10:16:09] [indexer] Queued next batch (1)
+[2023-12-27 10:16:09] [indexer] Queued next batch (1)
+[2023-12-27 10:16:14] [index] Dropping post.post 1035212
+[2023-12-27 10:16:14] [index] Dropping post.post 1035212
+[2023-12-27 10:16:14] [indexer] Processing batch (1)
+[2023-12-27 10:16:14] [indexer] Processing batch (1)
+[2023-12-27 10:16:14] [indexer] Indexing post.product:1055044
+[2023-12-27 10:16:14] [indexer] Indexing post.product:1055044
+[2023-12-27 10:16:14] [index] Marking [1] post.product 1055044 as indexed
+[2023-12-27 10:16:14] [index] Marking [1] post.product 1055044 as indexed
+[2023-12-27 10:16:14] [indexer] Queued next batch (1)
+[2023-12-27 10:16:14] [indexer] Queued next batch (1)
+[2023-12-27 10:16:19] [index] Dropping post.post 1035210
+[2023-12-27 10:16:19] [index] Dropping post.post 1035210
+[2023-12-27 10:16:19] [indexer] Processing batch (1)
+[2023-12-27 10:16:19] [indexer] Processing batch (1)
+[2023-12-27 10:16:19] [indexer] Indexing post.product:1055046
+[2023-12-27 10:16:19] [indexer] Indexing post.product:1055046
+[2023-12-27 10:16:19] [index] Marking [1] post.product 1055046 as indexed
+[2023-12-27 10:16:19] [index] Marking [1] post.product 1055046 as indexed
+[2023-12-27 10:16:19] [indexer] Queued next batch (1)
+[2023-12-27 10:16:19] [indexer] Queued next batch (1)
+[2023-12-27 10:16:29] [index] Dropping post.post 1032854
+[2023-12-27 10:16:29] [index] Dropping post.post 1032854
+[2023-12-27 10:16:29] [indexer] Processing batch (1)
+[2023-12-27 10:16:29] [indexer] Processing batch (1)
+[2023-12-27 10:16:29] [indexer] Indexing post.product:1055048
+[2023-12-27 10:16:29] [indexer] Indexing post.product:1055048
+[2023-12-27 10:16:29] [index] Marking [1] post.product 1055048 as indexed
+[2023-12-27 10:16:29] [index] Marking [1] post.product 1055048 as indexed
+[2023-12-27 10:16:29] [indexer] Queued next batch (1)
+[2023-12-27 10:16:29] [indexer] Queued next batch (1)
+[2023-12-27 10:16:38] [index] Dropping post.post 1032851
+[2023-12-27 10:16:38] [index] Dropping post.post 1032851
+[2023-12-27 10:16:38] [indexer] Processing batch (1)
+[2023-12-27 10:16:38] [indexer] Processing batch (1)
+[2023-12-27 10:16:38] [indexer] Indexing post.product:1055050
+[2023-12-27 10:16:38] [indexer] Indexing post.product:1055050
+[2023-12-27 10:16:38] [index] Marking [1] post.product 1055050 as indexed
+[2023-12-27 10:16:38] [index] Marking [1] post.product 1055050 as indexed
+[2023-12-27 10:16:38] [indexer] Queued next batch (1)
+[2023-12-27 10:16:38] [indexer] Queued next batch (1)
+[2023-12-27 10:16:43] [index] Dropping post.post 1032837
+[2023-12-27 10:16:43] [index] Dropping post.post 1032837
+[2023-12-27 10:16:43] [indexer] Processing batch (1)
+[2023-12-27 10:16:43] [indexer] Processing batch (1)
+[2023-12-27 10:16:43] [indexer] Indexing post.product:1055052
+[2023-12-27 10:16:43] [indexer] Indexing post.product:1055052
+[2023-12-27 10:16:43] [index] Marking [1] post.product 1055052 as indexed
+[2023-12-27 10:16:43] [index] Marking [1] post.product 1055052 as indexed
+[2023-12-27 10:16:43] [indexer] Queued next batch (1)
+[2023-12-27 10:16:43] [indexer] Queued next batch (1)
+[2023-12-27 10:16:53] [index] Dropping post.post 1032842
+[2023-12-27 10:16:53] [index] Dropping post.post 1032842
+[2023-12-27 10:16:53] [indexer] Processing batch (1)
+[2023-12-27 10:16:53] [indexer] Processing batch (1)
+[2023-12-27 10:16:53] [indexer] Indexing post.product:1055054
+[2023-12-27 10:16:53] [indexer] Indexing post.product:1055054
+[2023-12-27 10:16:53] [index] Marking [1] post.product 1055054 as indexed
+[2023-12-27 10:16:53] [index] Marking [1] post.product 1055054 as indexed
+[2023-12-27 10:16:53] [indexer] Queued next batch (1)
+[2023-12-27 10:16:53] [indexer] Queued next batch (1)

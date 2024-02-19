@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1c025a12-a2c6-4993-bbab-310825663a0e" name="Webshop">
+        <fileTransfer rootFolder="/datadrive/cabling-webshop" accessType="SFTP" host="168.63.37.239" port="22" sshConfigId="9dc80c77-368e-41cc-989d-d23ff0f77897" sshConfig="webshop devb">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseSudo="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

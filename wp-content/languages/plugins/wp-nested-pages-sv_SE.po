@@ -1,0 +1,1132 @@
+# Translation of Plugins - Nested Pages - Stable (latest release) in Swedish
+# This file is distributed under the same license as the Plugins - Nested Pages - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-06-21 20:16:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: sv_SE\n"
+"Project-Id-Version: Plugins - Nested Pages - Stable (latest release)\n"
+
+#: app/Views/forms/clone-form.php:63
+msgid "Clone Children"
+msgstr "Klona underordnad"
+
+#: app/Views/settings/settings-posttypes.php:75
+msgid "Maximum Nesting Depth"
+msgstr "Maximalt antal objektsnivåer"
+
+#: app/Views/settings/settings-posttypes.php:76
+msgid "By default, there is no maximum level of nesting for hierarchical posts. Value includes the primary level."
+msgstr "Som standard finns det inget maximalt antal nivåer för hierarkiska objekt. Detta värde inkluderar primärnivån."
+
+#: app/Views/settings/settings-posttypes.php:79
+msgid "Enable Maximum Nesting Level %s"
+msgstr "Aktivera maximal hierarkinivå %s"
+
+#: app/Views/settings/settings-posttypes.php:81
+msgid "Maximum Nesting Level for %s"
+msgstr "Maximal hierarkinivå för %s"
+
+#: app/Views/partials/row.php:167
+msgid "Insert After Icon"
+msgstr "Infoga efter ikon"
+
+#: app/Views/partials/row.php:159
+msgid "Insert Before Icon"
+msgstr "Infoga före ikon"
+
+#: app/Views/partials/row-link.php:30 app/Views/partials/row.php:20
+msgid "Arrow"
+msgstr "Pil"
+
+#: app/Views/partials/row-link.php:39 app/Views/partials/row.php:139
+msgid "Link Icon"
+msgstr "Länkikon"
+
+#: app/Views/partials/row.php:45 app/Views/partials/row.php:63
+#: app/Views/partials/row.php:67 app/Views/partials/row.php:81
+msgid "Lock Icon"
+msgstr "Låsikon"
+
+#: app/Views/partials/row.php:103
+msgid "More Icon"
+msgstr "Ikon för ”Mer”"
+
+#: app/Views/partials/row-link.php:85 app/Views/partials/row.php:280
+#: app/Views/partials/row.php:285 app/Views/partials/row.php:297
+msgid "Trash Icon"
+msgstr "Papperskorgsikon"
+
+#: app/Views/partials/row.php:112
+msgid "Globe Icon"
+msgstr "Globikon"
+
+#: app/Views/partials/row.php:179
+msgid "Arrow Up Icon"
+msgstr "”Pil upp”-ikon"
+
+#: app/Views/partials/row-link.php:33 app/Views/partials/row.php:25
+msgid "Sorting Handle"
+msgstr "Sorteringshandtag"
+
+#: app/Views/partials/row.php:197
+msgid "Clone Icon"
+msgstr "Ikon för att klona"
+
+#: app/Views/partials/row-link.php:50 app/Views/partials/row.php:52
+msgid "Hidden Icon"
+msgstr "Dold ikon"
+
+#: app/Views/partials/row.php:123
+msgid "Comments Icon"
+msgstr "Kommentarsikon"
+
+#: app/Views/partials/row.php:147
+msgid "Child Page Icon"
+msgstr "Ikon för underordnad sida"
+
+#: app/Views/partials/row.php:187
+msgid "Arrow Down Icon"
+msgstr "”Pil ned”-ikon"
+
+#: app/Views/settings/settings-general.php:71
+msgid "Default new pages to hide in nav menu."
+msgstr "Ange som standard att nya sidor är dolda i navigeringsmenyn."
+
+#: app/Views/partials/row.php:290
+msgid "Trash Children Icon"
+msgstr "Ikon för att slänga underordnade objekt"
+
+#: app/Views/forms/quickedit-post.php:261
+msgid "Example: #"
+msgstr "Exempel: #"
+
+#: app/Views/forms/quickedit-post.php:260
+msgid "Custom URL"
+msgstr "Anpassad URL"
+
+#: app/Form/Listeners/ToggleStatusDisplay.php:35
+msgid "Status preference updated."
+msgstr "Önskad status har uppdaterats."
+
+#: app/Form/Listeners/BaseHandler.php:100
+msgid "Invalid Nonce"
+msgstr "Ogiltig engångskod"
+
+#: app/Entities/Confirmation/TrashConfirmation.php:27
+msgid "<strong>%s</strong> moved to the trash."
+msgstr "<strong>%s</strong> flyttades till papperskorgen."
+
+#: app/Entities/Post/PostDataFactory.php:105 app/Views/forms/link-form.php:38
+msgid "%s (Archive)"
+msgstr "%s (arkiv)"
+
+#: app/Views/partials/row.php:269
+msgid "Preview"
+msgstr "Förhandsgranska"
+
+#: app/Views/settings/settings-general.php:166
+msgid "- or Donate through Paypal -"
+msgstr "- eller donera via Paypal -"
+
+#: app/Views/settings/settings-general.php:162
+msgid "Show Some Love!"
+msgstr "Visa lite kärlek!"
+
+#: app/Views/settings/settings-general.php:163
+msgid "Sponsor this Plugin"
+msgstr "Sponsra detta tillägg"
+
+#: app/Views/settings/settings-general.php:165
+msgid "Sponsor on Github"
+msgstr "Sponsor på Github"
+
+#: app/Views/settings/settings-general.php:52
+msgid "Include private items in the menu."
+msgstr "Inkludera privata objekt i menyn."
+
+#: app/Views/settings/settings-general.php:164
+msgid "You can help support the continued development and upkeep of this plugin by sponsoring on Github. Whether you are an individual using this on a side project, a business, or an agency using this plugin across multiple sites… every bit helps!"
+msgstr "Du kan hjälpa till att stödja den fortsatta utvecklingen och underhållet av detta tillägg genom att sponsra på Github. Oavsett om du är en privatperson som använder detta på ett sidoprojekt, ett företag eller en byrå som använder detta plugin på flera webbplatser … varje bidrag är till hjälp!"
+
+#: app/Views/settings/settings-general.php:103
+msgid "Allow Sort View"
+msgstr "Tillåt sorterad vy"
+
+#: app/Views/partials/row.php:76
+msgid "(Sticky)"
+msgstr "(Klistrat)"
+
+#: app/Views/forms/quickedit-post.php:243
+msgid "<strong>Current Menu</strong>: %s"
+msgstr "<strong>Nuvarande meny</strong>: %s"
+
+#: app/Views/partials/row.php:286
+msgid "Trash %s"
+msgstr "Släng %s"
+
+#: app/Form/Listeners/TrashWithChildren.php:53
+msgid "Current page could not be determined"
+msgstr "Nuvarande sida kunde inte bestämmas"
+
+#: app/Views/settings/settings-posttypes.php:184
+msgid "Enable Custom Statuses"
+msgstr "Aktivera anpassade statusar"
+
+#: app/Views/settings/settings-posttypes.php:185
+msgid "Add custom status support for this post type."
+msgstr "Lägg till anpassat statusstöd för denna inläggstyp."
+
+#: app/Views/partials/row.php:113
+msgid "Translations (%s)"
+msgstr "Översättningar (%s)"
+
+#: app/Entities/Confirmation/TrashConfirmation.php:17
+msgid "%d Link Removed."
+msgid_plural "%d Links Removed."
+msgstr[0] "%d länk borttagen."
+msgstr[1] "%d länkar borttagna."
+
+#: app/Views/partials/tool-list.php:38
+msgid "Empty (%s)"
+msgstr "Tom (%s)"
+
+#: app/Views/settings/settings-posttypes.php:102
+msgid "Currently assigned to: %s"
+msgstr "För närvarande tilldelad till: %s"
+
+#: app/Views/partials/bulk-edit.php:72
+msgid "Parent %s"
+msgstr "Överordnad %s"
+
+#: app/Views/partials/row.php:124
+msgid "%d Comments"
+msgstr "%d kommentarer"
+
+#: app/Views/settings/settings-posttypes.php:34
+msgid "Replace Default %s Menu"
+msgstr "Ersätt standard %s-meny"
+
+#: app/Views/settings/settings-posttypes.php:19
+msgid "%s <em>(Hierarchical)</em>"
+msgstr "%s <em>(Hierarkisk)</em>"
+
+#: app/Entities/Confirmation/TrashConfirmation.php:26
+msgid "%d %s moved to the trash."
+msgstr "%d %s flyttades till papperskorgen."
+
+#: app/Views/listing.php:45
+msgid "Sync %s Order"
+msgstr "Synkronisera %s-sortering"
+
+#: app/Entities/Confirmation/TrashRestoredConfirmation.php:12
+msgid "%d item restored from trash."
+msgid_plural "%d items restored from trash."
+msgstr[0] "%d objekt återställt från papperskorgen."
+msgstr[1] "%d objekt återställda från papperskorgen."
+
+#: app/Views/partials/row.php:148
+msgid "Add Child %s"
+msgstr "Lägg till underordnad %s"
+
+#: app/Views/settings/settings-admincustom.php:24
+msgid "Reset Admin Menu Settings"
+msgstr "Återställ inställningarna för adminmenyn"
+
+#: app/Entities/AdminCustomization/AdminMenuItems.php:332
+msgid "Profile"
+msgstr "Profil"
+
+#: app/Views/settings/partials/nav-menu-settings.php:65
+msgid "Reference"
+msgstr "Referens"
+
+#: app/Config/AdminMenuSettings.php:60
+#: app/Views/settings/partials/nav-menu-settings.php:42
+#: app/Views/settings/partials/nav-menu-settings/header.php:22
+msgid "Separator"
+msgstr "Avgränsare"
+
+#: app/Views/settings/partials/nav-menu-settings.php:42
+msgid "Separator (WooCommerce)"
+msgstr "Avgränsare (WooCommerce)"
+
+#: app/Views/settings/settings-admincustom.php:13
+msgid "Admin Menu"
+msgstr "Adminmeny"
+
+#: app/Form/Validation/Validation.php:227
+msgid "%s is required."
+msgstr "%s är obligatoriskt."
+
+#: app/Views/settings/settings-admincustom.php:21
+msgid "Menu Items"
+msgstr "Menyval"
+
+#: app/Views/settings/partials/nav-menu-settings.php:47
+msgid "Details"
+msgstr "Detaljer"
+
+#: app/Views/settings/partials/nav-menu-settings/header.php:19
+msgid "New"
+msgstr "Nytt"
+
+#: app/Views/settings/settings-admincustom.php:4
+msgid "Select Items to Customize"
+msgstr "Välj objekt att anpassa"
+
+#: app/Entities/AdminMenu/AdminSubmenu.php:89
+#: app/Views/partials/tool-list.php:46
+msgid "Default %s"
+msgstr "Standard %s"
+
+#: app/Views/settings/settings-general.php:139
+#: app/Views/settings/settings-general.php:145
+msgid "Reset User Preferences"
+msgstr "Återställ användarpreferenser"
+
+#: app/Views/settings/settings-general.php:149
+msgid "User preferences have been successfully reset."
+msgstr "Användarpreferenser har återställts."
+
+#: app/Form/Listeners/QuickEdit.php:26
+msgid "You do not have sufficient privileges to edit this post."
+msgstr "Du har inte tillräckliga behörigheter för att redigera detta inlägg."
+
+#: app/Entities/Post/PrivatePostParent.php:30
+msgid "(no parent)"
+msgstr "(ingen förälder)"
+
+#: app/Activation/Dependencies.php:136
+msgid "Are you sure you would like to empty the trash? This action is not reversible."
+msgstr "Är du säker på att du vill tömma papperskorgen? Detta kan inte ångras."
+
+#: app/Views/settings/settings-posttypes.php:333
+msgid "Initial Order:"
+msgstr "Ursprunglig ordning:"
+
+#: app/Views/settings/settings-posttypes.php:317
+msgid "Default (Menu Order)"
+msgstr "Standard (menyordning)"
+
+#: app/Views/settings/settings-posttypes.php:310
+msgid "Initial Order By:"
+msgstr "Ursprunglig ordning efter:"
+
+#: app/Views/partials/row.php:188
+msgid "Push to Bottom"
+msgstr "Flytta till botten"
+
+#: app/Views/partials/row.php:180
+msgid "Push to Top"
+msgstr "Flytta till toppen"
+
+#: app/Views/partials/row.php:168
+msgid "Insert %s After"
+msgstr "Lägg till %s efter"
+
+#: app/Views/partials/row.php:160
+msgid "Insert %s Before"
+msgstr "Lägg till %s före"
+
+#: app/Views/partials/list-header.php:18 app/Views/partials/tool-list.php:151
+msgid "Apply"
+msgstr "Tillämpa"
+
+#: app/Views/partials/bulk-edit.php:75
+msgid "— No Change —"
+msgstr "– Ingen ändring –"
+
+#: app/Form/Validation/Validation.php:187
+msgid "A valid parent page was not provided to insert after."
+msgstr "En giltig föräldrasida att lägga till efter angavs inte."
+
+#: app/Form/Validation/Validation.php:181
+msgid "A valid parent page was not provided to insert before."
+msgstr "En giltig föräldrasida att lägga till före angavs inte."
+
+#: app/Activation/Dependencies.php:152
+msgid "Insert After"
+msgstr "Infoga efter"
+
+#: app/Activation/Dependencies.php:151
+msgid "Insert Before"
+msgstr "Infoga före"
+
+#: app/Views/settings/settings-general.php:130
+msgid "Reset Nested Pages Settings"
+msgstr "Återställ Nested Pages-inställningarna"
+
+#: app/Views/settings/settings-general.php:127
+msgid "Warning: Resetting plugin settings will remove all menu settings, post type customizations, role customizations and any other Nested Pages settings. These will be replaced with the default settings. This action cannot be undone."
+msgstr "Varning: Om du återställer tilläggsinställningarna tar du bort alla menyinställningar, inläggstyp-anpassningar, roll-förändringar och andra inställningar i Nested Pages-tillägget. Dessa kommer att ersättas med standardinställningarna. Detta kan inte ångras."
+
+#: app/Views/settings/settings-general.php:126
+msgid "Reset Plugin Settings"
+msgstr "Återställ tilläggsinställningarna"
+
+#: app/Views/settings/settings-general.php:132
+msgid "Settings have been successfully reset."
+msgstr "Inställningarna har återställts utan problem."
+
+#: app/Entities/PluginIntegration/WPML.php:225
+msgid "All Languages"
+msgstr "Alla språk"
+
+#: app/Views/partials/wpml-translations.php:13
+msgid "Close"
+msgstr "Stäng"
+
+#: app/Views/partials/wpml-translations.php:4
+msgid "Translations for "
+msgstr "Översättning för"
+
+#: app/Activation/Dependencies.php:149
+msgid "Add Translation"
+msgstr "Lägg till översättning"
+
+#: app/Views/settings/settings-posttypes.php:296
+msgid "Add and remove sort options."
+msgstr "Lägg till och ta bort sorteringsalternativ"
+
+#: app/Views/settings/settings-posttypes.php:295
+msgid "Sort Options"
+msgstr "Sorteringsalternativ"
+
+#: app/Views/settings/settings-posttypes.php:7
+msgid "Enable Post Types:"
+msgstr "Aktivera inläggstyper:"
+
+#: app/Entities/PluginIntegration/WPML.php:151
+msgid "Sync WPML Menus"
+msgstr "Synkronisera WPML-menyer"
+
+#: app/Form/Listeners/WpmlTranslations.php:35
+msgid "There are currently no translations for the selected post."
+msgstr "Det är för närvarande inga översättningar för valt inlägg."
+
+#: app/Form/Listeners/WpmlTranslations.php:28
+msgid "WPML is not currently installed."
+msgstr "WPML är för närvarande inte installerat."
+
+#: app/Views/forms/quickedit-post.php:179
+msgid "Make Sticky"
+msgstr "Gör klistrad"
+
+#: app/Views/settings/settings-posttypes.php:111
+msgid "No pages were found."
+msgstr "Inga sidor hittades."
+
+#: app/Views/settings/settings-posttypes.php:110
+msgid "Search Pages"
+msgstr "Sök sidor"
+
+#: app/Views/settings/settings-posttypes.php:95
+msgid "Assign Page"
+msgstr "Tilldela sida"
+
+#: app/Views/settings/settings-posttypes.php:91
+msgid "Assign Page for Listing"
+msgstr "Tilldela sida för listning"
+
+#: app/Views/settings/settings-posttypes.php:53
+msgid "Remove drag and drop sorting from this post type."
+msgstr "Ta bort dra-och-släpp-sortering för den här inläggstypen."
+
+#: app/Activation/Dependencies.php:146
+#: app/Views/settings/partials/nav-menu-settings.php:44
+#: app/Views/settings/settings-posttypes.php:102
+msgid "Remove"
+msgstr "Ta bort"
+
+#: app/Activation/Dependencies.php:145
+msgid "Currently assigned to:"
+msgstr "För närvarande tilldelad till:"
+
+#: app/Views/settings/settings-posttypes.php:124
+msgid "There are currently no pages available."
+msgstr "Det finns för närvarande inga sidor tillgängliga."
+
+#: app/Views/settings/settings-posttypes.php:92
+msgid "Adds contextual links and post counts to the page row for the assigned post type."
+msgstr "Lägger till kontextuella länkar och inläggsräknare till sidkolumnen för den valda inläggstypen."
+
+#: app/Views/settings/settings-posttypes.php:52
+#: app/Views/settings/settings-posttypes.php:56
+msgid "Disable Sorting"
+msgstr "Inaktivera sortering"
+
+#: app/Views/listing.php:87 app/Views/listing.php:90
+msgid "Dismiss this notice."
+msgstr "Avfärda denna notis."
+
+#: app/Views/settings/settings-posttypes.php:251
+#: app/Views/settings/settings-posttypes.php:255
+msgid "Configure Custom Fields"
+msgstr "Konfigurera anpassade fält"
+
+#: app/Views/settings/settings-posttypes.php:202
+#: app/Views/settings/settings-posttypes.php:206
+msgid "Configure Standard Fields"
+msgstr "Konfigurera standardfält"
+
+#: app/Views/partials/bulk-edit.php:105 app/Views/partials/bulk-edit.php:115
+msgid "Show"
+msgstr "Visa"
+
+#: app/Views/partials/bulk-edit.php:104 app/Views/partials/bulk-edit.php:114
+#: app/Views/settings/partials/nav-menu-settings/header.php:27
+msgid "Hide"
+msgstr "Dölj"
+
+#: app/Views/partials/bulk-edit.php:94
+msgid "Allow"
+msgstr "Tillåt"
+
+#: app/Views/partials/bulk-edit.php:91
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: app/Views/partials/bulk-edit.php:28 app/Views/partials/bulk-edit.php:49
+#: app/Views/partials/bulk-edit.php:63 app/Views/partials/bulk-edit.php:93
+#: app/Views/partials/bulk-edit.php:103 app/Views/partials/bulk-edit.php:113
+msgid "No Change"
+msgstr "Ingen ändring"
+
+#: app/Views/partials/bulk-edit.php:13
+msgid "Bulk Edit"
+msgstr "Massredigera"
+
+#: app/Views/settings/settings-posttypes.php:330
+msgid "Order"
+msgstr "Ordning"
+
+#: app/Config/SettingsRepository.php:116
+msgid "Password/Private"
+msgstr "Lösenord/privat"
+
+#: app/Config/SettingsRepository.php:115
+msgid "Post Status"
+msgstr "Inläggsstatus"
+
+#: app/Config/SettingsRepository.php:113
+msgid "Post Date"
+msgstr "Inläggsdatum"
+
+#: app/Activation/Dependencies.php:138 app/Views/partials/list-header.php:12
+msgid "Bulk Actions"
+msgstr "Massåtgärder"
+
+#: app/Views/settings/settings-posttypes.php:279
+msgid "No ACF Fields configured for this post type"
+msgstr "Inga ACF-fält har konfigureras för den här inläggstypen"
+
+#: app/Views/settings/settings-posttypes.php:209
+msgid "Check to remove from Quick Edit."
+msgstr "Markera för att ta bort från Snabbredigera."
+
+#: app/Views/settings/settings-general.php:65
+msgid "Manually sync page order."
+msgstr "Synkronisera sidordning manuellt."
+
+#: app/Views/settings/settings-posttypes.php:163
+msgid "Large"
+msgstr "Stor"
+
+#: app/Views/settings/settings-posttypes.php:162
+msgid "Medium"
+msgstr "Medium"
+
+#: app/Views/settings/settings-posttypes.php:161
+msgid "Small"
+msgstr "Liten"
+
+#: app/Views/settings/settings-posttypes.php:41
+msgid "Remove Default Link"
+msgstr "Ta bort standardlänk"
+
+#: app/Views/settings/settings-posttypes.php:264
+msgid "Advanced Custom Fields"
+msgstr "Avancerade anpassade fält"
+
+#. Description of the plugin
+msgid "Provides an intuitive drag and drop interface for managing pages in the Wordpress admin, while enhancing quick edit. Includes an auto-generated menu to match the nested interface, support for all post types and more."
+msgstr "Lägger till ett intuitiv dra och släpp-gränssnitt för att hantera sidor i WordPress-administrationspanelen, samtidigt som den förbättrar snabbredigeringsfunktionerna. Lägger en autogenererad meny som matchar sidhierarkin, har stöd för alla inläggstyper, med mera."
+
+#: app/Views/settings/settings-posttypes.php:252
+msgid "Set which custom fields display in the quick edit form."
+msgstr "Ange vilka egna fält som ska visas i snabbredigeringsformuläret."
+
+#: app/Views/settings/settings-posttypes.php:203
+msgid "Remove standard fields from the quick edit form."
+msgstr "Dölj standardfälten från snabbredigeringsformuläret."
+
+#: app/Views/partials/bulk-edit.php:101
+msgid "Display in Nested View"
+msgstr "Visa i den underliggande vyn"
+
+#: app/Views/partials/list-header.php:20
+msgid "Nested Items Selected"
+msgstr "Underliggande objekt valda"
+
+#: app/Config/SettingsRepository.php:111
+msgid "Post Title"
+msgstr "Inläggsrubrik"
+
+#: app/Views/settings/settings-posttypes.php:65
+msgid "To disable nesting on hierarchical post types, select this option."
+msgstr "Välj det här alternativet för att inaktivera underliggande object för hierarkiska inläggstyper."
+
+#: app/Views/settings/settings-posttypes.php:42
+msgid "If the default menu is replaced, a link to the default view will be added. Select this to remove the link"
+msgstr "Om standardmenyn ersätts kommer en länk till standardvyn att läggas till. Välj detta alternativ för att dölja länken"
+
+#: app/Views/settings/settings-posttypes.php:148
+msgid "Thumbnail Source"
+msgstr "Miniatyrkälla"
+
+#: app/Activation/Dependencies.php:142
+msgid "Trash Posts and Delete Links"
+msgstr "Släng inlägg och ta bort länkar"
+
+#: app/Activation/Dependencies.php:140
+msgid "Are you sure you would like to delete this item? This action is not reversible."
+msgstr "Är du säker på att du vill ta bort detta objekt? Denna åtgärd är inte reversibel."
+
+#: app/Views/partials/bulk-edit.php:16
+msgid "There are links selected. Bulk edit will not apply to links."
+msgstr "Det finns länkar som valts. Massredigering kommer inte att tillämpas på länkar."
+
+#: app/Views/settings/settings-posttypes.php:159
+msgid "Thumbnail Display Size"
+msgstr "Visningsstorlek för miniatyr"
+
+#: app/Views/settings/settings-posttypes.php:145
+msgid "Display Thumbnails for %s"
+msgstr "Visa miniatyrer för %s"
+
+#: app/Views/settings/settings-posttypes.php:68
+msgid "Disable Nesting for %s"
+msgstr "Inaktivera Nesting för %s"
+
+#: app/Views/settings/settings-posttypes.php:258
+msgid "Check to Include in Quick Edit."
+msgstr "Kryssa i för att inkludera i snabbredigera."
+
+#: app/Views/settings/settings-posttypes.php:140
+msgid "Display Thumbnails"
+msgstr "Visa miniatyrer"
+
+#: app/Views/settings/settings-general.php:59
+msgid "Manually sync menu."
+msgstr "Synkronisera meny manuellt."
+
+#: app/Views/settings/settings-posttypes.php:141
+msgid "Display the thumbnail in the list sort view."
+msgstr "Visa miniatyren i listans sorteringsvy."
+
+#: app/Views/partials/bulk-edit.php:95
+msgid "Do not allow"
+msgstr "Tillåt inte"
+
+#: app/Views/partials/list-header.php:14
+msgid "Move to Trash"
+msgstr "Lägg i papperskorgen"
+
+#: app/Views/settings/settings.php:6
+msgid "General"
+msgstr "Allmänt"
+
+#: app/Activation/Dependencies.php:150 app/Views/forms/quickedit-post.php:243
+#: app/Views/partials/list-header.php:16 app/Views/partials/row.php:71
+msgid "Edit"
+msgstr "Redigera"
+
+#: app/Views/settings/settings.php:10
+msgid "Post Types"
+msgstr "Inläggstyper"
+
+#: app/Config/SettingsRepository.php:133 app/Views/forms/quickedit-post.php:23
+msgid "Taxonomies"
+msgstr "Taxonomier"
+
+#. Author URI of the plugin
+msgid "https://github.com/kylephillips"
+msgstr "https://github.com/kylephillips"
+
+#. Author of the plugin
+msgid "Kyle Phillips"
+msgstr "Kyle Phillips"
+
+#. Plugin URI of the plugin
+msgid "http://nestedpages.com"
+msgstr "http://nestedpages.com"
+
+#: app/Views/settings/settings-general.php:97
+msgid "Admins always have sorting ability."
+msgstr "Administratörer kan alltid sortera."
+
+#: app/Views/settings/settings-general.php:85
+msgid "Allow Page Sorting"
+msgstr "Tillåt sortering av sidor"
+
+#: app/Views/settings/settings-general.php:39
+msgid "Menu Sync"
+msgstr "Menysynkronisering"
+
+#: app/Views/settings/settings-general.php:23
+msgid "Display Options"
+msgstr "Visningalternativ"
+
+#: app/Views/partials/tool-list.php:165
+msgid "All "
+msgstr "Alla"
+
+#: app/Views/partials/tool-list.php:86
+msgid "Menu Order"
+msgstr "Menyordning"
+
+#: app/Views/partials/tool-list.php:65
+msgid "All Authors"
+msgstr "Alla författare"
+
+#: app/Views/partials/tool-list.php:14
+msgid "All"
+msgstr "Alla"
+
+#: app/Views/listing.php:63 app/Views/listing.php:68
+msgid "Sync Menu"
+msgstr "Synkronisera meny"
+
+#: app/Config/SettingsRepository.php:122 app/Views/forms/quickedit-post.php:26
+msgid "Menu Options"
+msgstr "Menyalternativ"
+
+#: app/Entities/Listing/Listing.php:235
+msgid "Front Page"
+msgstr "Startsida"
+
+#: app/Views/partials/tool-list.php:112
+#: app/Views/settings/settings-posttypes.php:338
+msgid "Descending"
+msgstr "Fallande"
+
+#: app/Views/partials/tool-list.php:111
+#: app/Views/settings/settings-posttypes.php:337
+msgid "Ascending"
+msgstr "Stigande"
+
+#: app/Views/settings/settings-general.php:14
+msgid "Nested Pages Version"
+msgstr "Version av Nested Pages"
+
+#: app/Views/settings/settings-general.php:5
+msgid "Currently Disabled"
+msgstr "För närvarande inaktiverad"
+
+#: app/Views/settings/settings-general.php:5
+msgid "Currently Enabled"
+msgstr "För närvarande aktiverad"
+
+#: app/Entities/Listing/Listing.php:236
+msgid "Posts Page"
+msgstr "Inläggssida"
+
+#: app/Views/settings/settings-posttypes.php:30
+msgid "Replace Default Menu"
+msgstr "Ersätt standardmeny"
+
+#: app/Views/settings/settings-general.php:77
+msgid "Disable menu sync completely"
+msgstr "Inaktivera menysynkronisering fullständigt"
+
+#: app/Views/settings/settings-general.php:28
+msgid "Enable Date Picker in Quick Edit"
+msgstr "Aktivera datumväljare i snabbredigering"
+
+#: app/Views/settings/settings-posttypes.php:64
+msgid "Disable Nesting"
+msgstr "Inaktivera Nesting"
+
+#: app/Views/partials/tool-list.php:90
+#: app/Views/settings/settings-posttypes.php:307
+msgid "Order By"
+msgstr "Sortera efter"
+
+#: app/Views/partials/tool-list.php:37
+msgid "Trash"
+msgstr "Släng"
+
+#: app/Views/forms/quickedit-post.php:146
+msgid "Password"
+msgstr "Lösenord"
+
+#: app/Views/forms/quickedit-link.php:87 app/Views/forms/quickedit-post.php:291
+#: app/Views/partials/bulk-edit.php:149
+msgid "Update"
+msgstr "Uppdatera"
+
+#: app/Bootstrap.php:70 app/Views/settings/settings-admincustom.php:14
+#: app/Views/settings/settings-posttypes.php:23
+msgid "Settings"
+msgstr "Inställningar"
+
+#: app/Views/forms/clone-form.php:72
+#: app/Views/forms/delete-confirmation-modal.php:10
+#: app/Views/forms/empty-trash-modal.php:10 app/Views/forms/link-form.php:116
+#: app/Views/forms/new-child.php:103 app/Views/forms/quickedit-link.php:84
+#: app/Views/forms/quickedit-post.php:288 app/Views/partials/bulk-edit.php:146
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: app/Config/SettingsRepository.php:117 app/Views/forms/quickedit-post.php:162
+msgid "Allow Comments"
+msgstr "Tillåt kommentarer"
+
+#: app/Activation/Dependencies.php:154 app/Views/forms/quickedit-post.php:152
+#: app/Views/partials/bulk-edit.php:53
+msgid "Private"
+msgstr "Privat"
+
+#: app/Views/forms/quickedit-post.php:55 app/Views/forms/quickedit-post.php:72
+#: app/Views/partials/tool-list.php:87
+#: app/Views/settings/settings-posttypes.php:314
+msgid "Date"
+msgstr "Datum"
+
+#: app/Entities/PostType/PostTypeRepository.php:477
+#: app/Views/forms/quickedit-link.php:31
+msgid "Scheduled"
+msgstr "Schemalagd"
+
+#: app/Views/forms/quickedit-link.php:8
+msgid "Link"
+msgstr "Länk"
+
+#: app/Views/forms/new-child.php:74 app/Views/forms/quickedit-post.php:138
+#: app/Views/partials/bulk-edit.php:64
+msgid "Default Template"
+msgstr "Standardmall"
+
+#: app/Config/SettingsRepository.php:121 app/Views/forms/new-child.php:72
+#: app/Views/forms/quickedit-post.php:136 app/Views/partials/bulk-edit.php:61
+msgid "Template"
+msgstr "Mall"
+
+#: app/Views/forms/link-form.php:99 app/Views/forms/quickedit-link.php:66
+#: app/Views/forms/quickedit-post.php:274
+msgid "Open link in a new window/tab"
+msgstr "Öppna länk i nytt fönster/flik"
+
+#: app/Views/forms/link-form.php:81 app/Views/forms/quickedit-link.php:22
+msgid "URL"
+msgstr "URL"
+
+#: app/Views/forms/link-form.php:76
+msgid "Original"
+msgstr "Original"
+
+#: app/Views/forms/link-form.php:35 app/Views/forms/link-form.php:57
+msgid "No Results"
+msgstr "Inga resultat"
+
+#: app/Views/forms/link-form.php:28 app/Views/forms/link-form.php:57
+msgid "Search"
+msgstr "Sök"
+
+#: app/Views/forms/link-form.php:19
+msgid "Custom Link"
+msgstr "Anpassad länk"
+
+#: app/Activation/Dependencies.php:141
+#: app/Views/forms/delete-confirmation-modal.php:11
+msgid "Delete"
+msgstr "Ta bort"
+
+#: app/Entities/PostType/PostTypeRepository.php:481
+#: app/Views/forms/clone-form.php:33 app/Views/forms/new-child.php:40
+#: app/Views/forms/quickedit-link.php:34 app/Views/partials/bulk-edit.php:55
+#: app/Views/partials/tool-list.php:22
+msgid "Draft"
+msgstr "Utkast"
+
+#: app/Entities/PostType/PostTypeRepository.php:476
+#: app/Views/forms/clone-form.php:30 app/Views/forms/new-child.php:38
+#: app/Views/forms/quickedit-link.php:30 app/Views/partials/bulk-edit.php:51
+#: app/Views/partials/tool-list.php:18
+msgid "Published"
+msgstr "Publicerad"
+
+#: app/Views/forms/clone-form.php:27 app/Views/forms/new-child.php:35
+#: app/Views/forms/quickedit-link.php:27 app/Views/forms/quickedit-post.php:109
+#: app/Views/partials/bulk-edit.php:47
+msgid "Status"
+msgstr "Status"
+
+#: app/Views/forms/clone-form.php:15
+msgid "Number of Copies"
+msgstr "Antal kopior"
+
+#: app/Views/forms/clone-form.php:10 app/Views/forms/clone-form.php:75
+#: app/Views/partials/row.php:198
+msgid "Clone"
+msgstr "Klona"
+
+#: app/Form/Validation/Validation.php:160
+msgid "Please provide a "
+msgstr "Ange en "
+
+#: app/Form/Listeners/NewMenuItem.php:28 app/Form/Validation/Validation.php:150
+msgid "Please provide a valid URL."
+msgstr "Ange en giltig URL."
+
+#: app/Form/Validation/Validation.php:136
+msgid "Please provide a valid date."
+msgstr "Ange ett giltigt datum."
+
+#: app/Form/Listeners/QuickEdit.php:35
+msgid "Post successfully updated."
+msgstr "Inlägget uppdaterat."
+
+#: app/Form/Listeners/NewMenuItem.php:47
+#: app/Form/Listeners/QuickEditLink.php:28
+msgid "Link successfully updated."
+msgstr "Länken uppdaterad."
+
+#: app/Form/Listeners/NewMenuItem.php:27
+msgid "Custom Links must have a label."
+msgstr "Anpassade länkar måste ha en etikett."
+
+#: app/Entities/PostType/RegisterPostTypes.php:30
+msgid "Redirect"
+msgstr "Omdirigera"
+
+#: app/Entities/PostType/RegisterPostTypes.php:29
+msgid "Redirects"
+msgstr "Omdirigeningar"
+
+#: app/Entities/Confirmation/TrashConfirmation.php:31
+msgid "Undo"
+msgstr "Ångra"
+
+#: app/Activation/Dependencies.php:137 app/Views/partials/row-link.php:54
+#: app/Views/partials/row.php:56
+msgid "Hidden"
+msgstr "Dold"
+
+#: app/Activation/Dependencies.php:134
+msgid "Add Pages"
+msgstr "Lägg till sidor"
+
+#: app/Activation/Dependencies.php:133
+msgid "Add Page"
+msgstr "Lägg till sida"
+
+#: app/Activation/Dependencies.php:132 app/Views/forms/link-form.php:120
+#: app/Views/forms/new-child.php:106
+msgid "Add"
+msgstr "Lägg till"
+
+#: app/Activation/Dependencies.php:131
+msgid "Add Child Pages"
+msgstr "Lägg till undersidor"
+
+#: app/Activation/Dependencies.php:130
+msgid "Add Child Page"
+msgstr "Lägg till undersida"
+
+#: app/Activation/Dependencies.php:128 app/Views/partials/row.php:261
+msgid "View"
+msgstr "Visa"
+
+#: app/Activation/Dependencies.php:126 app/Views/forms/quickedit-post.php:18
+#: app/Views/partials/row-link.php:79 app/Views/partials/row.php:245
+msgid "Quick Edit"
+msgstr "Snabbredigera"
+
+#: app/Activation/Dependencies.php:123 app/Views/listing.php:29
+#: app/Views/listing.php:30
+msgid "Add Link"
+msgstr "Lägg till länk"
+
+#: app/Activation/Dependencies.php:122 app/Views/partials/tool-list.php:29
+msgid "Hide Hidden"
+msgstr "Dölj dolda"
+
+#: app/Activation/Dependencies.php:119 app/Views/listing.php:38
+#: app/Views/partials/list-header.php:20
+msgid "Expand All"
+msgstr "Expandera alla"
+
+#: app/Views/forms/quickedit-link.php:48 app/Views/forms/quickedit-post.php:256
+msgid "CSS Classes"
+msgstr "CSS-klasser"
+
+#: app/Views/forms/link-form.php:93
+msgid "CSS Classes (optional)"
+msgstr "CSS-klasser (valfritt)"
+
+#: app/Views/forms/quickedit-post.php:58
+msgid "@"
+msgstr "@"
+
+#: app/Views/forms/new-child.php:109
+msgid "Add & Edit"
+msgstr "Lägg till och redigera"
+
+#: app/Config/SettingsRepository.php:114 app/Views/forms/clone-form.php:51
+#: app/Views/forms/new-child.php:62 app/Views/forms/quickedit-post.php:95
+#: app/Views/partials/bulk-edit.php:38
+#: app/Views/settings/settings-posttypes.php:302
+msgid "Author"
+msgstr "Författare"
+
+#: app/Activation/Dependencies.php:127
+msgid "Page Title"
+msgstr "Sidrubrik"
+
+#: app/Activation/Dependencies.php:125
+#: app/Entities/Post/PostUpdateRepository.php:122
+#: app/Views/forms/new-child.php:19 app/Views/forms/new-child.php:21
+#: app/Views/forms/quickedit-post.php:40 app/Views/partials/tool-list.php:88
+#: app/Views/settings/settings-posttypes.php:315
+msgid "Title"
+msgstr "Rubrik"
+
+#: app/Activation/Dependencies.php:121 app/Views/partials/tool-list.php:27
+msgid "Show Hidden"
+msgstr "Visa dolda"
+
+#: app/Activation/Dependencies.php:120
+msgid "Collapse All"
+msgstr "Minimera alla"
+
+#: app/Activation/Dependencies.php:129 app/Views/forms/new-child.php:7
+msgid "Add Child"
+msgstr "Lägg till under"
+
+#: app/Activation/Dependencies.php:124 app/Views/partials/row.php:140
+msgid "Add Child Link"
+msgstr "Lägg till en underlänk"
+
+#: app/Entities/Confirmation/LinkDeletedConfirmation.php:11
+msgid "Link successfully deleted."
+msgstr "Länk borttagen utan problem."
+
+#: app/Form/Listeners/BaseHandler.php:134
+msgid "There was an error updating the page."
+msgstr "Det var ett fel vid uppdatering av sidan."
+
+#: app/Form/Validation/Validation.php:202
+msgid "Page titles cannot be blank."
+msgstr "Sidrubriker kan inte vara tomma."
+
+#: app/Entities/PostType/PostTypeRepository.php:480
+#: app/Views/forms/clone-form.php:32 app/Views/forms/quickedit-link.php:33
+#: app/Views/partials/bulk-edit.php:54
+msgid "Pending Review"
+msgstr "Inväntar granskning"
+
+#: app/Views/forms/new-child.php:28
+msgid "+"
+msgstr "+"
+
+#: app/Views/forms/link-form.php:85 app/Views/forms/quickedit-link.php:17
+#: app/Views/forms/quickedit-post.php:248
+msgid "Navigation Label"
+msgstr "Navigeringsetikett"
+
+#: app/Activation/Dependencies.php:135 app/Views/listing.php:23
+#: app/Views/listing.php:24
+msgid "Add Multiple"
+msgstr "Lägg till flera"
+
+#. Plugin Name of the plugin
+#: app/Config/Settings.php:83
+msgid "Nested Pages"
+msgstr "Nested Pages"
+
+#: app/Config/Settings.php:82 app/Views/settings/settings.php:2
+msgid "Nested Pages Settings"
+msgstr "Inställningar för Nested Pages"
+
+#: app/Config/SettingsRepository.php:125 app/Views/forms/quickedit-link.php:60
+#: app/Views/forms/quickedit-post.php:171
+msgid "Hide in Nested Pages"
+msgstr "Dölj i Nested Pages"
+
+#: app/Form/Listeners/SyncMenu.php:34
+msgid "Menu sync enabled."
+msgstr "Menysynkronisering aktiverad."
+
+#: app/Form/Listeners/SyncMenu.php:24
+msgid "Menu sync disabled."
+msgstr "Menysynkronisering inaktiverad."
+
+#: app/Form/Validation/Validation.php:147
+msgid "Please provide a menu title."
+msgstr "Ange en menyrubrik."
+
+#: app/Form/Validation/Validation.php:174
+msgid "A valid parent page was not provided."
+msgstr "En giltig föräldersida angavs inte."
+
+#: app/Form/Listeners/ClonePost.php:36
+#: app/Form/Listeners/TrashWithChildren.php:50
+#: app/Form/Listeners/WpmlTranslations.php:47
+msgid "Post Not Found"
+msgstr "Inlägg hittades inte"
+
+#: app/Views/forms/link-form.php:71
+msgid "Select an item"
+msgstr "Välj ett objekt"
+
+#: app/Views/forms/new-child.php:84 app/Views/forms/quickedit-link.php:54
+#: app/Views/forms/quickedit-post.php:268 app/Views/partials/bulk-edit.php:111
+msgid "Hide in Nav Menu"
+msgstr "Dölj i navigeringsmeny"
+
+#: app/Entities/PostType/PostTypeRepository.php:416
+msgid "Sort View"
+msgstr "Sortera visning"
+
+#: app/Views/forms/quickedit-post.php:149
+msgid "&ndash;OR&ndash;"
+msgstr "&ndash;ELLER&ndash;"
+
+#: app/Config/SettingsRepository.php:112 app/Views/forms/quickedit-post.php:47
+msgid "Slug"
+msgstr "Slug"
+
+#: app/Views/forms/link-form.php:89 app/Views/forms/quickedit-link.php:44
+#: app/Views/forms/quickedit-post.php:252
+msgid "Title Attribute"
+msgstr "Rubrikattribut"
+
+#: app/Form/Validation/Validation.php:194
+msgid "Please provide at least one page title."
+msgstr "Ange minst en sidrubrik."
+
+#: app/Views/forms/quickedit-post.php:62
+msgid "am"
+msgstr "f m"
+
+#: app/Views/forms/quickedit-post.php:63
+msgid "pm"
+msgstr "e m"
+
+#: app/Views/forms/empty-trash-modal.php:9
+msgid "Are you sure you would like to empty the trash? This action is not reversable."
+msgstr "Är du säker på att du vill tömma papperskorgen? Denna åtgärd går inte att ångra."
+
+#: app/Form/Listeners/EmptyTrash.php:17
+msgid "Trash successfully emptied."
+msgstr "Papperskorgen tömd."
+
+#: app/Views/forms/empty-trash-modal.php:11
+msgid "Empty Trash"
+msgstr "Töm papperskorgen"

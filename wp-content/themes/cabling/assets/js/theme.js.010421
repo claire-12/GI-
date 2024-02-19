@@ -1,0 +1,379 @@
+( function( $ ) {
+
+	var ajaxSearch = null;
+
+	$('.search-field').keyup(function(e) {
+		setTimeout(function(){
+			var key_search = $('.search-field').val();
+			ajaxSearch = $.ajax({
+	            url: CABLING.ajax_url,
+	            type :'POST',
+	            dataType: 'json',
+				data: {
+					action: 'search_ajax',
+					key_search: key_search,
+				},
+				beforeSend : function()    {           
+			        if(ajaxSearch != null) {
+			            ajaxSearch.abort();
+			        }
+			        $('.search-ajax').removeClass('no');
+					$('.search-ajax').html('Searching...');
+	            	$('.search-ajax').show();
+	            	//$('.header-search .close').show();
+			    },
+	            success: function (response) {
+	            	$('.search-ajax').removeClass('no');
+	            	$('.search-ajax').html(response.data);
+	            	$('.search-ajax').show();
+	            	$('.header-search .close').show();
+	            	if(response.search_query==''){
+	            		$('.search-ajax').hide();
+	            	}
+	            },
+	            error: function(err){
+	                $('.search-ajax').addClass('no');
+	                $('.search-ajax').html('No results found, please search again.');
+	            	$('.search-ajax').show();
+	            	//$('.header-search .close').show();
+	            }
+	        });
+		}, 500);
+	});
+
+	$('.header-search').on('click', '.close', function(e) {
+		e.preventDefault();
+		$('.search-ajax').hide();
+		$('.header-search .close').hide();
+	});
+	//filter on category Cable
+	$('.product-filter').on('change', '.custom-select', function(e) {
+		e.preventDefault();
+
+		cabling_filter_product_by_class();
+	});
+
+	$('.product-filter-ajax').on('change', '.custom-select', function(e) {
+		e.preventDefault();
+		var form = $(this).closest('form');
+		$('.loading-ajax').fadeIn('fast');
+		$.ajax({
+			url: CABLING.ajax_url,
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				action: 'cabling_filter_product_ajax',
+				data: form.serialize(),
+				filter: $(e.delegateTarget).data('filter'),
+			},
+			success: function(res, textStatus, xhr) {
+		        //console.log(res);		        
+		        $('.site-main').find('.products').html(res.data);
+				if(res.pagination){
+					$('.site-main').find('.woocommerce-pagination').html(res.pagination);
+				}else{
+					$('.site-main').find('.woocommerce-pagination').empty();
+				}
+		        $('.loading-ajax').fadeOut();
+		    },
+		})
+		.fail(function() {
+			console.log("error");
+		});
+	});
+
+	$('.woocommerce').on('click', '.filter-pagination .filter-page', function(e) {
+		e.preventDefault();
+		
+		var form = $(this).closest('.site-main').find('form');
+		$('.loading-ajax').fadeIn('fast');
+		
+		$.ajax({
+			url: CABLING.ajax_url,
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				action: 'cabling_filter_product_ajax',
+				data: form.serialize(),
+				filter: $('.product-filter-ajax').data('filter'),
+				num: $(this).data('paged'),
+			},
+			success: function(res, textStatus, xhr) {
+		        //console.log(res);		        
+		        $('.site-main').find('.products').html(res.data);
+				if(res.pagination){
+					$('.site-main').find('.woocommerce-pagination').html(res.pagination);
+				}else{
+					$('.site-main').find('.woocommerce-pagination').empty();
+				}
+		        $('.loading-ajax').fadeOut();
+		    },
+		})
+		.fail(function() {
+			console.log("error");
+		});
+	});
+	//trigger on variation PDP
+	/*$('.product-type-variable').on('change', '.variations select', function(event) {
+		var attribute = $(this).val();
+
+
+	});
+	$( ".single_variation_wrap" ).on( "show_variation", function ( event, variation ) {
+	    // Fired when the user selects all the required dropdowns / attributes
+	    if ( variation.variation_id ) {
+	    	$('.table-variation').show();
+	    	$('.table-variation').find('tbody tr').hide();
+	    	$('.table-variation').find('tbody tr[data-variation=' + variation.variation_id + ']').show();
+	    }else{
+	    	$('.table-variation').hide();
+	    }
+	} );*/
+
+	//open login modal
+	$('body').on('click', '.my-account.menu-item', function(event) {
+		event.preventDefault();
+		
+		$("#loginModal").modal("toggle");
+	});
+	
+	//load more on single product
+	$('body').on('click', '.loadmore-meta', function(event) {
+		event.preventDefault();
+		
+		$(this).hide();
+		$(this).closest('.modal').find('.loadless-meta').show();
+		$(this).parent().addClass('show_all');
+	});
+	$('body').on('click', '.loadless-meta', function(event) {
+		event.preventDefault();
+
+		$(this).hide();
+		$(this).closest('.modal').find('.loadmore-meta').show();
+		$(this).parent().removeClass('show_all');
+	});
+	
+	//sign in ajax function
+	$('body').on('submit', 'form[name=cabling_ligin_form]', function(event) {
+		event.preventDefault();
+
+		var form = $(this);
+		form.find('.woo-notice').remove();
+		
+		$.ajax({
+			url: CABLING.ajax_url,
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				action: 'cabling_login_ajax',
+				data: form.serialize()
+			},
+			success: function(data, textStatus, xhr) {
+		        //console.log(data);
+		        
+		        form.find('.login-username').prepend(data.mess);
+		        
+		        if ( !data.error ) {
+		        	window.location.href = data.redirect;
+		        }
+		    },
+		})
+		.fail(function() {
+			console.log("error");
+		});
+		
+		
+		return false;
+	});
+	
+	//validate register form
+	$('body').on('submit', 'form[name=register-form]', function(event) {
+
+		var form = $(this);		
+		var response = grecaptcha.getResponse();
+
+		if( response.length == 0 ){
+			form.find('.woo-notice').fadeIn();
+			grecaptcha.reset();
+			return false;   		
+	   	}
+
+	   	return true;
+	});
+	
+	//validate register form
+	$('.woocommerce').on('click', '.quick-view > a', function(e) {
+		var product = $(this).parent().data('product');
+		var load_product_ajax = $.ajax({
+			url: CABLING.ajax_url,
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				action: 'cabling_get_product_single_ajax',
+				product: product,
+			}
+		});
+
+		$.when(load_product_ajax).done(function(result) {
+		    //console.log(result);
+
+		    if ( result.status == true) {
+		    	$("#quickViewModal").find('.modal-body').html(result.data);		    	
+		    	$("#quickViewModal").modal('show');
+		    }else {
+		    	//$(e.delegateTarget).hide();
+		    }
+		});
+
+	   	return false;
+	});
+	
+	//insert value to back button
+	if($('.woocommerce-breadcrumb').length && $('.backbutton').length){
+		let bread_count = $('.woocommerce-breadcrumb > span').length - 2;
+		let name = $('.woocommerce-breadcrumb > span').eq(bread_count).text();
+		let link = $('.woocommerce-breadcrumb > span').eq(bread_count).find('a').attr('href');
+		if( bread_count ){
+			$('.backbutton').find('span').text(name);
+			$('.backbutton').attr('href', link);
+		}else{
+			$('.backbutton').hide();
+		}
+	}
+	
+	//validate register form
+	$('.woocommerce').on('click', '.wcb2b_login_message', function(e) {
+		$("#loginModal").modal("toggle");
+		return false;
+	});
+
+	//woocommerce check out
+	//cabling_move_shipping_btn();
+	$('body').on('change', '#ship-to-different-address-checkbox', function(e) {
+		//console.log( $(this).is(":checked") );
+		if( $(this).is(":checked") )
+			$('.woocommerce-billing-fields').addClass('has_shipping_address');
+		else
+			$('.woocommerce-billing-fields').removeClass('has_shipping_address');
+	});
+	
+	//trigger product category widget 
+	$('body').find('.product-categories .cat-parent').append('<span class="show_more"></span>');
+	
+	$('body').on('click', '.show_more', function(e) {
+		var parent = $(this).closest('.cat-parent');
+		parent.toggleClass('active');
+		parent.find('> .children').slideToggle();
+	});	
+	
+	$('.top-header').on('click', '.show-language', function(e) {
+		$(e.delegateTarget).find('.cabling_language_list').toggle();
+	});	
+
+	if ( $('form[name=pre-training-data]').length ) {
+		var form = $('form[name=pre-training-data]');
+
+		$('form.wpcf7-form').find('input[name=training-id]').val( form.find('input[name=train-id]').val() );
+		$('form.wpcf7-form').find('input[name=training-title]').val( form.find('input[name=train-title]').val() );
+		$('form.wpcf7-form').find('input[name=training-place]').val( form.find('input[name=train-place]').val() );
+		$('form.wpcf7-form').find('input[name=training-date]').val( form.find('input[name=train-date]').val() );
+
+		$('form.wpcf7-form').on('change','[name="is-same-participant[]"]', function(e){
+			if ( $('input[name="is-same-participant[]"]:checked').length > 0 ) {
+				$(e.delegateTarget).find('.differ-participant').slideUp();
+			}else{
+				$(e.delegateTarget).find('.differ-participant').slideDown();
+			}
+		});
+	}
+
+	$('.more-if a[href^="www"]').each(function(){ 
+	    var oldUrl = $(this).attr("href");
+	    var newUrl = oldUrl.replace('www', 'http://www');
+	    $(this).attr("href", newUrl);
+	});
+
+} )( jQuery );
+
+function cabling_move_shipping_btn(){
+	var j = jQuery.noConflict();
+
+	if ( j('#ship-to-different-address').length ) {
+		var button = j('#ship-to-different-address').clone();
+
+		j('#ship-to-different-address').remove();
+		j('#billing_address_1_field').after(button);
+	}
+}
+
+function cabling_filter_product_by_class(){
+	var j = jQuery.noConflict();
+	
+	var root = j('.product-filter');
+	var select = root.find('.custom-select');
+	var value = '';
+
+	j('body').find('.product-item').hide();
+
+	j.each(select, function(index, ele) {
+		$this = j(ele);
+
+		if ( $this.val() !== '' ) {
+			value = value + '.' + $this.val();
+			//j('body').find('.product-item').filter('.' + $this.val()).show();			
+						
+		}
+	});
+	console.log(value);
+	j('body').find(value).show();
+	/* console.log(value);
+	j('body').find('.product-item').each(select, function(index, ele) {
+		$this = j(ele);
+
+		if ( j(ele) ) {
+			value = value + ' ' + $this.val();
+			//j('body').find('.product-item').filter('.' + $this.val()).show();			
+		}
+	}); */
+
+	if ( value === '' ) {
+		j('body').find('.product-item').show();
+	}
+}
+
+
+// Default Billing Disable Fields
+( function( $ ) {
+	
+	$(".woocommerce-billing-fields").each(function(){
+		$(this).find(':input').prop("readonly", true);
+		$(this).find(':input').css('background-color', '#f1f1f1');
+		$(this).find('span').css('background-color', '#f1f1f1');
+		console.log('teste');
+		 //<-- Should return all input elements in that specific form.
+	});
+	// $('#billing_country').prop('disabled', true);
+
+	$('.woocommerce-checkout').on('submit', function() {
+		$('#billing_country').prop('disabled', false);
+	});
+
+	//$(".checkout :input").prop("disabled", true);
+
+} )( jQuery );
+
+//navigation
+( function($) {
+	add_mobile_class_to_navigation();
+	
+	$( window ).resize(function() {
+		add_mobile_class_to_navigation();
+	});
+
+} )(jQuery);
+
+function add_mobile_class_to_navigation(){
+	if ( jQuery( window ).width() < 992 ) {
+		jQuery( "body" ).find('.main-navigation').addClass('collapse');
+	}
+}
