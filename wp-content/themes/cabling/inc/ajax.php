@@ -704,6 +704,16 @@ function cabling_get_products_ajax_callback()
             parse_str($_REQUEST['data'], $data);
             $productTypeId = $_REQUEST['category'] ?? 0;
 
+            if (empty($data['attributes']['nominal_size_id'])){
+                unset($data['attributes']['nominal_size_id']);
+            }
+            if (empty($data['attributes']['nominal_size_od'])){
+                unset($data['attributes']['nominal_size_od']);
+            }
+            if (empty($data['attributes']['nominal_size_width'])){
+                unset($data['attributes']['nominal_size_width']);
+            }
+
             $total = 0;
             $isSizeFilter = false;
             $results = '';
@@ -785,7 +795,7 @@ function cabling_get_products_ajax_callback()
             }
 
             //we will get the meta value of all product filter, and filter all options in the product filter
-            if (!empty($termFilters)) {
+            if (!empty($data['attributes']) && !empty($termFilters)) {
                 // get the product ids
                 $product_ids = get_product_ids_by_category('product_custom_type', $termFilters, $data['attributes']);
 
@@ -851,7 +861,7 @@ function cabling_get_products_ajax_callback()
 
                 }
                 //we must get the certifications of compound
-                /*if (!empty($certifications)){
+                if (!empty($certifications)){
                     $resultMetas['product_compound'] = $certifications;
                 } elseif (!empty($resultMetas['product_compound'])) {
                     $compound_certifications = [];
@@ -873,7 +883,7 @@ function cabling_get_products_ajax_callback()
                         $compound_certifications[] = $row['term_taxonomy_id'];
                     }
                     $resultMetas['product_compound'] = $compound_certifications;
-                }*/
+                }
 
             }
 
@@ -882,7 +892,7 @@ function cabling_get_products_ajax_callback()
                 'results' => $results,
                 'total' => $total,
                 'filter_meta' => $resultMetas ?? null,
-                //'$compounds' => $compounds ?? null,
+                '$data' => $data ?? null,
                 'isSizeFilter' => $isSizeFilter,
                 'redirect' => $redirect ?? null,
             ]);

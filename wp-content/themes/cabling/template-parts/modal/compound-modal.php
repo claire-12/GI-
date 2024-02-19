@@ -20,7 +20,10 @@ if (empty($content)){
             <div class="modal-body compound-modal-content">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="pre-heading heading-center"><?php echo get_the_title($compound) ?></h3>
+                        <h3 class="pre-heading heading-center">
+							<?php //echo get_the_title($compound) ?>
+						<?php echo $postdat->post_title;?>
+						</h3>
                     </div>
                     <div class="col-12 compoundtablewrap">
                         <?php

@@ -44,18 +44,40 @@ $compounds = get_compound_product($term->term_id);
 				<td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_drawing', $compound) ?></td>
 				<td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_material_specification', $compound) ?></td>
 				<td class="has-text-align-center" data-align="center">
+					<?php
+						$compounddetailsid=get_post_id_by_slug( get_the_title($compound), $post_type = "page" );
+							if($compounddetailsid!=""){
+								?>
+
                     <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
                         <?php echo get_the_title($compound) ?>
                     </a>
                     <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
+					<?php
+							}else{echo get_the_title($compound);}
+					?>					
                 </td>
 				<?php }else{?>
 				<td class="has-text-align-center" data-align="center"><?php echo get_product_field('_elastomer', $compound) ?></td>
 				<td class="has-text-align-center" data-align="center">
+					<?php
+						$compounddetailsid=get_post_id_by_slug( get_the_title($compound), $post_type = "page" );
+							if($compounddetailsid!=""){
+								?>
+
                     <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
                         <?php echo get_the_title($compound) ?>
                     </a>
                     <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
+					<?php
+							}else{echo get_the_title($compound);}
+					?>
+					<!--
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
+                        <?php echo get_the_title($compound) ?>
+                    </a>-->
+                    <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
+
                 </td>
 				<td class="has-text-align-center" data-align="center"><?php echo get_product_field('_durometer', $compound) ?></td>
 				<td class="has-text-align-center" data-align="center"><?php echo get_product_field('_colour', $compound) ?></td>

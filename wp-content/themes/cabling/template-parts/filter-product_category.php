@@ -325,7 +325,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                             <div class="form-check filter-category">
                                                 <input class="form-check-input"
                                                        type="checkbox"
-                                                        <?php echo show_product_filter_input_name($slug, $attribute) ?>
+                                                    <?php echo show_product_filter_input_name($slug, $attribute) ?>
                                                        value="<?php echo $attribute['valueType'] === 'key' ? $key : $value; ?>"
                                                        title="<?php echo $value; ?>"
                                                        id="category-<?php echo sanitize_title($slug . $value); ?>">

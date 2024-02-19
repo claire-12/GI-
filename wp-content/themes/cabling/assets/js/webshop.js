@@ -613,11 +613,11 @@ function product_filter_ajax(cat_id) {
                 $('.breadcrumbs-filter span').html(response.data.category);
             }
 
-            if (response.data.filter_meta !== null) {
-                const filter_meta = response.data.filter_meta;
-                $('.filter-blog').find('.filter-category').each(function () {
-                    let that = $(this);
-                    let meta_key = that.attr('data-meta-key');
+            const filter_meta = response.data.filter_meta;
+            $('.filter-blog').find('.filter-category').each(function () {
+                let that = $(this);
+                let meta_key = that.attr('data-meta-key');
+                if (filter_meta !== null) {
                     if (meta_key) {
                         if (filter_meta.hasOwnProperty(meta_key) && filter_meta[meta_key].includes(that.attr('data-value'))) {
                             that.show();
@@ -625,16 +625,19 @@ function product_filter_ajax(cat_id) {
                             that.hide();
                         }
                     }
-                });
-                /*$('.filter-blog').find('.accordion-item').each(function () {
-                    let that = $(this);
-                    if (that.find('.filter-category').is(':visible')) {
-                        that.show();
-                    } else {
-                        that.hide();
-                    }
-                })*/
-            }
+                } else {
+                    that.show();
+                }
+            });
+            /*$('.filter-blog').find('.accordion-item').each(function () {
+                let that = $(this);
+                if (that.find('.filter-category').is(':visible')) {
+                    that.show();
+                } else {
+                    that.hide();
+                }
+            })*/
+
             hideLoading();
         },
         beforeSend: function () {

@@ -40,11 +40,12 @@ get_header();
                         <div id="filtered-category-container">
                             <?php if (isset($product_lines)): ?>
                                 <?php foreach ($product_lines as $line) {
-                                    $children = get_product_type_category($line->term_id);
+                                    //$children = get_product_type_category($line->term_id);
+                                    $productTypes = get_product_line_category('product_custom_type', 'product_line', [$line->term_id]);
 
                                     get_template_part('template-parts/product', 'category', [
                                         'category' => $line,
-                                        'children' => $children,
+                                        'children' => $productTypes,
                                     ]);
                                 } ?>
                             <?php endif ?>
