@@ -1336,7 +1336,7 @@ function get_product_category($taxonomy = 'product_cat', $isParent = 0, $include
 {
     $args = array(
         'taxonomy' => $taxonomy,
-        'hide_empty' => true,
+        'hide_empty' => false,
         'parent' => $isParent,
         'exclude' => [7889],
         'orderby' => 'term_order'
@@ -1354,7 +1354,7 @@ function get_product_line_category(string $taxonomy = '', string $meta_key = '',
 {
     $args = array(
         'taxonomy' => $taxonomy,
-        'hide_empty' => true,
+        'hide_empty' => false,
         'include' => $includes,
         'meta_query' => array(
             //'relation' => 'OR',

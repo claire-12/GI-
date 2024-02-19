@@ -389,7 +389,7 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
         $('#billing_country').prop('disabled', false);
     });
 
-    $(document).on('input', '#registerStep input[type=password]', function () {
+    /*$(document).on('input', '#registerStep input[type=password]', function () {
         const btnSubmit = $(this).closest('form').find('button[type="submit"]');
         const password = $(this).val();
         let strength = 0;
@@ -443,7 +443,7 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                 $(this).css('border-color', '#dc3545');
             }
         }
-    })
+    })*/
 
     // JM 20230914
     $(document).on('input', 'input[name=password_2]', function () {
@@ -606,8 +606,9 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
         }
     });
 
-    $(document).on('click', '.show-email-share', function () {
-        $('#emailShareModal').modal('show')
+    $(document).on('click', '.show-email-share .email-share', function () {
+        $('#emailShareModal').modal('show');
+        return false;
     })
 
 })(jQuery);

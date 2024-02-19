@@ -6,7 +6,7 @@
  * @param array $block The block settings and attributes.
  * @param string $content The block inner HTML (empty).
  * @param bool $is_preview True during AJAX preview.
- * @param   (int|string) $post_id The post ID this block is saved to.
+ * @param (int|string) $post_id The post ID this block is saved to.
  */
 
 // Create id attribute allowing for custom "anchor" value.
@@ -28,10 +28,11 @@ $wmt_description = get_field('wmt_description');
 $wmt_button = get_field('wmt_button');
 $wmt_image_position = get_field('wmt_image_position');
 $wmt_background = get_field('wmt_background');
-//var_dump($block);
+
 $className .= ' ' . $wmt_image_position;
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>" style="background-color: <?php echo $wmt_background ?? '#fff' ?>">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"
+     style="background-color: <?php echo $wmt_background ?? '#fff' ?>">
     <div class="wrap-inner">
         <div class="row gx-5">
             <div class="col-md-12 col-lg-6 col-img">
@@ -47,7 +48,11 @@ $className .= ' ' . $wmt_image_position;
                     <h3 class="heading"><?php echo $wmt_heading ?></h3>
                     <div class="description"><?php echo $wmt_description ?></div>
                     <?php if (isset($wmt_button['url'])): ?>
-                        <a href="<?php echo esc_url($wmt_button['url']); ?>" class="block-button <?php echo ($wmt_button['url'] === '/request-a-quote/') ? 'show-product-quote' : ''; ?>">
+                        <a
+                                href="<?php echo esc_url($wmt_button['url']); ?>"
+                                class="block-button <?php echo ($wmt_button['url'] === '/request-a-quote/') ? 'show-product-quote' : ''; ?>"
+                                <?php echo empty($wmt_button['target']) ? '' : "target='". $wmt_button['target'] ."'" ?>
+                        >
                             <span><?php echo $wmt_button['title']; ?></span>
                         </a>
                     <?php endif; ?>

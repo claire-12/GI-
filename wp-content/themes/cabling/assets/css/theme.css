@@ -1319,24 +1319,36 @@ input.invalid,
     text-align: center;
     font-size: 18px
 }
-
 .show-email-share {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #159fb3;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
     position: fixed;
     z-index: 999999;
     cursor: pointer;
-    right: 30px;
-    bottom: 30px;
+    right: 16px;
+    bottom: 16px;
     color: #fff;
     font-size: 1.5em;
 }
-
+.show-email-share .dropdown-toggle {
+    background: #d51c23 !important;
+    border-color: #d51c23 !important;
+}
+.show-email-share .dropdown-toggle::after{
+    display: none;
+}
+.show-email-share .dropdown-menu i{
+    color: #45bfe1;
+}
+.show-email-share .dropdown-toggle {
+    background: #e6e6e6!important;
+    border-color: transparent!important;
+    padding: 0px 10px;
+    font-size: 1.85rem;
+    color: #d51c23;
+    border-radius: 50%;
+}
 @media (min-width: 500px) {
     .multisteps-form__progress-btn {
         text-indent: 0
@@ -2277,13 +2289,10 @@ body.has-loading {
     flex-direction: column;
     position: relative;
     margin-bottom: 50px;
-    height: 150px;
+    height: 250px;
     text-align: center;
 }
 
-.page-header.has-background {
-    height: 500px;
-}
 
 .page-header.has-background .entry-title {
     color: #fff;
@@ -2291,7 +2300,7 @@ body.has-loading {
 }
 
 .page-header .entry-title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
 }
 
@@ -3402,7 +3411,8 @@ label .required {
     transition: all 0.1s ease-in-out;
 }
 
-.contact-form-input > p.has-focus label, .contact-form-input > p:focus-within label {
+.contact-form-input > p.has-focus label,
+.contact-form-input > p:focus-within label {
     top: -10px;
     background: #fff;
     font-size: 12px;

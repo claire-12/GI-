@@ -1922,3 +1922,34 @@ function get_post_id_by_slug( $slug, $post_type = "post" ) {
     $posts = $query->get_posts();
     return array_shift( $posts );
 }
+
+
+function custom_autofill_data( $scanned_tag, $replace ) {
+    if ( is_user_logged_in() ) {
+        $current_user = wp_get_current_user();
+
+        switch ( $scanned_tag['name'] ){
+            case 'your-name':
+                $scanned_tag['values'] = [$current_user->display_name];
+                break;
+            case 'your-email':
+                $scanned_tag['values'] = [$current_user->user_email];
+                break;
+            case 'your-title':
+                $scanned_tag['values'] = [get_user_meta($current_user->ID, 'user_title', true)];
+                break;
+            case 'your-company-sector':
+                $scanned_tag['values'] = [get_user_meta($current_user->ID, 'company-sector', true)];
+                break;
+            case 'your-phone':
+                 $scanned_tag['values'] = [get_user_phone_number($current_user->ID)];
+                break;
+        }
+        return $scanned_tag;
+    }
+
+    // If user is not logged in, return the original form
+    return $scanned_tag;
+}
+
+add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );

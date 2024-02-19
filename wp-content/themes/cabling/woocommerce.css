@@ -123,7 +123,7 @@ WooCommerce styles override
 .table-variation td {
 	white-space: nowrap;
 }
-.woocommerce-page input.button {
+.woocommerce-page input.button:not(.ed_button) {
     padding: 8.5px 25px !important;
     background: var(--background-red);
     color: #fff;

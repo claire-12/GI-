@@ -55,7 +55,13 @@ if (!empty($production_equipment_category))
             <?php if (!empty($button['title'])): ?>
                 <div class="wp-block-buttons">
                     <div class="wp-block-button block-button-<?php echo $button_theme ?>">
-                        <a class="wp-element-button" href="<?php echo esc_url($button['url']) ?>"><?php echo $button['title'] ?></a>
+                        <a
+                                class="wp-element-button"
+                                href="<?php echo esc_url($button['url']) ?>"
+                                <?php echo empty($button['target']) ? '' : "target='". $button['target'] ."'" ?>
+                        >
+                            <?php echo $button['title'] ?>
+                        </a>
                     </div>
                 </div>
             <?php endif ?>

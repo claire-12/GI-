@@ -499,10 +499,13 @@ class UserInformed
 
     public static function custom_woocommerce_email_footer($email)
     {
+        if (empty($email->recipient)){
+            return;
+        }
         $unsubscription_link = add_query_arg(
             array(
                 'unsubscription' => base64_encode('unsubscription'),
-                'data' => urlencode(base64_encode($email->recipient ?? '')),
+                'data' => urlencode(base64_encode($email->recipient)),
             ),
             home_url('/newsletter-unsubscription')
         );

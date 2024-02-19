@@ -466,7 +466,7 @@ function cabling_share_page_email_ajax_callback()
 
             $mailer = WC()->mailer();
             $mailer->recipient = $data['to'];
-            $type = 'emails/reply-contact-form.php';
+            $type = 'emails/share-this-page.php';
             $content = cabling_get_custom_email_html('', $data['subject'], $mailer, $type, $data['message_content']);
             $headers = "Content-Type: text/html\r\n";
 

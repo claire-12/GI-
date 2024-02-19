@@ -36,6 +36,13 @@
             $(this).closest('.form-group').addClass('has-focus');
         }
     })
+    $(document).find('.contact-form-input input').each(function () {
+        if ($(this).val() === '') {
+            $(this).closest('p').removeClass('has-focus');
+        } else {
+            $(this).closest('p').addClass('has-focus');
+        }
+    })
 
     $(document).on('click', '.continue-step-2', function () {
         $(this).hide();
@@ -185,18 +192,16 @@
     $(document).on('submit', '#infomation-form', function () {
         const password = $('input[name=password]');
         if (!checkPasswordStrength(password.val())) {
-            $('.confirm-notice').html(`<div class="wc-block-components-notice-banner is-error" role="alert">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
-                    <path d="M12 3.2c-4.8 0-8.8 3.9-8.8 8.8 0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8 0-4.8-4-8.8-8.8-8.8zm0 16c-4 0-7.2-3.3-7.2-7.2C4.8 8 8 4.8 12 4.8s7.2 3.3 7.2 7.2c0 4-3.2 7.2-7.2 7.2zM11 17h2v-6h-2v6zm0-8h2V7h-2v2z"></path>
-                </svg>
-                <div class="wc-block-components-notice-banner__content">Your password must have at least: 8 characters long with characters, numbers and symbols</div>
-            </div>`);
+            $('.confirm-notice').html(`<ul class="woocommerce-error" role="alert">
+                    <li>Your password must have at least: 8 characters long with characters, numbers and symbols</li>
+            </ul>`);
             // Use animate to smoothly scroll to the target element
             $('html, body').animate({
                 scrollTop: $('#registerStep').offset().top - 200
             }, 'slow');
             return false;
         }
+
     })
 
     $(document).on('submit', '#reset-account-password', function () {
@@ -285,7 +290,7 @@
     $('#filter-heading-product').on('click', '.item', function () {
         if ($(this).hasClass('clear-all')) {
             showLoading();
-            window.location.reload();
+            window.location.href = CABLING.product_page;
         } else {
             const id = $(this).attr("data-action");
             $(document).find(`input[value='${id}']`).prop('checked', false).trigger('change');
@@ -477,10 +482,10 @@ function checkPasswordStrength(password) {
         strength += 1;
     }
 
-    // Check for at least one uppercase letter
+    /*// Check for at least one uppercase letter
     if (/[A-Z]/.test(password)) {
         strength += 1;
-    }
+    }*/
 
     // Check for at least one special character
     if (/[\W_]/.test(password)) {
@@ -492,7 +497,7 @@ function checkPasswordStrength(password) {
         strength += 1;
     }
 
-    return strength === 4;
+    return strength === 3;
 }
 
 function blog_filter_ajax(load_more = false) {
@@ -697,11 +702,14 @@ function add_phone_validate(phone_element) {
             },
         });
 
-        phoneCodeElement.addEventListener("keyup", function () {
+        phoneCodeElement.addEventListener("change", function () {
             resetPhoneError();
             if (phoneCodeElement.value.trim()) {
                 if (iti.isValidNumber()) {
                     parentElement.querySelector('.phone_number').value = phoneCodeElement.value.trim();
+                    if (buttonElement) {
+                        buttonElement.disabled = false;
+                    }
                 } else {
                     //parentElement.querySelector('.phone_number').value = '';
                     phoneCodeElement.classList.add("error");
@@ -710,6 +718,7 @@ function add_phone_validate(phone_element) {
                     if (buttonElement) {
                         buttonElement.disabled = true;
                     }
+                    console.log('Invalid number');
                 }
             }
             jQuery(jQuery(this)).closest('.form-group').addClass('has-focus');
@@ -720,7 +729,7 @@ function add_phone_validate(phone_element) {
             if (countryData && countryData.dialCode) {
                 parentElement.querySelector('.phone_code').value = countryData.dialCode;
             }
-            phoneCodeElement.dispatchEvent(new Event("keyup"));
+            phoneCodeElement.dispatchEvent(new Event("change"));
         });
 
         return iti;
