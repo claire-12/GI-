@@ -5,10 +5,10 @@ if (empty($data))
 $backlogMainTable = array(
     'ponumber' => __('Number', 'cabling'),
     'customer_part_number' => __('Customer Part', 'cabling'),
-    'parcomaterial' => __('Parco Part', 'cabling'),
-    'parcocompound' => __('Parco Compound', 'cabling'),
-    'sapMaterial' => __('SAP Part', 'cabling'),
-    'ship_date' => __('Parco Ship Date', 'cabling'),
+    'parcomaterial' => __('Part Numb', 'cabling'),
+    'parcocompound' => __('Compound', 'cabling'),
+    'sapMaterial' => __('Material', 'cabling'),
+    'ship_date' => __('Ship Date', 'cabling'),
     'open_quantity' => __('Quantity Remaining', 'cabling'),
     'remaining_value' => __('Remaining Value', 'cabling'),
 );

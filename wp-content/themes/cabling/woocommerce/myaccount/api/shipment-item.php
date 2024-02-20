@@ -16,9 +16,9 @@ $mainTable = array(
         <thead>
             <tr>
                 <th>
-                    <?php echo __('Parco Part', 'cabling') ?><br>
-                    <?php echo __('Parco Compound', 'cabling') ?><br>
-                    <?php echo __('SAP Part', 'cabling') ?>
+                    <?php echo __('Part Number', 'cabling') ?><br>
+                    <?php echo __('Compound', 'cabling') ?><br>
+                    <?php echo __('Material', 'cabling') ?>
                 </th>
                 <?php foreach ($mainTable as $name): ?>
                     <th><?php echo $name ?></th>

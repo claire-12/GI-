@@ -380,7 +380,7 @@
         return false;
     });
     $(document).on('submit', '#webservice-api-form', function () {
-        if ($('#sapMaterial').val() !== '' && $('#parcocompound').val() === '') {
+        if (($('#sapMaterial').val() !== '' && $('#parcocompound').val() === '') || $('#sapMaterial').val() === '' && $('#parcocompound').val() !== '') {
             $('.parcocompound-text').show();
             return false;
         } else {

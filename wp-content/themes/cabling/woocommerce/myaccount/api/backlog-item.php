@@ -2,24 +2,25 @@
 if (empty($data))
     return;
 
+$backlogMainTable = array(
+    'ponumber' => __('Number', 'cabling'),
+    'customer_part_number' => __('Customer Part', 'cabling'),
+    'parcomaterial' => __('Part Number', 'cabling'),
+    'parcocompound' => __('Compound', 'cabling'),
+    'sapMaterial' => __('Material', 'cabling'),
+    'ship_date' => __('Ship Date', 'cabling'),
+    'open_quantity' => __('Quantity Remaining', 'cabling'),
+    'remaining_value' => __('Remaining Value', 'cabling'),
+);
+
 $backlogSingleTable = array(
     'ordered_quantity' => __('Quantity Ordered', 'cabling'),
     'open_quantity' => __('Quantity Remaining', 'cabling'),
     'price_per_unit' => __('Price/Unit', 'cabling'),
-    'price_unit' => __('Unit', 'cabling'),
+    'price_unit' => __('Price', 'cabling'),
     'remaining_value' => __('Remaining Value', 'cabling'),
     'due_date' => __('Due Date', 'cabling'),
     'lv_shipping_method' => __('Shipping Method', 'cabling'),
-);
-$backlogMainTable = array(
-    'ponumber' => __('Number', 'cabling'),
-    'customer_part_number' => __('Customer Part', 'cabling'),
-    'parcomaterial' => __('Parco Part', 'cabling'),
-    'parcocompound' => __('Parco Compound', 'cabling'),
-    'sapMaterial' => __('SAP Part', 'cabling'),
-    'ship_date' => __('Parco Ship Date', 'cabling'),
-    'open_quantity' => __('Quantity Remaining', 'cabling'),
-    'remaining_value' => __('Remaining Value', 'cabling'),
 );
 ?>
 <div class="table-responsive">
