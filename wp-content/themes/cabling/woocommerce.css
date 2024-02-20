@@ -959,6 +959,7 @@ b, strong {
 .woocommerce-MyAccount-navigation-link--edit-address,
 .woocommerce-MyAccount-navigation-link--setting-account {
     padding-left: 25px;
+    font-size: .85rem;
 }
 .woocommerce-MyAccount-navigation-link--shipment:not(.is-active),
 .woocommerce-MyAccount-navigation-link--sales-backlog:not(.is-active),

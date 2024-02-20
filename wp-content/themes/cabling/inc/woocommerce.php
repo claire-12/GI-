@@ -814,7 +814,7 @@ function cabling_get_product_table_attributes(): array
     return $list_fields;
 }
 
-function cabling_get_product_single_attributes($dynamic_fields = array(), $product_id): array
+function cabling_get_product_single_attributes(array $dynamic_fields, $product_id): array
 {
     $list_fields = array();
 

@@ -921,7 +921,7 @@ function cabling_get_api_ajax_callback()
             $oauthClient = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
 
             if (empty($data['api_service'])) {
-                wp_send_json_error('Something went wrong!');
+                wp_send_json_error('Missing API Service');
             }
 
             $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
@@ -980,11 +980,10 @@ function cabling_get_api_ajax_callback()
                     $responseData = array(
                         'price' => $dataPrice,
                         'stock' => $dataStock,
-                        /*'data' => [
-                            $bodyPriceParams,
+                        'data' => [
                             $responsePrice,
                             $responseStock,
-                        ]*/
+                        ]
                     );
 
                     break;
@@ -994,7 +993,7 @@ function cabling_get_api_ajax_callback()
                     $response = $oauthClient->makeApiRequest($apiEndpoint, $bodyParams);
 
                     if ($response['error']) {
-                        wp_send_json_error($response['error']);
+                        wp_send_json_error('API error: ' . $response['error']);
                     }
 
                     $responseData = getDataResponse($response, $type, $type_level_2);

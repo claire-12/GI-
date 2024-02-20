@@ -2,15 +2,6 @@
 if (empty($data))
     return;
 
-$backlogSingleTable = array(
-    'ordered_quantity' => __('Quantity Ordered', 'cabling'),
-    'open_quantity' => __('Quantity Remaining', 'cabling'),
-    'price_per_unit' => __('Price/Unit', 'cabling'),
-    'price_unit' => __('Unit', 'cabling'),
-    'remaining_value' => __('Remaining Value', 'cabling'),
-    'due_date' => __('Due Date', 'cabling'),
-    'lv_shipping_method' => __('Shipping Method', 'cabling'),
-);
 $backlogMainTable = array(
     'ponumber' => __('Number', 'cabling'),
     'customer_part_number' => __('Customer Part', 'cabling'),
@@ -20,6 +11,16 @@ $backlogMainTable = array(
     'ship_date' => __('Parco Ship Date', 'cabling'),
     'open_quantity' => __('Quantity Remaining', 'cabling'),
     'remaining_value' => __('Remaining Value', 'cabling'),
+);
+
+$backlogSingleTable = array(
+    'ordered_quantity' => __('Quantity Ordered', 'cabling'),
+    'open_quantity' => __('Quantity Remaining', 'cabling'),
+    'price_per_unit' => __('Price/Unit', 'cabling'),
+    'price_unit' => __('Price', 'cabling'),
+    'remaining_value' => __('Remaining Value', 'cabling'),
+    'due_date' => __('Due Date', 'cabling'),
+    'lv_shipping_method' => __('Shipping Method', 'cabling'),
 );
 ?>
 <div class="table-responsive">

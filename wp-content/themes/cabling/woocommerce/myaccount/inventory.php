@@ -8,14 +8,23 @@
         <label for="sapcustomer" class="form-label">Customer</label>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[sapmaterial]" id="sapmaterial">
-        <label for="sapmaterial" class="form-label">Material</label>
+        <input type="text" class="form-control" name="api[parcomaterial]" id="parcomaterial">
+        <label for="parcomaterial" class="form-label">Material</label>
     </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="api[sapmaterial]" id="sapmaterial">
+        <label for="sapmaterial" class="form-label">Part Number</label>
+    </div>
+    <div class="form-group mb-1">
+        <input type="text" class="form-control" name="api[parcocompound]" id="parcocompound">
+        <label for="parcocompound" class="form-label">Compound Number</label>
+    </div>
+    <p class="help-text parcocompound-text text-danger hidden">Please fill out the Compound Number</p>
     <!--<div class="form-group hidden">
         <label for="date" class="form-label">Date Interval</label>
         <input type="date" class="form-control date-picker" name="api[due_date]" id="date">
     </div>-->
-    <button type="submit" class="block-button">Submit</button>
+    <button type="submit" class="block-button mt-3">Submit</button>
     <input type="hidden" name="api_service" value="GET_DATA_PRICE">
     <input type="hidden" name="api_page" value="<?php echo CABLING_INVENTORY ?>">
 </form>

@@ -134,7 +134,7 @@ class GIWebServices
             if ($responseData !== null) {
                 $result['success'] = $responseData;
             } else {
-                $result['error'] = __('Something went wrong!');
+                $result['error'] = __('CURL error: Something went wrong!');
             }
         }
 

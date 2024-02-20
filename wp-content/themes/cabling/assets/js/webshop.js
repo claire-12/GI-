@@ -380,6 +380,12 @@
         return false;
     });
     $(document).on('submit', '#webservice-api-form', function () {
+        if ($('#sapMaterial').val() !== '' && $('#parcocompound').val() === '') {
+            $('.parcocompound-text').show();
+            return false;
+        } else {
+            $('.parcocompound-text').hide();
+        }
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
@@ -391,9 +397,11 @@
             },
             success: function (response) {
                 hideLoading();
-                //if (response.success) {
-                $('#api-results').html(response.data.data)
-                //}
+                if (response.success) {
+                    $('#api-results').html(response.data.data)
+                } else {
+                    $('#api-results').html("Nothing to show");
+                }
             },
             beforeSend: function () {
                 showLoading();
