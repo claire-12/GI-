@@ -242,6 +242,10 @@
     border-bottom: none;
 }
 
+.wpclever_settings_page p.description, .wpclever_settings_page span.description {
+    font-size: 13px !important;
+}
+
 .wpclever_plugins_order {
     margin-left: 10px;
 }

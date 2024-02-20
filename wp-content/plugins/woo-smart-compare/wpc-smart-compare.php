@@ -3,7 +3,7 @@
 Plugin Name: WPC Smart Compare for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: Smart products compare for WooCommerce.
-Version: 6.1.8
+Version: 6.2.0
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: woo-smart-compare
@@ -11,12 +11,12 @@ Domain Path: /languages/
 Requires at least: 4.0
 Tested up to: 6.4
 WC requires at least: 3.0
-WC tested up to: 8.4
+WC tested up to: 8.5
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOSC_VERSION' ) && define( 'WOOSC_VERSION', '6.1.8' );
+! defined( 'WOOSC_VERSION' ) && define( 'WOOSC_VERSION', '6.2.0' );
 ! defined( 'WOOSC_LITE' ) && define( 'WOOSC_LITE', __FILE__ );
 ! defined( 'WOOSC_FILE' ) && define( 'WOOSC_FILE', __FILE__ );
 ! defined( 'WOOSC_URI' ) && define( 'WOOSC_URI', plugin_dir_url( __FILE__ ) );
@@ -291,6 +291,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 							'page_url'           => self::get_page_url(),
 							'open_button'        => esc_attr( self::get_setting( 'open_button', '' ) ),
 							'hide_empty_row'     => apply_filters( 'woosc_hide_empty_row', 'yes' ),
+							'variations'         => self::get_setting( 'variations', 'yes' ),
 							'open_button_action' => self::get_setting( 'open_button_action', 'open_popup' ),
 							'menu_action'        => self::get_setting( 'menu_action', 'open_popup' ),
 							'button_action'      => self::get_setting( 'button_action', 'show_table' ),
@@ -429,6 +430,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 								$adding                  = self::get_setting( 'adding', 'prepend' );
 								$hide_checkout           = self::get_setting( 'hide_checkout', 'yes' );
 								$hide_empty              = self::get_setting( 'hide_empty', 'no' );
+								$variations              = self::get_setting( 'variations', 'yes' );
 								$button_type             = self::get_setting( 'button_type', 'button' );
 								$button_icon             = self::get_setting( 'button_icon', 'no' );
 								$button_normal_icon      = self::get_setting( 'button_normal_icon', 'woosc-icon-1' );
@@ -504,6 +506,16 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                                     <option value="no" <?php selected( $hide_empty, 'no' ); ?>><?php esc_html_e( 'No', 'woo-smart-compare' ); ?></option>
                                                 </select>
                                                 <span class="description"><?php esc_html_e( 'Hide the comparison table and comparison bar if haven\'t any product.', 'woo-smart-compare' ); ?></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><?php esc_html_e( 'Compare variations', 'woo-smart-compare' ); ?></th>
+                                            <td>
+                                                <select name="woosc_settings[variations]">
+                                                    <option value="yes" <?php selected( $variations, 'yes' ); ?>><?php esc_html_e( 'Yes', 'woo-smart-compare' ); ?></option>
+                                                    <option value="no" <?php selected( $variations, 'no' ); ?>><?php esc_html_e( 'No', 'woo-smart-compare' ); ?></option>
+                                                </select>
+                                                <span class="description"><?php esc_html_e( 'Compare selected variation instead of the main variable product.', 'woo-smart-compare' ); ?></span>
                                             </td>
                                         </tr>
                                         <tr>

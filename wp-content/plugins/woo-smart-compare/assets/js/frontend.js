@@ -153,56 +153,62 @@
 
   // woovr
   $(document).on('woovr_selected', function(e, selected) {
-    var id = selected.attr('data-id');
-    var pid = selected.attr('data-pid');
+    if (woosc_vars.variations === 'yes') {
+      var id = selected.attr('data-id');
+      var pid = selected.attr('data-pid');
 
-    if (id > 0) {
-      $('.woosc-btn-' + pid).
-          removeClass('woosc-btn-added woosc-added').
-          attr('data-id', id);
-    } else {
-      $('.woosc-btn-' + pid).
-          removeClass('woosc-btn-added woosc-added').
-          attr('data-id', pid);
+      if (id > 0) {
+        $('.woosc-btn-' + pid).
+            removeClass('woosc-btn-added woosc-added').
+            attr('data-id', id);
+      } else {
+        $('.woosc-btn-' + pid).
+            removeClass('woosc-btn-added woosc-added').
+            attr('data-id', pid);
+      }
     }
   });
 
   // found variation
   $(document).on('found_variation', function(e, t) {
-    var product_id = $(e['target']).attr('data-product_id');
+    if (woosc_vars.variations === 'yes') {
+      var product_id = $(e['target']).attr('data-product_id');
 
-    $('.woosc-btn-' + product_id).
-        removeClass('woosc-btn-added woosc-added').
-        attr('data-id', t.variation_id);
+      $('.woosc-btn-' + product_id).
+          removeClass('woosc-btn-added woosc-added').
+          attr('data-id', t.variation_id);
 
-    $('.woosc-btn-' + product_id + ':not(.woosc-btn-has-icon)').
-        html(woosc_vars.button_text);
-    $('.woosc-btn-has-icon.woosc-btn-' + product_id).
-        find('.woosc-btn-icon').
-        removeClass(woosc_vars.button_added_icon).
-        addClass(woosc_vars.button_normal_icon);
-    $('.woosc-btn-has-icon.woosc-btn-' + product_id).
-        find('.woosc-btn-text').
-        html(woosc_vars.button_text);
+      $('.woosc-btn-' + product_id + ':not(.woosc-btn-has-icon)').
+          html(woosc_vars.button_text);
+      $('.woosc-btn-has-icon.woosc-btn-' + product_id).
+          find('.woosc-btn-icon').
+          removeClass(woosc_vars.button_added_icon).
+          addClass(woosc_vars.button_normal_icon);
+      $('.woosc-btn-has-icon.woosc-btn-' + product_id).
+          find('.woosc-btn-text').
+          html(woosc_vars.button_text);
+    }
   });
 
   // reset data
   $(document).on('reset_data', function(e) {
-    var product_id = $(e['target']).attr('data-product_id');
+    if (woosc_vars.variations === 'yes') {
+      var product_id = $(e['target']).attr('data-product_id');
 
-    $('.woosc-btn-' + product_id).
-        removeClass('woosc-btn-added woosc-added').
-        attr('data-id', product_id);
+      $('.woosc-btn-' + product_id).
+          removeClass('woosc-btn-added woosc-added').
+          attr('data-id', product_id);
 
-    $('.woosc-btn-' + product_id + ':not(.woosc-btn-has-icon)').
-        html(woosc_vars.button_text);
-    $('.woosc-btn-has-icon.woosc-btn-' + product_id).
-        find('.woosc-btn-icon').
-        removeClass(woosc_vars.button_added_icon).
-        addClass(woosc_vars.button_normal_icon);
-    $('.woosc-btn-has-icon.woosc-btn-' + product_id).
-        find('.woosc-btn-text').
-        html(woosc_vars.button_text);
+      $('.woosc-btn-' + product_id + ':not(.woosc-btn-has-icon)').
+          html(woosc_vars.button_text);
+      $('.woosc-btn-has-icon.woosc-btn-' + product_id).
+          find('.woosc-btn-icon').
+          removeClass(woosc_vars.button_added_icon).
+          addClass(woosc_vars.button_normal_icon);
+      $('.woosc-btn-has-icon.woosc-btn-' + product_id).
+          find('.woosc-btn-text').
+          html(woosc_vars.button_text);
+    }
   });
 
   // remove all
