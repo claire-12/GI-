@@ -716,7 +716,6 @@ function cabling_get_products_ajax_callback()
             $isSizeFilter = false;
             $results = '';
             $termFilters = [];
-            $certifications = [];
 
             if (empty($productTypeId)) {
                 $productGroupIds = [];
@@ -729,6 +728,7 @@ function cabling_get_products_ajax_callback()
                     //$product_compound = [];
                     if (!empty($data['attributes']['product_compound'])) {
                         $certifications = $data['attributes']['product_compound'];
+                        $data['attributes']['compound_certification'] = array_shift($certifications);
                         $compounds = get_compound_product($data['attributes']['product_compound']);
                         $data['attributes']['product_compound'] = $compounds;
                     }
@@ -793,7 +793,7 @@ function cabling_get_products_ajax_callback()
             }
 
             //we will get the meta-value of all product filters, and filter all options in the product filter
-            $resultMetas = get_available_attributes($data['attributes'], $termFilters, $certifications);
+            $resultMetas = get_available_attributes($data['attributes'], $termFilters);
 
             wp_send_json_success([
                 'category' => $category->name ?? '',

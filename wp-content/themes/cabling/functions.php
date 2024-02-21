@@ -214,7 +214,7 @@ function cabling_scripts()
 
     wp_enqueue_script('recaptcha', '//www.google.com/recaptcha/api.js', array(), null, true);
     wp_enqueue_script('bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), null, true);
-    wp_enqueue_script('pdfobject', '//cdn.jsdelivr.net/npm/pdfobject@2.2.12/pdfobject.min.js',array('jquery'), null, true);
+    //wp_enqueue_script('pdfobject', '//cdn.jsdelivr.net/npm/pdfobject@2.2.12/pdfobject.min.js',array('jquery'), null, true);
     wp_enqueue_script('flatpickr', get_template_directory_uri() . '/assets/js/flatpickr/flatpickr.min.js', array(), null, true);
     wp_enqueue_script('flatpickr-rangePlugin', get_template_directory_uri() . '/assets/js/flatpickr/plugins/rangePlugin.js', array(), null, true);
     wp_enqueue_script('flickity', get_template_directory_uri() . '/assets/js/flickity/flickity.pkgd.min.js', array(), null, true);

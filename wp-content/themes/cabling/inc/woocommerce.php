@@ -1666,7 +1666,6 @@ function get_acf_taxonomy_options($taxonomy = ''): array
 
 function get_term_ids_by_attributes(array $metas, string $taxonomy = 'product_group')
 {
-    global $wpdb;
 
     $product_ids = search_product_by_meta($metas);
 
@@ -1674,6 +1673,17 @@ function get_term_ids_by_attributes(array $metas, string $taxonomy = 'product_gr
         return [];
     }
 
+    return get_term_by_product($taxonomy, $product_ids);
+}
+
+/**
+ * @param string $taxonomy
+ * @param array $product_ids
+ * @return array
+ */
+function get_term_by_product(string $taxonomy, array $product_ids): array
+{
+    global $wpdb;
     $product_ids_string = implode(',', $product_ids);
 
     $sql = "SELECT DISTINCT tt.term_id
@@ -1700,6 +1710,9 @@ function search_product_by_meta($metas)
     );
 
     foreach ($metas as $meta_key => $meta_values) {
+        if ($meta_key === 'compound_certification') {
+            continue;
+        }
         if (empty($meta_values)) {
             continue;
         }
@@ -1787,11 +1800,15 @@ function get_meta_query_from_attributes($attributes): array
             continue;
         }
         if ($meta_key === 'product_compound') {
+            //$choices = get_acf_taxonomy_options('compound_certification');
+            //var_dump($meta_values, $choices);
+            continue;
+        }
+        if ($meta_key === 'compound_certification') {
             continue;
         }
         if (is_array($meta_values) && sizeof($meta_values)) {
-            $meta_array = array(//'relation' => 'OR',
-            );
+            $meta_array = array();
             foreach ($meta_values as $value) {
                 if (empty($value)) {
                     continue;
@@ -1906,10 +1923,9 @@ add_action('woocommerce_no_products_found', 'woocommerce_no_products_quote', 99)
 /**
  * @param array $data
  * @param array $termFilters
- * @param mixed $certifications
  * @return array|null
  */
-function get_available_attributes(array $data, array $termFilters, mixed $certifications): ?array
+function get_available_attributes(array $data, array $termFilters): ?array
 {
     try {
         if (!empty($data) && !empty($termFilters)) {
@@ -1983,29 +1999,8 @@ function get_available_attributes(array $data, array $termFilters, mixed $certif
 
             }
             //we must get the certifications of compound
-            if (!empty($certifications)) {
-                $resultMetas['product_compound'] = $certifications;
-            } elseif (!empty($resultMetas['product_compound'])) {
-                $compound_certifications = [];
-                $post_id_placeholders = implode(',', array_map('intval', $resultMetas['product_compound']));
-                $taxonomy = 'compound_certification';
+            $resultMetas['product_compound'] = $data['compound_certification'];
 
-                $query = $wpdb->prepare(
-                    "SELECT tr.term_taxonomy_id
-                             FROM $wpdb->term_relationships AS tr
-                             INNER JOIN $wpdb->term_taxonomy AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-                             WHERE tr.object_id IN ($post_id_placeholders)
-                             AND tt.taxonomy = %s",
-                    array_merge($resultMetas['product_compound'], array($taxonomy))
-                );
-
-                $term_taxonomy_ids = $wpdb->get_results($query, ARRAY_A);
-
-                foreach ($term_taxonomy_ids as $row) {
-                    $compound_certifications[] = $row['term_taxonomy_id'];
-                }
-                $resultMetas['product_compound'] = $compound_certifications;
-            }
             return $resultMetas;
         }
     } catch (Exception $e) {
