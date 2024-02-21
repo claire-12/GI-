@@ -699,8 +699,6 @@ function cabling_get_products_ajax_callback()
 {
     if (isset($_REQUEST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], 'cabling-ajax-nonce')) {
         try {
-            global $wpdb;
-
             parse_str($_REQUEST['data'], $data);
             $productTypeId = $_REQUEST['category'] ?? 0;
 
@@ -775,7 +773,7 @@ function cabling_get_products_ajax_callback()
                                 'children' => $productTypes,
                             ]);
                             $total += sizeof($productTypes);
-                            //$productTypesArray = wp_list_pluck($productTypes, 'term_id');
+
                             $productTypesArray = array();
                             foreach ($productTypes as $productType) {
                                 $productTypesArray[] = $productType->term_id;
@@ -790,109 +788,19 @@ function cabling_get_products_ajax_callback()
                 $productType = get_term_by('term_id', $productTypeId, 'product_custom_type');
                 if ($productType) {
                     $term_link = get_term_link($productType);
-                    $redirect = $term_link . '?' . $_REQUEST['data'];
+                    $redirect = add_query_arg('data-filter', base64_encode(json_encode($data)), $term_link);
                 }
             }
 
-            //we will get the meta value of all product filter, and filter all options in the product filter
-            if (!empty($data['attributes']) && !empty($termFilters)) {
-                // get the product ids
-                $product_ids = get_product_ids_by_category('product_custom_type', $termFilters, $data['attributes']);
-
-                $post_ids_placeholder = implode(',', array_fill(0, count($product_ids), '%d'));
-                //get only values for product acf fields
-                $meta_keys = array(
-                    'inches_id',
-                    'inches_width',
-                    'inches_od',
-                    'milimeters_id',
-                    'milimeters_od',
-                    'milimeters_width',
-                    'product_contact_media',
-                    'product_operating_temp',
-                    'product_dash_number',
-                    'product_colour',
-                    'product_compound',
-                    'product_complance',
-                    'product_material',
-                    'product_hardness'
-                );
-
-                $meta_key_placeholders = implode(',', array_fill(0, count($meta_keys), '%s'));
-
-                $query = $wpdb->prepare(
-                    "SELECT meta_key, meta_value 
-                    FROM $wpdb->postmeta 
-                    WHERE post_id IN ($post_ids_placeholder) 
-                    AND meta_key IN ($meta_key_placeholders)
-                    ORDER BY meta_value ASC",
-                    array_merge($product_ids, $meta_keys)
-                );
-
-                $meta_values = $wpdb->get_results($query, ARRAY_A);
-
-                $resultMetas = array();
-
-                foreach ($meta_values as $meta) {
-                    if (empty($meta['meta_value']) || $meta['meta_value'] == 'null') {
-                        continue;
-                    }
-
-                    if (!isset($resultMetas[$meta['meta_key']])) {
-                        $resultMetas[$meta['meta_key']] = array();
-                    }
-
-                    if (in_array($meta['meta_value'], $resultMetas[$meta['meta_key']])) {
-                        continue;
-                    }
-
-                    $unserializedData = unserialize($meta['meta_value']);
-
-                    if ($unserializedData === false) {
-                        $resultMetas[$meta['meta_key']][] = $meta['meta_value'];
-                    } else {
-                        foreach ($unserializedData as $val) {
-                            if (in_array($val, $resultMetas[$meta['meta_key']])) {
-                                continue;
-                            }
-                            $resultMetas[$meta['meta_key']][] = $val;
-                        }
-                    }
-
-                }
-                //we must get the certifications of compound
-                if (!empty($certifications)){
-                    $resultMetas['product_compound'] = $certifications;
-                } elseif (!empty($resultMetas['product_compound'])) {
-                    $compound_certifications = [];
-                    $post_id_placeholders = implode(',', array_map('intval', $resultMetas['product_compound']));
-                    $taxonomy = 'compound_certification';
-
-                    $query = $wpdb->prepare(
-                        "SELECT tr.term_taxonomy_id
-                         FROM $wpdb->term_relationships AS tr
-                         INNER JOIN $wpdb->term_taxonomy AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-                         WHERE tr.object_id IN ($post_id_placeholders)
-                         AND tt.taxonomy = %s",
-                        array_merge($resultMetas['product_compound'], array($taxonomy))
-                    );
-
-                    $term_taxonomy_ids = $wpdb->get_results($query, ARRAY_A);
-
-                    foreach ($term_taxonomy_ids as $row) {
-                        $compound_certifications[] = $row['term_taxonomy_id'];
-                    }
-                    $resultMetas['product_compound'] = $compound_certifications;
-                }
-
-            }
+            //we will get the meta-value of all product filters, and filter all options in the product filter
+            $resultMetas = get_available_attributes($data['attributes'], $termFilters, $certifications);
 
             wp_send_json_success([
                 'category' => $category->name ?? '',
                 'results' => $results,
                 'total' => $total,
                 'filter_meta' => $resultMetas ?? null,
-                '$data' => $data ?? null,
+                //'$data' => $data ?? null,
                 'isSizeFilter' => $isSizeFilter,
                 'redirect' => $redirect ?? null,
             ]);

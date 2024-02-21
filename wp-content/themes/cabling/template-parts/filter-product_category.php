@@ -1,5 +1,5 @@
 <?php
-$metas = $_REQUEST['attributes'];
+$metas = get_query_var('custom_filter');
 $attributes = get_filter_lists();
 $terms = get_queried_object();
 $product_ids = get_product_ids_by_category($terms->taxonomy, [$terms->term_id], $metas);
@@ -14,7 +14,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
 <div class="product-variable-filter woo-sidebar">
     <h2><?php echo __('Filter by', 'cabling') ?></h2>
     <div class="filter-blog">
-        <form method="get" id="form-filter-type">
+        <form method="POST" id="form-filter-type" action="<?php echo esc_url(get_term_link($terms)); ?>">
             <?php if (!empty($metas)): ?>
                 <?php foreach ($metas as $keyMeta => $meta): if (empty($meta)) {
                     continue;

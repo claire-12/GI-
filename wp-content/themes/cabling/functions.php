@@ -229,7 +229,7 @@ function cabling_scripts()
     wp_localize_script('cabling-webshop', 'CABLING', array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce'   => $cabling_nonce,
-            'product_page'   => home_url('/products-and-services'),
+            'product_page'   => is_tax('product_custom_type') ? get_term_link(get_queried_object()) : home_url('/products-and-services'),
     ));
 
     wp_enqueue_script('cabling-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true);

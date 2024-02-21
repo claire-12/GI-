@@ -1867,7 +1867,7 @@ function getCompoundRelated($postId = 0): array
 
 function get_compound_product($term_ids): array
 {
-    return get_posts(array(
+    $args = array(
         'post_type' => 'compound',
         'posts_per_page' => -1,
         'fields' => 'ids',
@@ -1879,7 +1879,8 @@ function get_compound_product($term_ids): array
                 'terms' => is_array($term_ids) ? $term_ids : [$term_ids],
             )
         ),
-    ));
+    );
+    return get_posts($args);
 }
 
 function checkFilterHasSize($attributes): bool
