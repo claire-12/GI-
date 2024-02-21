@@ -1769,6 +1769,7 @@ function cabling_change_product_query($query)
             return $query;
         }
 
+        $custom_filter = $attributes;
         $old_meta_query = $query->get('meta_query');
         if (!empty($attributes['product_compound'])) {
             $attributes['product_compound'] = get_compound_product($attributes['product_compound']);
@@ -1780,7 +1781,7 @@ function cabling_change_product_query($query)
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'product_dash_number');
         $query->set('order', 'ASC');
-        $query->set('custom_filter', $attributes);
+        $query->set('custom_filter', $custom_filter);
     }
     return $query;
 }
