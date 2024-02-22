@@ -60,7 +60,7 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                      aria-labelledby="panelsStayOpen-heading-sizeFT">
                     <div class="accordion-body">
                         <div class="accordion" id="accordionPanelsStayOpenExample">
-                            <div class="accordion-item">
+                            <div class="accordion-item filter-inch">
                                 <h2 class="accordion-header" id="panelsStayOpen-Inches">
                                     <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse"
@@ -170,7 +170,7 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
+                            <div class="accordion-item filter-millimeter">
                                 <h2 class="accordion-header" id="panelsStayOpen-Millimeters">
                                     <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse"

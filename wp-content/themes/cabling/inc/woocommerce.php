@@ -1664,16 +1664,20 @@ function get_acf_taxonomy_options($taxonomy = ''): array
     return $list;
 }
 
-function get_term_ids_by_attributes(array $metas, string $taxonomy = 'product_group')
+function get_term_ids_by_attributes(array $product_ids, string $taxonomy = 'product_group'): array
 {
 
-    $product_ids = search_product_by_meta($metas);
+    //$product_ids = search_product_by_meta($metas);
 
     if (empty($product_ids)) {
         return [];
     }
 
-    return get_term_by_product($taxonomy, $product_ids);
+    $terms = get_terms_by_product($taxonomy, $product_ids);
+    /*if ($taxonomy == 'compound_certification') {
+        var_dump($product_ids);
+    }*/
+    return $terms;
 }
 
 /**
@@ -1681,24 +1685,33 @@ function get_term_ids_by_attributes(array $metas, string $taxonomy = 'product_gr
  * @param array $product_ids
  * @return array
  */
-function get_term_by_product(string $taxonomy, array $product_ids): array
+function get_terms_by_product(string $taxonomy, array $product_ids): array
 {
     global $wpdb;
-    $product_ids_string = implode(',', $product_ids);
 
-    $sql = "SELECT DISTINCT tt.term_id
-        FROM {$wpdb->term_taxonomy} tt 
-        LEFT JOIN {$wpdb->term_relationships} tr ON tr.term_taxonomy_id = tt.term_id
-        WHERE tt.taxonomy = '{$taxonomy}' AND tr.object_id IN ({$product_ids_string})";
+    $placeholders = implode(',', array_fill(0, count($product_ids), '%d'));
 
-    $query = $wpdb->prepare($sql);
+    $sql = $wpdb->prepare("
+        SELECT DISTINCT tt.term_id
+        FROM {$wpdb->term_taxonomy} AS tt
+        LEFT JOIN {$wpdb->term_relationships} AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id
+        WHERE tt.taxonomy = %s AND tr.object_id IN ({$placeholders})
+    ", $taxonomy, ...$product_ids);
 
-    $results = $wpdb->get_results($query);
+    $results = $wpdb->get_results($sql);
+    /*if ($taxonomy == 'compound_certification') {
+        var_dump($sql);
+    }*/
+    if ($wpdb->last_error) {
+        error_log('Database error: ' . $wpdb->last_error);
+        return [];
+    }
 
     return $results ? wp_list_pluck($results, 'term_id') : [];
 }
 
-function search_product_by_meta($metas)
+
+function search_product_by_meta($metas): array
 {
     $args = array(
         'post_type' => 'product',
@@ -1720,12 +1733,20 @@ function search_product_by_meta($metas)
             $meta_array = array(
                 'relation' => 'OR',
             );
-            foreach ($meta_values as $value) {
+            if ($meta_key === 'product_compound') {
                 $meta_array[] = array(
                     'key' => $meta_key,
-                    'value' => $value,
-                    'compare' => 'LIKE'
+                    'value' => $meta_values,
+                    'compare' => 'IN',
                 );
+            } else {
+                foreach ($meta_values as $value) {
+                    $meta_array[] = array(
+                        'key' => $meta_key,
+                        'value' => $value,
+                        'compare' => 'LIKE'
+                    );
+                }
             }
 
             $args['meta_query'][] = $meta_array;
@@ -1733,12 +1754,12 @@ function search_product_by_meta($metas)
             $args['meta_query'][] = array(
                 'key' => $meta_key,
                 'value' => $meta_values,
-                'compare' => '='
+                'compare' => '=',
             );
         }
     }
-
-    return get_posts($args);
+    $posts = get_posts($args);
+    return $posts;
 }
 
 function redirect_on_product_type()
@@ -1760,10 +1781,10 @@ add_action('template_redirect', 'redirect_on_product_type');
 function cabling_change_product_query($query)
 {
     if ((is_tax('product_cat') || is_tax('compound_cat') || is_tax('product_custom_type'))) {
-        if (isset($_REQUEST['data-filter'])){
+        if (isset($_REQUEST['data-filter'])) {
             $data = json_decode(base64_decode($_REQUEST['data-filter']), true);
             $attributes = $data['attributes'];
-        } elseif (isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'product-category-filter') && !empty($_POST['attributes'])){
+        } elseif (isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'product-category-filter') && !empty($_POST['attributes'])) {
             $attributes = $_POST['attributes'];
         } else {
             return $query;
@@ -1926,84 +1947,79 @@ add_action('woocommerce_no_products_found', 'woocommerce_no_products_quote', 99)
  * @param array $termFilters
  * @return array|null
  */
-function get_available_attributes(array $data, array $termFilters): ?array
+function get_available_attributes(array $product_ids): ?array
 {
     try {
-        if (!empty($data) && !empty($termFilters)) {
-            // get the product ids
-            $product_ids = get_product_ids_by_category('product_custom_type', $termFilters, $data);
+        if (empty($product_ids)) {
+            return null;
+        }
+        global $wpdb;
 
-            if (empty($product_ids)) {
-                return null;
-            }
-            global $wpdb;
+        $post_ids_placeholder = implode(',', array_fill(0, count($product_ids), '%d'));
+        //get only values for product acf fields
+        $meta_keys = array(
+            'inches_id',
+            'inches_width',
+            'inches_od',
+            'milimeters_id',
+            'milimeters_od',
+            'milimeters_width',
+            'product_contact_media',
+            'product_operating_temp',
+            'product_dash_number',
+            'product_colour',
+            'product_compound',
+            'product_complance',
+            'product_material',
+            'product_hardness'
+        );
 
-            $post_ids_placeholder = implode(',', array_fill(0, count($product_ids), '%d'));
-            //get only values for product acf fields
-            $meta_keys = array(
-                'inches_id',
-                'inches_width',
-                'inches_od',
-                'milimeters_id',
-                'milimeters_od',
-                'milimeters_width',
-                'product_contact_media',
-                'product_operating_temp',
-                'product_dash_number',
-                'product_colour',
-                'product_compound',
-                'product_complance',
-                'product_material',
-                'product_hardness'
-            );
+        $meta_key_placeholders = implode(',', array_fill(0, count($meta_keys), '%s'));
 
-            $meta_key_placeholders = implode(',', array_fill(0, count($meta_keys), '%s'));
-
-            $query = $wpdb->prepare(
-                "SELECT meta_key, meta_value
+        $query = $wpdb->prepare(
+            "SELECT meta_key, meta_value
                         FROM $wpdb->postmeta
                         WHERE post_id IN ($post_ids_placeholder)
                         AND meta_key IN ($meta_key_placeholders)
                         ORDER BY meta_value ASC",
-                array_merge($product_ids, $meta_keys)
-            );
+            array_merge($product_ids, $meta_keys)
+        );
 
-            $meta_values = $wpdb->get_results($query, ARRAY_A);
+        $meta_values = $wpdb->get_results($query, ARRAY_A);
 
-            $resultMetas = array();
+        $resultMetas = array();
 
-            foreach ($meta_values as $meta) {
-                if (empty($meta['meta_value']) || $meta['meta_value'] == 'null') {
-                    continue;
-                }
-
-                if (!isset($resultMetas[$meta['meta_key']])) {
-                    $resultMetas[$meta['meta_key']] = array();
-                }
-
-                if (in_array($meta['meta_value'], $resultMetas[$meta['meta_key']])) {
-                    continue;
-                }
-
-                $unserializedData = unserialize($meta['meta_value']);
-
-                if ($unserializedData === false) {
-                    $resultMetas[$meta['meta_key']][] = $meta['meta_value'];
-                } else {
-                    foreach ($unserializedData as $val) {
-                        if (in_array($val, $resultMetas[$meta['meta_key']])) {
-                            continue;
-                        }
-                        $resultMetas[$meta['meta_key']][] = $val;
-                    }
-                }
-
+        foreach ($meta_values as $meta) {
+            if (empty($meta['meta_value']) || $meta['meta_value'] == 'null') {
+                continue;
             }
-            //we must get the certifications of compound
-            $resultMetas['product_compound'] = $data['compound_certification'];
 
-            return $resultMetas;
+            if (!isset($resultMetas[$meta['meta_key']])) {
+                $resultMetas[$meta['meta_key']] = array();
+            }
+
+            if (in_array($meta['meta_value'], $resultMetas[$meta['meta_key']])) {
+                continue;
+            }
+
+            $unserializedData = unserialize($meta['meta_value']);
+
+            if ($unserializedData === false) {
+                $resultMetas[$meta['meta_key']][] = $meta['meta_value'];
+            } else {
+                foreach ($unserializedData as $val) {
+                    if (in_array($val, $resultMetas[$meta['meta_key']])) {
+                        continue;
+                    }
+                    $resultMetas[$meta['meta_key']][] = $val;
+                }
+            }
+
         }
+        //we must get the certifications of compound
+        //$resultMetas['product_compound'] = $data['compound_certification'];
+
+        return $resultMetas;
     } catch (Exception $e) {
         error_log($e->getMessage());
         return null;

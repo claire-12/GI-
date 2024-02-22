@@ -716,6 +716,7 @@ function cabling_get_products_ajax_callback()
             $isSizeFilter = false;
             $results = '';
             $termFilters = [];
+            $product_ids = [];
 
             if (empty($productTypeId)) {
                 $productGroupIds = [];
@@ -733,6 +734,8 @@ function cabling_get_products_ajax_callback()
                         $data['attributes']['product_compound'] = $compounds;
                     }
 
+                    $product_ids = search_product_by_meta($data['attributes']);
+
                     if (!empty($data['attributes']['product_contact_media'])) {
                         foreach ($data['attributes']['product_contact_media'] as $media) {
                             $lines = get_the_terms($media, 'product_line');
@@ -743,7 +746,7 @@ function cabling_get_products_ajax_callback()
                             }
                         }
                     } else {
-                        $productGroupIncludes = get_term_ids_by_attributes($data['attributes'], 'product_line');
+                        $productGroupIncludes = get_term_ids_by_attributes($product_ids, 'product_line');
                         if (!empty($productGroupIncludes)) {
                             $productLines = get_product_line_category('product_line', 'group_category', $productGroupIds, false, $productGroupIncludes);
                         }
@@ -759,7 +762,7 @@ function cabling_get_products_ajax_callback()
                         $productLineIds = [$line->term_id];
 
                         if (!empty($data['attributes'])) {
-                            $productTypeIncludes = get_term_ids_by_attributes($data['attributes'], 'product_custom_type');
+                            $productTypeIncludes = get_term_ids_by_attributes($product_ids, 'product_custom_type');
                             if ($productTypeIncludes) {
                                 $productTypes = get_product_line_category('product_custom_type', 'product_line', $productLineIds, false, $productTypeIncludes);
                             }
@@ -793,14 +796,22 @@ function cabling_get_products_ajax_callback()
             }
 
             //we will get the meta-value of all product filters, and filter all options in the product filter
-            $resultMetas = get_available_attributes($data['attributes'], $termFilters);
+            if (!empty($data['attributes'])) {
+                $resultMetas = get_available_attributes($product_ids);
+                if (empty($resultMetas['product_compound']) && !empty($data['attributes']['compound_certification'])) {
+                    $resultMetas['product_compound'] = $data['attributes']['compound_certification'];
+                } else {
+                    $productCompoundCertification = get_term_ids_by_attributes($product_ids, 'compound_certification');
+                    $resultMetas['product_compound'] = $productCompoundCertification;
+                }
+            }
 
             wp_send_json_success([
                 'category' => $category->name ?? '',
                 'results' => $results,
                 'total' => $total,
                 'filter_meta' => $resultMetas ?? null,
-                //'$data' => $data ?? null,
+                //'$product_ids' => implode(',',$product_ids) ?? null,
                 'isSizeFilter' => $isSizeFilter,
                 'redirect' => $redirect ?? null,
             ]);
