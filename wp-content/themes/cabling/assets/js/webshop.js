@@ -379,6 +379,17 @@
         $(document).find('.cky-btn-revisit').trigger('click');
         return false;
     });
+    $(document).on('click', '.accordion-item', function () {
+        if ($(this).hasClass('filter-inch')){
+            $('#custom-size-width').attr('name', 'attributes[inches_width]');
+            $('#custom-size-id').attr('name', 'attributes[inches_od]');
+            $('#custom-size-od').attr('name', 'attributes[inches_id]');
+        } else if ($(this).hasClass('filter-millimeter')){
+            $('#custom-size-width').attr('name', 'attributes[milimeters_width]');
+            $('#custom-size-id').attr('name', 'attributes[milimeters_id]');
+            $('#custom-size-od').attr('name', 'attributes[milimeters_od]');
+        }
+    });
     $(document).on('submit', '#webservice-api-form', function () {
         if (($('#sapMaterial').val() !== '' && $('#parcocompound').val() === '') || $('#sapMaterial').val() === '' && $('#parcocompound').val() !== '') {
             $('.parcocompound-text').show();
@@ -610,7 +621,7 @@ function product_filter_ajax(cat_id) {
             }
             $('#filtered-category-container').html(response.data.results);
             if (response.data.total === 0) {
-                $('.filter-blog').addClass('no-results');
+                //$('.filter-blog').addClass('no-results');
                 $('.breadcrumbs-filter span').hide();
                 $('.heading .total').hide();
                 $('.woocommerce-product-type-custom').show();
@@ -621,7 +632,7 @@ function product_filter_ajax(cat_id) {
                     $('.text-for-size').hide();
                 }
             } else {
-                $('.filter-blog').removeClass('no-results');
+                //$('.filter-blog').removeClass('no-results');
                 $('.heading .total').show().find('span').html(response.data.total);
                 $('.breadcrumbs-filter span').html(response.data.category);
             }
