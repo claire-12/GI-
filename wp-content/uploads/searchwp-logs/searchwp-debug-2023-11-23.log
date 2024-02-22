@@ -1,9 +1,0 @@
-[2023-11-23 04:04:26] [index] Dropping taxonomy.product_cat 7874
-[2023-11-23 04:04:26] [indexer] Processing batch (1)
-[2023-11-23 04:04:26] [indexer] Indexing post.product:1031759
-[2023-11-23 04:04:26] [index] Marking [1] post.product 1031759 as indexed
-[2023-11-23 04:04:26] [indexer] Index built
-[2023-11-23 04:21:51] [index] Dropping taxonomy.product_cat 7874
-[2023-11-23 04:21:51] [indexer] Index built
-[2023-11-23 10:24:33] [index] Dropping post.product 1031782
-[2023-11-23 10:24:33] [indexer] Queued next batch (1)
