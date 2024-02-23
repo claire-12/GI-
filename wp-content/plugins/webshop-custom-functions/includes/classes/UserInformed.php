@@ -114,7 +114,6 @@ class UserInformed
             if (empty($verified_recapcha)){
                 wp_send_json_error(__('reCAPTCHA verification failed. Please try again!', 'cabling'));
             }
-
             $success = __('Subscription successfully!', 'cabling');
 
             if (is_user_logged_in()){
@@ -311,12 +310,16 @@ class UserInformed
         echo '<tbody>';
 
         foreach ($user_informed as $log) {
+            $cats = '';
+            if (is_array(unserialize($log->category))){
+                $cats = implode(',', unserialize($log->category));
+            }
             echo '<tr>';
             echo '<td>' . $log->user_id . '</td>';
             echo '<td>' . $log->ip_address . '</td>';
             echo '<td>' . $log->channel . '</td>';
             echo '<td>' . ($log->channel_value ?: 'N/A') . '</td>';
-            echo '<td style="max-width: 300px">' . implode(',', unserialize($log->category))  . '</td>';
+            echo '<td style="max-width: 300px">' . $cats  . '</td>';
             echo '<td>' . $log->date . '</td>';
              echo '<td><button class="delete-row" data-log-id="' . $log->id . '">Delete</button></td>';
             echo '</tr>';

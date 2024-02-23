@@ -68,7 +68,7 @@
             <?php if (!is_user_logged_in()): ?>
                 <div class="channel-email form-group form-check">
                     <input type="email" class="form-control" id="channel-email" name="channel-email" required
-                           placeholder="Enter your email" value="<?php echo $channel['email'] ?? '' ?>">
+                           placeholder="Enter your email*" value="<?php echo $channel['email'] ?? '' ?>">
                 </div>
             <?php endif; ?>
         </div>

@@ -2026,6 +2026,7 @@ function get_available_attributes(array $product_ids): ?array
     }
     return null;
 }
+
 function company_name_field()
 {
     $businessPlanSections = array(
@@ -2057,25 +2058,21 @@ function company_name_field()
         "Support",
     );
 
-    if (isset($_REQUEST['company-sector'])){
+    if (isset($_REQUEST['company-sector'])) {
         $company = $_REQUEST['company-sector'];
-    }
-    elseif (is_user_logged_in()){
+    } elseif (is_user_logged_in()) {
         $company = esc_attr(get_user_meta(get_current_user_id(), 'company-sector', true));
     } else {
         $company = '';
     }
 
-    woocommerce_form_field(
-        'company-sector',
-        array(
-            'type' => 'select',
-            'label' => __('Company Sector'),
-            'options' => $businessPlanSections,
-            'required' => true,
-            'class' => array('mw-100'),
-            'input_class' => array('form-select')
-        ),
-        $company
-    );
+    $field   = '';
+    $options = '<option value="">' . __( 'Choose an option', 'woocommerce' ) . '</option>';
+    foreach ($businessPlanSections as $option_text) {
+        $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($company, $option_text, false) . '>' . esc_html($option_text) . '</option>';
+    }
+
+    $field .= '<select name="company-sector" id="company-sector" class="select form-select" required>' . $options . '</select>';
+
+    echo '<p class="form-row w-100"><label for="company-sector">' . __( 'Company Sector', 'woocommerce' ) . '<span class="required">*</span></label>'. $field .'</p>';
 }

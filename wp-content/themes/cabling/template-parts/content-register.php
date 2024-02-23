@@ -84,7 +84,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                            value="<?php echo $_REQUEST['job-title'] ?? '' ?>" required>
                     <label for="job-title"><?php _e('Job Title', 'cabling') ?><span class="required">*</span></label>
                 </div>
-                <div class="form-group">
+                <div class="form-group1" style="margin-bottom: 15px">
                     <?php company_name_field() ?>
                 </div>
                 <div class="form-group">
