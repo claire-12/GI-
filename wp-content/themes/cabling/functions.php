@@ -439,3 +439,19 @@ function verify_register_code(): void
 }
 // Force enable SearchWP's alternate indexer.
 add_filter( 'searchwp\indexer\alternate', '__return_true' );
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+function my_acf_json_load_point( $paths ) {
+  // Remove the default path (optional)
+  unset($paths[0]);
+
+  // Add your custom path
+  $paths[] = get_stylesheet_directory() . '/acf-json';
+
+  return $paths;
+}
+
+function my_acf_json_save_point( $path ) {
+    return get_stylesheet_directory() . '/acf-json';
+}
+add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );

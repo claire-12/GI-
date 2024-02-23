@@ -2026,3 +2026,56 @@ function get_available_attributes(array $product_ids): ?array
     }
     return null;
 }
+function company_name_field()
+{
+    $businessPlanSections = array(
+        "Accounting",
+        "Administrative",
+        "Arts and Design",
+        "Business Development",
+        "Community and Social Services",
+        "Consulting",
+        "Education",
+        "Engineering",
+        "Entrepreneurship",
+        "Finance",
+        "Healthcare Services",
+        "Human Resources",
+        "Information Technology",
+        "Legal",
+        "Marketing",
+        "Media and Communication",
+        "Military and Protective Services",
+        "Operations",
+        "Product Management",
+        "Program and Project Management",
+        "Purchasing",
+        "Quality Assurance",
+        "Real Estate",
+        "Research",
+        "Sales",
+        "Support",
+    );
+
+    if (isset($_REQUEST['company-sector'])){
+        $company = $_REQUEST['company-sector'];
+    }
+    elseif (is_user_logged_in()){
+        $company = esc_attr(get_user_meta(get_current_user_id(), 'company-sector', true));
+    } else {
+        $company = '';
+    }
+
+    woocommerce_form_field(
+        'company-sector',
+        array(
+            'type' => 'select',
+            'label' => __('Company Sector'),
+            'options' => $businessPlanSections,
+            'required' => true,
+            'class' => array('mw-100'),
+            'input_class' => array('form-select')
+        ),
+        $company
+    );
+}
