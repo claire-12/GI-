@@ -7,6 +7,12 @@
             $thumbnail_id = 1032601;
         }
         $link = get_the_permalink($postId);
+        $target = '';
+        $custom_link = get_field('custom_link', $postId);
+        if (!empty($custom_link['url'])){
+            $link = $custom_link['url'];
+            $target = $custom_link['target'];
+        }
         ?>
         <div class="col-12 col-lg-4 position-relative pb-5">
             <div class="tax-item wp-block-image size-full">
@@ -20,6 +26,7 @@
                 </h3>
                 <div class="description"><?php echo get_the_excerpt($postId) ?></div>
                 <a href="<?php echo esc_url($link) ?>"
+                    <?php echo empty($target) ? '' : 'target="'. $target .'"' ?>
                    class="block-button mt-0"><?php echo __('Find out more', 'cabling'); ?></a>
             </div>
         </div>
