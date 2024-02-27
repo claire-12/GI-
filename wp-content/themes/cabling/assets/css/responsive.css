@@ -3,6 +3,10 @@
 }
 @media screen and (min-width: 993px){
 	#site-navigation{display: block !important;}
+    .group-gallery .wp-block-gallery .wp-block-image {
+        width: calc(18% - var(--wp--style--unstable-gallery-gap, 16px)*.66667) !important;
+        height: 150px;
+    }
 }
 @media screen and (min-width: 768px){
 	.woocommerce #content div.product div.images,

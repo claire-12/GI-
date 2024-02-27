@@ -10,14 +10,18 @@
         $link = add_query_arg('material', $postId, home_url('/products-and-services/'));
         ?>
         <div class="col-xs-12 col-lg-4">
-            <div class="part-item " data-action="<?php echo $postId ?>" style="position: relative; ">
-                <a style="color: inherit"
-                   href="<?php echo esc_url($link) ?>"><?php echo $thumbnail ?></a>
+            <div class="related-item" style="background: transparent">
+                <div class="part-item " data-action="<?php echo $postId ?>" style="position: relative; ">
+                    <a style="color: inherit"
+                       href="<?php echo esc_url($link) ?>"><?php echo $thumbnail ?></a>
+                </div>
+                <h4 class="my-3"><?php echo get_the_title($postId) ?></h4>
+                <!--<div class="desc"><?php echo get_the_excerpt($postId) ?></div>-->
+                <div class="desc"><?php echo get_post($postId)->post_content ?></div>
+                <a href="<?php echo esc_url($link) ?>" class="block-button " style="left: 0">
+                    <span><?php echo __('SEE MORE', 'cabling') ?></span>
+                </a>
             </div>
-            <h4 class="my-3"><?php echo get_the_title($postId) ?></h4>
-            <!--<div class="desc"><?php echo get_the_excerpt($postId) ?></div>-->
-			<div class="desc"><?php echo get_post($postId)->post_content ?></div>
-			
         </div>
     <?php endforeach; ?>
 </div>

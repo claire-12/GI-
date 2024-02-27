@@ -7,10 +7,12 @@
         >
         <label for="sapcustomer" class="form-label">Customer</label>
     </div>
+    <p><strong>Search by Material Number</strong></p>
     <div class="form-group">
         <input type="text" class="form-control" name="api[sapmaterial]" id="parcomaterial">
         <label for="parcomaterial" class="form-label">Material</label>
     </div>
+    <p><strong>Or search both Part and Compound Numbers</strong></p>
     <div class="form-group">
         <input type="text" class="form-control" name="api[parcomaterial]" id="sapMaterial">
         <label for="sapmaterial" class="form-label">Part Number</label>

@@ -3638,3 +3638,38 @@ table.tablepress tr:nth-child(even) td {
 {
 	text-wrap: wrap;
 }
+table.tablepress-id-52 tr td {
+    color: #111 !important;
+    padding: 10px 5px;
+}
+table.tablepress-id-52 tr .column-1 {
+    text-align: left;
+    padding-left: 15px;
+    background: #82c0c8 !important;
+    font-weight: 600;
+}
+table.tablepress-id-52 tr.row-1 .column-1 {
+    background: #fff !important;
+}
+table.tablepress-id-52 tr.row-2 td {
+    background: #0f828f !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+table.tablepress-id-52 tr .column-2,
+table.tablepress-id-52 tr .column-4,
+table.tablepress-id-52 tr .column-6 {
+    background: #c0e0e5 !important;
+}
+table.tablepress-id-52 tr .column-3,
+table.tablepress-id-52 tr .column-5,
+table.tablepress-id-52 tr .column-7 {
+    background: #e5f3f4 !important;
+}
+.group-gallery .wp-block-gallery {
+    align-items: center !important;
+    flex-wrap: nowrap;
+}
+.group-gallery .wp-block-gallery img{
+    object-fit: scale-down !important;
+}

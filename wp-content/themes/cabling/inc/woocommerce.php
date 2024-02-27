@@ -447,6 +447,7 @@ function show_value_from_api($key, $value)
     }
 
     if (str_contains($key, 'cure_date')) {
+		return $value;
         $dateTime = DateTime::createFromFormat('Ymd', $value);
         //$dateTime->setTimezone(new DateTimeZone("America/New_York"));
 
@@ -480,6 +481,7 @@ function cabling_add_my_account_endpoint()
     add_rewrite_endpoint('customer-service', EP_PAGES);
 
     $sap_customer = get_user_meta(get_current_user_id(), 'sap_customer', true);
+
     if (!empty($sap_customer)) {
         add_rewrite_endpoint('sales-backlog', EP_PAGES);
         add_rewrite_endpoint('inventory', EP_PAGES);
@@ -1927,7 +1929,7 @@ function remove_woocommerce_gallery_scripts()
  * @param mixed $taxonomy
  * @return string
  */
-function getTaxonomyThumbnail(mixed $taxonomy, string $class): string
+function getTaxonomyThumbnail(mixed $taxonomy, string $class = ''): string
 {
     $thumbnail_id = get_field('taxonomy_image', $taxonomy);
     $thumbnail_id = empty($thumbnail_id) ? 1032601 : $thumbnail_id;
