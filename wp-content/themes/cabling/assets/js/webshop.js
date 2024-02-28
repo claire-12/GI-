@@ -395,7 +395,7 @@
         const parcoCompound = $('#parcocompound');
         const parcoMaterial = $('#parcomaterial');
 
-        if (parcoMaterial.val() === '' && sapMaterial.val() === '' && parcoCompound.val() === ''){
+        if ($('input[name=api_page]').val() === 'inventory' && parcoMaterial.val() === '' && sapMaterial.val() === '' && parcoCompound.val() === ''){
             $('.form-error-text').show();
             return false;
         } else {

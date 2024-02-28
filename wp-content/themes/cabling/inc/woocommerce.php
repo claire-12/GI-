@@ -402,7 +402,7 @@ function cabling_account_menu_items()
         $new_items['inventory'] = __('Inventory, Lead Time and Pricing', 'cabling');
         $new_items['shipment'] = __('Shipments Last 12 Months ', 'cabling');
     }
-    $new_items['orders'] = __('Order history', 'cabling');
+    //$new_items['orders'] = __('Order history', 'cabling');
     //$new_items['products'] = __('Purchases', 'cabling');
     $new_items['quotations'] = __('My Quotes', 'cabling');
     //$new_items['messages'] = __('Messages', 'cabling');
@@ -447,15 +447,11 @@ function show_value_from_api($key, $value)
     }
 
     if (str_contains($key, 'quantity') || str_contains($key, 'scale_from') || str_contains($key, 'scale_to')) {
-		return number_format($value);
-    }
-
-    if (str_contains($key, 'quantity')) {
-		return number_format($value);
+        return number_format($value, 0, '.', ' ');
     }
 
     if (str_contains($key, 'cure_date')) {
-		return $value;
+        return $value;
     }
 
     if (str_contains($key, 'date')) {
@@ -465,7 +461,7 @@ function show_value_from_api($key, $value)
     }
 
     if (str_contains($key, 'price')) {
-        return '$' . number_format($value, 2);
+        return '$' . number_format($value, 2, '.', ' ');
     }
 
     return $value;
@@ -549,7 +545,9 @@ add_action('woocommerce_account_products_endpoint', 'cabling_products_endpoint_c
  */
 function cabling_quotations_endpoint_content()
 {
-    wc_get_template('myaccount/quotations.php');
+    $user = wp_get_current_user();
+    $data = RequestProductQuote::get(['email' => $user->user_email]);
+    wc_get_template('myaccount/quotations.php', ['data' => $data]);
 }
 
 add_action('woocommerce_account_quotations_endpoint', 'cabling_quotations_endpoint_content');
@@ -918,19 +916,29 @@ function cabling_get_product_single_attributes($dynamic_fields, $product_id): ar
         );
     }
     //inches_id_tol
-    $inches_id_tol = get_product_field('inches_id_tol', $product_id);
-    if (!empty($inches_id_tol)) {
-        $list_fields['size']['--'] = array(
-            'label' => '',
-            'value' => ''
-        );
-    }
+    $list_fields['size']['--'] = array(
+        'label' => '',
+        'value' => ''
+    );
     //inches_id_tol
     $inches_id_tol = get_product_field('inches_id_tol', $product_id);
     if (!empty($inches_id_tol)) {
         $list_fields['size']['inches_id_tol'] = array(
-            'label' => __('Inches Tol.', 'cabling'),
+            'label' => __('Inches I.D. Tol.', 'cabling'),
             'value' => $inches_id_tol
+        );
+    }
+    //inches_id_tol
+    $list_fields['size']['---'] = array(
+        'label' => '',
+        'value' => ''
+    );
+    //inches_id_tol
+    $inches_width_tol = get_product_field('inches_width_tol', $product_id);
+    if (!empty($inches_width_tol)) {
+        $list_fields['size']['inches_width_tol'] = array(
+            'label' => __('Inches CS Tol.', 'cabling'),
+            'value' => $inches_width_tol
         );
     }
 
@@ -2071,13 +2079,13 @@ function company_name_field()
         $company = '';
     }
 
-    $field   = '';
-    $options = '<option value="">' . __( 'Choose an option', 'woocommerce' ) . '</option>';
+    $field = '';
+    $options = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
     foreach ($businessPlanSections as $option_text) {
         $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($company, $option_text, false) . '>' . esc_html($option_text) . '</option>';
     }
 
     $field .= '<select name="company-sector" id="company-sector" class="select form-select" required>' . $options . '</select>';
 
-    echo '<p class="form-row w-100"><label for="company-sector">' . __( 'Company Sector', 'woocommerce' ) . '<span class="required">*</span></label>'. $field .'</p>';
+    echo '<p class="form-row w-100"><label for="company-sector">' . __('Company Sector', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
 }

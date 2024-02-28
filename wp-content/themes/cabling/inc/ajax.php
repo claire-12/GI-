@@ -702,13 +702,13 @@ function cabling_get_products_ajax_callback()
             parse_str($_REQUEST['data'], $data);
             $productTypeId = $_REQUEST['category'] ?? 0;
 
-            if (empty($data['attributes']['nominal_size_id'])){
+            if (empty($data['attributes']['nominal_size_id'])) {
                 unset($data['attributes']['nominal_size_id']);
             }
-            if (empty($data['attributes']['nominal_size_od'])){
+            if (empty($data['attributes']['nominal_size_od'])) {
                 unset($data['attributes']['nominal_size_od']);
             }
-            if (empty($data['attributes']['nominal_size_width'])){
+            if (empty($data['attributes']['nominal_size_width'])) {
                 unset($data['attributes']['nominal_size_width']);
             }
 
@@ -872,37 +872,56 @@ function cabling_get_api_ajax_callback()
                     $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE';
                     $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK';
                     $template = $data['api_page'] . '-item.php';
+                    $parcomaterial = $data['api']['parcomaterial'];
+                    $sapmaterial = $data['api']['sapmaterial'];
+                    $parcocompound = $data['api']['parcocompound'];
 
-                    $bodyStockParams = array(array(
-                        'Field' => 'sapmaterial',
-                        'Value' => $data['api']['sapmaterial'],
-                        'Operator' => '',
-                    ));
+                    $bodyPriceParams = array(
+                        array(
+                            'Field' => 'sapcustomer',
+                            'Value' => $sap_no,
+                            'Operator' => '',
+                        ),
+                    );
+                    $inventoryParams = array();
 
-                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $bodyParams);
-                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $bodyStockParams);
+                    if (!empty($parcomaterial) && !empty($parcocompound)) {
+                        $inventoryParams[] = array(
+                            'Field' => 'parcomaterial',
+                            'Value' => $parcomaterial,
+                            'Operator' => '',
+                        );
+                        $inventoryParams[] = array(
+                            'Field' => 'parcocompound',
+                            'Value' => $parcocompound,
+                            'Operator' => '',
+                        );
+                    } elseif (!empty($sapmaterial)) {
+                        $inventoryParams[] = array(
+                            'Field' => 'sapmaterial',
+                            'Value' => $sapmaterial,
+                            'Operator' => '',
+                        );
+                        $bodyPriceParams[] = array(
+                            'Field' => 'sapmaterial',
+                            'Value' => $sapmaterial,
+                            'Operator' => '',
+                        );
+                    }
+
+                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $bodyPriceParams);
+                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $inventoryParams);
 
                     $dataPrice = getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
                     $dataStock = getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
 
-                    if (empty($dataPrice)) {
-                        $bodyPriceParams = array(array(
-                            'Field' => 'sapmaterial',
-                            'Value' => $data['api']['sapmaterial'],
-                            'Operator' => '',
-                        ));
-
-                        $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $bodyPriceParams);
-                        $dataPrice = getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
-                    }
-
                     $responseData = array(
                         'price' => $dataPrice,
                         'stock' => $dataStock,
-                        'data' => [
-                            $responsePrice,
-                            $responseStock,
-                        ]
+                        /*'data' => [
+                            $bodyPriceParams,
+                            $inventoryParams,
+                        ]*/
                     );
 
                     break;
@@ -925,8 +944,8 @@ function cabling_get_api_ajax_callback()
 
             wp_send_json_success([
                 'data' => $result,
-                '$data' => $data,
-                'raw' => $responseData,
+                //'$data' => $data,
+                //'raw' => $responseData,
             ]);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());

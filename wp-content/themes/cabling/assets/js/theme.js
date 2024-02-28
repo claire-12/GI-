@@ -6,6 +6,7 @@
             // options
             cellAlign: 'left',
             contain: true,
+            autoPlay: 5000,
             pageDots: false
         });
     }

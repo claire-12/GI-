@@ -1940,7 +1940,7 @@ function custom_autofill_data( $scanned_tag, $replace ) {
                 $scanned_tag['values'] = [get_user_meta($current_user->ID, 'user_title', true)];
                 break;
             case 'your-company-sector':
-                $scanned_tag['values'] = [get_user_meta($current_user->ID, 'company-sector', true)];
+                $scanned_tag['values'] = [get_user_meta($current_user->ID, 'billing_company', true)];
                 break;
             case 'your-phone':
                  $scanned_tag['values'] = [get_user_phone_number($current_user->ID)];

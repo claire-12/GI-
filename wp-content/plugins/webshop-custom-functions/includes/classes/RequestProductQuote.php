@@ -6,14 +6,6 @@ class RequestProductQuote
 
     public function __construct()
     {
-        add_action('wp_ajax_get_quote_data_ajax', [$this, 'get_quote_data_ajax_callback']);
-        add_action('wp_ajax_cabling_request_quote', [$this, 'cabling_request_quote_callback']);
-        add_action('wp_ajax_nopriv_cabling_request_quote', [$this, 'cabling_request_quote_callback']);
-        add_action('wp_ajax_cabling_get_product_quote_modal', [$this, 'cabling_get_product_quote_modal_callback']);
-        add_action('wp_ajax_nopriv_cabling_get_product_quote_modal', [$this, 'cabling_get_product_quote_modal_callback']);
-        add_action('admin_menu', [$this, 'register_request_a_quote_page']);
-        add_action('wp_footer', [$this, 'cabling_add_product_quote_popup']);
-        //add_action('admin_init', [$this, 'add_new_date_column']);
     }
 
     public static function create_table(): void
@@ -59,18 +51,17 @@ class RequestProductQuote
         }
     }
 
-    public static function add_new_date_column()
+    public static function add_new_quote_filter_column()
     {
         global $wpdb;
         $table_name = $wpdb->prefix . 'request_a_quote';
 
         // Check if the column already exists
-        $column_exists = $wpdb->get_var("SHOW COLUMNS FROM $table_name LIKE 'quote_price'");
+        $column_exists = $wpdb->get_var("SHOW COLUMNS FROM $table_name LIKE 'quote_filter'");
 
-        if (!$column_exists) {
-            // Column doesn't exist, add it
+        if (!$column_exists) {            // Column doesn't exist, add it
             //$alter_sql = " ALTER TABLE $table_name ADD quote_number VARCHAR(255) ";
-            $alter_sql = " ALTER TABLE $table_name ADD quote_price VARCHAR(255) ";
+            $alter_sql = " ALTER TABLE $table_name ADD quote_filter TEXT ";
             $wpdb->query($alter_sql);
         }
     }
@@ -150,6 +141,26 @@ class RequestProductQuote
                 $uploaded_files = self::uploadToMedia($files);
                 $data['files'] = empty($uploaded_files) ? '' : implode(',', $uploaded_files);
 
+                if (is_user_logged_in()) {
+                    $user = wp_get_current_user();
+                    $userId = get_master_account_id($user->ID);
+
+                    $data['email'] = $user->user_email;
+                    $data['name'] = $user->display_name;
+                    $data['company'] = get_user_meta($userId, 'billing_company', true);
+                    $data['user_title'] = get_user_meta($userId, 'user_title', true);
+                    $data['billing_address_1'] = get_user_meta($userId, 'billing_address_1', true);
+                    $data['billing_city'] = get_user_meta($userId, 'billing_city', true);
+                    $data['billing_postcode'] = get_user_meta($userId, 'billing_postcode', true);
+                    $data['billing_country'] = get_user_meta($userId, 'billing_country', true);
+                    $data['billing_phone'] = get_user_meta($userId, 'billing_phone', true);
+                    $data['billing_phone_code'] = get_user_meta($userId, 'billing_phone_code', true);
+                    $data['company-sector'] = get_user_meta($userId, 'company-sector', true);
+                    $data['phone_number'] = get_user_phone_number($userId);
+                }
+
+                $data['quote_filter'] = json_decode(base64_decode($data['filter-params'])) ?? [];
+
                 self::saveQuote($data);
                 self::sendMail($data['email'], 'Request a quote', $data, $files);
 
@@ -171,16 +182,16 @@ class RequestProductQuote
         $table_name = $wpdb->prefix . 'request_a_quote';
 
         $data['data_company'] = array(
-            'name' => $data['name'],
-            'title-function' => $data['title-function'],
-            'company' => $data['company'],
-            'company-sector' => $data['company-sector'],
-            'billing_address_1' => $data['billing_address_1'],
-            'billing_city' => $data['billing_city'],
-            'billing_postcode' => $data['billing_postcode'],
-            'billing_country' => $data['billing_country'],
-            'billing_phone' => $data['billing_phone'],
-            'billing_phone_code' => $data['billing_phone_code'],
+            'name' => $data['name'] ?? '-',
+            'title-function' => $data['title-function'] ?? '-',
+            'company' => $data['company'] ?? '-',
+            'company-sector' => $data['company-sector'] ?? '-',
+            'billing_address_1' => $data['billing_address_1'] ?? '-',
+            'billing_city' => $data['billing_city'] ?? '-',
+            'billing_postcode' => $data['billing_postcode'] ?? '-',
+            'billing_country' => $data['billing_country'] ?? '-',
+            'billing_phone' => $data['billing_phone'] ?? '-',
+            'billing_phone_code' => $data['billing_phone_code'] ?? '-',
         );
 
         $data_to_insert = array(
@@ -205,6 +216,7 @@ class RequestProductQuote
             'potential_order_size' => sanitize_text_field($data['potential-order-size']) ?? '',
             'data_company' => serialize($data['data_company']),
             'data_o_ring' => serialize($data['o_ring']),
+            'quote_filter' => serialize($data['quote_filter']),
             'status' => 'Pending'
         );
 
@@ -312,7 +324,7 @@ class RequestProductQuote
         wp_send_json($response);
     }
 
-    private
+    public
     static function get($args = [], $type = OBJECT): array|object|null
     {
         global $wpdb;
@@ -386,24 +398,6 @@ class RequestProductQuote
         $mailer->send(implode(',', $emails), $subject, $mail_content, $headers, $attachments);
     }
 
-    private
-    static function encryptAES($data): string
-    {
-        $iv = openssl_random_pseudo_bytes(16); // Generate a random IV (Initialization Vector)
-        $encrypted = openssl_encrypt($data, 'AES-256-CFB', self::$encrytKey, 0, $iv);
-        return base64_encode($iv . $encrypted);
-    }
-
-// Function to decrypt data using AES encryption
-    private
-    static function decryptAES($data): bool|string
-    {
-        $data = base64_decode($data);
-        $iv = substr($data, 0, 16);
-        $encrypted = substr($data, 16);
-        return openssl_decrypt($encrypted, 'AES-256-CFB', self::$encrytKey, 0, $iv);
-    }
-
     public
     static function cabling_add_product_quote_popup()
     {
@@ -421,10 +415,21 @@ class RequestProductQuote
             'object_id' => $_REQUEST['data'],
         ];
 
+        $args['filter_params'] = $_REQUEST['filter_params'] ?? [] ;
+
         if ($post_type === 'product') {
             $product = wc_get_product($_REQUEST['data']);
-            $args['product'] = $product;
+            $product_material = get_field('product_material', $product->get_id());
             $object['object_type'] = 'product';
+            $inches_id = get_field('inches_id', $product->get_id());
+            $inches_od = get_field('inches_od', $product->get_id());
+            $inches_width = get_field('inches_width', $product->get_id());
+            $args['product'] = $product;
+            $args['product_of_interest'] = $product->get_sku();
+            $args['material'] = $product_material ? get_the_title($product_material) : '';
+            $args['hardness'] = get_field('product_hardness', $product->get_id());
+            $args['temperature'] = get_field('product_operating_temp', $product->get_id());
+            $args['dimension'] = sprintf('%sx%sx%s', $inches_id, $inches_od, $inches_width);
         } else {
             $args['post'] = get_post($_REQUEST['data']);
 
