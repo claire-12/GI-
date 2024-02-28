@@ -1,5 +1,7 @@
 <h2>Inventory, Lead Time and Pricing</h2>
 <form id="webservice-api-form">
+    <p class="form-error-text alert alert-danger mb-4 hidden">Please fill out the filter</p>
+    <p class="parcocompound-text alert alert-danger mb-4 hidden">Please fill out the Part Number and Compound Number</p>
     <div class="form-group">
         <input type="text" class="form-control" name="api[sapcustomer]" id="sapcustomer"
                value="<?php echo get_user_meta(get_current_user_id(), 'sap_customer', true)?>"
@@ -21,7 +23,6 @@
         <input type="text" class="form-control" name="api[parcocompound]" id="parcocompound">
         <label for="parcocompound" class="form-label">Compound Number</label>
     </div>
-    <p class="help-text parcocompound-text text-danger hidden">Please fill out the Part Number and Compound Number</p>
     <!--<div class="form-group hidden">
         <label for="date" class="form-label">Date Interval</label>
         <input type="date" class="form-control date-picker" name="api[due_date]" id="date">

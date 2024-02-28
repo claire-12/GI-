@@ -446,17 +446,20 @@ function show_value_from_api($key, $value)
         return '-';
     }
 
+    if (str_contains($key, 'quantity') || str_contains($key, 'scale_from') || str_contains($key, 'scale_to')) {
+		return number_format($value);
+    }
+
+    if (str_contains($key, 'quantity')) {
+		return number_format($value);
+    }
+
     if (str_contains($key, 'cure_date')) {
 		return $value;
-        $dateTime = DateTime::createFromFormat('Ymd', $value);
-        //$dateTime->setTimezone(new DateTimeZone("America/New_York"));
-
-        return $dateTime ? $dateTime->format("m/d/Y") : '-';
     }
 
     if (str_contains($key, 'date')) {
         $dateTime = new DateTime($value);
-        //$dateTime->setTimezone(new DateTimeZone("America/New_York"));
 
         return $dateTime->format("m/d/Y");
     }

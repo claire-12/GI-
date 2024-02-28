@@ -391,12 +391,23 @@
         }
     });
     $(document).on('submit', '#webservice-api-form', function () {
-        if (($('#sapMaterial').val() !== '' && $('#parcocompound').val() === '') || $('#sapMaterial').val() === '' && $('#parcocompound').val() !== '') {
+        const sapMaterial = $('#sapMaterial');
+        const parcoCompound = $('#parcocompound');
+        const parcoMaterial = $('#parcomaterial');
+
+        if (parcoMaterial.val() === '' && sapMaterial.val() === '' && parcoCompound.val() === ''){
+            $('.form-error-text').show();
+            return false;
+        } else {
+            $('.form-error-text').hide();
+        }
+        if ((sapMaterial.val() !== '' && parcoCompound.val() === '') || sapMaterial.val() === '' && parcoCompound.val() !== '') {
             $('.parcocompound-text').show();
             return false;
         } else {
             $('.parcocompound-text').hide();
         }
+
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',

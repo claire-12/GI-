@@ -65,6 +65,10 @@ $backlogMainTable = array(
                     </thead>
                     <tbody>
                     <?php foreach ($data['stock'] as $lead): ?>
+                        <?php
+                        if (isset($previous_date) && $lead['estimated_ship_date'] === $previous_date){continue;}
+                        $previous_date = $lead['estimated_ship_date'] ?? null;
+                        ?>
                         <tr>
                             <td><?php echo show_value_from_api('lead_time', $lead['lead_time']) ?></td>
                             <td><?php echo show_value_from_api('estimated_ship_date', $lead['estimated_ship_date']) ?></td>
