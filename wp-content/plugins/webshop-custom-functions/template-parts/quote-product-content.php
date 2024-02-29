@@ -217,12 +217,8 @@
                         </div>
                     <?php endif ?>
                     <div class="col-md-12 col-lg-6">
-                        <div class="mb-3 form-group">
-                            <input type="text" class="form-control" name="product-of-interest" id="product-of-interest"
-                                   value="<?php echo $product_of_interest ?? '' ?>"
-                                   required>
-                            <label for="product-of-interest" class="form-label">Product of Interest<span
-                                        class="required">*</span></label>
+                        <div class="mb-3 form-group1">
+                            <?php product_of_interest_field($product_of_interest) ?>
                         </div>
                         <div class="mb-3 form-group">
                             <input type="text" class="form-control" name="when-needed" id="when-needed"

@@ -12,7 +12,7 @@ $user_id = get_current_user_id();
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" name="create-user-form" id="infomation-form" class="needs-validation">
+                <form method="POST" name="create-user-form" id="information-form" class="needs-validation">
                     <div class="woo-notice" role="alert" style="display: none">
                     </div>
                     <div class="form-group">

@@ -1954,3 +1954,14 @@ function custom_autofill_data( $scanned_tag, $replace ) {
 }
 
 add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );
+
+// Define a function to modify the success message
+function contact_form_custom_success_message( $result, $that ) {
+  if ( $result['status'] === 'sent' ) {
+    $result['message'] = 'Thank you for contacting us! Our team will be in touch shortly.';
+  }
+  return $result;
+}
+
+// Add the function to the hook
+//add_filter( 'wpcf7_submission_result', 'contact_form_custom_success_message', 10, 2 );

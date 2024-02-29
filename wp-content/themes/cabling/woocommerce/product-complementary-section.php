@@ -46,9 +46,7 @@ if (empty($terms)){
                 <div class="col-12 col-lg-3">
                     <div class="related-item mb-5">
                         <?php
-                        $thumbnail_id = get_field('taxonomy_image', $term);
-                        $thumbnail_id = empty($thumbnail_id) ? 1032601 : $thumbnail_id;
-                        $thumbnail = wp_get_attachment_image($thumbnail_id, 'full');
+                        $thumbnail = getTaxonomyThumbnail($term);
                         $link = get_term_link($term);
                         ?>
                             <a href="<?php echo $link; ?>"
@@ -62,7 +60,7 @@ if (empty($terms)){
                                 </a>
                             </h5>
                             <div class="cat-desc mb-2">
-                                <?php echo get_field('short_description', $terms) ?>
+                                <?php echo get_field('short_description', $term) ?>
                             </div>
                             <a href="<?php echo $link; ?>" class="block-button btn-red">
                                 <span><?php _e('FIND OUT MORE', 'cabling') ?></span>

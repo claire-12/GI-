@@ -1331,6 +1331,9 @@ input.invalid,
     color: #fff;
     font-size: 1.5em;
 }
+.show-email-share .dropdown-item {
+    font-size: 1.15rem;
+}
 .show-email-share .dropdown-toggle {
     background: #d51c23 !important;
     border-color: #d51c23 !important;
@@ -1845,7 +1848,7 @@ h2 {
 
 .hero-content-main h2 {
     color: #fff;
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 0;
     font-weight: 900;
 }

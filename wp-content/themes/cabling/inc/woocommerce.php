@@ -503,6 +503,8 @@ function cabling_customer_endpoint_content()
     }
 }
 
+add_action('woocommerce_account_users-management_endpoint', 'cabling_customer_endpoint_content');
+
 /**
  * Users sales-backlog content
  */
@@ -812,7 +814,8 @@ function cabling_get_product_table_attributes(): array
         'product_operating_temp' => __('Temperature Range, °F', 'cabling'),
         'product_colour' => __('Colour', 'cabling'),
         //'_stock' => __('Pkg Qty.', 'cabling'),
-        '_sku' => '',
+        //'_sku' => '',
+        '_sku' => __('SKU', 'cabling'),
     );
     return $list_fields;
 }
@@ -1472,7 +1475,7 @@ function get_filter_lists($get_options = true): array
 
             $label = $field['label'];
             if ('product_operating_temp' === $field['name']) {
-                $label = 'Operating Temp';
+                //$label = 'Operating Temp';
             }
             if (is_tax('product_custom_type')) {
                 $term = get_queried_object();
@@ -2088,4 +2091,31 @@ function company_name_field()
     $field .= '<select name="company-sector" id="company-sector" class="select form-select" required>' . $options . '</select>';
 
     echo '<p class="form-row w-100"><label for="company-sector">' . __('Company Sector', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
+}
+
+function product_of_interest_field($value = '')
+{
+    $product_of_interests = [
+        141 => "Custom Molded Rubber Seals",
+        151 => "Rubber to Metal Bonded Seals",
+        171 => "Machined Thermoplastic",
+        311 => "None",
+        321 => "O-Ring",
+        331 => "Rubber to Plastic Bonded Seals",
+        341 => "Custom Machined Metal Parts",
+        351 => "Molded Resins",
+        361 => "Surface Production Equipment",
+        371 => "Wearable Sensors"
+    ];
+
+
+    $field = '';
+    $options = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
+    foreach ($product_of_interests as $option_text) {
+        $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($value, $option_text, false) . '>' . esc_html($option_text) . '</option>';
+    }
+
+    $field .= '<select name="product-of-interest" id="product-of-interest" class="select form-select" required>' . $options . '</select>';
+
+    echo '<p class="form-row w-100"><label for="product-of-interest">' . __('Product Of Interest', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
 }

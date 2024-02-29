@@ -11,6 +11,7 @@ define('MASTER_ACCOUNT', 'master_account');
 define('CHILD_ACCOUNT', 'child_account');
 define('LOG_DB_NAME', 'customer_change_logs');
 
+
 if (!function_exists('cabling_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.

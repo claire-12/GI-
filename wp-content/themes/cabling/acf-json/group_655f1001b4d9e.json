@@ -1,12 +1,13 @@
 {
     "key": "group_655f1001b4d9e",
-    "title": "Product Fields - Show on Filter",
+    "title": "Product Fields - Filters",
     "fields": [
         {
             "key": "field_655f108a564ea",
             "label": "Application",
             "name": "",
             "aria-label": "",
+
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -51,8 +52,28 @@
         },
         {
             "key": "field_655f1083564e9",
-            "label": "Temperature  Range, °F",
+            "label": "Min Temperature Range, °F",
             "name": "product_operating_temp",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65e04861fbe82",
+            "label": "Max Temperature Range, °F",
+            "name": "product_operating_temp_max",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -669,5 +690,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708659226
+    "modified": 1709198039
 }

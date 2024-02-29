@@ -1,6 +1,6 @@
 <h2>My Quotes</h2>
 <?php if (!empty($data)): ?>
-    <table class="table">
+    <table class="table hidden">
         <thead>
             <tr>
                 <th>Product</th>
