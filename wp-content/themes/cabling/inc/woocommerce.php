@@ -1475,7 +1475,7 @@ function get_filter_lists($get_options = true): array
 
             $label = $field['label'];
             if ('product_operating_temp' === $field['name']) {
-                //$label = 'Operating Temp';
+                $label = 'Operating Temp';
             }
             if (is_tax('product_custom_type')) {
                 $term = get_queried_object();

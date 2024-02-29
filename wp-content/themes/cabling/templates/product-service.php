@@ -30,12 +30,12 @@ get_header();
         <main id="main" class="site-main">
             <div class="container">
                 <div class="row">
-                    <div class="col col-xs-12 col-lg-4">
+                    <div class="col col-xs-12 col-lg-3">
                         <div class="woo-sidebar">
                             <?php get_template_part('template-parts/filter', 'product', ['categories' => $product_cats, 'product_cat' => $product_group]) ?>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-lg-8">
+                    <div class="col-sm-12 col-lg-9">
                         <?php get_template_part('template-parts/filter_heading', 'product') ?>
                         <div id="filtered-category-container">
                             <?php if (isset($product_lines)): ?>
