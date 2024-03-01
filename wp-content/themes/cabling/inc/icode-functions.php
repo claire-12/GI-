@@ -109,8 +109,8 @@ function cabling_process_register_form()
     }
 
     if (
-        (isset($_POST['verify-nounce']) && wp_verify_nonce($_POST['verify-nounce'], 'cabling-verify'))
-        || (isset($_POST['customer-nounce']) && wp_verify_nonce($_POST['customer-nounce'], 'cabling-customer'))) {
+            (isset($_POST['verify-nounce']) && wp_verify_nonce($_POST['verify-nounce'], 'cabling-verify'))
+            || (isset($_POST['customer-nounce']) && wp_verify_nonce($_POST['customer-nounce'], 'cabling-customer'))) {
 
         $verify_recaptcha = cabling_verify_recaptcha($_POST['g-recaptcha-response']);
 
@@ -1899,8 +1899,8 @@ function checkFilterHasSize($attributes): bool
         'milimeters_id_tol',
         'milimeters_width_tol',
     );
-    foreach ($attributes as $key => $attribute) {
-        if (in_array($key, $size) && !empty($attribute)) {
+    foreach ($attributes as $key => $attribute){
+        if(in_array($key, $size) && !empty($attribute)){
             return true;
         }
     }
@@ -1912,26 +1912,24 @@ function checkFilterHasSize($attributes): bool
  * José Martins 2024-02-14
  * Retrieves post by slug
  */
-function get_post_id_by_slug($slug, $post_type = "post")
-{
+function get_post_id_by_slug( $slug, $post_type = "post" ) {
     $query = new WP_Query(
         array(
-            'name' => $slug,
-            'post_type' => $post_type,
+            'name'   => $slug,
+            'post_type'   => $post_type,
             'numberposts' => 1,
-            'fields' => 'ids',
-        ));
+            'fields'      => 'ids',
+        ) );
     $posts = $query->get_posts();
-    return array_shift($posts);
+    return array_shift( $posts );
 }
 
 
-function custom_autofill_data($scanned_tag, $replace)
-{
-    if (is_user_logged_in()) {
+function custom_autofill_data( $scanned_tag, $replace ) {
+    if ( is_user_logged_in() ) {
         $current_user = wp_get_current_user();
 
-        switch ($scanned_tag['name']) {
+        switch ( $scanned_tag['name'] ){
             case 'your-name':
                 $scanned_tag['values'] = [$current_user->display_name];
                 break;
@@ -1945,7 +1943,7 @@ function custom_autofill_data($scanned_tag, $replace)
                 $scanned_tag['values'] = [get_user_meta($current_user->ID, 'billing_company', true)];
                 break;
             case 'your-phone':
-                $scanned_tag['values'] = [get_user_phone_number($current_user->ID)];
+                 $scanned_tag['values'] = [get_user_phone_number($current_user->ID)];
                 break;
         }
         return $scanned_tag;
@@ -1955,13 +1953,15 @@ function custom_autofill_data($scanned_tag, $replace)
     return $scanned_tag;
 }
 
-add_filter('wpcf7_form_tag', 'custom_autofill_data', 10, 2);
+add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );
 
 // Define a function to modify the success message
-function contact_form_custom_wpcf7_submit($form, $result)
-{
-  var_dump($result);
+function contact_form_custom_success_message( $result, $that ) {
+  if ( $result['status'] === 'sent' ) {
+    $result['message'] = 'Thank you for contacting us! Our team will be in touch shortly.';
+  }
+  return $result;
 }
 
 // Add the function to the hook
-add_action('wpcf7_submit', 'contact_form_custom_wpcf7_submit', 10, 2);
+//add_filter( 'wpcf7_submission_result', 'contact_form_custom_success_message', 10, 2 );
