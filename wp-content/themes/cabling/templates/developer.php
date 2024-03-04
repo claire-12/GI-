@@ -21,7 +21,7 @@ if (isset($_REQUEST['your-product'])) {
             'mobile' => $_REQUEST['your-phone'],
             'jobtitle' => $name_title,
             'message' => $_REQUEST['your-message'],
-            'product' => 141,
+            'product' => $productofinterest,
     );
 
     $crm = new CRMController();

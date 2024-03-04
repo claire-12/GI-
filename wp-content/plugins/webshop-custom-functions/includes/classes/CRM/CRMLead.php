@@ -83,7 +83,7 @@ class CRMLead
         $contact["ContactEMail"] = $crmcontact->email;
         $contact["ContactMobile"] = $crmcontact->mobile;
 
-        $contact["BusinessPartnerRelationshipBusinessPartnerFunctionTypeCode"] = $crmcontact->jobtitle;
+        $contact["ContactFormOfAddressCode"] = $crmcontact->jobtitle;
 
 
         $contact["Note"] = $comments;

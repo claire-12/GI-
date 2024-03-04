@@ -2121,7 +2121,9 @@ function get_product_of_interests($value = null)
         '371' => "Wearable Sensors"
     ];
     if (!empty($value)) {
-        return array_search($value, $product_of_interests);
+        $id = array_search($value, $product_of_interests);
+
+        return (string)$id ?? '';
     }
     return $product_of_interests;
 }

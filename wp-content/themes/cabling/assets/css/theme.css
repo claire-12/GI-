@@ -3676,3 +3676,9 @@ table.tablepress-id-52 tr .column-7 {
 .group-gallery .wp-block-gallery img{
     object-fit: scale-down !important;
 }
+
+/** JM 20240304 added padding for rows to become correct under clients resolution (1080p 150% ) */
+.row{
+	padding-left:35px;
+	padding-right:35px;
+}

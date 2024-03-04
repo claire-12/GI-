@@ -73,7 +73,7 @@ class CRMController
             'body' => $body
         ));
 
-        //echo '<pre>';var_dump(json_decode($body, true),$response);exit();
+        echo '<pre>';var_dump(json_decode($body, true),$response);exit();
         if (is_wp_error($response)) {
             $error_message = $response->get_error_message();
             $result = array('error' => $error_message);
