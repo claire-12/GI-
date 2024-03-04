@@ -14,13 +14,24 @@ define('WBC_PLUGIN_BASE_NAME', plugin_basename(__FILE__));
 define('WBC_PLUGIN_FILE', basename(__FILE__));
 define('WBC_PLUGIN_FULL_PATH', __FILE__);
 
-require_once(WBC_PLUGIN_DIR . 'vendor/autoload.php');
+//require_once(WBC_PLUGIN_DIR . 'vendor/autoload.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/SearchLog.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/UserInformed.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/CablingPageTemplate.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/RequestProductQuote.php');
 //require_once(WBC_PLUGIN_DIR . 'includes/classes/ProductQuote.php');
-require_once(WBC_PLUGIN_DIR . 'includes/classes/CRMController.php');
+//require_once(WBC_PLUGIN_DIR . 'includes/classes/CRMController.php');
+
+$folder_crm = WBC_PLUGIN_DIR . 'includes/classes/CRM/';
+
+// Get all PHP files in the folder
+$files = glob($folder_crm . '*.php');
+
+// Include each PHP file
+foreach ($files as $file) {
+    require_once $file;
+}
+
 
 function admin_webshop_enqueue_scripts()
 {

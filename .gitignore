@@ -49,11 +49,9 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
-/wp-content/plugins/acfml/
 
 /wp-content/plugins/advanced-custom-fields-pro/
 
-/wp-content/plugins/assets/
 
 /wp-content/plugins/bbpress/
 
@@ -76,12 +74,6 @@ wp-config.php
 /wp-content/plugins/email-log/
 
 /wp-content/plugins/enable-media-replace/
-
-/wp-content/plugins/includes/
-
-/wp-content/plugins/languages/
-
-/wp-content/plugins/lib/
 
 /wp-content/plugins/recaptcha-for-bbpress/
 

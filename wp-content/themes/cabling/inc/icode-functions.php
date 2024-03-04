@@ -1955,13 +1955,36 @@ function custom_autofill_data( $scanned_tag, $replace ) {
 
 add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );
 
-// Define a function to modify the success message
-function contact_form_custom_success_message( $result, $that ) {
-  if ( $result['status'] === 'sent' ) {
-    $result['message'] = 'Thank you for contacting us! Our team will be in touch shortly.';
-  }
-  return $result;
-}
+function my_custom_action_after_form_submission($contact_form) {
+    // Get the submitted form data
+    $submission = WPCF7_Submission::get_instance();
+    if ($submission) {
+        // Retrieve the posted data
+        $posted_data = $submission->get_posted_data();
 
-// Add the function to the hook
-//add_filter( 'wpcf7_submission_result', 'contact_form_custom_success_message', 10, 2 );
+        // Get specific fields from the posted data
+        $pre_name = $posted_data['your-pre-name'];
+        $name = $posted_data['your-name'];
+        $title = $posted_data['your-title'];
+        $company_sector = $posted_data['your-company-sector'];
+        $email = $posted_data['your-email'];
+        $phone = $posted_data['your-phone'];
+        $product = $posted_data['your-product'];
+        $message = $posted_data['your-message'];
+
+        // Now you can perform custom actions with this data
+        // For example, you can send an email, save data to the database, etc.
+        // Here, we're just logging the submitted data to the WordPress debug log
+        error_log('Submitted form data:');
+        error_log('Pre Name: ' . $pre_name);
+        error_log('Name: ' . $name);
+        error_log('Title: ' . $title);
+        error_log('Company Sector: ' . $company_sector);
+        error_log('Email: ' . $email);
+        error_log('Phone: ' . $phone);
+        error_log('Product: ' . $product);
+        error_log('Message: ' . $message);
+    }
+}
+add_action('wpcf7_submission_result', 'my_custom_action_after_form_submission');
+

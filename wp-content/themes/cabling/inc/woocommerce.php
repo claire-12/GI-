@@ -404,8 +404,10 @@ function cabling_account_menu_items()
     }
     //$new_items['orders'] = __('Order history', 'cabling');
     //$new_items['products'] = __('Purchases', 'cabling');
-    $new_items['quotations'] = __('My Quotes', 'cabling');
-    //$new_items['messages'] = __('Messages', 'cabling');
+
+	//$new_items['quotations'] = __('My Quotes', 'cabling');
+
+	//$new_items['messages'] = __('Messages', 'cabling');
     $new_items['request-a-quote'] = __('REQUEST A QUOTE', 'cabling');
     $new_items['contact-form'] = __('Help & Contact', 'cabling');
 
@@ -2093,21 +2095,40 @@ function company_name_field()
     echo '<p class="form-row w-100"><label for="company-sector">' . __('Company Sector', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
 }
 
-function product_of_interest_field($value = '')
+function get_name_title($value = null)
+{
+    $titles = [
+        '0001' => "Ms.",
+        '0002' => "Mr.",
+    ];
+    if (!empty($value)) {
+        return array_search($value, $titles);
+    }
+    return $titles;
+}
+function get_product_of_interests($value = null)
 {
     $product_of_interests = [
-        141 => "Custom Molded Rubber Seals",
-        151 => "Rubber to Metal Bonded Seals",
-        171 => "Machined Thermoplastic",
-        311 => "None",
-        321 => "O-Ring",
-        331 => "Rubber to Plastic Bonded Seals",
-        341 => "Custom Machined Metal Parts",
-        351 => "Molded Resins",
-        361 => "Surface Production Equipment",
-        371 => "Wearable Sensors"
+        '141' => "Custom Molded Rubber Seals",
+        '151' => "Rubber to Metal Bonded Seals",
+        '171' => "Machined Thermoplastic",
+        '311' => "None",
+        '321' => "O-Ring",
+        '331' => "Rubber to Plastic Bonded Seals",
+        '341' => "Custom Machined Metal Parts",
+        '351' => "Molded Resins",
+        '361' => "Surface Production Equipment",
+        '371' => "Wearable Sensors"
     ];
+    if (!empty($value)) {
+        return array_search($value, $product_of_interests);
+    }
+    return $product_of_interests;
+}
 
+function product_of_interest_field($value = '')
+{
+    $product_of_interests = get_product_of_interests();
 
     $field = '';
     $options = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
