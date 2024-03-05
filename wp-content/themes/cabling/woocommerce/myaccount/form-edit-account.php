@@ -17,36 +17,6 @@
 
 defined('ABSPATH') || exit;
 
-$businessPlanSections = array(
-    "Accounting",
-    "Administrative",
-    "Arts and Design",
-    "Business Development",
-    "Community and Social Services",
-    "Consulting",
-    "Education",
-    "Engineering",
-    "Entrepreneurship",
-    "Finance",
-    "Healthcare Services",
-    "Human Resources",
-    "Information Technology",
-    "Legal",
-    "Marketing",
-    "Media and Communication",
-    "Military and Protective Services",
-    "Operations",
-    "Product Management",
-    "Program and Project Management",
-    "Purchasing",
-    "Quality Assurance",
-    "Real Estate",
-    "Research",
-    "Sales",
-    "Support",
-);
-
-
 do_action('woocommerce_before_edit_account_form'); ?>
 
 <form class="woocommerce-EditAccountForm edit-account" action=""
@@ -96,9 +66,17 @@ do_action('woocommerce_before_edit_account_form'); ?>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="user_title"><?php esc_html_e('Title', 'woocommerce'); ?>&nbsp;<span
                         class="required">*</span></label>
-            <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="user_title"
-                   id="user_title" value="<?php echo esc_attr(get_user_meta($user->ID, 'user_title', true)); ?>"
-                   required/>
+            <?php woocommerce_form_field(
+                'user_title',
+                array(
+                    'type' => 'select',
+                    'class' => array('mw-100'),
+                    'options' => array('Ms.', 'Mr.'),
+                    'input_class' => array('form-select')
+                ),
+                esc_attr(get_user_meta($user->ID, 'user_title', true))
+            )
+            ?>
         </p>
         <div class="clear"></div>
 

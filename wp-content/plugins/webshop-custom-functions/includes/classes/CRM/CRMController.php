@@ -73,15 +73,17 @@ class CRMController
             'body' => $body
         ));
 
-        echo '<pre>';var_dump(json_decode($body, true),$response);exit();
+        //echo '<pre>';var_dump(json_decode($body, true),$response);exit();
         if (is_wp_error($response)) {
-            $error_message = $response->get_error_message();
-            $result = array('error' => $error_message);
+            return [];
         } else {
-            $result = json_decode(wp_remote_retrieve_body($response), true);
+            // Get the response body
+            $body = wp_remote_retrieve_body($response);
+            $data = json_decode($body);
+            if (!empty($data->d->results))
+                return $data->d->results;
         }
-
-        return $result;
+        return [];
     }
 
     private function makeGetRequest($url)

@@ -80,6 +80,20 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                                 class="required">*</span></label>
                 </div>
                 <div class="form-group">
+                        <label for="user_title"><?php esc_html_e('Title', 'woocommerce'); ?>&nbsp;<span
+                                    class="required">*</span></label>
+                        <?php woocommerce_form_field(
+                            'user_title',
+                            array(
+                                'type' => 'select',
+                                'class' => array('mw-100'),
+                                'options' => array('Ms.', 'Mr.'),
+                                'input_class' => array('form-select')
+                            ),
+                        )
+                        ?>
+                </div>
+                <div class="form-group">
                     <input type="text" class="form-control" name="job-title" id="job-title"
                            value="<?php echo $_REQUEST['job-title'] ?? '' ?>" required>
                     <label for="job-title"><?php _e('Job Title', 'cabling') ?><span class="required">*</span></label>

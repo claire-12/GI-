@@ -1937,7 +1937,8 @@ function custom_autofill_data( $scanned_tag, $replace ) {
                 $scanned_tag['values'] = [$current_user->user_email];
                 break;
             case 'your-title':
-                $scanned_tag['values'] = [get_user_meta($current_user->ID, 'user_title', true)];
+                //var_dump( $scanned_tag);
+                // $scanned_tag['values'] = [get_user_meta($current_user->ID, 'user_title', true)];
                 break;
             case 'your-company-sector':
                 $scanned_tag['values'] = [get_user_meta($current_user->ID, 'billing_company', true)];
@@ -1954,37 +1955,4 @@ function custom_autofill_data( $scanned_tag, $replace ) {
 }
 
 add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );
-
-function my_custom_action_after_form_submission($contact_form) {
-    // Get the submitted form data
-    $submission = WPCF7_Submission::get_instance();
-    if ($submission) {
-        // Retrieve the posted data
-        $posted_data = $submission->get_posted_data();
-
-        // Get specific fields from the posted data
-        $pre_name = $posted_data['your-pre-name'];
-        $name = $posted_data['your-name'];
-        $title = $posted_data['your-title'];
-        $company_sector = $posted_data['your-company-sector'];
-        $email = $posted_data['your-email'];
-        $phone = $posted_data['your-phone'];
-        $product = $posted_data['your-product'];
-        $message = $posted_data['your-message'];
-
-        // Now you can perform custom actions with this data
-        // For example, you can send an email, save data to the database, etc.
-        // Here, we're just logging the submitted data to the WordPress debug log
-        error_log('Submitted form data:');
-        error_log('Pre Name: ' . $pre_name);
-        error_log('Name: ' . $name);
-        error_log('Title: ' . $title);
-        error_log('Company Sector: ' . $company_sector);
-        error_log('Email: ' . $email);
-        error_log('Phone: ' . $phone);
-        error_log('Product: ' . $product);
-        error_log('Message: ' . $message);
-    }
-}
-add_action('wpcf7_submission_result', 'my_custom_action_after_form_submission');
 

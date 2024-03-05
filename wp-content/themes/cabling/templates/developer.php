@@ -26,6 +26,7 @@ if (isset($_REQUEST['your-product'])) {
 
     $crm = new CRMController();
     $lead = $crm->processContactUsSubmit($form);
+    echo '<pre>';
     var_dump($lead);
     //exit();
 }

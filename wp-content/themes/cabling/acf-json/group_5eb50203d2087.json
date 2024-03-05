@@ -46,7 +46,7 @@
         {
             "key": "field_65d80f4aadf0f",
             "label": "CRMAccountID",
-            "name": "CRMAccountID",
+            "name": "AccountID",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -82,6 +82,26 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_65e68e6b030c7",
+            "label": "ExternalID",
+            "name": "ExternalID",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -102,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708659910
+    "modified": 1709608568
 }

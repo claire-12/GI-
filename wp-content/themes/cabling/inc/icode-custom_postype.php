@@ -269,7 +269,7 @@ function cptui_register_my_cpts() {
 	register_post_type( "faq", $args );
 }
 
-add_action( 'init', 'cptui_register_my_cpts' );
+//add_action( 'init', 'cptui_register_my_cpts' );
 
 //taxonomy
 function cabling_register_my_taxes() {

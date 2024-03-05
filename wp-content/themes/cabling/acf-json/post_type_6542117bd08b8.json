@@ -2,7 +2,7 @@
     "key": "post_type_6542117bd08b8",
     "title": "Sample Parts",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "sample-part",
     "advanced_configuration": true,
     "import_source": "",
@@ -83,5 +83,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1708659489
+    "modified": 1709622372
 }

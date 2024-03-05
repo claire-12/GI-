@@ -2,7 +2,7 @@
     "key": "post_type_653b8639bf16a",
     "title": "Customer Stories",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "customer-story",
     "advanced_configuration": true,
     "import_source": "",
@@ -83,5 +83,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1708659466
+    "modified": 1709622348
 }
