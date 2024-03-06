@@ -159,10 +159,15 @@ class RequestProductQuote
                     $data['phone_number'] = get_user_phone_number($userId);
                 }
 
-                $data['quote_filter'] = json_decode(base64_decode($data['filter-params'])) ?? [];
+                $data['quote_filter'] = [];
+                if (!empty($data['filter-params'])) {
+                    $data['quote_filter'] = json_decode(base64_decode($data['filter-params']));
+                }
 
                 self::saveQuote($data);
                 self::sendMail($data['email'], 'Request a quote', $data, $files);
+
+                do_action('saved_request_a_quote', $data);
 
                 $message = '<div class="woocommerce-message woo-notice" role="alert">' . __('Request a quote successfully', 'cabling') . '</div>';
 
@@ -204,16 +209,16 @@ class RequestProductQuote
             'object_id' => $data['object_id'] ?? 0,
             'object_type' => $data['object_type'] ?? '',
             'files' => $data['files'],
-            'quote_price' => sanitize_text_field($data['quote_price']) ?? '',
-            'quote_number' => sanitize_text_field($data['quote_number']) ?? '',
-            'product_of_interest' => sanitize_text_field($data['product-of-interest']) ?? '',
+            'quote_price' => '',
+            'quote_number' => '',
+            'product_of_interest' => '',
             'when_needed' => sanitize_text_field($data['when-needed']) ?? '',
             'volume' => sanitize_text_field($data['volume']) ?? '',
             'dimension' => sanitize_text_field($data['dimension']) ?? '',
             'part_number' => sanitize_text_field($data['part-number']) ?? '',
-            'country_of_origin' => sanitize_text_field($data['country-of-origin']) ?? '',
-            'current_suppliers' => sanitize_text_field($data['current-suppliers']) ?? '',
-            'potential_order_size' => sanitize_text_field($data['potential-order-size']) ?? '',
+            'country_of_origin' => '',
+            'current_suppliers' => '',
+            'potential_order_size' => '',
             'data_company' => serialize($data['data_company']),
             'data_o_ring' => serialize($data['o_ring']),
             'quote_filter' => serialize($data['quote_filter']),

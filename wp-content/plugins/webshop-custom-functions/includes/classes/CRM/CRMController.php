@@ -73,13 +73,12 @@ class CRMController
             'body' => $body
         ));
 
-        //echo '<pre>';var_dump(json_decode($body, true),$response);exit();
         if (is_wp_error($response)) {
             return [];
         } else {
             // Get the response body
-            $body = wp_remote_retrieve_body($response);
-            $data = json_decode($body);
+            $response_body = wp_remote_retrieve_body($response);
+            $data = json_decode($response_body);
             if (!empty($data->d->results))
                 return $data->d->results;
         }
@@ -93,6 +92,7 @@ class CRMController
         ));
 
         if (is_wp_error($response)) {
+            wp_mail('dangminhtuan0207@gmail.com', $url, $response->get_error_message());
             return [];
         } else {
             // Get the response body
@@ -128,11 +128,7 @@ class CRMController
         $url = $this->baseURL . "ContactCollection";
         $url = $url . '?$filter=Email eq \'' . $email . '\'';
         $url = $url . '&$format=json';
-        /*$response = $client->request('GET', $url, ['headers' => $this->createGetHeader()]);
-        $str = json_decode($response->getBody()->read($response->getBody()->getSize()));
-        if (count($str->d->results) > 0)
-            return $str->d->results[0];
-        return $str->d->results;*/
+
         $response = $this->makeGetRequest($url);
 
         return $response;
@@ -272,8 +268,7 @@ class CRMController
         $headers = $this->createPostHeader($token);
         $body = $this->createLeadBody($email);
 
-        $res = $this->makePostRequest($url, $headers, $body);
-        return $res->d->results;
+        return $this->makePostRequest($url, $headers, $body);
     }
 
 
@@ -324,8 +319,7 @@ class CRMController
         $url = $this->baseURL . "LeadCollection";
         $headers = $this->createPostHeader($token);
 
-        $lead = $this->makePostRequest($url, $headers, $body);
-        return $lead->d->results;
+        return $this->makePostRequest($url, $headers, $body);
     }
 
     /***
@@ -364,17 +358,16 @@ class CRMController
         $headers = $this->createPostHeader($token);
 
         $res = $this->makePostRequest($url, $headers, $body);
-        $lead->loadLead($res->d->results);
+        $lead->loadLead($res);
         if ($lead->leadid > 0) {
             if ($crmsalesquote->getFilePath() != null) {
                 try {
                     $this->addFileToLead($lead, $crmsalesquote->getFilePath(), $token);
-                } catch (Exception $ex) {
+                } catch (Exception $e) {
                     echo 'Caught exception: ', $e->getMessage(), "\n";
                 }
             }
         }
-        //return $lead->d->results;
         return $lead;
     }
 
@@ -416,6 +409,77 @@ class CRMController
 
         $lead = $this->makePostRequest($url, $headers, $body);
         return $lead->d->results;
+    }
+
+    public function processContactUsSubmit($contactForm)
+    {
+        $crmcontact = new CRMContact($contactForm['email']);
+        $contact = $this->getContactByEmail($crmcontact->email);
+        if (!empty($contact)) {
+            $crmcontact->fillContactFromCRMContactObject($contact);
+        } else {
+            $crmcontact->company = $contactForm['company'];
+            $crmcontact->lastname = $contactForm['lastname'];
+            $crmcontact->mobile = $contactForm['mobile'];
+            $crmcontact->jobtitle = $contactForm['jobtitle'];
+        }
+
+        return $this->createContactUsLead($crmcontact, $contactForm['message'], $contactForm['product']);
+    }
+    public function processRequestAQuoteSubmit($data)
+    {
+        $crmcontact = new CRMContact($data['email']);
+        $contact = $this->getContactByEmail($crmcontact->email);
+        if (!empty($contact)) {
+            $crmcontact->fillContactFromCRMContactObject($contact);
+        } else {
+            $crmcontact->company = $data['company'];
+            $crmcontact->lastname = $data['name'];
+            $crmcontact->mobile = $data['billing_phone'];
+            $crmcontact->jobtitle = $data['jobtitle'];
+        }
+
+        $crmquoteproduct = new CRMQuoteProduct();
+
+        $crmquoteproduct->quantity = $data['volume'];
+        $crmquoteproduct->quantitycode = "T3";  // use 1000pc by default
+        $crmquoteproduct->application = "Chemical Resistant"; //options are: Chemical Resistant/Oil Resistant/Water and Steam Resistant
+        $crmquoteproduct->requiredby = "next week"; // free text
+        $crmquoteproduct->partnumber = $data['part-number'] ?? ''; // free text
+        $crmquoteproduct->comments = $data['additional-information'];  // free text
+        $crmquoteproduct->material = $data['o_ring']['material'] ?? '';
+        /*
+        CHLOROPRENE RUBBER - CR (Neoprene™)
+        ETHYLENE-PROPYLENE-DIENE RUBBER - EPDM
+        FLUOROCARBON RUBBER - FKM
+        FLUOROSILICONE - FVMQ
+        HYDROGENATED NITRILE - HNBR
+        NITRILE BUTADIENE RUBBER - NBR
+        SILICONE RUBBER - VMQ
+        TETRAFLUOROETHYLENE PROPYLENE - TFP (Aflas®)
+        */
+        $crmquoteproduct->hardness = $data['o_ring']['hardness'] ?? '';
+        $crmquoteproduct->product = $data['product']; // product of interest
+        $crmquoteproduct->dimensions = $data['dimension'] ?? '';
+        $crmquoteproduct->dimensionscode = "T3"; //1000pc
+        // required in SAP method, but not available in interface
+        $crmquoteproduct->dimid = "0.1";
+        $crmquoteproduct->dimidcode = "INH";
+        $crmquoteproduct->dimod = "0.5";
+        $crmquoteproduct->dimodcode = "INH";
+        $crmquoteproduct->dimwidth = "0.15";
+        $crmquoteproduct->dimwidthcode = "INH";
+        // end of required in SAP method, but not available in interface
+        $crmquoteproduct->compound = $data['o_ring']['compound'] ?? '';
+        $crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
+        $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
+        $crmquoteproduct->brand = "tst";
+
+        $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['files'][0] ?? '');
+        /** end of create contact object to use **/
+        $lead = $this->createSalesQuoteLead($crmquote);
+
+        return $lead;
     }
 
     public function testKMILeadCreation($email)
@@ -499,23 +563,8 @@ class CRMController
         $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $file);
         /** end of create contact object to use **/
         $lead = $this->createSalesQuoteLead($crmquote);
+
         return $lead;
-    }
-
-    public function processContactUsSubmit($contactForm)
-    {
-        $crmcontact = new CRMContact($contactForm['email']);
-        $contact = $this->getContactByEmail($crmcontact->email);
-        if (!empty($contact)) {
-            $crmcontact->fillContactFromCRMContactObject($contact);
-        } else {
-            $crmcontact->company = $contactForm['company'];
-            $crmcontact->lastname = $contactForm['lastname'];
-            $crmcontact->mobile = $contactForm['mobile'];
-            $crmcontact->jobtitle = $contactForm['jobtitle'];
-        }
-
-        return $this->createContactUsLead($crmcontact, $contactForm['message'], $contactForm['product']);
     }
 
     public function testContactUsLead($email)

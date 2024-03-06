@@ -1,6 +1,6 @@
 {
     "key": "group_5eb50203d2087",
-    "title": "User Custom Field",
+    "title": "User CRM",
     "fields": [
         {
             "key": "field_5eb502262938f",
@@ -45,7 +45,7 @@
         },
         {
             "key": "field_65d80f4aadf0f",
-            "label": "CRMAccountID",
+            "label": "AccountID",
             "name": "AccountID",
             "aria-label": "",
             "type": "text",
@@ -102,6 +102,46 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_65e7df5125bbd",
+            "label": "LeadID",
+            "name": "leadid",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65e7df5e25bbe",
+            "label": "Lead Type",
+            "name": "leadtype",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -122,5 +162,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709608568
+    "modified": 1709694846
 }
