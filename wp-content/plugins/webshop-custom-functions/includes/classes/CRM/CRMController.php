@@ -410,7 +410,7 @@ class CRMController
         $headers = $this->createPostHeader($token);
 
         $lead = $this->makePostRequest($url, $headers, $body);
-        return $lead->d->results;
+        return $lead->d->results ?? null;
     }
 
     public function processContactUsSubmit($contactForm)

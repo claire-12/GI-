@@ -166,6 +166,7 @@ function cabling_process_register_form()
         );
 
         if ($customer_id) {
+            $data['customer_id'] = $customer_id;
             do_action('gi_created_new_customer', $data);
 
             //JM 20230914
