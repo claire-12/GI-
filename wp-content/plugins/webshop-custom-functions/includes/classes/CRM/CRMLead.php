@@ -354,47 +354,46 @@ class CRMLead
         foreach ($options as $key) {
             $option = "";
             switch ($key) {
-                case "b_offers":
-                case "n_offers":
-                    $option = "001";
-                    break;
-                case "n_updates":
-                    $option = "002";
-                    break;
-                case "n_newsletters":
-                    $option = "003";
-                    break;
-                case "b_events":
                 case "n_events":
-                    $option = "004";
+                    $option = "Z08";
                     break;
-                case "b_surveys":
-                case "n_surveys":
-                    $option = "005";
-                    break;
-                case "b_announcements":
                 case "n_announcements":
                     $option = "Z01";
                     break;
-                case "b_blog":
                 case "n_blog":
                     $option = "Z02";
                     break;
-                case "b_news":
                 case "n_news":
                     $option = "Z03";
                     break;
-                case "b_reports":
                 case "n_reports":
                     $option = "Z04";
                     break;
-                case "b_webcasts":
                 case "n_webcasts":
                     $option = "Z05";
                     break;
                 case "n_webinars":
                     $option = "Z06";
                     break;
+                case "b_blog":
+                    $option = "Z13";
+                    break;
+                case "b_events":
+                    $option = "Z09";
+                    break;
+                case "b_announcements":
+                    $option = "Z14";
+                    break;
+                case "b_news":
+                    $option = "Z10";
+                    break;
+                case "b_reports":
+                    $option = "Z11";
+                    break;
+                case "b_webcasts":
+                    $option = "Z12";
+                    break;
+
             }
             $lst[] = $option;
         }
