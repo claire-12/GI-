@@ -309,17 +309,19 @@ class CRMController
             $token = $this->GetXCSRFToken();
         }
         //get mandatory fields from contact
-        $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
         if (!empty($crmcontact)) {
+            $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
             $crmcontact->fillContactFromCRMContactObject($contact); // fill the contact with SAP CRM data
         }
 
         $lead = new CRMLead();
-        $body = $lead->createKMILeadBody($crmcontact, $communicationoptions, $itemoptions);;
+        $body = $lead->createKMILeadBody($crmcontact, $communicationoptions, $itemoptions);
         $url = $this->baseURL . "LeadCollection";
         $headers = $this->createPostHeader($token);
 
-        return $this->makePostRequest($url, $headers, $body);
+        $request = $this->makePostRequest($url, $headers, $body);
+
+        return $request;
     }
 
     /***
@@ -426,6 +428,79 @@ class CRMController
 
         return $this->createContactUsLead($crmcontact, $contactForm['message'], $contactForm['product']);
     }
+
+    public function processKMILeadCreation($data)
+    {
+        $CRMContact = new CRMContact($data['email']);
+        if ($data['sms']) {
+            $CRMContact->phone = $data['sms'];
+        }
+
+        $communicationOptions = [
+            "tel" => false,
+            "whatsapp" => (bool)$data['whatsapp'],
+            "sms" => (bool)$data['sms']
+        ];
+
+        $lead = $this->createKMILead($CRMContact, $communicationOptions, $data['options']);
+        return $lead;
+    }
+
+    public function processAccountCreationLead($data)
+    {
+        $account = new CRMAccount();
+        $crmcontact = new CRMContact($data['user_email']);
+        $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
+        if (!empty($contact)) {
+            $crmcontact->fillContactFromCRMContactObject($contact); // fill the contact with SAP CRM data
+            return;
+        } else {
+            $account->company = $data['company-name'];
+            $account->firstname = $data['first-name'];
+            $account->lastname = $data['last-name'] ?? '';
+            $account->email = $data['user_email'];
+            $account->mobile = $data['billing_phone'];
+            $account->jobfunction = $data['job-title'];
+            $account->department = '0001'; //mandatory field from the list below
+            /*
+            Purchasing Dept.    0001
+            Sales Dept. 0002
+            Administration Dept.    0003
+            QA Assurance Dept.  0005
+            Secretary's Office  0006
+            Financial Dept. 0007
+            Legal Dept. 0008
+            R&D Dept.   0018
+            Product Dev Dept.   0019
+            Executive Board Z020
+            Packaging Dev Dept. Z021
+            Production Dept.    Z022
+            Quality Control Dept    Z023
+            Logistics Dept. Z024
+            Operations Dept.    Z025
+            Advanced Pur Dept.  Z026
+            Consulting Dept.    Z027
+            IT Dept.    Z28
+            Marketing Dept. Z29
+            Customer Ser Dept.  Z30
+            Audit Dept. Z31
+            HR Dept.    Z32
+            Engineering Z33
+            Project Management  Z34
+            Laboratory  Z35
+            Procurement Z36
+            Supply Chain Dept.  ZSC
+            */
+
+            $account->address = $data['billing_address_1']; //mandatory field (Text Field)
+            $account->city = 'Dream City'; //mandatory field
+            $account->state = ''; // State ISO code
+            $account->country = $data['billing_country']; //Country ISO Code
+            $account->postalcode = '1000-100'; // Postal Code
+        }
+        return $this->createAccountLead($account);
+    }
+
     public function processRequestAQuoteSubmit($data)
     {
         $crmcontact = new CRMContact($data['email']);
@@ -447,17 +522,7 @@ class CRMController
         $crmquoteproduct->requiredby = "next week"; // free text
         $crmquoteproduct->partnumber = $data['part-number'] ?? ''; // free text
         $crmquoteproduct->comments = $data['additional-information'];  // free text
-        $crmquoteproduct->material = $data['o_ring']['material'] ?? '';
-        /*
-        CHLOROPRENE RUBBER - CR (Neoprene™)
-        ETHYLENE-PROPYLENE-DIENE RUBBER - EPDM
-        FLUOROCARBON RUBBER - FKM
-        FLUOROSILICONE - FVMQ
-        HYDROGENATED NITRILE - HNBR
-        NITRILE BUTADIENE RUBBER - NBR
-        SILICONE RUBBER - VMQ
-        TETRAFLUOROETHYLENE PROPYLENE - TFP (Aflas®)
-        */
+        $crmquoteproduct->material = $data['material'] ?? '';
         $crmquoteproduct->hardness = $data['o_ring']['hardness'] ?? '';
         $crmquoteproduct->product = $data['product']; // product of interest
         $crmquoteproduct->dimensions = $data['dimension'] ?? '';
@@ -668,7 +733,7 @@ class CRMController
         //$email='jmartins123@infolabix.com';
         $email = 'john.doe@infolablix.com';
 
-        //$lead=$this->testKMILeadCreation($email);
+        $lead = $this->testKMILeadCreation($email);
         //dd($lead);
         $file = "C://xampp8.0/htdocs/pim-gi/public/storage/productthumbs/ptype_1706791744.png";
         $lead = $this->testSalesQuoteLeadCreation($email, $file);
@@ -677,7 +742,7 @@ class CRMController
         //$lead=$this->testContactUsLead($email);
         //dd($lead);
 
-        //$lead=$this->testAccountCreationLead($email);
+        $lead=$this->testAccountCreationLead($email);
         //dd($lead);
 
         $file = "C://xampp8.0/htdocs/pim-gi/public/storage/productthumbs/ptype_1706791744.png";

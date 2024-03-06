@@ -112,10 +112,10 @@ class UserInformed
         if (isset($data['_wpnonce']) && wp_verify_nonce($data['_wpnonce'], 'setting-account-action')){
             $verified_recapcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
             if (empty($verified_recapcha)){
-                wp_send_json_error(__('reCAPTCHA verification failed. Please try again!', 'cabling'));
+                //wp_send_json_error(__('reCAPTCHA verification failed. Please try again!', 'cabling'));
             }
             $success = __('Subscription successfully!', 'cabling');
-
+            $informedData = [];
             if (is_user_logged_in()){
                 $user = wp_get_current_user();
 
@@ -140,6 +140,9 @@ class UserInformed
                 }
             }
 
+            $informedData['email'] = $email;
+            $informedData['category'] = $data['category'];
+
             if (!empty($data['informed_channel']['email']) && filter_var($email, FILTER_VALIDATE_EMAIL)){
                 self::update_informed_channel('email', $email, $data['category']);
 
@@ -152,15 +155,19 @@ class UserInformed
                 self::remove_informed_channel('email');
             }
             if (!empty($data['informed_channel']['sms']) && !empty($sms)){
+                $informedData['sms'] = $sms;
                 self::update_informed_channel('sms', $sms, $data['category']);
             } else {
                 self::remove_informed_channel('sms');
             }
             if (!empty($data['informed_channel']['whatsapp']) && !empty($whatsapp)){
+                $informedData['whatsapp'] = $whatsapp;
                 self::update_informed_channel('whatsapp', $whatsapp, $data['category']);
             } else {
                self::remove_informed_channel('whatsapp');
             }
+
+            do_action('saved_user_keep_informed', $informedData);
 
             wp_send_json_success($success);
         }

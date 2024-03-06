@@ -166,6 +166,7 @@ function cabling_process_register_form()
         );
 
         if ($customer_id) {
+            do_action('gi_created_new_customer', $data);
 
             //JM 20230914
             $user_id = wp_update_user(array('ID' => $customer_id, 'display_name' => $data['first-name'] . ' ' . $data['last-name']));

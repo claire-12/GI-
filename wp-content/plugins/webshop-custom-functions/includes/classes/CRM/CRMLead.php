@@ -1,4 +1,5 @@
 <?php
+
 class CRMLead
 {
     public $leadid;
@@ -350,47 +351,52 @@ class CRMLead
     private function getKMIComunicationSubscriptionsRegisteredAccount($options)
     {
         $lst = [];
-        foreach ($options as $optionitem => $sub) {
-            if ($sub) {
-                $optionitem = strtolower($optionitem);
-                $option = "";
-                switch ($optionitem) {
-                    case "offers":
-                        $option = "001";
-                        break;
-                    case "updates":
-                        $option = "002";
-                        break;
-                    case "newsletters":
-                        $option = "003";
-                        break;
-                    case "events":
-                        $option = "004";
-                        break;
-                    case "surveys":
-                        $option = "005";
-                        break;
-                    case "announcements":
-                        $option = "Z01";
-                        break;
-                    case "blog":
-                        $option = "Z02";
-                        break;
-                    case "news":
-                        $option = "Z03";
-                        break;
-                    case "reports":
-                        $option = "Z04";
-                        break;
-                    case "webcasts":
-                        $option = "Z05";
-                        break;
-                    case "webinars":
-                        $option = "Z06";
-                        break;
-                }
-                array_push($lst, $option);
+        foreach ($options as $key) {
+            $option = "";
+            switch ($key) {
+                case "b_offers":
+                case "n_offers":
+                    $option = "001";
+                    break;
+                case "n_updates":
+                    $option = "002";
+                    break;
+                case "n_newsletters":
+                    $option = "003";
+                    break;
+                case "b_events":
+                case "n_events":
+                    $option = "004";
+                    break;
+                case "b_surveys":
+                case "n_surveys":
+                    $option = "005";
+                    break;
+                case "b_announcements":
+                case "n_announcements":
+                    $option = "Z01";
+                    break;
+                case "b_blog":
+                case "n_blog":
+                    $option = "Z02";
+                    break;
+                case "b_news":
+                case "n_news":
+                    $option = "Z03";
+                    break;
+                case "b_reports":
+                case "n_reports":
+                    $option = "Z04";
+                    break;
+                case "b_webcasts":
+                case "n_webcasts":
+                    $option = "Z05";
+                    break;
+                case "n_webinars":
+                    $option = "Z06";
+                    break;
             }
+            $lst[] = $option;
         }
         return implode(",", $lst);
     }
