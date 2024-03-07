@@ -27,6 +27,7 @@ $fieldList = cabling_get_product_table_attributes();
 $filterValues = show_filter_value($fieldList, $product->get_id());
 ?>
 <tr class="<?php echo implode(' ', $filterValues) ?>">
+	<td><?php cabling_add_quote_button($product->get_id()) ?></td>
     <?php foreach ($fieldList as $key => $attribute): ?>
          <?php $value = get_product_field($key, $product->get_id()); ?>
         <?php if ($key === '_sku'): ?>
@@ -37,5 +38,5 @@ $filterValues = show_filter_value($fieldList, $product->get_id());
                 data-align="center"><?php echo $value ?? '---' ?></td>
         <?php endif ?>
     <?php endforeach ?>
-    <td><?php cabling_add_quote_button($product->get_id()) ?></td>
+<!--    <td><?php cabling_add_quote_button($product->get_id()) ?></td> -->
 </tr>

@@ -218,7 +218,7 @@
                     <?php endif ?>
                     <div class="col-md-12 col-lg-6">
                         <div class="mb-3 form-group1">
-                            <?php product_of_interest_field($product_of_interest) ?>
+                            <?php product_of_interest_field($product_of_interest ?? '') ?>
                         </div>
                         <div class="mb-3 form-group">
                             <input type="text" class="form-control" name="when-needed" id="when-needed"
@@ -228,7 +228,7 @@
                                         class="required">*</span></label>
                         </div>
                         <div class="mb-3 form-group">
-                            <input type="text" class="form-control" name="volume" id="volume"
+                            <input type="number" class="form-control" name="volume" id="volume"
                                    value="<?php echo $volume ?? '' ?>"
                             >
                             <label for="volume" class="form-label">Quantity needed</label>
@@ -263,20 +263,20 @@
                          style="flex-direction: column;justify-content: space-between; padding-bottom: 16px;">
                         <div class="o-ring-block position-relative">
                             <h5>O-RINGS / BACKUP RINGS ONLY</h5>
-                            <div class="mb-3 form-group">
-                                <input type="text" class="form-control" name="o_ring[desired-application]"
-                                       id="desired-application"
-                                       value="<?php echo $desired_application ?? '' ?>"
-                                >
-                                <label for="desired-application" class="form-label">Desired Application</label>
+                            <div class="mb-3 form-group1">
+                                <?php product_desired_application_field() ?>
                             </div>
-                            <div class="mb-3 form-group">
-                                <input type="text" class="form-control" name="o_ring[material]" id="material"
-                                       value="<?php echo $material ?? '' ?>"
-                                >
-                                <label for="material" class="form-label">Material: <span
-                                            class="help">Buna-N</span></label>
-                            </div>
+                            <?php if (empty($material)): ?>
+                                <div class="mb-3">
+                                    <?php product_material_field() ?>
+                                </div>
+                            <?php else: ?>
+                                <div class="mb-3 form-group">
+                                    <input type="text" class="form-control" name="o_ring[material]" id="material" value="<?php echo $material ?>" readonly>
+                                    <label for="material" class="form-label">Material: <span
+                                                class="help">Buna-N</span></label>
+                                </div>
+                            <?php endif ?>
                             <div class="mb-3 form-group">
                                 <input type="text" class="form-control" name="o_ring[hardness]" id="hardness"
                                        value="<?php echo $hardness ?? '' ?>"

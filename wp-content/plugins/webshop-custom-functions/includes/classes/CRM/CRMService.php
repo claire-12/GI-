@@ -37,11 +37,11 @@ class CRMService
             'CR' => 'CHLOROPRENE RUBBER - CR (Neoprene™)',
             'EPDM' => 'ETHYLENE-PROPYLENE-DIENE RUBBER - EPDM',
             'FKM' => 'FLUOROCARBON RUBBER - FKM',
-            'FVMQ' => 'FLUOROSILICONE-FVMQ',
+            'FVMQ' => 'FLUOROSILICONE - FVMQ',
             'HNBR' => 'HYDROGENATED NITRILE - HNBR',
             'NBR' => 'NITRILE BUTADIENE RUBBER - NBR',
             'TFP' => 'TETRAFLUOROETHYLENE PROPYLENE - TFP (Aflas®)',
-            'VMQ' => 'SILICONE RUBBER - VMQ	',
+            'VMQ' => 'SILICONE RUBBER - VMQ',
         );
 
         return array_search($material, $materials);
@@ -86,9 +86,15 @@ class CRMService
 
     public function crm_action_after_form_submission($result, $submission)
     {
+        /*if ($result['status'] != 'mail_sent'){
+            return $result;
+        }*/
         try {
             // Retrieve the posted data
             $posted_data = $submission->get_posted_data();
+            if (empty($posted_data['your-name'])){
+                return false;
+            }
             $name_title = get_name_title($posted_data['your-title'][0]);
             $productofinterest = get_product_of_interests($posted_data['your-product'][0]);
             if (!empty($productofinterest) && !empty($name_title)) {
@@ -127,10 +133,24 @@ class CRMService
         try {
             $name_title = get_name_title($quote['user_title']);
             $product = get_product_of_interests($quote['product-of-interest']);
+            $brandId = get_field('brand');
             $quote['jobtitle'] = is_array($name_title) ? array_key_first($name_title) : $name_title;
             $quote['product'] = $product;
+            $quote['brand'] = $product;
+            $quote['application'] = $quote['o_ring']['desired-application'] ?? '';
             if (!empty($quote['o_ring']['material'])) {
                 $quote['material'] = $this->getMaterialCode($quote['o_ring']['material']);
+            }
+            if (!empty($quote['files'])) {
+                $filAray = explode(',', $quote['files']);
+                $filepath = wp_get_attachment_url($filAray[0]);
+                $quote['file'] = $filepath;
+            }
+            if (!empty($brandId)){
+                $brand = get_term($brandId, 'product-brand');
+                if ($brand){
+                    $quote['brand'] = $brand->slug;
+                }
             }
 
             $crm = new CRMController();

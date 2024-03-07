@@ -805,7 +805,6 @@ function cabling_get_products_ajax_callback()
                     $resultMetas['product_compound'] = $productCompoundCertification;
                 }
             }
-
             wp_send_json_success([
                 'category' => $category->name ?? '',
                 'results' => $results,

@@ -13,6 +13,11 @@
         }
     })
 
+    /*$('form.wpcf7-form').on('submit', function() {
+        showLoading();
+        return true;
+    });*/
+
     $(document).on('change', '.wpcf7-form-control', function () {
         if ($(this).val() === '') {
             $(this).closest('p').removeClass('has-focus');

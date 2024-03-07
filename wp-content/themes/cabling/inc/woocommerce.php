@@ -405,9 +405,9 @@ function cabling_account_menu_items()
     //$new_items['orders'] = __('Order history', 'cabling');
     //$new_items['products'] = __('Purchases', 'cabling');
 
-	//$new_items['quotations'] = __('My Quotes', 'cabling');
+    //$new_items['quotations'] = __('My Quotes', 'cabling');
 
-	//$new_items['messages'] = __('Messages', 'cabling');
+    //$new_items['messages'] = __('Messages', 'cabling');
     $new_items['request-a-quote'] = __('REQUEST A QUOTE', 'cabling');
     $new_items['contact-form'] = __('Help & Contact', 'cabling');
 
@@ -812,12 +812,13 @@ function cabling_get_product_table_attributes(): array
         'milimeters_id' => __('Millimeters I.D.', 'cabling'),
         'milimeters_width' => __('Millimeters CS', 'cabling'),
         'product_hardness' => __('Hardness', 'cabling'),
+		'_sku' => __('SKU', 'cabling'), // JM 20240307 Changed column order
         'product_specifications_met' => __('Specifications Met', 'cabling'),
         'product_operating_temp' => __('Temperature Range, °F', 'cabling'),
         'product_colour' => __('Colour', 'cabling'),
         //'_stock' => __('Pkg Qty.', 'cabling'),
         //'_sku' => '',
-        '_sku' => __('SKU', 'cabling'),
+        //'_sku' => __('SKU', 'cabling'),
     );
     return $list_fields;
 }
@@ -2047,33 +2048,34 @@ function get_available_attributes(array $product_ids): ?array
 
 function company_name_field()
 {
-    $businessPlanSections = array(
-        "Accounting",
-        "Administrative",
-        "Arts and Design",
-        "Business Development",
-        "Community and Social Services",
-        "Consulting",
-        "Education",
-        "Engineering",
-        "Entrepreneurship",
-        "Finance",
-        "Healthcare Services",
-        "Human Resources",
-        "Information Technology",
-        "Legal",
-        "Marketing",
-        "Media and Communication",
-        "Military and Protective Services",
-        "Operations",
-        "Product Management",
-        "Program and Project Management",
-        "Purchasing",
-        "Quality Assurance",
-        "Real Estate",
-        "Research",
-        "Sales",
-        "Support",
+    $departments = array(
+        "0001" => "Purchasing",
+        "0002" => "Sales",
+        "0003" => "Administration",
+        "0005" => "QA Assurance",
+        "0006" => "Secretary's Office",
+        "0007" => "Financial",
+        "0008" => "Legal",
+        "0018" => "R&D",
+        "0019" => "Product Dev",
+        "Z020" => "Executive Board",
+        "Z021" => "Packaging Dev",
+        "Z022" => "Production",
+        "Z023" => "Quality Control Dept",
+        "Z024" => "Logistics",
+        "Z025" => "Operations",
+        "Z026" => "Advanced Pur",
+        "Z027" => "Consulting",
+        "Z28" => "IT",
+        "Z29" => "Marketing",
+        "Z30" => "Customer Ser",
+        "Z31" => "Audit",
+        "Z32" => "HR",
+        "Z33" => "Engineering",
+        "Z34" => "Project Management",
+        "Z35" => "Laboratory",
+        "Z36" => "Procurement",
+        "ZSC" => "Supply Chain",
     );
 
     if (isset($_REQUEST['company-sector'])) {
@@ -2086,7 +2088,7 @@ function company_name_field()
 
     $field = '';
     $options = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
-    foreach ($businessPlanSections as $option_text) {
+    foreach ($departments as $option_text) {
         $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($company, $option_text, false) . '>' . esc_html($option_text) . '</option>';
     }
 
@@ -2106,6 +2108,7 @@ function get_name_title($value = null)
     }
     return $titles;
 }
+
 function get_product_of_interests($value = null)
 {
     $product_of_interests = [
@@ -2128,6 +2131,19 @@ function get_product_of_interests($value = null)
     return $product_of_interests;
 }
 
+function get_desired_applications($value = null)
+{
+    $desired_applications = [
+        'Chemical Resistant',
+        'Oil Resistant',
+        'Water and Steam Resistant',
+    ];
+    if (!empty($value)) {
+        return in_array($value, $desired_applications) ? $value : '';
+    }
+    return $desired_applications;
+}
+
 function product_of_interest_field($value = '')
 {
     $product_of_interests = get_product_of_interests();
@@ -2141,4 +2157,43 @@ function product_of_interest_field($value = '')
     $field .= '<select name="product-of-interest" id="product-of-interest" class="select form-select" required>' . $options . '</select>';
 
     echo '<p class="form-row w-100"><label for="product-of-interest">' . __('Product Of Interest', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
+}
+
+function product_desired_application_field($value = '')
+{
+    $desired_applications = get_desired_applications();
+
+    $field = '';
+    $options = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
+    foreach ($desired_applications as $option_text) {
+        $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($value, $option_text, false) . '>' . esc_html($option_text) . '</option>';
+    }
+
+    $field .= '<select name="o_ring[desired-application]" id="desired-application" class="select form-select" required>' . $options . '</select>';
+
+    echo '<p class="w-100"><label for="desired-application">' . __('Desired Application', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
+}
+
+function product_material_field($value = '')
+{
+    $materials = array(
+        'CR' => 'CHLOROPRENE RUBBER - CR (Neoprene™)',
+        'EPDM' => 'ETHYLENE-PROPYLENE-DIENE RUBBER - EPDM',
+        'FKM' => 'FLUOROCARBON RUBBER - FKM',
+        'FVMQ' => 'FLUOROSILICONE-FVMQ',
+        'HNBR' => 'HYDROGENATED NITRILE - HNBR',
+        'NBR' => 'NITRILE BUTADIENE RUBBER - NBR',
+        'TFP' => 'TETRAFLUOROETHYLENE PROPYLENE – TFP (Aflas®)',
+        'VMQ' => 'SILICONE RUBBER - VMQ	',
+    );
+
+    $field = '';
+    $options = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
+    foreach ($materials as $option_text) {
+        $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($value, $option_text, false) . '>' . esc_html($option_text) . '</option>';
+    }
+
+    $field .= '<select name="o_ring[material]" id="material" class="select form-select">' . $options . '</select>';
+
+    echo '<p class="w-100"><label for="material">' . __('Material', 'woocommerce') . '</label>' . $field . '</p>';
 }

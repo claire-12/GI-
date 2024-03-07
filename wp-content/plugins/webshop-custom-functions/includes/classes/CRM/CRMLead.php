@@ -21,18 +21,37 @@ class CRMLead
         }
     }
 
-    public function createFileLeadBody($filepath)
+    public function get_mime_type_from_url($file_url)
     {
-        $mime = mime_content_type($filepath);
+        // Use WordPress HTTP API to fetch the remote file
+        $response = wp_remote_head($file_url);
+
+        if (is_wp_error($response)) {
+            return $response->get_error_message();
+        } else {
+            // Get headers from the response
+            $headers = wp_remote_retrieve_headers($response);
+
+            // Extract content type header
+            $content_type = isset($headers['content-type']) ? $headers['content-type'] : '';
+
+            return $content_type;
+        }
+    }
+
+
+    public function createFileLeadBody($file_url)
+    {
+        $filebin = file_get_contents($file_url);
         $body = [];
         $body["CategoryCode"] = "2";  // Always 2
         $body["LeadID"] = $this->leadid;
-        $body["MimeType"] = $mime;  // Changes based on type of file
+        $body["MimeType"] = $this->get_mime_type_from_url($file_url);  // Changes based on type of file
         $body["Name"] = "Sales-Quote"; // mandatory
         $body["ParentObjectID"] = $this->leadparentobjectid;  // Same LeadObjectID from LeadCollection
         $body["TypeCode"] = "10001";  // Always 10001
-        $filebin = file_get_contents($filepath);
         $body["Binary"] = base64_encode($filebin);
+
         return json_encode($body);
     }
 
@@ -175,11 +194,11 @@ class CRMLead
         $rfq["Temperature_KUT"] = $product->temperature;
 
         //dimensions
-        $rfq["IDContent_KUT"] = $product->dimid ?? $product->dimensions ?? "N/A";
+        $rfq["IDContent_KUT"] = $product->dimid ?? $product->dimensions ?? "0";
         $rfq["IDUnitCode_KUT"] = $product->dimidcode ?? "N/A";
-        $rfq["ODContent_KUT"] = $product->dimod ?? "N/A";
+        $rfq["ODContent_KUT"] = $product->dimod ?? "0";
         $rfq["ODUnitCode_KUT"] = $product->dimodcode ?? "N/A";
-        $rfq["WidthContent_KUT"] = $product->dimwidth ?? "N/A";
+        $rfq["WidthContent_KUT"] = $product->dimwidth ?? "0";
         $rfq["WidthUnitCode_KUT"] = $product->dimwidthcode ?? "N/A";
         $rfq["Material_KUT"] = $product->material ?? "N/A";
         /*

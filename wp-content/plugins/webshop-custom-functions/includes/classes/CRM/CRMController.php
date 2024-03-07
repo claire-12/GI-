@@ -2,9 +2,16 @@
 
 class CRMController
 {
-    private string $baseURL = "https://my336469.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/";
-    private string $username = "B2B_INT_USER";
-    private string $password = "Datwyler@123456789";
+    private string $baseURL;
+    private string $username;
+    private string $password;
+
+    public function __construct()
+    {
+        $this->baseURL = get_field('crm_base_url', 'option');
+        $this->username = get_field('crm_username', 'option');
+        $this->password = get_field('crm_password', 'option');
+    }
 
     /**
      * Encode Credentials to Base64
@@ -70,7 +77,8 @@ class CRMController
     {
         $response = wp_remote_post($url, array(
             'headers' => $headers,
-            'body' => $body
+            'body' => $body,
+            'timeout' => 60
         ));
 
         if (is_wp_error($response)) {
@@ -90,7 +98,8 @@ class CRMController
     private function makeGetRequest($url)
     {
         $response = wp_remote_get($url, array(
-            'headers' => $this->createGetHeader()
+            'headers' => $this->createGetHeader(),
+            'timeout' => 60
         ));
 
         if (is_wp_error($response)) {
@@ -457,7 +466,7 @@ class CRMController
         } else {
             $account->company = $data['company-name'];
             $account->firstname = $data['first-name'];
-            $account->lastname = $data['first-name'];
+            $account->lastname = 'N/A';
             $account->email = $data['user_email'];
             $account->mobile = $data['billing_phone'];
             $account->jobfunction = $data['job-title'];
@@ -492,11 +501,11 @@ class CRMController
             Supply Chain Dept.  ZSC
             */
 
-            $account->address = $data['billing_address_1']; //mandatory field (Text Field)
-            $account->city = 'Dream City'; //mandatory field
-            $account->state = ''; // State ISO code
-            $account->country = $data['billing_country']; //Country ISO Code
-            $account->postalcode = '1000-100'; // Postal Code
+            $account->address = $data['billing_address_1'];
+            $account->city = 'N/A';
+            $account->state = 'N/A';
+            $account->country = $data['billing_country'];
+            $account->postalcode = 'N/A';
         }
         return $this->createAccountLead($account);
     }
@@ -516,9 +525,9 @@ class CRMController
 
         $crmquoteproduct = new CRMQuoteProduct();
 
-        $crmquoteproduct->quantity = $data['volume'];
+        $crmquoteproduct->quantity = (int)$data['volume'];
         $crmquoteproduct->quantitycode = "T3";  // use 1000pc by default
-        $crmquoteproduct->application = "Chemical Resistant"; //options are: Chemical Resistant/Oil Resistant/Water and Steam Resistant
+        $crmquoteproduct->application = $data['application']; //options are: Chemical Resistant/Oil Resistant/Water and Steam Resistant
         $crmquoteproduct->requiredby = "next week"; // free text
         $crmquoteproduct->partnumber = $data['part-number'] ?? ''; // free text
         $crmquoteproduct->comments = $data['additional-information'];  // free text
@@ -538,9 +547,9 @@ class CRMController
         $crmquoteproduct->compound = $data['o_ring']['compound'] ?? '';
         $crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
         $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
-        $crmquoteproduct->brand = "tst";
+        $crmquoteproduct->brand = $data['brand'] ?? '';
 
-        $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['files'][0] ?? '');
+        $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
         /** end of create contact object to use **/
         $lead = $this->createSalesQuoteLead($crmquote);
 
