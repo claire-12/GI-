@@ -372,6 +372,7 @@ class CRMController
         $headers = $this->createPostHeader($token);
 
         $res = $this->makePostRequest($url, $headers, $body);
+        wp_mail('daisy.nguyen0806@gmail.com', '[CRM createSalesQuoteLead]', json_encode($res));
         $lead->loadLead($res);
         if ($lead->leadid > 0) {
             if ($crmsalesquote->getFilePath() != null) {
@@ -525,7 +526,7 @@ class CRMController
 
         $crmquoteproduct = new CRMQuoteProduct();
 
-        $crmquoteproduct->quantity = (int)$data['volume'];
+        $crmquoteproduct->quantity = $data['volume'];
         $crmquoteproduct->quantitycode = "T3";  // use 1000pc by default
         $crmquoteproduct->application = $data['application']; //options are: Chemical Resistant/Oil Resistant/Water and Steam Resistant
         $crmquoteproduct->requiredby = "next week"; // free text
@@ -548,7 +549,7 @@ class CRMController
         $crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
         $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
         $crmquoteproduct->brand = $data['brand'] ?? '';
-
+var_dump($data, $crmquoteproduct);
         $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
         /** end of create contact object to use **/
         $lead = $this->createSalesQuoteLead($crmquote);
