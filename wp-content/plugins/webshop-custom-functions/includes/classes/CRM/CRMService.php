@@ -47,6 +47,43 @@ class CRMService
         return array_search($material, $materials);
     }
 
+    private function getDepartmentCode(string $department): string
+    {
+        $departments = array(
+            "0001" => "Purchasing",
+            "0002" => "Sales",
+            "0003" => "Administration",
+            "0005" => "QA Assurance",
+            "0006" => "Secretary's Office",
+            "0007" => "Financial",
+            "0008" => "Legal",
+            "0018" => "R&D",
+            "0019" => "Product Dev",
+            "Z020" => "Executive Board",
+            "Z021" => "Packaging Dev",
+            "Z022" => "Production",
+            "Z023" => "Quality Control Dept",
+            "Z024" => "Logistics",
+            "Z025" => "Operations",
+            "Z026" => "Advanced Pur",
+            "Z027" => "Consulting",
+            "Z28" => "IT",
+            "Z29" => "Marketing",
+            "Z30" => "Customer Ser",
+            "Z31" => "Audit",
+            "Z32" => "HR",
+            "Z33" => "Engineering",
+            "Z34" => "Project Management",
+            "Z35" => "Laboratory",
+            "Z36" => "Procurement",
+            "ZSC" => "Supply Chain",
+        );
+
+        $key = array_search($department, $departments);
+
+        return $key ?? '0001';
+    }
+
     public function crm_action_after_form_submission($result, $submission)
     {
         try {
@@ -114,23 +151,28 @@ class CRMService
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
     }
+
     public function crm_action_after_gi_created_new_customer($data)
     {
         try {
+            $data['department'] = '0001';
+            if (!empty($data['company-sector'])) {
+                $data['department'] = $this->getDepartmentCode($data['company-sector']);
+            }
+
             $crm = new CRMController();
             $lead = $crm->processAccountCreationLead($data);
 
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_gi_created_new_customer', json_encode($data) . '####' . json_encode($lead));
 
-            /*if (!empty($lead->leadid)) {
+            if ($lead) {
                 $dataCRM = array(
-                    'leadid' => $lead->leadid,
-                    'leadtype' => $lead->leadtype,
-                    'ContactID' => $lead->contactid,
-                    'AccountID' => $lead->accountid,
+                    'AccountID' => $lead->AccountPartyID,
+                    'ExternalID' => $lead->ExternalID,
+                    'ContactID' => $lead->ContactID,
                 );
-                $this->saveCRMData($quote['email'], $dataCRM);
-            }*/
+                $this->saveCRMData($data['user_email'], $dataCRM);
+            }
         } catch (Exception $e) {
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_gi_created_new_customer', $e->getMessage() . '###' . $e->getTraceAsString());
         }
@@ -157,14 +199,14 @@ class CRMService
                     $news = array_map(function ($slug) {
                         return "n_" . $slug;
                     }, $news);
-                    $data['options']['news'] = $news;
+                    $data['options'] = array_merge($data['options'], $news);
                 }
 
                 if ($blog) {
                     $blog = array_map(function ($slug) {
                         return "b_" . $slug;
                     }, $blog);
-                    $data['options']['blog'] = $blog;
+                    $data['options'] = array_merge($data['options'], $blog);
                 }
             }
             $crm = new CRMController();

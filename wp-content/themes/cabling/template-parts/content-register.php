@@ -79,7 +79,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     <label for="mobile-phone"><?php _e('Mobile Number', 'cabling') ?><span
                                 class="required">*</span></label>
                 </div>
-                <div class="form-group">
+                <div class="form-group1">
                         <label for="user_title"><?php esc_html_e('Title', 'woocommerce'); ?>&nbsp;<span
                                     class="required">*</span></label>
                         <?php woocommerce_form_field(

@@ -281,13 +281,13 @@ class CRMLead
             //add kmi comunication items
             $commitems = [];
             foreach ($listcomm as $item => $option) {
-                array_push($commitems, $this->getKMIComunicationItem($item, $option));
+                $commitems[] = $this->getKMIComunicationItem($item, $option);
             }
             $lead["LeadMarketingPermissionChannelPermission"] = $commitems;
             // add subscription options
             $options = [];
-            foreach ($listoptions as $item => $option) {
-                array_push($options, $this->getOptionItem($item, $option));
+            foreach ($listoptions as $item) {
+                $options[] = $this->getOptionItem($item, true);
             }
             $lead["LeadMarketingPermissionCommTypePermission"] = $options;
         }
@@ -432,45 +432,51 @@ class CRMLead
      * Options can be Offers/Updates/Newslatters/events/surveys/announcements/blog/news/reports/webcasts/webinars
      * Subscribe is true or false
      */
-    private function getOptionItem($option, $subscribe)
+    private function getOptionItem($option)
     {
         $option = strtolower($option);
         switch ($option) {
-            case "offers":
-                $option = "001";
+            case "n_events":
+                $option = "Z08";
                 break;
-            case "updates":
-                $option = "002";
-                break;
-            case "newsletters":
-                $option = "003";
-                break;
-            case "events":
-                $option = "004";
-                break;
-            case "surveys":
-                $option = "005";
-                break;
-            case "announcements":
+            case "n_announcements":
                 $option = "Z01";
                 break;
-            case "blog":
+            case "n_blog":
                 $option = "Z02";
                 break;
-            case "news":
+            case "n_news":
                 $option = "Z03";
                 break;
-            case "reports":
+            case "n_reports":
                 $option = "Z04";
                 break;
-            case "webcasts":
+            case "n_webcasts":
                 $option = "Z05";
                 break;
-            case "webinars":
+            case "n_webinars":
                 $option = "Z06";
                 break;
+            case "b_blog":
+                $option = "Z13";
+                break;
+            case "b_events":
+                $option = "Z09";
+                break;
+            case "b_announcements":
+                $option = "Z14";
+                break;
+            case "b_news":
+                $option = "Z10";
+                break;
+            case "b_reports":
+                $option = "Z11";
+                break;
+            case "b_webcasts":
+                $option = "Z12";
+                break;
         }
-        $item = ["CommunicationTypeCode" => $option, "SubscribedIndicator" => $subscribe];
+        $item = ["CommunicationTypeCode" => $option, "SubscribedIndicator" => true];
         return $item;
     }
 }

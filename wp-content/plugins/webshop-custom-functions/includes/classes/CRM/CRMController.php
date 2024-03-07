@@ -74,11 +74,13 @@ class CRMController
         ));
 
         if (is_wp_error($response)) {
+            wp_mail('daisy.nguyen0806@gmail.com', '[CRM ERROR]' . $url, $response->get_error_message());
             return [];
         } else {
             // Get the response body
             $response_body = wp_remote_retrieve_body($response);
             $data = json_decode($response_body);
+            wp_mail('daisy.nguyen0806@gmail.com', '[CRM SUCCESS]' . $url, $response_body);
             if (!empty($data->d->results))
                 return $data->d->results;
         }
@@ -92,12 +94,13 @@ class CRMController
         ));
 
         if (is_wp_error($response)) {
-            wp_mail('dangminhtuan0207@gmail.com', $url, $response->get_error_message());
+            wp_mail('daisy.nguyen0806@gmail.com', '[CRM ERROR]' . $url, $response->get_error_message());
             return [];
         } else {
             // Get the response body
             $body = wp_remote_retrieve_body($response);
             $data = json_decode($body);
+            wp_mail('daisy.nguyen0806@gmail.com', '[CRM SUCCESS]' . $url, $body);
             if (count($data->d->results) > 0)
                 return $data->d->results[0];
         }
@@ -387,10 +390,7 @@ class CRMController
         $headers = $this->createPostHeader($token);
 
         $res = $this->makePostRequest($url, $headers, $body);
-        return $res->d->results;
-        $resultlead = new CRMLead();
-        //$resultlead->loadLead($res->d->results);
-        return $resultlead;
+        return $res;
     }
 
     /***
@@ -410,7 +410,7 @@ class CRMController
         $headers = $this->createPostHeader($token);
 
         $lead = $this->makePostRequest($url, $headers, $body);
-        return $lead->d->results ?? null;
+        return $lead ?? null;
     }
 
     public function processContactUsSubmit($contactForm)
@@ -457,11 +457,11 @@ class CRMController
         } else {
             $account->company = $data['company-name'];
             $account->firstname = $data['first-name'];
-            $account->lastname = $data['last-name'] ?? '';
+            $account->lastname = $data['first-name'];
             $account->email = $data['user_email'];
             $account->mobile = $data['billing_phone'];
             $account->jobfunction = $data['job-title'];
-            $account->department = '0001'; //mandatory field from the list below
+            $account->department = $data['department']; //mandatory field from the list below
             /*
             Purchasing Dept.    0001
             Sales Dept. 0002
