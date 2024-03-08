@@ -55,6 +55,8 @@ input[type="text"]:disabled {
 .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     /*max-width: 77.5rem;*/
     max-width: 95vw;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .box-column a .bottom_link {
@@ -1319,6 +1321,7 @@ input.invalid,
     text-align: center;
     font-size: 18px
 }
+
 .show-email-share {
     display: flex;
     align-items: center;
@@ -1331,27 +1334,33 @@ input.invalid,
     color: #fff;
     font-size: 1.5em;
 }
+
 .show-email-share .dropdown-item {
     font-size: 1.15rem;
 }
+
 .show-email-share .dropdown-toggle {
     background: #d51c23 !important;
     border-color: #d51c23 !important;
 }
-.show-email-share .dropdown-toggle::after{
+
+.show-email-share .dropdown-toggle::after {
     display: none;
 }
-.show-email-share .dropdown-menu i{
+
+.show-email-share .dropdown-menu i {
     color: #45bfe1;
 }
+
 .show-email-share .dropdown-toggle {
-    background: #e6e6e6!important;
-    border-color: transparent!important;
+    background: #e6e6e6 !important;
+    border-color: transparent !important;
     padding: 0px 10px;
     font-size: 1.85rem;
     color: #d51c23;
     border-radius: 50%;
 }
+
 @media (min-width: 500px) {
     .multisteps-form__progress-btn {
         text-indent: 0
@@ -2661,6 +2670,7 @@ input:checked + .slider:before {
     padding-right: 25px;
     position: relative;
 }
+
 .filter-blog.no-results::before {
     content: '';
     display: block;
@@ -2671,6 +2681,7 @@ input:checked + .slider:before {
     z-index: 99;
     cursor: not-allowed;
 }
+
 .filter-blog .accordion-item,
 .filter-blog .accordion-item .accordion-button {
     border-radius: 0;
@@ -3497,13 +3508,16 @@ label .help {
     font-weight: 600;
     padding: 5px 0;
 }
+
 .tablepress-table-name {
     font-size: 1.35rem;
 }
+
 #tablepress-22 td {
     text-align: left;
     padding: 5px 15px;
 }
+
 table.tablepress {
     border-top: 1px solid #fff;
     --text-color: #fff;
@@ -3526,7 +3540,7 @@ table.tablepress tr td {
     padding: 2px 0
 }
 
-table.tablepress tr:nth-child(odd) td{
+table.tablepress tr:nth-child(odd) td {
     background: #e7f3f6;
 }
 
@@ -3553,9 +3567,10 @@ table.tablepress tr:nth-child(even) td {
 .tablepress.tablepress-id-9 .row-11 td,
 .tablepress.tablepress-id-9 .row-13 td,
 .tablepress.tablepress-id-3 .row-3 td,
-.tablepress.tablepress-id-2 .row-5 td{
-    background: #e7f3f6 ;
+.tablepress.tablepress-id-2 .row-5 td {
+    background: #e7f3f6;
 }
+
 .tablepress.tablepress-id-11 .row-12 td,
 .tablepress.tablepress-id-11 .row-14 td,
 .tablepress.tablepress-id-11 .row-16 td,
@@ -3579,9 +3594,10 @@ table.tablepress tr:nth-child(even) td {
 .tablepress.tablepress-id-3 .row-6 td,
 .tablepress.tablepress-id-3 .row-8 td,
 .tablepress.tablepress-id-2 .row-8 td,
-.tablepress.tablepress-id-2 .row-4 td{
+.tablepress.tablepress-id-2 .row-4 td {
     background: #d0e5e7;
 }
+
 .toggle-table .column-1 {
     max-width: 400px;
     width: 400px;
@@ -3603,82 +3619,122 @@ table.tablepress tr:nth-child(even) td {
     font-size: 1.35rem;
     margin-top: 25px;
 }
+
 .filter-params .item.clear-all {
     display: none;
 }
+
 .filter-params.is-multiple .item.clear-all {
     display: block;
 }
+
 .quote-product-overview h4 {
     display: none;
 }
+
 .quote-product-overview .value {
     margin-bottom: 0;
 }
+
 .quote-product-overview .product-overview .overview-item {
     margin-bottom: 5px;
 }
+
 .quote-product-overview .pdp-attribute {
     margin-bottom: 0 !important;
 }
+
 .quote-product-overview {
     margin-bottom: 15px;
 }
+
 .quote-product-overview h5 {
     font-size: 1rem;
 }
+
 .tax-compound_certification .entry-header img {
     width: 100%;
     height: 350px;
     object-fit: cover;
 }
+
 .confirm-notice {
     max-width: 800px;
     margin: 0 auto 35px;
 }
 
-.compoundtablewrap > td
-{
-	text-wrap: wrap;
+.compoundtablewrap > td {
+    text-wrap: wrap;
 }
+
 table.tablepress-id-52 tr td {
     color: #111 !important;
     padding: 10px 5px;
 }
+
 table.tablepress-id-52 tr .column-1 {
     text-align: left;
     padding-left: 15px;
     background: #82c0c8 !important;
     font-weight: 600;
 }
+
 table.tablepress-id-52 tr.row-1 .column-1 {
     background: #fff !important;
 }
+
 table.tablepress-id-52 tr.row-2 td {
     background: #0f828f !important;
     color: #fff !important;
     font-weight: 600;
 }
+
 table.tablepress-id-52 tr .column-2,
 table.tablepress-id-52 tr .column-4,
 table.tablepress-id-52 tr .column-6 {
     background: #c0e0e5 !important;
 }
+
 table.tablepress-id-52 tr .column-3,
 table.tablepress-id-52 tr .column-5,
 table.tablepress-id-52 tr .column-7 {
     background: #e5f3f4 !important;
 }
+
 .group-gallery .wp-block-gallery {
     align-items: center !important;
     flex-wrap: nowrap;
 }
-.group-gallery .wp-block-gallery img{
+
+.group-gallery .wp-block-gallery img {
     object-fit: scale-down !important;
 }
 
 /** JM 20240304 added padding for rows to become correct under clients resolution (1080p 150% ) */
-.row{
+/*.row{
 	padding-left:35px;
 	padding-right:35px;
+}*/
+.contact-form-input label.label {
+    top: -10px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.wpcf7-form-control-wrap .hidden {
+    display: none !important
+}
+
+.wpcf7-form {
+    position: relative;
+}
+
+.wpcf7-form.submitting::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255 / 80%);
+    position: absolute;
+    z-index: 10;
 }

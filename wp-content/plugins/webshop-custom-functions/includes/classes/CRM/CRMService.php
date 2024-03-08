@@ -5,9 +5,9 @@ class CRMService
     public function __construct()
     {
         add_filter('wpcf7_submission_result', [$this, 'crm_action_after_form_submission'], 10, 2);
-        add_filter('saved_request_a_quote', [$this, 'crm_action_after_saved_request_a_quote']);
-        add_filter('saved_user_keep_informed', [$this, 'crm_action_after_saved_user_keep_informed']);
-        add_filter('gi_created_new_customer', [$this, 'crm_action_after_gi_created_new_customer']);
+        add_action('saved_request_a_quote', [$this, 'crm_action_after_saved_request_a_quote']);
+        add_action('saved_user_keep_informed', [$this, 'crm_action_after_saved_user_keep_informed']);
+        add_action('gi_created_new_customer', [$this, 'crm_action_after_gi_created_new_customer']);
     }
 
     /**
@@ -37,11 +37,11 @@ class CRMService
             'CR' => 'CHLOROPRENE RUBBER - CR (Neoprene™)',
             'EPDM' => 'ETHYLENE-PROPYLENE-DIENE RUBBER - EPDM',
             'FKM' => 'FLUOROCARBON RUBBER - FKM',
-            'FVMQ' => 'FLUOROSILICONE - FVMQ',
+            'FVMQ' => 'FLUOROSILICONE-FVMQ',
             'HNBR' => 'HYDROGENATED NITRILE - HNBR',
             'NBR' => 'NITRILE BUTADIENE RUBBER - NBR',
             'TFP' => 'TETRAFLUOROETHYLENE PROPYLENE - TFP (Aflas®)',
-            'VMQ' => 'SILICONE RUBBER - VMQ',
+            'VMQ' => 'SILICONE RUBBER - VMQ	',
         );
 
         return array_search($material, $materials);
@@ -86,15 +86,12 @@ class CRMService
 
     public function crm_action_after_form_submission($result, $submission)
     {
-        /*if ($result['status'] != 'mail_sent'){
+        if ($result['status'] != 'mail_sent'){
             return $result;
-        }*/
+        }
         try {
             // Retrieve the posted data
             $posted_data = $submission->get_posted_data();
-            if (empty($posted_data['your-name'])){
-                return false;
-            }
             $name_title = get_name_title($posted_data['your-title'][0]);
             $productofinterest = get_product_of_interests($posted_data['your-product'][0]);
             if (!empty($productofinterest) && !empty($name_title)) {
@@ -102,7 +99,7 @@ class CRMService
                     'email' => $posted_data['your-email'],
                     'company' => $posted_data['your-company-sector'],
                     'lastname' => $posted_data['your-name'],
-                    'mobile' => $posted_data['your-phone'],
+                    'mobile' => sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone'])),
                     'jobtitle' => (string)$name_title,
                     'message' => $posted_data['your-message'],
                     'product' => (string)$productofinterest,

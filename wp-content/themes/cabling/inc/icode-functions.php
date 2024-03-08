@@ -1931,6 +1931,10 @@ function custom_autofill_data( $scanned_tag, $replace ) {
     if ( is_user_logged_in() ) {
         $current_user = wp_get_current_user();
 
+        $phone_code = get_user_meta($current_user->ID, 'billing_phone_code', true);
+        $phone = get_user_meta($current_user->ID, 'billing_phone', true);
+        $phoneFull = sprintf('+%s%s', $phone_code, remove_zero_number($phone));
+
         switch ( $scanned_tag['name'] ){
             case 'your-name':
                 $scanned_tag['values'] = [$current_user->display_name];
@@ -1946,7 +1950,13 @@ function custom_autofill_data( $scanned_tag, $replace ) {
                 $scanned_tag['values'] = [get_user_meta($current_user->ID, 'billing_company', true)];
                 break;
             case 'your-phone':
-                 $scanned_tag['values'] = [get_user_phone_number($current_user->ID)];
+                 $scanned_tag['values'] = [$phoneFull];
+                break;
+            case 'user_telephone':
+                 $scanned_tag['values'] = [$phone];
+                break;
+            case 'user_telephone_code':
+                 $scanned_tag['values'] = [$phone_code];
                 break;
         }
         return $scanned_tag;

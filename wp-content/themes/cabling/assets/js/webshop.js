@@ -1,6 +1,7 @@
 (function ($) {
     add_phone_validate('#mobile-phone');
     add_phone_validate('#user_telephone');
+    add_phone_validate('#contact-phone');
     checkMyAccountNavigation();
     product_filter_init();
 
@@ -385,11 +386,11 @@
         return false;
     });
     $(document).on('click', '.accordion-item', function () {
-        if ($(this).hasClass('filter-inch')){
+        if ($(this).hasClass('filter-inch')) {
             $('#custom-size-width').attr('name', 'attributes[inches_width]');
             $('#custom-size-id').attr('name', 'attributes[inches_od]');
             $('#custom-size-od').attr('name', 'attributes[inches_id]');
-        } else if ($(this).hasClass('filter-millimeter')){
+        } else if ($(this).hasClass('filter-millimeter')) {
             $('#custom-size-width').attr('name', 'attributes[milimeters_width]');
             $('#custom-size-id').attr('name', 'attributes[milimeters_id]');
             $('#custom-size-od').attr('name', 'attributes[milimeters_od]');
@@ -400,7 +401,7 @@
         const parcoCompound = $('#parcocompound');
         const parcoMaterial = $('#parcomaterial');
 
-        if ($('input[name=api_page]').val() === 'inventory' && parcoMaterial.val() === '' && sapMaterial.val() === '' && parcoCompound.val() === ''){
+        if ($('input[name=api_page]').val() === 'inventory' && parcoMaterial.val() === '' && sapMaterial.val() === '' && parcoCompound.val() === '') {
             $('.form-error-text').show();
             return false;
         } else {
@@ -687,6 +688,7 @@ function product_filter_ajax(cat_id) {
     });
 }
 
+
 function add_filter_heading(form) {
     const $ = jQuery.noConflict();
     const filter = $('#filter-heading-product');
@@ -713,7 +715,7 @@ function add_phone_validate(phone_element) {
     if (phoneCodeElement !== null) {
         const parentElement = phoneCodeElement.parentNode;
         const thisForm = phoneCodeElement.closest('form');
-        const errorMsg = parentElement.querySelector('.input-error');
+        const errorMsg = thisForm.querySelector('.input-error');
 
         let buttonElement;
         if (thisForm) {
@@ -741,7 +743,7 @@ function add_phone_validate(phone_element) {
             resetPhoneError();
             if (phoneCodeElement.value.trim()) {
                 if (iti.isValidNumber()) {
-                    parentElement.querySelector('.phone_number').value = phoneCodeElement.value.trim();
+                    thisForm.querySelector('.phone_number').value = phoneCodeElement.value.trim();
                     if (buttonElement) {
                         buttonElement.disabled = false;
                     }
@@ -753,7 +755,6 @@ function add_phone_validate(phone_element) {
                     if (buttonElement) {
                         buttonElement.disabled = true;
                     }
-                    console.log('Invalid number');
                 }
             }
             jQuery(jQuery(this)).closest('.form-group').addClass('has-focus');
@@ -762,7 +763,7 @@ function add_phone_validate(phone_element) {
         phoneCodeElement.addEventListener("countrychange", function () {
             const countryData = iti.getSelectedCountryData();
             if (countryData && countryData.dialCode) {
-                parentElement.querySelector('.phone_code').value = countryData.dialCode;
+                thisForm.querySelector('.phone_code').value = countryData.dialCode;
             }
             phoneCodeElement.dispatchEvent(new Event("change"));
         });
