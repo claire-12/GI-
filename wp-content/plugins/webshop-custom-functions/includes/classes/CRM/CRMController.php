@@ -425,18 +425,19 @@ class CRMController
 
     public function processContactUsSubmit($contactForm)
     {
-        $crmcontact = new CRMContact($contactForm['email']);
+        $crmcontact = new CRMContact($contactForm['your-email']);
         $contact = $this->getContactByEmail($crmcontact->email);
         if (!empty($contact)) {
             $crmcontact->fillContactFromCRMContactObject($contact);
         } else {
-            $crmcontact->company = $contactForm['company'];
-            $crmcontact->lastname = $contactForm['lastname'];
+            $crmcontact->company = $contactForm['your-company-sector'];
+            $crmcontact->lastname = $contactForm['last-name'];
             $crmcontact->mobile = $contactForm['mobile'];
-            $crmcontact->jobtitle = $contactForm['jobtitle'];
+            $crmcontact->jobtitle = $contactForm['job-title'];
+            $crmcontact->function = $contactForm['function'];
         }
 
-        return $this->createContactUsLead($crmcontact, $contactForm['message'], $contactForm['product']);
+        return $this->createContactUsLead($crmcontact, $contactForm['your-message'], $contactForm['product']);
     }
 
     public function processKMILeadCreation($data)

@@ -91,23 +91,15 @@ class CRMService
             return $result;
         }
         try {
-            // Retrieve the posted data
             $posted_data = $submission->get_posted_data();
             $name_title = get_name_title($posted_data['your-title'][0]);
-            $productofinterest = get_product_of_interests($posted_data['your-product'][0]);
-            if (!empty($productofinterest) && !empty($name_title)) {
-                $form = array(
-                    'email' => $posted_data['your-email'],
-                    'company' => $posted_data['your-company-sector'],
-                    'lastname' => $posted_data['your-name'],
-                    'mobile' => sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone'])),
-                    'jobtitle' => (string)$name_title,
-                    'message' => $posted_data['your-message'],
-                    'product' => (string)$productofinterest,
-                );
+            $product = get_product_of_interests($posted_data['your-product'][0]);
+            if (!empty($product) && !empty($name_title)) {
+                $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
+                $posted_data['product'] = (string)$product;
 
                 $crm = new CRMController();
-                $lead = $crm->processContactUsSubmit($form);
+                $lead = $crm->processContactUsSubmit($posted_data);
 
                 wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', json_encode($lead));
 
