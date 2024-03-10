@@ -148,6 +148,7 @@ class UserInformed
 
                 if (!is_user_logged_in()) {
                     self::send_confirm_notification($email);
+                    $is_sent_confirmed = true;
                 }
 
                 $success = __('Subscription Confirmation: Please check you email to confirm the subscription.', 'cabling');
@@ -167,7 +168,9 @@ class UserInformed
                self::remove_informed_channel('whatsapp');
             }
 
-            do_action('saved_user_keep_informed', $informedData);
+            if (empty($is_sent_confirmed)) {
+                do_action('saved_user_keep_informed', $informedData);
+            }
 
             wp_send_json_success($success);
         }
@@ -501,6 +504,8 @@ class UserInformed
             $key = sanitize_key('verify_informed_'.$email);
             update_option($key, 'yes');
             self::send_notification($email);
+
+            do_action('saved_user_confirm_keep_informed', ['email' => $email]);
 
             wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
             exit();

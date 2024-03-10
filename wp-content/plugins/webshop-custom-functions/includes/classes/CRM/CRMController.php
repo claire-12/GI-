@@ -446,10 +446,16 @@ class CRMController
             $CRMContact->phone = $data['sms'];
         }
 
-        $communicationOptions = [
+        /*$communicationOptions = [
             "tel" => false,
             "whatsapp" => (bool)$data['whatsapp'],
             "sms" => (bool)$data['sms']
+        ];*/
+
+        $communicationOptions = [
+            "tel" => false,
+            "whatsapp" => false,
+            "sms" => false
         ];
 
         $lead = $this->createKMILead($CRMContact, $communicationOptions, $data['options']);
@@ -549,7 +555,7 @@ class CRMController
         $crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
         $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
         $crmquoteproduct->brand = $data['brand'] ?? '';
-var_dump($data, $crmquoteproduct);
+
         $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
         /** end of create contact object to use **/
         $lead = $this->createSalesQuoteLead($crmquote);

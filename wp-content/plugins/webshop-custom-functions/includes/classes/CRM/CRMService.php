@@ -7,6 +7,7 @@ class CRMService
         add_filter('wpcf7_submission_result', [$this, 'crm_action_after_form_submission'], 10, 2);
         add_action('saved_request_a_quote', [$this, 'crm_action_after_saved_request_a_quote']);
         add_action('saved_user_keep_informed', [$this, 'crm_action_after_saved_user_keep_informed']);
+        add_action('saved_user_confirm_keep_informed', [$this, 'crm_action_after_saved_user_keep_informed']);
         add_action('gi_created_new_customer', [$this, 'crm_action_after_gi_created_new_customer']);
     }
 
