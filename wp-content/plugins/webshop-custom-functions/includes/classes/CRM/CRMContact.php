@@ -11,7 +11,7 @@ class CRMContact
     public $contactid = "";
     public $accountid = "";
     public $sapAccountId = "";
-    public $function = "";
+    public $jobfunction = "";
     public $jobtitle = "";
     public $address = "";
     public $city = "";
@@ -31,6 +31,34 @@ class CRMContact
     public function getLastName()
     {
         return $this->lastname == "" ? "N/A" : $this->lastname;
+    }
+
+    public function getFunctionCode(string $department): string
+    {
+        $departments = array(
+            "Z41" => "Accounting",
+            "Z42" => "Administrative",
+            "Z43" => "Business Development",
+            "Z44" => "Consulting",
+            "Z45" => "Engineering",
+            "Z46"=> "Finance",
+            "Z47"=>"Human Resources",
+            "Z48"=>"Information Technology",
+            "Z49"=>"Marketing",
+            "Z50"=>"Operations",
+            "Z58"=>"Legal",
+            "Z52"=>"Military and Protective Services",
+            "Z51"=>"Product Management",
+            "Z52"=>"Purchasing",
+            "Z53"=>"Quality Assurance",
+            "Z54"=>"Research",
+            "Z55"=>"Sales",
+            "Z56"=>"Support",
+        );
+
+        $key = array_search($department, $departments);
+
+        return $key ?? '0001';
     }
 
     public function toArray()

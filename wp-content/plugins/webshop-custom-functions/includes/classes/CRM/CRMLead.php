@@ -101,9 +101,11 @@ class CRMLead
         $contact["ContactFirstName"] = $crmcontact->getFirstName();
         $contact["ContactLastName"] = $crmcontact->getLastName();
         $contact["ContactEMail"] = $crmcontact->email;
-        $contact["ContactMobile"] = $crmcontact->mobile;
+	$contact["ContactMobile"] = $crmcontact->mobile;
+        $contact["BusinessPartnerRelationshipBusinessPartnerFunctionTypeCode"] = $crmcontact->jobfunction;
 
-        $contact["ContactFormOfAddressCode"] = $crmcontact->jobtitle;
+        $contact["ContactFunctionalTitleName"] = $crmcontact->jobtitle;
+//ContactFormOfAddressCode"] = $crmcontact->jobtitle;
 
 
         $contact["Note"] = $comments;
@@ -360,9 +362,9 @@ class CRMLead
                     case "whatsapp":
                         $option = "ZWA";
                         break;
-					default:
-						$option="INT";
-						break;						
+		    default:
+			$option="INT";
+			break;
                 }
                 array_push($lst, $option);
             }
