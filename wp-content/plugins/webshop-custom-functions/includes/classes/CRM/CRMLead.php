@@ -360,6 +360,9 @@ class CRMLead
                     case "whatsapp":
                         $option = "ZWA";
                         break;
+					default:
+						$option="INT";
+						break;						
                 }
                 array_push($lst, $option);
             }

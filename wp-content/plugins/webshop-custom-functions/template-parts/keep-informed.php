@@ -4,6 +4,7 @@
 </div>
 <form id="keep-informed-form" class="keep-informed-account" method="post">
     <div class="informed-categories">
+	<?php if(false) { ?>
         <?php if ($product_category): ?>
             <div class="informed-product mb-3">
                 <h5><?php _e('Product Categories', 'cabling'); ?></h5>
@@ -56,21 +57,34 @@
             </div>
         <?php endif; ?>
     </div>
-
+<?php }?>
     <h4 class="informed-heading-contact text-center pre-heading heading-center"><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h4>
     <div class="informed-contact informed-categories">
         <h5><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h5>
         <div class="form-check">
-            <input class="form-check-input" name="informed_channel[email]" type="checkbox"
-                <?php echo empty($channel['email']) ? '' : ' checked="checked" ' ?>
+            <input class="form-check-input" name="informed_channel[email]" type="checkbox" checked="checked" 
+                <?php echo 'style="display:none"' //echo empty($channel['email']) ? '' : ' checked="checked" ' ?>
                    id="cat-email" value="email">
             <label class="form-check-label" for="cat-email">Email</label>
-            <?php if (!is_user_logged_in()): ?>
+            <?php if (!is_user_logged_in()){ ?>
                 <div class="channel-email form-group form-check">
                     <input type="email" class="form-control" id="channel-email" name="channel-email" required
                            placeholder="Enter your email*" value="<?php echo $channel['email'] ?? '' ?>">
                 </div>
-            <?php endif; ?>
+
+	<?php }else{ 
+$current_user = wp_get_current_user();
+?>
+		 <div class="channel-email form-group form-check">
+                    <input type="email" class="form-control" id="channel-email" name="channel-email" required
+                           placeholder="Enter your email*" value="<?php 
+echo $current_user->user_email;
+ // $channel['email'] ?? '' ?>" 
+readonly>
+                </div>
+
+
+            <?php } ?>
         </div>
         <!--<div class="form-check">
             <input class="form-check-input" name="informed_channel[whatsapp]" type="checkbox"

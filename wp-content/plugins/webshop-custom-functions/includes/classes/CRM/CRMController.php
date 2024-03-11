@@ -454,7 +454,7 @@ class CRMController
         ];*/
 
         $communicationOptions = [
-            "tel" => false,
+            "tel" => true,
             "whatsapp" => false,
             "sms" => false
         ];
