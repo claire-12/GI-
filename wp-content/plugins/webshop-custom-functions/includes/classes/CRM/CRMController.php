@@ -511,9 +511,9 @@ class CRMController
         }
 
         $crmquoteproduct = new CRMQuoteProduct();
-
-        $crmquoteproduct->quantity = $data['volume'];
-        $crmquoteproduct->quantitycode = "T3";
+        if ($data['volume'] == "") $data['volume'] = null;
+        $crmquoteproduct->quantity = $data['volume'] ?? '0';
+//        $crmquoteproduct->quantitycode = "T3";
         $crmquoteproduct->application = $data['application'];
         $crmquoteproduct->requiredby = "next week"; // free text
         $crmquoteproduct->partnumber = $data['part-number'] ?? 'N/A'; // free text
@@ -533,9 +533,9 @@ class CRMController
             $crmquoteproduct->dimid = $data['dimension_oring']['id'] ?? '0';
             $crmquoteproduct->dimidcode = $data['dimension_oring']['type'] ?? 'INH';
             $crmquoteproduct->dimod = $data['dimension_oring']['od'] ?? '0';
-            $crmquoteproduct->dimodcode = $data['dimension_oring']['type'] ?? '0';
+            $crmquoteproduct->dimodcode = $data['dimension_oring']['type'] ?? 'INH';
             $crmquoteproduct->dimwidth = $data['dimension_oring']['width'] ?? '0';
-            $crmquoteproduct->dimwidthcode = $data['dimension_oring']['type'] ?? '0';
+            $crmquoteproduct->dimwidthcode = $data['dimension_oring']['type'] ?? 'INH';
         } else {
             $crmquoteproduct->dimid = '0';
             $crmquoteproduct->dimidcode = "INH";
