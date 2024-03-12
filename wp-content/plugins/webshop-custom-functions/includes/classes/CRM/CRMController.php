@@ -499,7 +499,8 @@ class CRMController
             $crmcontact->fillContactFromCRMContactObject($contact);
         } else {
             $crmcontact->company = $data['company'];
-            $crmcontact->lastname = $data['name'];
+            $crmcontact->firstname = $data['first_name'];
+            $crmcontact->lastname = $data['last_name'];
             $crmcontact->mobile = $data['billing_phone'];
             $crmcontact->jobtitle = $data['jobtitle'];
             $crmcontact->city = $data['billing_city'];

@@ -85,7 +85,7 @@ class CRMService
     public function crm_action_after_saved_request_a_quote($quote)
     {
         try {
-            $name_title = get_name_title($quote['user_title']);
+            $name_title = $quote['user_title'] ? get_name_title($quote['user_title']) : '0001';
             $product = get_product_of_interests($quote['product-of-interest']);
             $brandId = get_field('brand');
             $quote['jobtitle'] = is_array($name_title) ? array_key_first($name_title) : $name_title;

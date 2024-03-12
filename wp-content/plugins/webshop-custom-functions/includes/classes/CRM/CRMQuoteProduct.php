@@ -2,7 +2,7 @@
 class CRMQuoteProduct
 {
     public $quantity = "";
-    public $quantitycode = "T3";  // not available in interface defaulting to 1000pc
+    public $quantitycode = "ZPC";  // not available in interface defaulting to 1000pc
     public $application = "";
     public $requiredby = "";
     public $diagram = null; // this is a file tbd
