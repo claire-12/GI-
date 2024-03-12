@@ -349,6 +349,7 @@ class CRMController
 
         $lead = new CRMLead();
         $body = $lead->createContactLeadBody($crmcontact, $comments, $productofinterest);
+
         $url = $this->baseURL . "LeadCollection";
         $headers = $this->createPostHeader($token);
 
@@ -432,9 +433,11 @@ class CRMController
         } else {
             $crmcontact->company = $contactForm['your-company-sector'];
             $crmcontact->lastname = $contactForm['last-name'];
+	    $crmcontact->firstname = $contactForm['first-name'];
             $crmcontact->mobile = $contactForm['mobile'];
             $crmcontact->jobtitle = $contactForm['job-title'];
-            $crmcontact->function = $contactForm['function'];
+	    //$crmcontact->jobfunction = $contactForm['function'];         
+	    $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$contactForm['function']);
         }
 
         return $this->createContactUsLead($crmcontact, $contactForm['your-message'], $contactForm['product']);
@@ -454,7 +457,7 @@ class CRMController
         ];*/
 
         $communicationOptions = [
-            "tel" => false,
+            "tel" => true,
             "whatsapp" => false,
             "sms" => false
         ];
