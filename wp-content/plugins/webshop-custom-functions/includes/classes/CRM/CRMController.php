@@ -433,11 +433,11 @@ class CRMController
         } else {
             $crmcontact->company = $contactForm['your-company-sector'];
             $crmcontact->lastname = $contactForm['last-name'];
-	    $crmcontact->firstname = $contactForm['first-name'];
+            $crmcontact->firstname = $contactForm['first-name'];
             $crmcontact->mobile = $contactForm['mobile'];
             $crmcontact->jobtitle = $contactForm['job-title'];
-	    //$crmcontact->jobfunction = $contactForm['function'];         
-	    $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$contactForm['function']);
+            //$crmcontact->jobfunction = $contactForm['function'];
+            $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$contactForm['function']);
         }
 
         return $this->createContactUsLead($crmcontact, $contactForm['your-message'], $contactForm['product']);
@@ -481,37 +481,7 @@ class CRMController
             $account->email = $data['user_email'];
             $account->mobile = $data['billing_phone'];
             $account->jobfunction = $data['job-title'];
-            $account->department = $data['department']; //mandatory field from the list below
-            /*
-            Purchasing Dept.    0001
-            Sales Dept. 0002
-            Administration Dept.    0003
-            QA Assurance Dept.  0005
-            Secretary's Office  0006
-            Financial Dept. 0007
-            Legal Dept. 0008
-            R&D Dept.   0018
-            Product Dev Dept.   0019
-            Executive Board Z020
-            Packaging Dev Dept. Z021
-            Production Dept.    Z022
-            Quality Control Dept    Z023
-            Logistics Dept. Z024
-            Operations Dept.    Z025
-            Advanced Pur Dept.  Z026
-            Consulting Dept.    Z027
-            IT Dept.    Z28
-            Marketing Dept. Z29
-            Customer Ser Dept.  Z30
-            Audit Dept. Z31
-            HR Dept.    Z32
-            Engineering Z33
-            Project Management  Z34
-            Laboratory  Z35
-            Procurement Z36
-            Supply Chain Dept.  ZSC
-            */
-
+            $account->department = $data['department'];
             $account->address = $data['billing_address_1'];
             $account->city = 'N/A';
             $account->state = 'N/A';
@@ -532,6 +502,10 @@ class CRMController
             $crmcontact->lastname = $data['name'];
             $crmcontact->mobile = $data['billing_phone'];
             $crmcontact->jobtitle = $data['jobtitle'];
+            $crmcontact->city = $data['billing_city'];
+            $crmcontact->address = $data['billing_address_1'];
+            $crmcontact->postalcode = $data['billing_postcode'];
+            $crmcontact->country = $data['billing_country'];
         }
 
         $crmquoteproduct = new CRMQuoteProduct();
@@ -548,7 +522,7 @@ class CRMController
         $crmquoteproduct->dimensions = $data['dimension'] ?? '';
         $crmquoteproduct->dimensionscode = "T3"; //1000pc
         // required in SAP method, but not available in interface
-        $crmquoteproduct->dimid = "0.1";
+        $crmquoteproduct->dimid = $data['dimension'] ?? '';
         $crmquoteproduct->dimidcode = "INH";
         $crmquoteproduct->dimod = "0.5";
         $crmquoteproduct->dimodcode = "INH";
@@ -558,7 +532,7 @@ class CRMController
         $crmquoteproduct->compound = $data['o_ring']['compound'] ?? '';
         $crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
         $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
-        $crmquoteproduct->brand = $data['brand'] ?? '';
+        $crmquoteproduct->brand = $data['brand'] ?? 'N/A';
 
         $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
         /** end of create contact object to use **/
@@ -762,7 +736,7 @@ class CRMController
         //$lead=$this->testContactUsLead($email);
         //dd($lead);
 
-        $lead=$this->testAccountCreationLead($email);
+        $lead = $this->testAccountCreationLead($email);
         //dd($lead);
 
         $file = "C://xampp8.0/htdocs/pim-gi/public/storage/productthumbs/ptype_1706791744.png";

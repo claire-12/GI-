@@ -16,27 +16,27 @@ $contact_types = get_terms(array('taxonomy' => 'contact_type','parent' => 0));
 	<div class="entry-content" style="margin-top: 0;">
 		<div class="row">
 			<div class="col-md-8"><?php the_content(); ?></div>
-		</div>		
+		</div>
 	</div><!-- .entry-content -->
 
 	<div id="accordion">
-		<?php 
+		<?php
 		if( $contact_types )
 		{
 			foreach($contact_types as $type )
 			{
 				//cabling_get_contact_wordwide( $type, get_the_ID(), 'contact-parent' );
-				
+
 				$contact_children = get_terms(array('taxonomy' => 'contact_type','parent' => $type->term_id ));
 				if( $contact_children )
 				{
 					foreach($contact_children as $child )
 					{
-						cabling_get_contact_wordwide( $child, get_the_ID(), 'contact-parent' );
+						///cabling_get_contact_wordwide( $child, get_the_ID(), 'contact-parent' );
 					}
-				} 
+				}
 			}
-		} 
+		}
 		?>
 	</div>
 

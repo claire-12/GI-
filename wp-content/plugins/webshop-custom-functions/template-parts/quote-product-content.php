@@ -3,6 +3,7 @@
     </button>
     <div class="wrap-inner container">
         <h4 class="text-center"><?php echo __('Request a quote', 'cabling') ?></h4>
+        <h5 class="text-center"><?php echo __('I would like to be informed about this product:', 'cabling') ?></h5>
         <?php if (!$is_user_logged_in): ?>
             <?php wc_get_template('template-parts/register-block.php', [], '', WBC_PLUGIN_DIR); ?>
         <?php endif ?>
@@ -124,12 +125,12 @@
                                     <label for="last_name" class="form-label">Last Name<span
                                                 class="required">*</span></label>
                                 </div>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="function" id="function"
-                                           value="<?php echo $function ?? '' ?>" required>
-                                    <label for="function"
-                                           class="form-label">Function<span class="required">*</span></label>
-                                </div>
+                                <?php echo show_product_field('function', array(
+                                    'options' => CRMConstant::FUNCTION_CONTACT,
+                                    'label' => __('Function', 'woocommerce'),
+                                    'class' => 'form-group has-focus mb-3',
+                                    'required' => true
+                                )); ?>
                                 <div class="mb-3 form-group">
                                     <input type="text" class="form-control" name="job_title" id="job_title"
                                            value="<?php echo $job_title ?? '' ?>">
@@ -168,22 +169,29 @@
                                     <input type="text" class="form-control" name="billing_address_1" id="company-street"
                                            value="<?php echo $billing_address_1 ?? '' ?>"
                                            required>
-                                    <label for="company-street" class="form-label">Company Address<span
+                                    <label for="company-street" class="form-label">Address<span
                                                 class="required">*</span></label>
                                 </div>
                                 <div class="mb-3 form-group">
-                                    <label for="company-city" class="form-label">Company City<span
+                                    <input type="text" class="form-control" name="billing_state" id="billing_state"
+                                           value="<?php echo $billing_state ?? '' ?>"
+                                           required>
+                                    <label for="billing_state" class="form-label">State<span
                                                 class="required">*</span></label>
+                                </div>
+                                <div class="mb-3 form-group">
                                     <input type="text" class="form-control" name="billing_city" id="company-city"
                                            value="<?php echo $billing_city ?? '' ?>"
                                            required>
+                                    <label for="company-city" class="form-label">City<span
+                                                class="required">*</span></label>
                                 </div>
                                 <div class="mb-3 form-group">
                                     <input type="text" class="form-control" name="billing_postcode"
                                            id="company-postcode"
                                            value="<?php echo $billing_postcode ?? '' ?>"
                                            required>
-                                    <label for="company-postcode" class="form-label">Company Postcode<span
+                                    <label for="company-postcode" class="form-label">Postcode<span
                                                 class="required">*</span></label>
                                 </div>
                                 <div class="mb-4">
@@ -191,7 +199,7 @@
                                         'billing_country',
                                         array(
                                             'type' => 'country',
-                                            'placeholder' => 'Company Country',
+                                            'placeholder' => 'Country',
                                             'class' => array('mw-100'),
                                             'input_class' => array('form-select')
                                         ),
@@ -238,11 +246,48 @@
                             >
                             <label for="volume" class="form-label">Quantity needed</label>
                         </div>
-                        <div class="mb-3 form-group">
+                        <div class="mb-3 form-group dimension-not-oring">
                             <input type="text" class="form-control" name="dimension" id="dimension"
                                    value="<?php echo $dimension ?? '' ?>"
                             >
                             <label for="dimension" class="form-label">Dimension: <span class="help">0.029 x 0.004 x 0.040</span></label>
+                        </div>
+                        <div class="mb-3 dimension-oring hidden">
+                            <div class="row">
+                                <div class="col-12">
+                                    <?php echo show_product_field('dimension_oring[type]', array(
+                                        'options' => array(
+                                            'mm' => __('Millimeter', 'cabling'),
+                                            'inch' => __('Inch', 'cabling'),
+                                        ),
+                                        'label' => __('Dimension', 'woocommerce'),
+                                    )); ?>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="dimension_oring[id]" id="dimension-id"
+                                               value=""
+                                        >
+                                        <label for="dimension-id" class="form-label">ID</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="dimension_oring[od]" id="dimension-od"
+                                               value=""
+                                        >
+                                        <label for="dimension-od" class="form-label">OD</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="dimension_oring[width]"
+                                               id="dimension-width" value=""
+                                        >
+                                        <label for="dimension-width" class="form-label">Width</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-3 form-group">
                             <input type="text" class="form-control" name="part-number" id="part-number"
@@ -268,26 +313,18 @@
                          style="flex-direction: column;justify-content: space-between; padding-bottom: 16px;">
                         <div class="o-ring-block position-relative">
                             <h5>O-RINGS / BACKUP RINGS ONLY</h5>
-                            <div class="mb-3 form-group1">
-                                <?php product_desired_application_field() ?>
-                            </div>
+                            <?php product_desired_application_field() ?>
                             <?php if (empty($material)): ?>
-                                <div class="mb-3">
-                                    <?php product_material_field() ?>
-                                </div>
+                                <?php product_material_field() ?>
                             <?php else: ?>
                                 <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="o_ring[material]" id="material" value="<?php echo $material ?>" readonly>
+                                    <input type="text" class="form-control" name="o_ring[material]" id="material"
+                                           value="<?php echo $material ?>" readonly>
                                     <label for="material" class="form-label">Material: <span
                                                 class="help">Buna-N</span></label>
                                 </div>
                             <?php endif ?>
-                            <div class="mb-3 form-group">
-                                <input type="text" class="form-control" name="o_ring[hardness]" id="hardness"
-                                       value="<?php echo $hardness ?? '' ?>"
-                                >
-                                <label for="hardness" class="form-label">Hardness: <span class="help">XXX</span></label>
-                            </div>
+                            <?php product_harness_field(); ?>
                             <div class="mb-3 form-group">
                                 <input type="text" class="form-control" name="o_ring[temperature]" id="temperature"
                                        value="<?php echo $temperature ?? '' ?>"

@@ -146,7 +146,8 @@ class RequestProductQuote
                     $userId = get_master_account_id($user->ID);
 
                     $data['email'] = $user->user_email;
-                    $data['name'] = $user->display_name;
+                    $data['first_name'] = $user->first_name;
+                    $data['last_name'] = $user->last_name;
                     $data['company'] = get_user_meta($userId, 'billing_company', true);
                     $data['user_title'] = get_user_meta($userId, 'user_title', true);
                     $data['billing_address_1'] = get_user_meta($userId, 'billing_address_1', true);
@@ -187,38 +188,37 @@ class RequestProductQuote
         $table_name = $wpdb->prefix . 'request_a_quote';
 
         $data['data_company'] = array(
-            'name' => $data['name'] ?? '-',
-            'title-function' => $data['title-function'] ?? '-',
-            'company' => $data['company'] ?? '-',
-            'company-sector' => $data['company-sector'] ?? '-',
-            'billing_address_1' => $data['billing_address_1'] ?? '-',
-            'billing_city' => $data['billing_city'] ?? '-',
-            'billing_postcode' => $data['billing_postcode'] ?? '-',
-            'billing_country' => $data['billing_country'] ?? '-',
-            'billing_phone' => $data['billing_phone'] ?? '-',
-            'billing_phone_code' => $data['billing_phone_code'] ?? '-',
+            'first_name' => $data['first_name'] ?? 'N/A',
+            'last_name' => $data['last_name'] ?? 'N/A',
+            'function' => $data['function'] ?? 'N/A',
+            'company' => $data['company'] ?? 'N/A',
+            'job_title' => $data['job_title'] ?? 'N/A',
+            'billing_address_1' => $data['billing_address_1'] ?? 'N/A',
+            'billing_state' => $data['billing_state'] ?? 'N/A',
+            'billing_city' => $data['billing_city'] ?? 'N/A',
+            'billing_postcode' => $data['billing_postcode'] ?? 'N/A',
+            'billing_country' => $data['billing_country'] ?? 'N/A',
+            'billing_phone' => $data['billing_phone'] ?? 'N/A',
+            'billing_phone_code' => $data['billing_phone_code'] ?? 'N/A',
         );
+
+        if ($data['product-of-interest'] === 'O-Ring') {
+            $data['o_ring'][] = $data['dimension_oring'];
+        }
 
         $data_to_insert = array(
             'email' => sanitize_email($data['email']),
-            'name' => sanitize_text_field($data['name']),
+            'name' => sanitize_text_field($data['first_name']) . ' ' . sanitize_text_field($data['last_name']),
             'company' => sanitize_text_field($data['company']),
-            'company_sector' => sanitize_text_field($data['company-sector']),
             'company_address' => sanitize_text_field($data['billing_address_1']),
             'additional_information' => sanitize_text_field($data['additional-information']),
             'object_id' => $data['object_id'] ?? 0,
             'object_type' => $data['object_type'] ?? '',
             'files' => $data['files'],
-            'quote_price' => '',
-            'quote_number' => '',
-            'product_of_interest' => '',
             'when_needed' => sanitize_text_field($data['when-needed']) ?? '',
             'volume' => sanitize_text_field($data['volume']) ?? '',
             'dimension' => sanitize_text_field($data['dimension']) ?? '',
             'part_number' => sanitize_text_field($data['part-number']) ?? '',
-            'country_of_origin' => '',
-            'current_suppliers' => '',
-            'potential_order_size' => '',
             'data_company' => serialize($data['data_company']),
             'data_o_ring' => serialize($data['o_ring']),
             'quote_filter' => serialize($data['quote_filter']),

@@ -45,6 +45,9 @@
                             'sitekey': sitekey,
                         });
                     }
+                    $('.date-picker').flatpickr({
+                        dateFormat: "m/d/Y",
+                    });
                     $('#quoteProductModal').find('.form-group input').each(function () {
                         if ($(this).val() === '') {
                             $(this).closest('.form-group').removeClass('has-focus');
@@ -72,6 +75,18 @@
         modalElement.find('.login-wrapper').hide();
         modalElement.find('.form-request-quote').show();
         modalElement.find('.login-wrapper-non').css('opacity', 1);
+    })
+
+    $(document).on('change', '#product-of-interest', function (e) {
+        if ($('.dimension-not-oring').length && $('.dimension-oring').length) {
+            if ($(this).val() === 'O-Ring'){
+                $('.dimension-oring').show();
+                $('.dimension-not-oring').hide();
+            } else {
+                $('.dimension-oring').hide();
+                $('.dimension-not-oring').show();
+            }
+        }
     })
 
     $(document).on('submit', '#keep-informed-form', function (e) {

@@ -54,7 +54,12 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                 <div class="form-group">
                     <input type="text" class="form-control" name="first-name" id="first-name"
                            value="<?php echo $_REQUEST['first-name'] ?? '' ?>" required>
-                    <label for="first-name"><?php _e('Name', 'cabling') ?><span class="required">*</span></label>
+                    <label for="first-name"><?php _e('First Name', 'cabling') ?><span class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="last-name" id="last-name"
+                           value="<?php echo $_REQUEST['last-name'] ?? '' ?>" required>
+                    <label for="last-name"><?php _e('Last Name', 'cabling') ?><span class="required">*</span></label>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="password" id="password" required>
@@ -132,7 +137,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                 <div style="clear:both;"></div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="company-address"
-                           value="<?php echo $_REQUEST['first-name'] ?? '' ?>" id="company-address" required>
+                           value="<?php echo $_REQUEST['company-address'] ?? '' ?>" id="company-address" required>
                     <label for="company-address"><?php _e('Company address', 'cabling') ?><span
                                 class="required">*</span></label>
                 </div>

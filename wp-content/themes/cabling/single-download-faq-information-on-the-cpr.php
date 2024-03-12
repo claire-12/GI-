@@ -28,7 +28,7 @@ get_header();
 					<?php the_content(); ?>
                     <div id="accordion">
 		                <?php
-                        echo cabling_get_download_faq();
+                        // echo cabling_get_download_faq();
 		                ?>
                     </div>
                 </div>

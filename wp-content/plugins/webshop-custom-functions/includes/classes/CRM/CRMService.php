@@ -34,51 +34,14 @@ class CRMService
 
     private function getMaterialCode(string $material): string
     {
-        $materials = array(
-            'CR' => 'CHLOROPRENE RUBBER - CR (Neoprene™)',
-            'EPDM' => 'ETHYLENE-PROPYLENE-DIENE RUBBER - EPDM',
-            'FKM' => 'FLUOROCARBON RUBBER - FKM',
-            'FVMQ' => 'FLUOROSILICONE-FVMQ',
-            'HNBR' => 'HYDROGENATED NITRILE - HNBR',
-            'NBR' => 'NITRILE BUTADIENE RUBBER - NBR',
-            'TFP' => 'TETRAFLUOROETHYLENE PROPYLENE - TFP (Aflas®)',
-            'VMQ' => 'SILICONE RUBBER - VMQ	',
-        );
+        $materials = CRMConstant::MATERIAL;
 
         return array_search($material, $materials);
     }
 
     private function getDepartmentCode(string $department): string
     {
-        $departments = array(
-            "0001" => "Purchasing",
-            "0002" => "Sales",
-            "0003" => "Administration",
-            "0005" => "QA Assurance",
-            "0006" => "Secretary's Office",
-            "0007" => "Financial",
-            "0008" => "Legal",
-            "0018" => "R&D",
-            "0019" => "Product Dev",
-            "Z020" => "Executive Board",
-            "Z021" => "Packaging Dev",
-            "Z022" => "Production",
-            "Z023" => "Quality Control Dept",
-            "Z024" => "Logistics",
-            "Z025" => "Operations",
-            "Z026" => "Advanced Pur",
-            "Z027" => "Consulting",
-            "Z28" => "IT",
-            "Z29" => "Marketing",
-            "Z30" => "Customer Ser",
-            "Z31" => "Audit",
-            "Z32" => "HR",
-            "Z33" => "Engineering",
-            "Z34" => "Project Management",
-            "Z35" => "Laboratory",
-            "Z36" => "Procurement",
-            "ZSC" => "Supply Chain",
-        );
+        $departments = CRMConstant::FUNCTION_FIELD;
 
         $key = array_search($department, $departments);
 
@@ -100,7 +63,7 @@ class CRMService
 
                 $crm = new CRMController();
                 $lead = $crm->processContactUsSubmit($posted_data);
-//print_r($lead);
+                //print_r($lead);
 
                 wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', json_encode($lead));
 
@@ -127,7 +90,7 @@ class CRMService
             $brandId = get_field('brand');
             $quote['jobtitle'] = is_array($name_title) ? array_key_first($name_title) : $name_title;
             $quote['product'] = $product;
-            $quote['brand'] = $product;
+            $quote['brand'] = 'N/A';
             $quote['application'] = $quote['o_ring']['desired-application'] ?? '';
             if (!empty($quote['o_ring']['material'])) {
                 $quote['material'] = $this->getMaterialCode($quote['o_ring']['material']);

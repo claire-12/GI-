@@ -36,7 +36,7 @@ get_header();
                                 //var_dump($country['name']);
                                 foreach ($download_types as $type)
                                 {
-                                    cabling_get_download_file($type, get_the_ID(), $country['name']);
+                                    //cabling_get_download_file($type, get_the_ID(), $country['name']);
                                 }
                             }
                             ?>
