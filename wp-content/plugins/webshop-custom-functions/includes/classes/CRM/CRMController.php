@@ -82,13 +82,13 @@ class CRMController
         ));
 
         if (is_wp_error($response)) {
-            wp_mail('daisy.nguyen0806@gmail.com', '[CRM ERROR]' . $url, $response->get_error_message());
+            debug_log('[CRM makePostRequest ERROR]' . $url, $response->get_error_message() . PHP_EOL . $body);
             return [];
         } else {
             // Get the response body
             $response_body = wp_remote_retrieve_body($response);
             $data = json_decode($response_body);
-            wp_mail('daisy.nguyen0806@gmail.com', '[CRM SUCCESS]' . $url, $response_body);
+            debug_log('[CRM makePostRequest SUCCESS]' . $url, $response_body . PHP_EOL . $body);
             if (!empty($data->d->results))
                 return $data->d->results;
         }
@@ -103,13 +103,13 @@ class CRMController
         ));
 
         if (is_wp_error($response)) {
-            wp_mail('daisy.nguyen0806@gmail.com', '[CRM ERROR]' . $url, $response->get_error_message());
+            debug_log('[CRM makeGetRequest ERROR]' . $url, $response->get_error_message());
             return [];
         } else {
             // Get the response body
             $body = wp_remote_retrieve_body($response);
             $data = json_decode($body);
-            wp_mail('daisy.nguyen0806@gmail.com', '[CRM SUCCESS]' . $url, $body);
+            debug_log('[CRM makeGetRequest SUCCESS]' . $url, $body);
             if (count($data->d->results) > 0)
                 return $data->d->results[0];
         }
@@ -506,6 +506,7 @@ class CRMController
             $crmcontact->address = $data['billing_address_1'];
             $crmcontact->postalcode = $data['billing_postcode'];
             $crmcontact->country = $data['billing_country'];
+            $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
         }
 
         $crmquoteproduct = new CRMQuoteProduct();

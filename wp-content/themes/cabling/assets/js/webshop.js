@@ -388,13 +388,13 @@
     });
     $(document).on('click', '.accordion-item', function () {
         if ($(this).hasClass('filter-inch')) {
-            $('#custom-size-width').attr('name', 'attributes[inches_width]');
-            $('#custom-size-id').attr('name', 'attributes[inches_od]');
-            $('#custom-size-od').attr('name', 'attributes[inches_id]');
+            $('#custom-size-width').attr('name', 'attributes[inches_width_custom]');
+            $('#custom-size-id').attr('name', 'attributes[inches_od_custom]');
+            $('#custom-size-od').attr('name', 'attributes[inches_id_custom]');
         } else if ($(this).hasClass('filter-millimeter')) {
-            $('#custom-size-width').attr('name', 'attributes[milimeters_width]');
-            $('#custom-size-id').attr('name', 'attributes[milimeters_id]');
-            $('#custom-size-od').attr('name', 'attributes[milimeters_od]');
+            $('#custom-size-width').attr('name', 'attributes[milimeters_width_custom]');
+            $('#custom-size-id').attr('name', 'attributes[milimeters_id_custom]');
+            $('#custom-size-od').attr('name', 'attributes[milimeters_od_custom]');
         }
     });
     $(document).on('submit', '#webservice-api-form', function () {

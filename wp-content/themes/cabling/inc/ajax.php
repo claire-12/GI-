@@ -711,7 +711,6 @@ function cabling_get_products_ajax_callback()
             if (empty($data['attributes']['nominal_size_width'])) {
                 unset($data['attributes']['nominal_size_width']);
             }
-
             $total = 0;
             $isSizeFilter = false;
             $results = '';

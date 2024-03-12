@@ -438,7 +438,7 @@ class RequestProductQuote
         } else {
             $args['post'] = get_post($_REQUEST['data']);
 
-            $object['object_type'] = $args['post']->post_type;
+            $object['object_type'] = $args['post']->post_type ?? '';
         }
         $args['object'] = $object;
         $args['is_user_logged_in'] = $is_user_logged_in;

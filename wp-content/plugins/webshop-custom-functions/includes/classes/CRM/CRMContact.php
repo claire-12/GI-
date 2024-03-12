@@ -17,6 +17,7 @@ class CRMContact
     public $city = "";
     public $country = "";
     public $postalcode = "";
+    public $function = "";
 
     public function __construct(string $email = "")
     {

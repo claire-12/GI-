@@ -65,7 +65,7 @@ class CRMService
                 $lead = $crm->processContactUsSubmit($posted_data);
                 //print_r($lead);
 
-                wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', json_encode($lead));
+                //wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', json_encode($lead));
 
                 if ($lead) {
                     $dataCRM = array(
@@ -110,7 +110,7 @@ class CRMService
             $crm = new CRMController();
             $lead = $crm->processRequestAQuoteSubmit($quote);
 
-            wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_saved_request_a_quote', json_encode($quote) . '####' . json_encode($lead));
+            //wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_saved_request_a_quote', json_encode($quote) . '####' . json_encode($lead));
 
             if (!empty($lead->leadid)) {
                 $dataCRM = array(
@@ -137,7 +137,7 @@ class CRMService
             $crm = new CRMController();
             $lead = $crm->processAccountCreationLead($data);
 
-            wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_gi_created_new_customer', json_encode($data) . '####' . json_encode($lead));
+            //wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_gi_created_new_customer', json_encode($data) . '####' . json_encode($lead));
 
             if ($lead) {
                 $dataCRM = array(

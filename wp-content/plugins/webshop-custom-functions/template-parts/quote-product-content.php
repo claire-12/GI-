@@ -254,16 +254,7 @@
                         </div>
                         <div class="mb-3 dimension-oring hidden">
                             <div class="row">
-                                <div class="col-12">
-                                    <?php echo show_product_field('dimension_oring[type]', array(
-                                        'options' => array(
-                                            'mm' => __('Millimeter', 'cabling'),
-                                            'inch' => __('Inch', 'cabling'),
-                                        ),
-                                        'label' => __('Dimension', 'woocommerce'),
-                                    )); ?>
-                                </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="dimension_oring[id]" id="dimension-id"
                                                value=""
@@ -271,7 +262,7 @@
                                         <label for="dimension-id" class="form-label">ID</label>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="dimension_oring[od]" id="dimension-od"
                                                value=""
@@ -279,13 +270,22 @@
                                         <label for="dimension-od" class="form-label">OD</label>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="dimension_oring[width]"
                                                id="dimension-width" value=""
                                         >
-                                        <label for="dimension-width" class="form-label">Width</label>
+                                        <label for="dimension-width" class="form-label">CS</label>
                                     </div>
+                                </div>
+                                <div class="col-3">
+                                    <?php echo show_product_field('dimension_oring[type]', array(
+                                        'options' => array(
+                                            'mm' => __('Milimeters', 'cabling'),
+                                            'inch' => __('Inches', 'cabling'),
+                                        ),
+                                        'label' => __('Unit', 'woocommerce'),
+                                    )); ?>
                                 </div>
                             </div>
                         </div>
