@@ -1499,6 +1499,7 @@ function get_filter_lists($get_options = true): array
 
                         if ($product_material) {
                             $choices = array($product_material => get_the_title($product_material));
+                            $valueType = 'key';
                         }
                         break;
                     case 'product_compound':
@@ -1800,6 +1801,7 @@ add_action('template_redirect', 'redirect_on_product_type');
 function cabling_change_product_query($query)
 {
     if ((is_tax('product_cat') || is_tax('compound_cat') || is_tax('product_custom_type'))) {
+        $paged = $query->get('paged');
         if (isset($_REQUEST['data-filter'])) {
             $data = json_decode(base64_decode($_REQUEST['data-filter']), true);
             $attributes = $data['attributes'];
@@ -1808,6 +1810,8 @@ function cabling_change_product_query($query)
         } else {
             return $query;
         }
+
+        $paged = $_POST['paged'] ?? $paged;
 
         $custom_filter = $attributes;
         $old_meta_query = $query->get('meta_query');
@@ -1821,6 +1825,7 @@ function cabling_change_product_query($query)
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'product_dash_number');
         $query->set('order', 'ASC');
+        $query->set('paged', $paged);
         $query->set('custom_filter', $custom_filter);
     }
     return $query;
@@ -2169,9 +2174,9 @@ function product_desired_application_field($value = '')
         $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($value, $option_text, false) . '>' . esc_html($option_text) . '</option>';
     }
 
-    $field .= '<select name="o_ring[desired-application]" id="desired-application" class="select form-select" required>' . $options . '</select>';
+    $field .= '<select name="o_ring[desired-application]" id="desired-application" class="select form-select">' . $options . '</select>';
 
-    echo '<p class="w-100"><label for="desired-application">' . __('Desired Application', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
+    echo '<p class="w-100"><label for="desired-application">' . __('Desired Application', 'woocommerce') . '</label>' . $field . '</p>';
 }
 
 function product_material_field($value = '')

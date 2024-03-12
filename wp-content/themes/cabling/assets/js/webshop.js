@@ -357,6 +357,7 @@
 
     $('.product-variable-filter').on('change', 'input[type=checkbox]', function () {
         showLoading();
+        $('input[name=paged]').val(1);
         $(this).closest('form').submit();
     });
 
@@ -686,6 +687,16 @@ function product_filter_ajax(cat_id) {
             showLoading();
         }
     });
+
+    $('.tax-product_custom_type').on('click', '.page-numbers', function(e) {
+        e.preventDefault();
+
+        const form = $('form#form-filter-type');
+
+        form.find('input[name=paged]').val($(this).text());
+        form.submit();
+        return false
+    })
 }
 
 

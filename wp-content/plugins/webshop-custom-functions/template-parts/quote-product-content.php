@@ -113,16 +113,28 @@
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
                                 <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="name" id="firstName"
-                                           value="<?php echo $name ?? '' ?>" required>
-                                    <label for="firstName" class="form-label">Name<span
+                                    <input type="text" class="form-control" name="first_name" id="firstName"
+                                           value="<?php echo $first_name ?? '' ?>" required>
+                                    <label for="firstName" class="form-label">First Name<span
                                                 class="required">*</span></label>
                                 </div>
                                 <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="title-function" id="title_function"
-                                           value="<?php echo $user_title ?? '' ?>" required>
-                                    <label for="title_function"
-                                           class="form-label">Title/Function<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="last_name" id="last_name"
+                                           value="<?php echo $last_name ?? '' ?>" required>
+                                    <label for="last_name" class="form-label">Last Name<span
+                                                class="required">*</span></label>
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <input type="text" class="form-control" name="function" id="function"
+                                           value="<?php echo $function ?? '' ?>" required>
+                                    <label for="function"
+                                           class="form-label">Function<span class="required">*</span></label>
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <input type="text" class="form-control" name="job_title" id="job_title"
+                                           value="<?php echo $job_title ?? '' ?>">
+                                    <label for="job_title"
+                                           class="form-label">Job Title</label>
                                 </div>
                                 <div class="mb-3 form-group">
                                     <input type="text" class="form-control" name="company" id="company-name"
@@ -130,11 +142,6 @@
                                            required>
                                     <label for="company-name" class="form-label">Company name<span
                                                 class="required">*</span></label>
-                                </div>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="company-sector" id="company-sector"
-                                           value="<?php echo $company_sector ?? '' ?>">
-                                    <label for="company-sector" class="form-label">Company Sector<span class="required">*</span></label>
                                 </div>
                                 <div class="mb-3 form-group">
                                     <input type="email" class="form-control" name="email" id="email"
@@ -221,11 +228,9 @@
                             <?php product_of_interest_field($product_of_interest ?? '') ?>
                         </div>
                         <div class="mb-3 form-group">
-                            <input type="text" class="form-control" name="when-needed" id="when-needed"
-                                   value="<?php echo $when_needed ?? '' ?>"
-                                   required>
-                            <label for="when-needed" class="form-label">When Needed<span
-                                        class="required">*</span></label>
+                            <input type="date" class="form-control date-picker" name="when-needed" id="when-needed"
+                                   value="<?php echo $when_needed ?? '' ?>">
+                            <label for="when-needed" class="form-label">When Needed</label>
                         </div>
                         <div class="mb-3 form-group">
                             <input type="number" class="form-control" name="volume" id="volume"
