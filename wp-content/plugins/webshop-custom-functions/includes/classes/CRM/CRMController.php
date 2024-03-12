@@ -512,28 +512,37 @@ class CRMController
         $crmquoteproduct = new CRMQuoteProduct();
 
         $crmquoteproduct->quantity = $data['volume'];
-        $crmquoteproduct->quantitycode = "T3";  // use 1000pc by default
-        $crmquoteproduct->application = $data['application']; //options are: Chemical Resistant/Oil Resistant/Water and Steam Resistant
+        $crmquoteproduct->quantitycode = "T3";
+        $crmquoteproduct->application = $data['application'];
         $crmquoteproduct->requiredby = "next week"; // free text
-        $crmquoteproduct->partnumber = $data['part-number'] ?? ''; // free text
+        $crmquoteproduct->partnumber = $data['part-number'] ?? 'N/A'; // free text
         $crmquoteproduct->comments = $data['additional-information'];  // free text
         $crmquoteproduct->material = $data['material'] ?? '';
-        $crmquoteproduct->hardness = $data['o_ring']['hardness'] ?? '';
+        $crmquoteproduct->hardness = $data['o_ring']['hardness'] ?? 'N/A';
         $crmquoteproduct->product = $data['product']; // product of interest
-        $crmquoteproduct->dimensions = $data['dimension'] ?? '';
+        $crmquoteproduct->dimensions = $data['dimension'] ?? 'N/A';
         $crmquoteproduct->dimensionscode = "T3"; //1000pc
-        // required in SAP method, but not available in interface
-        $crmquoteproduct->dimid = $data['dimension'] ?? '';
-        $crmquoteproduct->dimidcode = "INH";
-        $crmquoteproduct->dimod = "0.5";
-        $crmquoteproduct->dimodcode = "INH";
-        $crmquoteproduct->dimwidth = "0.15";
-        $crmquoteproduct->dimwidthcode = "INH";
         // end of required in SAP method, but not available in interface
         $crmquoteproduct->compound = $data['o_ring']['compound'] ?? '';
         $crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
         $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
         $crmquoteproduct->brand = $data['brand'] ?? 'N/A';
+
+        if ($crmquoteproduct->product === '321') {
+            $crmquoteproduct->dimid = $data['dimension_oring']['id'] ?? '0';
+            $crmquoteproduct->dimidcode = $data['dimension_oring']['type'] ?? 'INH';
+            $crmquoteproduct->dimod = $data['dimension_oring']['od'] ?? '0';
+            $crmquoteproduct->dimodcode = $data['dimension_oring']['type'] ?? '0';
+            $crmquoteproduct->dimwidth = $data['dimension_oring']['width'] ?? '0';
+            $crmquoteproduct->dimwidthcode = $data['dimension_oring']['type'] ?? '0';
+        } else {
+            $crmquoteproduct->dimid = '0';
+            $crmquoteproduct->dimidcode = "INH";
+            $crmquoteproduct->dimod = "0";
+            $crmquoteproduct->dimodcode = "INH";
+            $crmquoteproduct->dimwidth = "0";
+            $crmquoteproduct->dimwidthcode = "INH";
+        }
 
         $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
         /** end of create contact object to use **/

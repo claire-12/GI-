@@ -216,7 +216,8 @@ class CRMLead
 
         $rfq["Hardness_KUT"] = $product->hardness ?? "N/A";
 
-        $rfq["OwnerPartyID"] = "8000000770";  // no brand defined by default
+        //$rfq["OwnerPartyID"] = "8000000770";  // no brand defined by default
+        $rfq["OwnerPartyID"] = "";  // no brand defined by default
         if ($crmsalesquote->getBrand() != "") {
             switch (strtolower($crmsalesquote->getBrand())) {
                 case "tst":

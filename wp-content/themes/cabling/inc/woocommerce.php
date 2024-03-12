@@ -2155,12 +2155,12 @@ function show_product_field($name, $options = array()): string
     $option = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
     foreach ($options['options'] as $key => $option_text) {
         $selectKey = empty($options['key']) ? $option_text : $key;
-        $option .= '<option value="' . esc_attr($selectKey) . '" ' . selected($default, $selectKey, false) . '>' . esc_html($selectKey) . '</option>';
+        $option .= '<option value="' . esc_attr($selectKey) . '" ' . selected($default, $selectKey, false) . '>' . esc_html($option_text) . '</option>';
     }
 
     $field = '<select name="' . $name . '" id="' . $name . '" class="select form-select" ' . $required . '>' . $option . '</select>';
 
-    return '<div class="w-100 mb-2 ' . ($options['class'] ?? '') . '"><label for="' . $name . '">' . $options['label'] . $requiredLabel . '</label>' . $field . '</div>';
+    return '<div class="w-100 form-group has-focus' . ($options['class'] ?? '') . '">' . $field . '<label for="' . $name . '">' . $options['label'] . $requiredLabel . '</label></div>';
 }
 
 function debug_log($subject, $body)

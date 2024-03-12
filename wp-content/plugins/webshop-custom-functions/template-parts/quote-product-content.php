@@ -256,7 +256,7 @@
                             <div class="row">
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="dimension_oring[id]" id="dimension-id"
+                                        <input type="number" class="form-control" name="dimension_oring[id]" id="dimension-id" step="0.01"
                                                value=""
                                         >
                                         <label for="dimension-id" class="form-label">ID</label>
@@ -264,7 +264,7 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="dimension_oring[od]" id="dimension-od"
+                                        <input type="number" class="form-control" name="dimension_oring[od]" id="dimension-od" step="0.01"
                                                value=""
                                         >
                                         <label for="dimension-od" class="form-label">OD</label>
@@ -272,7 +272,7 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="dimension_oring[width]"
+                                        <input type="number" class="form-control" name="dimension_oring[width]" step="0.01"
                                                id="dimension-width" value=""
                                         >
                                         <label for="dimension-width" class="form-label">CS</label>
@@ -281,10 +281,11 @@
                                 <div class="col-3">
                                     <?php echo show_product_field('dimension_oring[type]', array(
                                         'options' => array(
-                                            'mm' => __('Milimeters', 'cabling'),
-                                            'inch' => __('Inches', 'cabling'),
+                                            'MMT' => __('Milimeters', 'cabling'),
+                                            'INH' => __('Inches', 'cabling'),
                                         ),
                                         'label' => __('Unit', 'woocommerce'),
+                                        'key' => true
                                     )); ?>
                                 </div>
                             </div>
