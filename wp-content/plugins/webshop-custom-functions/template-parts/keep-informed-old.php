@@ -62,29 +62,16 @@
     <div class="informed-contact informed-categories">
         <h5><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h5>
         <div class="form-check">
-            <input class="form-check-input" name="informed_channel[email]" type="checkbox" checked="checked" 
-                <?php echo 'style="display:none"' //echo empty($channel['email']) ? '' : ' checked="checked" ' ?>
+            <input class="form-check-input" name="informed_channel[email]" type="checkbox"
+                <?php echo empty($channel['email']) ? '' : ' checked="checked" ' ?>
                    id="cat-email" value="email">
             <label class="form-check-label" for="cat-email">Email</label>
-            <?php if (!is_user_logged_in()){ ?>
+            <?php if (!is_user_logged_in()): ?>
                 <div class="channel-email form-group form-check">
                     <input type="email" class="form-control" id="channel-email" name="channel-email" required
                            placeholder="Enter your email*" value="<?php echo $channel['email'] ?? '' ?>">
                 </div>
-
-	<?php }else{ 
-$current_user = wp_get_current_user();
-?>
-		 <div class="channel-email form-group form-check">
-                    <input type="email" class="form-control" id="channel-email" name="channel-email" required
-                           placeholder="Enter your email*" value="<?php 
-echo $current_user->user_email;
- // $channel['email'] ?? '' ?>" 
-readonly>
-                </div>
-
-
-            <?php } ?>
+            <?php endif; ?>
         </div>
         <!--<div class="form-check">
             <input class="form-check-input" name="informed_channel[whatsapp]" type="checkbox"
@@ -122,10 +109,9 @@ readonly>
             <div class="mb-3">
                 <label for="agree-term-condition">
                     <input type="checkbox" name="agree-term-condition" id="agree-term-condition" required>
-                    <?php //printf( __('I\'ve read and accept the %s.', 'cabling'),'<a target="_blank" href="' . home_url("/contact/general-terms-and-conditions/") . '">' . __("Terms & Conditions", "cabling") . '</a>') 
-			printf(  __('I would like to receive sales and marketing information from Datwyler Switzerland Inc. and its affiliates, based on my personal interests. I give my consent to the processing of my data as described in the terms and conditions %s.', 'cabling'),
-                        '<a target="_blank" href="' . home_url("/privacy") . '">' . __("here", "cabling") . '</a>')
-?>
+                    <?php printf(
+                        __('I\'ve read and accept the %s.', 'cabling'),
+                        '<a target="_blank" href="' . home_url("/contact/general-terms-and-conditions/") . '">' . __("Terms & Conditions", "cabling") . '</a>') ?>
                 </label>
             </div>
         <?php endif; ?>

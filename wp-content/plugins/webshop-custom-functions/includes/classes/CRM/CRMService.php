@@ -100,6 +100,7 @@ class CRMService
 
                 $crm = new CRMController();
                 $lead = $crm->processContactUsSubmit($posted_data);
+//print_r($lead);
 
                 wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', json_encode($lead));
 

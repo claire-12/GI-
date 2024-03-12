@@ -30,14 +30,14 @@
             <th>Status</th>
             <th>Email</th>
             <th>Date</th>
-            <th>Name</th>
             <th>Company</th>
-            <th>Company Sector</th>
-            <th>Company Address</th>
-            <th>Number</th>
-            <th>Price</th>
-            <th>Timing Required</th>
-            <th>Qty</th>
+            <th>Product Of Interest</th>
+            <th>When Needed</th>
+            <th>Quantity needed</th>
+            <th>Dimension</th>
+            <th>Part Number</th>
+            <th>O-ring</th>
+            <th>Filters</th>
             <th>Additional Information</th>
             <th>Object ID</th>
             <th>Object Type</th>
@@ -70,6 +70,36 @@
     }
 </style>
 <script>
+    // Custom function to parse the serialized string
+    function parseSerializedString(serializedString, isKey) {
+        const regex = /s:(\d+):"([^"]+)";/g;
+        const result = [];
+        let match;
+
+        while ((match = regex.exec(serializedString)) !== null) {
+            let [, keyLength, key] = match;
+            if (key===''){
+                key = '';
+            }
+            result.push(key)
+        }
+
+        const keyValuePairs = [];
+        if (isKey){
+            for (let i = 0; i < result.length; i += 1) {
+                keyValuePairs.push(result[i]);
+            }
+        } else {
+            for (let i = 0; i < result.length; i += 2) {
+                const key = result[i];
+                const value = result[i + 1] || '-'; // Use "-" if the value is empty
+                keyValuePairs.push(`<b>${key}</b>: ${value}`);
+            }
+        }
+
+        return keyValuePairs.join('<br>');
+    }
+
     jQuery(document).ready(function ($) {
         const quoteTableHtml = $('#quote-table');
         const dataTable = quoteTableHtml.DataTable({
@@ -86,14 +116,29 @@
                 {"data": "status"},
                 {"data": "email"},
                 {"data": "date"},
-                {"data": "name"},
-                {"data": "company"},
-                {"data": "company_sector"},
-                {"data": "company_address"},
-                {"data": "quote_number"},
-                {"data": "quote_price"},
-                {"data": "timing_required"},
-                {"data": "qty"},
+                {
+                    "data": "data_company",
+                    "render": function (data) {
+                        return parseSerializedString(data);
+                    }
+                },
+                {"data": "product_of_interest"},
+                {"data": "when_needed"},
+                {"data": "volume"},
+                {"data": "dimension"},
+                {"data": "part_number"},
+                {
+                    "data": "data_o_ring",
+                    "render": function (data) {
+                        return parseSerializedString(data);
+                    }
+                },
+                {
+                    "data": "quote_filter",
+                    "render": function (data) {
+                        return parseSerializedString(data, true);
+                    }
+                },
                 {"data": "additional_information"},
                 {"data": "object_id"},
                 {"data": "object_type"},
@@ -119,7 +164,7 @@
             const selectedValue = $(this).val();
             dataTable.columns(1).search(selectedValue).draw();
         });
-         // Handle edit button click
+        // Handle edit button click
         quoteTableHtml.on('click', '.edit-button', function () {
             const id = $(this).data('id');
             // Implement your edit logic here, e.g., open a modal with the record for editing
