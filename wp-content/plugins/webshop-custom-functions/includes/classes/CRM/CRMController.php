@@ -511,9 +511,12 @@ class CRMController
         }
 
         $crmquoteproduct = new CRMQuoteProduct();
+        
+        if( $data['volume']=="") $data['volume']=null;
+        $crmquoteproduct->quantity = $data['volume'] ?? '0';
 
-        $crmquoteproduct->quantity = $data['volume'];
-        $crmquoteproduct->quantitycode = "T3";
+        //$crmquoteproduct->quantity = $data['volume'];
+        //$crmquoteproduct->quantitycode = "T3";
         $crmquoteproduct->application = $data['application'];
         $crmquoteproduct->requiredby = "next week"; // free text
         $crmquoteproduct->partnumber = $data['part-number'] ?? 'N/A'; // free text
