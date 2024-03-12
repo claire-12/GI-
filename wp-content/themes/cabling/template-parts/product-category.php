@@ -26,7 +26,7 @@ $includes = $args['includes'] ?? null;
                         </a>
                     </h5>
                     <div class="cat-desc mb-2">
-                        <?php echo $short_description ?? '' ?>
+                        <?php echo str_replace("''","'",$short_description) ?? '' ?>
                     </div>
                     <a href="javascript:void(0)" class="block-button btn-red">
                         <span><?php _e('FIND OUT MORE', 'cabling') ?></span>

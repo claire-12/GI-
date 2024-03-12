@@ -40,7 +40,8 @@
     padding: 40px 0;
 }
 .webshop-block.media_text {
-    padding: 50px 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .home .site-main {

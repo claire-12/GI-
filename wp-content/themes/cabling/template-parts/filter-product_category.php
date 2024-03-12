@@ -23,6 +23,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                            value="<?php echo $meta[0]; ?>">
                 <?php endforeach; ?>
             <?php endif ?>
+            <input type="hidden" name="paged" value="<?php echo $_REQUEST['paged'] ?? '1'; ?>" >
             <div class="accordion" id="accordionFilterBlog">
                 <div class="accordion-item filter-checkbox filter-attribute filter-size">
                     <h2 class="accordion-header" id="panelsStayOpen-heading-sizeFT">
