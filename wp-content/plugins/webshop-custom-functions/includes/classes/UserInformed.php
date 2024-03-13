@@ -112,7 +112,7 @@ class UserInformed
         if (isset($data['_wpnonce']) && wp_verify_nonce($data['_wpnonce'], 'setting-account-action')){
             $verified_recapcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
             if (empty($verified_recapcha)){
-                //wp_send_json_error(__('reCAPTCHA verification failed. Please try again!', 'cabling'));
+                wp_send_json_error(__('reCAPTCHA verification failed. Please try again!', 'cabling'));
             }
             $success = __('Subscription successfully!', 'cabling');
             $informedData = [];
@@ -151,7 +151,7 @@ class UserInformed
                     $is_sent_confirmed = true;
                 }
 
-                $success = __('Subscription Confirmation: Please check you email to confirm the subscription.', 'cabling');
+                $success = __('Thanks for your request. Respecting your data is important for us at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your consent. All you need to do is click on the link in the message. And if you don’t receive a message, please check to see if it ended up in your junk folder.', 'cabling');
             } else {
                 self::remove_informed_channel('email');
             }
@@ -475,39 +475,45 @@ class UserInformed
 
     private static function send_confirm_notification(string $email): void
     {
+        $token = generate_confirmation_token();
+
+        $expiration_time = time() + (24 * 60 * 60); // 24 hours in seconds
+        set_transient('confirmation_informed_' . $email, $token, $expiration_time);
+
         $verify_link = add_query_arg([
-                'verify_nonce' => wp_create_nonce('verify_informed'),
+                'verify_nonce' => $token,
                 'verify_informed' => base64_encode($email),
         ], home_url('/'));
-        $name = get_bloginfo('name');
-        $subject = "[COMPANY] Subscription Confirmation: Please Confirm Your Email";
-        $message = "Hi,
-        Thank you for your interest in [COMPANY]!
-        To ensure you receive our latest updates. Please take a moment to confirm your subscription by clicking the link below:
-        [CONFIRMATION_LINK]
-        If you did not request this subscription, you can safely ignore this email.
-        If you have any questions or need further assistance, please don't hesitate to reach out to our customer support.
-        Thank you for choosing [COMPANY] for your subscription. We look forward to keeping you informed!
-        Best regards,
-            ";
-        $subject = str_replace('COMPANY', $name, $subject);
-        $message = str_replace('[COMPANY]', $name, $message);
-        $message = str_replace('[CONFIRMATION_LINK]', $verify_link, $message);
 
-        self::send_email($email, $subject, $message);
+        $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+
+        $options = array(
+            'link' => $verify_link,
+            'subject' => $subject,
+            'template' => 'template-parts/emails/confirm.php',
+        );
+
+        GIEmail::send($email, $options);
     }
 
     public static function confirm_keep_informed(): void
     {
         if (!empty($_GET['verify_informed']) && isset($_GET['verify_nonce'])){
+            $token =  $_GET['verify_nonce'];
             $email = base64_decode($_GET['verify_informed']);
-            $key = sanitize_key('verify_informed_'.$email);
-            update_option($key, 'yes');
-            self::send_notification($email);
+            $key = 'confirmation_informed_' . $email;
+            $transient_token = get_transient('confirmation_informed_' . $email);
+            if ($transient_token && $transient_token === $token) {
+                update_option($key, 'yes');
 
-            do_action('saved_user_confirm_keep_informed', ['email' => $email]);
+                self::send_notification($email);
 
-            wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+                do_action('saved_user_confirm_keep_informed', ['email' => $email]);
+
+                wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+            } else {
+                wp_redirect(home_url('/'));
+            }
             exit();
         }
     }

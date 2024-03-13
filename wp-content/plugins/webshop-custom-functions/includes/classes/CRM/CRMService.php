@@ -206,7 +206,7 @@ class CRMService
     private function send_confirm_email(string $email, array $data, $type)
     {
         $data_confirm = base64_encode(json_encode($data));
-        $token = $this->generate_confirmation_token();
+        $token = generate_confirmation_token();
 
         $expiration_time = time() + (24 * 60 * 60); // 24 hours in seconds
         set_transient('confirmation_token_' . $email, $token, $expiration_time);
@@ -257,17 +257,6 @@ class CRMService
             }
             exit();
         }
-    }
-
-
-    private function generate_confirmation_token($length = 32): string
-    {
-        $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        $token = '';
-        for ($i = 0; $i < $length; $i++) {
-            $token .= $characters[wp_rand(0, strlen($characters) - 1)];
-        }
-        return $token;
     }
 
 }

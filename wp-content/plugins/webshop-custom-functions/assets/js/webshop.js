@@ -106,7 +106,7 @@
             },
             success: function (response) {
                 if (response.success) {
-                    form.find('.woo-notice').addClass('woocommerce-message');
+                    form.html('<div class="woocommerce-message woo-notice"></div>');
                 } else {
                     form.find('.woo-notice').addClass('woocommerce-error');
                 }
@@ -114,8 +114,8 @@
                 form.find('button[type="submit"]').prop('disabled', false);
 
                 setTimeout(() => {
-                    form.find('.btn-closed').trigger('click');
-                }, 2000)
+                    window.location.reload();
+                }, 5000)
             },
             beforeSend: function () {
                 showLoading();

@@ -88,3 +88,13 @@ add_action('save_post_product', array('UserInformed', 'notify_subscribers'), 10,
 register_activation_hook(__FILE__, array('SearchLog', 'create_table'));
 register_activation_hook(__FILE__, array('UserInformed', 'create_table'));
 register_activation_hook(__FILE__, array('RequestProductQuote', 'create_table'));
+
+function generate_confirmation_token($length = 32): string
+{
+    $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    $token = '';
+    for ($i = 0; $i < $length; $i++) {
+        $token .= $characters[wp_rand(0, strlen($characters) - 1)];
+    }
+    return $token;
+}
