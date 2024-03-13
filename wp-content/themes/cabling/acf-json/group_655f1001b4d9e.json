@@ -3,91 +3,6 @@
     "title": "Product Fields - Show on Filter",
     "fields": [
         {
-            "key": "field_655f108a564ea",
-            "label": "Application",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "",
-            "esc_html": 0
-        },
-        {
-            "key": "field_655f1068564e6",
-            "label": "Contact Media",
-            "name": "product_contact_media",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": 1,
-            "post_type": [
-                "contact-media"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 1,
-            "allow_null": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_655f1083564e9",
-            "label": "Temperature  Range, °F",
-            "name": "product_operating_temp",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_655f1092564eb",
-            "label": "Properties",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "",
-            "esc_html": 0
-        },
-        {
             "key": "field_655f109c564ec",
             "label": "Dash Number",
             "name": "product_dash_number",
@@ -481,6 +396,91 @@
             "placeholder": ""
         },
         {
+            "key": "field_655f108a564ea",
+            "label": "Application",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_655f1068564e6",
+            "label": "Contact Media",
+            "name": "product_contact_media",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "post_type": [
+                "contact-media"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 1,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_655f1083564e9",
+            "label": "Temperature  Range, °F",
+            "name": "product_operating_temp",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_655f1092564eb",
+            "label": "Properties",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
             "key": "field_655f1073564e7",
             "label": "Type",
             "name": "product_type",
@@ -669,5 +669,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709199614
+    "modified": 1710317911
 }

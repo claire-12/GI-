@@ -47,19 +47,18 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
     </div>
     <div class="tab">
         <?php if (!empty($verify)): ?>
-            <p class="hidden"><strong><?php _e('Email:', 'cabling') ?></strong> <?php echo $email; ?></p>
             <form method="POST" name="infomation-form" id="infomation-form" class="needs-validation">
                 <input type="hidden" value="<?php echo $email; ?>" name="user_email">
 
+                <div class="form-group has-focus">
+                    <input type="text" class="form-control" name="user_email" id="user_email"
+                           value="<?php echo $email ?>" readonly>
+                    <label for="user_email"><?php _e('Professional Email ', 'cabling') ?><span class="required">*</span></label>
+                </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="first-name" id="first-name"
                            value="<?php echo $_REQUEST['first-name'] ?? '' ?>" required>
-                    <label for="first-name"><?php _e('First Name', 'cabling') ?><span class="required">*</span></label>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="last-name" id="last-name"
-                           value="<?php echo $_REQUEST['last-name'] ?? '' ?>" required>
-                    <label for="last-name"><?php _e('Last Name', 'cabling') ?><span class="required">*</span></label>
+                    <label for="first-name"><?php _e('Name', 'cabling') ?><span class="required">*</span></label>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="password" id="password" required>
@@ -69,43 +68,41 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                         <?php _e('Your password must have at least: 8 characters long with characters, numbers and symbols', 'cabling') ?>
                     </span>
                 <!-- JM 20230920 changed position of Is client? and client number -->
-                <div class="form-group">
+                <!--<div class="form-group">
                     <input type="text" class="form-control" name="company-name-responsible" id="company-responsive-name"
-                           value="<?php echo $_REQUEST['company-name-responsible'] ?? '' ?>"
+                           value="<?php /*echo $_REQUEST['company-name-responsible'] ?? '' */ ?>"
                            required>
-                    <label for="company-responsive-name"><?php _e('Company contact Full Name', 'cabling') ?><span
+                    <label for="company-responsive-name"><?php /*_e('Company contact Full Name', 'cabling') */ ?><span
                                 class="required">*</span></label>
-                </div>
+                </div>-->
                 <div class="form-group form-phone">
                     <input type="tel" class="form-control" id="mobile-phone" required>
                     <span id="mobile-phone-validate" class="hidden input-error"></span>
                     <input type="hidden" class="phone_number" name="billing_phone">
                     <input type="hidden" class="phone_code" name="billing_phone_code">
-                    <label for="mobile-phone"><?php _e('Mobile Number', 'cabling') ?><span
+                    <label for="mobile-phone"><?php _e('Professional Mobile', 'cabling') ?><span
                                 class="required">*</span></label>
                 </div>
-                <div class="form-group1">
-                        <label for="user_title"><?php esc_html_e('Title', 'woocommerce'); ?>&nbsp;<span
-                                    class="required">*</span></label>
-                        <?php woocommerce_form_field(
-                            'user_title',
-                            array(
-                                'type' => 'select',
-                                'class' => array('mw-100'),
-                                'options' => array('Ms.', 'Mr.'),
-                                'input_class' => array('form-select')
-                            ),
-                        )
-                        ?>
-                </div>
+                <?php echo show_product_field('function', array(
+                    'options' => CRMConstant::FUNCTION_CONTACT,
+                    'label' => __('Function', 'woocommerce'),
+                    'default' => $_REQUEST['function'] ?? '',
+                    'class' => ' form-group has-focus mt-4 mb-1 ',
+                    'required' => true
+                )); ?>
+                <?php echo show_product_field('user_title', array(
+                    'options' => array('Ms.', 'Mr.'),
+                    'label' => __('Title', 'woocommerce'),
+                    'default' => $_REQUEST['function'] ?? '',
+                    'class' => ' form-group has-focus mt-4 ',
+                    'required' => true
+                )); ?>
                 <div class="form-group">
                     <input type="text" class="form-control" name="job-title" id="job-title"
-                           value="<?php echo $_REQUEST['job-title'] ?? '' ?>" required>
-                    <label for="job-title"><?php _e('Job Title', 'cabling') ?><span class="required">*</span></label>
+                           value="<?php echo $_REQUEST['job-title'] ?? '' ?>">
+                    <label for="job-title"><?php _e('Job Title', 'cabling') ?></label>
                 </div>
-                <div class="form-group1" style="margin-bottom: 15px">
-                    <?php company_name_field() ?>
-                </div>
+                <?php echo company_name_field(); ?>
                 <div class="form-group">
                     <input type="text" class="form-control" name="company-name"
                            value="<?php echo $_REQUEST['company-name'] ?? '' ?>" id="company-name" required>
@@ -115,7 +112,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                 <div class="form-group">
                     <input type="text" class="form-control" name="billing_vat"
                            value="<?php echo $_REQUEST['billing_vat'] ?? '' ?>" id="company-vat" required>
-                    <label for="company-vat"><?php _e('Income tax number', 'cabling') ?><span class="required">*</span></label>
+                    <label for="company-vat"><?php _e('Company Tax Number', 'cabling') ?><span class="required">*</span></label>
                 </div>
                 <span class="password-help">
                         <?php _e('US Federal Tax or VAT number', 'cabling') ?>

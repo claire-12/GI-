@@ -22,7 +22,16 @@ $backlogMainTable = array(
     'remaining_value' => __('Remaining Value', 'cabling'),
 );
 ?>
-<?php if (is_array($data['stock'])): ?>
+<?php function get_cumulative_quantity($stock, float $quantity)
+{
+    if (empty($stock)){
+        $stock = 0;
+    }
+
+    return $stock + $quantity;
+}
+
+if (is_array($data['stock'])): ?>
     <div class="table-responsive">
         <h2 class="table-heading">Inventory</h2>
         <table id="inventory-table" class="table table-bordered text-center">
@@ -91,11 +100,16 @@ $backlogMainTable = array(
                     </tr>
                     </thead>
                     <tbody>
+                    <?php $stock = 0; ?>
                     <?php foreach ($data['stock'] as $cure): ?>
+                        <?php
+                        $cumulative_quantity = get_cumulative_quantity($stock, $cure['quantity']);
+                        $stock = $cumulative_quantity;
+                        ?>
                         <tr>
                             <td><?php echo show_value_from_api('cure_date', $cure['cure_date']) ?></td>
                             <td><?php echo show_value_from_api('quantity', $cure['quantity']) ?></td>
-                            <td><?php echo show_value_from_api('cumulative_quantity', $cure['cumulative_quantity']) ?></td>
+                            <td><?php echo $cumulative_quantity ?></td>
                         </tr>
                     <?php endforeach ?>
                     </tbody>

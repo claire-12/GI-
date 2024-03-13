@@ -2064,16 +2064,13 @@ function company_name_field()
     } else {
         $company = '';
     }
-
-    $field = '';
-    $options = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
-    foreach ($departments as $option_text) {
-        $options .= '<option value="' . esc_attr($option_text) . '" ' . selected($company, $option_text, false) . '>' . esc_html($option_text) . '</option>';
-    }
-
-    $field .= '<select name="company-sector" id="company-sector" class="select form-select" required>' . $options . '</select>';
-
-    echo '<p class="form-row w-100"><label for="company-sector">' . __('Company Sector', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
+    return show_product_field('company-sector', array(
+        'options' => $departments,
+        'label' => __('Company Sector', 'woocommerce'),
+        'default' => $company,
+        'class' => ' form-group has-focus mt-4 ',
+        'required' => true
+    ));
 }
 
 function get_name_title($value = null)
@@ -2167,3 +2164,12 @@ function debug_log($subject, $body)
 {
     wp_mail('daisy.nguyen0806@gmail.com,jose.martins@infolabix.com', $subject, $body);
 }
+
+function show_product_filter_input_value($attribute, $value)
+{
+    if ($attribute === 'product_dash_number') {
+        return str_replace('AS', '', $value);
+    }
+    return $value;
+}
+

@@ -341,8 +341,10 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                     </div>
                 </div>
             </div>
-            <?php if (!empty($attributes)): ?>
+            <?php
+            if (!empty($attributes)): ?>
                 <?php foreach ($attributes as $slug => $attribute): ?>
+                    <?php if ($slug === 'product_complance' || $slug === 'product_type'){continue;} ?>
                     <?php if ($attribute['field_type'] === 'message'): ?>
                         <h3 class="filter-heading"><?php echo $attribute['label'] ?></h3>
                     <?php else: ?>
@@ -364,13 +366,13 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                              data-value="<?php echo $attribute['valueType'] === 'key' ? $key : $value; ?>">
                                             <input class="form-check-input"
                                                    type="checkbox"
-                                                <?php echo show_product_filter_input_name($slug, $attribute) ?>
+                                                   <?php echo show_product_filter_input_name($slug, $attribute) ?>
                                                    value="<?php echo $attribute['valueType'] === 'key' ? $key : $value; ?>"
                                                    title="<?php echo $value; ?>"
                                                    id="category-<?php echo sanitize_title($slug . $value); ?>">
                                             <label class="form-check-label"
                                                    for="category-<?php echo sanitize_title($slug . $value); ?>">
-                                                <?php echo $value; ?>
+                                                <?php echo show_product_filter_input_value($slug, $value); ?>
                                                 <i class="fa-regular fa-check"></i>
                                             </label>
                                         </div>

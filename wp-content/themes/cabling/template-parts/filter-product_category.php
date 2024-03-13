@@ -356,7 +356,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                                        id="category-<?php echo sanitize_title($slug . $value); ?>">
                                                 <label class="form-check-label"
                                                        for="category-<?php echo sanitize_title($slug . $value); ?>">
-                                                    <?php echo $value; ?>
+                                                    <?php echo show_product_filter_input_value($slug, $value); ?>
                                                     <i class="fa-regular fa-check"></i>
                                                 </label>
                                             </div>

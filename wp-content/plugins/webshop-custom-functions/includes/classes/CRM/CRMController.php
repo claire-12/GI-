@@ -480,8 +480,9 @@ class CRMController
             $account->lastname = 'N/A';
             $account->email = $data['user_email'];
             $account->mobile = $data['billing_phone'];
-            $account->jobfunction = $data['job-title'];
+            $account->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
             $account->department = $data['department'];
+            $account->vatnumber = $data['billing_vat'];
             $account->address = $data['billing_address_1'];
             $account->city = 'N/A';
             $account->state = 'N/A';
