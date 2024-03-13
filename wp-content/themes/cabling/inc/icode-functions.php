@@ -1518,4 +1518,3 @@ function custom_autofill_data( $scanned_tag, $replace ) {
 }
 
 add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );
-

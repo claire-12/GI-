@@ -398,13 +398,13 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 .change-account-password .form-group input {
     color: #858585
 }
-.change-account-password .form-group #user_name {
+.change-account-password #user_name {
     padding-left: 90px;
 }
-.change-account-password .form-group #user_email {
+.change-account-password #user_email {
     padding-left: 60px;
 }
-.change-account-password .form-group #user_password {
+.change-account-password #user_password {
     padding-left: 85px;
 }
 .change-account-password .btn-submit {
@@ -835,7 +835,18 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     --bs-btn-font-size: .75rem;
     font-weight: 400;
     --bs-btn-padding-x: 0.5rem;
+	font-size:10px !important;
 }
+/* JM 20240301 change for sku table to drop scroll on client resolution */
+.product-variation-table >thead tr th
+{
+	font-size:10px !important;
+}
+.product-variation-table >tbody tr td
+{
+	font-size:10px !important;
+}
+
 .product-variation-table .product-request-button{
     margin-bottom: 0;
 }

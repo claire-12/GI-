@@ -103,17 +103,17 @@ $lost_password_url = esc_url(wp_lostpassword_url());
                     </div>
                     <div class="col-12 col-lg-8">
                         <form action="" id="change-account-password" class="change-account-password">
-                            <div class="form-group">
+                            <div class="form-group1 mb-3 position-relative">
                                 <label for="user_name"><?php echo __('Name:', 'cabling') ?></label>
                                 <input type="text" id="user_name"
                                        value="<?php echo $full_name ?: $current_user->display_name ?>" readonly>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group1 mb-3 position-relative">
                                 <label for="user_email"><?php echo __('Email:', 'cabling') ?></label>
                                 <input type="email" id="user_email"
                                        value="<?php echo $current_user->data->user_email ?>" readonly>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group1 mb-3 position-relative">
                                 <label for="user_password"><?php echo __('Password:', 'cabling') ?></label>
                                 <input type="email" id="user_password" value="********" readonly>
                             </div>

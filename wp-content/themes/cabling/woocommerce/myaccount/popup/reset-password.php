@@ -11,19 +11,19 @@
             <div class="modal-body">
                 <form action="" id="reset-account-password" class="reset-account-password">
                     <div class="form-group">
-                        <label for="old-password"><?php echo __('Old Password:', 'cabling') ?></label>
                         <input type="password" id="old-password" name="old-password" required>
+                        <label for="old-password"><?php echo __('Old Password:', 'cabling') ?></label>
                     </div>
                     <div class="form-group">
-                        <label for="new-password"><?php echo __('New Password:', 'cabling') ?></label>
                         <input type="password" id="new-password" name="new-password" required>
+                        <label for="new-password"><?php echo __('New Password:', 'cabling') ?></label>
                         <span class="password-help">
                             <?php _e('Required to update password - mix of characters, symbols and numbers, min 8 digits','cabling') ?>
                         </span>
                     </div>
                     <div class="form-group">
-                        <label for="confirm-password"><?php echo __('Confirm Password:', 'cabling') ?></label>
                         <input type="password" id="confirm-password" name="confirm-password" value="" required>
+                        <label for="confirm-password"><?php echo __('Confirm Password:', 'cabling') ?></label>
                     </div>
                     <div class="modal-footer text-center">
                         <button type="submit" class="block-button"><?php echo __('Update', 'cabling') ?></button>
