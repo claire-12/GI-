@@ -4,6 +4,7 @@ class CRMService
 {
     public function __construct()
     {
+        add_action('init', [$this, 'confirm_email']);
         add_filter('wpcf7_submission_result', [$this, 'crm_action_after_form_submission'], 10, 2);
         add_action('saved_request_a_quote', [$this, 'crm_action_after_saved_request_a_quote']);
         add_action('saved_user_keep_informed', [$this, 'crm_action_after_saved_user_keep_informed']);
@@ -48,11 +49,41 @@ class CRMService
         return $key ?? '0001';
     }
 
+    private function requestQuoteCRM($data)
+    {
+        $crm = new CRMController();
+        $lead = $crm->processRequestAQuoteSubmit($data);
+        if (!empty($lead->leadid)) {
+            $dataCRM = array(
+                'leadid' => $lead->leadid,
+                'leadtype' => $lead->leadtype,
+                'ContactID' => $lead->contactid,
+                'AccountID' => $lead->accountid,
+            );
+            $this->saveCRMData($data['email'], $dataCRM);
+        }
+    }
+    private function requestContactCRM($data)
+    {
+        $crm = new CRMController();
+        $lead = $crm->processContactUsSubmit($data);
+
+        if ($lead) {
+            $dataCRM = array(
+                'AccountID' => $lead->AccountPartyID,
+                'ExternalID' => $lead->ExternalID,
+                'ContactID' => $lead->ContactID,
+            );
+            $this->saveCRMData($data['your-email'], $dataCRM);
+        }
+    }
+
     public function crm_action_after_form_submission($result, $submission)
     {
-        if ($result['status'] != 'mail_sent'){
+        if ($result['status'] != 'mail_sent') {
             return $result;
         }
+
         try {
             $posted_data = $submission->get_posted_data();
             $name_title = get_name_title($posted_data['your-title'][0]);
@@ -61,24 +92,17 @@ class CRMService
                 $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
                 $posted_data['product'] = (string)$product;
 
-                $crm = new CRMController();
-                $lead = $crm->processContactUsSubmit($posted_data);
-                //print_r($lead);
-
-                //wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', json_encode($lead));
-
-                if ($lead) {
-                    $dataCRM = array(
-                        'AccountID' => $lead->AccountPartyID,
-                        'ExternalID' => $lead->ExternalID,
-                        'ContactID' => $lead->ContactID,
-                    );
-                    $this->saveCRMData($posted_data['your-email'], $dataCRM);
+                if (is_user_logged_in()) {
+                    $this->requestContactCRM($posted_data);
+                } else {
+                    $result['message'] = 'Thanks for your request. Respecting your data is important for us at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your consent. All you need to do is click on the link in the message. And if you don’t receive a message, please check to see if it ended up in your junk folder.';
+                    $this->send_confirm_email($posted_data['your-email'], $posted_data, 'contact');
                 }
             }
         } catch (Exception $e) {
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
+
         return $result;
     }
 
@@ -100,26 +124,17 @@ class CRMService
                 $filepath = wp_get_attachment_url($filAray[0]);
                 $quote['file'] = $filepath;
             }
-            if (!empty($brandId)){
+            if (!empty($brandId)) {
                 $brand = get_term($brandId, 'product-brand');
-                if ($brand){
+                if ($brand) {
                     $quote['brand'] = $brand->slug;
                 }
             }
 
-            $crm = new CRMController();
-            $lead = $crm->processRequestAQuoteSubmit($quote);
-
-            //wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_saved_request_a_quote', json_encode($quote) . '####' . json_encode($lead));
-
-            if (!empty($lead->leadid)) {
-                $dataCRM = array(
-                    'leadid' => $lead->leadid,
-                    'leadtype' => $lead->leadtype,
-                    'ContactID' => $lead->contactid,
-                    'AccountID' => $lead->accountid,
-                );
-                $this->saveCRMData($quote['email'], $dataCRM);
+            if (is_user_logged_in()) {
+                $this->requestQuoteCRM($quote);
+            } else {
+                $this->send_confirm_email($quote['email'], $quote, 'request_quote');
             }
         } catch (Exception $e) {
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
@@ -136,8 +151,6 @@ class CRMService
 
             $crm = new CRMController();
             $lead = $crm->processAccountCreationLead($data);
-
-            //wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_gi_created_new_customer', json_encode($data) . '####' . json_encode($lead));
 
             if ($lead) {
                 $dataCRM = array(
@@ -184,13 +197,79 @@ class CRMService
                 }
             }
             $crm = new CRMController();
-            $lead = $crm->processKMILeadCreation($data);
-
-            wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_saved_user_keep_informed', json_encode($data) . '####' . json_encode($lead));
+            $crm->processKMILeadCreation($data);
         } catch (Exception $e) {
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
     }
+
+    private function send_confirm_email(string $email, array $data, $type)
+    {
+        $data_confirm = base64_encode(json_encode($data));
+        $token = $this->generate_confirmation_token();
+
+        $expiration_time = time() + (24 * 60 * 60); // 24 hours in seconds
+        set_transient('confirmation_token_' . $email, $token, $expiration_time);
+        set_transient('confirmation_data_' . $email, $data_confirm, $expiration_time);
+        $verify_link = add_query_arg([
+            'action' => 'confirm-email',
+            'token' => $token,
+            'email' => $email,
+            'type' => $type,
+        ], home_url('/'));
+
+        $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+
+        $options = array(
+            'link' => $verify_link,
+            'subject' => $subject,
+            'template' => 'template-parts/emails/confirm.php',
+        );
+
+        GIEmail::send($email, $options);
+    }
+
+    public function confirm_email()
+    {
+        if (isset($_GET['action']) && $_GET['action'] == 'confirm-email') {
+            echo '<p style="text-align: center">Verifying your email! Please wait ...</p>';
+            $token = $_GET['token'];
+            $email = $_GET['email'];
+            $type = $_GET['type'];
+
+            $transient_token = get_transient('confirmation_token_' . $email);
+
+            if ($transient_token && $transient_token === $token) {
+                $confirmation_data = get_transient('confirmation_data_' . $email);
+                $data = json_decode(base64_decode($confirmation_data), true);
+
+                if ($type === 'request_quote') {
+                    $this->requestQuoteCRM($data);
+                } elseif ($type === 'contact') {
+                    $this->requestContactCRM($data);
+                }
+                delete_transient('confirmation_token_' . $email);
+                delete_transient('confirmation_data_' . $email);
+
+                wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+            } else {
+                wp_redirect(home_url('/'));
+            }
+            exit();
+        }
+    }
+
+
+    private function generate_confirmation_token($length = 32): string
+    {
+        $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $token = '';
+        for ($i = 0; $i < $length; $i++) {
+            $token .= $characters[wp_rand(0, strlen($characters) - 1)];
+        }
+        return $token;
+    }
+
 }
 
 new CRMService();

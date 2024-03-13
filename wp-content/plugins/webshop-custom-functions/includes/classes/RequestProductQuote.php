@@ -158,6 +158,9 @@ class RequestProductQuote
                     $data['billing_phone_code'] = get_user_meta($userId, 'billing_phone_code', true);
                     $data['company-sector'] = get_user_meta($userId, 'company-sector', true);
                     $data['phone_number'] = get_user_phone_number($userId);
+                    $success_message = __('Request a quote successfully', 'cabling');
+                } else {
+                    $success_message = __('Thanks for your request. Respecting your data is important for us at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your consent. All you need to do is click on the link in the message. And if you don’t receive a message, please check to see if it ended up in your junk folder.', 'cabling');
                 }
 
                 $data['quote_filter'] = [];
@@ -170,7 +173,7 @@ class RequestProductQuote
 
                 do_action('saved_request_a_quote', $data);
 
-                $message = '<div class="woocommerce-message woo-notice" role="alert">' . __('Request a quote successfully', 'cabling') . '</div>';
+                $message = '<div class="woocommerce-message woo-notice" role="alert">' . $success_message . '</div>';
 
                 wp_send_json_success($message);
             }

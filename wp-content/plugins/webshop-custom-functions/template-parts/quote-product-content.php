@@ -360,9 +360,12 @@
                 <div class="form-check d-inline-block">
                     <input class="form-check-input" type="checkbox" id="share-my-data" value="yes" required>
                     <label class="form-check-label ms-2" for="share-my-data">
-                        I AGREE TO <a href="<?php echo esc_url(home_url('/privacy/')) ?>" style="color: inherit"
-                                      target="_blank">SHARE MY
-                            DATA</a>
+                        I would like
+                    to receive sales and marketing information from Datwyler Switzerland Inc. and its affiliates,
+                    based on my personal interests.
+                    I give my consent to the processing of my data
+                    as described in the terms and conditions <a target="_blank" href="<?php echo home_url('/privacy')?>">here</a>.
+
                     </label>
                 </div>
                 <div class="mb-3 form-group">
