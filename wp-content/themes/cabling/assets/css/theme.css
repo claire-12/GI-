@@ -3741,3 +3741,9 @@ table.tablepress-id-52 tr .column-7 {
     position: absolute;
     z-index: 10;
 }
+.custom-size-quote {
+	padding-left: 10px;
+}
+.custom-size-quote .product-request-button .btn-primary {
+	font-size: 1rem;
+}

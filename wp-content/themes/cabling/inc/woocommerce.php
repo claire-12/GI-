@@ -1804,7 +1804,7 @@ function cabling_change_product_query($query)
         $paged = $query->get('paged');
         if (isset($_REQUEST['data-filter'])) {
             $data = json_decode(base64_decode($_REQUEST['data-filter']), true);
-            $attributes = $data['attributes'];
+            $attributes = $data['attributes'] ?? [];
         } elseif (isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'product-category-filter') && !empty($_POST['attributes'])) {
             $attributes = $_POST['attributes'];
         } else {

@@ -298,7 +298,7 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion accordion-flush">
+                        <!--<div class="accordion accordion-flush">
                             <div class="accordion-item filter-checkbox filter-custom-size">
                                 <h2 class="accordion-header"
                                     id="panelsStayOpen-heading-customSize">
@@ -307,7 +307,7 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                             data-bs-target="#panelsStayOpen-collapse-customSize"
                                             aria-expanded="false"
                                             aria-controls="panelsStayOpen-collapse-customSize">
-                                        <?php echo __('Custom', 'cabling') ?>
+                                        <?php /*echo __('Custom', 'cabling') */ ?>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapse-customSize"
@@ -337,6 +337,10 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                     </div>
                                 </div>
                             </div>
+                        </div>-->
+                        <div class="custom-size-quote">
+                            <div>Need a custom size? Just send us a quote request.</div>
+                            <?php cabling_add_quote_button() ?>
                         </div>
                     </div>
                 </div>
@@ -344,7 +348,9 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
             <?php
             if (!empty($attributes)): ?>
                 <?php foreach ($attributes as $slug => $attribute): ?>
-                    <?php if ($slug === 'product_complance' || $slug === 'product_type'){continue;} ?>
+                    <?php if ($slug === 'product_complance' || $slug === 'product_type') {
+                        continue;
+                    } ?>
                     <?php if ($attribute['field_type'] === 'message'): ?>
                         <h3 class="filter-heading"><?php echo $attribute['label'] ?></h3>
                     <?php else: ?>
@@ -366,7 +372,7 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                              data-value="<?php echo $attribute['valueType'] === 'key' ? $key : $value; ?>">
                                             <input class="form-check-input"
                                                    type="checkbox"
-                                                   <?php echo show_product_filter_input_name($slug, $attribute) ?>
+                                                <?php echo show_product_filter_input_name($slug, $attribute) ?>
                                                    value="<?php echo $attribute['valueType'] === 'key' ? $key : $value; ?>"
                                                    title="<?php echo $value; ?>"
                                                    id="category-<?php echo sanitize_title($slug . $value); ?>">
@@ -383,6 +389,10 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                     <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
+            <div class="custom-size-quote">
+                <div>Need a hardness / durometer measurement not listed here? Just send us a quote request.</div>
+                <?php cabling_add_quote_button() ?>
+            </div>
         </div>
     </form>
 </div>
