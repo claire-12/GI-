@@ -3762,3 +3762,12 @@ table.tablepress-id-52 tr .column-7 {
     bottom: -35px;
     left: 12px;
 }
+.industry-items .wp-block-column {
+    position: relative;
+    padding-bottom: 50px;
+}
+.industry-items .wp-block-column .wp-block-button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}

@@ -309,9 +309,13 @@ if (!function_exists('cabling_woocommerce_header_cart')) {
 function cabling_woocommerce_breadcrumb()
 {
     if (is_shop()) return;
+    $link = home_url('/products-and-services/');
+    if (is_product() && isset($_REQUEST['data-history'])){
+        $link = base64_decode($_REQUEST['data-history']);
+    }
     echo '<div class="container mb-3">';
     echo '<div class="woo-breadcrumbs d-flex align-items-center">';
-    echo '<a href="' . home_url('/products-and-services/') . '" class="back-button"><i class="fa-light fa-arrow-left"></i>' . __('Back to Results', 'cabling') . '</a>';
+    echo '<a href="' . $link . '" class="back-button"><i class="fa-light fa-arrow-left"></i>' . __('Back to Results', 'cabling') . '</a>';
     woocommerce_breadcrumb(
         array(
             'delimiter' => ' / ',
@@ -2173,3 +2177,21 @@ function show_product_filter_input_value($attribute, $value)
     return $value;
 }
 
+
+function get_product_filter_link(): string
+{
+    $link = get_the_permalink();
+    if (isset($_POST['attributes'])) {
+        $attributes = array(
+            'attributes' => $_POST['attributes'],
+            'paged' => $_POST['paged'] ?? 1,
+        );
+        $data = base64_encode(json_encode($attributes));
+    } elseif (isset($_GET['data-filter'])) {
+        $data = $_GET['data-filter'];
+    } else {
+        $data = '';
+    }
+    $previous_link = add_query_arg('data-filter', $data, get_term_link(get_queried_object()));
+    return add_query_arg('data-history', base64_encode($previous_link), $link);
+}
