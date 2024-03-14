@@ -117,17 +117,19 @@ $lost_password_url = esc_url(wp_lostpassword_url());
                                 <label for="user_password"><?php echo __('Password:', 'cabling') ?></label>
                                 <input type="email" id="user_password" value="********" readonly>
                             </div>
+							<!--
                             <div class="btn-submit wp-block-button block-button-black">
                                 <a href="<?php echo $lost_password_url ?>" class=" wp-element-button"
                                    data-bs-toggle="modal" data-bs-target="#resetPasswordModal">
                                     <span>SET NEW PASSWORD</span>
                                 </a>
                             </div>
+-->
                         </form>
                     </div>
                 </div>
             </div>
-            <h3><?php echo __('CONTENT PREFERENCES', 'cabling'); ?></h3>
+            <!--<h3><?php echo __('CONTENT PREFERENCES', 'cabling'); ?></h3>-->
             <div class="keep-informed-account-wrapper">
                 <?php UserInformed::setting_account_endpoint_content() ?>
             </div>
