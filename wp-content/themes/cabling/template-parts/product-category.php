@@ -13,7 +13,7 @@ $includes = $args['includes'] ?? null;
                 $thumbnail_id = empty($thumbnail_id) ? 1032601 : $thumbnail_id;
                 $thumbnail = wp_get_attachment_image($thumbnail_id, 'medium');
                 ?>
-                <div class="cat-item col-sm-6 col-md-4 mb-5"
+                <div class="cat-item col-sm-6 col-md-4"
                      data-category="<?php echo $child->term_id ?>">
                     <a href="javascript:void(0)"
                        title="<?php echo $child->name ?>">

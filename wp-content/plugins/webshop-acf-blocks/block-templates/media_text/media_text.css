@@ -34,7 +34,7 @@ object-fit:contain;
 .media_text.show-right .main-content{
     padding-left: 0;
 }
-.media_text.items-center .row {
+.media_text .row {
     align-items: center;
 }
 .media_text.items-end .row {

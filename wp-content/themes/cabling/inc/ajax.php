@@ -108,8 +108,13 @@ function cabling_login_ajax_callback()
             $user = wp_signon($creds, is_ssl());
 
             if (is_wp_error($user)) {
+                if ($user->get_error_code() === 'invalid_email'){
+                    $error = __('Unknown email address. Please check again!', 'cabling');
+                } else {
+                    $error = $user->get_error_message();
+                }
                 $err = true;
-                $mess = '<div class="woocommerce-error woo-notice" role="alert">' . $user->get_error_message() . '</div>';
+                $mess = '<div class="woocommerce-error woo-notice" role="alert">' . $error . '</div>';
             } else {
                 $redirect_to = $data['_wp_http_referer'] ?? wc_get_account_endpoint_url('');
                 $mess = '<div class="woocommerce-message woo-notice" role="alert">' . __('Success! Redirecting...', 'cabling') . '</div>';

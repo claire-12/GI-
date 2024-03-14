@@ -355,6 +355,7 @@ input[type="text"]:disabled {
     flex-wrap: wrap;
     list-style: none;
     margin-bottom: 0;
+    padding-left: 0;
 }
 
 .main-navigation .menu > li {
@@ -2575,8 +2576,13 @@ ul.bbp-replies .heateor_sss_sharing_container {
 
 .brand-row .wp-block-column {
     padding: 0 10% 100px;
+    position: relative;
 }
-
+.brand-row .wp-block-button {
+    position: absolute;
+    bottom: 50px;
+    left: 20%;
+}
 .brand-row .wp-block-image img {
     width: 350px;
     height: 200px !important;
@@ -3746,4 +3752,13 @@ table.tablepress-id-52 tr .column-7 {
 }
 .custom-size-quote .product-request-button .btn-primary {
 	font-size: 1rem;
+}
+.cat-item {
+    position: relative;
+    margin-bottom: 4rem;
+}
+.cat-item .block-button {
+    position: absolute;
+    bottom: -35px;
+    left: 12px;
 }

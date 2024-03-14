@@ -1,4 +1,4 @@
-<?php if (!empty(get_field('hide_breadcrumb'))): ?>
+<?php if (is_product()): ?>
     <div class="cabling-breadcrumb woocommerce-breadcrumb my-3">
         <?php cabling_woocommerce_breadcrumb() ?>
     </div>

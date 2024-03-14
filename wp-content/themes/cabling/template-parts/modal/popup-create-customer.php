@@ -15,25 +15,30 @@ $user_id = get_current_user_id();
                 <form method="POST" name="create-user-form" id="information-form" class="needs-validation">
                     <div class="woo-notice" role="alert" style="display: none">
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control"
-                               name="user-title" id="user-title" required>
-                        <label for="user-title"><?php _e('Title', 'cabling') ?><span class="required">*</span></label>
-                    </div>
+                    <?php echo show_product_field('user-title', array(
+                        'options' => array('Ms.', 'Mr.'),
+                        'label' => __('Title', 'woocommerce'),
+                        'default' => $_REQUEST['user-title'] ?? '',
+                        'class' => ' form-group has-focus mt-4 ',
+                        'required' => true
+                    )); ?>
                     <div class="form-group">
                         <input type="text" class="form-control"
                                name="first_name" id="first_name" required>
-                        <label for="first_name"><?php _e('First Name', 'cabling') ?><span class="required">*</span></label>
+                        <label for="first_name"><?php _e('First Name', 'cabling') ?><span
+                                    class="required">*</span></label>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control"
                                name="last_name" id="last_name" required>
-                        <label for="last_name"><?php _e('Last Name', 'cabling') ?><span class="required">*</span></label>
+                        <label for="last_name"><?php _e('Last Name', 'cabling') ?><span
+                                    class="required">*</span></label>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control"
                                name="job-title" id="job-title" required>
-                        <label for="job-title"><?php _e('Job Title', 'cabling') ?><span class="required">*</span></label>
+                        <label for="job-title"><?php _e('Job Title', 'cabling') ?><span
+                                    class="required">*</span></label>
                     </div>
                     <div class="form-group">
                         <label for="user_email"><?php _e('Email', 'cabling') ?><span class="required">*</span></label>
@@ -44,7 +49,8 @@ $user_id = get_current_user_id();
                     </div>
                     <div class="form-group">
                         <label for="user_telephone"><?php _e('Telephone', 'cabling') ?></label>
-                        <input type="tel" class="form-control" id="user_telephone" placeholder="<?php _e('Telephone', 'cabling') ?>" required>
+                        <input type="tel" class="form-control" id="user_telephone"
+                               placeholder="<?php _e('Telephone', 'cabling') ?>" required>
                         <span id="user_telephone-validate" class="hidden input-error"></span>
                         <input type="hidden" class="phone_number" name="user_telephone">
                         <input type="hidden" class="phone_code" name="user_telephone_code">
@@ -59,7 +65,8 @@ $user_id = get_current_user_id();
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="department" name="user-department" required>
-                        <label for="department"><?php _e('Department', 'cabling') ?><span class="required">*</span></label>
+                        <label for="department"><?php _e('Department', 'cabling') ?><span
+                                    class="required">*</span></label>
                     </div>
                     <div class="text-center">
 

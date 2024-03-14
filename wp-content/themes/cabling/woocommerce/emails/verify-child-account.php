@@ -29,4 +29,4 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 <p><?php printf( esc_html__( 'Please click on the following link to verify and set your password: %1$s', 'woocommerce' ), make_clickable( esc_url( $link_verify ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 
 <?php
-do_action( 'woocommerce_email_footer', $email );
+do_action( 'woocommerce_email_footer' );

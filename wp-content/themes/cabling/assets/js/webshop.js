@@ -519,10 +519,14 @@ function checkPasswordStrength(password) {
         strength += 1;
     }
 
-    /*// Check for at least one uppercase letter
+    // Check for at least one uppercase letter
     if (/[A-Z]/.test(password)) {
         strength += 1;
-    }*/
+    }
+    // Check for at least one uppercase letter
+    if (/[a-z]/.test(password)) {
+        strength += 1;
+    }
 
     // Check for at least one special character
     if (/[\W_]/.test(password)) {
@@ -534,7 +538,7 @@ function checkPasswordStrength(password) {
         strength += 1;
     }
 
-    return strength === 3;
+    return strength === 5;
 }
 
 function blog_filter_ajax(load_more = false) {

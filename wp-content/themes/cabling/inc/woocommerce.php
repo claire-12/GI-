@@ -311,7 +311,7 @@ function cabling_woocommerce_breadcrumb()
     if (is_shop()) return;
     echo '<div class="container mb-3">';
     echo '<div class="woo-breadcrumbs d-flex align-items-center">';
-    echo '<a href="' . home_url('/products-and-services/') . '" class="back-button"><i class="fa-light fa-arrow-left"></i>' . __('Back to Results', 'cabling') . '</a>';
+    echo '<a href="javascript:window.history.back();" class="back-button"><i class="fa-light fa-arrow-left"></i>' . __('Back to Results', 'cabling') . '</a>';
     woocommerce_breadcrumb(
         array(
             'delimiter' => ' / ',

@@ -17,11 +17,13 @@
                    id="user_email" disabled>
             <label for="user_email"><?php _e('Email', 'cabling') ?><span class="required">*</span></label>
         </div>
-        <div class="form-group <?php echo empty($data['user_title']) ? '' : 'has-focus' ?>">
-            <input type="text" class="form-control" name="user_title" value="<?php echo $data['user_title'] ?>"
-                   id="user_title" required>
-            <label for="user_title"><?php _e('Title', 'cabling') ?><span class="required">*</span></label>
-        </div>
+        <?php echo show_product_field('user_title', array(
+            'options' => array('Ms.', 'Mr.'),
+            'label' => __('Title', 'woocommerce'),
+            'default' => $data['user_title'] ?? '',
+            'class' => ' form-group has-focus mt-4 ',
+            'required' => true
+        )); ?>
         <div class="form-group <?php echo empty($data['billing_first_name']) ? '' : 'has-focus' ?>">
             <input type="text" class="form-control" name="billing_first_name"
                    value="<?php echo $data['billing_first_name'] ?>"
@@ -42,19 +44,24 @@
         </div>
         <div class="form-group">
             <label for="user_telephone"><?php _e('Telephone', 'cabling') ?></label>
-            <input type="tel" class="form-control" id="user_telephone_edit" placeholder="<?php _e('Telephone', 'cabling') ?>"
+            <input type="tel" class="form-control" id="user_telephone_edit"
+                   placeholder="<?php _e('Telephone', 'cabling') ?>"
                    value="<?php echo get_user_telephone_number($customer->ID) ?>" required>
             <span id="user_telephone-validate" class="hidden input-error"></span>
-            <input type="hidden" class="phone_number" name="user_telephone" value="<?php echo $data['user_telephone'] ?>">
-            <input type="hidden" class="phone_code" name="user_telephone_code" value="<?php echo $data['user_telephone_code'] ?>">
+            <input type="hidden" class="phone_number" name="user_telephone"
+                   value="<?php echo $data['user_telephone'] ?>">
+            <input type="hidden" class="phone_code" name="user_telephone_code"
+                   value="<?php echo $data['user_telephone_code'] ?>">
         </div>
         <div class="form-group">
             <label for="mobile-phone"><?php _e('Mobile Number', 'cabling') ?></label>
             <input type="tel" class="form-control" id="mobile_phone_edit"
-                   placeholder="<?php _e('Mobile Number', 'cabling') ?>" value="<?php echo get_user_phone_number($customer->ID) ?>" required>
+                   placeholder="<?php _e('Mobile Number', 'cabling') ?>"
+                   value="<?php echo get_user_phone_number($customer->ID) ?>" required>
             <span id="mobile-phone-validate" class="hidden input-error"></span>
             <input type="hidden" class="phone_number" name="billing_phone" value="<?php echo $data['billing_phone'] ?>">
-            <input type="hidden" class="phone_code" name="billing_phone_code" value="<?php echo $data['billing_phone_code'] ?>">
+            <input type="hidden" class="phone_code" name="billing_phone_code"
+                   value="<?php echo $data['billing_phone_code'] ?>">
         </div>
         <div class="form-group <?php echo empty($data['user_department']) ? '' : 'has-focus' ?>">
             <input type="text" class="form-control" id="user_department"
@@ -63,7 +70,8 @@
         </div>
         <div class="text-center">
             <input type="hidden" name="customer_id" value="<?php echo $customer->ID ?>">
-            <button class="btn btn-dark btn-update-customer btn-submit" type="submit"><?php _e('Update', 'cabling') ?></button>
+            <button class="btn btn-dark btn-update-customer btn-submit"
+                    type="submit"><?php _e('Update', 'cabling') ?></button>
         </div>
     </form>
 </div>

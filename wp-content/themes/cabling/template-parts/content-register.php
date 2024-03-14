@@ -93,7 +93,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                 <?php echo show_product_field('user_title', array(
                     'options' => array('Ms.', 'Mr.'),
                     'label' => __('Title', 'woocommerce'),
-                    'default' => $_REQUEST['function'] ?? '',
+                    'default' => $_REQUEST['user_title'] ?? '',
                     'class' => ' form-group has-focus mt-4 ',
                     'required' => true
                 )); ?>
