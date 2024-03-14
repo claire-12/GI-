@@ -1,4 +1,4 @@
-<h2><?php _e('Account Setting / Keep me Informed', 'cabling'); ?></h2>
+<h2><?php _e('Account Setting / Keep Me Informed', 'cabling'); ?></h2>
 <form method="post">
     <?php if ($product_category): ?>
         <div class="mb-3">

@@ -393,7 +393,7 @@ function cabling_account_menu_items()
         'dashboard' => __('Datwyler My Account', 'cabling'),
         'edit-account' => __('Account Information', 'cabling'),
         //'edit-address' => __('Billing/shipping address', 'cabling'),
-        'setting-account' => __('Keep me Informed', 'cabling'),
+        'setting-account' => __('Keep Me Informed', 'cabling'),
     );
 
     // JM 20230913 restricted menu to master account only

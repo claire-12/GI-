@@ -1,5 +1,5 @@
 <div class="informed-header">
-    <h2 class="text-center"><?php _e('Keep me Informed', 'cabling'); ?></h2>
+    <h2 class="text-center"><?php _e('Keep Me Informed', 'cabling'); ?></h2>
     <h4 class="text-center"><?php _e('Please keep me informed about the following', 'cabling'); ?></h4>
 </div>
 <form id="keep-informed-form" class="keep-informed-account" method="post">
