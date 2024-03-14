@@ -25,18 +25,20 @@ if (empty($product) || !$product->is_visible()) {
 }
 $fieldList = cabling_get_product_table_attributes();
 $filterValues = show_filter_value($fieldList, $product->get_id());
+
+$product_link = get_product_filter_link();
 ?>
 <tr class="<?php echo implode(' ', $filterValues) ?>">
-	<td><?php cabling_add_quote_button($product->get_id()) ?></td>
+    <td><?php cabling_add_quote_button($product->get_id()) ?></td>
     <?php foreach ($fieldList as $key => $attribute): ?>
-         <?php $value = get_product_field($key, $product->get_id()); ?>
+        <?php $value = get_product_field($key, $product->get_id()); ?>
         <?php if ($key === '_sku'): ?>
-            <td><a href="<?php the_permalink(); ?>"><?php echo $value ?? '---' ?></td>
+            <td><a href="<?php echo esc_url($product_link); ?>"><?php echo $value ?? '---' ?></td>
         <?php else: ?>
             <td class="has-text-align-center"
                 data-filter="<?php echo $key ?>"
                 data-align="center"><?php echo $value ?? '---' ?></td>
         <?php endif ?>
     <?php endforeach ?>
-<!--    <td><?php cabling_add_quote_button($product->get_id()) ?></td> -->
+    <!--    <td><?php cabling_add_quote_button($product->get_id()) ?></td> -->
 </tr>
