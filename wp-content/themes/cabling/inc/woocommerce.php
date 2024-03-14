@@ -311,7 +311,7 @@ function cabling_woocommerce_breadcrumb()
     if (is_shop()) return;
     echo '<div class="container mb-3">';
     echo '<div class="woo-breadcrumbs d-flex align-items-center">';
-    echo '<a href="javascript:window.history.back();" class="back-button"><i class="fa-light fa-arrow-left"></i>' . __('Back to Results', 'cabling') . '</a>';
+    echo '<a href="' . home_url('/products-and-services/') . '" class="back-button"><i class="fa-light fa-arrow-left"></i>' . __('Back to Results', 'cabling') . '</a>';
     woocommerce_breadcrumb(
         array(
             'delimiter' => ' / ',
@@ -1414,10 +1414,10 @@ function get_product_type_category(string $meta_value = '')
 
 function get_product_category_list()
 {
-    $taxs = get_product_category();
+    $taxs = get_product_line_category('product_group', 'family_category', ['8626']);;
     $cat = '';
     if ($taxs) {
-        $cat .= '<select name="product_cat" id="product_cat" class="form-select">';
+        $cat .= '<select name="product_group" id="product_group" class="form-select">';
         $cat .= '<option value="">' . __('Select Category', 'cabling') . '</option>';
         foreach ($taxs as $tax) {
             $cat .= '<option value="' . $tax->term_id . '">' . $tax->name . '</option>';

@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Myriad Pro';
     src: url('../fonts/MyriaPro/Myriad Pro Regular.woff2') format('woff2'),
-        url('../fonts/MyriaPro/Myriad Pro Regular.woff') format('woff');
+    url('../fonts/MyriaPro/Myriad Pro Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -18,7 +18,7 @@
 @font-face {
     font-family: 'Myriad Pro';
     src: url('../fonts/MyriaPro/Myriad Pro Semibold.woff2') format('woff2'),
-        url('../fonts/MyriaPro/Myriad Pro Semibold.woff') format('woff');
+    url('../fonts/MyriaPro/Myriad Pro Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -27,7 +27,7 @@
 @font-face {
     font-family: 'Myriad Pro';
     src: url('../fonts/MyriaPro/MyriadPro-Black.woff2') format('woff2'),
-        url('../fonts/MyriaPro/MyriadPro-Black.woff') format('woff');
+    url('../fonts/MyriaPro/MyriadPro-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -36,9 +36,11 @@
 .webshop-block {
     color: var(--main-color)
 }
+
 .view-product-block {
     padding: 40px 0;
 }
+
 .webshop-block.media_text {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -48,7 +50,7 @@
     overflow: hidden;
 }
 
-.block-button,.wp-block-button .wp-element-button {
+.block-button, .wp-block-button .wp-element-button {
     display: inline-flex;
     padding: 8.5px 25px;
     background: var(--background-red);
@@ -61,7 +63,7 @@
 }
 
 .block-button::after,
-.wp-block-button .wp-element-button::after{
+.wp-block-button .wp-element-button::after {
     content: '';
     display: inline-block;
     width: 0;
@@ -82,7 +84,7 @@
     color: #fff;
 }
 
-.wp-block-button.block-button-white .wp-element-button::after{
+.wp-block-button.block-button-white .wp-element-button::after {
     border-left-color: #fff
 }
 
@@ -90,19 +92,20 @@
     background: var(--main-color);
     color: #fff;
 }
+
 .wp-block-button.block-button-white .wp-element-button:hover:after {
     border-left-color: #fff;
 }
 
 .wp-block-button.block-button-black .wp-element-button,
-.news-innovation .block-button{
+.news-innovation .block-button {
     background: transparent;
     border-color: var(--main-color);
     color: var(--main-color);
 }
 
 .news-innovation .block-button::after,
-.wp-block-button.block-button-black .wp-element-button::after{
+.wp-block-button.block-button-black .wp-element-button::after {
     border-left-color: var(--main-color);
 }
 
@@ -110,6 +113,7 @@
     background: #fff;
     color: var(--main-color);
 }
+
 .wp-block-button.block-button-black .wp-element-button:hover:after {
     border-left-color: var(--main-color);
 }
@@ -123,6 +127,7 @@
     color: var(--main-color);
     font-weight: 400;
 }
+
 .pre-heading:before {
     content: '';
     position: absolute;
@@ -158,23 +163,28 @@
     color: var(--main-color);
     font-weight: 600;
 }
+
 .view-product-block .description {
     margin-bottom: 30px;
 }
+
 .oring-group .block-heading {
     max-width: 550px;
     margin-left: auto;
     margin-right: auto;
     font-size: 3rem;
 }
+
 .oring-group-compound .desc,
 .oring-group-compound .block-heading {
     max-width: 800px;
 }
-.oring-group-compound .desc{
+
+.oring-group-compound .desc {
     margin-left: auto;
     margin-right: auto;
 }
+
 .category-block {
     padding-top: 35px
 }
@@ -195,62 +205,71 @@
 .post-type-content .posts-list img {
     height: 300px;
 }
-.category-block img ,
+
+.category-block img,
 .list-service .part-item img,
-.list-sample-part .part-item img{
+.list-sample-part .part-item img {
     width: 100%;
     object-fit: cover;
     height: 250px;
 }
+
 .taxonomy-slider .carousel-cell {
     width: 25%;
     padding-right: 30px;
 }
+
 .media-inovation.media_text .pre-heading,
 .media-inovation.media_text .description,
-.media-inovation.media_text .heading ,
+.media-inovation.media_text .heading,
 .view-product-block.white-block .pre-heading,
 .view-product-block.white-block .description,
 .view-product-block.white-block .block-heading {
     color: #fff;
 }
-.media-inovation.media_text .pre-heading:before{
+
+.media-inovation.media_text .pre-heading:before {
     border-color: #fff;
 }
 
 .media-inovation.media_text .block-button,
-.white-block  .wp-block-button.block-button-white .wp-element-button {
+.white-block .wp-block-button.block-button-white .wp-element-button {
     background-color: transparent;
     border-color: #fff;
     color: #fff;
 }
 
 .media-inovation.media_text .block-button::after,
-.white-block  .wp-block-button.block-button-white .wp-element-button::after{
+.white-block .wp-block-button.block-button-white .wp-element-button::after {
     border-left-color: #fff;
 }
 
-.media-inovation.media_text .block-button:hover ,
-.white-block  .wp-block-button.block-button-white .wp-element-button:hover {
+.media-inovation.media_text .block-button:hover,
+.white-block .wp-block-button.block-button-white .wp-element-button:hover {
     background: #fff;
     color: var(--wp--preset--color--black);
 }
-.media-inovation.media_text .block-button:hover:after ,
-.white-block  .wp-block-button.block-button-white .wp-element-button:hover:after {
+
+.media-inovation.media_text .block-button:hover:after,
+.white-block .wp-block-button.block-button-white .wp-element-button:hover:after {
     border-left-color: var(--wp--preset--color--black);
 }
+
 .form-request-quote {
     max-width: 1270px;
     margin: auto;
 }
+
 .quote-product-content h4 {
     font-size: 2.5rem;
     margin-bottom: 25px;
     margin-top: 0;
 }
-#quoteProductModal .modal-dialog{
+
+#quoteProductModal .modal-dialog {
     max-width: 1000px;
 }
+
 .button-close {
     background: red;
     color: #fff;
@@ -263,25 +282,29 @@
     right: -15px;
     z-index: 10;
 }
+
 .help-text {
     margin-bottom: 0;
     color: rgb(128, 128, 128);
     font-size: small;
 }
+
 .form-request-quote .fa-arrow-up-from-bracket {
     font-size: 2rem;
     color: #159fb3;
 }
+
 .form-request-quote .box,
 .form-request-quote select,
 .form-request-quote textarea,
-.form-request-quote input[type="number"] ,
-.form-request-quote input[type="email"] ,
+.form-request-quote input[type="number"],
+.form-request-quote input[type="email"],
 .form-request-quote input[type="text"] {
     border-radius: 0;
     border: none;
     box-shadow: 0 0 5px rgb(0 0 0 / 60%);
 }
+
 .page-id-1032789 .entry-sub-title {
     color: inherit;
     font-size: 1.5rem;
@@ -294,42 +317,52 @@
     text-align: center;
     cursor: pointer;
 }
+
 .webshop-content-section {
     text-align: center;
     padding: 50px 0;
 }
+
 .webshop-content-section .heading {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: inherit;
 }
+
 .webshop-content-section .description {
     margin-bottom: 1.5rem;
     font-size: 1.35rem;
 }
-.webshop-content-section .wp-block-button.block-button-white .wp-element-button{
+
+.webshop-content-section .wp-block-button.block-button-white .wp-element-button {
     background-color: transparent;
 }
+
 .post-type-content .slide-item {
     width: 25%;
     padding-right: 30px;
 }
+
 .post-type-content.blog-related {
     background-color: transparent;
     padding-top: 0;
     padding-bottom: 30px;
 }
+
 .webshop-content-section .pre-heading {
     color: inherit;
 }
+
 .webshop-content-section .pre-heading:before {
     left: 50%;
     margin-left: -29px;
 }
-.webshop-content-section  .taxonomy-content {
+
+.webshop-content-section .taxonomy-content {
     text-align: left;
 }
-.webshop-content-section  .post-item-inner {
+
+.webshop-content-section .post-item-inner {
     background: #fff;
     height: 100%;
     padding-bottom: 20px;
@@ -337,6 +370,7 @@
     padding-top: 0;
     margin-top: 50px;
 }
+
 .webshop-content-section .list-event .post-item-inner {
     background: transparent;
     padding-bottom: 70px;
@@ -345,13 +379,42 @@
 .webshop-content-section .list-event .block-button {
     left: 0;
 }
+
 .post-type-content .list-service .slide-item {
     width: 33%;
 }
+
+@media screen and (max-width: 1440px) {
+    .webshop-block.media_text {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
 @media screen and (max-width: 992px) {
     .taxonomy-slider .slide-item,
     .taxonomy-slider .carousel-cell {
         width: 50%;
+    }
+
+    .show-left .col-left {
+        margin-bottom: 50px;
+    }
+
+    .media_text.show-left .main-content {
+        max-width: 100%;
+    }
+
+    .webshop-block.media_text {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .media_text.show-right .main-content {
+        padding-left: 25px !important;
+        padding-right: 25px;
+        margin-bottom: 50px;
+        max-width: 100%;
     }
 }
 

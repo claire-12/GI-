@@ -108,7 +108,7 @@ function cabling_login_ajax_callback()
             $user = wp_signon($creds, is_ssl());
 
             if (is_wp_error($user)) {
-                if ($user->get_error_code() === 'invalid_email'){
+                if ($user->get_error_code() === 'invalid_email') {
                     $error = __('Unknown email address. Please check again!', 'cabling');
                 } else {
                     $error = $user->get_error_message();
@@ -295,9 +295,9 @@ function search_ajax()
                 if (!empty($data['product_cat'])) {
                     $tax_query = array(
                         array(
-                            'taxonomy' => 'product_cat',
+                            'taxonomy' => 'product_group',
                             'field' => 'term_id',
-                            'terms' => $data['product_cat'],
+                            'terms' => $data['product_group'],
                         )
                     );
                 }
@@ -327,19 +327,37 @@ function search_ajax()
             $swp_query->the_post();
 
             $post_type = get_post_type();
-            $post_type_name = match ($post_type) {
-                'post' => __('Blog', 'cabling'),
-                'company_news' => __('News', 'cabling'),
-                default => $post_type,
-            };
+            switch ($post_type) {
+                case 'post':
+                    $post_type_name = __('Blog', 'cabling');
+                    break;
+                case 'company_news':
+                    $post_type_name = __('News', 'cabling');
+                    break;
+                case 'production-equipment':
+                    $post_type_name = __('Production Equipment', 'cabling');
+                    break;
+                case 'gi_learn':
+                    $post_type_name = __('Learns', 'cabling');
+                    break;
+                case 'page':
+                    $page_id = wp_get_post_parent_id();
+                    $post_type_name = get_the_title($page_id);
+                    break;
+                default:
+                    $post_type_name = $post_type;
+                    break;
+            }
             $title = get_the_title();
-            $content = wp_trim_words(get_the_excerpt(), 40);
+            $content = wp_trim_words(get_the_content(), 40);
             ?>
             <div class="search-result post-item">
                 <div class="entry-content row">
                     <div class="featured-image col-12 col-lg-4">
-                        <?php if (has_post_thumbnail()): the_post_thumbnail(); ?>
-                        <?php else: echo wp_get_attachment_image(1032601); endif; ?>
+                        <a href="<?php echo get_permalink(); ?>">
+                            <?php if (has_post_thumbnail()): the_post_thumbnail(); ?>
+                            <?php else: echo wp_get_attachment_image(1032601); endif; ?>
+                        </a>
                     </div>
                     <div class="info col-12 col-lg-8">
                         <div class="post-type">

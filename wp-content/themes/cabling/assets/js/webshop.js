@@ -386,6 +386,11 @@
         $(document).find('.cky-btn-revisit').trigger('click');
         return false;
     });
+    $(document).on('change', 'select[name=product_group]', function () {
+        if ($(this).val() !== '') {
+            $('input[name=search-product]').prop('checked', true);
+        }
+    });
     $(document).on('click', '.accordion-item', function () {
         if ($(this).hasClass('filter-inch')) {
             $('#custom-size-width').attr('name', 'attributes[inches_width_custom]');
