@@ -8,6 +8,7 @@ $inches_od_choices = get_all_meta_values_cached('inches_od');
 $milimeters_id_choices = get_all_meta_values_cached('milimeters_id');
 $milimeters_od_choices = get_all_meta_values_cached('milimeters_od');
 $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
+$history = isset($_REQUEST['data-history']) ? json_decode(base64_decode($_REQUEST['data-history']), true) : [];
 ?>
 <div class="filter-blog">
 
@@ -16,6 +17,12 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
         <?php if (!empty($_REQUEST['material'])): ?>
             <input type="hidden" class="pre_filter" data-action="product_material"
                    value="<?php echo $_REQUEST['material']; ?>">
+        <?php endif ?>
+        <?php if (!empty($history['attributes'])): ?>
+            <?php foreach($history['attributes'] as $pre_key => $pre_value): ?>
+                <input type="hidden" class="pre_filter" data-action="<?php echo $pre_key ?>"
+                       value="<?php echo $pre_value[0] ?? ''; ?>">
+            <?php endforeach; ?>
         <?php endif ?>
         <div class="accordion" id="accordionFilterBlog">
             <?php if ($product_cats): ?>
@@ -355,12 +362,12 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                      class="accordion-collapse collapse"
                                      aria-labelledby="panelsStayOpen-heading-customSize">
                                     <div class="accordion-body">
-										
+
                                         <div class="custom-size-quote">
                                             <div>Need a custom size? Just send us a quote request.</div>
                                             <?php cabling_add_quote_button() ?>
                                         </div>
-										
+
 									</div>
 								</div>
 	                       </div>
@@ -429,7 +436,7 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                      class="accordion-collapse collapse"
                                      aria-labelledby="panelsStayOpen-heading-customHardness">
                             <div class="accordion-body">
-										
+
                             <div class="custom-size-quote">
                                 <div>Need a hardness / durometer measurement not listed here? Just send us a quote request.</div>
                                 <?php cabling_add_quote_button() ?>

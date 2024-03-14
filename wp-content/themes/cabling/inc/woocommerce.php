@@ -312,6 +312,8 @@ function cabling_woocommerce_breadcrumb()
     $link = home_url('/products-and-services/');
     if (is_product() && isset($_REQUEST['data-history'])){
         $link = base64_decode($_REQUEST['data-history']);
+    } elseif (is_tax('product_custom_type')){
+        $link = get_product_filter_link(true);
     }
     echo '<div class="container mb-3">';
     echo '<div class="woo-breadcrumbs d-flex align-items-center">';
@@ -2177,10 +2179,8 @@ function show_product_filter_input_value($attribute, $value)
     return $value;
 }
 
-
-function get_product_filter_link(): string
+function get_product_filter_link($isBack = false): string
 {
-    $link = get_the_permalink();
     if (isset($_POST['attributes'])) {
         $attributes = array(
             'attributes' => $_POST['attributes'],
@@ -2192,6 +2192,13 @@ function get_product_filter_link(): string
     } else {
         $data = '';
     }
-    $previous_link = add_query_arg('data-filter', $data, get_term_link(get_queried_object()));
-    return add_query_arg('data-history', base64_encode($previous_link), $link);
+    if ($isBack){
+        $link = home_url('/products-and-services');
+        $history = $data;
+    } else {
+        $previous_link = add_query_arg('data-filter', $data, get_term_link(get_queried_object()));
+        $link = get_the_permalink();
+        $history = base64_encode($previous_link);
+    }
+    return add_query_arg('data-history', $history, $link);
 }
