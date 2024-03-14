@@ -298,10 +298,73 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                                 </div>
                             </div>
                         </div>
-                        <div class="custom-size-quote">
-                            <div>Need a custom size? Just send us a quote request.</div>
-                            <?php cabling_add_quote_button() ?>
-                        </div>
+                        <!--<div class="accordion accordion-flush">
+                            <div class="accordion-item filter-checkbox filter-custom-size">
+                                <h2 class="accordion-header"
+                                    id="panelsStayOpen-heading-customSize">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#panelsStayOpen-collapse-customSize"
+                                            aria-expanded="false"
+                                            aria-controls="panelsStayOpen-collapse-customSize">
+                                        <?php /*echo __('Custom', 'cabling') */ ?>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapse-customSize"
+                                     class="accordion-collapse collapse"
+                                     aria-labelledby="panelsStayOpen-heading-customSize">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <input type="text" id="custom-size-width" class="custom-size" placeholder="Width:"
+                                                           name="attributes[nominal_size_width]">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <input type="text" id="custom-size-id" class="custom-size" placeholder="ID:"
+                                                           name="attributes[nominal_size_id]">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <input type="text" id="custom-size-od" class="custom-size" placeholder="OD:"
+                                                           name="attributes[nominal_size_od]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+						<!-- JM 20240313 Changed display -->
+                        <div class="accordion accordion-flush">
+                            <div class="accordion-item filter-checkbox filter-custom-size">
+                                <h2 class="accordion-header"
+                                    id="panelsStayOpen-heading-customSize">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#panelsStayOpen-collapse-customSize"
+                                            aria-expanded="false"
+                                            aria-controls="panelsStayOpen-collapse-customSize">
+                                        <?php echo __('Custom', 'cabling')  ?>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapse-customSize"
+                                     class="accordion-collapse collapse"
+                                     aria-labelledby="panelsStayOpen-heading-customSize">
+                                    <div class="accordion-body">
+										
+                                        <div class="custom-size-quote">
+                                            <div>Need a custom size? Just send us a quote request.</div>
+                                            <?php cabling_add_quote_button() ?>
+                                        </div>
+										
+									</div>
+								</div>
+	                       </div>
+	                   </div>
                     </div>
                 </div>
             </div>
@@ -349,10 +412,32 @@ $milimeters_width_choices = get_all_meta_values_cached('milimeters_width');
                     <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
-            <div class="custom-size-quote">
-                <div>Need a hardness / durometer measurement not listed here? Just send us a quote request.</div>
-                <?php cabling_add_quote_button() ?>
-            </div>
+			<!-- JM 20240313 Changed display -->
+                    <div class="accordion accordion-flush">
+                        <div class="accordion-item filter-checkbox filter-custom-hardness">
+                            <h2 class="accordion-header"
+                                id="panelsStayOpen-heading-customHardness">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapse-customHardness"
+                                        aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapse-customHardness">
+                                    <?php echo __('Custom', 'cabling')  ?>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapse-customHardness"
+                                     class="accordion-collapse collapse"
+                                     aria-labelledby="panelsStayOpen-heading-customHardness">
+                            <div class="accordion-body">
+										
+                            <div class="custom-size-quote">
+                                <div>Need a hardness / durometer measurement not listed here? Just send us a quote request.</div>
+                                <?php cabling_add_quote_button() ?>
+                            </div>
+						</div>
+					</div>
+	           </div>
+			</div>
         </div>
     </form>
 </div>
