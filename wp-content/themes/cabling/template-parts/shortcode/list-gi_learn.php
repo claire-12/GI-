@@ -17,7 +17,7 @@
         <div class="col-12 col-lg-4 position-relative pb-5">
             <div class="tax-item wp-block-image size-full">
                 <a style="color: inherit" href="<?php echo esc_url($link) ?>">
-                    <?php echo wp_get_attachment_image($thumbnail_id) ?>
+                    <?php echo wp_get_attachment_image($thumbnail_id, 'full') ?>
                 </a>
                 <h3 class="wp-caption my-3">
                     <a style="color: inherit" href="<?php echo esc_url($link) ?>">

@@ -205,7 +205,9 @@
 .post-type-content .posts-list img {
     height: 300px;
 }
-
+.post-type-content .posts-list.list-gi_learn img {
+    height: 190px;
+}
 .category-block img,
 .list-service .part-item img,
 .list-sample-part .part-item img {

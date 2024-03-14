@@ -2202,3 +2202,12 @@ function get_product_filter_link($isBack = false): string
     }
     return add_query_arg('data-history', $history, $link);
 }
+
+add_filter('woocommerce_add_error', 'woocommerce_add_error_callback');
+function  woocommerce_add_error_callback($message)
+{
+    if ($message === 'Invalid username or email.'){
+        $message = __( 'Invalid email. Please try again!', 'woocommerce' );
+    }
+    return $message;
+}
