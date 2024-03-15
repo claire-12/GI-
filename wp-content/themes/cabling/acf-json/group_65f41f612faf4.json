@@ -101,6 +101,34 @@
                     },
                     "return_format": "array",
                     "parent_repeater": "field_65f4286c647aa"
+                },
+                {
+                    "key": "field_65f42cc7b959e",
+                    "label": "Type",
+                    "name": "gi_download_type",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Download": "Download",
+                        "News": "News",
+                        "Links": "Links"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65f4286c647aa"
                 }
             ]
         }
@@ -123,5 +151,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710500022
+    "modified": 1710501116
 }
