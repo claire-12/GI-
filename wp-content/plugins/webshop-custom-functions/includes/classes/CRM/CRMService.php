@@ -62,6 +62,7 @@ class CRMService
             );
             $this->saveCRMData($data['email'], $dataCRM);
         }
+        $this->notify_quote_customer($data['email'], $data);
     }
     private function requestContactCRM($data)
     {
@@ -202,7 +203,6 @@ class CRMService
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
     }
-
     private function send_confirm_email(string $email, array $data, $type)
     {
         $data_confirm = base64_encode(json_encode($data));
@@ -228,11 +228,22 @@ class CRMService
 
         GIEmail::send($email, $options);
     }
+    private function notify_quote_customer(string $email, array $data)
+    {
+        $subject = sprintf(__('[%s] Request a quote', 'cabling'), get_bloginfo('name'));
+
+        $options = array(
+            'subject' => $subject,
+            'data' => $data,
+            'template' => 'template-parts/emails/request-a-quote.php',
+        );
+
+        GIEmail::send($email, $options);
+    }
 
     public function confirm_email()
     {
         if (isset($_GET['action']) && $_GET['action'] == 'confirm-email') {
-            echo '<p style="text-align: center">Verifying your email! Please wait ...</p>';
             $token = $_GET['token'];
             $email = $_GET['email'];
             $type = $_GET['type'];

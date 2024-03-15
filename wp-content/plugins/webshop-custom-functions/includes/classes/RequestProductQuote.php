@@ -169,7 +169,7 @@ class RequestProductQuote
                 }
 
                 self::saveQuote($data);
-                self::sendMail($data['email'], 'Request a quote', $data, $files);
+                //self::sendMail($data['email'], 'Request a quote', $data, $files);
 
                 do_action('saved_request_a_quote', $data);
 
