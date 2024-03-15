@@ -348,8 +348,9 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                     ajaxSearch.abort();
                 }
                 search_element.removeClass('no');
-                search_result.html('Searching...');
+                //search_result.html('Searching...');
                 search_element.show();
+                showLoading();
             },
             success: function (response) {
                 search_element.removeClass('no');
@@ -362,12 +363,13 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                 }
 
                 save_search_log(key_search);
+                hideLoading();
             },
             error: function (err) {
                 search_element.addClass('no');
                 search_result.html('No results found, please search again.');
                 search_element.show();
-                //$('.header-search .close').show();
+                hideLoading();
             }
         });
     }, 500);

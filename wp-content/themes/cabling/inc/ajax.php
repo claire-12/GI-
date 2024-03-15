@@ -397,7 +397,7 @@ function search_ajax()
 
         $pagination .= '</div>';
     } else { ?>
-        <p class="mb-0"><?php echo esc_attr_x('Sorry – we can’t find directly what you’re looking for, but we’ve provided further information related to your search in the chat', 'submit button') ?></p>
+        <p class="mb-0"><?php echo esc_attr_x('Sorry – we can’t find directly what you’re looking for, but we’ve provided further information related to your search.', 'submit button') ?></p>
         <?php
     }
     $data = ob_get_clean();

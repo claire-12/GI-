@@ -58,7 +58,12 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                 <div class="form-group">
                     <input type="text" class="form-control" name="first-name" id="first-name"
                            value="<?php echo $_REQUEST['first-name'] ?? '' ?>" required>
-                    <label for="first-name"><?php _e('Name', 'cabling') ?><span class="required">*</span></label>
+                    <label for="first-name"><?php _e('First Name', 'cabling') ?><span class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="last-name" id="last-name"
+                           value="<?php echo $_REQUEST['last-name'] ?? '' ?>" required>
+                    <label for="last-name"><?php _e('Last Name', 'cabling') ?><span class="required">*</span></label>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="password" id="password" required>
@@ -95,14 +100,12 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     'label' => __('Title', 'woocommerce'),
                     'default' => $_REQUEST['user_title'] ?? '',
                     'class' => ' form-group has-focus mt-4 ',
-                    'required' => true
                 )); ?>
                 <div class="form-group">
                     <input type="text" class="form-control" name="job-title" id="job-title"
                            value="<?php echo $_REQUEST['job-title'] ?? '' ?>">
                     <label for="job-title"><?php _e('Job Title', 'cabling') ?></label>
                 </div>
-                <?php echo company_name_field(); ?>
                 <div class="form-group">
                     <input type="text" class="form-control" name="company-name"
                            value="<?php echo $_REQUEST['company-name'] ?? '' ?>" id="company-name" required>
@@ -133,9 +136,32 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                 </div>
                 <div style="clear:both;"></div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="company-address"
-                           value="<?php echo $_REQUEST['company-address'] ?? '' ?>" id="company-address" required>
-                    <label for="company-address"><?php _e('Company address', 'cabling') ?><span
+                    <input type="text" class="form-control" name="billing_address_1" id="company-street"
+                           value="<?php echo $_REQUEST['billing_address_1'] ?? '' ?>"
+                           required>
+                    <label for="company-street" class="form-label">Company Address<span
+                                class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="billing_state" id="billing_state"
+                           value="<?php echo $_REQUEST['billing_state'] ?? '' ?>"
+                           required>
+                    <label for="billing_state" class="form-label">Company State<span
+                                class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="billing_city" id="company-city"
+                           value="<?php echo $_REQUEST['billing_city'] ?? '' ?>"
+                           required>
+                    <label for="company-city" class="form-label">Company City<span
+                                class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="billing_postcode"
+                           id="company-postcode"
+                           value="<?php echo $_REQUEST['billing_postcode'] ?? '' ?>"
+                           required>
+                    <label for="company-postcode" class="form-label">Company Postcode<span
                                 class="required">*</span></label>
                 </div>
                 <div class="form-group">
