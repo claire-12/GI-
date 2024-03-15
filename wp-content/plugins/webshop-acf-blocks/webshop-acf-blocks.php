@@ -27,7 +27,7 @@ function webshop_register_acf_block_types()
     $block_icon = '';
 	acf_register_block_type([
         'name' => 'webshop_media_text',
-        'title' => __('Webshop Media & Text', 'cabling'),
+        'title' => __('GI Media & Text', 'cabling'),
         'description' => __('', 'cabling'),
         'render_template' => WEBSHOP_ACF_DIR_PATH . '/block-templates/media_text/media_text.php',
         'enqueue_assets' => function () {
@@ -53,8 +53,8 @@ function webshop_register_acf_block_types()
     ]);
 	acf_register_block_type([
         'name' => 'webshop_customer_story_text',
-        'title' => __('Webshop Customer Story', 'cabling'),
-        'description' => __('Webshop Customer Story Block', 'cabling'),
+        'title' => __('GI Customer Story', 'cabling'),
+        'description' => __('GI Customer Story Block', 'cabling'),
         'render_template' => WEBSHOP_ACF_DIR_PATH . '/block-templates/webshop_customer_story/webshop_customer_story.php',
         'enqueue_assets' => function () {
             wp_enqueue_style(
@@ -79,8 +79,8 @@ function webshop_register_acf_block_types()
     ]);
 	acf_register_block_type([
         'name' => 'webshop_request_a_quote',
-        'title' => __('Webshop Request A Quote', 'cabling'),
-        'description' => __('Webshop Request A Quote Block', 'cabling'),
+        'title' => __('GI Request A Quote', 'cabling'),
+        'description' => __('GI Request A Quote Block', 'cabling'),
         'render_template' => WEBSHOP_ACF_DIR_PATH . '/block-templates/webshop_request_a_quote/webshop_request_a_quote.php',
         'enqueue_assets' => function () {
             wp_enqueue_style(
@@ -105,8 +105,8 @@ function webshop_register_acf_block_types()
     ]);
 	acf_register_block_type([
         'name' => 'webshop_request_a_quote_button',
-        'title' => __('Webshop Request A Quote Button', 'cabling'),
-        'description' => __('Webshop Request A Quote Button Block', 'cabling'),
+        'title' => __('GI Request A Quote Button', 'cabling'),
+        'description' => __('GI Request A Quote Button Block', 'cabling'),
         'render_template' => WEBSHOP_ACF_DIR_PATH . '/block-templates/webshop_request_a_quote_button/webshop_request_a_quote_button.php',
         'category' => 'webshop_blocks',
         'mode' => 'preview',
@@ -124,13 +124,32 @@ function webshop_register_acf_block_types()
 
 	acf_register_block_type([
         'name' => 'webshop_content_section',
-        'title' => __('Webshop Content Section', 'cabling'),
-        'description' => __('Webshop Content Section', 'cabling'),
+        'title' => __('GI Content Section', 'cabling'),
+        'description' => __('GI Content Section', 'cabling'),
         'render_template' => WEBSHOP_ACF_DIR_PATH . '/block-templates/webshop_content_section/webshop_content_section.php',
         'category' => 'webshop_blocks',
         'mode' => 'preview',
         'icon' => $block_icon,
         'keywords' => array('webshop_content_section', 'cabling'),
+        'post_type' => [
+            'page',
+        ],
+        'supports' => [
+            'align' => ['full'],
+            'anchor' => true,
+            'customClassName' => true,
+        ]
+    ]);
+
+	acf_register_block_type([
+        'name' => 'gi_download_block',
+        'title' => __('GI Download', 'cabling'),
+        'description' => __('GI Download', 'cabling'),
+        'render_template' => WEBSHOP_ACF_DIR_PATH . '/block-templates/gi_download_block/gi_download_block.php',
+        'category' => 'webshop_blocks',
+        'mode' => 'preview',
+        'icon' => $block_icon,
+        'keywords' => array('download', 'gi'),
         'post_type' => [
             'page',
         ],
@@ -158,7 +177,7 @@ function webshop_block_category($categories, $post)
         [
             [
                 'slug' => 'webshop_blocks',
-                'title' => __('Webshop Blocks', 'cabling'),
+                'title' => __('GI Blocks', 'cabling'),
             ],
         ]
     );

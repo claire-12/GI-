@@ -386,6 +386,20 @@
     width: 33%;
 }
 
+.download-item {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgb(0 0 0 / 30%);
+    height: 100%;
+    position: relative;
+    border-top: 5px solid #1fa3b7;
+    padding: 2rem 2rem 5rem;
+}
+.download-item .block-button {
+    margin-top: 0;
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+}
 @media screen and (max-width: 1440px) {
     .webshop-block.media_text {
         padding-left: 2rem;
