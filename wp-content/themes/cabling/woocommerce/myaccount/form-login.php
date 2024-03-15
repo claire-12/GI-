@@ -77,9 +77,11 @@ do_action('woocommerce_before_customer_login_form'); ?>
             <p class="sub-heading">
                 <span><?php esc_html_e('Register for an account today to gain access to these Datwyler benefits:', 'woocommerce'); ?></span>
             <ul>
+                <!--
                 <li>Save and retrieve quotes</li>
                 <li>Personalised offers and news</li>
-                <li>Test reports</li>
+                <li>Test reports</li>-->
+                <li>Datwyler Industrial Sealing News</li>
                 <li>Shipments</li>
                 <li>Sales backlog</li>
                 <li>Inventory, Lead time & Pricing</li>
