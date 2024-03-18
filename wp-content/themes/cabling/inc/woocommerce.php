@@ -2120,7 +2120,7 @@ function product_of_interest_field($value = '')
 
     $field .= '<select name="product-of-interest" id="product-of-interest" class="select form-select" required>' . $options . '</select>';
 
-    echo '<p class="form-row w-100"><label for="product-of-interest">' . __('Product Of Interest', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
+    echo '<p class="form-row w-100"><label for="product-of-interest">' . __('What Datwyler product are you most interested in?', 'woocommerce') . '<span class="required">*</span></label>' . $field . '</p>';
 }
 
 function product_desired_application_field($value = '')

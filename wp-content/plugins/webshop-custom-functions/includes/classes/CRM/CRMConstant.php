@@ -73,7 +73,7 @@ class CRMConstant
         '141' => "Custom Molded Rubber Seals",
         '151' => "Rubber to Metal Bonded Seals",
         '171' => "Machined Thermoplastic",
-        '311' => "None",
+        //'311' => "None",
         '321' => "O-Ring",
         '331' => "Rubber to Plastic Bonded Seals",
         '341' => "Custom Machined Metal Parts",

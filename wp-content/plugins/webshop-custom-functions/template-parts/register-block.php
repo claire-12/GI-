@@ -13,9 +13,9 @@
             <div class="register-block">
 
                 <form method="POST" name="register-form" id="register-form">
-                    <h3><?php esc_html_e('Register for an account', 'woocommerce'); ?></h3>
+                    <h3><?php esc_html_e('Register for My Account', 'woocommerce'); ?></h3>
                     <p class="sub-heading mb-0 pe-3"
-                       style="font-size: larger;"><?php esc_html_e('Register for an account to save and retrieve quotes, plus many more benefits', 'woocommerce'); ?></p>
+                       style="font-size: larger;"><?php esc_html_e('Register today to make future quote requests even easier – and easier account management after you’ve made a purchase.', 'woocommerce'); ?></p>
 
                     <div class="form-group">
                         <label class="screen-reader-text"
@@ -42,7 +42,7 @@
         </div>
         <div class="col-12 col-lg-6">
             <form class="woocommerce-form woocommerce-form-login" method="post" name="cabling_login_form">
-                <h3><?php esc_html_e('Existing Users', 'woocommerce'); ?></h3>
+                <h3><?php esc_html_e('Existing My Account Users', 'woocommerce'); ?></h3>
                 <p class="sub-heading login-username"
                    style="    font-size: larger;"><?php esc_html_e('Sign In', 'woocommerce'); ?></p>
 

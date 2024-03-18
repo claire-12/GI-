@@ -374,6 +374,7 @@ class CRMController
 
         $res = $this->makePostRequest($url, $headers, $body);
         wp_mail('daisy.nguyen0806@gmail.com', '[CRM createSalesQuoteLead]', json_encode($res));
+        wp_mail('jose.martins@infolabix.com', '[CRM createSalesQuoteLead Body]', $body);
         $lead->loadLead($res);
         if ($lead->leadid > 0) {
             if ($crmsalesquote->getFilePath() != null) {
@@ -499,6 +500,7 @@ class CRMController
         if (!empty($contact)) {
             $crmcontact->fillContactFromCRMContactObject($contact);
         } else {
+            $crmcontact->email = $data['email'];
             $crmcontact->company = $data['company'];
             $crmcontact->firstname = $data['first_name'];
             $crmcontact->lastname = $data['last_name'];
@@ -548,6 +550,8 @@ class CRMController
             $crmquoteproduct->dimwidth = "0";
             $crmquoteproduct->dimwidthcode = "INH";
         }
+
+        wp_mail('jose.martins@infolabix.com', '[CRM Contact Body]', json_encode($crmcontact));
 
         $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
         /** end of create contact object to use **/

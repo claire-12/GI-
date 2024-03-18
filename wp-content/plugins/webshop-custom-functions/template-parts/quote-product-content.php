@@ -3,7 +3,8 @@
     </button>
     <div class="wrap-inner container">
         <h4 class="text-center"><?php echo __('Request a quote', 'cabling') ?></h4>
-        <h5 class="text-center"><?php echo __('I would like to be informed about this product:', 'cabling') ?></h5>
+        <!--<h5 class="text-center"><?php echo __('I would like to be informed about this product:', 'cabling') ?></h5>-->
+        <h5 class="text-center"><?php echo __('Thanks for offering us the opportunity to quote. To proceed, if it’s your first time here, either continue as a guest or consider registering with us through My Account to make asking for quotes in the future even easier. If you’re an existing My Account user, just log-in to complete your request.', 'cabling') ?></h5>
         <?php if (!$is_user_logged_in): ?>
             <?php wc_get_template('template-parts/register-block.php', [], '', WBC_PLUGIN_DIR); ?>
         <?php endif ?>
@@ -238,7 +239,7 @@
                         <div class="mb-3 form-group">
                             <input type="date" class="form-control date-picker" name="when-needed" id="when-needed"
                                    value="<?php echo $when_needed ?? '' ?>">
-                            <label for="when-needed" class="form-label">When Needed</label>
+                            <label for="when-needed" class="form-label">By when do you need the product delivered to your business?</label>
                         </div>
                         <div class="mb-3 form-group">
                             <input type="number" class="form-control" name="volume" id="volume"
@@ -250,7 +251,7 @@
                             <input type="text" class="form-control" name="dimension" id="dimension"
                                    value="<?php echo $dimension ?? '' ?>"
                             >
-                            <label for="dimension" class="form-label">Dimension: <span class="help">0.029 x 0.004 x 0.040</span></label>
+                            <label for="dimension" class="form-label">Dimensions needed<span class="help"></span></label>
                         </div>
                         <div class="mb-3 dimension-oring hidden">
                             <div class="row">
@@ -294,11 +295,11 @@
                             <input type="text" class="form-control" name="part-number" id="part-number"
                                    value="<?php echo $part_number ?? '' ?>"
                             >
-                            <label for="part-number" class="form-label">Part number (if known): <span
-                                        class="help">XXX</span></label>
+                            <label for="part-number" class="form-label">Your Internal Reference Number (if applicable)<span
+                                        class="help"></span></label>
                         </div>
                         <div class="mb-3 upload-files box p-3">
-                            <label for="file" class="form-label">Upload a diagram:</label>
+                            <label for="file" class="form-label">Upload Diagram(s)</label>
                             <div class="dropzone" id="dropzone">
                                 <i class="fa-regular fa-arrow-up-from-bracket"></i>
                                 <p class="mb-0">Drag & Drop or <a href="javascript:void(0)">Choose file</a> to upload
@@ -330,9 +331,10 @@
                                 <input type="text" class="form-control" name="o_ring[temperature]" id="temperature"
                                        value="<?php echo $temperature ?? '' ?>"
                                 >
-                                <label for="temperature" class="form-label">Temperature: <span
-                                            class="help">-40° - 250°C</span></label>
+                                <label for="temperature" class="form-label">Temperature Range Needed<span
+                                            class="help"></span></label>
                             </div>
+                            <!--
                             <div class="mb-3 form-group">
                                 <input type="text" class="form-control" name="o_ring[compound]" id="compound"
                                        value="<?php echo $compound ?? '' ?>"
@@ -340,11 +342,12 @@
                                 <label for="compound" class="form-label">Compound: <span
                                             class="help">Nitrile</span></label>
                             </div>
+                        -->
                             <div class="form-group">
                                 <input type="text" class="form-control" name="o_ring[coating]" id="coating"
                                        value="<?php echo $coating ?? '' ?>"
                                 >
-                                <label for="coating" class="form-label">Coating: <span class="help">XXX</span></label>
+                                <label for="coating" class="form-label">Coating Needed<span class="help"></span></label>
                             </div>
                         </div>
                         <div class="text-area">
@@ -360,11 +363,16 @@
                 <div class="form-check d-inline-block">
                     <input class="form-check-input" type="checkbox" id="share-my-data" value="yes" required>
                     <label class="form-check-label ms-2" for="share-my-data">
+                    I give my consent to the processing of my data
+                    as described in the terms and conditions <a target="_blank" href="<?php echo home_url('/privacy')?>">here</a>.
+                    </label>
+<!--                    <label class="form-check-label ms-2" for="share-my-data">
                         I would like
                     to receive sales and marketing information from Datwyler Switzerland Inc. and its affiliates,
                     based on my personal interests.
                     I give my consent to the processing of my data
                     as described in the terms and conditions <a target="_blank" href="<?php echo home_url('/privacy')?>">here</a>.
+-->
 
                     </label>
                 </div>

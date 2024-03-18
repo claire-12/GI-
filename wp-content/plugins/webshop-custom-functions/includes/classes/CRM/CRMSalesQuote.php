@@ -17,14 +17,15 @@ class CRMSalesQuote
         $this->crmcontact = $crmcontact;
         $this->name = "Sales Quote_" . date('d/m/Y') . "_" . substr($crmcontact->email, strpos($crmcontact->email, '@') + 1);
         $this->company = $crmcontact->company ?? substr($crmcontact->email, strpos($crmcontact->email, '@') + 1);
-        $this->contactfirstname = substr($crmcontact->email, 0, strpos($crmcontact->email, '@'));
-        $this->contactlastname = $crmcontact->lastname ?? "N/A";
-        $this->email = $crmcontact->email;
-        $this->mobile = $crmcontact->mobile;
+        $this->contactfirstname =$crmcontact->firstname!=""?$crmcontact->firstname: substr($crmcontact->email, 0, strpos($crmcontact->email, '@'));
+        $this->contactlastname =$crmcontact->lastname!=""?$crmcontact->lastname: "N/A";
+        $this->contactemail = $crmcontact->email;
+        $this->contactmobile = $crmcontact->mobile;
         $this->contactfunction = $crmcontact->function;
         $this->contactjobtitle = $crmcontact->jobtitle;
         $this->contactaddress = $crmcontact->address;
         $this->contactcity = $crmcontact->city;
+        $this->contactstreet = $crmcontact->street;
         $this->contactcountry = $crmcontact->country;
         $this->contactpostalcode = $crmcontact->postalcode;
     }
@@ -38,6 +39,7 @@ class CRMSalesQuote
     protected string $contactfunction = "";
     protected string $contactjobtitle = "";
     protected string $contactaddress = "";
+    protected string $contactstreet = "";
     protected string $contactcity = "";
     protected string $contactcountry = "";
     protected string $contactpostalcode = "";
