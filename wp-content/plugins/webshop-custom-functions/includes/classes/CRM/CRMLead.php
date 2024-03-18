@@ -109,6 +109,7 @@ class CRMLead
 
 
         $contact["Note"] = $comments;
+        if(empty($prodofinterest)||($prodofinterest=="Array")){$prodofinterest="";}
         $contact["ProductofInterest_KUT"] = $prodofinterest;
         /*
         CHLOROPRENE RUBBER - CR (Neoprene™)
