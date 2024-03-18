@@ -22,8 +22,9 @@ get_header();
 				the_post(); ?>
 
 				<div class="entry-content">
-					<?php the_content(); ?>
-					<?php get_template_part( 'template-parts/content', 'register' ); ?>
+					<?php the_content(); ?>					<?php get_template_part( 'template-parts/content', 'register' ); ?>
+
+                    <?php get_template_part( 'template-parts/content', 'register' ); ?>
 				</div><!-- .entry-content -->
 				<?php
 			endwhile; // End of the loop.

@@ -404,7 +404,7 @@ function cabling_account_menu_items()
     }
 
     if (!empty($sap_customer)) {
-        $new_items['sales-backlog'] = __('Sales Backlog', 'cabling');
+        $new_items['sales-backlog'] = __('Purchase Orders', 'cabling');
         $new_items['inventory'] = __('Inventory, Lead Time and Pricing', 'cabling');
         $new_items['shipment'] = __('Shipments Last 12 Months ', 'cabling');
     }

@@ -118,8 +118,8 @@
                     },
                     "choices": {
                         "Download": "Download",
-                        "News": "News",
-                        "Links": "Links"
+                        "News": "Latest Articles",
+                        "Links": "Selected Papers"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -128,6 +128,29 @@
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
+                    "parent_repeater": "field_65f4286c647aa"
+                },
+                {
+                    "key": "field_65f7fc7978973",
+                    "label": "Order",
+                    "name": "order",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_65f4286c647aa"
                 }
             ]
@@ -151,5 +174,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710501116
+    "modified": 1710752499
 }

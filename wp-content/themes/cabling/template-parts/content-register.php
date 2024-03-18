@@ -95,12 +95,6 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     'class' => ' form-group has-focus mt-4 mb-1 ',
                     'required' => true
                 )); ?>
-                <?php echo show_product_field('user_title', array(
-                    'options' => array('Ms.', 'Mr.'),
-                    'label' => __('Title', 'woocommerce'),
-                    'default' => $_REQUEST['user_title'] ?? '',
-                    'class' => ' form-group has-focus mt-4 ',
-                )); ?>
                 <div class="form-group">
                     <input type="text" class="form-control" name="job-title" id="job-title"
                            value="<?php echo $_REQUEST['job-title'] ?? '' ?>">

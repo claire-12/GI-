@@ -147,7 +147,7 @@ function cabling_process_register_form()
             'billing_vat' => $data['billing_vat'],
             'job_title' => $data['job-title'] ?? '',
             'user_department' => $data['department'],
-            'user_title' => $data['user-title'],
+            'user_title' => $data['user-title'] ?? '',
             // JM 20230914
             'display_name' => $data['first-name'] . ' ' . $data['last-name'],
             'nickname' => $data['first-name'] . ' ' . $data['last-name'],
@@ -1518,3 +1518,4 @@ function custom_autofill_data( $scanned_tag, $replace ) {
 }
 
 add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );
+

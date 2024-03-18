@@ -4,6 +4,7 @@
     add_phone_validate('#contact-phone');
     checkMyAccountNavigation();
     product_filter_init();
+    sortList('download-list', 'data-order', 'asc');
 
     $(document).on('change', 'input[name="existing-customer"]', function () {
         const numberField = $('.client-number-field');
@@ -446,7 +447,42 @@
             });
         return false;
     });
+
+    $(document).on('change', '[name=filter-by]', function () {
+        if ($(this).val() === 'name-desc') {
+            sortList('download-list', 'data-name', 'asc');
+            return false;
+        } else if ($(this).val() === 'name-asc') {
+            sortList('download-list', 'data-name', 'desc');
+            return false;
+        } else {
+            $(this).closest('form').submit();
+        }
+    })
 })(jQuery);
+
+function sortList(element, name, order) {
+    const $ = jQuery.noConflict();
+    const myList = $(`#${element}`);
+    if (myList.length) {
+        const listItems = myList.children('div').get();
+
+        listItems.sort(function (a, b) {
+            const nameA = $(a).find('.download-item').attr(name).toLowerCase();
+            const nameB = $(b).find('.download-item').attr(name).toLowerCase();
+
+            if (order === 'asc') {
+                return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+            } else if (order === 'desc') {
+                return (nameA > nameB) ? -1 : (nameA < nameB) ? 1 : 0;
+            }
+        });
+
+        $.each(listItems, function (index, item) {
+            myList.append(item);
+        });
+    }
+}
 
 function setActiveCheckbox() {
     const $ = jQuery.noConflict();
@@ -513,6 +549,13 @@ function checkMyAccountNavigation() {
             myAccountShipment.fadeIn('fast');
             myAccount.fadeIn('fast');
         }
+
+        myAccount.addClass('has-tooltip').find('a').attr('data-title', 'Update your details and preferences');
+        myAccountInfo.addClass('has-tooltip').find('a').attr('data-title', 'Update your preferences for receiving news and updates about Datwyler Industrial Sealing');
+        myAccountBacklog.addClass('has-tooltip').find('a').attr('data-title', 'See details about past and open purchase orders');
+        myAccountInventory.addClass('has-tooltip').find('a').attr('data-title', 'See item inventory, pricing and lead times for ordering');
+        myAccountManager.addClass('has-tooltip').find('a').attr('data-title', 'Add new user associate to this account');
+        myAccountShipment.addClass('has-tooltip').find('a').attr('data-title', 'See the items shipped in the last 12 months');
     }
 }
 
@@ -697,7 +740,7 @@ function product_filter_ajax(cat_id) {
         }
     });
 
-    $('.tax-product_custom_type').on('click', '.page-numbers', function(e) {
+    $('.tax-product_custom_type').on('click', '.page-numbers', function (e) {
         e.preventDefault();
 
         const form = $('form#form-filter-type');
