@@ -164,10 +164,14 @@ class CRMLead
         $rfq["ContactEMail"] = $crmsalesquote->getContactEmail();
         $rfq["ContactMobile"] = $crmsalesquote->getContactMobile();
 
+        $rfq["AccountPostalAddressElementsStreetName"]=$crmsalesquote->getStreet();
+        $rfq["AccountPostalAddressElementsHouseID"]=$crmsalesquote->getHouseNumber();
+        $rfq["AccountState"]=$crmsalesquote->getState();
+
         $rfq["ContactFunctionalTitleName"] = $crmsalesquote->getContactFunction();
         $rfq["BusinessPartnerRelationshipBusinessPartnerFunctionTypeCode"] = $crmsalesquote->getContactJobtitle();
 
-        $rfq["AccountPostalAddressElementsStreetName"] = $crmsalesquote->getContactAddress();
+        //$rfq["AccountPostalAddressElementsStreetName"] = $crmsalesquote->getContactAddress();
         $rfq["AccountCity"] = $crmsalesquote->getContactCity();
         //$rfq["AccountState"]=""; //N/available
         $rfq["AccountCountry"] = $crmsalesquote->getContactCountry();

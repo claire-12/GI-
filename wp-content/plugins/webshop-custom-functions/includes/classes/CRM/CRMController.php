@@ -507,7 +507,10 @@ class CRMController
             $crmcontact->mobile = $data['billing_phone'];
             $crmcontact->jobtitle = $data['jobtitle'];
             $crmcontact->city = $data['billing_city'];
-            $crmcontact->address = $data['billing_address_1'];
+            //$crmcontact->address = $data['billing_address_1'];
+            $crmcontact->street = $data['billing_address_1'];
+            $crmcontact->housenumber = $data['billing_address_2'];
+            $crmcontact->state = $data['billing_state'];
             $crmcontact->postalcode = $data['billing_postcode'];
             $crmcontact->country = $data['billing_country'];
             $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
@@ -551,7 +554,6 @@ class CRMController
             $crmquoteproduct->dimwidthcode = "INH";
         }
 
-        wp_mail('jose.martins@infolabix.com', '[CRM Contact Body]', json_encode($crmcontact));
 
         $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
         /** end of create contact object to use **/

@@ -25,9 +25,11 @@ class CRMSalesQuote
         $this->contactjobtitle = $crmcontact->jobtitle;
         $this->contactaddress = $crmcontact->address;
         $this->contactcity = $crmcontact->city;
-        $this->contactstreet = $crmcontact->street;
         $this->contactcountry = $crmcontact->country;
         $this->contactpostalcode = $crmcontact->postalcode;
+        $this->contactstreet = $crmcontact->street;
+        $this->contactstate=$crmcontact->state;
+        $this->contacthousenumber=$crmcontact->housenumber;           
     }
 
     protected string $name = "";
@@ -43,6 +45,8 @@ class CRMSalesQuote
     protected string $contactcity = "";
     protected string $contactcountry = "";
     protected string $contactpostalcode = "";
+    protected string $contactstate="";
+    protected string $contacthousenumber="";
     protected ?CRMContact $crmcontact = null;
     protected ?CRMQuoteProduct $product = null;
     protected ?string $filepath;
@@ -51,6 +55,21 @@ class CRMSalesQuote
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getStreet()
+    {
+        return $this->contactstreet;
+    }
+
+    public function getState()
+    {
+        return $this->contactstate;
+    }
+
+    public function getHouseNumber()
+    {
+        return $this->contacthousenumber;
     }
 
     public function getBrand()

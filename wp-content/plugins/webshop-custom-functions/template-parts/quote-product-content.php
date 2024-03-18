@@ -165,21 +165,22 @@
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-6">
-                                <p><strong>Company Address<span class="required">*</span></strong></p>
+                                <p><strong>Company<span class="required">*</span></strong></p>
                                 <div class="mb-3 form-group">
                                     <input type="text" class="form-control" name="billing_address_1" id="company-street"
                                            value="<?php echo $billing_address_1 ?? '' ?>"
                                            required>
-                                    <label for="company-street" class="form-label">Address<span
+                                    <label for="company-street" class="form-label">Street Address<span
                                                 class="required">*</span></label>
                                 </div>
                                 <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="billing_state" id="billing_state"
-                                           value="<?php echo $billing_state ?? '' ?>"
+                                    <input type="text" class="form-control" name="billing_address_2" id="company-street-number"
+                                           value="<?php echo $billing_address_2 ?? '' ?>"
                                            required>
-                                    <label for="billing_state" class="form-label">State<span
+                                    <label for="company-street-number" class="form-label">Street Number<span
                                                 class="required">*</span></label>
                                 </div>
+                                
                                 <div class="mb-3 form-group">
                                     <input type="text" class="form-control" name="billing_city" id="company-city"
                                            value="<?php echo $billing_city ?? '' ?>"
@@ -208,6 +209,13 @@
                                     )
                                     ?>
                                     <!--<label for="company-country" class="form-label">Company Country<span class="required">*</span></label>-->
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <input type="text" class="form-control" name="billing_state" id="billing_state"
+                                           value="<?php echo $billing_state ?? '' ?>"
+                                           required>
+                                    <label for="billing_state" class="form-label">State<span
+                                                class="required">*</span></label>
                                 </div>
                                 <div class="wp-block-button block-button-black continue-step-2"
                                      style="text-align: right">
