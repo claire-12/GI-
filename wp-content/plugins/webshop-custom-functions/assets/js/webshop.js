@@ -99,13 +99,26 @@
         const stateSelect = $('#billing_state');
         if (stateSelect.length){
             const country = $(this).val();
-            stateSelect.find('option').each(function () {console.log($(this).attr('data-country'), country)
-                if ($(this).attr('data-country') === undefined || $(this).attr('data-country') == country){
-                    $(this).show();
-                } else {
-                    $(this).hide();
+            $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'cabling_get_state_of_country',
+                data: country,
+            },
+            success: function (response) {
+                if (response.success) {
+                    stateSelect.html(response.data)
                 }
-            })
+            },
+            beforeSend: function () {
+                showLoading();
+            }
+        })
+            .done(function () {
+                hideLoading();
+            });
         }
     })
 

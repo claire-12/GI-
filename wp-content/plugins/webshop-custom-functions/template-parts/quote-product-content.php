@@ -205,22 +205,15 @@
                                     <label for="company-postcode" class="form-label">Postcode<span
                                                 class="required">*</span></label>
                                 </div>
+                                <?php echo show_product_field('billing_country', array(
+                                    'options' => CRMCountry::getCountries(),
+                                    'label' => __('Country', 'woocommerce'),
+                                    'class' => 'form-group has-focus mb-3',
+                                    'required' => true,
+                                    'key' => true,
+                                )); ?>
                                 <div class="mb-4">
-                                    <?php woocommerce_form_field(
-                                        'billing_country',
-                                        array(
-                                            'type' => 'country',
-                                            'placeholder' => 'Country',
-                                            'class' => array('mw-100'),
-                                            'input_class' => array('form-select')
-                                        ),
-                                        $billing_country ?? ''
-                                    )
-                                    ?>
-                                    <!--<label for="company-country" class="form-label">Company Country<span class="required">*</span></label>-->
-                                </div>
-                                <div class="mb-4">
-                                    <?php //echo product_address_state_field()
+                                    <?php echo product_address_state_field()
                                     ?>
                                 </div>
                                 <div class="wp-block-button block-button-black continue-step-2"

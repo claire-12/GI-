@@ -284,6 +284,18 @@ class RequestProductQuote
         return $attachments;
     }
 
+    public static function cabling_get_state_of_country_callback()
+    {
+        $country_code = $_REQUEST['data'];
+        $states = CRMCountry::getStatesByCountryCode($country_code);
+        $option = '<option value="">' . __('Choose state', 'woocommerce') . '</option>';
+        foreach ($states as $state){
+            $option .= '<option value="' . esc_attr($state['code']) . '" >' . esc_html($state['state']) . '</option>';
+        }
+
+        wp_send_json_success($option);
+    }
+
     public
     static function get_quote_data_ajax_callback()
     {

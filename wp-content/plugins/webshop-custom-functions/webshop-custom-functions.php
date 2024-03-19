@@ -76,6 +76,8 @@ add_action('wp_ajax_cabling_request_quote', ['RequestProductQuote', 'cabling_req
 add_action('wp_ajax_nopriv_cabling_request_quote', ['RequestProductQuote', 'cabling_request_quote_callback']);
 add_action('wp_ajax_cabling_get_product_quote_modal', ['RequestProductQuote', 'cabling_get_product_quote_modal_callback']);
 add_action('wp_ajax_nopriv_cabling_get_product_quote_modal', ['RequestProductQuote', 'cabling_get_product_quote_modal_callback']);
+add_action('wp_ajax_cabling_get_state_of_country', ['RequestProductQuote', 'cabling_get_state_of_country_callback']);
+add_action('wp_ajax_nopriv_cabling_get_state_of_country', ['RequestProductQuote', 'cabling_get_state_of_country_callback']);
 add_action('admin_menu', ['RequestProductQuote', 'register_request_a_quote_page']);
 add_action('wp_footer', ['RequestProductQuote', 'cabling_add_product_quote_popup']);
 add_action('admin_init', ['RequestProductQuote', 'add_new_quote_filter_column']);

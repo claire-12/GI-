@@ -28025,9 +28025,44 @@ class CRMCountry
         $states = array();
         foreach (self::COUNTRY as $info) {
             if ($info['country_code'] === $countryCode) {
-                $states[] = $info['state'];
+                $states[] = $info;
             }
         }
         return $states;
+    }
+
+    public static function getCountryByCountryCode($countryCode): string
+    {
+        foreach (self::COUNTRY as $info) {
+            if ($info['country_code'] === $countryCode) {
+                return $info['country'];
+
+            }
+        }
+        return '';
+    }
+
+    public static function getCountries(): array
+    {
+        $countries = array();
+        $usIndex = $caIndex = -1;
+
+        foreach (self::COUNTRY as $index => $info) {
+            if ($info['country_code'] === 'US') {
+                $usIndex = $index;
+            } elseif ($info['country_code'] === 'CA') {
+                $caIndex = $index;
+            } else {
+                $countries[$info['country_code']] = $info['country'];
+            }
+        }
+
+        // Sort remaining countries alphabetically
+        ksort($countries);
+
+        $us = ['US' => self::getCountryByCountryCode('US')];
+        $ca = ['CA' => self::getCountryByCountryCode('CA')];
+
+        return array_merge($us, $ca, $countries);
     }
 }
