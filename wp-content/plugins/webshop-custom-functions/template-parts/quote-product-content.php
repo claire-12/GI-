@@ -109,8 +109,17 @@
                            value="<?php echo base64_encode(json_encode($filters)) ?>">
                 </div>
             <?php endif ?>
-            <?php if (!$is_user_logged_in): ?>
-                <div class="row gx-5">
+            <div class="row gx-5">
+                    <?php if (isset($product)): ?>
+                        <div class="col-12 quote-product-overview">
+                            <?php
+                            ob_start();
+                            cabling_woocommerce_pdf_document($product);
+                            echo ob_get_clean();
+                            ?>
+
+                        </div>
+                    <?php endif ?>
                     <div class="col-12">
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
@@ -180,7 +189,7 @@
                                     <label for="company-street-number" class="form-label">Street Number<span
                                                 class="required">*</span></label>
                                 </div>
-                                
+
                                 <div class="mb-3 form-group">
                                     <input type="text" class="form-control" name="billing_city" id="company-city"
                                            value="<?php echo $billing_city ?? '' ?>"
@@ -226,20 +235,9 @@
                         </div>
                     </div>
                 </div>
-            <?php endif ?>
             <div class="quote-step-2 <?php echo $is_user_logged_in ? '' : 'hidden' ?>">
                 <hr class="mb-5">
                 <div class="row gx-5">
-                    <?php if (isset($product)): ?>
-                        <div class="col-12 quote-product-overview">
-                            <?php
-                            ob_start();
-                            cabling_woocommerce_pdf_document($product);
-                            echo ob_get_clean();
-                            ?>
-
-                        </div>
-                    <?php endif ?>
                     <div class="col-md-12 col-lg-6">
                         <div class="mb-3 form-group1">
                             <?php product_of_interest_field($product_of_interest ?? '') ?>
@@ -265,7 +263,7 @@
                             <div class="row">
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="dimension_oring[id]" id="dimension-id" step="0.01"
+                                        <input type="number" class="form-control" name="dimension_oring[id]" id="dimension-id" step="0.001"
                                                value=""
                                         >
                                         <label for="dimension-id" class="form-label">ID</label>
@@ -273,7 +271,7 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="dimension_oring[od]" id="dimension-od" step="0.01"
+                                        <input type="number" class="form-control" name="dimension_oring[od]" id="dimension-od" step="0.001"
                                                value=""
                                         >
                                         <label for="dimension-od" class="form-label">OD</label>
@@ -281,7 +279,7 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="dimension_oring[width]" step="0.01"
+                                        <input type="number" class="form-control" name="dimension_oring[width]" step="0.001"
                                                id="dimension-width" value=""
                                         >
                                         <label for="dimension-width" class="form-label">CS</label>

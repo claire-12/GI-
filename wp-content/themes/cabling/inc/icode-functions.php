@@ -1449,7 +1449,7 @@ function checkFilterHasSize($attributes): bool
         'inches_width_tol',
         'milimeters_id',
         'milimeters_od',
-        'milimeters_id_tol',
+        'milimeters_width',
         'milimeters_width_tol',
     );
     foreach ($attributes as $key => $attribute){

@@ -37,7 +37,7 @@
             },
             success: function (response) {
                 if (response.success) {
-                    $('#quoteProductModal').find('.modal-content').html(response.data);
+                    $('#quoteProductModal').find('.modal-content').html(response.data.content);
                     add_phone_validate('#mobile-phone');
                     if ($('#login-recaptcha').length) {
                         const sitekey = $('#login-recaptcha').attr('data-sitekey');
@@ -54,7 +54,14 @@
                         } else {
                             $(this).closest('.form-group').addClass('has-focus');
                         }
-                    })
+                    });
+                    if ($('select[name="product-of-interest"]').val() === 'O-Ring'){
+                        $('select[name="product-of-interest"]').trigger('change');
+                        $('#dimension-id').val(response.data.arg.inches_id).closest('.form-group').addClass('has-focus');
+                        $('#dimension-od').val(response.data.arg.inches_od).closest('.form-group').addClass('has-focus');
+                        $('#dimension-width').val(response.data.arg.inches_width).closest('.form-group').addClass('has-focus');
+                        $('select[name="dimension_oring[type]"]').val('INH');
+                    }
                 }
             },
             beforeSend: function () {

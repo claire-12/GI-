@@ -29,7 +29,7 @@ class CRMSalesQuote
         $this->contactpostalcode = $crmcontact->postalcode;
         $this->contactstreet = $crmcontact->street;
         $this->contactstate=$crmcontact->state;
-        $this->contacthousenumber=$crmcontact->housenumber;           
+        $this->contacthousenumber=$crmcontact->housenumber??"";
     }
 
     protected string $name = "";

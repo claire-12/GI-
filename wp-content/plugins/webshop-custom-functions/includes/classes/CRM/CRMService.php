@@ -117,6 +117,7 @@ class CRMService
             $quote['product'] = $product;
             $quote['brand'] = 'N/A';
             $quote['application'] = $quote['o_ring']['desired-application'] ?? '';
+            $quote['mobile'] = sprintf('+%s%s', $quote['billing_phone_code'], $quote['billing_phone']);
             if (!empty($quote['o_ring']['material'])) {
                 $quote['material'] = $this->getMaterialCode($quote['o_ring']['material']);
             }

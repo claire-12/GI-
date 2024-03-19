@@ -429,11 +429,20 @@ class RequestProductQuote
             $product = wc_get_product($_REQUEST['data']);
             $product_material = get_field('product_material', $product->get_id());
             $object['object_type'] = 'product';
+            $milimeters_id = get_field('milimeters_id', $product->get_id());
+            $milimeters_od = get_field('milimeters_od', $product->get_id());
+            $milimeters_width = get_field('milimeters_width', $product->get_id());
             $inches_id = get_field('inches_id', $product->get_id());
             $inches_od = get_field('inches_od', $product->get_id());
             $inches_width = get_field('inches_width', $product->get_id());
             $args['product'] = $product;
-            $args['product_of_interest'] = $product->get_sku();
+            $args['milimeters_id'] = $milimeters_id;
+            $args['milimeters_od'] = $milimeters_od;
+            $args['milimeters_width'] = $milimeters_width;
+            $args['inches_id'] = $inches_id;
+            $args['inches_od'] = $inches_od;
+            $args['inches_width'] = $inches_width;
+            $args['product_of_interest'] = 'O-Ring';
             $args['material'] = $product_material ? get_the_title($product_material) : '';
             $args['hardness'] = get_field('product_hardness', $product->get_id());
             $args['temperature'] = get_field('product_operating_temp', $product->get_id());
@@ -462,9 +471,13 @@ class RequestProductQuote
             $args['billing_phone_code'] = get_user_meta($userId, 'billing_phone_code', true);
             $args['phone_number'] = get_user_phone_number($userId);
         }
+
         wc_get_template('template-parts/quote-product-content.php', $args, '', WBC_PLUGIN_DIR);
         $content = ob_get_clean();
-        wp_send_json_success($content);
+        wp_send_json_success(array(
+            'arg' => $args,
+            'content' => $content,
+        ));
     }
 }
 

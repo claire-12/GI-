@@ -373,8 +373,6 @@ class CRMController
         $headers = $this->createPostHeader($token);
 
         $res = $this->makePostRequest($url, $headers, $body);
-        wp_mail('daisy.nguyen0806@gmail.com', '[CRM createSalesQuoteLead]', json_encode($res));
-        wp_mail('jose.martins@infolabix.com', '[CRM createSalesQuoteLead Body]', $body);
         $lead->loadLead($res);
         if ($lead->leadid > 0) {
             if ($crmsalesquote->getFilePath() != null) {
@@ -504,13 +502,13 @@ class CRMController
             $crmcontact->company = $data['company'];
             $crmcontact->firstname = $data['first_name'];
             $crmcontact->lastname = $data['last_name'];
-            $crmcontact->mobile = $data['billing_phone'];
+            $crmcontact->mobile = $data['mobile'];
             $crmcontact->jobtitle = $data['jobtitle'];
             $crmcontact->city = $data['billing_city'];
             //$crmcontact->address = $data['billing_address_1'];
             $crmcontact->street = $data['billing_address_1'];
-            $crmcontact->housenumber = $data['billing_address_2'];
-            $crmcontact->state = $data['billing_state'];
+            $crmcontact->housenumber = $data['billing_address_2'] ?? "";
+            $crmcontact->state = $data['billing_state'] ?? "";
             $crmcontact->postalcode = $data['billing_postcode'];
             $crmcontact->country = $data['billing_country'];
             $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
@@ -518,7 +516,7 @@ class CRMController
 
         $crmquoteproduct = new CRMQuoteProduct();
 
-        if( $data['volume']=="") $data['volume']=null;
+        if ($data['volume'] == "") $data['volume'] = null;
         $crmquoteproduct->quantity = $data['volume'] ?? '0';
 
         //$crmquoteproduct->quantity = $data['volume'];
