@@ -95,6 +95,19 @@
             }
         }
     })
+    $(document).on('change', '#billing_country', function (e) {
+        const stateSelect = $('#billing_state');
+        if (stateSelect.length){
+            const country = $(this).val();
+            stateSelect.find('option').each(function () {console.log($(this).attr('data-country'), country)
+                if ($(this).attr('data-country') === undefined || $(this).attr('data-country') == country){
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            })
+        }
+    })
 
     $(document).on('submit', '#keep-informed-form', function (e) {
         e.preventDefault();

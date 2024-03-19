@@ -64,6 +64,7 @@ class CRMService
         }
         $this->notify_quote_customer($data['email'], $data);
     }
+
     private function requestContactCRM($data)
     {
         $crm = new CRMController();
@@ -121,10 +122,13 @@ class CRMService
             if (!empty($quote['o_ring']['material'])) {
                 $quote['material'] = $this->getMaterialCode($quote['o_ring']['material']);
             }
+            $quote['file_path'] = [];
             if (!empty($quote['files'])) {
-                $filAray = explode(',', $quote['files']);
-                $filepath = wp_get_attachment_url($filAray[0]);
-                $quote['file'] = $filepath;
+                $filArray = explode(',', $quote['files']);
+                foreach ($filArray as $file) {
+                    $filepath = wp_get_attachment_url($file);
+                    $quote['file_path'][] = $filepath;
+                }
             }
             if (!empty($brandId)) {
                 $brand = get_term($brandId, 'product-brand');
@@ -204,6 +208,7 @@ class CRMService
             wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
     }
+
     private function send_confirm_email(string $email, array $data, $type)
     {
         $data_confirm = base64_encode(json_encode($data));
@@ -229,6 +234,7 @@ class CRMService
 
         GIEmail::send($email, $options);
     }
+
     private function notify_quote_customer(string $email, array $data)
     {
         $subject = sprintf(__('[%s] Request a quote', 'cabling'), get_bloginfo('name'));

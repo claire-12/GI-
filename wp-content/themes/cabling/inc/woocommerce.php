@@ -2160,6 +2160,17 @@ function product_harness_field($value = '')
         'default' => $value
     ));
 }
+function product_address_state_field()
+{
+    $option = '<option value="">' . __('Choose state', 'woocommerce') . '</option>';
+    foreach (CRMCountry::COUNTRY as $country) {
+        $option .= '<option data-country="' . esc_attr($country['country_code']) . '" value="' . esc_attr($country['code']) . '" >' . esc_html($country['state']) . '</option>';
+    }
+
+    $field = '<select name="billing_state" id="billing_state" class="select form-select" required>' . $option . '</select>';
+
+    return '<div class="w-100 form-group has-focus">' . $field . '<label for="billing_state">State</label></div>';
+}
 
 function show_product_field($name, $options = array()): string
 {

@@ -49,7 +49,7 @@ class CRMSalesQuote
     protected string $contacthousenumber="";
     protected ?CRMContact $crmcontact = null;
     protected ?CRMQuoteProduct $product = null;
-    protected ?string $filepath;
+    protected ?array $filepath;
     protected $brand;
 
     public function getName()

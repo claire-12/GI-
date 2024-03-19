@@ -219,12 +219,9 @@
                                     ?>
                                     <!--<label for="company-country" class="form-label">Company Country<span class="required">*</span></label>-->
                                 </div>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="billing_state" id="billing_state"
-                                           value="<?php echo $billing_state ?? '' ?>"
-                                           required>
-                                    <label for="billing_state" class="form-label">State<span
-                                                class="required">*</span></label>
+                                <div class="mb-4">
+                                    <?php //echo product_address_state_field()
+                                    ?>
                                 </div>
                                 <div class="wp-block-button block-button-black continue-step-2"
                                      style="text-align: right">

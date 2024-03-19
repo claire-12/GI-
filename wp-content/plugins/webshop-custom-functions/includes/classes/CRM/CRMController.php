@@ -375,9 +375,12 @@ class CRMController
         $res = $this->makePostRequest($url, $headers, $body);
         $lead->loadLead($res);
         if ($lead->leadid > 0) {
-            if ($crmsalesquote->getFilePath() != null) {
+            $files = $crmsalesquote->getFilePath();
+            if (is_array($files)) {
                 try {
-                    $this->addFileToLead($lead, $crmsalesquote->getFilePath(), $token);
+                    foreach ($files as $file) {
+                        $this->addFileToLead($lead, $file, $token);
+                    }
                 } catch (Exception $e) {
                     echo 'Caught exception: ', $e->getMessage(), "\n";
                 }
@@ -553,7 +556,7 @@ class CRMController
         }
 
 
-        $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file'] ?? null);
+        $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $data['file_path'] ?? null);
         /** end of create contact object to use **/
         $lead = $this->createSalesQuoteLead($crmquote);
 
