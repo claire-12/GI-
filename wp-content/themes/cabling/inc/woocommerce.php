@@ -2170,7 +2170,7 @@ function product_address_state_field()
 
     $field = '<select name="billing_state" id="billing_state" class="select form-select" required>' . $option . '</select>';
 
-    return '<div class="w-100 form-group has-focus">' . $field . '<label for="billing_state">State</label></div>';
+    return '<div class="w-100 form-group has-focus">' . $field . '<label for="billing_state">State<span                                             class="required">*</span></label></div>';
 }
 
 function show_product_field($name, $options = array()): string
