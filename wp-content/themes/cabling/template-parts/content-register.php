@@ -73,13 +73,6 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                         <?php _e('Your password must have at least: 8 characters long with characters, numbers and symbols', 'cabling') ?>
                     </span>
                 <!-- JM 20230920 changed position of Is client? and client number -->
-                <!--<div class="form-group">
-                    <input type="text" class="form-control" name="company-name-responsible" id="company-responsive-name"
-                           value="<?php /*echo $_REQUEST['company-name-responsible'] ?? '' */ ?>"
-                           required>
-                    <label for="company-responsive-name"><?php /*_e('Company contact Full Name', 'cabling') */ ?><span
-                                class="required">*</span></label>
-                </div>-->
                 <div class="form-group form-phone">
                     <input type="tel" class="form-control" id="mobile-phone" required>
                     <span id="mobile-phone-validate" class="hidden input-error"></span>

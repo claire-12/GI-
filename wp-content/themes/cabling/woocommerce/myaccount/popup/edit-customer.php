@@ -17,13 +17,6 @@
                    id="user_email" disabled>
             <label for="user_email"><?php _e('Email', 'cabling') ?><span class="required">*</span></label>
         </div>
-        <?php echo show_product_field('user_title', array(
-            'options' => array('Ms.', 'Mr.'),
-            'label' => __('Title', 'woocommerce'),
-            'default' => $data['user_title'] ?? '',
-            'class' => ' form-group has-focus mt-4 ',
-            'required' => true
-        )); ?>
         <div class="form-group <?php echo empty($data['billing_first_name']) ? '' : 'has-focus' ?>">
             <input type="text" class="form-control" name="billing_first_name"
                    value="<?php echo $data['billing_first_name'] ?>"

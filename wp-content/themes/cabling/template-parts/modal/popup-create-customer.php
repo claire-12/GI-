@@ -15,13 +15,6 @@ $user_id = get_current_user_id();
                 <form method="POST" name="create-user-form" id="information-form" class="needs-validation">
                     <div class="woo-notice" role="alert" style="display: none">
                     </div>
-                    <?php echo show_product_field('user-title', array(
-                        'options' => array('Ms.', 'Mr.'),
-                        'label' => __('Title', 'woocommerce'),
-                        'default' => $_REQUEST['user-title'] ?? '',
-                        'class' => ' form-group has-focus mt-4 ',
-                        'required' => true
-                    )); ?>
                     <div class="form-group">
                         <input type="text" class="form-control"
                                name="first_name" id="first_name" required>

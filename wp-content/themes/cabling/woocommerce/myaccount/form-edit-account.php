@@ -62,14 +62,6 @@ do_action('woocommerce_before_edit_account_form'); ?>
                    id="account_email" autocomplete="email" value="<?php echo esc_attr($user->user_email); ?>" disabled/>
         </p>
         <div class="clear"></div>
-        <?php echo show_product_field('user_title', array(
-            'options' => array('Ms.', 'Mr.'),
-            'label' => __('Title', 'woocommerce'),
-            'default' => esc_attr(get_user_meta($user->ID, 'user_title', true)) ?? '',
-            'class' => ' form-group has-focus mt-4 woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide',
-            'required' => true
-        )); ?>
-        <div class="clear"></div>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="job_title"><?php esc_html_e('Job Title', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
