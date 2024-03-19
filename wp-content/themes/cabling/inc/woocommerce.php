@@ -447,7 +447,14 @@ function getDataResponse(array $response, string $type, string $type_level_2): a
     }
     return $responseData;
 }
-
+ function get_cumulative_quantity($stock, float $quantity): string
+ {
+    if (empty($stock)){
+        $stock = 0;
+    }
+    $qty = $stock + $quantity;
+    return number_format($qty, 0, '.', ' ');
+}
 function show_value_from_api($key, $value)
 {
     if (empty($value)) {
@@ -456,6 +463,10 @@ function show_value_from_api($key, $value)
 
     if (str_contains($key, 'quantity') || str_contains($key, 'scale_from') || str_contains($key, 'scale_to')) {
         return number_format($value, 0, '.', ' ');
+    }
+
+    if ($key === 'remaining_value') {
+        return number_format($value, 2, '.', ' ');
     }
 
     if (str_contains($key, 'cure_date')) {

@@ -22,16 +22,7 @@ $backlogMainTable = array(
     'remaining_value' => __('Remaining Value', 'cabling'),
 );
 ?>
-<?php function get_cumulative_quantity($stock, float $quantity)
-{
-    if (empty($stock)){
-        $stock = 0;
-    }
-
-    return $stock + $quantity;
-}
-
-if (is_array($data['stock'])): ?>
+<?php if (is_array($data['stock'])): ?>
     <div class="table-responsive">
         <h2 class="table-heading">Inventory</h2>
         <table id="inventory-table" class="table table-bordered text-center">

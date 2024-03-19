@@ -37,7 +37,7 @@ $backlogSingleTable = array(
         <?php foreach ($data as $datum): ?>
             <tr onclick="showSingleTable('<?php echo sanitize_title($datum['ponumber']) ?>')">
                 <?php foreach ($backlogMainTable as $key => $item): ?>
-                    <td><?php echo show_value_from_api($key, $datum[$key]) ?></td>
+                    <td class="<?php echo $key ?>"><?php echo show_value_from_api($key, $datum[$key]) ?></td>
                 <?php endforeach ?>
             </tr>
             <tr class="hidden single-<?php echo sanitize_title($datum['ponumber']) ?>">

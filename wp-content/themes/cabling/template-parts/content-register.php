@@ -85,7 +85,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     'options' => CRMConstant::FUNCTION_CONTACT,
                     'label' => __('Function', 'woocommerce'),
                     'default' => $_REQUEST['function'] ?? '',
-                    'class' => ' form-group has-focus mt-4 mb-1 ',
+                    'class' => ' form-group has-focus mt-4 mb-3 ',
                     'required' => true
                 )); ?>
                 <div class="form-group">

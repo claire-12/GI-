@@ -999,7 +999,10 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     white-space: nowrap;
     vertical-align: middle;
 }
-
+td.ponumber {
+    text-decoration: underline;
+    cursor: pointer;
+}
 .product-request-button {
     margin-bottom: 1.5rem;
 }
