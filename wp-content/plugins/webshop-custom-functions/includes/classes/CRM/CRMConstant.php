@@ -69,6 +69,7 @@ class CRMConstant
         '0002' => "Mr.",
     );
 
+/*
     const PRODUCT = array(
         '141' => "Custom Molded Rubber Seals",
         '151' => "Rubber to Metal Bonded Seals",
@@ -81,7 +82,19 @@ class CRMConstant
         '361' => "Surface Production Equipment",
         '371' => "Wearable Sensors"
     );
-
+*/
+    const PRODUCT = array(
+        '002' => "Custom Molded Rubber Seals",
+        '006' => "Rubber to Metal Bonded Seals",
+        '003' => "Machined Thermoplastic",
+        //'311' => "None",
+        '005' => "O-Ring",
+        '007' => "Rubber to Plastic Bonded Seals",
+        '001' => "Custom Machined Metal Parts",
+        '004' => "Molded Resins",
+        '008' => "Surface Production Equipment",
+        '371' => "Wearable Sensors"
+    );
     const COMPOUND = array(
         'Chemical Resistant',
         'Oil Resistant',
