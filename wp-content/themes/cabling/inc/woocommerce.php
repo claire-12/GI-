@@ -1261,6 +1261,9 @@ function save_custom_field_my_account_edit($user_id)
     if (isset($_POST['billing_postcode'])) {
         update_user_meta($user_id, 'billing_postcode', sanitize_text_field($_POST['billing_postcode']));
     }
+    if (isset($_POST['billing_state'])) {
+        update_user_meta($user_id, 'billing_state', sanitize_text_field($_POST['billing_state']));
+    }
     if (isset($_POST['company_name_responsible'])) {
         update_user_meta($user_id, 'company_name_responsible', sanitize_text_field($_POST['company_name_responsible']));
     }
