@@ -79,6 +79,7 @@ class CRMLead
         $body["LeadType_KUT"] = "105";//FIXED VALUE -> GI
         $body["Segment"] = "GI";//FIXED VALUE -> GI
         $body["OriginTypeCode"] = "Z38";//FIXED VALUE -> GI
+
         return json_encode($body);
     }
 
@@ -107,6 +108,9 @@ class CRMLead
         $contact["ContactFunctionalTitleName"] = $crmcontact->jobtitle;
 //ContactFormOfAddressCode"] = $crmcontact->jobtitle;
 
+        $contact["Business_KUT"]= "141";    // Always send this 141 is GI
+        $contact["Segment"] = "GI";  // Always send
+        $contact["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
 
         $contact["Note"] = $comments;
         if(empty($prodofinterest)||($prodofinterest=="Array")){$prodofinterest="";}
@@ -156,6 +160,11 @@ class CRMLead
         //$rfq["LeadType_KUT"]= "105";
         $rfq["LeadLifecycle_KUT"] = "151"; // Sales quote lead
         $rfq["CompanySectorL1_KUT"] = "171"; // Sales quote lead
+
+        $rfq["Business_KUT"]= "141";    // Always send this 141 is GI
+        $rfq["Segment"] = "GI";  // Always send
+        $rfq["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
+
 
 
         $rfq["Company"] = $crmsalesquote->getCompany();
