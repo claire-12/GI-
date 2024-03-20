@@ -140,30 +140,24 @@ do_action('woocommerce_before_edit_account_form'); ?>
         </p>
         <div class="clear"></div>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="billing_postcode"><?php esc_html_e('Postcode', 'woocommerce'); ?>&nbsp;<span
-                        class="required">*</span></label>
-            <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_postcode"
-                   id="billing_postcode"
-                   value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_postcode', true)); ?>" required/>
-        </p>
-        <div class="clear"></div>
+        <?php echo show_product_field('billing_country', array(
+            'options' => CRMCountry::getCountries(),
+            'label' => __('Country', 'woocommerce'),
+            'class' => 'form-group has-focus mb-4 mt-3',
+            'required' => true,
+            'key' => true,
+            'default' => esc_attr(get_user_meta($user->ID, 'billing_country', true)),
+        )); ?>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="billing_country"><?php esc_html_e('Country', 'woocommerce'); ?>&nbsp;<span
-                        class="required">*</span></label>
-            <?php woocommerce_form_field(
-                'billing_country',
-                array(
-                    'type' => 'country',
-                    'default' => 'US',
-                    'class' => array('mw-100'),
-                    'input_class' => array('form-select')
-                ),
-                esc_attr(get_user_meta($user->ID, 'billing_country', true))
-            )
-            ?>
-        </p>
+        <?php
+        echo show_product_field('billing_postcode', array(
+            'options' => CRMCountry::getStatesByCountryCode(esc_attr(get_user_meta($user->ID, 'billing_country', true))),
+            'label' => __('Sate', 'woocommerce'),
+            'class' => 'form-group has-focus mb-4 mt-3',
+            'required' => true,
+            'key' => true,
+            'default' => esc_attr(get_user_meta($user->ID, 'billing_postcode', true)),
+        )); ?>
         <div class="clear"></div>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="mobile-phone"><?php _e('Mobile Number', 'cabling') ?></label>

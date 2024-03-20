@@ -73,7 +73,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                         <?php _e('Your password must have at least: 8 characters long with characters, numbers and symbols', 'cabling') ?>
                     </span>
                 <!-- JM 20230920 changed position of Is client? and client number -->
-                <div class="form-group form-phone">
+                <div class="form-group form-phone has-focus">
                     <input type="tel" class="form-control" id="mobile-phone" required>
                     <span id="mobile-phone-validate" class="hidden input-error"></span>
                     <input type="hidden" class="phone_number" name="billing_phone">
@@ -130,39 +130,30 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                                 class="required">*</span></label>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="billing_state" id="billing_state"
-                           value="<?php echo $_REQUEST['billing_state'] ?? '' ?>"
-                           required>
-                    <label for="billing_state" class="form-label">Company State<span
-                                class="required">*</span></label>
-                </div>
-                <div class="form-group">
                     <input type="text" class="form-control" name="billing_city" id="company-city"
                            value="<?php echo $_REQUEST['billing_city'] ?? '' ?>"
                            required>
                     <label for="company-city" class="form-label">Company City<span
                                 class="required">*</span></label>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="billing_postcode"
-                           id="company-postcode"
-                           value="<?php echo $_REQUEST['billing_postcode'] ?? '' ?>"
-                           required>
-                    <label for="company-postcode" class="form-label">Company Postcode<span
-                                class="required">*</span></label>
-                </div>
-                <div class="form-group">
-                    <?php woocommerce_form_field('billing_country', array(
-                        'type' => 'country',
-                        'default' => 'US',
-                        'class' => array('mw-100'),
-                        'placeholder' => __('Country*', 'cabling'),
-                        'input_class' => array('form-select')
-                    ));
-                    ?>
-                    <label class="screen-reader-text" for="country"><?php _e('Country', 'cabling') ?><span
-                                class="required">*</span></label>
-                </div>
+                <?php echo show_product_field('billing_country', array(
+                    'options' => CRMCountry::getCountries(),
+                    'label' => __('Company Country', 'woocommerce'),
+                    'class' => 'form-group has-focus mb-4 mt-4',
+                    'required' => true,
+                    'key' => true,
+                    'default' => $_REQUEST['billing_country'] ?? '',
+                )); ?>
+
+                <?php
+                echo show_product_field('billing_postcode', array(
+                    'options' => CRMCountry::getStatesByCountryCode($_REQUEST['billing_country'] ?? ''),
+                    'label' => __('Company Postcode', 'woocommerce'),
+                    'class' => 'form-group has-focus mb-4 mt-3',
+                    'required' => true,
+                    'key' => true,
+                    'default' => $_REQUEST['billing_postcode'] ?? '',
+                )); ?>
                 <div class="form-group text-center agree-term-condition mb-3">
                     <p for="agree-term-condition">
                         <!--<input type="checkbox" name="agree-term-condition" id="agree-term-condition" required>-->

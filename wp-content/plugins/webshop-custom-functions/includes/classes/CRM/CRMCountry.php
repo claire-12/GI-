@@ -28025,7 +28025,7 @@ class CRMCountry
         $states = array();
         foreach (self::COUNTRY as $info) {
             if ($info['country_code'] === $countryCode) {
-                $states[] = $info;
+                $states[$info['code']] = $info['state'];
             }
         }
         return $states;

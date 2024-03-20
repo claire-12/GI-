@@ -289,8 +289,8 @@ class RequestProductQuote
         $country_code = $_REQUEST['data'];
         $states = CRMCountry::getStatesByCountryCode($country_code);
         $option = '<option value="">' . __('Choose state', 'woocommerce') . '</option>';
-        foreach ($states as $state){
-            $option .= '<option value="' . esc_attr($state['code']) . '" >' . esc_html($state['state']) . '</option>';
+        foreach ($states as $key => $state){
+            $option .= '<option value="' . esc_attr($key) . '" >' . esc_html($state) . '</option>';
         }
 
         wp_send_json_success($option);
