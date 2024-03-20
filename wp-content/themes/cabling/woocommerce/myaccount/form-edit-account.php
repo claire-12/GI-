@@ -133,9 +133,18 @@ do_action('woocommerce_before_edit_account_form'); ?>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="billing_city"><?php esc_html_e('City', 'woocommerce'); ?>&nbsp;<span
-                        class="required">*</span></label>
+                        class="required">*</span></label>00000
             <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_city"
                    id="billing_city" value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_city', true)); ?>"
+                   required/>
+        </p>
+        <div class="clear"></div>
+
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="billing_postcode"><?php esc_html_e('Postcode', 'woocommerce'); ?>&nbsp;<span
+                        class="required">*</span></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_postcode"
+                   id="billing_postcode" value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_postcode', true)); ?>"
                    required/>
         </p>
         <div class="clear"></div>
@@ -150,13 +159,13 @@ do_action('woocommerce_before_edit_account_form'); ?>
         )); ?>
 
         <?php
-        echo show_product_field('billing_postcode', array(
+        echo show_product_field('billing_state', array(
             'options' => CRMCountry::getStatesByCountryCode(esc_attr(get_user_meta($user->ID, 'billing_country', true))),
             'label' => __('Sate', 'woocommerce'),
             'class' => 'form-group has-focus mb-4 mt-3',
             'required' => true,
             'key' => true,
-            'default' => esc_attr(get_user_meta($user->ID, 'billing_postcode', true)),
+            'default' => esc_attr(get_user_meta($user->ID, 'billing_state', true)),
         )); ?>
         <div class="clear"></div>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">

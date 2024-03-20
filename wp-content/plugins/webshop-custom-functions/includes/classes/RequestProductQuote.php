@@ -289,7 +289,7 @@ class RequestProductQuote
         $country_code = $_REQUEST['data'];
         $states = CRMCountry::getStatesByCountryCode($country_code);
         $option = '<option value="">' . __('Choose state', 'woocommerce') . '</option>';
-        foreach ($states as $key => $state){
+        foreach ($states as $key => $state) {
             $option .= '<option value="' . esc_attr($key) . '" >' . esc_html($state) . '</option>';
         }
 
@@ -435,7 +435,7 @@ class RequestProductQuote
             'object_id' => $_REQUEST['data'],
         ];
 
-        $args['filter_params'] = $_REQUEST['filter_params'] ?? [] ;
+        $args['filter_params'] = $_REQUEST['filter_params'] ?? [];
 
         if ($post_type === 'product') {
             $product = wc_get_product($_REQUEST['data']);
@@ -456,9 +456,21 @@ class RequestProductQuote
             $args['inches_width'] = $inches_width;
             $args['product_of_interest'] = 'O-Ring';
             $args['material'] = $product_material ? get_the_title($product_material) : '';
-            $args['hardness'] = get_field('product_hardness', $product->get_id());
             $args['temperature'] = get_field('product_operating_temp', $product->get_id());
             $args['dimension'] = sprintf('%sx%sx%s', $inches_id, $inches_od, $inches_width);
+            $hardness = get_field('product_hardness', $product->get_id());
+            $args['hardness'] = $hardness . 'A';
+            $product_lines = get_the_terms($product->get_id(), 'product_line');
+            if (!empty($product_lines[0])) {
+                $name = trim(str_replace('O-Rings', '', $product_lines[0]->name));
+                foreach (CRMConstant::COMPOUND as $compound) {
+                    $position = strpos($compound, $name);
+
+                    if ($position !== false) {
+                        $args['desired'] = $compound;
+                    }
+                }
+            }
         } else {
             $args['post'] = get_post($_REQUEST['data']);
 

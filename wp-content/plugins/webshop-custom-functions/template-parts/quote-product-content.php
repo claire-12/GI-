@@ -204,7 +204,7 @@
                                        id="company-postcode"
                                        value="<?php echo $billing_postcode ?? '' ?>"
                                        required>
-                                <label for="company-postcode" class="form-label">Company Postcode<span
+                                <label for="company-postcode" class="form-label">Postcode<span
                                             class="required">*</span></label>
                             </div>
                             <?php echo show_product_field('billing_country', array(
@@ -326,7 +326,7 @@
                          style="flex-direction: column;justify-content: space-between; padding-bottom: 16px;">
                         <div class="o-ring-block position-relative">
                             <h5>O-RINGS / BACKUP RINGS ONLY</h5>
-                            <?php product_desired_application_field() ?>
+                            <?php product_desired_application_field($desired ?? '') ?>
                             <?php if (empty($material)): ?>
                                 <?php product_material_field() ?>
                             <?php else: ?>
@@ -337,7 +337,7 @@
                                                 class="help">Buna-N</span></label>
                                 </div>
                             <?php endif ?>
-                            <?php product_harness_field(); ?>
+                            <?php product_harness_field($hardness ?? ''); ?>
                             <div class="mb-3 form-group">
                                 <input type="text" class="form-control" name="o_ring[temperature]" id="temperature"
                                        value="<?php echo $temperature ?? '' ?>"
