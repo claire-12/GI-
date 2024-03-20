@@ -32,7 +32,10 @@
         if ($(this).val() === '') {
             $(this).closest('.form-group').removeClass('has-focus');
         } else {
-            $(this).closest('.form-group').addClass('has-focus');
+            const formGroup = $(this).closest('.form-group');
+            if (!formGroup.hasClass('form-phone')) {
+                $(this).closest('.form-group').addClass('has-focus');
+            }
         }
     })
 

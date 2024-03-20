@@ -110,121 +110,130 @@
                 </div>
             <?php endif ?>
             <div class="row gx-5">
-                    <?php if (isset($product)): ?>
-                        <div class="col-12 quote-product-overview">
-                            <?php
-                            ob_start();
-                            cabling_woocommerce_pdf_document($product);
-                            echo ob_get_clean();
-                            ?>
+                <?php if (isset($product)): ?>
+                    <div class="col-12 quote-product-overview">
+                        <?php
+                        ob_start();
+                        cabling_woocommerce_pdf_document($product);
+                        echo ob_get_clean();
+                        ?>
 
-                        </div>
-                    <?php endif ?>
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-6">
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="first_name" id="firstName"
-                                           value="<?php echo $first_name ?? '' ?>" required>
-                                    <label for="firstName" class="form-label">First Name<span
-                                                class="required">*</span></label>
-                                </div>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="last_name" id="last_name"
-                                           value="<?php echo $last_name ?? '' ?>" required>
-                                    <label for="last_name" class="form-label">Last Name<span
-                                                class="required">*</span></label>
-                                </div>
-                                <?php echo show_product_field('function', array(
-                                    'options' => CRMConstant::FUNCTION_CONTACT,
-                                    'label' => __('Function', 'woocommerce'),
-                                    'class' => 'form-group has-focus mb-3',
-                                    'required' => true
-                                )); ?>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="job_title" id="job_title"
-                                           value="<?php echo $job_title ?? '' ?>">
-                                    <label for="job_title"
-                                           class="form-label">Job Title</label>
-                                </div>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="company" id="company-name"
-                                           value="<?php echo $company ?? '' ?>"
-                                           required>
-                                    <label for="company-name" class="form-label">Company name<span
-                                                class="required">*</span></label>
-                                </div>
-                                <div class="mb-3 form-group">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                           value="<?php echo $email ?? '' ?>"
-                                           required>
-                                    <label for="email" class="form-label">Professional Email<span
-                                                class="required">*</span></label>
-                                </div>
-                                <div class="mb-3 form-group form-phone">
-                                    <input type="tel" class="form-control" id="mobile-phone"
-                                           value="<?php echo $phone_number ?? ''; ?>" required>
-                                    <span id="mobile-phone-validate" class="hidden input-error"></span>
-                                    <input type="hidden" class="phone_number" name="billing_phone"
-                                           value="<?php echo $billing_phone ?? ''; ?>">
-                                    <input type="hidden" class="phone_code" name="billing_phone_code"
-                                           value="<?php echo $billing_phone_code ?? ''; ?>">
-                                    <label for="phone" class="form-label">Professional Mobile number<span
-                                                class="required">*</span></label>
-                                </div>
+                    </div>
+                <?php endif ?>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="first_name" id="firstName"
+                                       value="<?php echo $first_name ?? '' ?>" required>
+                                <label for="firstName" class="form-label">First Name<span
+                                            class="required">*</span></label>
                             </div>
-                            <div class="col-md-12 col-lg-6">
-                                <p><strong>Company<span class="required">*</span></strong></p>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="billing_address_1" id="company-street"
-                                           value="<?php echo $billing_address_1 ?? '' ?>"
-                                           required>
-                                    <label for="company-street" class="form-label">Street Address<span
-                                                class="required">*</span></label>
-                                </div>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="billing_address_2" id="company-street-number"
-                                           value="<?php echo $billing_address_2 ?? '' ?>"
-                                           required>
-                                    <label for="company-street-number" class="form-label">Street Number<span
-                                                class="required">*</span></label>
-                                </div>
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="last_name" id="last_name"
+                                       value="<?php echo $last_name ?? '' ?>" required>
+                                <label for="last_name" class="form-label">Last Name<span
+                                            class="required">*</span></label>
+                            </div>
+                            <?php echo show_product_field('function', array(
+                                'options' => CRMConstant::FUNCTION_CONTACT,
+                                'label' => __('Function', 'woocommerce'),
+                                'class' => 'form-group has-focus mb-3',
+                                'required' => true,
+                                'default' => $function ?? '',
+                            )); ?>
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="job_title" id="job_title"
+                                       value="<?php echo $job_title ?? '' ?>">
+                                <label for="job_title"
+                                       class="form-label">Job Title</label>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="company" id="company-name"
+                                       value="<?php echo $company ?? '' ?>"
+                                       required>
+                                <label for="company-name" class="form-label">Company name<span
+                                            class="required">*</span></label>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <input type="email" class="form-control" name="email" id="email"
+                                       value="<?php echo $email ?? '' ?>"
+                                       required>
+                                <label for="email" class="form-label">Professional Email<span
+                                            class="required">*</span></label>
+                            </div>
+                            <div class="mb-3 form-group form-phone">
+                                <input type="tel" class="form-control" id="mobile-phone"
+                                       value="<?php echo $phone_number ?? ''; ?>" required>
+                                <span id="mobile-phone-validate" class="hidden input-error"></span>
+                                <input type="hidden" class="phone_number" name="billing_phone"
+                                       value="<?php echo $billing_phone ?? ''; ?>">
+                                <input type="hidden" class="phone_code" name="billing_phone_code"
+                                       value="<?php echo $billing_phone_code ?? ''; ?>">
+                                <label for="phone" class="form-label">Professional Mobile number<span
+                                            class="required">*</span></label>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <p><strong>Company<span class="required">*</span></strong></p>
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="billing_address_1" id="company-street"
+                                       value="<?php echo $billing_address_1 ?? '' ?>"
+                                       required>
+                                <label for="company-street" class="form-label">Street Address<span
+                                            class="required">*</span></label>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="billing_address_2"
+                                       id="company-street-number"
+                                       value="<?php echo $billing_address_2 ?? '' ?>"
+                                       required>
+                                <label for="company-street-number" class="form-label">Street Number<span
+                                            class="required">*</span></label>
+                            </div>
 
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="billing_city" id="company-city"
-                                           value="<?php echo $billing_city ?? '' ?>"
-                                           required>
-                                    <label for="company-city" class="form-label">City<span
-                                                class="required">*</span></label>
-                                </div>
-                                <div class="mb-3 form-group">
-                                    <input type="text" class="form-control" name="billing_postcode"
-                                           id="company-postcode"
-                                           value="<?php echo $billing_postcode ?? '' ?>"
-                                           required>
-                                    <label for="company-postcode" class="form-label">Postcode<span
-                                                class="required">*</span></label>
-                                </div>
-                                <?php echo show_product_field('billing_country', array(
-                                    'options' => CRMCountry::getCountries(),
-                                    'label' => __('Country', 'woocommerce'),
-                                    'class' => 'form-group has-focus mb-3',
-                                    'required' => true,
-                                    'key' => true,
-                                )); ?>
-                                <div class="mb-4">
-                                    <?php echo product_address_state_field()
-                                    ?>
-                                </div>
-                                <div class="wp-block-button block-button-black continue-step-2"
-                                     style="text-align: right">
-                                    <a class="wp-block-button__link has-text-align-center wp-element-button"
-                                       href="javascript:void(0)">Continue</a>
-                                </div>
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="billing_city" id="company-city"
+                                       value="<?php echo $billing_city ?? '' ?>"
+                                       required>
+                                <label for="company-city" class="form-label">City<span
+                                            class="required">*</span></label>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <input type="text" class="form-control" name="billing_postcode"
+                                       id="company-postcode"
+                                       value="<?php echo $billing_postcode ?? '' ?>"
+                                       required>
+                                <label for="company-postcode" class="form-label">Company Postcode<span
+                                            class="required">*</span></label>
+                            </div>
+                            <?php echo show_product_field('billing_country', array(
+                                'options' => CRMCountry::getCountries(),
+                                'label' => __('Country', 'woocommerce'),
+                                'class' => 'form-group has-focus mb-3',
+                                'required' => true,
+                                'key' => true,
+                                'default' => $billing_country ?? '',
+                            )); ?>
+                            <?php
+                            echo show_product_field('billing_state', array(
+                                'options' => CRMCountry::getStatesByCountryCode($billing_country ?? ''),
+                                'label' => __('State', 'woocommerce'),
+                                'class' => 'form-group has-focus mb-4 mt-3',
+                                'required' => true,
+                                'key' => true,
+                                'default' => $billing_state ?? '',
+                            ));
+                            ?>
+                            <div class="wp-block-button block-button-black continue-step-2"
+                                 style="text-align: right">
+                                <a class="wp-block-button__link has-text-align-center wp-element-button"
+                                   href="javascript:void(0)">Continue</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             <div class="quote-step-2 <?php echo $is_user_logged_in ? '' : 'hidden' ?>">
                 <hr class="mb-5">
                 <div class="row gx-5">
@@ -235,7 +244,8 @@
                         <div class="mb-3 form-group">
                             <input type="date" class="form-control date-picker" name="when-needed" id="when-needed"
                                    value="<?php echo $when_needed ?? '' ?>">
-                            <label for="when-needed" class="form-label">By when do you need the product delivered to your business?</label>
+                            <label for="when-needed" class="form-label">By when do you need the product delivered to
+                                your business?</label>
                         </div>
                         <div class="mb-3 form-group">
                             <input type="number" class="form-control" name="volume" id="volume"
@@ -247,13 +257,15 @@
                             <input type="text" class="form-control" name="dimension" id="dimension"
                                    value="<?php echo $dimension ?? '' ?>"
                             >
-                            <label for="dimension" class="form-label">Dimensions needed<span class="help"></span></label>
+                            <label for="dimension" class="form-label">Dimensions needed<span
+                                        class="help"></span></label>
                         </div>
                         <div class="mb-3 dimension-oring hidden">
                             <div class="row">
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="dimension_oring[id]" id="dimension-id" step="0.001"
+                                        <input type="number" class="form-control" name="dimension_oring[id]"
+                                               id="dimension-id" step="0.001"
                                                value=""
                                         >
                                         <label for="dimension-id" class="form-label">ID</label>
@@ -261,7 +273,8 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="dimension_oring[od]" id="dimension-od" step="0.001"
+                                        <input type="number" class="form-control" name="dimension_oring[od]"
+                                               id="dimension-od" step="0.001"
                                                value=""
                                         >
                                         <label for="dimension-od" class="form-label">OD</label>
@@ -269,7 +282,8 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="dimension_oring[width]" step="0.001"
+                                        <input type="number" class="form-control" name="dimension_oring[width]"
+                                               step="0.001"
                                                id="dimension-width" value=""
                                         >
                                         <label for="dimension-width" class="form-label">CS</label>
@@ -291,7 +305,8 @@
                             <input type="text" class="form-control" name="part-number" id="part-number"
                                    value="<?php echo $part_number ?? '' ?>"
                             >
-                            <label for="part-number" class="form-label">Your Internal Reference Number (if applicable)<span
+                            <label for="part-number" class="form-label">Your Internal Reference Number (if
+                                applicable)<span
                                         class="help"></span></label>
                         </div>
                         <div class="mb-3 upload-files box p-3">
@@ -359,15 +374,16 @@
                 <div class="form-check d-inline-block">
                     <input class="form-check-input" type="checkbox" id="share-my-data" value="yes" required>
                     <label class="form-check-label ms-2" for="share-my-data">
-                    I give my consent to the processing of my data
-                    as described in the terms and conditions <a target="_blank" href="<?php echo home_url('/privacy')?>">here</a>.
+                        I give my consent to the processing of my data
+                        as described in the terms and conditions <a target="_blank"
+                                                                    href="<?php echo home_url('/privacy') ?>">here</a>.
                     </label>
-<!--                    <label class="form-check-label ms-2" for="share-my-data">
+                    <!--                    <label class="form-check-label ms-2" for="share-my-data">
                         I would like
                     to receive sales and marketing information from Datwyler Switzerland Inc. and its affiliates,
                     based on my personal interests.
                     I give my consent to the processing of my data
-                    as described in the terms and conditions <a target="_blank" href="<?php echo home_url('/privacy')?>">here</a>.
+                    as described in the terms and conditions <a target="_blank" href="<?php echo home_url('/privacy') ?>">here</a>.
 -->
 
                     </label>

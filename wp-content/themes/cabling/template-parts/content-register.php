@@ -136,6 +136,14 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     <label for="company-city" class="form-label">Company City<span
                                 class="required">*</span></label>
                 </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="billing_postcode"
+                           id="company-postcode"
+                           value="<?php echo $_REQUEST['billing_postcode'] ?? '' ?>"
+                           required>
+                    <label for="company-postcode" class="form-label">Company Postcode<span
+                                class="required">*</span></label>
+                </div>
                 <?php echo show_product_field('billing_country', array(
                     'options' => CRMCountry::getCountries(),
                     'label' => __('Company Country', 'woocommerce'),
@@ -146,13 +154,13 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                 )); ?>
 
                 <?php
-                echo show_product_field('billing_postcode', array(
+                echo show_product_field('billing_state', array(
                     'options' => CRMCountry::getStatesByCountryCode($_REQUEST['billing_country'] ?? ''),
-                    'label' => __('Company Postcode', 'woocommerce'),
+                    'label' => __('Company State', 'woocommerce'),
                     'class' => 'form-group has-focus mb-4 mt-3',
                     'required' => true,
                     'key' => true,
-                    'default' => $_REQUEST['billing_postcode'] ?? '',
+                    'default' => $_REQUEST['billing_state'] ?? '',
                 )); ?>
                 <div class="form-group text-center agree-term-condition mb-3">
                     <p for="agree-term-condition">

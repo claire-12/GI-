@@ -96,7 +96,7 @@
         }
     })
     $(document).on('change', '#billing_country', function (e) {
-        const stateSelect = $('#billing_postcode');
+        const stateSelect = $('#billing_state');
         if (stateSelect.length) {
             const country = $(this).val();
             $.ajax({

@@ -472,11 +472,16 @@ class RequestProductQuote
             $userId = get_master_account_id($user->ID);
 
             $args['email'] = $user->user_email;
-            $args['name'] = $user->display_name;
+            $args['first_name'] = $user->first_name;
+            $args['last_name'] = $user->last_name;
+            $args['function'] = get_user_meta($userId, 'function', true);
+            $args['job_title'] = get_user_meta($userId, 'job_title', true);
             $args['company'] = get_user_meta($userId, 'billing_company', true);
             $args['user_title'] = get_user_meta($userId, 'user_title', true);
             $args['billing_address_1'] = get_user_meta($userId, 'billing_address_1', true);
+            $args['billing_address_2'] = get_user_meta($userId, 'billing_address_2', true);
             $args['billing_city'] = get_user_meta($userId, 'billing_city', true);
+            $args['billing_state'] = get_user_meta($userId, 'billing_state', true);
             $args['billing_postcode'] = get_user_meta($userId, 'billing_postcode', true);
             $args['billing_country'] = get_user_meta($userId, 'billing_country', true);
             $args['billing_phone'] = get_user_meta($userId, 'billing_phone', true);
