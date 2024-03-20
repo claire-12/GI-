@@ -32,10 +32,15 @@
         if ($(this).val() === '') {
             $(this).closest('.form-group').removeClass('has-focus');
         } else {
-            const formGroup = $(this).closest('.form-group');
-            if (!formGroup.hasClass('form-phone')) {
-                $(this).closest('.form-group').addClass('has-focus');
-            }
+            $(this).closest('.form-group').addClass('has-focus');
+        }
+    })
+
+    $(document).on('keyup', '#mobile-phone', function () {
+        if ($(this).val() === '') {
+            $(this).closest('.form-group').removeClass('has-focus');
+        } else {
+            $(this).closest('.form-group').addClass('has-focus');
         }
     })
 
