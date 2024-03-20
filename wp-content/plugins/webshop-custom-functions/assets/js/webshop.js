@@ -4,11 +4,11 @@
         showKeepInformedModal();
     })
     $(document).on('click', 'a', function () {
-        if ($(this).attr('href') === '#keep-informed-modal'){
-			showKeepInformedModal();
-			return false;
-		}
-		return true;
+        if ($(this).attr('href') === '#keep-informed-modal') {
+            showKeepInformedModal();
+            return false;
+        }
+        return true;
     })
 
     $(document).on('click', '.show-product-quote,.woocommerce-MyAccount-navigation-link--request-a-quote', function (e) {
@@ -55,7 +55,7 @@
                             $(this).closest('.form-group').addClass('has-focus');
                         }
                     });
-                    if ($('select[name="product-of-interest"]').val() === 'O-Ring'){
+                    if ($('select[name="product-of-interest"]').val() === 'O-Ring') {
                         $('select[name="product-of-interest"]').trigger('change');
                         $('#dimension-id').val(response.data.arg.inches_id).closest('.form-group').addClass('has-focus');
                         $('#dimension-od').val(response.data.arg.inches_od).closest('.form-group').addClass('has-focus');
@@ -86,7 +86,7 @@
 
     $(document).on('change', '#product-of-interest', function (e) {
         if ($('.dimension-not-oring').length && $('.dimension-oring').length) {
-            if ($(this).val() === 'O-Ring'){
+            if ($(this).val() === 'O-Ring') {
                 $('.dimension-oring').show();
                 $('.dimension-not-oring').hide();
             } else {
@@ -97,28 +97,28 @@
     })
     $(document).on('change', '#billing_country', function (e) {
         const stateSelect = $('#billing_state');
-        if (stateSelect.length){
+        if (stateSelect.length) {
             const country = $(this).val();
             $.ajax({
-            url: CABLING.ajax_url,
-            type: 'POST',
-            dataType: 'json',
-            data: {
-                action: 'cabling_get_state_of_country',
-                data: country,
-            },
-            success: function (response) {
-                if (response.success) {
-                    stateSelect.html(response.data)
+                url: CABLING.ajax_url,
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    action: 'cabling_get_state_of_country',
+                    data: country,
+                },
+                success: function (response) {
+                    if (response.success) {
+                        stateSelect.html(response.data)
+                    }
+                },
+                beforeSend: function () {
+                    showLoading();
                 }
-            },
-            beforeSend: function () {
-                showLoading();
-            }
-        })
-            .done(function () {
-                hideLoading();
-            });
+            })
+                .done(function () {
+                    hideLoading();
+                });
         }
     })
 
@@ -160,10 +160,43 @@
 
         return false;
     })
+    $(document).on('submit', '#form-request-quote', function () {
+        const form = $(this);
+        const phoneValidate = $('#mobile-phone-validate');
+
+        const formData = new FormData(this);
+        formData.append('action', 'cabling_request_quote');
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: function (response) {
+                if (response.success) {
+                    form.html(response.data);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 5000);
+                } else {
+                    form.prepend(response.data);
+                    passwordElement.val('');
+                }
+            },
+            beforeSend: function () {
+                showLoading();
+            }
+        })
+            .done(function () {
+                hideLoading();
+            });
+        return false;
+    })
 })(jQuery);
 
 function showKeepInformedModal() {
-	$ = jQuery.noConflict();
+    $ = jQuery.noConflict();
     const modalElement = document.getElementById('keepInformedModal');
     $.ajax({
         url: CABLING.ajax_url,

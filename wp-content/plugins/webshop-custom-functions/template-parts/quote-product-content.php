@@ -376,7 +376,7 @@
                     <input type="hidden" name="object_id" value="<?php echo $object['object_id'] ?? '' ?>">
                     <input type="hidden" name="object_type" value="<?php echo $object['object_type'] ?? '' ?>">
                     <?php wp_nonce_field('save_request_quote_cabling', '_wp_quote_nonce') ?>
-                    <button type="submit" class="btn btn-primary"><i class="fa-light fa-messages me-2"></i>Request
+                    <button type="submit" class="btn btn-primary btn-submit"><i class="fa-light fa-messages me-2"></i>Request
                         a quote
                     </button>
                 </div>
