@@ -53,7 +53,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                          data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body">
                                             <div class="accordion-body">
-                                                <div class="accordion-item filter-checkbox filter-attribute">
+                                                <div class="accordion-item filter-checkbox filter-inches_id filter-attribute">
                                                     <h2 class="accordion-header" id="panelsStayOpen-heading-InchesID">
                                                         <button class="accordion-button collapsed" type="button"
                                                                 data-bs-toggle="collapse"
@@ -86,7 +86,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="accordion-item filter-checkbox filter-attribute">
+                                                <div class="accordion-item filter-checkbox filter-inches_od filter-attribute">
                                                     <h2 class="accordion-header" id="panelsStayOpen-heading-inches_od">
                                                         <button class="accordion-button collapsed" type="button"
                                                                 data-bs-toggle="collapse"
@@ -119,7 +119,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="accordion-item filter-checkbox filter-attribute">
+                                                <div class="accordion-item filter-checkbox filter-inches_width filter-attribute">
                                                     <h2 class="accordion-header"
                                                         id="panelsStayOpen-heading-InchesWidth">
                                                         <button class="accordion-button collapsed" type="button"
@@ -171,7 +171,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                          data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body">
                                             <div class="accordion-body">
-                                                <div class="accordion-item filter-checkbox filter-attribute">
+                                                <div class="accordion-item filter-checkbox filter-milimeters_id filter-attribute">
                                                     <h2 class="accordion-header"
                                                         id="panelsStayOpen-heading-MillimetersID">
                                                         <button class="accordion-button collapsed" type="button"
@@ -205,7 +205,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="accordion-item filter-checkbox filter-attribute">
+                                                <div class="accordion-item filter-checkbox filter-milimeters_od filter-attribute">
                                                     <h2 class="accordion-header"
                                                         id="panelsStayOpen-heading-MillimetersOD">
                                                         <button class="accordion-button collapsed" type="button"
@@ -239,7 +239,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="accordion-item filter-checkbox filter-attribute">
+                                                <div class="accordion-item filter-checkbox filter-milimeters_width filter-attribute">
                                                     <h2 class="accordion-header"
                                                         id="panelsStayOpen-heading-MillimetersWidth">
                                                         <button class="accordion-button collapsed" type="button"
@@ -337,12 +337,12 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                      class="accordion-collapse collapse"
                                      aria-labelledby="panelsStayOpen-heading-customSize">
                                     <div class="accordion-body">
-										
+
                                         <div class="custom-size-quote">
                                             <div>Need a custom size? Just send us a quote request.</div>
                                             <?php cabling_add_quote_button() ?>
                                         </div>
-										
+
 									</div>
 								</div>
 	                       </div>
@@ -410,7 +410,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                      class="accordion-collapse collapse"
                                      aria-labelledby="panelsStayOpen-heading-customHardness">
                             <div class="accordion-body">
-										
+
                             <div class="custom-size-quote">
                                 <div>Need a hardness / durometer measurement not listed here? Just send us a quote request.</div>
                                 <?php cabling_add_quote_button() ?>
@@ -418,7 +418,7 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
 						</div>
 					</div>
 	           </div>
-			</div>				
+			</div>
             </div>
             <?php wp_nonce_field('product-category-filter') ?>
         </form>
