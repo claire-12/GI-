@@ -478,17 +478,17 @@ class CRMController
         } else {
             $account->company = $data['company-name'];
             $account->firstname = $data['first-name'];
-            $account->lastname = 'N/A';
+            $account->lastname = $data['last-name'];
             $account->email = $data['user_email'];
             $account->mobile = $data['billing_phone'];
             $account->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
             $account->department = $data['department'];
             $account->vatnumber = $data['billing_vat'];
             $account->address = $data['billing_address_1'];
-            $account->city = 'N/A';
-            $account->state = 'N/A';
+            $account->city = $data['billing_city'];
+            $account->state = $data['billing_state'];
             $account->country = $data['billing_country'];
-            $account->postalcode = 'N/A';
+            $account->postalcode = $data['billing_postcode'];
         }
         return $this->createAccountLead($account);
     }
