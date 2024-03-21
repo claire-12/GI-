@@ -1001,8 +1001,8 @@ function cabling_get_api_ajax_callback()
                         );
                     }
 
-                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $bodyPriceParams);
-                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $inventoryParams);
+                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $inventoryParams);
+                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $bodyPriceParams);
 
                     $dataPrice = getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
                     $dataStock = getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
