@@ -731,14 +731,30 @@ function product_filter_ajax(cat_id) {
                     that.show();
                 }
             });
-            /*$('.filter-blog').find('.accordion-item').each(function () {
+            $('.filter-blog').find('.accordion-item').each(function () {
                 let that = $(this);
-                if (that.find('.filter-category').is(':visible')) {
-                    that.show();
-                } else {
+                if (
+                    that.hasClass('filter-size')
+                    || that.hasClass('filter-custom-hardness')
+                    || that.hasClass('filter-inch')
+                    || that.hasClass('filter-custom-size')
+                    || that.hasClass('filter-millimeter')
+                ){
+                    return;
+                }
+                that.show();
+                let isHidden = 0;
+                const category = that.find('.filter-category');
+                category.each(function () {
+                    if (!$(this).is(':visible')) {
+                        ++isHidden;
+                    }
+                });
+
+                if (category.length === isHidden) {
                     that.hide();
                 }
-            })*/
+            })
 
             hideLoading();
         },
