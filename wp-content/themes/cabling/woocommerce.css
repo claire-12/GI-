@@ -1225,3 +1225,6 @@ b, strong {
     color: var(--bs-danger);
     font-size: small;
 }
+.form-phone .iti__flag-container {
+    height: 42px;
+}

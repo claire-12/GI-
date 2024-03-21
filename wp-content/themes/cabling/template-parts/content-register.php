@@ -74,7 +74,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     </span>
                 <!-- JM 20230920 changed position of Is client? and client number -->
                 <div class="form-group form-phone has-focus">
-                    <input type="tel" class="form-control" id="mobile-phone" required>
+                    <input type="tel" class="form-control" id="mobile-phone" name="mobile-phone" required>
                     <span id="mobile-phone-validate" class="hidden input-error"></span>
                     <input type="hidden" class="phone_number" name="billing_phone">
                     <input type="hidden" class="phone_code" name="billing_phone_code">
