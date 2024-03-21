@@ -737,6 +737,7 @@ function product_filter_ajax(cat_id) {
                     that.hasClass('filter-size')
                     || that.hasClass('filter-custom-hardness')
                     || that.hasClass('filter-inch')
+                    || that.hasClass('filter-attribute')
                     || that.hasClass('filter-custom-size')
                     || that.hasClass('filter-millimeter')
                 ){
