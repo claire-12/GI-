@@ -39,9 +39,9 @@
                 if (response.success) {
                     $('#quoteProductModal').find('.modal-content').html(response.data.content);
                     add_phone_validate('#mobile-phone');
-                    if ($('#login-recaptcha').length) {
-                        const sitekey = $('#login-recaptcha').attr('data-sitekey');
-                        grecaptcha.render('login-recaptcha', {
+                    if ($('#quote-recaptcha').length) {
+                        const sitekey = $('#quote-recaptcha').attr('data-sitekey');
+                        grecaptcha.render('quote-recaptcha', {
                             'sitekey': sitekey,
                         });
                     }
@@ -77,12 +77,41 @@
     })
 
     $(document).on('click', '.continue-as-a-guest', function (e) {
+
         e.preventDefault();
-        const modalElement = $(this).closest('.quote-product-content');
-        modalElement.find('.login-wrapper').hide();
-        modalElement.find('.form-request-quote').show();
-        modalElement.find('.login-wrapper-non').css('opacity', 1);
-    })
+        const register_block = $('.register-block');
+        const button = $(this);
+        const capcha_form = $('#quote_form-recapcha');
+        const recaptcha = capcha_form.find('[name="g-recaptcha-response"]').val();
+
+        register_block.find('.woo-notice').remove();
+
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'cabling_confirm_recaptcha_ajax',
+                recaptcha: recaptcha,
+            },
+            success: function (response) {
+                if (response.success) {
+                    const modalElement = register_block.closest('.quote-product-content');
+
+                    modalElement.find('.login-wrapper').hide();
+                    modalElement.find('.form-request-quote').show();
+                    modalElement.find('.login-wrapper-non').css('opacity', 1);
+                } else {
+                    button.before(response.data);
+                }
+                hideLoading();
+            },
+            beforeSend: function () {
+                showLoading();
+            }
+        })
+    });
+
 
     $(document).on('change', '#product-of-interest', function (e) {
         if ($('.dimension-not-oring').length && $('.dimension-oring').length) {

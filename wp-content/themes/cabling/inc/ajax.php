@@ -90,6 +90,10 @@ function cabling_login_ajax_callback()
 {
     parse_str($_REQUEST['data'], $data);
 
+    if (!empty($_REQUEST['recaptcha'])) {
+        $data['g-recaptcha-response'] = $_REQUEST['recaptcha'];
+    }
+
     $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
 
     $err = false;
@@ -97,7 +101,7 @@ function cabling_login_ajax_callback()
     if ($verify_recaptcha) {
         if (empty($data['log']) || empty($data['pwd'])) {
             $err = true;
-            $mess = '<div class="woocommerce-error woo-notice" role="alert">' . __('Please check your Email or Password.', 'cabling') . '</div>';
+            $mess = '<div class="woo-notice alert alert-danger" role="alert">' . __('Please check your Email or Password.', 'cabling') . '</div>';
         } else {
             $creds = array(
                 'user_login' => $data['log'],
@@ -114,15 +118,15 @@ function cabling_login_ajax_callback()
                     $error = $user->get_error_message();
                 }
                 $err = true;
-                $mess = '<div class="woocommerce-error woo-notice" role="alert">' . $error . '</div>';
+                $mess = '<div class="alert woo-notice alert-danger" role="alert">' . $error . '</div>';
             } else {
                 $redirect_to = $data['_wp_http_referer'] ?? wc_get_account_endpoint_url('');
-                $mess = '<div class="woocommerce-message woo-notice" role="alert">' . __('Success! Redirecting...', 'cabling') . '</div>';
+                $mess = '<div class="alert woo-notice alert-success" role="alert">' . __('Success! Redirecting...', 'cabling') . '</div>';
             }
         }
     } else {
         $err = true;
-        $mess = '<div class="woocommerce-error woo-notice" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        $mess = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
     }
 
     $response = array(
@@ -134,6 +138,69 @@ function cabling_login_ajax_callback()
 }
 
 add_action('wp_ajax_nopriv_cabling_login_ajax', 'cabling_login_ajax_callback');
+function cabling_register_account_ajax_callback()
+{
+    parse_str($_REQUEST['data'], $data);
+
+    if (!empty($_REQUEST['recaptcha'])) {
+        $data['g-recaptcha-response'] = $_REQUEST['recaptcha'];
+    }
+
+    $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
+
+    if (empty($verify_recaptcha)) {
+        $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        wp_send_json_error($message);
+    }
+    $recipient = $data['register_email'];
+
+    $register = home_url('/register/');
+    if (!email_exists($recipient)) {
+        $email = urlencode($recipient);
+        $hash = MD5($recipient . CABLING_SECRET);
+
+        $arg = json_encode(array('email' => $email, 'code' => $hash));
+
+        $verify_link = add_query_arg(array(
+            'code' => base64_encode($arg),
+        ), $register);
+
+        set_transient($recipient, $hash, DAY_IN_SECONDS);
+
+        // load the mailer class
+        $mailer = WC()->mailer();
+        $mailer->recipient = $recipient;
+        $type = 'emails/pre-register.php';
+        $subject = __("Hi! Please verify your account!", 'cabling');
+        $content = cabling_get_custom_email_html($verify_link, $subject, $mailer, $type);
+        $headers = "Content-Type: text/html\r\n";
+
+        $mailer->send($recipient, $subject, $content, $headers);
+
+        $message = '<div class="alert woo-notice alert-success" role="alert">' . sprintf(__('A confirmation email has been sent to your mailbox <strong>%s</strong><br> Please check your email box and continue your registration within 24 hours', 'cabling'), $recipient) . '</div>';
+        wp_send_json_success($message);
+    } else {
+        $message = '<div class="alert woo-notice alert-danger" role="alert">' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient) . '</div>';
+        wp_send_json_error($message);
+    }
+    wp_die();
+}
+
+add_action('wp_ajax_nopriv_cabling_register_account_ajax', 'cabling_register_account_ajax_callback');
+function cabling_confirm_recaptcha_ajax_callback()
+{
+    $verify_recaptcha = cabling_verify_recaptcha($_REQUEST['recaptcha']);
+
+    if (empty($verify_recaptcha)) {
+        $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        wp_send_json_error($message);
+    } else {
+        wp_send_json_success();
+    }
+    wp_die();
+}
+
+add_action('wp_ajax_nopriv_cabling_confirm_recaptcha_ajax', 'cabling_confirm_recaptcha_ajax_callback');
 
 function cabling_verify_user_ajax()
 {

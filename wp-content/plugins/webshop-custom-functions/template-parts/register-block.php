@@ -11,9 +11,9 @@
             </div>
             <hr>
             <div class="register-block">
+                <h3><?php esc_html_e('Register for My Account', 'woocommerce'); ?></h3>
 
                 <form method="POST" name="register-form" id="register-form">
-                    <h3><?php esc_html_e('Register for My Account', 'woocommerce'); ?></h3>
                     <p class="sub-heading mb-0 pe-3"
                        style="font-size: larger;"><?php esc_html_e('Register today to make future quote requests even easier – and easier account management after you’ve made a purchase.', 'woocommerce'); ?></p>
 
@@ -26,10 +26,6 @@
                                value="<?php echo $_POST['register_email'] ?? '' ?>"
                                pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                                id="register_email" required>
-                    </div>
-                    <div class="form-group">
-                        <div class="g-recaptcha"
-                             data-sitekey="<?php echo get_field('gcapcha_sitekey_v2', 'option'); ?>"></div>
                     </div>
                     <div class="submit-btn">
                         <?php wp_nonce_field('cabling-register', 'register-nounce'); ?>
@@ -52,9 +48,10 @@
                     <label class="screen-reader-text"
                            for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span
                                 class="required">*</span></label>
-                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="log"
+                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="log"
                            id="username"
                            autocomplete="username"
+                           required
                            value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"
                            placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>"/><?php // @codingStandardsIgnoreLine ?>
                 </p>
@@ -63,14 +60,11 @@
                         &nbsp;<span class="required">*</span></label>
                     <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="pwd"
                            id="password" autocomplete="current-password"
+                           required
                            placeholder="<?php esc_html_e('Password*', 'woocommerce'); ?>"/>
                 <p class="woocommerce-LostPassword lost_password flex-row">
                     <a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgotten Password', 'woocommerce'); ?></a>
                 </p>
-                </p>
-
-                <p class="form-group">
-                    <div id="login-recaptcha" class="g-recaptcha" data-sitekey="<?php echo get_field('gcapcha_sitekey_v2', 'option') ?>"></div>
                 </p>
 
                 <p class="form-row d-flex justify-content-end">
@@ -83,6 +77,14 @@
 
                 <?php do_action('woocommerce_login_form_end'); ?>
 
+            </form>
+        </div>
+        <div class="col-12">
+            <form action="" id="quote_form-recapcha">
+                <div class="form-group">
+                    <div class="g-recaptcha d-flex justify-content-center mt-2" id="quote-recaptcha"
+                         data-sitekey="<?php echo get_field('gcapcha_sitekey_v2', 'option'); ?>"></div>
+                </div>
             </form>
         </div>
     </div>

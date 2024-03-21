@@ -141,11 +141,19 @@
 
     //sign in ajax function
     $(document).on('submit', 'form[name=cabling_login_form]', function (event) {
+        showLoading();
+
         event.preventDefault();
 
+        let recaptcha;
         const form = $(this);
+        const capcha_form = $('#quote_form-recapcha');
         form.find('.woo-notice').remove();
         form.find('input[type="submit"]').prop('disabled', true);
+
+        if (capcha_form.length){
+            recaptcha = capcha_form.find('[name="g-recaptcha-response"]').val();
+        }
 
         $.ajax({
             url: CABLING.ajax_url,
@@ -153,7 +161,9 @@
             dataType: 'json',
             data: {
                 action: 'cabling_login_ajax',
-                data: form.serialize()
+                data: form.serialize(),
+                recaptcha: recaptcha
+
             },
             success: function (data) {
                 form.find('input[type="submit"]').prop('disabled', false);
@@ -167,32 +177,62 @@
                         window.location.href = data.redirect;
                     }
                 }
+                hideLoading();
             },
         })
             .fail(function () {
                 grecaptcha.reset();
                 form.find('input[type="submit"]').prop('disabled', false);
-                console.log("error");
+                hideLoading();
             });
 
 
         return false;
     });
 
-    /*//validate register form
-    $(document).on('submit', 'form[name=register-form]', function(event) {
+    //validate register form
+    $(document).on('submit', 'form[name=register-form]', function(e) {
+
+        showLoading();
+
+        e.preventDefault();
 
         const form = $(this);
-        const response = grecaptcha.getResponse();
+        const capcha_form = $('#quote_form-recapcha');
+        form.find('.woo-notice').remove();
+        form.find('input[type="submit"]').prop('disabled', true);
 
-        if( response.length == 0 ){
-            form.find('.woo-notice').fadeIn();
-            grecaptcha.reset();
-            return false;
-           }
+        let recaptcha;
+        if (capcha_form.length){
+            recaptcha = capcha_form.find('[name="g-recaptcha-response"]').val();
+        }
 
-           return true;
-    });*/
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'cabling_register_account_ajax',
+                data: form.serialize(),
+                recaptcha: recaptcha
+
+            },
+            success: function (response) {
+                form.find('input[type="submit"]').prop('disabled', false);
+                form.prepend(response.data);
+                grecaptcha.reset();
+                hideLoading();
+            },
+        })
+            .fail(function () {
+                grecaptcha.reset();
+                form.find('input[type="submit"]').prop('disabled', false);
+                hideLoading();
+            });
+
+
+        return false;
+    });
     $(document).on('submit', 'form.lost_reset_password', function (event) {
 
         const form = $(this);

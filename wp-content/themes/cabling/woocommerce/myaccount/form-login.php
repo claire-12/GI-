@@ -36,8 +36,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
                 <label class="screen-reader-text"
                        for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span
                             class="required">*</span></label>
-                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="log" id="username"
+                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="log" id="username"
                        autocomplete="username"
+                       required
                        value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"
                        placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>"/><?php // @codingStandardsIgnoreLine ?>
                 <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
@@ -50,6 +51,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                 <label class="screen-reader-text" for="password"><?php esc_html_e('Password', 'woocommerce'); ?>
                     &nbsp;<span class="required">*</span></label>
                 <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="pwd"
+                       required
                        id="password" autocomplete="current-password"
                        placeholder="<?php esc_html_e('Password*', 'woocommerce'); ?>"/>
                 <p class="woocommerce-LostPassword lost_password">
@@ -72,8 +74,8 @@ do_action('woocommerce_before_customer_login_form'); ?>
     </div>
 
     <div class="u-column2 col-2 login col-register">
+        <h2><?php esc_html_e('New User', 'woocommerce'); ?></h2>
         <form method="POST" name="register-form" id="register-form">
-            <h2><?php esc_html_e('New User', 'woocommerce'); ?></h2>
             <p class="sub-heading">
                 <span><?php esc_html_e('Register for an account today to gain access to these Datwyler benefits:', 'woocommerce'); ?></span>
             <ul>
