@@ -1221,3 +1221,7 @@ b, strong {
 .woocommerce-MyAccount-navigation-link.has-tooltip a:hover::after {
     display: block;
 }
+.form-group span.error {
+    color: var(--bs-danger);
+    font-size: small;
+}

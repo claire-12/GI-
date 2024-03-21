@@ -47,7 +47,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
     </div>
     <div class="tab">
         <?php if (!empty($verify)): ?>
-            <form method="POST" name="infomation-form" id="infomation-form" class="needs-validation">
+            <form method="POST" name="infomation-form" id="infomation-form">
                 <input type="hidden" value="<?php echo $email; ?>" name="user_email">
 
                 <div class="form-group has-focus">

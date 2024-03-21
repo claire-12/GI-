@@ -467,6 +467,12 @@
             $(this).closest('form').submit();
         }
     })
+    $("#infomation-form").validate({
+        errorElement: "span",
+        errorPlacement: function (error, element) {
+            error.appendTo(element.parent());
+        }
+    });
 })(jQuery);
 
 function sortList(element, name, order) {
@@ -740,7 +746,7 @@ function product_filter_ajax(cat_id) {
                     || that.hasClass('filter-attribute')
                     || that.hasClass('filter-custom-size')
                     || that.hasClass('filter-millimeter')
-                ){
+                ) {
                     return;
                 }
                 that.show();

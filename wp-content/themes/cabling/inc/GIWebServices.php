@@ -65,7 +65,7 @@ class GIWebServices
                 return $tokenResult;
             }
             $access_token = $tokenResult['access_token'];
-            $cookies = $tokenResult['cookies'];
+            $cookies = is_array($tokenResult['cookies']) ? implode(';',$tokenResult['cookies']) : $tokenResult['cookies'];
 
             $headers = array(
                 'Content-Type: application/json',
