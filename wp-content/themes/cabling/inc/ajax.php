@@ -109,6 +109,9 @@ function cabling_login_ajax_callback()
                 'remember' => $data['rememberme']
             );
 
+            /*$user = get_user_by('email', $data['log']);
+            do_action( 'wp_login', $data['log'], $user );*/
+
             $user = wp_signon($creds, is_ssl());
 
             if (is_wp_error($user)) {
@@ -120,6 +123,7 @@ function cabling_login_ajax_callback()
                 $err = true;
                 $mess = '<div class="alert woo-notice alert-danger" role="alert">' . $error . '</div>';
             } else {
+
                 $redirect_to = $data['_wp_http_referer'] ?? wc_get_account_endpoint_url('');
                 $mess = '<div class="alert woo-notice alert-success" role="alert">' . __('Success! Redirecting...', 'cabling') . '</div>';
             }

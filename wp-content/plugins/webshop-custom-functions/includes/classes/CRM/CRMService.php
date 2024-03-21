@@ -5,6 +5,7 @@ class CRMService
     public function __construct()
     {
         add_action('init', [$this, 'confirm_email']);
+        add_action('wp_login', [$this, 'check_user_sap_number'], 10, 2);
         add_filter('wpcf7_submission_result', [$this, 'crm_action_after_form_submission'], 10, 2);
         add_action('saved_request_a_quote', [$this, 'crm_action_after_saved_request_a_quote']);
         add_action('saved_user_keep_informed', [$this, 'crm_action_after_saved_user_keep_informed']);
@@ -274,6 +275,19 @@ class CRMService
                 wp_redirect(home_url('/'));
             }
             exit();
+        }
+    }
+
+    public static function check_user_sap_number($username, $user)
+    {
+        $sapNumber = get_user_meta($user->ID, 'sap_customer', true);
+        if (empty($sapNumber)) {
+            $crm = new CRMController();
+            $lead = $crm->getContactByUserEmail($user->data->user_email);
+
+            if (!empty($lead->ExternalID)){
+                update_user_meta($user->ID, 'sap_customer', $lead->ExternalID);
+            }
         }
     }
 

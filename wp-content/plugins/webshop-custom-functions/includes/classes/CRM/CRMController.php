@@ -136,7 +136,6 @@ class CRMController
 
     private function getContactByEmail($email)
     {
-        //$client = new Client(); //GuzzleHttp\Client
         $url = $this->baseURL . "ContactCollection";
         $url = $url . '?$filter=Email eq \'' . $email . '\'';
         $url = $url . '&$format=json';
@@ -561,6 +560,10 @@ class CRMController
         $lead = $this->createSalesQuoteLead($crmquote);
 
         return $lead;
+    }
+    public function getContactByUserEmail($email)
+    {
+        return $this->getContactByEmail($email);
     }
 
     public function testKMILeadCreation($email)
