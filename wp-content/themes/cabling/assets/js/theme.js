@@ -236,14 +236,13 @@
 
     $(document).on('submit', 'form.lost_reset_password', function (event) {
         const form = $(this);
-
+        form.find('.woo-notice').remove();
         if (form.find('input[name=woocommerce-lost-password-nonce]').length) {
             const response = form.find('[name=g-recaptcha-response]').val();
 
             if (response == '') {
                 form.prepend('<div class="woocommerce-error woo-notice" role="alert">Please verify the Captcha.</div>');
                 grecaptcha.reset();
-                //form.find('input[type="submit"]').prop('disabled', false);
                 return false;
             }
         }
