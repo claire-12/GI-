@@ -233,68 +233,21 @@
 
         return false;
     });
-    $(document).on('submit', 'form.lost_reset_password', function (event) {
 
+    $(document).on('submit', 'form.lost_reset_password', function (event) {
         const form = $(this);
 
         if (form.find('input[name=woocommerce-lost-password-nonce]').length) {
-            const response = grecaptcha.getResponse();
+            const response = form.find('[name=g-recaptcha-response]').val();
 
-            if (response.length == 0) {
+            if (response == '') {
                 form.prepend('<div class="woocommerce-error woo-notice" role="alert">Please verify the Captcha.</div>');
                 grecaptcha.reset();
-                form.find('input[type="submit"]').prop('disabled', false);
+                //form.find('input[type="submit"]').prop('disabled', false);
                 return false;
             }
         }
-
         return true;
-    });
-
-    //validate register form
-    $('.woocommerce').on('click', '.quick-view > a', function (e) {
-        var product = $(this).parent().data('product');
-        var load_product_ajax = $.ajax({
-            url: CABLING.ajax_url,
-            type: 'POST',
-            dataType: 'json',
-            data: {
-                action: 'cabling_get_product_single_ajax',
-                product: product,
-            }
-        });
-
-        $.when(load_product_ajax).done(function (result) {
-            //console.log(result);
-
-            if (result.status == true) {
-                $("#quickViewModal").find('.modal-body').html(result.data);
-                $("#quickViewModal").modal('show');
-            } else {
-                //$(e.delegateTarget).hide();
-            }
-        });
-
-        return false;
-    });
-
-    //insert value to back button
-    /*if ($('.woocommerce-breadcrumb').length && $('.backbutton').length) {
-        let bread_count = $('.woocommerce-breadcrumb > span').length - 2;
-        let name = $('.woocommerce-breadcrumb > span').eq(bread_count).text();
-        let link = $('.woocommerce-breadcrumb > span').eq(bread_count).find('a').attr('href');
-        if (bread_count) {
-            $('.backbutton').find('span').text(name);
-            $('.backbutton').attr('href', link);
-        } else {
-            $('.backbutton').hide();
-        }
-    }*/
-
-    //validate register form
-    $('.woocommerce').on('click', '.wcb2b_login_message', function (e) {
-        $("#loginModal").modal("toggle");
-        return false;
     });
 
     //woocommerce check out

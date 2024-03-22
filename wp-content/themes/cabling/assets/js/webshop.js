@@ -459,6 +459,7 @@
         },
         submitHandler: function (form) {
             $(form).find('.woo-notice').remove();
+            $('.confirm-notice').empty();
 
             const password = $(form).find('input[name=password]');
             if (!checkPasswordStrength(password.val())) {
