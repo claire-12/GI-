@@ -204,21 +204,6 @@
         return confirm('Are you sure you want to update your account information?');
     })
 
-    $(document).on('submit', '#infomation-form', function () {
-        const password = $('input[name=password]');
-        if (!checkPasswordStrength(password.val())) {
-            $('.confirm-notice').html(`<ul class="woocommerce-error" role="alert">
-                    <li>Your password must have at least: 8 characters long with characters, numbers and symbols</li>
-            </ul>`);
-            // Use animate to smoothly scroll to the target element
-            $('html, body').animate({
-                scrollTop: $('#registerStep').offset().top - 200
-            }, 'slow');
-            return false;
-        }
-
-    })
-
     $(document).on('submit', '#reset-account-password', function () {
         const password = $('#new-password');
         const confirm_password = $('#confirm-password');
@@ -471,6 +456,50 @@
         errorElement: "span",
         errorPlacement: function (error, element) {
             error.appendTo(element.parent());
+        },
+        submitHandler: function (form) {
+            $(form).find('.woo-notice').remove();
+
+            const password = $(form).find('input[name=password]');
+            if (!checkPasswordStrength(password.val())) {
+                $('.confirm-notice').html(`<div class="alert woo-notice alert-danger" role="alert">
+                    Your password must have at least: 8 characters long with characters, numbers and symbols
+            </div>`);
+                // Use animate to smoothly scroll to the target element
+                $('html, body').animate({
+                    scrollTop: $('#registerStep').offset().top - 200
+                }, 'slow');
+                return false;
+            }
+
+            let formData = $(form).serialize();
+
+            $.ajax({
+                url: CABLING.ajax_url,
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    action: 'cabling_register_new_account_ajax',
+                    data: formData,
+                    nonce: CABLING.nonce,
+                },
+                success: function (response) {
+                    hideLoading();
+                    if (response.success) {
+                        $(form).html(response.data)
+                    } else {
+                        $(form).prepend(response.data);
+                    }
+                },
+                beforeSend: function () {
+                    showLoading();
+                }
+            })
+                .fail(function () {
+                    console.log("error");
+                });
+
+            return false;
         }
     });
 })(jQuery);

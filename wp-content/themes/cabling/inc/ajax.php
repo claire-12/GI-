@@ -205,6 +205,95 @@ function cabling_confirm_recaptcha_ajax_callback()
 }
 
 add_action('wp_ajax_nopriv_cabling_confirm_recaptcha_ajax', 'cabling_confirm_recaptcha_ajax_callback');
+function cabling_register_new_account_ajax_callback()
+{
+    parse_str($_REQUEST['data'], $data);
+
+    $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
+
+    if (empty($verify_recaptcha)) {
+        $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        wp_send_json_error($message);
+    }
+
+    $user_data = array(
+        'has_approve' => 'false',
+        'customer_level' => '1',
+        'first_name' => $data['first-name'],
+        'last_name' => $data['last-name'],
+        'billing_first_name' => $data['first-name'],
+        'shipping_first_name' => $data['first-name'],
+        'billing_last_name' => $data['last-name'],
+        'shipping_last_name' => $data['last-name'],
+        'billing_phone' => $data['billing_phone'],
+        'billing_phone_code' => $data['billing_phone_code'],
+        'billing_company' => $data['company-name'],
+        'shipping_company' => $data['company-name'],
+        'billing_address_1' => $data['billing_address_1'],
+        'shipping_address_1' => $data['billing_address_1'],
+        'billing_country' => $data['billing_country'],
+        'shipping_country' => $data['billing_country'],
+        'billing_city' => $data['billing_city'],
+        'shipping_city' => $data['billing_city'],
+        'billing_state' => $data['billing_state'],
+        'shipping_state' => $data['billing_state'],
+        'billing_postcode' => $data['billing_postcode'],
+        'shipping_postcode' => $data['billing_postcode'],
+        'function' => $data['function'],
+        'billing_vat' => $data['billing_vat'],
+        'job_title' => $data['job-title'],
+        // JM 20230914
+        'display_name' => $data['first-name'] . ' ' . $data['last-name'],
+        'nickname' => $data['first-name'] . ' ' . $data['last-name'],
+    );
+
+    if (!empty($data['existing-customer']) && !empty($data['client-number'])) {
+        $user_data['client-number'] = $data['client-number'];
+    }
+
+    $customer_id = wc_create_new_customer(
+        $data['user_email'],
+        $data['user_email'],
+        $data['password'],
+        [
+            'meta_input' => $user_data
+        ]
+    );
+
+    if ($customer_id) {
+        $data['customer_id'] = $customer_id;
+        do_action('gi_created_new_customer', $data);
+
+        //JM 20230914
+        wp_update_user(array('ID' => $customer_id, 'display_name' => $data['first-name'] . ' ' . $data['last-name']));
+
+
+        delete_transient(urldecode($data['user_email']));
+
+        //send email to customer
+        if (isset($data['verify-nounce'])) {
+            $mailer = WC()->mailer();
+            $mailer->recipient = $data['user_email'];
+            $verify_link = '';
+            $type = 'emails/register-verify.php';
+            $recipient = get_option('admin_email');
+            $subject = __("New account need to verify!", 'cabling');
+            $content = cabling_get_custom_email_html($verify_link, $subject, $mailer, $type);
+            $headers = "Content-Type: text/html\r\n";
+
+            $mailer->send($recipient, $subject, $content, $headers);
+        }
+
+        $message = '<div class="alert woo-notice alert-success" role="alert">' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
+        wp_send_json_success($message);
+    }
+
+    $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('Something went wrong. Please try again!', 'cabling') . '</div>';
+    wp_send_json_error($message);
+}
+
+add_action('wp_ajax_nopriv_cabling_register_new_account_ajax', 'cabling_register_new_account_ajax_callback');
+add_action('wp_ajax_cabling_register_new_account_ajax', 'cabling_register_new_account_ajax_callback');
 
 function cabling_verify_user_ajax()
 {
