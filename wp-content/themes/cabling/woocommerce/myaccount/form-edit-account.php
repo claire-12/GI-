@@ -25,11 +25,11 @@ do_action('woocommerce_before_edit_account_form'); ?>
     <?php do_action('woocommerce_edit_account_form_start'); ?>
 
     <fieldset>
-        <legend><?php esc_html_e('Account Information', 'woocommerce'); ?></legend>
+        <legend class="mb-3"><?php esc_html_e('Account Information', 'woocommerce'); ?></legend>
 
         <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input input-text" name="user_level"
-                   id="user_level" value="<?php echo esc_attr(get_user_meta($user->ID, 'customer_level', true)); ?>"
+                   id="user_level" value="<?php echo get_customer_level($user->ID); ?>"
                    disabled/>
             <label for="user_level"><?php esc_html_e('Client Level', 'woocommerce'); ?></label>
         </p>
