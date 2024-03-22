@@ -9,7 +9,7 @@ $categories = getPostCategory($post_id, 'news-category');
         <div class="featured-image col-12 col-lg-4">
             <a href="<?php the_permalink(); ?>">
                 <?php if (has_post_thumbnail()): the_post_thumbnail('full'); ?>
-                <?php else: echo wp_get_attachment_image(1032601); endif; ?>
+                <?php else: echo wp_get_attachment_image(1138416, 'full'); endif; ?>
             </a>
         </div>
         <div class="info col-12 col-lg-8">
