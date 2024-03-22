@@ -27,12 +27,29 @@ do_action('woocommerce_before_edit_account_form'); ?>
     <fieldset>
         <legend><?php esc_html_e('Account Information', 'woocommerce'); ?></legend>
 
-        <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-            <label for="user_level"><?php esc_html_e('Client Level', 'woocommerce'); ?></label>
+        <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input input-text" name="user_level"
                    id="user_level" value="<?php echo esc_attr(get_user_meta($user->ID, 'customer_level', true)); ?>"
                    disabled/>
+            <label for="user_level"><?php esc_html_e('Client Level', 'woocommerce'); ?></label>
         </p>
+
+        <p class="form-group mb-3">
+            <input disabled type="text" class="woocommerce-Input woocommerce-Input--email input-text"
+                   name="sap_customer"
+                   id="sap_customer"
+                   value="<?php echo esc_attr(get_user_meta($user->ID, 'sap_customer', true)); ?>" <?php echo current_user_can('administrator') ? '' : 'disabled'; ?>/>
+            <label for="sap_customer"><?php esc_html_e('SAP Customer', 'woocommerce'); ?></label>
+        </p>
+        <div class="clear"></div>
+
+        <p class="form-group mb-3">
+            <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email"
+                   id="account_email" autocomplete="email" value="<?php echo esc_attr($user->user_email); ?>" disabled/>
+            <label for="account_email"><?php esc_html_e('Professional Email', 'woocommerce'); ?></label>
+        </p>
+        <div class="clear"></div>
+
         <?php if (!empty(get_user_meta($user->ID, 'client-number', true))): ?>
             <p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
                 <label for="client-number"><?php esc_html_e('Client Number', 'woocommerce'); ?></label>
@@ -42,45 +59,50 @@ do_action('woocommerce_before_edit_account_form'); ?>
             </p>
         <?php endif; ?>
         <div class="clear"></div>
-        <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-            <label for="account_first_name"><?php esc_html_e('First name', 'woocommerce'); ?>&nbsp;<span
-                        class="required">*</span></label>
+        <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name"
                    id="account_first_name" autocomplete="given-name"
                    value="<?php echo esc_attr($user->first_name); ?>"/>
+            <label for="account_first_name"><?php esc_html_e('First name', 'woocommerce'); ?>&nbsp;<span
+                        class="required">*</span></label>
         </p>
-        <p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-            <label for="account_last_name"><?php esc_html_e('Last name', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+        <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name"
                    id="account_last_name" autocomplete="family-name" value="<?php echo esc_attr($user->last_name); ?>"/>
+            <label for="account_last_name"><?php esc_html_e('Last name', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
         </p>
         <div class="clear"></div>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="account_email"><?php esc_html_e('Email address', 'woocommerce'); ?></label>
-            <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email"
-                   id="account_email" autocomplete="email" value="<?php echo esc_attr($user->user_email); ?>" disabled/>
+        <p class="form-group mb-3 form-phone has-focus">
+            <input type="tel" class="form-control" id="mobile-phone"
+                   value="<?php echo esc_attr(get_user_phone_number($user->ID)); ?>"
+                   placeholder="<?php _e('Mobile Number', 'cabling') ?>" required>
+            <label for="mobile-phone"><?php _e('Professional Mobile', 'cabling') ?><span
+                        class="required">*</span></label>
+            <span id="mobile-phone-validate" class="hidden input-error"></span>
+            <input type="hidden" class="phone_number" name="billing_phone"
+                   value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_phone', true)); ?>">
+            <input type="hidden" class="phone_code" name="billing_phone_code"
+                   value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_phone_code', true)); ?>">
         </p>
-        <div class="clear"></div>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="job_title"><?php esc_html_e('Job Title', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+        <?php echo show_product_field('function', array(
+            'options' => CRMConstant::FUNCTION_CONTACT,
+            'label' => __('Function', 'woocommerce'),
+            'default' => esc_attr(get_user_meta($user->ID, 'function', true)),
+            'class' => ' form-group has-focus mt-4 mb-3 ',
+            'required' => true
+        )); ?>
+
+        <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="job_title"
                    id="job_title" value="<?php echo esc_attr(get_user_meta($user->ID, 'job_title', true)); ?>"
                    required/>
+            <label for="job_title"><?php esc_html_e('Job Title', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
         </p>
         <div class="clear"></div>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="sap_customer"><?php esc_html_e('SAP Customer', 'woocommerce'); ?></label>
-            <input disabled type="text" class="woocommerce-Input woocommerce-Input--email input-text"
-                   name="sap_customer"
-                   id="sap_customer"
-                   value="<?php echo esc_attr(get_user_meta($user->ID, 'sap_customer', true)); ?>" <?php echo current_user_can('administrator') ? '' : 'disabled'; ?>/>
-        </p>
-        <div class="clear"></div>
-
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide hidden">
             <label for="user_department"><?php esc_html_e('Department', 'woocommerce'); ?>&nbsp;<span
                         class="required">*</span></label>
             <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="user_department"
@@ -89,15 +111,15 @@ do_action('woocommerce_before_edit_account_form'); ?>
         </p>
         <div class="clear"></div>
         <?php if (get_customer_type($user->ID) === MASTER_ACCOUNT): ?>
-            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                <label for="billing_company"><?php esc_html_e('Company', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+            <p class="form-group mb-3">
                 <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_company"
                        id="billing_company"
                        value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_company', true)); ?>" required/>
+                <label for="billing_company"><?php esc_html_e('Company Name', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
             </p>
             <div class="clear"></div>
 
-            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide hidden">
                 <label for="company_name_responsible"><?php esc_html_e('Company Responsible Full Name', 'woocommerce'); ?>
                     &nbsp;<span class="required">*</span></label>
                 <input type="text" class="woocommerce-Input woocommerce-Input--email input-text"
@@ -112,47 +134,48 @@ do_action('woocommerce_before_edit_account_form'); ?>
             </p>
             <div class="clear"></div>
 
-            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                <label for="billing_vat"><?php esc_html_e('Company VAT number', 'woocommerce'); ?>&nbsp;<span
-                            class="required">*</span></label>
+            <p class="form-group mb-3">
                 <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_vat"
                        id="billing_vat" value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_vat', true)); ?>"
                        required/>
+                <label for="billing_vat"><?php esc_html_e('Company Tax number', 'woocommerce'); ?>&nbsp;<span
+                            class="required">*</span></label>
             </p>
             <div class="clear"></div>
         <?php endif ?>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="billing_address_1"><?php esc_html_e('Address', 'woocommerce'); ?>&nbsp;<span
-                        class="required">*</span></label>
+        <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_address_1"
                    id="billing_address_1"
                    value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_address_1', true)); ?>" required/>
+            <label for="billing_address_1"><?php esc_html_e('Company Address', 'woocommerce'); ?>&nbsp;<span
+                        class="required">*</span></label>
         </p>
         <div class="clear"></div>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="billing_city"><?php esc_html_e('City', 'woocommerce'); ?>&nbsp;<span
-                        class="required">*</span></label>00000
+        <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_city"
                    id="billing_city" value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_city', true)); ?>"
                    required/>
+            <label for="billing_city"><?php esc_html_e('Company City', 'woocommerce'); ?>&nbsp;<span
+                        class="required">*</span></label>
         </p>
         <div class="clear"></div>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="billing_postcode"><?php esc_html_e('Postcode', 'woocommerce'); ?>&nbsp;<span
-                        class="required">*</span></label>
+        <p class="form-group mb-3">
             <input type="text" class="woocommerce-Input woocommerce-Input--email input-text" name="billing_postcode"
-                   id="billing_postcode" value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_postcode', true)); ?>"
+                   id="billing_postcode"
+                   value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_postcode', true)); ?>"
                    required/>
+            <label for="billing_postcode"><?php esc_html_e('Company Postcode', 'woocommerce'); ?>&nbsp;<span
+                        class="required">*</span></label>
         </p>
         <div class="clear"></div>
 
         <?php echo show_product_field('billing_country', array(
             'options' => CRMCountry::getCountries(),
-            'label' => __('Country', 'woocommerce'),
-            'class' => 'form-group has-focus mb-4 mt-3',
+            'label' => __('Company Country', 'woocommerce'),
+            'class' => 'form-group has-focus mb-3',
             'required' => true,
             'key' => true,
             'default' => esc_attr(get_user_meta($user->ID, 'billing_country', true)),
@@ -161,27 +184,16 @@ do_action('woocommerce_before_edit_account_form'); ?>
         <?php
         echo show_product_field('billing_state', array(
             'options' => CRMCountry::getStatesByCountryCode(esc_attr(get_user_meta($user->ID, 'billing_country', true))),
-            'label' => __('Sate', 'woocommerce'),
-            'class' => 'form-group has-focus mb-4 mt-3',
+            'label' => __('Company Sate', 'woocommerce'),
+            'class' => 'form-group has-focus mt-3',
             'required' => true,
             'key' => true,
             'default' => esc_attr(get_user_meta($user->ID, 'billing_state', true)),
         )); ?>
         <div class="clear"></div>
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-            <label for="mobile-phone"><?php _e('Mobile Number', 'cabling') ?></label>
-            <input type="tel" class="form-control" id="mobile-phone"
-                   value="<?php echo esc_attr(get_user_phone_number($user->ID)); ?>"
-                   placeholder="<?php _e('Mobile Number', 'cabling') ?>" required>
-            <span id="mobile-phone-validate" class="hidden input-error"></span>
-            <input type="hidden" class="phone_number" name="billing_phone"
-                   value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_phone', true)); ?>">
-            <input type="hidden" class="phone_code" name="billing_phone_code"
-                   value="<?php echo esc_attr(get_user_meta($user->ID, 'billing_phone_code', true)); ?>">
-        </p>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="hidden">
         <legend><?php esc_html_e('Password change', 'woocommerce'); ?></legend>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
@@ -204,10 +216,10 @@ do_action('woocommerce_before_edit_account_form'); ?>
 
     <?php do_action('woocommerce_edit_account_form'); ?>
 
-    <p>
+    <p class="text-center">
         <?php wp_nonce_field('save_account_details', 'save-account-details-nonce'); ?>
         <button type="submit"
-                class="woocommerce-Button btn-submit button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"
+                class="btn-submit block-button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"
                 name="save_account_details"
                 value="<?php esc_attr_e('Save changes', 'woocommerce'); ?>"><?php esc_html_e('Save changes', 'woocommerce'); ?></button>
         <input type="hidden" name="action" value="save_account_details"/>

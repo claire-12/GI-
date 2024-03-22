@@ -2088,7 +2088,7 @@ function company_name_field()
         'options' => $departments,
         'label' => __('Company Sector', 'woocommerce'),
         'default' => $company,
-        'class' => ' form-group has-focus mt-4 ',
+        'class' => ' form-group has-focus mb-3',
         'required' => true
     ));
 }
