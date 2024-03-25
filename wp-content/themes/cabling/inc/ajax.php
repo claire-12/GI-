@@ -101,7 +101,7 @@ function cabling_login_ajax_callback()
     if ($verify_recaptcha) {
         if (empty($data['log']) || empty($data['pwd'])) {
             $err = true;
-            $mess = '<div class="woo-notice alert alert-danger" role="alert">' . __('Please check your Email or Password.', 'cabling') . '</div>';
+            $mess = '<div class="woo-notice alert alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . __('Please check your Email or Password.', 'cabling') . '</div>';
         } else {
             $creds = array(
                 'user_login' => $data['log'],
@@ -121,16 +121,16 @@ function cabling_login_ajax_callback()
                     $error = $user->get_error_message();
                 }
                 $err = true;
-                $mess = '<div class="alert woo-notice alert-danger" role="alert">' . $error . '</div>';
+                $mess = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . $error . '</div>';
             } else {
 
                 $redirect_to = $data['_wp_http_referer'] ?? wc_get_account_endpoint_url('');
-                $mess = '<div class="alert woo-notice alert-success" role="alert">' . __('Success! Redirecting...', 'cabling') . '</div>';
+                $mess = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Success! Redirecting...', 'cabling') . '</div>';
             }
         }
     } else {
         $err = true;
-        $mess = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        $mess = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
     }
 
     $response = array(
@@ -153,7 +153,7 @@ function cabling_register_account_ajax_callback()
     $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
 
     if (empty($verify_recaptcha)) {
-        $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
         wp_send_json_error($message);
     }
     $recipient = $data['register_email'];
@@ -181,10 +181,10 @@ function cabling_register_account_ajax_callback()
 
         $mailer->send($recipient, $subject, $content, $headers);
 
-        $message = '<div class="alert woo-notice alert-success" role="alert">' . sprintf(__('A confirmation email has been sent to your mailbox <strong>%s</strong><br> Please check your email box and continue your registration within 24 hours', 'cabling'), $recipient) . '</div>';
+        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . sprintf(__('A confirmation email has been sent to your mailbox <strong>%s</strong><br> Please check your email box and continue your registration within 24 hours', 'cabling'), $recipient) . '</div>';
         wp_send_json_success($message);
     } else {
-        $message = '<div class="alert woo-notice alert-danger" role="alert">' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient) . '</div>';
+        $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient) . '</div>';
         wp_send_json_error($message);
     }
     wp_die();
@@ -196,7 +196,7 @@ function cabling_confirm_recaptcha_ajax_callback()
     $verify_recaptcha = cabling_verify_recaptcha($_REQUEST['recaptcha']);
 
     if (empty($verify_recaptcha)) {
-        $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
         wp_send_json_error($message);
     } else {
         wp_send_json_success();
@@ -212,7 +212,7 @@ function cabling_register_new_account_ajax_callback()
     $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
 
     if (empty($verify_recaptcha)) {
-        $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . __('reCAPTCHA verification failed. Please try again!', 'cabling') . '</div>';
         wp_send_json_error($message);
     }
 
@@ -284,11 +284,11 @@ function cabling_register_new_account_ajax_callback()
             $mailer->send($recipient, $subject, $content, $headers);
         }
 
-        $message = '<div class="alert woo-notice alert-success" role="alert">' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
         wp_send_json_success($message);
     }
 
-    $message = '<div class="alert woo-notice alert-danger" role="alert">' . __('Something went wrong. Please try again!', 'cabling') . '</div>';
+    $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . __('Something went wrong. Please try again!', 'cabling') . '</div>';
     wp_send_json_error($message);
 }
 

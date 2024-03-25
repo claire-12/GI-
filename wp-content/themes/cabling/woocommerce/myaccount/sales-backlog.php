@@ -1,7 +1,7 @@
 <h2>Sales Backlog</h2>
 <form id="webservice-api-form">
-    <p class="form-error-text alert alert-danger mb-4 hidden">Please fill out the filter</p>
-    <p class="parcocompound-text alert alert-danger mb-4 hidden">Please fill out the Part Number and Compound Number</p>
+    <p class="form-error-text alert alert-danger mb-4 hidden"><i class="fa-solid fa-triangle-exclamation me-2"></i>Please fill out the filter</p>
+    <p class="parcocompound-text alert alert-danger mb-4 hidden"><i class="fa-solid fa-triangle-exclamation me-2"></i>Please fill out the Part Number and Compound Number</p>
     <div class="form-group">
         <input type="text" class="form-control" name="api[sapcustomer]" id="sapcustomer"
                value="<?php echo get_user_meta(get_current_user_id(), 'sap_customer', true)?>"
