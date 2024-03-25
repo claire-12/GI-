@@ -478,7 +478,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .change-account-password #user_name {
-    padding-left: 90px;
+    padding-left: 65px;
 }
 
 .change-account-password #user_email {

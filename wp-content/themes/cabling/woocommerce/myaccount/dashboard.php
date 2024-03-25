@@ -29,6 +29,7 @@ $allowed_html = array(
 $full_name = "$current_user->first_name $current_user->last_name";
 $client_number = get_user_meta($current_user->ID, 'client-number', true);
 $billing_company = get_user_meta($current_user->ID, 'billing_company', true);
+$sap_no = get_user_meta($current_user->ID, 'AccountID', true);
 $my_account_content = get_field('my_account_content', 'options');
 $avatar_url = get_avatar_url($current_user->ID, array('size' => 150));
 $lost_password_url = esc_url(wp_lostpassword_url());
@@ -53,7 +54,7 @@ $lost_password_url = esc_url(wp_lostpassword_url());
                 printf(
                 /* translators: 1: user display name 2: logout url */
                     wp_kses(__('Account: %1$s', 'woocommerce'), $allowed_html),
-                    $current_user->ID,
+                    $sap_no,
                 );
                 ?>
             </li>
@@ -113,24 +114,24 @@ $lost_password_url = esc_url(wp_lostpassword_url());
                                 <input type="email" id="user_email"
                                        value="<?php echo $current_user->data->user_email ?>" readonly>
                             </div>
-                            <div class="form-group1 mb-3 position-relative">
+                            <div class="form-group1 mb-3 position-relative hidden">
                                 <label for="user_password"><?php echo __('Password:', 'cabling') ?></label>
                                 <input type="email" id="user_password" value="********" readonly>
                             </div>
-							<!--
+
                             <div class="btn-submit wp-block-button block-button-black">
                                 <a href="<?php echo $lost_password_url ?>" class=" wp-element-button"
                                    data-bs-toggle="modal" data-bs-target="#resetPasswordModal">
                                     <span>SET NEW PASSWORD</span>
                                 </a>
                             </div>
--->
+
                         </form>
                     </div>
                 </div>
             </div>
             <!--<h3><?php echo __('CONTENT PREFERENCES', 'cabling'); ?></h3>-->
-            <div class="keep-informed-account-wrapper">
+            <div class="keep-informed-account-wrapper hidden">
                 <?php UserInformed::setting_account_endpoint_content() ?>
             </div>
         </div>
