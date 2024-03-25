@@ -1243,8 +1243,8 @@ function save_custom_field_my_account_edit($user_id)
     if (isset($_POST['job_title'])) {
         update_user_meta($user_id, 'job_title', sanitize_text_field($_POST['job_title']));
     }
-    if (isset($_POST['user_department'])) {
-        update_user_meta($user_id, 'user_department', sanitize_text_field($_POST['user_department']));
+    if (isset($_POST['function'])) {
+        update_user_meta($user_id, 'function', sanitize_text_field($_POST['function']));
     }
     if (isset($_POST['billing_company'])) {
         update_user_meta($user_id, 'billing_company', sanitize_text_field($_POST['billing_company']));
