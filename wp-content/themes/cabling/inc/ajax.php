@@ -1025,6 +1025,7 @@ function cabling_get_api_ajax_callback()
             }
 
             $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
+            $user_plant = get_user_meta(get_current_user_id(), 'user_plant', true);
 
             $data['api']['sapcustomer'] = $sap_no;
 
@@ -1057,41 +1058,61 @@ function cabling_get_api_ajax_callback()
                     $sapmaterial = $data['api']['sapmaterial'];
                     $parcocompound = $data['api']['parcocompound'];
 
-                    $bodyPriceParams = array(
-                        array(
+                    $stockParams = array(
+                        /*array(
                             'Field' => 'sapcustomer',
                             'Value' => $sap_no,
                             'Operator' => '',
+                        ),*/
+                        array(
+                            'Field' => 'Plant',
+                            'Value' => empty($user_plant) ? '2141' : $user_plant,
+                            'Operator' => '',
                         ),
                     );
-                    $inventoryParams = array();
+                    $priceParams = array();
 
                     if (!empty($parcomaterial) && !empty($parcocompound)) {
-                        $inventoryParams[] = array(
+                        $priceParams = array(
+                            array(
+                                'Field' => 'parcomaterial',
+                                'Value' => $parcomaterial,
+                                'Operator' => '',
+                            ),
+                            array(
+                                'Field' => 'parcocompound',
+                                'Value' => $parcocompound,
+                                'Operator' => '',
+                            )
+                        );
+
+                        $stockParams[] = array(
                             'Field' => 'parcomaterial',
                             'Value' => $parcomaterial,
                             'Operator' => '',
                         );
-                        $inventoryParams[] = array(
+                        $stockParams[] = array(
                             'Field' => 'parcocompound',
                             'Value' => $parcocompound,
                             'Operator' => '',
                         );
                     } elseif (!empty($sapmaterial)) {
-                        $inventoryParams[] = array(
-                            'Field' => 'sapmaterial',
-                            'Value' => $sapmaterial,
-                            'Operator' => '',
+                        $priceParams = array(
+                            array(
+                                'Field' => 'sapmaterial',
+                                'Value' => $sapmaterial,
+                                'Operator' => '',
+                            )
                         );
-                        $bodyPriceParams[] = array(
+                        $stockParams[] = array(
                             'Field' => 'sapmaterial',
                             'Value' => $sapmaterial,
                             'Operator' => '',
                         );
                     }
 
-                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $inventoryParams);
-                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $bodyPriceParams);
+                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $priceParams);
+                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $stockParams);
 
                     $dataPrice = getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
                     $dataStock = getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
@@ -1099,10 +1120,10 @@ function cabling_get_api_ajax_callback()
                     $responseData = array(
                         'price' => $dataPrice,
                         'stock' => $dataStock,
-                        /*'data' => [
-                            $bodyPriceParams,
-                            $inventoryParams,
-                        ]*/
+                        'data' => [
+                            $priceParams,
+                            $stockParams,
+                        ]
                     );
 
                     break;
@@ -1126,7 +1147,7 @@ function cabling_get_api_ajax_callback()
             wp_send_json_success([
                 'data' => $result,
                 //'$data' => $data,
-                //'raw' => $responseData,
+                'raw' => $responseData,
             ]);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());
