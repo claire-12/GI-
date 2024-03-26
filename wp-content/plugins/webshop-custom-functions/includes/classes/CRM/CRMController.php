@@ -366,7 +366,8 @@ class CRMController
         }
         $lead = new CRMLead();
         $body = $lead->createSalesQuoteLeadBody($crmsalesquote);
-
+        //print_r($body);
+        //die();
         $url = $this->baseURL . "SalesQuoteCollection";
         $url = $this->baseURL . "LeadCollection";
         $headers = $this->createPostHeader($token);
@@ -495,6 +496,7 @@ class CRMController
 
     public function processRequestAQuoteSubmit($data)
     {
+
         $crmcontact = new CRMContact($data['email']);
         $contact = $this->getContactByEmail($crmcontact->email);
         if (!empty($contact)) {
@@ -524,7 +526,7 @@ class CRMController
         //$crmquoteproduct->quantity = $data['volume'];
         //$crmquoteproduct->quantitycode = "T3";
         $crmquoteproduct->application = $data['application'];
-        $crmquoteproduct->requiredby = "next week"; // free text
+        $crmquoteproduct->requiredby = $data['when-needed']; // "next week"; // free text
         $crmquoteproduct->partnumber = $data['part-number'] ?? 'N/A'; // free text
         $crmquoteproduct->comments = $data['additional-information'];  // free text
         $crmquoteproduct->material = $data['material'] ?? '';
@@ -538,13 +540,13 @@ class CRMController
         $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
         $crmquoteproduct->brand = $data['brand'] ?? 'N/A';
 
-        if ($crmquoteproduct->product === '321') {
-            $crmquoteproduct->dimid = $data['dimension_oring']['id'] ?? '0';
-            $crmquoteproduct->dimidcode = $data['dimension_oring']['type'] ?? 'INH';
-            $crmquoteproduct->dimod = $data['dimension_oring']['od'] ?? '0';
-            $crmquoteproduct->dimodcode = $data['dimension_oring']['type'] ?? 'INH';
-            $crmquoteproduct->dimwidth = $data['dimension_oring']['width'] ?? '0';
-            $crmquoteproduct->dimwidthcode = $data['dimension_oring']['type'] ?? 'INH';
+        if ($crmquoteproduct->product === '005') {
+            $crmquoteproduct->dimid = $data['dimension_oring']['id']!=""?$data['dimension_oring']['id']:"0";
+            $crmquoteproduct->dimidcode = $data['dimension_oring']['type']!=""?$data['dimension_oring']['type']: 'INH';
+            $crmquoteproduct->dimod = $data['dimension_oring']['od']!=""?$data['dimension_oring']['od']:"0";
+            $crmquoteproduct->dimodcode = $data['dimension_oring']['type']!=""?$data['dimension_oring']['type']: 'INH';
+            $crmquoteproduct->dimwidth = $data['dimension_oring']['width']!=""?$data['dimension_oring']['width']:"0";
+            $crmquoteproduct->dimwidthcode = $data['dimension_oring']['type']!=""?$data['dimension_oring']['type']: 'INH';
         } else {
             $crmquoteproduct->dimid = '0';
             $crmquoteproduct->dimidcode = "INH";

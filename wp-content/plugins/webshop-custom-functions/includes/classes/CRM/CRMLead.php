@@ -189,13 +189,17 @@ class CRMLead
         $rfq["Quantity1Content_KUT"] = $product->quantity ?? "0";
         $rfq["Quantity1UnitCode_KUT"] = $product->quantitycode ?? "N/A";
 
-        $rfq["DesiredApplication_KUT"] = $product->application ?? "N/A";
+        $rfq["DesiredApplication_KUT"] = $product->application ?? "N/A";        
         /*
         Chemical Resistant
         Oil Resistant
         Water and Steam Resistan
         */
-
+/*
+        if($product->requiredby!=""){
+        $rfq["EndDate"] = strtotime($product->requiredby);
+    }
+*/
         /**
          * Diagram to check in doc
          */
