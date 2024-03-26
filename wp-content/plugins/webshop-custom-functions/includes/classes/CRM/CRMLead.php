@@ -95,7 +95,7 @@ class CRMLead
         $contact["Name"] = "Contact Us_" . date('d/m/Y') . "_" . substr($crmcontact->email, strpos($crmcontact->email, '@') + 1);
 
         $contact["LeadLifecycle_KUT"] = "141"; // Contact Us quote lead
-        $contact["CompanySectorL1_KUT"] = "121"; // Contact Us quote lead
+//        $contact["CompanySectorL1_KUT"] = "121"; // Contact Us quote lead
 
 
         $contact["Company"] = $crmcontact->company;
@@ -159,7 +159,7 @@ class CRMLead
         //$rfq["Segment_KUT"]= "GI";
         //$rfq["LeadType_KUT"]= "105";
         $rfq["LeadLifecycle_KUT"] = "151"; // Sales quote lead
-        $rfq["CompanySectorL1_KUT"] = "171"; // Sales quote lead
+//        $rfq["CompanySectorL1_KUT"] = "171"; // Sales quote lead
 
         $rfq["Business_KUT"]= "141";    // Always send this 141 is GI
         $rfq["Segment"] = "GI";  // Always send
