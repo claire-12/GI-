@@ -1231,3 +1231,34 @@ b, strong {
 .menu-item-1033162 {
     text-decoration: underline;
 }
+.list-site-map a {color: inherit;}
+
+.list-site-map, .list-site-map ul {
+    padding: 0;
+    list-style: none;
+}
+
+.list-site-map li {
+    border-top: 1px solid #666;
+    padding: 5px 0;
+}
+
+.list-site-map > ul {
+    padding-left: 1rem;
+}
+
+.list-site-map > li > ul > li > a {
+    padding-left: 1.5rem;
+}
+
+.list-site-map > li > ul > li > ul > li > a {
+    padding-left: 3rem;
+}
+
+.list-site-map > li > ul > li > ul > li > ul > li > a {
+    padding-left: 4.5rem;
+}
+
+.list-site-map > li > ul > li > ul > li > ul > li > ul a {
+    padding-left: 6rem;
+}

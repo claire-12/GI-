@@ -452,57 +452,59 @@
             $(this).closest('form').submit();
         }
     })
-    $("#infomation-form").validate({
-        errorElement: "span",
-        errorPlacement: function (error, element) {
-            error.appendTo(element.parent());
-        },
-        submitHandler: function (form) {
-            $(form).find('.woo-notice').remove();
-            $('.confirm-notice').empty();
+    if($("#infomation-form").length) {
+        $("#infomation-form").validate({
+            errorElement: "span",
+            errorPlacement: function (error, element) {
+                error.appendTo(element.parent());
+            },
+            submitHandler: function (form) {
+                $(form).find('.woo-notice').remove();
+                $('.confirm-notice').empty();
 
-            const password = $(form).find('input[name=password]');
-            if (!checkPasswordStrength(password.val())) {
-                $('.confirm-notice').html(`<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                const password = $(form).find('input[name=password]');
+                if (!checkPasswordStrength(password.val())) {
+                    $('.confirm-notice').html(`<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
                     Your password must have at least: 8 characters long with characters, numbers and symbols
             </div>`);
-                // Use animate to smoothly scroll to the target element
-                $('html, body').animate({
-                    scrollTop: $('#registerStep').offset().top - 200
-                }, 'slow');
+                    // Use animate to smoothly scroll to the target element
+                    $('html, body').animate({
+                        scrollTop: $('#registerStep').offset().top - 200
+                    }, 'slow');
+                    return false;
+                }
+
+                let formData = $(form).serialize();
+
+                $.ajax({
+                    url: CABLING.ajax_url,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        action: 'cabling_register_new_account_ajax',
+                        data: formData,
+                        nonce: CABLING.nonce,
+                    },
+                    success: function (response) {
+                        hideLoading();
+                        if (response.success) {
+                            $(form).html(response.data)
+                        } else {
+                            $(form).prepend(response.data);
+                        }
+                    },
+                    beforeSend: function () {
+                        showLoading();
+                    }
+                })
+                    .fail(function () {
+                        console.log("error");
+                    });
+
                 return false;
             }
-
-            let formData = $(form).serialize();
-
-            $.ajax({
-                url: CABLING.ajax_url,
-                type: 'POST',
-                dataType: 'json',
-                data: {
-                    action: 'cabling_register_new_account_ajax',
-                    data: formData,
-                    nonce: CABLING.nonce,
-                },
-                success: function (response) {
-                    hideLoading();
-                    if (response.success) {
-                        $(form).html(response.data)
-                    } else {
-                        $(form).prepend(response.data);
-                    }
-                },
-                beforeSend: function () {
-                    showLoading();
-                }
-            })
-                .fail(function () {
-                    console.log("error");
-                });
-
-            return false;
-        }
-    });
+        });
+    }
 })(jQuery);
 
 function sortList(element, name, order) {
