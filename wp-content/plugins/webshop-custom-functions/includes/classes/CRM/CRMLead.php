@@ -63,8 +63,11 @@ class CRMLead
         $body["ContactFirstName"] = $account->firstname;
         $body["ContactLastName"] = $account->lastname;
         $body["ContactEMail"] = $account->email;
-        $body["ContactFunctionalTitleName"] = $account->jobfunction;
+        //$body["ContactFunctionalTitleName"] = $account->jobfunction;
+        $body["ContactFunctionalTitleName"] = $account->jobtitle;
         $body["BusinessPartnerRelationshipBusinessPartnerFunctionalAreaCode"] = $account->department;
+        //$body["BusinessPartnerRelationshipBusinessPartnerFunctionalAreaCode"] = $account->jobfunction;
+
         $body["ContactMobile"] = $account->mobile;
         $body["AccountPostalAddressElementsStreetName"] = $account->address;
         $body["AccountCity"] = $account->city;

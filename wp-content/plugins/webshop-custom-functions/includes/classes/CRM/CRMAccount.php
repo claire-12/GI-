@@ -44,4 +44,5 @@ class CRMAccount
     public $state;
     public $country;
     public $postalcode;
+    public $jobtitle;
 }

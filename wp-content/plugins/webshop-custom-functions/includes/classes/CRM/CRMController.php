@@ -483,6 +483,7 @@ class CRMController
             $account->email = $data['user_email'];
             $account->mobile = $data['billing_phone'];
             $account->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
+            $account->jobtitle = $data['job-title'];
             $account->department = $data['department'];
             $account->vatnumber = $data['billing_vat'];
             $account->address = $data['billing_address_1'];
@@ -491,6 +492,7 @@ class CRMController
             $account->country = $data['billing_country'];
             $account->postalcode = $data['billing_postcode'];
         }
+
         return $this->createAccountLead($account);
     }
 
