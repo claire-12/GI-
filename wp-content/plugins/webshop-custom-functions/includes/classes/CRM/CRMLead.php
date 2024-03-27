@@ -146,19 +146,7 @@ class CRMLead
 
 
         $rfq["Name"] = $crmsalesquote->getName();
-        //$rfq["SalesUnitPartyID"]= "AU_6000";
-        //$rfq["SalesOrganisationID"]= "AU_6000";
-        //$rfq["DistributionChannelCode"]= "01";
-
-        //$rfq["RequestedFulfillmentStartDateTime"]= now();
-        //$rfq["TimeZoneCode"]= "UTC";
-        //$rfq["CurrencyCode"]= "USD";
-        //$rfq["DocumentLanguageCode"]= "EN";
-        //$rfq["DeliveryPriorityCode"]= "3";
-        //$rfq["ProbabilityPercent"]= "25.00";
-        //$rfq["Marketsubsegment"]= "381";
-        //$rfq["ProductionSite"]= "SMX";
-        //$rfq["SalesOrg"]= "SMX";
+        
         //$rfq["Segment_KUT"]= "GI";
         //$rfq["LeadType_KUT"]= "105";
         $rfq["LeadLifecycle_KUT"] = "151"; // Sales quote lead
@@ -167,6 +155,7 @@ class CRMLead
         $rfq["Business_KUT"]= "141";    // Always send this 141 is GI
         $rfq["Segment"] = "GI";  // Always send
         $rfq["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
+
 
 
 
@@ -198,11 +187,12 @@ class CRMLead
         Oil Resistant
         Water and Steam Resistan
         */
-/*
+        
+    try{
         if($product->requiredby!=""){
-        $rfq["EndDate"] = strtotime($product->requiredby);
-    }
-*/
+            $rfq["EndDate"] = date("Y-m-d",strtotime($product->requiredby))."T00:00:00";
+        }
+    }catch(Exception $e){}
         /**
          * Diagram to check in doc
          */
