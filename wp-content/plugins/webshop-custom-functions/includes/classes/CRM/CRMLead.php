@@ -65,7 +65,8 @@ class CRMLead
         $body["ContactEMail"] = $account->email;
         //$body["ContactFunctionalTitleName"] = $account->jobfunction;
         $body["ContactFunctionalTitleName"] = $account->jobtitle;
-        $body["BusinessPartnerRelationshipBusinessPartnerFunctionalAreaCode"] = $account->department;
+        //$body["BusinessPartnerRelationshipBusinessPartnerFunctionalAreaCode"] = $account->department;
+        $body["BusinessPartnerRelationshipBusinessPartnerFunctionTypeCode"] = $account->jobfunction;
         //$body["BusinessPartnerRelationshipBusinessPartnerFunctionalAreaCode"] = $account->jobfunction;
 
         $body["ContactMobile"] = $account->mobile;
@@ -88,6 +89,7 @@ class CRMLead
 
     public function createContactLeadBody(CRMContact $crmcontact, $comments, $prodofinterest)
     {
+
         // define contant fields
         $contact = [];
 
@@ -98,18 +100,15 @@ class CRMLead
         $contact["Name"] = "Contact Us_" . date('d/m/Y') . "_" . substr($crmcontact->email, strpos($crmcontact->email, '@') + 1);
 
         $contact["LeadLifecycle_KUT"] = "141"; // Contact Us quote lead
-//        $contact["CompanySectorL1_KUT"] = "121"; // Contact Us quote lead
-
 
         $contact["Company"] = $crmcontact->company;
         $contact["ContactFirstName"] = $crmcontact->getFirstName();
         $contact["ContactLastName"] = $crmcontact->getLastName();
         $contact["ContactEMail"] = $crmcontact->email;
-	$contact["ContactMobile"] = $crmcontact->mobile;
+	    $contact["ContactMobile"] = $crmcontact->mobile;
         $contact["BusinessPartnerRelationshipBusinessPartnerFunctionTypeCode"] = $crmcontact->jobfunction;
 
         $contact["ContactFunctionalTitleName"] = $crmcontact->jobtitle;
-//ContactFormOfAddressCode"] = $crmcontact->jobtitle;
 
         $contact["Business_KUT"]= "141";    // Always send this 141 is GI
         $contact["Segment"] = "GI";  // Always send
@@ -150,7 +149,7 @@ class CRMLead
         //$rfq["Segment_KUT"]= "GI";
         //$rfq["LeadType_KUT"]= "105";
         $rfq["LeadLifecycle_KUT"] = "151"; // Sales quote lead
-//        $rfq["CompanySectorL1_KUT"] = "171"; // Sales quote lead
+        //        $rfq["CompanySectorL1_KUT"] = "171"; // Sales quote lead
 
         $rfq["Business_KUT"]= "141";    // Always send this 141 is GI
         $rfq["Segment"] = "GI";  // Always send
@@ -188,11 +187,12 @@ class CRMLead
         Water and Steam Resistan
         */
         
-    try{
-        if($product->requiredby!=""){
-            $rfq["EndDate"] = date("Y-m-d",strtotime($product->requiredby))."T00:00:00";
-        }
-    }catch(Exception $e){}
+        try{
+            if($product->requiredby!=""){
+                $rfq["EndDate"] = date("Y-m-d",strtotime($product->requiredby))."T00:00:00";
+                $rfq["StartDate"] =date("Y-m-d")."T00:00:00";
+            }
+        }catch(Exception $e){}
         /**
          * Diagram to check in doc
          */
