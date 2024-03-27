@@ -439,7 +439,7 @@ class CRMController
             $crmcontact->mobile = $contactForm['mobile'];
             $crmcontact->jobtitle = $contactForm['job-title'];
             //$crmcontact->jobfunction = $contactForm['function'];
-            $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$contactForm['function']);
+            $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$contactForm['function'][0]);
         }
 
         return $this->createContactUsLead($crmcontact, $contactForm['your-message'], $contactForm['product']);
