@@ -78,6 +78,8 @@ class CRMService
                 'ContactID' => $lead->ContactID,
             );
             $this->saveCRMData($data['your-email'], $dataCRM);
+
+            $this->notify_contact_customer($data['your-email'], $data);
         }
     }
 
@@ -89,9 +91,8 @@ class CRMService
 
         try {
             $posted_data = $submission->get_posted_data();
-            $name_title = get_name_title($posted_data['your-title'][0]);
             $product = get_product_of_interests($posted_data['your-product'][0]);
-            if (!empty($product) && !empty($name_title)) {
+            if (!empty($product)) {
                 $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
                 $posted_data['product'] = (string)$product;
 
@@ -248,6 +249,18 @@ class CRMService
 
         GIEmail::send($email, $options);
     }
+    private function notify_contact_customer(string $email, array $data)
+    {
+        $subject = sprintf(__('[%s] Contact Us', 'cabling'), get_bloginfo('name'));
+
+        $options = array(
+            'subject' => $subject,
+            'data' => $data,
+            'template' => 'template-parts/emails/request-a-contact.php',
+        );
+
+        GIEmail::send($email, $options);
+    }
 
     public function confirm_email()
     {
@@ -267,6 +280,7 @@ class CRMService
                 } elseif ($type === 'contact') {
                     $this->requestContactCRM($data);
                 }
+
                 delete_transient('confirmation_token_' . $email);
                 delete_transient('confirmation_data_' . $email);
 

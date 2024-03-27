@@ -109,8 +109,8 @@ function cabling_process_register_form()
     }
 
     if (
-            (isset($_POST['verify-nounce']) && wp_verify_nonce($_POST['verify-nounce'], 'cabling-verify'))
-            || (isset($_POST['customer-nounce']) && wp_verify_nonce($_POST['customer-nounce'], 'cabling-customer'))) {
+        (isset($_POST['verify-nounce']) && wp_verify_nonce($_POST['verify-nounce'], 'cabling-verify'))
+        || (isset($_POST['customer-nounce']) && wp_verify_nonce($_POST['customer-nounce'], 'cabling-customer'))) {
 
         $verify_recaptcha = cabling_verify_recaptcha($_POST['g-recaptcha-response']);
 
@@ -1452,8 +1452,8 @@ function checkFilterHasSize($attributes): bool
         'milimeters_width',
         'milimeters_width_tol',
     );
-    foreach ($attributes as $key => $attribute){
-        if(in_array($key, $size) && !empty($attribute)){
+    foreach ($attributes as $key => $attribute) {
+        if (in_array($key, $size) && !empty($attribute)) {
             return true;
         }
     }
@@ -1465,57 +1465,68 @@ function checkFilterHasSize($attributes): bool
  * José Martins 2024-02-14
  * Retrieves post by slug
  */
-function get_post_id_by_slug( $slug, $post_type = "post" ) {
+function get_post_id_by_slug($slug, $post_type = "post")
+{
     $query = new WP_Query(
         array(
-            'name'   => $slug,
-            'post_type'   => $post_type,
+            'name' => $slug,
+            'post_type' => $post_type,
             'numberposts' => 1,
-            'fields'      => 'ids',
-        ) );
+            'fields' => 'ids',
+        ));
     $posts = $query->get_posts();
-    return array_shift( $posts );
+    return array_shift($posts);
 }
 
 
-function custom_autofill_data( $scanned_tag, $replace ) {
-    if ( is_user_logged_in() ) {
+function custom_autofill_data($scanned_tag, $replace)
+{
+    if (is_user_logged_in()) {
         $current_user = wp_get_current_user();
 
         $phone_code = get_user_meta($current_user->ID, 'billing_phone_code', true);
+        $function = get_user_meta($current_user->ID, 'function', true);
         $phone = get_user_meta($current_user->ID, 'billing_phone', true);
         $phoneFull = sprintf('+%s%s', $phone_code, remove_zero_number($phone));
 
-        switch ( $scanned_tag['name'] ){
-            case 'your-name':
-                $scanned_tag['values'] = [$current_user->display_name];
+        switch ($scanned_tag['name']) {
+            case 'first-name':
+                $scanned_tag['values'] = [$current_user->first_name];
+                break;
+            case 'last-name':
+                $scanned_tag['values'] = [$current_user->last_name];
                 break;
             case 'your-email':
                 $scanned_tag['values'] = [$current_user->user_email];
-                break;
-            case 'your-title':
-                //var_dump( $scanned_tag);
-                // $scanned_tag['values'] = [get_user_meta($current_user->ID, 'user_title', true)];
                 break;
             case 'your-company-sector':
                 $scanned_tag['values'] = [get_user_meta($current_user->ID, 'billing_company', true)];
                 break;
             case 'your-phone':
-                 $scanned_tag['values'] = [$phoneFull];
+                $scanned_tag['values'] = [$phoneFull];
                 break;
             case 'user_telephone':
-                 $scanned_tag['values'] = [$phone];
+                $scanned_tag['values'] = [$phone];
                 break;
             case 'user_telephone_code':
-                 $scanned_tag['values'] = [$phone_code];
+                $scanned_tag['values'] = [$phone_code];
                 break;
         }
-        return $scanned_tag;
     }
 
-    // If user is not logged in, return the original form
+    switch ($scanned_tag['name']) {
+        case 'function':
+            $scanned_tag['raw_values'] = CRMConstant::FUNCTION_CONTACT;
+            $scanned_tag['values'] = CRMConstant::FUNCTION_CONTACT;
+            break;
+        case 'your-product':
+            $scanned_tag['raw_values'] = CRMConstant::PRODUCT;
+            $scanned_tag['values'] = CRMConstant::PRODUCT;
+            break;
+    }
+
     return $scanned_tag;
 }
 
-add_filter( 'wpcf7_form_tag', 'custom_autofill_data', 10 , 2 );
+add_filter('wpcf7_form_tag', 'custom_autofill_data', 10, 2);
 
