@@ -151,7 +151,7 @@ class UserInformed
                     $is_sent_confirmed = true;
                 }
 
-                $success = __('Thanks for your request. Respecting your data is important for us at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your consent. All you need to do is click on the link in the message. And if you don’t receive a message, please check to see if it ended up in your junk folder.', 'cabling');
+                $success = __('Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.', 'cabling');
             } else {
                 self::remove_informed_channel('email');
             }

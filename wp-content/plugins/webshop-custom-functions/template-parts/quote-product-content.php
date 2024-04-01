@@ -4,7 +4,12 @@
     <div class="wrap-inner container">
         <h4 class="text-center"><?php echo __('Request a quote', 'cabling') ?></h4>
         <!--<h5 class="text-center"><?php echo __('I would like to be informed about this product:', 'cabling') ?></h5>-->
+        <!--
         <h5 class="text-center"><?php echo __('Thanks for offering us the opportunity to quote. To proceed, if it’s your first time here, either continue as a guest or consider registering with us through My Account to make asking for quotes in the future even easier. If you’re an existing My Account user, just log-in to complete your request.', 'cabling') ?></h5>
+    -->
+    <h5 class="text-center"><?php echo __('Thanks for offering us the opportunity to quote.','cabling'); ?></h5>
+    <h5><?php echo __('If it’s your first time here, you can either continue as a guest, or sign up with My Account, Datwyler’s online account management portal.','cabling'); ?></h5>
+     <h5><?php echo __('If you’re an existing My Account user, just log-in to complete your request.', 'cabling'); ?></h5>
         <?php if (!$is_user_logged_in): ?>
             <?php wc_get_template('template-parts/register-block.php', [], '', WBC_PLUGIN_DIR); ?>
         <?php endif ?>

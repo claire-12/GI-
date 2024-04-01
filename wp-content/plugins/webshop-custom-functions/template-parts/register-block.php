@@ -15,7 +15,7 @@
 
                 <form method="POST" name="register-form" id="register-form">
                     <p class="sub-heading mb-0 pe-3"
-                       style="font-size: larger;"><?php esc_html_e('Register today to make future quote requests even easier – and easier account management after you’ve made a purchase.', 'woocommerce'); ?></p>
+                       style="font-size: larger;"><?php esc_html_e('Register today to access your Datwyler account online.', 'woocommerce'); ?></p>
 
                     <div class="form-group">
                         <label class="screen-reader-text"
