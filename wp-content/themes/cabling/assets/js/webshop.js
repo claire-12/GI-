@@ -894,6 +894,8 @@ function add_phone_validate(phone_element) {
             phoneCodeElement.dispatchEvent(new Event("change"));
         });
 
+        phoneCodeElement.style.paddingLeft = "75px";
+
         return iti;
     }
 }
