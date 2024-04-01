@@ -200,25 +200,23 @@ function cabling_scripts()
 {
     wp_enqueue_style('cabling-style', get_stylesheet_uri());
     wp_enqueue_style('flickity', get_template_directory_uri() . '/assets/js/flickity/flickity.min.css');
-    wp_enqueue_style('bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
     wp_enqueue_style('flatpickr', get_template_directory_uri() . '/assets/js/flatpickr/flatpickr.min.css');
     wp_enqueue_style('cabling-font-awesome', get_template_directory_uri() . '/assets/css/Font-Awesome-6.4.0/css/all.css');
+    wp_enqueue_style('intlTelInput', get_template_directory_uri() . '/assets/intl-tel-input-17.0.0/css/intlTelInput.min.css');
     wp_enqueue_style('cabling-theme', get_template_directory_uri() . '/assets/css/theme.css');
     wp_enqueue_style('cabling-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
-
-    wp_enqueue_style('intlTelInput', '//cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.min.css');
-    wp_enqueue_script('intlTelInput', '//cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js', array(), '18.2.1', true);
 
     if (is_checkout()) {
         wp_enqueue_script('cabling-checkout', get_template_directory_uri() . '/assets/js/checkout-step.js', array(), null, true);
     }
     if (is_page_template('templates/register.php')) {
-        wp_enqueue_script('jquery-validation', '//cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js', array('jquery'), null, true);
+        wp_enqueue_script('jquery.validate', get_template_directory_uri() . '/assets/js/jquery.validate.min.js', array(), null, true);
     }
 
-    wp_enqueue_script('recaptcha', '//www.google.com/recaptcha/api.js', array(), null, true);
-    wp_enqueue_script('bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), null, true);
-    //wp_enqueue_script('pdfobject', '//cdn.jsdelivr.net/npm/pdfobject@2.2.12/pdfobject.min.js',array('jquery'), null, true);
+    wp_enqueue_script('recaptcha', 'https://www.google.com/recaptcha/api.js', array(), null, true);
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), null, true);
+    wp_enqueue_script('intlTelInput', get_template_directory_uri() . '/assets/intl-tel-input-17.0.0/js/intlTelInput.min.js', array(), null, true);
     wp_enqueue_script('flatpickr', get_template_directory_uri() . '/assets/js/flatpickr/flatpickr.min.js', array(), null, true);
     wp_enqueue_script('flatpickr-rangePlugin', get_template_directory_uri() . '/assets/js/flatpickr/plugins/rangePlugin.js', array(), null, true);
     wp_enqueue_script('flickity', get_template_directory_uri() . '/assets/js/flickity/flickity.pkgd.min.js', array(), null, true);

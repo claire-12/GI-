@@ -185,6 +185,14 @@
         })
             .done(function () {
                 hideLoading();
+            })
+            .error(function () {
+                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    <div>
+                        There was an error while processing the request. Please try again later!
+                    </div>
+                </div>`);
+                hideLoading();
             });
 
         return false;
@@ -218,6 +226,14 @@
             }
         })
             .done(function () {
+                hideLoading();
+            })
+            .error(function () {
+                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    <div>
+                        There was an error while processing the request. Please try again later!
+                    </div>
+                </div>`);
                 hideLoading();
             });
         return false;

@@ -1262,3 +1262,6 @@ b, strong {
 .list-site-map > li > ul > li > ul > li > ul > li > ul a {
     padding-left: 6rem;
 }
+.iti__selected-flag{
+    height: 100%
+}
