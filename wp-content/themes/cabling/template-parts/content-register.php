@@ -70,7 +70,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     <label for="password"><?php _e('Password', 'cabling') ?><span class="required">*</span></label>
                 </div>
                 <span class="password-help">
-                        <?php _e('Your password must have at least: 8 characters long with characters, numbers and symbols', 'cabling') ?>
+                        <?php _e('Your password must have at least: 8 characters long with at least 1 uppercase and 1 lowercase character, numbers and symbols', 'cabling') ?>
                     </span>
                 <!-- JM 20230920 changed position of Is client? and client number -->
                 <div class="form-group form-phone has-focus">

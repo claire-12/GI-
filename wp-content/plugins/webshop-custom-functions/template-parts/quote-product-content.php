@@ -253,7 +253,7 @@
                                 your business?</label>
                         </div>
                         <div class="mb-3 form-group">
-                            <input type="number" class="form-control" name="volume" id="volume"
+                            <input type="number" class="form-control" name="volume" id="volume" min="0"
                                    value="<?php echo $volume ?? '' ?>"
                             >
                             <label for="volume" class="form-label">Quantity needed</label>
@@ -270,7 +270,7 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <input type="number" class="form-control" name="dimension_oring[id]"
-                                               id="dimension-id" step="0.001"
+                                               id="dimension-id" step="0.001"  min="0"
                                                value=""
                                         >
                                         <label for="dimension-id" class="form-label">ID</label>
@@ -279,7 +279,7 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <input type="number" class="form-control" name="dimension_oring[od]"
-                                               id="dimension-od" step="0.001"
+                                               id="dimension-od" step="0.001"  min="0"
                                                value=""
                                         >
                                         <label for="dimension-od" class="form-label">OD</label>
@@ -288,7 +288,7 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <input type="number" class="form-control" name="dimension_oring[width]"
-                                               step="0.001"
+                                               step="0.001"  min="0"
                                                id="dimension-width" value=""
                                         >
                                         <label for="dimension-width" class="form-label">CS</label>

@@ -465,7 +465,7 @@
                 const password = $(form).find('input[name=password]');
                 if (!checkPasswordStrength(password.val())) {
                     $('.confirm-notice').html(`<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
-                    Your password must have at least: 8 characters long with characters, numbers and symbols
+                    Your password must have at least: 8 characters long with at least 1 uppercase and 1 lowercase character, numbers and symbols
             </div>`);
                     // Use animate to smoothly scroll to the target element
                     $('html, body').animate({

@@ -83,7 +83,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                 <li>Save and retrieve quotes</li>
                 <li>Personalised offers and news</li>
                 <li>Test reports</li>-->
-                <li>Datwyler Industrial Sealing News</li>
+                <li>Datwyler Sealing News</li>
                 <li>Shipments</li>
                 <li>Sales backlog</li>
                 <li>Inventory, Lead time & Pricing</li>

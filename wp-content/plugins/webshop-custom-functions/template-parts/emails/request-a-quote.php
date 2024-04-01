@@ -6,7 +6,7 @@ $blogname = get_bloginfo('name');
 
 do_action('woocommerce_email_header', $email_heading, $email); ?>
 
-    <p><?php printf(esc_html__('Hi %1$s,', 'woocommerce'), esc_html($data['company'])); ?></p>
+    <p><?php printf(esc_html__('Hi %1$s,', 'woocommerce'), esc_html(echo $data['first_name'] . ' ' . $data['last_name'])); ?></p>
     <div class="quote-content">
         <h4><?php echo esc_html__('The details of quote:', 'woocommerce'); ?></h4>
         <p>
@@ -103,6 +103,7 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
         </p>
     </div>
 
-    <p><?php printf(esc_html__('Thank you for choosing %1$s! for your subscription. We look forward to keeping you informed!', 'woocommerce'), esc_html($blogname)); ?></p>
-<?php
+    <p><?php printf(esc_html__('Thanks for confirming your request for quotation. A member of the Datwyler team will be in touch with you promptly.','woocommerce')); ?></p>
+    <p><?php printf(esc_html__('Best regards,','woocommerce')); ?></p>
+    <p><?php printf(esc_html__('Datwyler Sealing','woocommerce')); ?></p><?php
 do_action('woocommerce_email_footer');

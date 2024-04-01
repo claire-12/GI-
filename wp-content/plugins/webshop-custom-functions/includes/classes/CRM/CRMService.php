@@ -239,7 +239,9 @@ class CRMService
 
     private function notify_quote_customer(string $email, array $data)
     {
-        $subject = sprintf(__('[%s] Request a quote', 'cabling'), get_bloginfo('name'));
+        //$subject = sprintf(__('[%s] Request a quote', 'cabling'), get_bloginfo('name'));
+        $subject = __('Datwyler Sealing Solutions: Confirming Your Request for Quotation', 'cabling');
+         
 
         $options = array(
             'subject' => $subject,
@@ -251,7 +253,7 @@ class CRMService
     }
     private function notify_contact_customer(string $email, array $data)
     {
-        $subject = sprintf(__('[%s] Contact Us', 'cabling'), get_bloginfo('name'));
+        $subject = __('Datwyler Sealing Solutions: Confirming Your Contact Us Request', 'cabling');
 
         $options = array(
             'subject' => $subject,

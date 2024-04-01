@@ -104,7 +104,9 @@ function cabling_process_register_form()
 
             wc_add_notice(sprintf(__('A confirmation email has been sent to your mailbox <strong>%s</strong><br> Please check your email box and continue your registration within 24 hours', 'cabling'), $recipient), 'success');
         } else {
-            wc_add_notice(sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient), 'error');
+            //wc_add_notice(sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient), 'error');
+            wc_add_notice(sprintf(__('We already have an account registered under %s . Please log in with the password linked to this  account.', 'cabling'), $recipient), 'error');
+            
         }
     }
 

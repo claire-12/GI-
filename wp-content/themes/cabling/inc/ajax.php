@@ -7,7 +7,9 @@ function cabling_create_webshop_user_ajax_callback(): void
     $message = '';
     if (email_exists($data['user_email'])) {
         $err = true;
-        $message = '<div class="woocommerce-error woo-notice" role="alert">' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $data['user_email']) . '</div>';
+        //$message = '<div class="woocommerce-error woo-notice" role="alert">' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $data['user_email']) . '</div>';
+        $message = '<div class="woocommerce-error woo-notice" role="alert">' . sprintf(__('We already have an account registered under %s . Please log in with the password linked to this  account.', 'cabling'), $data['user_email']) . '</div>';
+        
     } else {
         $parent_id = get_current_user_id();
         $sap_no = get_user_meta($parent_id, 'sap_no', true);
@@ -184,7 +186,9 @@ function cabling_register_account_ajax_callback()
         $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . sprintf(__('A confirmation email has been sent to your mailbox <strong>%s</strong><br> Please check your email box and continue your registration within 24 hours', 'cabling'), $recipient) . '</div>';
         wp_send_json_success($message);
     } else {
-        $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient) . '</div>';
+        //$message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient) . '</div>';
+        $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . sprintf(__('We already have an account registered under %s . Please log in with the password linked to this  account.', 'cabling'), $recipient) . '</div>';
+        
         wp_send_json_error($message);
     }
     wp_die();
@@ -284,7 +288,8 @@ function cabling_register_new_account_ajax_callback()
             $mailer->send($recipient, $subject, $content, $headers);
         }
 
-        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
+        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the link to log in and explore.', 'cabling') . '</div>';
         wp_send_json_success($message);
     }
 
