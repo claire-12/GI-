@@ -9,7 +9,7 @@ function cabling_create_webshop_user_ajax_callback(): void
         $err = true;
         //$message = '<div class="woocommerce-error woo-notice" role="alert">' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $data['user_email']) . '</div>';
         $message = '<div class="woocommerce-error woo-notice" role="alert">' . sprintf(__('We already have an account registered under %s . Please log in with the password linked to this  account.', 'cabling'), $data['user_email']) . '</div>';
-        
+
     } else {
         $parent_id = get_current_user_id();
         $sap_no = get_user_meta($parent_id, 'sap_no', true);
@@ -177,18 +177,19 @@ function cabling_register_account_ajax_callback()
         $mailer = WC()->mailer();
         $mailer->recipient = $recipient;
         $type = 'emails/pre-register.php';
-        $subject = __("Hi! Please verify your account!", 'cabling');
+        $subject = __("Datwyler Sealing: Confirming Your My Account Opening Request", 'cabling');
         $content = cabling_get_custom_email_html($verify_link, $subject, $mailer, $type);
         $headers = "Content-Type: text/html\r\n";
 
         $mailer->send($recipient, $subject, $content, $headers);
 
-        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . sprintf(__('A confirmation email has been sent to your mailbox <strong>%s</strong><br> Please check your email box and continue your registration within 24 hours', 'cabling'), $recipient) . '</div>';
+        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . sprintf(__('A confirmation email has been sent to your mailbox <strong>%s</strong><br> Please check your email box and continue your registration within 24 hours', 'cabling'), $recipient) . '</div>';
+        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for requesting access to Datwyler My Account. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.', 'cabling') . '</div>';
         wp_send_json_success($message);
     } else {
         //$message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient) . '</div>';
         $message = '<div class="alert woo-notice alert-danger" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>' . sprintf(__('We already have an account registered under %s . Please log in with the password linked to this  account.', 'cabling'), $recipient) . '</div>';
-        
+
         wp_send_json_error($message);
     }
     wp_die();

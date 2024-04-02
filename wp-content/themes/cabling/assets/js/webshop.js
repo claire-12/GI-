@@ -59,11 +59,6 @@
         }
     })
 
-    $(document).on('click', '.continue-step-2', function () {
-        $(this).hide();
-        $('.quote-step-2').show();
-    })
-
     $(document).on('click', '.contact-form-input label', function () {
         $(this).closest('p').find('input').trigger('focus')
     })

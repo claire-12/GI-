@@ -116,29 +116,6 @@
             });
     });
 
-    //open login modal
-    $('body').on('click', '.my-account.menu-item', function (event) {
-        event.preventDefault();
-
-        $("#loginModal").modal("toggle");
-    });
-
-    //load more on single product
-    $('body').on('click', '.loadmore-meta', function (event) {
-        event.preventDefault();
-
-        $(this).hide();
-        $(this).closest('.modal').find('.loadless-meta').show();
-        $(this).parent().addClass('show_all');
-    });
-    $('body').on('click', '.loadless-meta', function (event) {
-        event.preventDefault();
-
-        $(this).hide();
-        $(this).closest('.modal').find('.loadmore-meta').show();
-        $(this).parent().removeClass('show_all');
-    });
-
     //sign in ajax function
     $(document).on('submit', 'form[name=cabling_login_form]', function (event) {
         showLoading();
@@ -241,7 +218,7 @@
             const response = form.find('[name=g-recaptcha-response]').val();
 
             if (response == '') {
-                form.prepend('<div class="woocommerce-error woo-notice" role="alert">Please verify the Captcha.</div>');
+                form.prepend('<div class="alert alert-danger d-flex align-items-center woo-notice" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i><span>Please verify the Captcha.</span></div>');
                 grecaptcha.reset();
                 return false;
             }
@@ -271,23 +248,6 @@
     $('.top-header').on('click', '.show-language', function (e) {
         $(e.delegateTarget).find('.cabling_language_list').toggle();
     });
-
-    if ($('form[name=pre-training-data]').length) {
-        var form = $('form[name=pre-training-data]');
-
-        $('form.wpcf7-form').find('input[name=training-id]').val(form.find('input[name=train-id]').val());
-        $('form.wpcf7-form').find('input[name=training-title]').val(form.find('input[name=train-title]').val());
-        $('form.wpcf7-form').find('input[name=training-place]').val(form.find('input[name=train-place]').val());
-        $('form.wpcf7-form').find('input[name=training-date]').val(form.find('input[name=train-date]').val());
-
-        $('form.wpcf7-form').on('change', '[name="is-same-participant[]"]', function (e) {
-            if ($('input[name="is-same-participant[]"]:checked').length > 0) {
-                $(e.delegateTarget).find('.differ-participant').slideUp();
-            } else {
-                $(e.delegateTarget).find('.differ-participant').slideDown();
-            }
-        });
-    }
 
     $('.more-if a[href^="www"]').each(function () {
         const oldUrl = $(this).attr("href");

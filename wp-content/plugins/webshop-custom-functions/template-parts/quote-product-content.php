@@ -3,14 +3,12 @@
     </button>
     <div class="wrap-inner container">
         <h4 class="text-center"><?php echo __('Request a quote', 'cabling') ?></h4>
-        <!--<h5 class="text-center"><?php echo __('I would like to be informed about this product:', 'cabling') ?></h5>-->
-        <!--
-        <h5 class="text-center"><?php echo __('Thanks for offering us the opportunity to quote. To proceed, if it’s your first time here, either continue as a guest or consider registering with us through My Account to make asking for quotes in the future even easier. If you’re an existing My Account user, just log-in to complete your request.', 'cabling') ?></h5>
-    -->
-    <h5 class="text-center"><?php echo __('Thanks for offering us the opportunity to quote.','cabling'); ?></h5>
-    <h5><?php echo __('If it’s your first time here, you can either continue as a guest, or sign up with My Account, Datwyler’s online account management portal.','cabling'); ?></h5>
-     <h5><?php echo __('If you’re an existing My Account user, just log-in to complete your request.', 'cabling'); ?></h5>
+        <h5 class="text-center step2-quote"><?php echo __('Thanks for offering us the opportunity to quote.', 'cabling'); ?></h5>
         <?php if (!$is_user_logged_in): ?>
+            <div class="step2-quote">
+                <h5><?php echo __('If it’s your first time here, you can either continue as a guest, or sign up with My Account, Datwyler’s online account management portal.', 'cabling'); ?></h5>
+                <h5><?php echo __('If you’re an existing My Account user, just log-in to complete your request.', 'cabling'); ?></h5>
+            </div>
             <?php wc_get_template('template-parts/register-block.php', [], '', WBC_PLUGIN_DIR); ?>
         <?php endif ?>
         <form id="form-request-quote" class="form-request-quote <?php echo $is_user_logged_in ? '' : 'hidden' ?>"
@@ -270,7 +268,7 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <input type="number" class="form-control" name="dimension_oring[id]"
-                                               id="dimension-id" step="0.001"  min="0"
+                                               id="dimension-id" step="0.001" min="0"
                                                value=""
                                         >
                                         <label for="dimension-id" class="form-label">ID</label>
@@ -279,7 +277,7 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <input type="number" class="form-control" name="dimension_oring[od]"
-                                               id="dimension-od" step="0.001"  min="0"
+                                               id="dimension-od" step="0.001" min="0"
                                                value=""
                                         >
                                         <label for="dimension-od" class="form-label">OD</label>
@@ -288,7 +286,7 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <input type="number" class="form-control" name="dimension_oring[width]"
-                                               step="0.001"  min="0"
+                                               step="0.001" min="0"
                                                id="dimension-width" value=""
                                         >
                                         <label for="dimension-width" class="form-label">CS</label>

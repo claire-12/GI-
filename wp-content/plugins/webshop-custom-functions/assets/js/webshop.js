@@ -76,6 +76,11 @@
         return false;
     })
 
+    $(document).on('click', '.continue-step-2', function () {
+        $(this).hide();
+        $('.quote-step-2').show();
+    })
+
     $(document).on('click', '.continue-as-a-guest', function (e) {
 
         e.preventDefault();
@@ -99,6 +104,7 @@
                     const modalElement = register_block.closest('.quote-product-content');
 
                     modalElement.find('.login-wrapper').hide();
+                    modalElement.find('.step2-quote').hide();
                     modalElement.find('.form-request-quote').show();
                     modalElement.find('.login-wrapper-non').css('opacity', 1);
                 } else {

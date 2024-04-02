@@ -310,9 +310,9 @@ function cabling_woocommerce_breadcrumb()
 {
     if (is_shop()) return;
     $link = home_url('/products-and-services/');
-    if (is_product() && isset($_REQUEST['data-history'])){
+    if (is_product() && isset($_REQUEST['data-history'])) {
         $link = base64_decode($_REQUEST['data-history']);
-    } elseif (is_tax('product_custom_type')){
+    } elseif (is_tax('product_custom_type')) {
         $link = get_product_filter_link(true);
     }
     echo '<div class="container mb-3">';
@@ -447,14 +447,16 @@ function getDataResponse(array $response, string $type, string $type_level_2): a
     }
     return $responseData;
 }
- function get_cumulative_quantity($stock, float $quantity): string
- {
-    if (empty($stock)){
+
+function get_cumulative_quantity($stock, float $quantity): string
+{
+    if (empty($stock)) {
         $stock = 0;
     }
     $qty = $stock + $quantity;
     return number_format($qty, 0, '.', ' ');
 }
+
 function show_value_from_api($key, $value)
 {
     if (empty($value)) {
@@ -2215,7 +2217,7 @@ function get_product_filter_link($isBack = false): string
     } else {
         $data = '';
     }
-    if ($isBack){
+    if ($isBack) {
         $link = home_url('/products-and-services');
         $history = $data;
     } else {
@@ -2227,10 +2229,33 @@ function get_product_filter_link($isBack = false): string
 }
 
 add_filter('woocommerce_add_error', 'woocommerce_add_error_callback');
-function  woocommerce_add_error_callback($message)
+function woocommerce_add_error_callback($message)
 {
-    if ($message === 'Invalid username or email.'){
-        $message = __( 'Invalid email. Please try again!', 'woocommerce' );
+    if ($message === 'Invalid username or email.') {
+        $message = __('Invalid email. Please try again!', 'woocommerce');
     }
     return $message;
+}
+
+add_action('lostpassword_post', 'gi_retrieve_password_callback', 10, 2);
+function gi_retrieve_password_callback($errors, $user_data)
+{
+    $key = sanitize_key($user_data->user_login . '_limit_password_reset');
+    $limit = get_transient($key);var_dump($limit);
+    if ($limit) {
+        $link = esc_url( add_query_arg( array( 'error' => 'request_too_much' ), wc_get_endpoint_url( 'lost-password', '', wc_get_page_permalink( 'myaccount' ) ) ) );
+
+        wp_redirect($link);
+        exit();
+    }
+    set_transient($key, true, 120);
+    return true;
+}
+
+add_filter('woocommerce_email_subject_customer_reset_password', 'gi_custom_reset_password_heading');
+add_filter('woocommerce_email_heading_customer_reset_password', 'gi_custom_reset_password_heading');
+function gi_custom_reset_password_heading($title)
+{
+    $title = __('Datwyler Sealing: Password Reset Request', 'cabling');
+    return $title;
 }

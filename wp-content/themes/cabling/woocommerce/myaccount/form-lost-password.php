@@ -22,9 +22,15 @@ do_action('woocommerce_before_lost_password_form');
     <div class="informed-header">
         <h2 class="text-center"><?php echo __('Reset Password', 'cabling') ?></h2>
     </div>
+
     <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
-        <p><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Lost your password? Please enter your email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine ?>
+        <p><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Lost your1 password? Please enter your email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine ?>
+        <?php if (isset($_REQUEST['error']) && $_REQUEST['error'] === 'request_too_much'): ?>
+            <div>
+                <div class="alert alert-danger woo-notice my-2 d-inline-block" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i><span><?php echo __('Too many requests recently. Please try again later.', 'woocommerce'); ?></span></div>
+            </div>
+        <?php endif ?>
 
         <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
             <label for="user_login"><?php esc_html_e('Email', 'woocommerce'); ?></label>
