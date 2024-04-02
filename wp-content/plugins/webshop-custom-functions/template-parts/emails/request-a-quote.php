@@ -6,7 +6,7 @@ $blogname = get_bloginfo('name');
 
 do_action('woocommerce_email_header', $email_heading, $email); ?>
 
-    <p><?php printf(esc_html__('Hi %1$s,', 'woocommerce'), esc_html(echo $data['first_name'] . ' ' . $data['last_name'])); ?></p>
+    <p><?php printf(esc_html__('Hi %1$s,', 'woocommerce'), esc_html($data['first_name'] . ' ' . $data['last_name'])); ?></p>
     <div class="quote-content">
         <h4><?php echo esc_html__('The details of quote:', 'woocommerce'); ?></h4>
         <p>

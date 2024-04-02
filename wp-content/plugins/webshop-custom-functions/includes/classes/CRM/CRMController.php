@@ -110,7 +110,7 @@ class CRMController
             $body = wp_remote_retrieve_body($response);
             $data = json_decode($body);
             debug_log('[CRM makeGetRequest SUCCESS]' . $url, $body);
-            if (count($data->d->results) > 0)
+            if (isset($data->d->results) && count($data->d->results) > 0)
                 return $data->d->results[0];
         }
         return [];

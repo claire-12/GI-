@@ -12,11 +12,13 @@ class CRMLead
     public function loadLead($data)
     {
         try {
-            $this->leadid = $data->ID;
-            $this->accountid = $data->AccountPartyID;
-            $this->leadparentobjectid = $data->ObjectID;
-            $this->status = $data->UserStatusCodeText;
-            $this->contactid = $data->ContactID;
+            if (isset($data->ID)) {
+                $this->leadid = $data->ID;
+                $this->accountid = $data->AccountPartyID;
+                $this->leadparentobjectid = $data->ObjectID;
+                $this->status = $data->UserStatusCodeText;
+                $this->contactid = $data->ContactID;
+            }
         } catch (Exception $e) {
         }
     }
@@ -105,17 +107,19 @@ class CRMLead
         $contact["ContactFirstName"] = $crmcontact->getFirstName();
         $contact["ContactLastName"] = $crmcontact->getLastName();
         $contact["ContactEMail"] = $crmcontact->email;
-	    $contact["ContactMobile"] = $crmcontact->mobile;
+        $contact["ContactMobile"] = $crmcontact->mobile;
         $contact["BusinessPartnerRelationshipBusinessPartnerFunctionTypeCode"] = $crmcontact->jobfunction;
 
         $contact["ContactFunctionalTitleName"] = $crmcontact->jobtitle;
 
-        $contact["Business_KUT"]= "141";    // Always send this 141 is GI
+        $contact["Business_KUT"] = "141";    // Always send this 141 is GI
         $contact["Segment"] = "GI";  // Always send
         $contact["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
 
         $contact["Note"] = $comments;
-        if(empty($prodofinterest)||($prodofinterest=="Array")){$prodofinterest="";}
+        if (empty($prodofinterest) || ($prodofinterest == "Array")) {
+            $prodofinterest = "";
+        }
         $contact["ProductofInterest_KUT"] = $prodofinterest;
         /*
         CHLOROPRENE RUBBER - CR (Neoprene™)
@@ -145,17 +149,15 @@ class CRMLead
 
 
         $rfq["Name"] = $crmsalesquote->getName();
-        
+
         //$rfq["Segment_KUT"]= "GI";
         //$rfq["LeadType_KUT"]= "105";
         $rfq["LeadLifecycle_KUT"] = "151"; // Sales quote lead
         //        $rfq["CompanySectorL1_KUT"] = "171"; // Sales quote lead
 
-        $rfq["Business_KUT"]= "141";    // Always send this 141 is GI
+        $rfq["Business_KUT"] = "141";    // Always send this 141 is GI
         $rfq["Segment"] = "GI";  // Always send
         $rfq["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
-
-
 
 
         $rfq["Company"] = $crmsalesquote->getCompany();
@@ -164,9 +166,9 @@ class CRMLead
         $rfq["ContactEMail"] = $crmsalesquote->getContactEmail();
         $rfq["ContactMobile"] = $crmsalesquote->getContactMobile();
 
-        $rfq["AccountPostalAddressElementsStreetName"]=$crmsalesquote->getStreet();
-        $rfq["AccountPostalAddressElementsHouseID"]=$crmsalesquote->getHouseNumber();
-        $rfq["AccountState"]=$crmsalesquote->getState();
+        $rfq["AccountPostalAddressElementsStreetName"] = $crmsalesquote->getStreet();
+        $rfq["AccountPostalAddressElementsHouseID"] = $crmsalesquote->getHouseNumber();
+        $rfq["AccountState"] = $crmsalesquote->getState();
 
         $rfq["ContactFunctionalTitleName"] = $crmsalesquote->getContactFunction();
         $rfq["BusinessPartnerRelationshipBusinessPartnerFunctionTypeCode"] = $crmsalesquote->getContactJobtitle();
@@ -180,19 +182,20 @@ class CRMLead
         $rfq["Quantity1Content_KUT"] = $product->quantity ?? "0";
         $rfq["Quantity1UnitCode_KUT"] = $product->quantitycode ?? "N/A";
 
-        $rfq["DesiredApplication_KUT"] = $product->application ?? "N/A";        
+        $rfq["DesiredApplication_KUT"] = $product->application ?? "N/A";
         /*
         Chemical Resistant
         Oil Resistant
         Water and Steam Resistan
         */
-        
-        try{
-            if($product->requiredby!=""){
-                $rfq["EndDate"] = date("Y-m-d",strtotime($product->requiredby))."T00:00:00";
-                $rfq["StartDate"] =date("Y-m-d")."T00:00:00";
+
+        try {
+            if ($product->requiredby != "") {
+                $rfq["EndDate"] = date("Y-m-d", strtotime($product->requiredby)) . "T00:00:00";
+                $rfq["StartDate"] = date("Y-m-d") . "T00:00:00";
             }
-        }catch(Exception $e){}
+        } catch (Exception $e) {
+        }
         /**
          * Diagram to check in doc
          */
@@ -374,9 +377,9 @@ class CRMLead
                     case "whatsapp":
                         $option = "ZWA";
                         break;
-		    default:
-			$option="INT";
-			break;
+                    default:
+                        $option = "INT";
+                        break;
                 }
                 array_push($lst, $option);
             }

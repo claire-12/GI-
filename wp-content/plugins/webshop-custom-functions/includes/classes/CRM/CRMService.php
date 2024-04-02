@@ -241,7 +241,7 @@ class CRMService
     {
         //$subject = sprintf(__('[%s] Request a quote', 'cabling'), get_bloginfo('name'));
         $subject = __('Datwyler Sealing Solutions: Confirming Your Request for Quotation', 'cabling');
-         
+
 
         $options = array(
             'subject' => $subject,
@@ -251,6 +251,7 @@ class CRMService
 
         GIEmail::send($email, $options);
     }
+
     private function notify_contact_customer(string $email, array $data)
     {
         $subject = __('Datwyler Sealing Solutions: Confirming Your Contact Us Request', 'cabling');
@@ -301,7 +302,7 @@ class CRMService
             $crm = new CRMController();
             $lead = $crm->getContactByUserEmail($user->data->user_email);
 
-            if (!empty($lead->ExternalID)){
+            if (!empty($lead->ExternalID)) {
                 update_user_meta($user->ID, 'sap_customer', $lead->ExternalID);
             }
         }
