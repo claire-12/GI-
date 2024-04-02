@@ -459,9 +459,10 @@ class CRMController
         ];*/
 
         $communicationOptions = [
-            "tel" => true,
+            "email" => true,
+            "tel" => false,
             "whatsapp" => false,
-            "sms" => false
+            "sms" => false,
         ];
 
         $lead = $this->createKMILead($CRMContact, $communicationOptions, $data['options']);

@@ -1022,6 +1022,8 @@ function cabling_get_api_ajax_callback()
 
             $oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
             $apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
+            //$oauthTokenUrl = 'https://oauthasservices-a3c9ce896.hana.ondemand.com/oauth2/api/v1/token';
+            //$apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
             $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
             $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
             $oauthClient = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
@@ -1110,6 +1112,11 @@ function cabling_get_api_ajax_callback()
                                 'Operator' => '',
                             )
                         );
+                        array_push($priceParams,array(
+                            'Field' => 'sapcustomer',
+                            'Value' => $sap_no,
+                            'Operator' => '',
+                        ));
                         $stockParams[] = array(
                             'Field' => 'sapmaterial',
                             'Value' => $sapmaterial,
