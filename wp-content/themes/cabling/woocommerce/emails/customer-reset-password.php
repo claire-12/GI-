@@ -24,7 +24,7 @@ $user = get_user_by( 'id', $user_id );
 <?php do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <?php /* translators: %s: Customer username */ ?>
-<p><?php printf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $user->display_name ) ); ?></p>
+<p><?php printf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $user->first_name . ' ' . $user->last_name ) ); ?></p>
 <p><?php esc_html_e( 'We’ve received a request to reset your Datwyler Sealing My Account password.', 'woocommerce' ); ?></p>
 <?php /* translators: %s: Customer username */ ?>
 <p><?php printf( esc_html__( 'Email: %s', 'woocommerce' ), esc_html( $user->user_email ) ); ?></p>

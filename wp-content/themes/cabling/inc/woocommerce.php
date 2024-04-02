@@ -2240,16 +2240,17 @@ function woocommerce_add_error_callback($message)
 add_action('lostpassword_post', 'gi_retrieve_password_callback', 10, 2);
 function gi_retrieve_password_callback($errors, $user_data)
 {
-    $key = sanitize_key($user_data->user_login . '_limit_password_reset');
-    $limit = get_transient($key);var_dump($limit);
-    if ($limit) {
-        $link = esc_url( add_query_arg( array( 'error' => 'request_too_much' ), wc_get_endpoint_url( 'lost-password', '', wc_get_page_permalink( 'myaccount' ) ) ) );
+    if (isset($user_data->user_login)) {
+        $key = sanitize_key($user_data->user_login . '_limit_password_reset');
+        $limit = get_transient($key);
+        if ($limit) {
+            $link = esc_url(add_query_arg(array('error' => 'request_too_much'), wc_get_endpoint_url('lost-password', '', wc_get_page_permalink('myaccount'))));
 
-        wp_redirect($link);
-        exit();
+            wp_redirect($link);
+            exit();
+        }
+        set_transient($key, true, 120);
     }
-    set_transient($key, true, 120);
-    return true;
 }
 
 add_filter('woocommerce_email_subject_customer_reset_password', 'gi_custom_reset_password_heading');
