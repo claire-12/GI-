@@ -95,6 +95,7 @@ class CRMService
             if (!empty($product)) {
                 $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
                 $posted_data['product'] = (string)$product;
+                $posted_data['brand'] = $this->getPageBrand();
 
                 if (is_user_logged_in()) {
                     $this->requestContactCRM($posted_data);
@@ -115,10 +116,10 @@ class CRMService
         try {
             $name_title = $quote['user_title'] ? get_name_title($quote['user_title']) : '0001';
             $product = get_product_of_interests($quote['product-of-interest']);
-            $brandId = get_field('brand');
+
             $quote['jobtitle'] = is_array($name_title) ? array_key_first($name_title) : $name_title;
             $quote['product'] = $product;
-            $quote['brand'] = 'N/A';
+            $quote['brand'] = $this->getPageBrand();
             $quote['application'] = $quote['o_ring']['desired-application'] ?? '';
             $quote['mobile'] = sprintf('+%s%s', $quote['billing_phone_code'], $quote['billing_phone']);
             if (!empty($quote['o_ring']['material'])) {
@@ -130,12 +131,6 @@ class CRMService
                 foreach ($filArray as $file) {
                     $filepath = wp_get_attachment_url($file);
                     $quote['file_path'][] = $filepath;
-                }
-            }
-            if (!empty($brandId)) {
-                $brand = get_term($brandId, 'product-brand');
-                if ($brand) {
-                    $quote['brand'] = $brand->slug;
                 }
             }
 
@@ -204,6 +199,7 @@ class CRMService
                     $data['options'] = array_merge($data['options'], $blog);
                 }
             }
+            $data['brand'] = $this->getPageBrand();
             $crm = new CRMController();
             $crm->processKMILeadCreation($data);
         } catch (Exception $e) {
@@ -306,6 +302,18 @@ class CRMService
                 update_user_meta($user->ID, 'sap_customer', $lead->ExternalID);
             }
         }
+    }
+
+    private function getPageBrand(): string
+    {
+        $brandId = get_field('brand');
+        if (!empty($brandId)) {
+            $brand = get_term($brandId, 'product-brand');
+            if ($brand) {
+                return $brand->slug;
+            }
+        }
+        return 'N/A';
     }
 
 }
