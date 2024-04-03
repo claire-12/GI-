@@ -23,7 +23,7 @@ $message_for_gdpr = str_replace('!!date!!', date('d/m/Y'), $message_for_gdpr);
 
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-<p><?php echo esc_html__( 'Hello – and thanks again for requesting access to Datwyler My Account. Still open', 'woocommerce' ) ?></p>
+<p><?php echo esc_html__( 'Hello – and thanks again for requesting access to Datwyler My Account.', 'woocommerce' ) ?></p>
 <p><?php printf( esc_html__( 'Please take a moment to confirm your request by clicking on the following link: %1$s', 'woocommerce' ), make_clickable( esc_url( $link_verify ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 <p><?php echo esc_html__( 'If you didn’t make this request, there’s no action needed -- please ignore this email.', 'woocommerce' ) ?></p>
 <p><?php echo esc_html__( 'Best regards,', 'woocommerce' ) ?></p>
