@@ -1112,11 +1112,11 @@ function cabling_get_api_ajax_callback()
                                 'Operator' => '',
                             )
                         );
-                        array_push($priceParams,array(
+                        $priceParams[] = array(
                             'Field' => 'sapcustomer',
                             'Value' => $sap_no,
                             'Operator' => '',
-                        ));
+                        );
                         $stockParams[] = array(
                             'Field' => 'sapmaterial',
                             'Value' => $sapmaterial,

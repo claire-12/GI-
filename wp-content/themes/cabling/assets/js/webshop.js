@@ -500,6 +500,38 @@
             }
         });
     }
+
+    $("#webservice-api-form").on('click', '[type=button]', function (event) {
+        const form = $(this).closest('form');
+        const sapMaterial = $('#parcomaterial').val();
+        const po_number = $('#ponumber').val();
+        const parco_material = $('#parcomaterial').val();
+        const parco_compound = $('#parcocompound').val();
+
+        $('.backlog-row').each(function () {
+            const that = $(this);
+            let is_show = true;
+            if (sapMaterial !== '' && !that.find(`[data-sapmaterial=${sapMaterial}]`).length){
+                is_show = false;
+            }
+            if (po_number !== '' && that.find(`[data-ponumber=${po_number}]`).length){
+                is_show = false;
+            }
+            if (parco_material !== '' && that.find(`[data-parcomaterial=${parco_material}]`).length){
+                is_show = false;
+            }
+            if (parco_compound !== '' && that.find(`[data-parcocompound=${parco_compound}]`).length){
+                is_show = false;
+            }
+
+            if (is_show){
+                that.show();
+            } else {
+                that.hide();
+            }
+        })
+    });
+    $("#webservice-api-form").trigger('submit');
 })(jQuery);
 
 function sortList(element, name, order) {
@@ -546,20 +578,23 @@ function setActiveCheckbox() {
 
 function showSingleTable(order) {
     const $ = jQuery.noConflict();
-    const table = $('tr.single-' + order);
-    const tableSingle = $('#table-order-detail');
+    const tableContent = $(`tr.single-${order}`);
+    const tablePODetails = $('#table-order-detail');
 
-    tableSingle.find('.table-heading span').html(order);
-    tableSingle.find('tbody').empty();
-    table.each(function () {
-        tableSingle.find('tbody').append(`<tr>${$(this).html()}</tr>`);
+    $(`.backlog-row`).removeClass('table-warning').show();
+    $(`.row-${order}`).addClass('table-warning');
+
+    tablePODetails.find('.table-heading span').html(order);
+    tablePODetails.find('tbody').empty();
+    tableContent.each(function () {
+        tablePODetails.find('tbody').append(`<tr>${$(this).html()}</tr>`);
     })
-    tableSingle.removeClass('hidden');
+    tablePODetails.removeClass('hidden');
 
 
     $('html, body').animate({
-        scrollTop: tableSingle.offset().top - 200
-    }, 'slow');
+        scrollTop: tablePODetails.offset().top - 200
+    }, 'fast');
 }
 
 function checkMyAccountNavigation() {

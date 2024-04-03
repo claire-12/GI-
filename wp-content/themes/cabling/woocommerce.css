@@ -999,6 +999,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     white-space: nowrap;
     vertical-align: middle;
 }
+.table > tbody .table-warning td {
+    background-color: var(--bs-table-bg);
+}
 td.ponumber {
     text-decoration: underline;
     cursor: pointer;

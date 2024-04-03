@@ -1,7 +1,7 @@
 <?php
 if (empty($data))
     return;
-
+usort($data, function ($a, $b) {return strtotime($a['ponumber']) - strtotime($b['ponumber']);});
 $backlogMainTable = array(
     'ponumber' => __('Number', 'cabling'),
     'customer_part_number' => __('Customer Part', 'cabling'),
@@ -17,7 +17,7 @@ $backlogSingleTable = array(
     'ordered_quantity' => __('Quantity Ordered', 'cabling'),
     'open_quantity' => __('Quantity Remaining', 'cabling'),
     'price_per_unit' => __('Price/Unit', 'cabling'),
-    'price_unit' => __('Price', 'cabling'),
+    'price_unit' => __('Units', 'cabling'),
     'remaining_value' => __('Remaining Value', 'cabling'),
     'due_date' => __('Due Date', 'cabling'),
     'lv_shipping_method' => __('Shipping Method', 'cabling'),
@@ -27,17 +27,23 @@ $backlogSingleTable = array(
     <h2 class="table-heading">Purchase orders</h2>
     <table class="table table-bordered text-center">
         <thead>
-            <tr>
-                <?php foreach ($backlogMainTable as $name): ?>
-                    <th><?php echo $name ?></th>
-                <?php endforeach ?>
-            </tr>
+        <tr>
+            <?php foreach ($backlogMainTable as $name): ?>
+                <th><?php echo $name ?></th>
+            <?php endforeach ?>
+        </tr>
         </thead>
         <tbody>
         <?php foreach ($data as $datum): ?>
-            <tr onclick="showSingleTable('<?php echo sanitize_title($datum['ponumber']) ?>')">
+            <tr class="backlog-row row-<?php echo sanitize_title($datum['ponumber']) ?>">
                 <?php foreach ($backlogMainTable as $key => $item): ?>
-                    <td class="<?php echo $key ?>"><?php echo show_value_from_api($key, $datum[$key]) ?></td>
+                    <td <?php echo ($key === 'ponumber') ? 'onclick="showSingleTable(\''. sanitize_title($datum[$key]) .'\')"' : '' ?>
+                        class="<?php echo $key ?>"
+                        data-name="<?php echo $key ?>"
+                        data-<?php echo $key ?>="<?php echo show_value_from_api($key, $datum[$key]) ?>"
+                    >
+                        <?php echo show_value_from_api($key, $datum[$key]) ?>
+                    </td>
                 <?php endforeach ?>
             </tr>
             <tr class="hidden single-<?php echo sanitize_title($datum['ponumber']) ?>">

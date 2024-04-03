@@ -481,7 +481,7 @@ function show_value_from_api($key, $value)
         return $dateTime->format("m/d/Y");
     }
 
-    if (str_contains($key, 'price')) {
+    if (str_contains($key, 'price') && $key !== 'price_unit') {
         return '$' . number_format($value, 2, '.', ' ');
     }
 
