@@ -395,6 +395,7 @@
         const sapMaterial = $('#sapMaterial');
         const parcoCompound = $('#parcocompound');
         const parcoMaterial = $('#parcomaterial');
+        const show_ponumber = $('input[name="show_ponumber"]').val();
 
         if ($('input[name=api_page]').val() === 'inventory' && parcoMaterial.val() === '' && sapMaterial.val() === '' && parcoCompound.val() === '') {
             $('.form-error-text').show();
@@ -421,10 +422,15 @@
             success: function (response) {
                 hideLoading();
                 if (response.success) {
-                    $('#api-results').html(response.data.data)
+                    $('#api-results').html(response.data.data);
+                    if (show_ponumber !== ''){
+                        showSingleTable(show_ponumber);
+                    }
                 } else {
                     $('#api-results').html("Nothing to show");
                 }
+
+                $('[name="show_ponumber"]').val('');
             },
             beforeSend: function () {
                 showLoading();
@@ -433,7 +439,18 @@
             .fail(function () {
                 console.log("error");
             });
+
         return false;
+    });
+
+    $('#api-results').on('click', 'td.ponumber', function (){
+        $('#sapMaterial1').val('');
+        $('#ponumber1').val('');
+        $('#parcomaterial1').val('');
+        $('#parcocompound1').val('');
+        $('[name="show_ponumber"]').val($(this).attr('data-ponumber'));
+
+        $('#webservice-api-form').submit();
     });
 
     $(document).on('change', '[name=filter-by]', function () {
@@ -501,12 +518,16 @@
         });
     }
 
-    $("#webservice-api-form").on('click', '[type=button]', function (event) {
-        const form = $(this).closest('form');
+    /*$("#webservice-api-form").on('click', '[type=button]', function () {
         const sapMaterial = $('#parcomaterial').val();
         const po_number = $('#ponumber').val();
         const parco_material = $('#parcomaterial').val();
         const parco_compound = $('#parcocompound').val();
+
+        if (sapMaterial === '' && po_number === '' && parco_material === '' && parco_compound === ''){
+            $(this).closest('form').submit();
+            return;
+        }
 
         $('.backlog-row').each(function () {
             const that = $(this);
@@ -530,8 +551,8 @@
                 that.hide();
             }
         })
-    });
-    $("#webservice-api-form").trigger('submit');
+    });*/
+    //$("#webservice-api-form").trigger('submit');
 })(jQuery);
 
 function sortList(element, name, order) {
