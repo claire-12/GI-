@@ -3774,3 +3774,6 @@ table.tablepress-id-52 tr .column-7 {
     left: 0;
     bottom: 0;
 }
+.wpcf7 form .wpcf7-response-output{
+    display: none;
+}

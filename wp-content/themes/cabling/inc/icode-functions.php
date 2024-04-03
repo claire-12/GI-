@@ -43,14 +43,14 @@ function cabling_add_theme_popup()
 {
     if (is_user_logged_in()) {
         get_template_part('template-parts/modal/popup', 'create-customer');
-    } else {
-        get_template_part('template-parts/modal/popup', 'login');
     }
     get_template_part('template-parts/loading');
     get_template_part('template-parts/sidebar', 'navigation');
     get_template_part('template-parts/modal/popup', 'customer');
     get_template_part('template-parts/modal/popup', 'email_share');
     get_template_part('template-parts/modal/popup', 'pdf');
+    get_template_part('template-parts/modal/popup', 'success');
+    get_template_part('template-parts/modal/popup', 'error');
 }
 
 add_action('wp_footer', 'cabling_add_theme_popup');
@@ -106,7 +106,7 @@ function cabling_process_register_form()
         } else {
             //wc_add_notice(sprintf(__('The email <strong>%s</strong> was registered, please try with others.', 'cabling'), $recipient), 'error');
             wc_add_notice(sprintf(__('We already have an account registered under %s . Please log in with the password linked to this  account.', 'cabling'), $recipient), 'error');
-            
+
         }
     }
 

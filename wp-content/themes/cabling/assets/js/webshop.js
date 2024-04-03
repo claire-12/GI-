@@ -423,7 +423,7 @@
                 hideLoading();
                 if (response.success) {
                     $('#api-results').html(response.data.data);
-                    if (show_ponumber !== ''){
+                    if (show_ponumber !== '') {
                         showSingleTable(show_ponumber);
                     }
                 } else {
@@ -443,7 +443,7 @@
         return false;
     });
 
-    $('#api-results').on('click', 'td.ponumber', function (){
+    $('#api-results').on('click', 'td.ponumber', function () {
         $('#sapMaterial1').val('');
         $('#ponumber1').val('');
         $('#parcomaterial1').val('');
@@ -464,7 +464,7 @@
             $(this).closest('form').submit();
         }
     })
-    if($("#infomation-form").length) {
+    if ($("#infomation-form").length) {
         $("#infomation-form").validate({
             errorElement: "span",
             errorPlacement: function (error, element) {
@@ -553,6 +553,17 @@
         })
     });*/
     //$("#webservice-api-form").trigger('submit');
+    const wpcf7Elm = document.querySelector('.wpcf7');
+
+    wpcf7Elm.addEventListener('wpcf7submit', function () {
+        openModal('modalSuccess');
+    }, false);
+    wpcf7Elm.addEventListener('wpcf7spam', function () {
+        openModal('modalError');
+    }, false);
+    wpcf7Elm.addEventListener('wpcf7invalid', function () {
+        openModal('modalError');
+    }, false);
 })(jQuery);
 
 function sortList(element, name, order) {
