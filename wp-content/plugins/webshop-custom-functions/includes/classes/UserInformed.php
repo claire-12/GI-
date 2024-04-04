@@ -490,7 +490,7 @@ class UserInformed
         $options = array(
             'link' => $verify_link,
             'subject' => $subject,
-            'template' => 'template-parts/emails/confirm.php',
+            'template' => 'template-parts/emails/confirm_kmi.php',
         );
 
         GIEmail::send($email, $options);
