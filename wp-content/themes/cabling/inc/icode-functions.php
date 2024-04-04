@@ -1532,12 +1532,31 @@ function custom_autofill_data($scanned_tag, $replace)
 
 add_filter('wpcf7_form_tag', 'custom_autofill_data', 10, 2);
 
-function add_xframe_options_header() {
-  header("X-Frame-Options: SAMEORIGIN");
+function add_xframe_options_header()
+{
+    header("X-Frame-Options: SAMEORIGIN");
 }
+
 add_action('send_headers', 'add_xframe_options_header');
 
-function add_csp_header() {
-  header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ;  connect-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ;  frame-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ; worker-src 'self' 'unsafe-inline';  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ; img-src 'self' *.gravatar.com https://cdn-cookieyes.com data:;  font-src 'self' https://fonts.gstatic.com data:  ");
+function add_csp_header()
+{
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ;  connect-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ;  frame-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ; worker-src 'self' 'unsafe-inline';  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ; img-src 'self' *.gravatar.com https://cdn-cookieyes.com data:;  font-src 'self' https://fonts.gstatic.com data:  ");
 }
+
 add_action('send_headers', 'add_csp_header');
+
+function is_user_logged_in_by_email(string $email): bool
+{
+    global $wpdb;
+
+    $query = $wpdb->prepare("
+            SELECT COUNT(*)
+            FROM $wpdb->users
+            WHERE user_email = %s
+        ", $email);
+
+    $count = $wpdb->get_var($query);
+
+    return $count > 0;
+}

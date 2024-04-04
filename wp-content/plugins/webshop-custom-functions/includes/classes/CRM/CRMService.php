@@ -145,7 +145,8 @@ class CRMService
                 }
             }
 
-            if (is_user_logged_in()) {
+            //if (is_user_logged_in()) {
+            if ( is_user_logged_in_by_email($quote['email']) ) {
                 if ($this->requestQuoteCRM($quote)) {
                     $success = true;
                 }
@@ -154,7 +155,7 @@ class CRMService
                 $success = true;
                 $this->send_confirm_email($quote['email'], $quote, 'request_quote');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
 
