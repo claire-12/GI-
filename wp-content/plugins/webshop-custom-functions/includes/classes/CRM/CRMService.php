@@ -145,8 +145,8 @@ class CRMService
                 }
             }
 
-            //if (is_user_logged_in()) {
-            if ( is_user_logged_in_by_email($quote['email']) ) {
+            if (is_user_logged_in()) {
+            //if ( is_user_logged_in_by_email($quote['email']) ) {
                 if ($this->requestQuoteCRM($quote)) {
                     $success = true;
                 }
@@ -252,6 +252,7 @@ class CRMService
             $options = array(
                 'link' => $verify_link,
                 'subject' => $subject,
+                'email' => $email,
                 'template' => 'template-parts/emails/confirm_request_quote.php',
             );
         } elseif ($type === 'contact') {
@@ -261,6 +262,7 @@ class CRMService
             $options = array(
                 'link' => $verify_link,
                 'subject' => $subject,
+                'email' => $email,
                 'template' => 'template-parts/emails/confirm_contact.php',
             );
         }

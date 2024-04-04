@@ -116,7 +116,8 @@ class UserInformed
             }
             $success = __('Subscription successfully!', 'cabling');
             $informedData = [];
-            if (is_user_logged_in_by_email($email)){
+            if (is_user_logged_in()){
+            //if (is_user_logged_in_by_email($email)){
                 $user = wp_get_current_user();
 
                 $email = $user->user_email;
@@ -145,8 +146,8 @@ class UserInformed
 
             if (!empty($data['informed_channel']['email']) && filter_var($email, FILTER_VALIDATE_EMAIL)){
                 self::update_informed_channel('email', $email, $data['category']);
-
-                if (!is_user_logged_in_by_email($email)) {
+                if (!is_user_logged_in()){
+                //if (!is_user_logged_in_by_email($email)) {
                     self::send_confirm_notification($email);
                     $is_sent_confirmed = true;
                 }
