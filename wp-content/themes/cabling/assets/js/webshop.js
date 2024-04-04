@@ -518,51 +518,25 @@
         });
     }
 
-    /*$("#webservice-api-form").on('click', '[type=button]', function () {
-        const sapMaterial = $('#parcomaterial').val();
-        const po_number = $('#ponumber').val();
-        const parco_material = $('#parcomaterial').val();
-        const parco_compound = $('#parcocompound').val();
 
-        if (sapMaterial === '' && po_number === '' && parco_material === '' && parco_compound === ''){
-            $(this).closest('form').submit();
-            return;
-        }
-
-        $('.backlog-row').each(function () {
-            const that = $(this);
-            let is_show = true;
-            if (sapMaterial !== '' && !that.find(`[data-sapmaterial=${sapMaterial}]`).length){
-                is_show = false;
-            }
-            if (po_number !== '' && that.find(`[data-ponumber=${po_number}]`).length){
-                is_show = false;
-            }
-            if (parco_material !== '' && that.find(`[data-parcomaterial=${parco_material}]`).length){
-                is_show = false;
-            }
-            if (parco_compound !== '' && that.find(`[data-parcocompound=${parco_compound}]`).length){
-                is_show = false;
-            }
-
-            if (is_show){
-                that.show();
-            } else {
-                that.hide();
-            }
-        })
-    });*/
-    //$("#webservice-api-form").trigger('submit');
     const wpcf7Elm = document.querySelector('.wpcf7');
 
-    wpcf7Elm.addEventListener('wpcf7submit', function () {
+    wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
         openModal('modalSuccess');
     }, false);
-    wpcf7Elm.addEventListener('wpcf7spam', function () {
+    wpcf7Elm.addEventListener('wpcf7spam', function (event) {
         openModal('modalError');
     }, false);
-    wpcf7Elm.addEventListener('wpcf7invalid', function () {
+    wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
         openModal('modalError');
+    }, false);
+    wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
+        openModal('modalError');
+    }, false);
+    wpcf7Elm.addEventListener('wpcf7submit', function (event) {
+        if (event.detail.status === 'wpcf7invalid') {
+            openModal('modalError');
+        }
     }, false);
 })(jQuery);
 
