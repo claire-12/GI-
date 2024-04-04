@@ -103,7 +103,6 @@ class CRMService
                         $lead = $this->requestContactCRM($posted_data);
                         $result['lead'] = $lead;
 
-                        wp_mail('michael.santos@infolabix.com', 'requestContactCRM', json_encode($lead));
                         if (empty($lead)) {
                             $result['status'] = 'wpcf7invalid';
                         }
@@ -246,13 +245,23 @@ class CRMService
             'type' => $type,
         ], home_url('/'));
 
-        $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+        if ($type === 'request_quote') {
+            $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+            $options = array(
+                'link' => $verify_link,
+                'subject' => $subject,
+                'template' => 'template-parts/emails/confirm_request_quote.php',
+            );
+        } elseif ($type === 'contact') {
 
-        $options = array(
-            'link' => $verify_link,
-            'subject' => $subject,
-            'template' => 'template-parts/emails/confirm.php',
-        );
+            $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+            $options = array(
+                'link' => $verify_link,
+                'subject' => $subject,
+                'template' => 'template-parts/emails/confirm_contact.php',
+            );
+        }
+
 
         GIEmail::send($email, $options);
     }
