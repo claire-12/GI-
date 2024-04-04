@@ -99,7 +99,7 @@ class CRMService
                     $posted_data['product'] = (string)$product;
                     $posted_data['brand'] = $this->getPageBrand();
 
-                    if ($this->userExistByEmail($posted_data['your-email'])) {
+                    if (is_user_logged_in()){
                         $lead = $this->requestContactCRM($posted_data);
                         $result['lead'] = $lead;
 
