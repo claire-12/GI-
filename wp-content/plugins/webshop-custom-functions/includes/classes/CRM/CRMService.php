@@ -246,7 +246,8 @@ class CRMService
         ], home_url('/'));
 
         if ($type === 'request_quote') {
-            $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+            //$subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+            $subject = __('Datwyler Sealing Solutions: Confirming Your Request for Quotation', 'cabling');
             $options = array(
                 'link' => $verify_link,
                 'subject' => $subject,
@@ -254,7 +255,8 @@ class CRMService
             );
         } elseif ($type === 'contact') {
 
-            $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+            //$subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+            $subject = __('Datwyler Sealing Solutions: Confirming Your Contact Us Request', 'cabling');
             $options = array(
                 'link' => $verify_link,
                 'subject' => $subject,
