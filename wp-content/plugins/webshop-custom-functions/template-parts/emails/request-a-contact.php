@@ -43,7 +43,7 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
         </p>
     </div>
 
-    <p><?php printf(esc_html__('Thanks for confirming your contact request. A member of the Datwyler team will be in touch with you promptly.','woocommerce')); ?></p>
+    <p><?php printf(esc_html__('Thanks for confirming your contact request.','woocommerce')); ?></p>
 	<p><?php printf(esc_html__('Best regards,','woocommerce')); ?></p>
 	<p><?php printf(esc_html__('Datwyler Sealing','woocommerce')); ?></p>
  
