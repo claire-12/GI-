@@ -224,7 +224,6 @@
                     }, 5000);
                 } else {
                     form.prepend(response.data);
-                    passwordElement.val('');
                 }
             },
             beforeSend: function () {

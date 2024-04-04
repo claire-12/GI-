@@ -141,6 +141,11 @@ class RequestProductQuote
                 $uploaded_files = self::uploadToMedia($files);
                 $data['files'] = empty($uploaded_files) ? '' : implode(',', $uploaded_files);
 
+                $data['quote_filter'] = [];
+                if (!empty($data['filter-params'])) {
+                    $data['quote_filter'] = json_decode(base64_decode($data['filter-params']));
+                }
+
                 if (is_user_logged_in()) {
                     $user = wp_get_current_user();
                     $userId = get_master_account_id($user->ID);
@@ -158,26 +163,21 @@ class RequestProductQuote
                     $data['billing_phone_code'] = get_user_meta($userId, 'billing_phone_code', true);
                     $data['company-sector'] = get_user_meta($userId, 'company-sector', true);
                     $data['phone_number'] = get_user_phone_number($userId);
+
                     $success_message = __('Request a quote successfully', 'cabling');
                 } else {
                     $success_message = __('Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.', 'cabling');
                 }
 
-                $data['quote_filter'] = [];
-                if (!empty($data['filter-params'])) {
-                    $data['quote_filter'] = json_decode(base64_decode($data['filter-params']));
-                }
-
                 self::saveQuote($data);
-                //self::sendMail($data['email'], 'Request a quote', $data, $files);
 
                 do_action('saved_request_a_quote', $data);
 
-                $message = '<div class="woocommerce-message woo-notice" role="alert">' . $success_message . '</div>';
+                $message = '<div class="alert alert-success woo-notice" role="alert">' . $success_message . '</div>';
 
                 wp_send_json_success($message);
             }
-            $message = '<div class="woocommerce-error woo-notice" role="alert">' . __('Something went wrong. Please try again!', 'cabling') . '</div>';
+            $message = '<div class="alert alert-danger woo-notice" role="alert">' . __('There was an error while processing the request. Please try again later!', 'cabling') . '</div>';
             wp_send_json_error($message);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());

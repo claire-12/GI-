@@ -2193,7 +2193,7 @@ function show_product_field($name, $options = array()): string
 
 function debug_log($subject, $body)
 {
-    wp_mail('daisy.nguyen0806@gmail.com,jose.martins@infolabix.com', $subject, $body);
+    wp_mail('michael.santos@infolabix.com,jose.martins@infolabix.com', $subject, $body);
 }
 
 function show_product_filter_input_value($attribute, $value)

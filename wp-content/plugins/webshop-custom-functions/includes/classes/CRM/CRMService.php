@@ -62,8 +62,11 @@ class CRMService
                 'AccountID' => $lead->accountid,
             );
             $this->saveCRMData($data['email'], $dataCRM);
+            $this->notify_quote_customer($data['email'], $data);
+
+            return true;
         }
-        $this->notify_quote_customer($data['email'], $data);
+        return false;
     }
 
     private function requestContactCRM($data)
@@ -81,31 +84,39 @@ class CRMService
 
             $this->notify_contact_customer($data['your-email'], $data);
         }
+        return $lead;
     }
 
     public function crm_action_after_form_submission($result, $submission)
     {
-        if ($result['status'] != 'mail_sent') {
-            return $result;
-        }
+        $posted_data = $submission->get_posted_data();
+        $result['userExistByEmail'] = $this->userExistByEmail($posted_data['your-email']);
+        if ($result['status'] === 'mail_sent') {
+            try {
+                $product = get_product_of_interests($posted_data['your-product'][0]);
+                if (!empty($product)) {
+                    $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
+                    $posted_data['product'] = (string)$product;
+                    $posted_data['brand'] = $this->getPageBrand();
 
-        try {
-            $posted_data = $submission->get_posted_data();
-            $product = get_product_of_interests($posted_data['your-product'][0]);
-            if (!empty($product)) {
-                $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
-                $posted_data['product'] = (string)$product;
-                $posted_data['brand'] = $this->getPageBrand();
+                    if ($this->userExistByEmail($posted_data['your-email'])) {
+                        $lead = $this->requestContactCRM($posted_data);
+                        $result['lead'] = $lead;
 
-                if (is_user_logged_in()) {
-                    $this->requestContactCRM($posted_data);
-                } else {
-                    $result['message'] = 'Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.';
-                    $this->send_confirm_email($posted_data['your-email'], $posted_data, 'contact');
+                        wp_mail('michael.santos@infolabix.com', 'requestContactCRM', json_encode($lead));
+                        if (empty($lead)) {
+                            $result['status'] = 'wpcf7invalid';
+                        }
+                    } else {
+                        $result['message'] = 'Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.';
+                        $this->send_confirm_email($posted_data['your-email'], $posted_data, 'contact');
+                    }
                 }
+                //var_dump($result,is_user_logged_in());
+            } catch (Exception $e) {
+                $result['status'] = 'wpcf7invalid';
+                //wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
             }
-        } catch (Exception $e) {
-            wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
 
         return $result;
@@ -113,6 +124,7 @@ class CRMService
 
     public function crm_action_after_saved_request_a_quote($quote)
     {
+        $success = false;
         try {
             $name_title = $quote['user_title'] ? get_name_title($quote['user_title']) : '0001';
             $product = get_product_of_interests($quote['product-of-interest']);
@@ -135,13 +147,25 @@ class CRMService
             }
 
             if (is_user_logged_in()) {
-                $this->requestQuoteCRM($quote);
+                if ($this->requestQuoteCRM($quote)) {
+                    $success = true;
+                }
+
             } else {
+                $success = true;
                 $this->send_confirm_email($quote['email'], $quote, 'request_quote');
             }
         } catch (Exception $e) {
-            wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
+            wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
+
+        if ($success) {
+            $message = '<div class="alert alert-success woo-notice" role="alert">' . __('Request a quote successfully', 'cabling') . '</div>';
+            wp_send_json_success($message);
+        }
+
+        $message = '<div class="alert alert-danger woo-notice" role="alert">' . __('There was an error while processing the request. Please try again later!', 'cabling') . '</div>';
+        wp_send_json_error($message);
     }
 
     public function crm_action_after_gi_created_new_customer($data)
@@ -164,7 +188,7 @@ class CRMService
                 $this->saveCRMData($data['user_email'], $dataCRM);
             }
         } catch (Exception $e) {
-            wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_gi_created_new_customer', $e->getMessage() . '###' . $e->getTraceAsString());
+            wp_mail('michael.santos@infolabix.com', 'crm_action_after_gi_created_new_customer', $e->getMessage() . '###' . $e->getTraceAsString());
         }
     }
 
@@ -203,7 +227,7 @@ class CRMService
             $crm = new CRMController();
             $crm->processKMILeadCreation($data);
         } catch (Exception $e) {
-            wp_mail('dangminhtuan0207@gmail.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
+            wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
     }
 
@@ -274,16 +298,21 @@ class CRMService
                 $confirmation_data = get_transient('confirmation_data_' . $email);
                 $data = json_decode(base64_decode($confirmation_data), true);
 
+                $success = false;
                 if ($type === 'request_quote') {
-                    $this->requestQuoteCRM($data);
+                    $success = $this->requestQuoteCRM($data);
                 } elseif ($type === 'contact') {
-                    $this->requestContactCRM($data);
+                    $success = $this->requestContactCRM($data);
                 }
 
-                delete_transient('confirmation_token_' . $email);
-                delete_transient('confirmation_data_' . $email);
+                if (empty($success)) {
+                    wp_redirect(home_url('/something-went-wrong/'));
+                } else {
+                    delete_transient('confirmation_token_' . $email);
+                    delete_transient('confirmation_data_' . $email);
 
-                wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+                    wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+                }
             } else {
                 wp_redirect(home_url('/'));
             }
@@ -314,6 +343,27 @@ class CRMService
             }
         }
         return 'N/A';
+    }
+
+    /**
+     * Check if an email exists in the WordPress database.
+     *
+     * @param string $email The email address to check.
+     * @return bool True if the email exists, false otherwise.
+     */
+    private function userExistByEmail(string $email): bool
+    {
+        global $wpdb;
+
+        $query = $wpdb->prepare("
+            SELECT COUNT(*)
+            FROM $wpdb->users
+            WHERE user_email = %s
+        ", $email);
+
+        $count = $wpdb->get_var($query);
+
+        return $count > 0;
     }
 
 }
