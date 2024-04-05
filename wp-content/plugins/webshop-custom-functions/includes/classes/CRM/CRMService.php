@@ -160,7 +160,8 @@ class CRMService
         }
 
         if ($success) {
-            $message = '<div class="alert alert-success woo-notice" role="alert">' . __('Request a quote successfully', 'cabling') . '</div>';
+            //$message = '<div class="alert alert-success woo-notice" role="alert">' . __('Request a quote successfully', 'cabling') . '</div>';
+            $message = '<div class="alert alert-success woo-notice" role="alert">' . __('Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.', 'cabling') . '</div>';
             wp_send_json_success($message);
         }
 
@@ -324,8 +325,11 @@ class CRMService
                 } else {
                     delete_transient('confirmation_token_' . $email);
                     delete_transient('confirmation_data_' . $email);
-
-                    wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+					if ($type === 'request_quote') {
+						wp_redirect(home_url('/confirm-quote/'));
+					}else{
+						wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+					}
                 }
             } else {
                 wp_redirect(home_url('/'));

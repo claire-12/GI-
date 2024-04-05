@@ -486,7 +486,9 @@ class UserInformed
                 'verify_informed' => base64_encode($email),
         ], home_url('/'));
 
-        $subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+        //$subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
+        $subject = __('Datwyler Sealing Solutions: Confirming Your Keep Me Informed Request', 'cabling');
+        
 
         $options = array(
             'link' => $verify_link,
@@ -507,11 +509,12 @@ class UserInformed
             if ($transient_token && $transient_token === $token) {
                 update_option($key, 'yes');
 
-                self::send_notification($email);
+                //self::send_notification($email);
 
                 do_action('saved_user_confirm_keep_informed', ['email' => $email]);
 
-                wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+                //wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+                wp_redirect(home_url('/contact-kmi-confirmed/'));
             } else {
                 wp_redirect(home_url('/'));
             }

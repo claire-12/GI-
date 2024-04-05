@@ -77,16 +77,19 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <h2><?php esc_html_e('New User', 'woocommerce'); ?></h2>
         <form method="POST" name="register-form" id="register-form">
             <p class="sub-heading">
-                <span><?php esc_html_e('Register for an account today to gain access to these Datwyler benefits:', 'woocommerce'); ?></span>
+                <!--<span><?php esc_html_e('Register for an account today to gain access to these Dawyler benefits:', 'woocommerce'); ?></span>-->
+				<span><?php esc_html_e('Already have an account with Datwyler’s Parco brand? Then register today to access more info on Datwyler’s Parco products and manage your Parco product transactions:', 'woocommerce'); ?></span>
             <ul>
+                <li>Datwyler Sealing News</li>
+                <li style="break-inside: avoid-column;">More info on Datwyler Parco products, including inventory, lead times, pricing, as well as your Parco transactions</li>
                 <!--
                 <li>Save and retrieve quotes</li>
                 <li>Personalised offers and news</li>
-                <li>Test reports</li>-->
+                <li>Test reports</li>
                 <li>Datwyler Sealing News</li>
                 <li>Shipments</li>
                 <li>Sales backlog</li>
-                <li>Inventory, Lead time & Pricing</li>
+                <li>Inventory, Lead time & Pricing</li>-->
             </ul>
             </p>
 

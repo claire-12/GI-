@@ -183,7 +183,7 @@
 
                 setTimeout(() => {
                     window.location.reload();
-                }, 5000)
+                }, 10000)
             },
             beforeSend: function () {
                 showLoading();
@@ -221,7 +221,7 @@
                     form.html(response.data);
                     setTimeout(function () {
                         window.location.reload();
-                    }, 5000);
+                    }, 10000);
                 } else {
                     form.prepend(response.data);
                 }

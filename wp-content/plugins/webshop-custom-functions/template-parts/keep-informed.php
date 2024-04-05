@@ -58,9 +58,9 @@
         <?php endif; ?>
     </div>
 <?php }?>
-    <h4 class="informed-heading-contact text-center pre-heading heading-center"><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h4>
+    <!--<h4 class="informed-heading-contact text-center pre-heading heading-center"><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h4>-->
     <div class="informed-contact informed-categories">
-        <h5><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h5>
+<!--        <h5><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h5>-->
         <div class="form-check">
             <input class="form-check-input" name="informed_channel[email]" type="checkbox" checked="checked"
                 <?php echo 'style="display:none"' //echo empty($channel['email']) ? '' : ' checked="checked" ' ?>
@@ -123,8 +123,11 @@ readonly>
                 <label for="agree-term-condition">
                     <input type="checkbox" name="agree-term-condition" id="agree-term-condition" required>
                     <?php //printf( __('I\'ve read and accept the %s.', 'cabling'),'<a target="_blank" href="' . home_url("/contact/general-terms-and-conditions/") . '">' . __("Terms & Conditions", "cabling") . '</a>')
-			printf(  __('I would like to receive sales and marketing information from Datwyler Switzerland Inc. and its affiliates, based on my personal interests. I give my consent to the processing of my data as described in the terms and conditions %s.', 'cabling'),
+			//printf(  __('I would like to receive sales and marketing information from Datwyler Switzerland Inc. and its affiliates, based on my personal interests. I give my consent to the processing of my data as described in the terms and conditions %s.', 'cabling'),'<a target="_blank" href="' . home_url("/privacy") . '">' . __("here", "cabling") . '</a>')
+			printf(  __('Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your preference at any time in your account settings or by contacting Datwyler at suso.ont.sales@datwyler.com . Datwyler shall process your personal data in accordance with its privacy notice, which can be found %s.', 'cabling'),
                         '<a target="_blank" href="' . home_url("/privacy") . '">' . __("here", "cabling") . '</a>')
+						
+						
 ?>
                 </label>
             </div>
@@ -138,7 +141,7 @@ readonly>
     <div class="mb-3 informed-submit">
         <?php wp_nonce_field('setting-account-action') ?>
         <div class="btn-submit wp-block-button block-button-black">
-            <button type="submit" class="wp-element-button"><?php _e('Save Settings', 'cabling'); ?></button>
+            <button type="submit" class="wp-element-button"><?php _e('Confirm', 'cabling'); ?></button>
         </div><!--
 
         <button type="button" class="btn btn-secondary btn-closed" data-bs-dismiss="modal">Close</button>-->

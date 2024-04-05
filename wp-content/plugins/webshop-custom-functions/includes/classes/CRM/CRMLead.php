@@ -462,6 +462,8 @@ class CRMLead
             case "whatsapp":
                 $option = "ZWA";
                 break;
+            default:
+                $option = "INT";
         }
         $item = ["CommunicationMediumTypeCode" => $option, "MarketingPermissionCode" => ((int)$subscribe) == 0 ? "2" : "1"];
         return $item;

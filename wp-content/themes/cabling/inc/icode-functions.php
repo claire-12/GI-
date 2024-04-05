@@ -1523,7 +1523,7 @@ function custom_autofill_data($scanned_tag, $replace)
             break;
         case 'your-product':
             $scanned_tag['raw_values'] = CRMConstant::PRODUCT;
-            $scanned_tag['values'] = CRMConstant::PRODUCT;
+            //$scanned_tag['values'] = CRMConstant::PRODUCT;
             break;
     }
 

@@ -3777,3 +3777,10 @@ table.tablepress-id-52 tr .column-7 {
 .wpcf7 form .wpcf7-response-output{
     display: none;
 }
+
+.confirm-msg
+{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 100px;
+}
