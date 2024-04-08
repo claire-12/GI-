@@ -168,7 +168,7 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                         <!-- JM 20231002 changed target new -->
                         <?php //printf(__('By clicking "Register Now" you accept the %s and %s', 'cabling'), $term_link, $policy_link) ?>
 						<input type="checkbox" name="agree-term-condition" id="agree-term-condition" required style="opacity:1;">
-						<?php printf(__('Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your quote request and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found %s'), $policy_link) ?>
+						<?php printf(__('Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your request to access My Account and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found %s'), $policy_link) ?>
                     </label>
                 </div>
                 <div class="text-center mb-5">

@@ -2257,6 +2257,6 @@ add_filter('woocommerce_email_subject_customer_reset_password', 'gi_custom_reset
 add_filter('woocommerce_email_heading_customer_reset_password', 'gi_custom_reset_password_heading');
 function gi_custom_reset_password_heading($title)
 {
-    $title = __('Datwyler Sealing: Password Reset Request', 'cabling');
+    $title = __('Datwyler Sealing Solutions: Password Reset Request', 'cabling');
     return $title;
 }

@@ -35,7 +35,7 @@ $user = get_user_by( 'id', $user_id );
 	</a>
 </p>
 <p><?php esc_html_e( 'Best regards,', 'woocommerce' ); ?></p>
-<p><?php esc_html_e( 'Datwyler Sealing', 'woocommerce' ); ?></p>
+<p><?php esc_html_e( 'Datwyler Sealing Solutions', 'woocommerce' ); ?></p>
 
 <?php
 /**

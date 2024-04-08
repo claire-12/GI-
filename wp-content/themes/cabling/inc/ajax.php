@@ -177,7 +177,7 @@ function cabling_register_account_ajax_callback()
         $mailer = WC()->mailer();
         $mailer->recipient = $recipient;
         $type = 'emails/confirm_create_account.php';
-        $subject = __("Datwyler Sealing: Confirming Your My Account Opening Request", 'cabling');
+        $subject = __("Datwyler Sealing Solutions: Confirming Your My Account Opening Request", 'cabling');
         $content = cabling_get_custom_email_html($verify_link, $subject, $mailer, $type);
         $headers = "Content-Type: text/html\r\n";
 

@@ -377,7 +377,7 @@
                 <div class="form-check d-inline-block">
                     <input class="form-check-input" type="checkbox" id="share-my-data" value="yes" required>
                     <label class="form-check-label ms-2" for="share-my-data">
-                        Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your preference at any time in your account settings or by contacting Datwyler at suso.ont.sales@datwyler.com . Datwyler shall process your personal data in accordance with its privacy notice, which can be found <a target="_blank"
+                         Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your quote request and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found <a target="_blank"
                                                                     href="<?php echo home_url('/privacy') ?>">here</a>.
                     </label>
                     <!--                    <label class="form-check-label ms-2" for="share-my-data">
