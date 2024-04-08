@@ -463,6 +463,50 @@
             "append": ""
         },
         {
+            "key": "field_6613c71a8f004",
+            "label": "Min Temperature  Range, °F",
+            "name": "product_min_temp",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6613c79a8f005",
+            "label": "Max Temperature  Range, °F",
+            "name": "product_max_temp",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_655f1092564eb",
             "label": "Properties",
             "name": "",
@@ -669,5 +713,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710317911
+    "modified": 1712572334
 }
