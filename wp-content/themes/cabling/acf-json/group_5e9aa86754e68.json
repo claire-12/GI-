@@ -41,6 +41,50 @@
             "append": ""
         },
         {
+            "key": "field_6614c69bcb0b4",
+            "label": "Min temp",
+            "name": "product_min_temp",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6614c6bacb0b5",
+            "label": "Max Temp",
+            "name": "product_max_temp",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_65767f0e49844",
             "label": "Nominal Size",
             "name": "",
@@ -728,5 +772,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708659987
+    "modified": 1712637648
 }

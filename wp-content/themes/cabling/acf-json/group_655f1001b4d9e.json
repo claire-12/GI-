@@ -465,9 +465,9 @@
         {
             "key": "field_6613c71a8f004",
             "label": "Min Temperature  Range, °F",
-            "name": "product_min_temp",
+            "name": "product_min",
             "aria-label": "",
-            "type": "number",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -476,20 +476,28 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
+            "choices": {
+                "-250° F or less": "-250° F or less",
+                "-249° F to -100° F": "-249° F to -100° F",
+                "-99° F to -50° F": "-99° F to -50° F",
+                "-49° F to 0° F": "-49° F to 0° F",
+                "Greater than 0° F": "Greater than 0° F",
+                "Not Rated": "Not Rated"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_6613c79a8f005",
             "label": "Max Temperature  Range, °F",
-            "name": "product_max_temp",
+            "name": "product_max",
             "aria-label": "",
-            "type": "number",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -498,13 +506,21 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
+            "choices": {
+                "Less than 250° F": "Less than 250° F",
+                "250° F to 299° F": "250° F to 299° F",
+                "300° F to 399° F": "300° F to 399° F",
+                "400° F to 499° F": "400° F to 499° F",
+                "500° F or greater": "500° F or greater",
+                "Not Rated": "Not Rated"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_655f1092564eb",
@@ -713,5 +729,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712572334
+    "modified": 1712637668
 }
