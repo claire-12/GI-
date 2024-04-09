@@ -97,7 +97,7 @@ class CRMService
                 if (!empty($product)) {
                     $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
                     $posted_data['product'] = (string)$product;
-                    $posted_data['brand'] = $this->getPageBrand();
+                    //$posted_data['brand'] = $this->getPageBrand();
 
                     if (is_user_logged_in()){
                         $lead = $this->requestContactCRM($posted_data);
@@ -130,7 +130,7 @@ class CRMService
 
             $quote['jobtitle'] = is_array($name_title) ? array_key_first($name_title) : $name_title;
             $quote['product'] = $product;
-            $quote['brand'] = $this->getPageBrand();
+            $quote['brand'] = $this->getPageBrand($quote['brandId']);
             $quote['application'] = $quote['o_ring']['desired-application'] ?? '';
             $quote['mobile'] = sprintf('+%s%s', $quote['billing_phone_code'], $quote['billing_phone']);
             if (!empty($quote['o_ring']['material'])) {
@@ -146,7 +146,6 @@ class CRMService
             }
 
             if (is_user_logged_in()) {
-            //if ( is_user_logged_in_by_email($quote['email']) ) {
                 if ($this->requestQuoteCRM($quote)) {
                     $success = true;
                 }
@@ -159,8 +158,7 @@ class CRMService
             wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
         }
 
-        if ($success) {
-            //$message = '<div class="alert alert-success woo-notice" role="alert">' . __('Request a quote successfully', 'cabling') . '</div>';
+        if ($success) {            //$message = '<div class="alert alert-success woo-notice" role="alert">' . __('Request a quote successfully', 'cabling') . '</div>';
             $message = '<div class="alert alert-success woo-notice" role="alert">' . __('Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.', 'cabling') . '</div>';
             wp_send_json_success($message);
         }
@@ -224,7 +222,7 @@ class CRMService
                     $data['options'] = array_merge($data['options'], $blog);
                 }
             }
-            $data['brand'] = $this->getPageBrand();
+            $data['brand'] = $this->getPageBrand($data['brandId']);
             $crm = new CRMController();
             $crm->processKMILeadCreation($data);
         } catch (Exception $e) {
@@ -351,9 +349,9 @@ class CRMService
         }
     }
 
-    private function getPageBrand(): string
+    private function getPageBrand($pageId): string
     {
-        $brandId = get_field('brand');
+        $brandId = get_field('brand', $pageId);
         if (!empty($brandId)) {
             $brand = get_term($brandId, 'product-brand');
             if ($brand) {

@@ -520,24 +520,25 @@
 
 
     const wpcf7Elm = document.querySelector('.wpcf7');
-
-    wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
-        openModal('modalSuccess');
-    }, false);
-    wpcf7Elm.addEventListener('wpcf7spam', function (event) {
-        openModal('modalError');
-    }, false);
-    wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
-        openModal('modalError');
-    }, false);
-    wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
-        openModal('modalError');
-    }, false);
-    wpcf7Elm.addEventListener('wpcf7submit', function (event) {
-        if (event.detail.status === 'wpcf7invalid') {
+    if (wpcf7Elm) {
+        wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
+            openModal('modalSuccess');
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7spam', function (event) {
             openModal('modalError');
-        }
-    }, false);
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
+            openModal('modalError');
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
+            openModal('modalError');
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7submit', function (event) {
+            if (event.detail.status === 'wpcf7invalid') {
+                openModal('modalError');
+            }
+        }, false);
+    }
 })(jQuery);
 
 function sortList(element, name, order) {
