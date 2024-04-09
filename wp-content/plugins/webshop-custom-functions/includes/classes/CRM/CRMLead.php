@@ -232,10 +232,14 @@ class CRMLead
 
         //$rfq["OwnerPartyID"] = "8000000770";  // no brand defined by default
         $rfq["OwnerPartyID"] = "";  // no brand defined by default
+        if($rfq["OwnerPartyID"]==""&& $product->product=="005"){
+            $rfq["OwnerPartyID"]='parco';
+        }
         if ($crmsalesquote->getBrand() != "") {
             switch (strtolower($crmsalesquote->getBrand())) {
                 case "tst":
                     $rfq["OwnerPartyID"] = "8000000820";  // TST
+                    $rfq["OwnerPartyID"] = "8000000734";  // TST
                     break;
                 case "parco":
                     $rfq["OwnerPartyID"] = "8000000821";  // PARCO
@@ -244,7 +248,8 @@ class CRMLead
                     $rfq["OwnerPartyID"] = "8000000822";  // Double E
                     break;
                 case "olympian":
-                    $rfq["OwnerPartyID"] = "8000000823";  // Olympian
+                    //$rfq["OwnerPartyID"] = "8000000823";  // Olympian
+                    $rfq["OwnerPartyID"] = "8000000732";  // Olympian
                     break;
             }
         }
