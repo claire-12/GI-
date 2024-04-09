@@ -238,7 +238,7 @@ class CRMLead
         if ($crmsalesquote->getBrand() != "") {
             switch (strtolower($crmsalesquote->getBrand())) {
                 case "tst":
-                    $rfq["OwnerPartyID"] = "8000000820";  // TST
+                    //$rfq["OwnerPartyID"] = "8000000820";  // TST
                     $rfq["OwnerPartyID"] = "8000000734";  // TST
                     break;
                 case "parco":
