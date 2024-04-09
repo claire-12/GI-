@@ -48,6 +48,7 @@ function webshop_enqueue_scripts()
     $cabling_nonce = wp_create_nonce('cabling-ajax-nonce');
     wp_localize_script('webshop-cuz', 'CABLING', array(
         'ajax_url' => admin_url('admin-ajax.php'),
+        'crm' => get_the_ID(),
         'nonce' => $cabling_nonce,
     ));
 }

@@ -116,8 +116,8 @@ class UserInformed
             }
             $success = __('Subscription successfully!', 'cabling');
             $informedData = [];
+            $informedData['brandId'] = $_REQUEST['brandId'] ?? 0;
             if (is_user_logged_in()){
-            //if (is_user_logged_in_by_email($email)){
                 $user = wp_get_current_user();
 
                 $email = $user->user_email;
@@ -147,7 +147,6 @@ class UserInformed
             if (!empty($data['informed_channel']['email']) && filter_var($email, FILTER_VALIDATE_EMAIL)){
                 self::update_informed_channel('email', $email, $data['category']);
                 if (!is_user_logged_in()){
-                //if (!is_user_logged_in_by_email($email)) {
                     self::send_confirm_notification($email);
                     $is_sent_confirmed = true;
                 }
@@ -486,9 +485,8 @@ class UserInformed
                 'verify_informed' => base64_encode($email),
         ], home_url('/'));
 
-        //$subject = sprintf(__('[%s] Confirmation: Please Confirm Your Email', 'cabling'), get_bloginfo('name'));
         $subject = __('Datwyler Sealing Solutions: Confirming Your Keep Me Informed Request', 'cabling');
-        
+
 
         $options = array(
             'link' => $verify_link,
