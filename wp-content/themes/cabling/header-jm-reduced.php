@@ -17,10 +17,10 @@
         <div class="site-branding_jm_reduced">
             <div class="container">
                 <div class="row" style="top:39px;">
-                    <div class="col-sm-3">
+                    <div class="col-8 col-sm-3">
                         <?php the_custom_logo(); ?>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-4 col-sm-9 d-flex align-items-center">
                         <?php echo get_template_part('/template-parts/header', 'right_jm_reduced') ?>
                     </div>
                 </div>

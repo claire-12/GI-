@@ -60,7 +60,7 @@
         padding-right: 42%;
     }
 
-    .top-navigation {
+    .top-navigation, .header-right > .top-navigation_jm, .main-navigation_jm{
         display: none !important;
     }
 
@@ -98,6 +98,9 @@
 }
 
 @media screen and (max-width: 992px) {
+     .footer-right {
+        padding: 1rem;
+    }
     .flickity-prev-next-button {
         display: none
     }

@@ -16,7 +16,7 @@
 		<div class="footer-top">
 			<div class="container">
 			    <div class="row">
-			        <div class="col-md-6 col-xs-12">
+			        <div class="col-lg-6 col-xs-12">
                         <?php if (is_active_sidebar( 'footer-2' ) ): ?>
 			            	<?php dynamic_sidebar('footer-2'); ?>
 			            <?php endif ?>
@@ -28,7 +28,7 @@
                         </div>
 			        </div><!--.col-->
 
-			        <div class="col-md-6 col-xs-12 footer-right">
+			        <div class="col-lg-6 col-xs-12 footer-right">
                         <div class="footer-social">
                             <div class="datwyler-mobility">
                                 <h5><a href="https://datwyler.com/" target="_blank"><?php echo __('Datwyler Group', 'cabling') ?></a></h5>
