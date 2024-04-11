@@ -116,19 +116,13 @@ class CRMController
         return [];
     }
 
-    private function getAccount($accountid)
+    public function getAccount($accountid)
     {
         // $client = new Client(); //GuzzleHttp\Client
         $url = $this->baseURL . "CorporateAccountCollection";
         $url = $url . '?$filter=AccountID eq \'' . $accountid . '\'';
         $url = $url . '&$format=json';
-        /*$response = $client->request('GET', $url, [
-            'headers' => $this->createGetHeader(),
-        ]);
-        $str = json_decode($response->getBody()->read($response->getBody()->getSize()));
-        if (count($str->d->results) > 0)
-            return $str->d->results[0];
-        return [];*/
+
         $response = $this->makeGetRequest($url);
 
         return $response;

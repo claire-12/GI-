@@ -342,9 +342,11 @@ class CRMService
         if (empty($sapNumber)) {
             $crm = new CRMController();
             $lead = $crm->getContactByUserEmail($user->data->user_email);
+            $leadaccoutncoll=$crm->getAccount($lead->AccountID);
+            //AccountID
 
-            if (!empty($lead->ExternalID)) {
-                update_user_meta($user->ID, 'sap_customer', $lead->ExternalID);
+            if (!empty($leadaccoutncoll->ExternalID)) {
+                update_user_meta($user->ID, 'sap_customer', $leadaccoutncoll->ExternalID);
             }
         }
     }
