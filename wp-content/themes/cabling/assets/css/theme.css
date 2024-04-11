@@ -55,10 +55,11 @@ input[type="text"]:disabled {
 .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     /*max-width: 77.5rem;*/
     max-width: 95vw;
+}
+.site-main > .container {
     padding-left: 2rem;
     padding-right: 2rem;
 }
-
 .box-column a .bottom_link {
     background-color: var(--main-blue-color);
     color: #fff;
