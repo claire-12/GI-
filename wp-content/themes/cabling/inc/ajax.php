@@ -916,11 +916,11 @@ function cabling_get_products_ajax_callback()
                 if (!empty($data['attributes'])) {
                     $isSizeFilter = checkFilterHasSize($data['attributes']);
                     //$product_compound = [];
-                    if (!empty($data['attributes']['product_compound'])) {
-                        $certifications = $data['attributes']['product_compound'];
+                    if (!empty($data['attributes']['product_compound_certification'])) {
+                        $certifications = $data['attributes']['product_compound_certification'];
                         $data['attributes']['compound_certification'] = array_shift($certifications);
-                        $compounds = get_compound_product($data['attributes']['product_compound']);
-                        $data['attributes']['product_compound'] = $compounds;
+                        $compounds = get_compound_product($data['attributes']['product_compound_certification']);
+                        $data['attributes']['product_compound_certification'] = $compounds;
                     }
 
                     $product_ids = search_product_by_meta($data['attributes']);
@@ -987,11 +987,11 @@ function cabling_get_products_ajax_callback()
             //we will get the meta-value of all product filters, and filter all options in the product filter
             if (!empty($data['attributes'])) {
                 $resultMetas = get_available_attributes($product_ids);
-                if (empty($resultMetas['product_compound']) && !empty($data['attributes']['compound_certification'])) {
-                    $resultMetas['product_compound'] = $data['attributes']['compound_certification'];
+                if (empty($resultMetas['product_compound_certification']) && !empty($data['attributes']['compound_certification'])) {
+                    $resultMetas['product_compound_certification'] = $data['attributes']['compound_certification'];
                 } else {
                     $productCompoundCertification = get_term_ids_by_attributes($product_ids, 'compound_certification');
-                    $resultMetas['product_compound'] = $productCompoundCertification;
+                    $resultMetas['product_compound_certification'] = $productCompoundCertification;
                 }
             }
             wp_send_json_success([

@@ -19,7 +19,7 @@ $history = isset($_REQUEST['data-history']) ? json_decode(base64_decode($_REQUES
                    value="<?php echo $_REQUEST['material']; ?>">
         <?php endif ?>
         <?php if (!empty($history['attributes'])): ?>
-            <?php foreach($history['attributes'] as $pre_key => $pre_value): ?>
+            <?php foreach ($history['attributes'] as $pre_key => $pre_value): ?>
                 <input type="hidden" class="pre_filter" data-action="<?php echo $pre_key ?>"
                        value="<?php echo $pre_value[0] ?? ''; ?>">
             <?php endforeach; ?>
@@ -345,7 +345,7 @@ $history = isset($_REQUEST['data-history']) ? json_decode(base64_decode($_REQUES
                                 </div>
                             </div>
                         </div>-->
-						<!-- JM 20240313 Changed display -->
+                        <!-- JM 20240313 Changed display -->
                         <div class="accordion accordion-flush">
                             <div class="accordion-item filter-checkbox filter-custom-size">
                                 <h2 class="accordion-header"
@@ -355,7 +355,7 @@ $history = isset($_REQUEST['data-history']) ? json_decode(base64_decode($_REQUES
                                             data-bs-target="#panelsStayOpen-collapse-customSize"
                                             aria-expanded="false"
                                             aria-controls="panelsStayOpen-collapse-customSize">
-                                        <?php echo __('Custom', 'cabling')  ?>
+                                        <?php echo __('Custom', 'cabling') ?>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapse-customSize"
@@ -368,10 +368,10 @@ $history = isset($_REQUEST['data-history']) ? json_decode(base64_decode($_REQUES
                                             <?php cabling_add_quote_button() ?>
                                         </div>
 
-									</div>
-								</div>
-	                       </div>
-	                   </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -419,32 +419,34 @@ $history = isset($_REQUEST['data-history']) ? json_decode(base64_decode($_REQUES
                     <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
-			<!-- JM 20240313 Changed display -->
-                    <div class="accordion accordion-flush">
-                        <div class="accordion-item filter-checkbox filter-custom-hardness">
-                            <h2 class="accordion-header"
-                                id="panelsStayOpen-heading-customHardness">
-                                <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapse-customHardness"
-                                        aria-expanded="false"
-                                        aria-controls="panelsStayOpen-collapse-customHardness">
-                                    <?php echo __('Custom', 'cabling')  ?>
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapse-customHardness"
-                                     class="accordion-collapse collapse"
-                                     aria-labelledby="panelsStayOpen-heading-customHardness">
-                            <div class="accordion-body">
+            <!-- JM 20240313 Changed display -->
+            <div class="accordion accordion-flush">
+                <div class="accordion-item filter-checkbox filter-custom-hardness">
+                    <h2 class="accordion-header"
+                        id="panelsStayOpen-heading-customHardness">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapse-customHardness"
+                                aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapse-customHardness">
+                            <?php echo __('Custom', 'cabling') ?>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapse-customHardness"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="panelsStayOpen-heading-customHardness">
+                        <div class="accordion-body">
 
                             <div class="custom-size-quote">
-                                <div>Need a hardness / durometer measurement not listed here? Just send us a quote request.</div>
+                                <div>Need a hardness / durometer measurement not listed here? Just send us a quote
+                                    request.
+                                </div>
                                 <?php cabling_add_quote_button() ?>
                             </div>
-						</div>
-					</div>
-	           </div>
-			</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </div>

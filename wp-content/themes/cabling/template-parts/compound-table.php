@@ -28,10 +28,10 @@ $compounds = get_compound_product($term->term_id);
         <?php foreach ($compounds as $compound): ?>
             <?php
             $attributes = array(
-                'attributes' => array('product_compound' =>[$term->term_id]),
+                'attributes' => array('product_compound' =>[$compound]),
             );
             $data = base64_encode(json_encode($attributes));
-            $link = add_query_arg('data-history', $data, home_url('/products-and-services/'))
+            $link = add_query_arg('data-history', $data, home_url('/products-and-services/'));
             ?>
             <tr>
                 <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>

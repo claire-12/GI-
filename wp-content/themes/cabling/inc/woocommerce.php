@@ -1525,7 +1525,7 @@ function get_filter_lists($get_options = true): array
                             $valueType = 'key';
                         }
                         break;
-                    case 'product_compound':
+                    case 'product_compound_certification':
                         $choices = get_acf_taxonomy_options('compound_certification');
                         $valueType = 'key';
                         break;
@@ -1552,7 +1552,7 @@ function get_filter_lists($get_options = true): array
                 }
             } else if ($get_options) {
 
-                if ($field['name'] === 'product_compound') {
+                if ($field['name'] === 'product_compound_certification') {
                     $choices = get_acf_taxonomy_options('compound_certification');
                     $valueType = 'key';
                 } elseif ($field['name'] === 'product_type') {
@@ -1776,7 +1776,7 @@ function search_product_by_meta($metas): array
             $meta_array = array(
                 'relation' => 'OR',
             );
-            if ($meta_key === 'product_compound') {
+            if ($meta_key === 'product_compound_certification') {
                 $meta_array[] = array(
                     'key' => $meta_key,
                     'value' => $meta_values,
@@ -1838,8 +1838,8 @@ function cabling_change_product_query($query)
 
         $custom_filter = $attributes;
         $old_meta_query = $query->get('meta_query');
-        if (!empty($attributes['product_compound'])) {
-            $attributes['product_compound'] = get_compound_product($attributes['product_compound']);
+        if (!empty($attributes['product_compound_certification'])) {
+            $attributes['product_compound_certification'] = get_compound_product($attributes['product_compound_certification']);
         }
         unset($attributes['group-type']);
         $meta_query = get_meta_query_from_attributes($attributes);
