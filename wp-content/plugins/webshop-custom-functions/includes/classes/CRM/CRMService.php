@@ -97,21 +97,26 @@ class CRMService
                 if (!empty($product)) {
                     $posted_data['mobile'] = sprintf('+%s%s', $posted_data['user_telephone_code'], remove_zero_number($posted_data['user_telephone']));
                     $posted_data['product'] = (string)$product;
-                    //$posted_data['brand'] = $this->getPageBrand();
 
-                    if (is_user_logged_in()){
+                    $user_id = get_current_user_id();
+                    if ($user_id) {
                         $lead = $this->requestContactCRM($posted_data);
                         $result['lead'] = $lead;
+
+                        update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed']);
+                        update_user_meta($user_id, 'contact_marketing_agreed', $posted_data['contact_marketing_agreed']);
 
                         if (empty($lead)) {
                             $result['status'] = 'wpcf7invalid';
                         }
                     } else {
+                        update_option($posted_data['your-email'] . '_contact_policy_agreed', 'contact_policy_agreed', $posted_data['contact_policy_agreed']);
+                        update_option($posted_data['your-email'] . '_contact_marketing_agreed', 'contact_marketing_agreed', $posted_data['contact_marketing_agreed']);
+
                         $result['message'] = 'Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.';
                         $this->send_confirm_email($posted_data['your-email'], $posted_data, 'contact');
                     }
                 }
-                //var_dump($result,is_user_logged_in());
             } catch (Exception $e) {
                 $result['status'] = 'wpcf7invalid';
                 //wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
@@ -144,8 +149,10 @@ class CRMService
                     $quote['file_path'][] = $filepath;
                 }
             }
-
-            if (is_user_logged_in()) {
+            $user_id = get_current_user_id();
+            if ($user_id) {
+                update_user_meta($user_id, 'rfq_marketing_agreed', $quote['rfq_marketing_agreed']);
+                update_user_meta($user_id, 'rfq_policy_agreed', $quote['rfq_policy_agreed']);
                 if ($this->requestQuoteCRM($quote)) {
                     $success = true;
                 }
@@ -153,6 +160,9 @@ class CRMService
             } else {
                 $success = true;
                 $this->send_confirm_email($quote['email'], $quote, 'request_quote');
+
+                update_option($quote['email'] . '_rfq_marketing_agreed', 'rfq_marketing_agreed', $quote['rfq_marketing_agreed']);
+                update_option($quote['email'] . '_rfq_policy_agreed', 'rfq_policy_agreed', $quote['rfq_policy_agreed']);
             }
         } catch (\Exception $e) {
             wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
@@ -323,11 +333,11 @@ class CRMService
                 } else {
                     delete_transient('confirmation_token_' . $email);
                     delete_transient('confirmation_data_' . $email);
-					if ($type === 'request_quote') {
-						wp_redirect(home_url('/confirm-quote/'));
-					}else{
-						wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
-					}
+                    if ($type === 'request_quote') {
+                        wp_redirect(home_url('/confirm-quote/'));
+                    } else {
+                        wp_redirect(home_url('/your-subscription-has-been-confirmed/'));
+                    }
                 }
             } else {
                 wp_redirect(home_url('/'));
@@ -342,7 +352,7 @@ class CRMService
         if (empty($sapNumber)) {
             $crm = new CRMController();
             $lead = $crm->getContactByUserEmail($user->data->user_email);
-            $leadaccoutncoll=$crm->getAccount($lead->AccountID);
+            $leadaccoutncoll = $crm->getAccount($lead->AccountID);
             //AccountID
 
             if (!empty($leadaccoutncoll->ExternalID)) {

@@ -373,24 +373,20 @@
                 </div>
             </div>
 
-            <div class="submit-block text-center mt-3 quote-step-2 <?php echo $is_user_logged_in ? '' : 'hidden' ?>">
+            <div class="submit-block mt-3 quote-step-2 <?php echo $is_user_logged_in ? '' : 'hidden' ?>">
                 <div class="form-check d-inline-block">
-                    <input class="form-check-input" type="checkbox" id="share-my-data" value="yes" required>
+                    <input class="form-check-input" type="checkbox" id="share-my-data" name="rfq_policy_agreed" value="yes" required>
                     <label class="form-check-label ms-2" for="share-my-data">
-                         Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your quote request and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found <a target="_blank"
-                                                                    href="<?php echo home_url('/privacy') ?>">here</a>.
-                    </label>
-                    <!--                    <label class="form-check-label ms-2" for="share-my-data">
-                        I would like
-                    to receive sales and marketing information from Datwyler Switzerland Inc. and its affiliates,
-                    based on my personal interests.
-                    I give my consent to the processing of my data
-                    as described in the terms and conditions <a target="_blank" href="<?php echo home_url('/privacy') ?>">here</a>.
--->
-
+                        Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your quote request and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found <a target="_blank" href="<?php echo home_url('/privacy') ?>">here</a>.
                     </label>
                 </div>
-                <div class="mb-3 form-group">
+                <div class="form-check d-inline-block">
+                    <input class="form-check-input" type="checkbox" id="receive-newsletter" name="rfq_marketing_agreed" value="yes">
+                    <label class="form-check-label ms-2" for="receive-newsletter">
+                        Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your preference at any time in your account settings or by contacting Datwyler at <a href="mailto:suso.ont.sales@datwyler.com">suso.ont.sales@datwyler.com</a>.
+                    </label>
+                </div>
+                <div class="mb-3 form-group text-center">
                     <input type="hidden" name="object_id" value="<?php echo $object['object_id'] ?? '' ?>">
                     <input type="hidden" name="object_type" value="<?php echo $object['object_type'] ?? '' ?>">
                     <?php wp_nonce_field('save_request_quote_cabling', '_wp_quote_nonce') ?>

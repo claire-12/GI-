@@ -27,6 +27,24 @@
                                pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                                id="register_email" required>
                     </div>
+                    <div class="submit-block d-flex my-3">
+                        <input class="form-check-input" type="checkbox" id="share-my-data" value="yes" required>
+                        <label class="form-check-label ms-2" for="share-my-data">
+                            Please tick this box to confirm that you consent to Datwyler processing your personal data
+                            in order to respond to your request to access My Account and to acknowledge that Datwyler
+                            shall process your personal data in accordance with its privacy notice, which can be found
+                            <a target="_blank"
+                               href="<?php echo home_url('/privacy') ?>">here</a>.
+                        </label>
+                    </div>
+                    <div class="submit-block d-flex my-3">
+                        <input class="form-check-input" type="checkbox" id="receive-newsletter" value="yes" required>
+                        <label class="form-check-label ms-2" for="receive-newsletter">
+                            Please tick this box if you would like to receive electronic newsletters from Datwyler. You
+                            can change your preference at any time in your account settings or by contacting Datwyler at
+                            <a href="mailto:suso.ont.sales@datwyler.com">suso.ont.sales@datwyler.com</a>.
+                        </label>
+                    </div>
                     <div class="submit-btn">
                         <?php wp_nonce_field('cabling-register', 'register-nounce'); ?>
                         <button class="block-button" type="submit"

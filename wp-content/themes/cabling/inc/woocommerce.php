@@ -1493,15 +1493,16 @@ function get_filter_lists($get_options = true): array
             $choices = array();
             $value = '';
             $valueType = '';
+            $label = $field['label'];
+            if ('product_operating_temp' === $field['name']) {
+                $label = 'Operating Temp';
+                continue;
+            }
             if (is_product()) {
                 $postId = get_the_ID();
                 $value = get_post_meta($postId, $field['name'], true);
             }
 
-            $label = $field['label'];
-            if ('product_operating_temp' === $field['name']) {
-                $label = 'Operating Temp';
-            }
             if (is_tax('product_custom_type')) {
                 $term = get_queried_object();
                 $attributes = $_POST['attributes'] ?? [];

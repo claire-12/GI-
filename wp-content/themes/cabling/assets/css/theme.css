@@ -3785,3 +3785,7 @@ table.tablepress-id-52 tr .column-7 {
     text-align: center;
     margin-bottom: 100px;
 }
+.wpcf7-acceptance .wpcf7-list-item {
+    margin-left: 0;
+    font-size: 12px;
+}

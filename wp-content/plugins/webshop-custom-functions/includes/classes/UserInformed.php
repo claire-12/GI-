@@ -109,6 +109,7 @@ class UserInformed
     public static function save_user_setting_account(): void
     {
         parse_str($_REQUEST['data'], $data);
+
         if (isset($data['_wpnonce']) && wp_verify_nonce($data['_wpnonce'], 'setting-account-action')){
             $verified_recapcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
             if (empty($verified_recapcha)){
@@ -139,6 +140,10 @@ class UserInformed
                         $whatsapp = sprintf('+%s%s', $data['whatsapp_number_code'], $data['whatsapp_number']);
                     }
                 }
+            }
+
+            if (!empty($data["kmi_marketing_agreed"])){
+                update_option($email . '_rfq_policy_agreed', 'kmi_marketing_agreed', $data['kmi_marketing_agreed']);
             }
 
             $informedData['email'] = $email;
