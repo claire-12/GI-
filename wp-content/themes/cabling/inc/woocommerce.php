@@ -1841,6 +1841,15 @@ function cabling_change_product_query($query)
         if (!empty($attributes['product_compound'])) {
             $attributes['product_compound'] = get_compound_product($attributes['product_compound']);
         }
+        if (!empty($attributes['product_compound_single'])) {
+            if (empty($attributes['product_compound'])) {
+                $attributes['product_compound'] = $attributes['product_compound_single'];
+            } else {
+                $attributes['product_compound'] = array_merge($attributes['product_compound'], $attributes['product_compound_single']);
+            }
+
+            unset($attributes['product_compound_single']);
+        }
         unset($attributes['group-type']);
         $meta_query = get_meta_query_from_attributes($attributes);
 
@@ -2012,7 +2021,8 @@ function get_available_attributes(array $product_ids): ?array
             'milimeters_od',
             'milimeters_width',
             'product_contact_media',
-            'product_operating_temp',
+            'product_min',
+            'product_max',
             'product_dash_number',
             'product_colour',
             'product_compound',

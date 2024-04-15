@@ -1000,7 +1000,7 @@ function cabling_get_products_ajax_callback()
                 'category' => $category->name ?? '',
                 'results' => $results,
                 'total' => $total,
-                'data' => $data,
+                //'data' => $data,
                 'filter_meta' => $resultMetas ?? null,
                 //'$product_ids' => implode(',',$product_ids) ?? null,
                 'isSizeFilter' => $isSizeFilter,
