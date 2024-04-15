@@ -794,6 +794,7 @@ function product_filter_ajax(cat_id) {
             $('.filter-blog').find('.filter-category').each(function () {
                 let that = $(this);
                 let meta_key = that.attr('data-meta-key');
+
                 if (filter_meta !== null) {
                     if (meta_key) {
                         if (filter_meta.hasOwnProperty(meta_key) && filter_meta[meta_key] && filter_meta[meta_key].includes(that.attr('data-value'))) {

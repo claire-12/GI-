@@ -352,6 +352,9 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                 </div>
                 <?php if (!empty($attributes)): ?>
                     <?php foreach ($attributes as $slug => $attribute): ?>
+                        <?php if ($slug === 'product_complance' || $slug === 'product_type') {
+                            continue;
+                        } ?>
                         <?php if ($attribute['field_type'] === 'message'): ?>
                             <h3 class="filter-heading"><?php echo $attribute['label'] ?></h3>
                         <?php else: if (empty($attribute['choices'])) {
@@ -373,7 +376,11 @@ $milimeters_od_choices = get_all_meta_values_cached('milimeters_od', $product_id
                                         <?php foreach ($attribute['choices'] as $key => $value): if (empty($value)) {
                                             continue;
                                         } ?>
-                                            <div class="form-check filter-category">
+                                            <div
+                                                    class="form-check filter-category"
+                                                    data-meta-key="<?php echo $slug ?>"
+                                                    data-value="<?php echo $attribute['valueType'] === 'key' ? $key : $value; ?>"
+                                            >
                                                 <input class="form-check-input"
                                                        type="checkbox"
                                                     <?php echo show_product_filter_input_name($slug, $attribute) ?>
