@@ -1,0 +1,120 @@
+### WordPress template
+# Wordpress - ignore core, configuration, examples, uploads and logs.
+# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+
+# Core
+#
+# Note: if you want to stage/commit WP core files
+# you can delete this whole section/until Configuration.
+/wp-admin/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/plugins/index.php
+
+/wp-content/themes/index.php
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+
+# Configuration
+wp-config.php
+
+# Example themes
+/wp-content/themes/twenty*/
+
+# Example plugin
+/wp-content/plugins/hello.php
+
+# Uploads
+/wp-content/uploads/
+
+# Log files
+*.log
+
+# htaccess
+/.htaccess
+/.idea/
+
+# All plugins
+#
+# Note: If you wish to whitelist plugins,
+# uncomment the next line
+#/wp-content/plugins
+
+# All themes
+#
+# Note: If you wish to whitelist themes,
+# uncomment the next line
+#/wp-content/themes
+
+/wp-content/plugins/advanced-custom-fields-pro/
+
+
+/wp-content/plugins/bbpress/
+
+/wp-content/plugins/better-search-replace/
+
+/wp-content/plugins/breadcrumb-navxt/
+
+/wp-content/plugins/codepress-admin-columns/
+
+/wp-content/plugins/complianz-gdpr/
+
+/wp-content/plugins/contact-form-7/
+
+/wp-content/plugins/contact-form-7-custom/
+
+/wp-content/plugins/contact-form-cfdb7/
+
+/wp-content/plugins/duplicate-page/
+
+/wp-content/plugins/email-log/
+
+/wp-content/plugins/enable-media-replace/
+
+/wp-content/plugins/recaptcha-for-bbpress/
+
+/wp-content/plugins/sassy-social-share/
+
+/wp-content/plugins/searchwp/
+
+/wp-content/plugins/searchwp-customizations/
+
+/wp-content/plugins/searchwp-woocommerce/
+
+/wp-content/plugins/searchwp-wpml/
+
+/wp-content/plugins/show-current-template/
+
+/wp-content/plugins/sitepress-multilingual-cms/
+
+/wp-content/plugins/tablepress/
+
+/wp-content/plugins/taxonomy-terms-order/
+
+/wp-content/plugins/themehigh-multiple-addresses/
+
+/wp-content/plugins/tinymce-advanced/
+
+/wp-content/plugins/toggles/
+
+/wp-content/plugins/updraftplus/
+
+/wp-content/plugins/user-role-editor/
+
+/wp-content/plugins/user-switching/
+/wp-content/plugins/woo-smart-compare/
+
+/wp-content/plugins/woocommerce/
+
+/wp-content/plugins/wp-ajaxify-comments/
+
+/wp-content/plugins/wp-mail-smtp/
+
+/wp-content/plugins/wp-seo-multilingual/
+
+/wp-content/plugins/wpml-string-translation/
+/wp-content/updraft/

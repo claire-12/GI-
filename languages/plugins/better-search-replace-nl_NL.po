@@ -1,0 +1,226 @@
+# Translation of Plugins - Better Search Replace - Development (trunk) in Dutch
+# This file is distributed under the same license as the Plugins - Better Search Replace - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-04-09 12:50:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"Language: nl\n"
+"Project-Id-Version: Plugins - Better Search Replace - Development (trunk)\n"
+
+#: templates/sidebar.php:29
+msgid "Upgrade Now"
+msgstr "Upgrade nu"
+
+#: templates/sidebar.php:25
+msgid "Get up to <span>50% off</span> your first year!"
+msgstr "Krijg tot <span>50% korting op</span> je eerste jaar!"
+
+#: templates/sidebar.php:21
+msgid "Email support"
+msgstr "Ondersteuning per e-mail"
+
+#: templates/sidebar.php:18
+msgid "Export and import WordPress databases"
+msgstr "WordPress databases exporteren en importeren"
+
+#: templates/sidebar.php:15
+msgid "Migrate full sites including themes, plugins, media, and database"
+msgstr "Migreer volledige sites inclusief thema's, plugins, media en database"
+
+#: templates/sidebar.php:12
+msgid "Use regular expressions for complex string replacements"
+msgstr "Gebruik reguliere uitdrukkingen voor complexe string vervangingen"
+
+#: templates/sidebar.php:9
+msgid "Preview database changes before they are saved"
+msgstr "Bekijk een voorbeeld van database wijzigingen voordat ze worden opgeslagen"
+
+#: templates/sidebar.php:5
+msgid "Gain access to more database and migration features"
+msgstr "Toegang krijgen tot meer database- en migratiefuncties"
+
+#: templates/sidebar.php:4
+msgid "Upgrade"
+msgstr "Upgrade"
+
+#: templates/bsr-settings.php:43
+msgid "If you notice timeouts or are unable to backup/import the database, try decreasing this value."
+msgstr "Als je time-outs opmerkt of de database niet kan back-uppen/importeren, probeer dan deze waarde te verlagen."
+
+#: templates/bsr-search-replace.php:95
+msgid "Replace GUIDs"
+msgstr "GUID's vervangen"
+
+#: templates/bsr-search-replace.php:73
+msgid "Additional Settings"
+msgstr "Extra instellingen"
+
+#: templates/bsr-search-replace.php:37
+msgid "Search and replace text in the database, including serialized arrays and objects. Be sure to back up your database before running this process."
+msgstr "Zoeken en vervangen van tekst in de database, inclusief geserialiseerde arrays en objecten. Zorg ervoor dat je een back-up maakt van je database voordat je dit proces uitvoert."
+
+#: templates/bsr-help.php:61
+msgid "System Info"
+msgstr "Systeeminfo"
+
+#: templates/bsr-help.php:43
+msgid "<a href=\"%s\" style=\"font-weight:bold;\" target=\"_blank\">Upgrade</a> to gain access to premium features and priority email support."
+msgstr "<a href=\"%s\" style=\"font-weight:bold;\" target=\"_blank\">Upgrade</a> om toegang te krijgen tot premium functies en prioritaire e-mailondersteuning."
+
+#: templates/bsr-dashboard.php:53
+msgid "Upgrade now and get 50% off"
+msgstr "Upgrade nu en krijg 50% korting"
+
+#: includes/class-bsr-admin.php:223
+msgid "<a href=\"%s\" target=\"_blank\">UPGRADE</a> to view details on the exact changes that will be made."
+msgstr "<a href=\"%s\" target=\"_blank\">UPGRADE</a> om details te zien over de exacte veranderingen die zullen worden gemaakt."
+
+#. Author of the plugin
+msgid "Delicious Brains"
+msgstr "Delicious Brains"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://bettersearchreplace.com"
+msgstr "https://bettersearchreplace.com"
+
+#: includes/class-bsr-admin.php:234
+msgid " seconds"
+msgstr " seconden"
+
+#: includes/class-bsr-ajax.php:157
+msgid "Processing table %d of %d: %s"
+msgstr "Tabel verwerken %d van %d: %s"
+
+#: includes/class-bsr-admin.php:75
+msgid "Processing..."
+msgstr "Verwerken..."
+
+#. Description of the plugin
+msgid "A small plugin for running a search/replace on your WordPress database."
+msgstr "Een kleine plugin voor het uitvoeren van een zoek/vervang-opdracht in je WordPress-database."
+
+#: templates/bsr-settings.php:39
+msgid "Max Page Size"
+msgstr "Max pagina grootte"
+
+#: templates/bsr-search-replace.php:118
+msgid "Run Search/Replace"
+msgstr "Zoek/vervang uitvoeren"
+
+#: templates/bsr-search-replace.php:107
+msgid "If checked, no changes will be made to the database, allowing you to check the results beforehand."
+msgstr "Indien ingeschakeld, worden er geen wijzigingen in de database aangebracht, zodat je de resultaten van tevoren kunt controleren."
+
+#: templates/bsr-search-replace.php:106
+msgid "Run as dry run"
+msgstr "Uitvoeren als test"
+
+#: templates/bsr-search-replace.php:96
+msgid "If left unchecked, all database columns titled 'guid' will be skipped."
+msgstr "Indien uitgeschakeld, worden alle databasekolommen met de naam 'guid' overgeslagen."
+
+#: templates/bsr-search-replace.php:85
+msgid "Searches are case-sensitive by default."
+msgstr "Zoekopdrachten zijn standaard hoofdletter gevoelig."
+
+#: templates/bsr-search-replace.php:84
+msgid "Case-Insensitive"
+msgstr "Hoofdletter ongevoelig"
+
+#: templates/bsr-search-replace.php:61
+msgid "Select multiple tables with Ctrl-Click for Windows or Cmd-Click for Mac."
+msgstr "Selecteer meerdere tabellen met Ctrl-klik voor Windows of Cmd-klik voor Mac."
+
+#: templates/bsr-search-replace.php:59
+msgid "Select tables"
+msgstr "Selecteer tabellen"
+
+#: templates/bsr-search-replace.php:51
+msgid "Replace with"
+msgstr "Vervang door"
+
+#: templates/bsr-search-replace.php:46
+msgid "Search for"
+msgstr "Zoek naar"
+
+#: templates/bsr-help.php:51
+msgid "Found a bug or have a feature request? Please submit an issue on <a href=\"%s\">GitHub</a>!"
+msgstr "Heb je een bug gevonden of heb je een functieverzoek? Stuur een verzoek op <a href=\"%s\">GitHub</a>!"
+
+#: templates/bsr-help.php:35
+msgid "Free support is available on the <a href=\"%s\">plugin support forums</a>."
+msgstr "Gratis ondersteuning is beschikbaar op de <a href=\"%s\">ondersteuningsforums voor de plugin</a>."
+
+#: templates/bsr-help.php:26
+msgid "Help & Troubleshooting"
+msgstr "Hulp & probleemoplossing"
+
+#: templates/bsr-dashboard.php:67
+msgid "Help"
+msgstr "Help"
+
+#: templates/bsr-dashboard.php:66 templates/bsr-settings.php:30
+msgid "Settings"
+msgstr "Instellingen"
+
+#: templates/bsr-dashboard.php:65 templates/bsr-search-replace.php:32
+msgid "Search/Replace"
+msgstr "Zoek/vervang"
+
+#: includes/class-bsr-db.php:295
+msgid "Error updating row: %d."
+msgstr "Fout tijdens bijwerken van rij: %d."
+
+#: includes/class-bsr-db.php:85
+msgid "(%s MB)"
+msgstr "(%s MB)"
+
+#: includes/class-bsr-admin.php:284
+msgid "Upgrade to Pro"
+msgstr "Upgrade naar Pro"
+
+#: includes/class-bsr-admin.php:212
+msgid "Time"
+msgstr "Tijd"
+
+#: includes/class-bsr-admin.php:212
+msgid "Rows Updated"
+msgstr "Rijen geüpdatet"
+
+#: includes/class-bsr-admin.php:212
+msgid "Changes Found"
+msgstr "Gevonden wijzigingen"
+
+#: includes/class-bsr-admin.php:212
+msgid "Table"
+msgstr "Tabel"
+
+#: includes/class-bsr-admin.php:114
+msgid "<p>During the search/replace, <strong>%d</strong> tables were searched, with <strong>%d</strong> cells changed in <strong>%d</strong> updates.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Search/Replace Details\">Click here</a> for more details.</p>"
+msgstr "<p>Tijdens het zoeken/vervangen zijn de, <strong>%d</strong> tabellen doorzocht, met <strong>%d</strong> cellen gewijzigd in <strong>%d</strong> updates.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Search/Replace Details\">Klik hier</a> voor meer details.</p>"
+
+#: includes/class-bsr-admin.php:107
+msgid "<p><strong>DRY RUN:</strong> <strong>%d</strong> tables were searched, <strong>%d</strong> cells were found that need to be updated, and <strong>%d</strong> changes were made.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Dry Run Details\">Click here</a> for more details, or use the form below to run the search/replace.</p>"
+msgstr "<p><strong>TEST RUN:</strong> <strong>%d</strong> tabellen zijn doorzocht, <strong>%d</strong> cellen zijn gevonden die kunnen worden bijgewerkt, en <strong>%d</strong> veranderingen zijn gemaakt.</p><p><a href=\"%s\" class=\"thickbox\" title=\"Dry Run Details\">Klik hier</a> voor meer details, of gebruik het formulier hieronder voor een zoek/vervang-actie.</p>"
+
+#. Plugin Name of the plugin
+#: includes/class-bsr-admin.php:87
+msgid "Better Search Replace"
+msgstr "Better Search Replace"
+
+#: includes/class-bsr-admin.php:74
+msgid "An error occurred processing your request. Try decreasing the \"Max Page Size\", or contact support."
+msgstr "Er is een fout opgetreden bij het verwerken van jouw verzoek. Probeer het \"Max. Paginaformaat\" te verlagen of neem contact op met de ondersteuning."
+
+#: includes/class-bsr-admin.php:73
+msgid "Please select the tables that you want to update."
+msgstr "Selecteer de tabellen die je wilt bijwerken."
+
+#: includes/class-bsr-admin.php:72
+msgid "No search string was defined, please enter a URL or string to search for."
+msgstr "Er is geen zoekreeks gedefinieerd. Voer een URL of tekenreeks in waarnaar moet worden gezocht."

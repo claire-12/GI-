@@ -1,0 +1,266 @@
+# Translation of Plugins - Premmerce Permalink Manager for WooCommerce - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Premmerce Permalink Manager for WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-07-04 12:27:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Premmerce Permalink Manager for WooCommerce - Stable (latest release)\n"
+
+#: views/admin/tabs/bundle-and-save/faq.php:53
+msgid "Frequently Asked Questions"
+msgstr "Preguntas frecuentes"
+
+#: src/Admin/Admin.php:225 src/Admin/Admin.php:226
+msgid "Get premmerce full pack"
+msgstr "Consigue el paquete completo de premmerce"
+
+#: views/admin/main.php:26
+msgid "Upgrate to Premium"
+msgstr "Actualizar a Premium"
+
+#. translators: %%1$s: plugin link, %2$s target
+#: src/Admin/Admin.php:347
+msgid "Please rate our Premmerce Permalink Manager for WooCommerce on <a href=\"%1$s\" %2$s>WordPress.org</a><br/>Thank you from the Premmerce team!"
+msgstr "Por favor, valora nuestro Premmerce Permalink Manager for WooCommerce en <a href=\"%1$s\" %2$s>WordPress.org</a><br/>¡Gracias de parte del equipo de Premmerce!"
+
+#: src/Admin/Admin.php:244 src/Admin/AffiliateTab.php:30
+msgid "Affiliate"
+msgstr "Afiliado"
+
+#: views/admin/tabs/bundle-and-save/thanks.php:23
+msgid "reviews on"
+msgstr "valoraciones en"
+
+#: views/admin/tabs/bundle-and-save/thanks.php:15
+msgid "active users for 5 star"
+msgstr "usuarios activos de 5 estrellas "
+
+#: views/admin/tabs/bundle-and-save/thanks.php:14
+msgid "to our"
+msgstr "a nuestro"
+
+#: views/admin/tabs/bundle-and-save/texts.php:72
+msgid "Read more"
+msgstr "Leer más"
+
+#: views/admin/tabs/bundle-and-save/texts.php:9
+msgid "Permalink Manager Plugin"
+msgstr "Plugin Permalink Manager"
+
+#: views/admin/tabs/bundle-and-save/testimonials.php:28
+msgid "What clients say about Premmerce"
+msgstr "Qué dicen los clientes de Premmerce"
+
+#: views/admin/tabs/bundle-and-save/pricing.php:109
+msgid "Lifetime"
+msgstr "De por vida"
+
+#: views/admin/tabs/bundle-and-save/pricing.php:106
+msgid "Annual"
+msgstr "Anual"
+
+#: views/admin/tabs/bundle-and-save/pricing.php:87
+msgid "Buy now"
+msgstr "Comprar ahora"
+
+#: views/admin/tabs/bundle-and-save/featured-in.php:37
+msgid "Featured in"
+msgstr "Destacado en "
+
+#: views/admin/tabs/bundle-and-save/faq.php:11
+msgid "How does the domain limit work?"
+msgstr "¿Cómo funciona el límite de dominios?"
+
+#: src/Admin/BundleAndSave.php:109
+msgid "Bundle & Save"
+msgstr "Ahorra con lotes"
+
+#: src/Admin/Admin.php:243
+msgid "Bundle and Save"
+msgstr "Ahorra con lotes"
+
+#: src/Addons/BreadcrumbsAddon.php:69
+msgid "Shop"
+msgstr "Tienda"
+
+#: src/Addons/BreadcrumbsAddon.php:66
+msgid "Home"
+msgstr "Inicio"
+
+#: src/Admin/Settings.php:49
+msgid "SKU"
+msgstr "SKU"
+
+#: views/admin/section/additional.php:111
+msgid "Remove Shop"
+msgstr "Quitar tienda"
+
+#: views/admin/section/sku.php:41
+msgid "Replace product slug"
+msgstr "Reemplazar slug del producto"
+
+#: views/admin/section/additional.php:92
+msgid "Support breadcrumbs"
+msgstr "Compatibilidad de migas de pan"
+
+#: views/admin/section/additional.php:120
+msgid "Remove \"Shop\" from breadcrumbs"
+msgstr "Eliminar «Tienda» de las migas de pan"
+
+#: views/admin/section/additional.php:101
+msgid "Enable breadcrumbs support"
+msgstr "Activar la compatibilidad con las migas de pan"
+
+#: views/admin/section/suffix.php:54
+msgid "Enable for products"
+msgstr "Activar para los productos"
+
+#: views/admin/section/suffix.php:42
+msgid "Specify suffix for your urls. For example "
+msgstr "Especificar el sufijo para tus urls. Por ejemplo"
+
+#: views/admin/section/suffix.php:94
+msgid "Enable for categories"
+msgstr "Activar para categorías"
+
+#: src/Admin/Settings.php:59
+msgid "URL's suffix"
+msgstr "Sufijo de la URL"
+
+#. Plugin Name of the plugin
+msgid "Premmerce Permalink Manager for WooCommerce"
+msgstr "Premmerce Permalink Manager for WooCommerce"
+
+#: views/admin/banner.php:38
+msgid "Get it now"
+msgstr "Obtenerlo ahora"
+
+#: views/admin/banner.php:23
+msgid "Get clean URLs and additional Pro SEO settings for your Filter pages with Premmerce WooCommerce Filter Premium for only $69!"
+msgstr "¡Puedes limpiar URLs y ajustes SEO pro adicionales para filtrar tus páginas con Premmerce WooCommerce Filter Premium por solo 69$!"
+
+#: views/admin/banner.php:17 views/admin/banner.php:20
+msgid "Premmerce WooCommerce Product Filter Premium"
+msgstr "Premmerce WooCommerce Product Filter Premium"
+
+#: views/admin/section/product.php:53
+msgid "Full product path"
+msgstr "Ruta completa al producto"
+
+#: views/admin/section/product.php:41
+msgid "Product slug with primary category"
+msgstr "Slug del producto con la categoría principal"
+
+#: views/admin/section/product.php:29
+msgid "Product slug"
+msgstr "Slug del producto"
+
+#: views/admin/section/category.php:38
+msgid "Full category path"
+msgstr "Ruta completa a la categoría"
+
+#: views/admin/section/category.php:26
+msgid "Category slug"
+msgstr "Slug de la categoría"
+
+#: views/admin/section/category.php:17 views/admin/section/product.php:18
+#: views/admin/section/sku.php:31
+msgid "Use WooCommerce settings"
+msgstr "Usar ajustes de WooCommerce"
+
+#: views/admin/section/additional.php:83
+msgid "Create 301 redirect from duplicated pages"
+msgstr "Crear redirecciones 301 de páginas duplicadas"
+
+#: views/admin/section/additional.php:74
+msgid "Create redirects"
+msgstr "Crear redirecciones"
+
+#: views/admin/section/additional.php:66
+msgid "Add canonical meta tag to duplicated pages"
+msgstr "Añadir la etiqueta meta canonical a las páginas duplicadas"
+
+#: views/admin/section/additional.php:63
+msgid "Add canonicals"
+msgstr "Añadir canonicals"
+
+#: views/admin/section/additional.php:54
+msgid "Use 'Yoast SEO' primary category to build product path"
+msgstr "Usar la categoría principal de 'Yoast SEO' para crear la ruta del producto"
+
+#: views/admin/section/additional.php:51
+msgid "Use primary category"
+msgstr "Usar la categoría principal"
+
+#: views/admin/section/additional.php:40 views/admin/section/additional.php:80
+#: views/admin/section/additional.php:98 views/admin/section/additional.php:117
+#: views/admin/section/sku.php:47 views/admin/section/suffix.php:39
+#: views/admin/section/suffix.php:60 views/admin/section/suffix.php:100
+msgid "Available only in premium version"
+msgstr "Solo disponible en la versión premium"
+
+#: views/admin/section/additional.php:34
+msgid "Remove product tag base"
+msgstr "Quitar la base de la etiqueta del producto"
+
+#: src/Admin/Settings.php:72
+msgid "WooCommerce Permalink Manager offers you the ability to create a custom URL structure for your permalinks. Custom URL structures can improve the aesthetics, usability, and forward-compatibility of your links. A number of settings are available, and here are some examples to get you started."
+msgstr "WooCommerce Permalink Manager te ofrece la posibilidad de crear una estructura de URLs personalizada para tus enlaces permanentes. Las estructuras de URL personalizadas pueden mejorar la estética, usabilidad y compatibilidad futura de tus enlaces. Hay disponibles una buena cantidad de ajustes, y aquí tienes algunos ejemplos para empezar."
+
+#: views/admin/main.php:8
+msgid "WooCommerce Permalink Settings"
+msgstr "Ajustes de enlaces permanentes de WooCommerce"
+
+#: src/Admin/Settings.php:39
+msgid "Categories"
+msgstr "Categorías"
+
+#: src/Admin/Settings.php:54
+msgid "Additional"
+msgstr "Adicional"
+
+#: src/Admin/Admin.php:197 src/Admin/Admin.php:198
+msgid "Permalink Manager"
+msgstr "Gestor de enlaces permanentes"
+
+#: src/Admin/Admin.php:248
+msgid "Account"
+msgstr "Cuenta"
+
+#: src/Admin/Admin.php:250
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+#: src/Admin/Admin.php:132 src/Admin/Admin.php:242
+msgid "Settings"
+msgstr "Ajustes"
+
+#. Author URI of the plugin
+msgid "https://premmerce.com/"
+msgstr "https://premmerce.com/"
+
+#. Author of the plugin
+msgid "premmerce"
+msgstr "premmerce"
+
+#: src/Admin/Settings.php:44
+msgid "Products"
+msgstr "Productos"
+
+#. Plugin URI of the plugin
+msgid "https://premmerce.com/woocommerce-permalink-manager-remove-shop-product-product-category-url/"
+msgstr "https://premmerce.com/woocommerce-permalink-manager-remove-shop-product-product-category-url/"
+
+#. Description of the plugin
+msgid "Premmerce Permalink Manager for WooCommerce allows you to change WooCommerce permalink and remove product and product_category slugs from the URL."
+msgstr "Premmerce Permalink Manager for WooCommerce te permite cambiar el enlace permanente de WooCommerce y eliminar los slugs product y product_category de la URL."
+
+#. translators: %%1$s: our plugin name, %2$s another plugin name
+#: src/UrlManagerPlugin.php:148
+msgid "The %1$s plugin requires %2$s plugin to be active!"
+msgstr "¡El plugin %1$s necesita que esté activo el plugin %2$s!"
