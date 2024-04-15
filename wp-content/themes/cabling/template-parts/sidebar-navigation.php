@@ -43,6 +43,16 @@ $product_categories = get_field('_product_category_menu', 'options');
                         <?php endforeach; ?>
                     </ul>
                 <?php endif ?>
+                <?php if ($sustainable_nav = get_field('_sustainable', 'options')): ?>
+                    <ul>
+                        <?php foreach ($sustainable_nav as $item_sustainable): ?>
+                            <li>
+                                <span><img src="<?php echo esc_url($item_sustainable['icon']) ?? '' ?>" alt="icon"></span>
+                                <a href="<?php echo esc_url($item_sustainable['link']['url']) ?? '#' ?>"><?php echo $item_sustainable['link']['title'] ?? 'Title' ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif ?>
                 <?php if ($account_nav = get_field('_account_help', 'options')): ?>
                     <ul>
                         <?php foreach ($account_nav as $item_account): ?>
