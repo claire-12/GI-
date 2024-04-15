@@ -12,7 +12,7 @@ $settings = array(
     'tinymce' => true,
 );
 ?>
-
+<div class="show-email-share show-quote-button show-product-quote" data-action="<?php echo is_product() ? get_the_ID() : 0 ?>"></div>
 <div class="dropdown show-email-share">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-list"></i>
