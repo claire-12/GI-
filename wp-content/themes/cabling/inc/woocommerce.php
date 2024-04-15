@@ -1877,11 +1877,11 @@ function get_meta_query_from_attributes($attributes): array
         if (empty($meta_values)) {
             continue;
         }
-        if ($meta_key === 'product_compound') {
+        /*if ($meta_key === 'product_compound') {
             //$choices = get_acf_taxonomy_options('compound_certification');
             //var_dump($meta_values, $choices);
             continue;
-        }
+        }*/
         if ($meta_key === 'compound_certification') {
             continue;
         }
