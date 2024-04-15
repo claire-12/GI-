@@ -122,15 +122,9 @@
 
         event.preventDefault();
 
-        let recaptcha;
         const form = $(this);
-        const capcha_form = $('#quote_form-recapcha');
         form.find('.woo-notice').remove();
         form.find('input[type="submit"]').prop('disabled', true);
-
-        if (capcha_form.length){
-            recaptcha = capcha_form.find('[name="g-recaptcha-response"]').val();
-        }
 
         $.ajax({
             url: CABLING.ajax_url,
@@ -139,7 +133,6 @@
             data: {
                 action: 'cabling_login_ajax',
                 data: form.serialize(),
-                recaptcha: recaptcha
 
             },
             success: function (data) {
@@ -175,14 +168,9 @@
         e.preventDefault();
 
         const form = $(this);
-        const capcha_form = $('#quote_form-recapcha');
         form.find('.woo-notice').remove();
         form.find('input[type="submit"]').prop('disabled', true);
 
-        let recaptcha;
-        if (capcha_form.length){
-            recaptcha = capcha_form.find('[name="g-recaptcha-response"]').val();
-        }
 
         $.ajax({
             url: CABLING.ajax_url,
@@ -191,7 +179,6 @@
             data: {
                 action: 'cabling_register_account_ajax',
                 data: form.serialize(),
-                recaptcha: recaptcha
 
             },
             success: function (response) {

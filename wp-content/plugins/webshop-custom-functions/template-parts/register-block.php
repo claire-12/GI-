@@ -5,6 +5,11 @@
                 <h3>
                     <?php esc_html_e('First time quote?', 'woocommerce'); ?>
                 </h3>
+                <form action="" id="quote_form-recapcha">
+                    <div class="form-group">
+                        <div class="quote-recaptcha mt-2" id="quote-guest-gcapcha"></div>
+                    </div>
+                </form>
                 <button type="button" class="block-button continue-as-a-guest">
                     <?php esc_html_e('CONTINUE AS A GUEST', 'woocommerce'); ?>
                 </button>
@@ -38,12 +43,15 @@
                         </label>
                     </div>
                     <div class="submit-block d-flex my-3">
-                        <input class="form-check-input" type="checkbox" id="receive-newsletter" value="yes" required>
+                        <input class="form-check-input" type="checkbox" id="receive-newsletter" value="yes">
                         <label class="form-check-label ms-2" for="receive-newsletter">
                             Please tick this box if you would like to receive electronic newsletters from Datwyler. You
                             can change your preference at any time in your account settings or by contacting Datwyler at
                             <a href="mailto:suso.ont.sales@datwyler.com">suso.ont.sales@datwyler.com</a>.
                         </label>
+                    </div>
+                    <div class="form-group">
+                        <div class="quote-recaptcha mt-2" id="quote-register-gcapcha"></div>
                     </div>
                     <div class="submit-btn">
                         <?php wp_nonce_field('cabling-register', 'register-nounce'); ?>
@@ -85,7 +93,11 @@
                 </p>
                 </p>
 
-                <p class="form-row d-flex justify-content-end">
+                <p class="woocommerce-LostPassword lost_password flex-row">
+                        <div class="quote-recaptcha mt-2" id="quote-sign_in-gcapcha"></div>
+                    </p>
+
+                <p class="form-row">
                     <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
                     <input type="hidden" name="redirect" value="<?php echo get_the_permalink() ?>">
                     <input type="hidden" name="is_reload" value="true">
@@ -95,14 +107,6 @@
 
                 <?php do_action('woocommerce_login_form_end'); ?>
 
-            </form>
-        </div>
-        <div class="col-12">
-            <form action="" id="quote_form-recapcha">
-                <div class="form-group">
-                    <div class="g-recaptcha d-flex justify-content-center mt-2" id="quote-recaptcha"
-                         data-sitekey="<?php echo get_field('gcapcha_sitekey_v2', 'option'); ?>"></div>
-                </div>
             </form>
         </div>
     </div>

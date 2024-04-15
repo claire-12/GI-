@@ -92,10 +92,6 @@ function cabling_login_ajax_callback()
 {
     parse_str($_REQUEST['data'], $data);
 
-    if (!empty($_REQUEST['recaptcha'])) {
-        $data['g-recaptcha-response'] = $_REQUEST['recaptcha'];
-    }
-
     $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
 
     $err = false;
@@ -147,10 +143,6 @@ add_action('wp_ajax_nopriv_cabling_login_ajax', 'cabling_login_ajax_callback');
 function cabling_register_account_ajax_callback()
 {
     parse_str($_REQUEST['data'], $data);
-
-    if (!empty($_REQUEST['recaptcha'])) {
-        $data['g-recaptcha-response'] = $_REQUEST['recaptcha'];
-    }
 
     $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
 

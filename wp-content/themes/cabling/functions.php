@@ -232,6 +232,7 @@ function cabling_scripts()
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce'   => $cabling_nonce,
             'crm' => get_the_ID(),
+            'recaptcha_key' => get_field('gcapcha_sitekey_v2', 'option'),
             'product_page'   => is_tax('product_custom_type') ? get_term_link(get_queried_object()) : home_url('/products-and-services'),
     ));
 

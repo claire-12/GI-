@@ -39,11 +39,16 @@
                 if (response.success) {
                     $('#quoteProductModal').find('.modal-content').html(response.data.content);
                     add_phone_validate('#mobile-phone');
-                    if ($('#quote-recaptcha').length) {
-                        const sitekey = $('#quote-recaptcha').attr('data-sitekey');
-                        grecaptcha.render('quote-recaptcha', {
-                            'sitekey': sitekey,
-                        });
+                    const captcha_element = $(document).find('.quote-recaptcha');
+
+                    if (captcha_element.length) {
+                        captcha_element.each(function(){
+                            const that = $(this);
+                            const sitekey = CABLING.recaptcha_key;
+                            grecaptcha.render(that.attr('id'), {
+                                'sitekey': sitekey,
+                            });
+                        })
                     }
                     $('.date-picker').flatpickr({
                         dateFormat: "m/d/Y",
