@@ -177,6 +177,10 @@
 }
 
 @media screen and (max-width: 767px) {
+    .informed-categories {
+        padding: 15px;
+    }
+
     .filter-blog {
         border-right: none;
         padding-right: 0;

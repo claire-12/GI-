@@ -63,13 +63,13 @@
         <!--        <h5><?php _e('CONTACT PREFERENCES', 'cabling'); ?></h5>-->
         <div class="form-check">
             <input class="form-check-input" name="informed_channel[email]" type="checkbox" checked="checked"
-                <?php echo 'style="display:none"' //echo empty($channel['email']) ? '' : ' checked="checked" ' ?>
+                <?php echo 'style="display:none"' ?>
                    id="cat-email" value="email">
             <label class="form-check-label" for="cat-email">Email</label>
             <?php if (!is_user_logged_in()) { ?>
                 <div class="channel-email form-group form-check">
                     <input type="email" class="form-control" id="channel-email" name="channel-email" required
-                           placeholder="Enter your email*" value="<?php echo $channel['email'] ?? '' ?>">
+                           placeholder="Enter your email*" value="<?php //echo $channel['email'] ?? '' ?>">
                 </div>
 
             <?php } else {
@@ -88,35 +88,35 @@
         </div>
         <!--<div class="form-check">
             <input class="form-check-input" name="informed_channel[whatsapp]" type="checkbox"
-                <?php /*echo empty($channel['whatsapp']) ? '' : ' checked="checked" ' */ ?>
+                <?php /*echo empty($channel['whatsapp']) ? '' : ' checked="checked" ' */?>
                    id="cat-whatsapp" value="whatsapp">
             <label class="form-check-label" for="cat-whatsapp">Whatsapp</label>
-            <?php /*if (!is_user_logged_in()): */ ?>
+            <?php /*if (!is_user_logged_in()): */?>
                 <div class="channel-whatsapp form-group form-check">
                     <input type="tel" class="form-control" id="mobile-phone-informed"
-                           value="<?php /*echo $channel['whatsapp'] ?? '' */ ?>"
-                           placeholder="<?php /*_e('Whatsapp Number', 'cabling') */ ?>">
+                           value="<?php /*echo $channel['whatsapp'] ?? '' */?>"
+                           placeholder="<?php /*_e('Whatsapp Number', 'cabling') */?>">
                     <span id="mobile-phone-validate" class="hidden input-error"></span>
                     <input type="hidden" class="phone_number" name="whatsapp_number">
                     <input type="hidden" class="phone_code" name="whatsapp_number_code">
                 </div>
-            <?php /*endif; */ ?>
+            <?php /*endif; */?>
         </div>
         <div class="form-check">
             <input class="form-check-input" name="informed_channel[sms]" type="checkbox"
-                <?php /*echo empty($channel['sms']) ? '' : ' checked="checked" ' */ ?>
+                <?php /*echo empty($channel['sms']) ? '' : ' checked="checked" ' */?>
                    id="cat-sms" value="sms">
             <label class="form-check-label" for="cat-sms">SMS</label>
-            <?php /*if (!is_user_logged_in()): */ ?>
+            <?php /*if (!is_user_logged_in()): */?>
                 <div class="channel-sms form-group form-check">
                     <input type="tel" class="form-control" id="sms-phone-informed"
-                           value="<?php /*echo $channel['sms'] ?? '' */ ?>"
-                           placeholder="<?php /*_e('SMS Number', 'cabling') */ ?>">
+                           value="<?php /*echo $channel['sms'] ?? '' */?>"
+                           placeholder="<?php /*_e('SMS Number', 'cabling') */?>">
                     <span id="mobile-phone-validate" class="hidden input-error"></span>
                     <input type="hidden" class="phone_number" name="sms_number">
                     <input type="hidden" class="phone_code" name="sms_number_code">
                 </div>
-            <?php /*endif; */ ?>
+            <?php /*endif; */?>
         </div>-->
         <?php //if (!is_user_logged_in()): ?>
             <div class="mb-3 d-flex" style="text-align: left; font-size: 12px">
