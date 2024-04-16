@@ -1168,6 +1168,7 @@ b, strong {
 
 .submit-block label {
     font-size: 12px;
+    text-align: left;
 }
 
 .woocommerce-MyAccount-navigation-link--shipment,
