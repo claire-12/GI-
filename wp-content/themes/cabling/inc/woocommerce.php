@@ -430,24 +430,6 @@ function endArray($array)
     return end($array);
 }
 
-/**
- * get data response from API endpoint
- * @param array $response
- * @param string $type
- * @param string $type_level_2
- * @return array
- */
-function getDataResponse(array $response, string $type, string $type_level_2): array
-{
-    $responseData = array();
-    if (isset($response[$type][$type_level_2])) {
-        $responseData = $response[$type][$type_level_2];
-
-        $responseData = is_array($responseData[0]) ? $responseData : [$responseData];
-    }
-    return $responseData;
-}
-
 function get_cumulative_quantity($stock, float $quantity): string
 {
     if (empty($stock)) {

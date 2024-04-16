@@ -1030,7 +1030,7 @@ function cabling_get_api_ajax_callback()
             //$apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
             $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
             $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
-            $oauthClient = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
+            $webServices = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
 
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
@@ -1128,11 +1128,11 @@ function cabling_get_api_ajax_callback()
                         );
                     }
 
-                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $priceParams);
-                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $stockParams);
+                    $responsePrice = $webServices->makeApiRequest($apiEndpoint, $priceParams);
+                    $responseStock = $webServices->makeApiRequest($apiStockEndpoint, $stockParams);
 
-                    $dataPrice = getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
-                    $dataStock = getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
+                    $dataPrice = $webServices->getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
+                    $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
 
                     $responseData = array(
                         'price' => $dataPrice,
@@ -1147,13 +1147,13 @@ function cabling_get_api_ajax_callback()
                 default:
                     $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG';
                     $template = $data['api_page'] . '-item.php';
-                    $response = $oauthClient->makeApiRequest($apiEndpoint, $bodyParams);
+                    $response = $webServices->makeApiRequest($apiEndpoint, $bodyParams);
 
                     if ($response['error']) {
                         wp_send_json_error('API error: ' . $response['error']);
                     }
 
-                    $responseData = getDataResponse($response, $type, $type_level_2);
+                    $responseData = $webServices->getDataResponse($response, $type, $type_level_2);
                     break;
             }
 
