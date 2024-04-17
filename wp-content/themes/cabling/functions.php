@@ -305,7 +305,6 @@ require get_template_directory() . '/inc/GIWebServices.php';
  */
 if (class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/woocommerce.php';
-    require get_template_directory() . '/inc/GICheckOut.php';
 }
 
 global $wpdb;

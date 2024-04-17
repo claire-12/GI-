@@ -999,13 +999,16 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     white-space: nowrap;
     vertical-align: middle;
 }
+
 .table > tbody .table-warning td {
     background-color: var(--bs-table-bg);
 }
+
 td.ponumber {
     text-decoration: underline;
     cursor: pointer;
 }
+
 .product-request-button {
     margin-bottom: 1.5rem;
 }
@@ -1208,34 +1211,40 @@ b, strong {
 }
 
 .woocommerce-MyAccount-navigation-link.has-tooltip a::after {
-	content: attr(data-title);
-	position: absolute;
-	background-color: #333;
-	color: #fff;
-	padding: 5px;
-	border-radius: 3px;
-	z-index: 999;
-	display: none;
-	font-size: 0.875rem;
-	bottom: 0;
-	left: 105%;
-	width: 100%;
+    content: attr(data-title);
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 999;
+    display: none;
+    font-size: 0.875rem;
+    bottom: 0;
+    left: 105%;
+    width: 100%;
 }
 
 .woocommerce-MyAccount-navigation-link.has-tooltip a:hover::after {
     display: block;
 }
+
 .form-group span.error {
     color: var(--bs-danger);
     font-size: small;
 }
+
 .form-phone .iti__flag-container {
     height: 42px;
 }
+
 .menu-item-1033162 {
     text-decoration: underline;
 }
-.list-site-map a {color: inherit;}
+
+.list-site-map a {
+    color: inherit;
+}
 
 .list-site-map, .list-site-map ul {
     padding: 0;
@@ -1266,6 +1275,31 @@ b, strong {
 .list-site-map > li > ul > li > ul > li > ul > li > ul a {
     padding-left: 6rem;
 }
-.iti__selected-flag{
+
+.iti__selected-flag {
     height: 100%
+}
+
+.woocommerce div.product form.cart .button,
+.add-to-cart-button{
+    float: none;
+    background: #159fb3;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    padding: .618em 1em;
+    border-radius: 3px;
+}
+.woocommerce div.product form.cart .single_add_to_cart_button:before {
+    font-weight: 300;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-family: "Font Awesome 6 Pro";
+    content: "\f07a";
+    margin-right: .5rem;
 }
