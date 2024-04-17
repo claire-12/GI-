@@ -1532,6 +1532,8 @@ function get_filter_lists($get_options = true): array
                     case 'product_colour':
                     case 'product_complance':
                     case 'product_dash_number':
+                    case 'product_min':
+                    case 'product_max':
                         $choices = get_all_meta_values_cached($field['name'], $product_ids);
                         break;
                     case 'product_type':
