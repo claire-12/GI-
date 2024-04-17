@@ -100,18 +100,18 @@ class CRMService
 
                     $user_id = get_current_user_id();
                     if ($user_id) {
+                        update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed'][0]);
+                        update_user_meta($user_id, 'contact_marketing_agreed', $posted_data['contact_marketing_agreed'][0]);
+
                         $lead = $this->requestContactCRM($posted_data);
                         $result['lead'] = $lead;
-
-                        update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed']);
-                        update_user_meta($user_id, 'contact_marketing_agreed', $posted_data['contact_marketing_agreed']);
 
                         if (empty($lead)) {
                             $result['status'] = 'wpcf7invalid';
                         }
                     } else {
-                        update_option($posted_data['your-email'] . '_contact_policy_agreed', 'contact_policy_agreed', $posted_data['contact_policy_agreed']);
-                        update_option($posted_data['your-email'] . '_contact_marketing_agreed', 'contact_marketing_agreed', $posted_data['contact_marketing_agreed']);
+                        update_option($posted_data['your-email'] . '_contact_policy_agreed', 'contact_policy_agreed', $posted_data['contact_policy_agreed'][0]);
+                        update_option($posted_data['your-email'] . '_contact_marketing_agreed', 'contact_marketing_agreed', $posted_data['contact_marketing_agreed'][0]);
 
                         $result['message'] = 'Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.';
                         $this->send_confirm_email($posted_data['your-email'], $posted_data, 'contact');
@@ -122,7 +122,6 @@ class CRMService
                 //wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
             }
         }
-
         return $result;
     }
 
