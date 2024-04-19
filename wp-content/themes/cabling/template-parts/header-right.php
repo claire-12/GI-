@@ -5,7 +5,7 @@
                 <i class="fa-light fa-heart me-2"></i>
                 <?php echo __('MY WISHLIST', 'cabling');?>
             </a>
-            <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
+            <a class="ms-2" href="<?php echo esc_url(wc_get_cart_url()); ?>">
                 <i class="fa-light fa-shopping-cart me-2"></i>
                 <?php echo __('My cart', 'cabling'); ?>
             </a>

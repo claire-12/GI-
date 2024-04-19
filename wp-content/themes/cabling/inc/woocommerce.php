@@ -1520,6 +1520,8 @@ function get_filter_lists($get_options = true): array
                     case 'product_colour':
                     case 'product_complance':
                     case 'product_dash_number':
+                    case 'product_min':
+                    case 'product_max':
                         $choices = get_all_meta_values_cached($field['name'], $product_ids);
                         break;
                     case 'product_type':
@@ -1625,9 +1627,12 @@ function get_all_meta_values_cached($meta_key, array $post_ids = [])
     if (!empty($values) && $acf_field['type'] === 'checkbox') {
         $new_values = array();
         foreach ($values as $value) {
+            if (empty($value)) {
+                continue;
+            }
             $unserializedData = unserialize($value);
 
-            if ($unserializedData === false || empty($value)) {
+            if ($unserializedData === false) {
                 continue;
             } else {
                 foreach ($unserializedData as $val) {

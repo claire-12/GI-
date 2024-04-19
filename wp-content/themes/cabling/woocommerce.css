@@ -1303,3 +1303,12 @@ b, strong {
     content: "\f07a";
     margin-right: .5rem;
 }
+.product-variation-table .add-to-cart-button {
+    height: 33px;
+    display: inline-flex;
+    line-height: 21px;
+    align-items: center;
+}
+.product-variation-table .add-to-cart-button i {
+    font-size: 1rem;
+}

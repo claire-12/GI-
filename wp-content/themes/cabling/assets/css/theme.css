@@ -637,7 +637,16 @@ body #ajaxsearchlite1 .autocomplete {
     color: #fff;
     line-height: 1.4
 }
-
+.header-cart {
+    display: flex;
+    align-items: center;
+}
+.header-cart a{
+    color: var(--bs-body-color);
+}
+.header-cart a i{
+    color: var(--primary-color);
+}
 .header-right .contact-box p {
     margin: 0
 }
