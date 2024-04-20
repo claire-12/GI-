@@ -1312,3 +1312,23 @@ b, strong {
 .product-variation-table .add-to-cart-button i {
     font-size: 1rem;
 }
+.woocommerce-cart table.cart img {
+    width: 250px;
+}
+
+.woocommerce-cart .product-thumbnail {
+    width: 300px;
+}
+.car-subtotal {
+    flex-direction: column;
+    text-align: right;
+}
+.product-quantity .quantity {
+    margin: 0 1rem;
+}
+.btn-recalculate {
+    padding: 0;
+    background: no-repeat;
+    color: var(--main-blue-color);
+    text-decoration: underline;
+}
