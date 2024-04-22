@@ -19,6 +19,7 @@ require_once(WBC_PLUGIN_DIR . 'includes/classes/UserInformed.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/CablingPageTemplate.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/RequestProductQuote.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIEmail.php');
+require_once(WBC_PLUGIN_DIR . 'includes/classes/GIWoocommerce.php');
 
 $folder_crm = WBC_PLUGIN_DIR . 'includes/classes/CRM/';
 
