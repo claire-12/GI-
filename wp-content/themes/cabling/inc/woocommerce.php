@@ -1463,16 +1463,19 @@ function get_product_ids_by_category($taxonomy = '', $term_id = array(), $attrib
 
     return $posts;
 }
-function custom_compare($a, $b) {
-    $pattern = '/-?\d+/';
-    preg_match_all($pattern, $a, $matches_a);
-    preg_match_all($pattern, $b, $matches_b);
+if(function_exists('custom_compare')){
+    function custom_compare($a, $b) {
+        $pattern = '/-?\d+/';
+        preg_match_all($pattern, $a, $matches_a);
+        preg_match_all($pattern, $b, $matches_b);
 
-    $max_a = max($matches_a[0]);
-    $max_b = max($matches_b[0]);
+        $max_a = max($matches_a[0]);
+        $max_b = max($matches_b[0]);
 
-    return $max_a <=> $max_b;
+        return $max_a <=> $max_b;
+    }
 }
+
 
 function get_filter_lists($get_options = true): array
 {
