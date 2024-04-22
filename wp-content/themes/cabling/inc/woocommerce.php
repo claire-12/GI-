@@ -1475,6 +1475,16 @@ function get_product_ids_by_category($taxonomy = '', $term_id = array(), $attrib
 
     return $posts;
 }
+function custom_compare($a, $b) {
+    $pattern = '/-?\d+/';
+    preg_match_all($pattern, $a, $matches_a);
+    preg_match_all($pattern, $b, $matches_b);
+
+    $max_a = max($matches_a[0]);
+    $max_b = max($matches_b[0]);
+
+    return $max_a <=> $max_b;
+}
 
 function get_filter_lists($get_options = true): array
 {
@@ -1502,7 +1512,7 @@ function get_filter_lists($get_options = true): array
                 $postId = get_the_ID();
                 $value = get_post_meta($postId, $field['name'], true);
             }
-
+            $run_asort = true;
             if (is_tax('product_custom_type')) {
                 $term = get_queried_object();
                 $attributes = $_POST['attributes'] ?? [];
@@ -1553,7 +1563,6 @@ function get_filter_lists($get_options = true): array
                         break;
                 }
             } else if ($get_options) {
-
                 if ($field['name'] === 'product_compound') {
                     $choices = get_acf_taxonomy_options('compound_certification');
                     $valueType = 'key';
@@ -1563,13 +1572,23 @@ function get_filter_lists($get_options = true): array
                 } elseif ($field['type'] === 'post_object') {
                     $choices = get_acf_post_options($field['post_type']);
                     $valueType = 'key';
+                } elseif ($field['name'] === 'product_min'){
+                    $choices = get_all_meta_values_cached($field['name']);
+                    usort($choices, 'custom_compare');
+                    $run_asort = false;
+                }elseif ($field['name'] === 'product_max'){
+                    $choices = get_all_meta_values_cached($field['name']);
+                    usort($choices, 'custom_compare');
+                    $run_asort = false;
                 } elseif (!empty($field['choices'])) {
                     $choices = get_all_meta_values_cached($field['name']);
                     //$valueType = 'key';
                 } else {
                     $choices = get_all_meta_values_cached($field['name']);
                 }
-                asort($choices);
+                if( $run_asort){
+                    asort($choices);
+                }
             }
 
             $name = empty($field['name']) ? $key : $field['name'];
