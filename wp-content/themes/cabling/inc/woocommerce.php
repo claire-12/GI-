@@ -430,24 +430,6 @@ function endArray($array)
     return end($array);
 }
 
-/**
- * get data response from API endpoint
- * @param array $response
- * @param string $type
- * @param string $type_level_2
- * @return array
- */
-function getDataResponse(array $response, string $type, string $type_level_2): array
-{
-    $responseData = array();
-    if (isset($response[$type][$type_level_2])) {
-        $responseData = $response[$type][$type_level_2];
-
-        $responseData = is_array($responseData[0]) ? $responseData : [$responseData];
-    }
-    return $responseData;
-}
-
 function get_cumulative_quantity($stock, float $quantity): string
 {
     if (empty($stock)) {
@@ -766,19 +748,15 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
 
-//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 add_action('woocommerce_before_main_content', 'cabling_woocommerce_breadcrumb', 1);
 add_action('woocommerce_before_single_product_summary', 'cabling_get_brand_product', 4);
-add_action('woocommerce_single_product_summary', 'cabling_add_quote_button', 21);
-add_action('woocommerce_single_product_summary', 'cabling_additional_information', 22);
-//add_action( 'woocommerce_after_single_product_summary', 'cabling_woocommerce_description', 5 );
-//add_action( 'woocommerce_after_single_product_summary', 'cabling_woocommerce_pdf_export_button', 10 );
+add_action('woocommerce_single_product_summary', 'cabling_add_quote_on_product', 21);
+add_action('woocommerce_single_product_summary', 'cabling_additional_information', 90);
 add_action('woocommerce_shop_loop_item_title', 'cabling_product_description', 15);
-add_action('woocommerce_before_shop_loop', 'cabling_product_category_heading', 10);
+add_action('woocommerce_before_shop_loop', 'cabling_product_category_heading');
 add_action('woocommerce_after_my_account', 'cabling_woocommerce_after_my_account_modal', 99);
 
 function cabling_product_category_heading()
@@ -1055,7 +1033,7 @@ function cabling_woocommerce_description()
 // Change Add to Cart text on product archives
 function custom_woocommerce_product_add_to_cart_text($text, $product)
 {
-    return __('FIND OUT MORE', 'cabling');
+    return __('Add to cart', 'cabling');
 }
 
 add_filter('woocommerce_product_add_to_cart_text', 'custom_woocommerce_product_add_to_cart_text', 10, 2);
@@ -1066,6 +1044,16 @@ function cabling_add_quote_button($product_id = 0)
     echo '<div data-action="' . $product_id . '" class="product-request-button show-product-quote">';
     echo '<a class="btn btn-primary" href="#">' . __('Request a quote', 'cabling') . '</a>';
     echo '</div>';
+}
+
+function cabling_add_quote_on_product()
+{
+    global $product;
+
+    // Check if it's a product page and if price is empty
+    if (is_product() && '' === $product->get_price()) {
+        cabling_add_quote_button();
+    }
 }
 
 function cabling_additional_information()
@@ -1639,9 +1627,12 @@ function get_all_meta_values_cached($meta_key, array $post_ids = [])
     if (!empty($values) && $acf_field['type'] === 'checkbox') {
         $new_values = array();
         foreach ($values as $value) {
+            if (empty($value)) {
+                continue;
+            }
             $unserializedData = unserialize($value);
 
-            if ($unserializedData === false || empty($value)) {
+            if ($unserializedData === false) {
                 continue;
             } else {
                 foreach ($unserializedData as $val) {

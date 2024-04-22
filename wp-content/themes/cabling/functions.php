@@ -297,7 +297,6 @@ if (defined('JETPACK__VERSION')) {
 
 require get_template_directory() . '/inc/icode-functions.php';
 require get_template_directory() . '/inc/ajax.php';
-require get_template_directory() . '/inc/icode-custom_postype.php';
 require get_template_directory() . '/inc/shortcode.php';
 require get_template_directory() . '/inc/GIWebServices.php';
 
@@ -306,7 +305,6 @@ require get_template_directory() . '/inc/GIWebServices.php';
  */
 if (class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/woocommerce.php';
-    require get_template_directory() . '/inc/variation-meta.php';
 }
 
 global $wpdb;
