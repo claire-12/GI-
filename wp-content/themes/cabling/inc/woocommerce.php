@@ -1463,7 +1463,7 @@ function get_product_ids_by_category($taxonomy = '', $term_id = array(), $attrib
 
     return $posts;
 }
-if(function_exists('custom_compare')){
+if(!function_exists('custom_compare')){
     function custom_compare($a, $b) {
         $pattern = '/-?\d+/';
         preg_match_all($pattern, $a, $matches_a);
