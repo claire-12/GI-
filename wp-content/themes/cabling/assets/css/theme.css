@@ -640,6 +640,7 @@ body #ajaxsearchlite1 .autocomplete {
 .header-cart {
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 .header-cart a{
     color: var(--bs-body-color);

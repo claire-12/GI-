@@ -1028,6 +1028,12 @@ td.ponumber {
 .product-variation-table > tbody tr td {
     font-size: 10px !important;
 }
+/*.product-variation-table > tbody tr.product-row:nth-child(even) td {
+    background: rgb(41 159 177 / 20%);
+}
+.product-variation-table > tbody tr.product-row:nth-child(odd) td {
+    background: rgb(41 159 177 / 40%);
+}*/
 
 .product-variation-table .product-request-button {
     margin-bottom: 0;

@@ -29,7 +29,7 @@ $filterValues = show_filter_value($fieldList, $product->get_id());
 $product_link = get_product_filter_link();
 $col_number = 0;
 ?>
-<tr class="<?php echo implode(' ', $filterValues) ?>">
+<tr class="product-row <?php echo implode(' ', $filterValues) ?>">
     <?php foreach ($fieldList as $key => $attribute): $col_number++; ?>
         <?php $value = get_product_field($key, $product->get_id()); ?>
         <?php if ($key === '_sku'): ?>
@@ -41,7 +41,7 @@ $col_number = 0;
         <?php endif ?>
     <?php endforeach ?>
 </tr>
-<tr>
+<tr class="add-cart-row">
     <?php if (empty($product->get_price())): ?>
         <td
            colspan="<?php echo $col_number ?>"
