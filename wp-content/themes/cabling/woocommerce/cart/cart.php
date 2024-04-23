@@ -131,7 +131,7 @@ do_action('woocommerce_before_cart'); ?>
                                         <?php esc_html_e('recalculate', 'woocommerce'); ?>
                                     </button>
                                 </div>
-                                <a class="btn-recalculate mt-3 d-flex" href="#">Detailed View</a>
+                                <a class="btn-recalculate mt-3 d-flex" href="<?php echo $_product->get_permalink($cart_item) ?>">Detailed View</a>
                             </td>
 
                             <!--<td class="product-price" data-title="<?php /*esc_attr_e('Price', 'woocommerce'); */ ?>">
@@ -140,7 +140,7 @@ do_action('woocommerce_before_cart'); ?>
                                                             */ ?>
                             </td>-->
 
-                            <td class="product-subtotal" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>" style="width: 150px">
+                            <td class="product-subtotal" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                                 <div class="car-subtotal d-flex">
                                     <?php
                                     echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
@@ -150,7 +150,7 @@ do_action('woocommerce_before_cart'); ?>
                                     echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                         'woocommerce_cart_item_remove_link',
                                         sprintf(
-                                            '<a href="%s" class="remove-cart btn btn-primary" aria-label="%s" data-product_id="%s" data-product_sku="%s"><span>&times;</span> <span>%s</span></a>',
+                                            '<a href="%s" class="remove-cart" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="fa-sharp fa-regular fa-x"></i> <span>%s</span></a>',
                                             esc_url(wc_get_cart_remove_url($cart_item_key)),
                                             /* translators: %s is the product name */
                                             esc_attr(sprintf(__('Remove %s from cart', 'woocommerce'), wp_strip_all_tags($product_name))),

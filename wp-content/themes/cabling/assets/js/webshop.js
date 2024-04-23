@@ -246,7 +246,8 @@
     })
 
     $(document).on('click', 'a', function () {
-        if ($(this).attr('href').includes('my-account') && $(this).attr('href').includes('customer-logout')) {
+        const href = $(this).attr('href');
+        if (href && href.includes('my-account') && href.includes('customer-logout')) {
             return confirm('Are you sure you want to logout?');
         }
         /*if ($(this).closest('table').length) {
@@ -539,6 +540,24 @@
             }
         }, false);
     }
+
+    $(document).on('change', 'input[name=select-shipping-address]', function(){
+        const elm = $(this);
+        thmaf_address.populate_selected_address(elm, elm.attr('data-type'), elm.attr('data-id'));
+    })
+    $(document).on('click', '.submit-shipping-step', function(){
+        $('.multisteps-form').find('.woo-notice').remove();
+        if ($('input[name=select-shipping-address]:checked').length){
+            $('.multisteps-form__progress-btn').removeClass('js-active');
+            $('.multisteps-form__panel').removeClass('js-active');
+
+            $('.multisteps-form__progress-btn:nth-child(2)').addClass('js-active');
+            $('.multisteps-form__panel:nth-child(2)').addClass('js-active');
+        } else {
+            $('.multisteps-form').prepend('<div class="alert alert-danger d-flex align-items-center woo-notice" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i><span>Please select Shipping Address.</span></div>');
+        }
+        return false;
+    })
 })(jQuery);
 
 function sortList(element, name, order) {

@@ -594,7 +594,7 @@ function cabling_custome_thankyou_text($var, $order)
 }
 
 //Custom check-out field
-add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
+//add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
 function cabling_custom_override_checkout_fields($fields)
 {
     $fields['billing']['billing_company']['custom_attributes'] = array('readonly' => 'readonly');
@@ -689,32 +689,32 @@ add_action('widgets_init', 'product_widgets_init');
  * Pre-populate Woocommerce checkout fields
  * Note that this filter populates shipping_ and billing_ fields with a different meta field eg 'first_name'
  */
-add_filter('woocommerce_checkout_get_value', function ($input, $key) {
-
-    global $current_user;
-
-    switch ($key) :
-        case 'billing_first_name':
-        case 'shipping_first_name':
-            return $current_user->first_name;
-            break;
-
-        case 'billing_last_name':
-        case 'shipping_last_name':
-            return $current_user->last_name;
-            break;
-
-        case 'billing_email':
-            return $current_user->user_email;
-            break;
-
-        case 'billing_phone':
-            return $current_user->phone;
-            break;
-
-    endswitch;
-
-}, 10, 2);
+//add_filter('woocommerce_checkout_get_value', function ($input, $key) {
+//
+//    global $current_user;
+//
+//    switch ($key) :
+//        case 'billing_first_name':
+//        case 'shipping_first_name':
+//            return $current_user->first_name;
+//            break;
+//
+//        case 'billing_last_name':
+//        case 'shipping_last_name':
+//            return $current_user->last_name;
+//            break;
+//
+//        case 'billing_email':
+//            return $current_user->user_email;
+//            break;
+//
+//        case 'billing_phone':
+//            return $current_user->phone;
+//            break;
+//
+//    endswitch;
+//
+//}, 10, 2);
 
 /**
  * Dynamically pre-populate Woocommerce checkout fields with exact named meta field
@@ -1463,17 +1463,28 @@ function get_product_ids_by_category($taxonomy = '', $term_id = array(), $attrib
 
     return $posts;
 }
-if(!function_exists('custom_compare')){
-    function custom_compare($a, $b) {
+
+if (!function_exists('custom_compare')) {
+    function custom_compare($a, $b)
+    {
+        if (!is_string($a) || !is_string($b)) {
+            return 0;
+        }
+
         $pattern = '/-?\d+/';
         preg_match_all($pattern, $a, $matches_a);
         preg_match_all($pattern, $b, $matches_b);
+
+        if (empty($matches_a[0]) || empty($matches_b[0])) {
+            return 0;
+        }
 
         $max_a = max($matches_a[0]);
         $max_b = max($matches_b[0]);
 
         return $max_a <=> $max_b;
     }
+
 }
 
 
@@ -1563,11 +1574,11 @@ function get_filter_lists($get_options = true): array
                 } elseif ($field['type'] === 'post_object') {
                     $choices = get_acf_post_options($field['post_type']);
                     $valueType = 'key';
-                } elseif ($field['name'] === 'product_min'){
+                } elseif ($field['name'] === 'product_min') {
                     $choices = get_all_meta_values_cached($field['name']);
                     usort($choices, 'custom_compare');
                     $run_asort = false;
-                }elseif ($field['name'] === 'product_max'){
+                } elseif ($field['name'] === 'product_max') {
                     $choices = get_all_meta_values_cached($field['name']);
                     usort($choices, 'custom_compare');
                     $run_asort = false;
@@ -1577,7 +1588,7 @@ function get_filter_lists($get_options = true): array
                 } else {
                     $choices = get_all_meta_values_cached($field['name']);
                 }
-                if( $run_asort){
+                if ($run_asort) {
                     asort($choices);
                 }
             }
