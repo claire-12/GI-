@@ -27,7 +27,7 @@ if (empty($content)) {
                         <?php
                         echo apply_filters('the_content', $postdat->post_content);
                         ?>
-                        <button class="print-pdf-button" onclick="downloadPDF(<?php echo $compound; ?>, '<?php echo $postdat->post_title; ?>')">Print BDF</button>
+                        <button class="print-pdf-button" onclick="downloadPDF(<?php echo $compound; ?>, '<?php echo $postdat->post_title; ?>')">Print PDF</button>
                     </div>
                     <!--<div class="col-12 col-lg-6">
                         <?php
@@ -53,12 +53,11 @@ if (empty($content)) {
 <script>
     function downloadPDF(compoundId, pdfName) {
         var elementHTML = document.querySelector("#compoundModal" + compoundId).innerHTML;
-
         const {
             jsPDF
         } = window.jspdf;
 
-        const doc = new jsPDF();
+        const doc = new jsPDF('p', 'pt', 'letter');
         var element = document.createElement("div");
 
         element.innerHTML = elementHTML;
@@ -72,6 +71,14 @@ if (empty($content)) {
             javascriptEnabled: true,
             callback: function() {
                 doc.save(`${pdfName}.pdf`);
+            },
+            margin: [20, 20, 20, 20],
+            autoPaging: 'text',
+            html2canvas: {
+                allowTaint: true,
+                letterRendering: true,
+                logging: false,
+                scale: 0.58,
             },
             x: 15,
             y: 15,
