@@ -594,7 +594,7 @@ function cabling_custome_thankyou_text($var, $order)
 }
 
 //Custom check-out field
-add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
+//add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
 function cabling_custom_override_checkout_fields($fields)
 {
     $fields['billing']['billing_company']['custom_attributes'] = array('readonly' => 'readonly');
@@ -689,32 +689,32 @@ add_action('widgets_init', 'product_widgets_init');
  * Pre-populate Woocommerce checkout fields
  * Note that this filter populates shipping_ and billing_ fields with a different meta field eg 'first_name'
  */
-add_filter('woocommerce_checkout_get_value', function ($input, $key) {
-
-    global $current_user;
-
-    switch ($key) :
-        case 'billing_first_name':
-        case 'shipping_first_name':
-            return $current_user->first_name;
-            break;
-
-        case 'billing_last_name':
-        case 'shipping_last_name':
-            return $current_user->last_name;
-            break;
-
-        case 'billing_email':
-            return $current_user->user_email;
-            break;
-
-        case 'billing_phone':
-            return $current_user->phone;
-            break;
-
-    endswitch;
-
-}, 10, 2);
+//add_filter('woocommerce_checkout_get_value', function ($input, $key) {
+//
+//    global $current_user;
+//
+//    switch ($key) :
+//        case 'billing_first_name':
+//        case 'shipping_first_name':
+//            return $current_user->first_name;
+//            break;
+//
+//        case 'billing_last_name':
+//        case 'shipping_last_name':
+//            return $current_user->last_name;
+//            break;
+//
+//        case 'billing_email':
+//            return $current_user->user_email;
+//            break;
+//
+//        case 'billing_phone':
+//            return $current_user->phone;
+//            break;
+//
+//    endswitch;
+//
+//}, 10, 2);
 
 /**
  * Dynamically pre-populate Woocommerce checkout fields with exact named meta field

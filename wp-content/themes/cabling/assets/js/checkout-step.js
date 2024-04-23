@@ -49,7 +49,7 @@ const setActiveStep = activeStepNum => {
     //set picked items to active
     DOMstrings.stepsBtns.forEach((elem, index) => {
 
-        if (index <= activeStepNum) {
+        if (index === activeStepNum) {
             elem.classList.add('js-active');
         }
 
