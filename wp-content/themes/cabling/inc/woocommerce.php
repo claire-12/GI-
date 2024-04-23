@@ -2297,3 +2297,10 @@ function gi_custom_reset_password_heading($title)
     $title = __('Datwyler Sealing Solutions: Password Reset Request', 'cabling');
     return $title;
 }
+
+add_filter('woocommerce_get_terms_and_conditions_checkbox_text', 'gi_woocommerce_get_terms_and_conditions_checkbox_text');
+function gi_woocommerce_get_terms_and_conditions_checkbox_text($text)
+{
+    $text = __('I confirm all details are correct', 'cabling');
+    return $text;
+}

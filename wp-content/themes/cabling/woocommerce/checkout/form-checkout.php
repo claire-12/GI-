@@ -76,9 +76,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                                 <div class="woocommerce-billing-details">
                                     <?php do_action( 'woocommerce_checkout_billing' ); ?>
                                 </div>
-                                <div class="wp-block-button button-row block-button-black d-flex mt-4">
-                                    <button class="wp-element-button ml-auto js-btn-next" type="button" title="<?php _e('Continue', 'cabling') ?>"><?php _e('Continue', 'cabling') ?></button>
-                                </div>
                             </div>
                         </div>
                         <!--single form panel-->
