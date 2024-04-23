@@ -1,4 +1,5 @@
 <?php
+
 /**
  * cabling functions and definitions
  *
@@ -222,18 +223,22 @@ function cabling_scripts()
     wp_enqueue_script('flickity', get_template_directory_uri() . '/assets/js/flickity/flickity.pkgd.min.js', array(), null, true);
     wp_enqueue_script('cabling-theme', get_template_directory_uri() . '/assets/js/theme.js', array(), null, true);
     wp_enqueue_script('cabling-webshop', get_template_directory_uri() . '/assets/js/webshop.js', array(), null, true);
+    wp_enqueue_script('jspdf', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js', array(), null, true);
+    wp_enqueue_script('html2canvas', 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', array(), null, true);
+    wp_enqueue_script('dompurify', 'https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.3/purify.min.js', array(), null, true);
+
 
     $cabling_nonce = wp_create_nonce('cabling-ajax-nonce');
     wp_localize_script('cabling-theme', 'CABLING', array(
-            'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce'   => $cabling_nonce,
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'   => $cabling_nonce,
     ));
     wp_localize_script('cabling-webshop', 'CABLING', array(
-            'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce'   => $cabling_nonce,
-            'crm' => get_the_ID(),
-            'recaptcha_key' => get_field('gcapcha_sitekey_v2', 'option'),
-            'product_page'   => is_tax('product_custom_type') ? get_term_link(get_queried_object()) : home_url('/products-and-services'),
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'   => $cabling_nonce,
+        'crm' => get_the_ID(),
+        'recaptcha_key' => get_field('gcapcha_sitekey_v2', 'option'),
+        'product_page'   => is_tax('product_custom_type') ? get_term_link(get_queried_object()) : home_url('/products-and-services'),
     ));
 
     wp_enqueue_script('cabling-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true);
@@ -242,7 +247,6 @@ function cabling_scripts()
         wp_enqueue_script('comment-reply');
     }
     wp_dequeue_script('wc-lost-password');
-
 }
 
 add_action('wp_enqueue_scripts', 'cabling_scripts');
@@ -328,7 +332,8 @@ if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") !== $table_name) {
     dbDelta($sql);
 }
 
-function log_customer_change($user_by, $user_id, $data) {
+function log_customer_change($user_by, $user_id, $data)
+{
     global $wpdb;
     $table_name = $wpdb->prefix . LOG_DB_NAME;
 
@@ -439,23 +444,24 @@ function verify_register_code(): void
             exit();
         }
     }
-
 }
 // Force enable SearchWP's alternate indexer.
-add_filter( 'searchwp\indexer\alternate', '__return_true' );
+add_filter('searchwp\indexer\alternate', '__return_true');
 
 add_filter('acf/settings/load_json', 'my_acf_json_load_point');
-function my_acf_json_load_point( $paths ) {
-  // Remove the default path (optional)
-  unset($paths[0]);
+function my_acf_json_load_point($paths)
+{
+    // Remove the default path (optional)
+    unset($paths[0]);
 
-  // Add your custom path
-  $paths[] = get_stylesheet_directory() . '/acf-json';
+    // Add your custom path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
 
-  return $paths;
+    return $paths;
 }
 
-function my_acf_json_save_point( $path ) {
+function my_acf_json_save_point($path)
+{
     return get_stylesheet_directory() . '/acf-json';
 }
-add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
