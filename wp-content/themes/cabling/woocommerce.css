@@ -717,9 +717,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     display: none
 }
 
-.woocommerce-billing-fields h3 {
+/*.woocommerce-billing-fields h3 {
     display: none;
-}
+}*/
 
 
 #shipping_city_field,
