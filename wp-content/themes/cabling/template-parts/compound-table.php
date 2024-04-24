@@ -130,7 +130,7 @@ $compounds = get_compound_product($term->term_id);
                     width: 300px;
                 }
                 .wp-block-column p, .compoundtablewrap p{
-                    word-break: break-all;
+                    word-break: break-work;
                     word-wrap: break-all;
                     page-break-inside: avoid;
                 }
