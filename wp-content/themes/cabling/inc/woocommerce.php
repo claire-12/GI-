@@ -587,17 +587,11 @@ function cabling_get_user_by_customer($user_id)
     return get_users($args);
 }
 
-add_filter('woocommerce_thankyou_order_received_text', 'cabling_custome_thankyou_text', 10, 2);
-function cabling_custome_thankyou_text($var, $order)
-{
-    return sprintf(__('Thank you. Your order has been received. Tracking order number %d has been successfully saved. One of our sales representative will get back to you shortly once the order is confirmed', 'cabling'), $order->get_id());
-}
-
 //Custom check-out field
-//add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
+add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
 function cabling_custom_override_checkout_fields($fields)
 {
-    $fields['billing']['billing_company']['custom_attributes'] = array('readonly' => 'readonly');
+    /*$fields['billing']['billing_company']['custom_attributes'] = array('readonly' => 'readonly');
     $fields['billing']['billing_country']['custom_attributes'] = array('disabled' => 'disabled');
     $fields['shipping']['shipping_country']['custom_attributes'] = array('disabled' => 'disabled');
 
@@ -605,10 +599,11 @@ function cabling_custom_override_checkout_fields($fields)
     $fields['order']['order_comments']['placeholder'] = __('Shipping Notes', 'cabling');
 
     $fields['billing']['billing_country']['priority'] = 95;
-    $fields['shipping']['shipping_country']['priority'] = 95;
+    $fields['shipping']['shipping_country']['priority'] = 95;*/
 
-    $fields['billing']['billing_company']['placeholder'] = __('Company', 'cabling');
-    $fields['billing']['billing_address_1']['placeholder'] = __('Address 1', 'cabling');
+    $fields['billing']['billing_company']['label'] = __('Company', 'cabling');
+    $fields['billing']['billing_company']['required'] = true;
+    /*$fields['billing']['billing_address_1']['placeholder'] = __('Address 1', 'cabling');
     $fields['billing']['billing_address_2']['placeholder'] = __('Address 2', 'cabling');
     $fields['billing']['billing_city']['placeholder'] = __('City', 'cabling');
     $fields['billing']['billing_postcode']['placeholder'] = __('Zip Code', 'cabling');
@@ -622,7 +617,12 @@ function cabling_custom_override_checkout_fields($fields)
     $fields['shipping']['shipping_postcode']['placeholder'] = __('Zip Code', 'cabling');
     $fields['shipping']['shipping_state']['placeholder'] = __('State', 'cabling');
     $fields['shipping']['shipping_email']['placeholder'] = __('Email', 'cabling');
-    $fields['shipping']['shipping_phone']['placeholder'] = __('Phone', 'cabling');
+    $fields['shipping']['shipping_phone']['placeholder'] = __('Phone', 'cabling');*/
+
+
+    $fields['billing']['billing_company']['label'] = __('Company', 'cabling');
+    $fields['billing']['billing_company']['required'] = true;
+    $fields['billing']['billing_company']['class'] = array('form-row-first');
 
     return $fields;
 }
@@ -632,7 +632,7 @@ function cabling_custom_override_checkout_fields($fields)
 add_filter('woocommerce_billing_fields', 'cabling_woocommerce_billing_fields');
 function cabling_woocommerce_billing_fields($fields)
 {
-    if (get_customer_type(get_current_user_id()) === MASTER_ACCOUNT) {
+    /*if (get_customer_type(get_current_user_id()) === MASTER_ACCOUNT) {
         $fields['company_name_responsible'] = array(
             'label' => __('Company Responsible Full Name', 'cabling'),
             'placeholder' => _x('Company Responsible Full Name', 'placeholder', 'cabling'),
@@ -641,14 +641,15 @@ function cabling_woocommerce_billing_fields($fields)
             'type' => 'text',
             'priority' => 36
         );
-    }
+    }*/
 
-    $fields['company_name_responsible'] = array(
-        'label' => __('Company Responsible Full Name1', 'cabling'),
-        'placeholder' => _x('Company Responsible Full Name1', 'placeholder', 'cabling'),
+    $fields['company_cat'] = array(
+        'label' => __('VAT Number', 'cabling'),
+        'placeholder' => _x('VAT Number', 'placeholder', 'cabling'),
         'required' => false,
         'clear' => false,
         'type' => 'text',
+        'class' => array('form-row-last'),
         'priority' => 36
     );
 
@@ -2226,6 +2227,36 @@ function show_product_field($name, $options = array()): string
     $field = '<select name="' . $name . '" id="' . $name . '" class="select form-select" ' . $required . '>' . $option . '</select>';
 
     return '<div class="w-100 form-group has-focus' . ($options['class'] ?? '') . '">' . $field . '<label for="' . $name . '">' . $options['label'] . $requiredLabel . '</label></div>';
+}
+
+function show_input_field($name, $options = array())
+{
+    $type = $options['type'] ?? 'text';
+    switch ($type) {
+        case 'country';
+        case 'state';
+        case 'hidden';
+            $options['return'] = true;
+            $field = woocommerce_form_field($name, $options);
+            break;
+        default:
+            $value = empty($options['value']) ? '' : $options['value'];
+            $required = empty($options['required']) ? '' : 'required';
+            $requiredLabel = empty($options['required']) ? '' : '<span class="required">*</span>';
+            $class = is_array($options['class']) ? implode(' ', $options['class']) : ' ';
+
+            $input = '<input type="' . $type . '" name="' . $name . '" id="' . $name . '"" value="' . $value . '" class="form-control" ' . $required . '/>';
+
+            $field = '<div class="form-group mb-3 ' . $class . '">' . $input . '<label for="' . $name . '">' . $options['label'] . '&nbsp;' . $requiredLabel . '</label></div>';
+            break;
+
+    }
+    if (empty($options['return'])) {
+        echo $field;
+    } else {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        return $field;
+    }
 }
 
 function debug_log($subject, $body)

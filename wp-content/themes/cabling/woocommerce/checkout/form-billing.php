@@ -62,7 +62,7 @@ $fields = $checkout->get_checkout_fields('billing');
                         <?php
 
                         foreach ($fields as $key => $field) {
-                            woocommerce_form_field($key, $field, $checkout->get_value($key));
+                            echo show_input_field($key, $field);
                         }
                         ?>
                         <div class="wp-block-button button-row block-button-black d-flex">
@@ -75,9 +75,9 @@ $fields = $checkout->get_checkout_fields('billing');
         </div>
         <?php
 
-        foreach ($fields as $key => $field) {
-            //woocommerce_form_field($key, $field, $checkout->get_value($key));
-        }
+        /*foreach ($fields as $key => $field) {
+            woocommerce_form_field($key, $field, $checkout->get_value($key));
+        }*/
         ?>
     </div>
 
