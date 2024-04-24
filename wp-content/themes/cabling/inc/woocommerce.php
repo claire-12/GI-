@@ -591,42 +591,30 @@ function cabling_get_user_by_customer($user_id)
 add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
 function cabling_custom_override_checkout_fields($fields)
 {
-    /*$fields['billing']['billing_company']['custom_attributes'] = array('readonly' => 'readonly');
-    $fields['billing']['billing_country']['custom_attributes'] = array('disabled' => 'disabled');
-    $fields['shipping']['shipping_country']['custom_attributes'] = array('disabled' => 'disabled');
+    $fields['billing']['billing_address_1']['label'] = __('Address Line 1', 'cabling');
+    $fields['billing']['billing_address_1']['class'] = array('form-row-first');
 
-    $fields['order']['order_comments']['label'] = '';
-    $fields['order']['order_comments']['placeholder'] = __('Shipping Notes', 'cabling');
+    $fields['billing']['billing_address_2']['class'] = array('form-row-last');
+    $fields['billing']['billing_address_2']['label'] = __('Address Line 2', 'cabling');
 
-    $fields['billing']['billing_country']['priority'] = 95;
-    $fields['shipping']['shipping_country']['priority'] = 95;*/
+    $fields['billing']['billing_city']['label'] = __('City', 'cabling');
+    $fields['billing']['billing_city']['class'] = array('form-row-last');
 
-    $fields['billing']['billing_company']['label'] = __('Company', 'cabling');
-    $fields['billing']['billing_company']['required'] = true;
-    /*$fields['billing']['billing_address_1']['placeholder'] = __('Address 1', 'cabling');
-    $fields['billing']['billing_address_2']['placeholder'] = __('Address 2', 'cabling');
-    $fields['billing']['billing_city']['placeholder'] = __('City', 'cabling');
-    $fields['billing']['billing_postcode']['placeholder'] = __('Zip Code', 'cabling');
-    $fields['billing']['billing_state']['placeholder'] = __('State', 'cabling');
-    $fields['billing']['billing_email']['placeholder'] = __('Email', 'cabling');
-    $fields['billing']['billing_phone']['placeholder'] = __('Phone', 'cabling');
-
-    $fields['shipping']['shipping_address_1']['placeholder'] = __('Address 1', 'cabling');
-    $fields['shipping']['shipping_address_2']['placeholder'] = __('Address 2', 'cabling');
-    $fields['shipping']['shipping_city']['placeholder'] = __('City', 'cabling');
-    $fields['shipping']['shipping_postcode']['placeholder'] = __('Zip Code', 'cabling');
-    $fields['shipping']['shipping_state']['placeholder'] = __('State', 'cabling');
-    $fields['shipping']['shipping_email']['placeholder'] = __('Email', 'cabling');
-    $fields['shipping']['shipping_phone']['placeholder'] = __('Phone', 'cabling');*/
-
+    $fields['billing']['billing_postcode']['label'] = __('Postcode', 'cabling');
+    $fields['billing']['billing_postcode']['required'] = true;
+    $fields['billing']['billing_postcode']['class'] = array('form-row-first');
 
     $fields['billing']['billing_company']['label'] = __('Company', 'cabling');
     $fields['billing']['billing_company']['required'] = true;
     $fields['billing']['billing_company']['class'] = array('form-row-first');
 
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_state']);
+    unset($fields['billing']['billing_email']);
+    unset($fields['billing']['billing_phone']);
+
     return $fields;
 }
-
 
 //add Company Responsible Full Name field to billing address
 add_filter('woocommerce_billing_fields', 'cabling_woocommerce_billing_fields');
@@ -2233,8 +2221,9 @@ function show_input_field($name, $options = array())
 {
     $type = $options['type'] ?? 'text';
     switch ($type) {
-        case 'country';
-        case 'state';
+        case 'country':
+        case 'state':
+            break;
         case 'hidden';
             $options['return'] = true;
             $field = woocommerce_form_field($name, $options);

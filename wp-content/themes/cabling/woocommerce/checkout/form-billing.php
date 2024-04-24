@@ -65,6 +65,27 @@ $fields = $checkout->get_checkout_fields('billing');
                             echo show_input_field($key, $field);
                         }
                         ?>
+                        <div class="clear"></div>
+                        <?php echo show_product_field('billing_country', array(
+                                'options' => CRMCountry::getCountries(),
+                                'label' => __('Country', 'woocommerce'),
+                                'class' => 'form-group has-focus mb-3',
+                                'required' => true,
+                                'key' => true,
+                                'default' => $billing_country ?? '',
+                            )); ?>
+                        <div class="clear"></div>
+                            <?php
+                            echo show_product_field('billing_state', array(
+                                'options' => CRMCountry::getStatesByCountryCode($billing_country ?? ''),
+                                'label' => __('State', 'woocommerce'),
+                                'class' => 'form-group has-focus mb-4 mt-3',
+                                'required' => true,
+                                'key' => true,
+                                'default' => $billing_state ?? '',
+                            ));
+                            ?>
+                        <div class="clear"></div>
                         <div class="wp-block-button button-row block-button-black d-flex">
                             <button class="wp-element-button ml-auto continue-to-order new-address" type="button"
                                     title="<?php _e('Continue', 'cabling') ?>"><?php _e('Continue', 'cabling') ?></button>
