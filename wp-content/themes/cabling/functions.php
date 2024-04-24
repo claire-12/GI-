@@ -224,7 +224,7 @@ function cabling_scripts()
     wp_enqueue_script('cabling-theme', get_template_directory_uri() . '/assets/js/theme.js', array(), null, true);
     wp_enqueue_script('cabling-webshop', get_template_directory_uri() . '/assets/js/webshop.js', array(), null, true);
     wp_enqueue_script('jspdf', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js', array(), null, true);
-    wp_enqueue_script('html2canvas', 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', array(), null, true);
+    wp_enqueue_script('html2pdf', 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js', array(), null, true);
     wp_enqueue_script('dompurify', 'https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.3/purify.min.js', array(), null, true);
 
 
