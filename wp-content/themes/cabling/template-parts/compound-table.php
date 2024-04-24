@@ -154,27 +154,16 @@ $compounds = get_compound_product($term->term_id);
                 type: 'jpeg',
                 quality: 0.98
             },
-            pageBreak: {
-                mode: "css",
-                avoid: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong', 'li', 'feild'],
-                before: "5cm",
-                after: "5cm"
-            },
             html2canvas: {
                 scale: 2,
                 logging: true,
                 dpi: 192,
                 letterRendering: true,
-                useCORS: true,
-                bottom: 20
             },
             jsPDF: {
                 unit: 'mm',
                 format: 'a4',
                 orientation: 'portrait',
-                putTotalPages: true,
-                autoPaging: 'text',
-                margin: [12, 8, 15, 8],
             },
         };
         html2pdf().from(htmlContent).set(opt).toPdf().get('pdf').then(function(pdf) {
