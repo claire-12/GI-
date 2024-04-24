@@ -2,127 +2,190 @@
 $term = get_queried_object();
 $compounds = get_compound_product($term->term_id);
 ?>
-<?php //print_r($term); ?>
+<?php //print_r($term); 
+?>
 <div class="table-responsive">
     <table class="table table-bordered product-variation-table">
         <thead>
-        <tr>
-            <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
-                <th class="has-text-align-center" data-align="center">Part Number Format</th>
-                <th class="has-text-align-center" data-align="center">Drawing</th>
-                <th class="has-text-align-center" data-align="center">Material Specification</th>
-                <th class="has-text-align-center" data-align="center">Compound</th>
-                <th class="has-text-align-center" data-align="center"></th>
-            <?php } else { ?>
-                <th class="has-text-align-center" data-align="center">Elastomer</th>
-                <th class="has-text-align-center" data-align="center">Compound</th>
-                <th class="has-text-align-center" data-align="center">Durometer</th>
-                <th class="has-text-align-center" data-align="center">Color</th>
-                <th class="has-text-align-center" data-align="center">Key properties</th>
-                <th class="has-text-align-center" data-align="center"></th>
-            <?php } ?>
-        </tr>
+            <tr>
+                <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
+                    <th class="has-text-align-center" data-align="center">Part Number Format</th>
+                    <th class="has-text-align-center" data-align="center">Drawing</th>
+                    <th class="has-text-align-center" data-align="center">Material Specification</th>
+                    <th class="has-text-align-center" data-align="center">Compound</th>
+                    <th class="has-text-align-center" data-align="center"></th>
+                <?php } else { ?>
+                    <th class="has-text-align-center" data-align="center">Elastomer</th>
+                    <th class="has-text-align-center" data-align="center">Compound</th>
+                    <th class="has-text-align-center" data-align="center">Durometer</th>
+                    <th class="has-text-align-center" data-align="center">Color</th>
+                    <th class="has-text-align-center" data-align="center">Key properties</th>
+                    <th class="has-text-align-center" data-align="center"></th>
+                <?php } ?>
+            </tr>
         </thead>
         <tbody>
 
-        <?php foreach ($compounds as $compound): ?>
-            <?php
-            $attributes = array(
-                'attributes' => array('product_compound_single' =>[$compound]),
-            );
-            $data = base64_encode(json_encode($attributes));
-            $link = add_query_arg('data-history', $data, home_url('/products-and-services/'));
-            ?>
-            <tr>
-                <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
-                    <td class="has-text-align-center"
-                        data-align="center"><?php echo get_product_field('_compound_number_format', $compound) ?></td>
-                    <td class="has-text-align-center"
-                        data-align="center"><?php echo get_product_field('_compound_drawing', $compound) ?></td>
-                    <td class="has-text-align-center"
-                        data-align="center"><?php echo get_product_field('_compound_material_specification', $compound) ?></td>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php
-                        $compounddetailsid = get_post_id_by_slug(get_the_title($compound), $post_type = "page");
-                        if ($compounddetailsid != "") {
+            <?php foreach ($compounds as $compound) : ?>
+                <?php
+                $attributes = array(
+                    'attributes' => array('product_compound_single' => [$compound]),
+                );
+                $data = base64_encode(json_encode($attributes));
+                $link = add_query_arg('data-history', $data, home_url('/products-and-services/'));
+                ?>
+                <tr>
+                    <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_number_format', $compound) ?></td>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_drawing', $compound) ?></td>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_material_specification', $compound) ?></td>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php
+                            $compounddetailsid = get_post_id_by_slug(get_the_title($compound), $post_type = "page");
+                            if ($compounddetailsid != "") {
                             ?>
 
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
-                                <?php echo get_the_title($compound) ?>
-                            </a>
-                            <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
+                                    <?php echo get_the_title($compound) ?>
+                                </a>
+                                <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
                             <?php
-                        } else {
-                            echo get_the_title($compound);
-                        }
-                        ?>
-                    </td>
-                <?php } else { ?>
-                    <td class="has-text-align-center"
-                        data-align="center"><?php echo get_product_field('_elastomer', $compound) ?></td>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php
-                        $compounddetailsid = get_post_id_by_slug(get_the_title($compound), $post_type = "page");
-                        if ($compounddetailsid != "") {
+                            } else {
+                                echo get_the_title($compound);
+                            }
+                            ?>
+                        </td>
+                    <?php } else { ?>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_elastomer', $compound) ?></td>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php
+                            $compounddetailsid = get_post_id_by_slug(get_the_title($compound), $post_type = "page");
+                            if ($compounddetailsid != "") {
                             ?>
 
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
-                                <?php echo get_the_title($compound) ?>
-                            </a>
-                            <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
+                                    <?php echo get_the_title($compound) ?>
+                                </a>
+                                <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
                             <?php
-                        } else {
-                            echo get_the_title($compound);
-                        }
-                        ?>
-                        <!--
+                            } else {
+                                echo get_the_title($compound);
+                            }
+                            ?>
+                            <!--
                     <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
                         <?php echo get_the_title($compound) ?>
                     </a>-->
-                        <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
+                            <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
 
-                    </td>
-                    <td class="has-text-align-center"
-                        data-align="center"><?php echo get_product_field('_durometer', $compound) ?></td>
-                    <td class="has-text-align-center"
-                        data-align="center"><?php echo get_product_field('_colour', $compound) ?></td>
-                    <td class="has-text-align-center"
-                        data-align="center"><?php echo get_product_field('_key_properties', $compound) ?></td>
-                <?php } ?>
+                        </td>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_durometer', $compound) ?></td>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_colour', $compound) ?></td>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_key_properties', $compound) ?></td>
+                    <?php } ?>
 
-                <?php if (1 == 0) { ?>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php echo get_product_field('_elastomer', $compound) ?>
-                    </td>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php echo get_product_field('_compound_drawing', $compound) ?>
-                    </td>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php echo get_product_field('_compound_number_format', $compound) ?>
-                    </td>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php echo get_product_field('_compound_material_specification', $compound) ?>
-                    </td>
-                    <td class="has-text-align-center" data-align="center">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
-                            <?php echo get_the_title($compound) ?>
-                        </a>
-                        <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
-                    </td>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php echo get_product_field('_compound_most_recent_approval', $compound) ?>
-                    </td>
-                    <td class="has-text-align-center" data-align="center">
-                        <?php echo get_product_field('_compound_approval_date', $compound) ?>
-                    </td>
+                    <?php if (1 == 0) { ?>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php echo get_product_field('_elastomer', $compound) ?>
+                        </td>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php echo get_product_field('_compound_drawing', $compound) ?>
+                        </td>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php echo get_product_field('_compound_number_format', $compound) ?>
+                        </td>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php echo get_product_field('_compound_material_specification', $compound) ?>
+                        </td>
+                        <td class="has-text-align-center" data-align="center">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#compoundModal<?php echo $compound ?>">
+                                <?php echo get_the_title($compound) ?>
+                            </a>
+                            <?php get_template_part('template-parts/modal/compound', 'modal', ['compound' => $compound]); ?>
+                        </td>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php echo get_product_field('_compound_most_recent_approval', $compound) ?>
+                        </td>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php echo get_product_field('_compound_approval_date', $compound) ?>
+                        </td>
 
-                    <td class="has-text-align-center" data-align="center">
-                        <?php echo get_product_field('_key_properties', $compound) ?>
-                    </td>
-                <?php } ?>
-                <td><a href="<?php echo esc_url($link) ?>">View Product</a></td>
-            </tr>
-        <?php endforeach; ?>
+                        <td class="has-text-align-center" data-align="center">
+                            <?php echo get_product_field('_key_properties', $compound) ?>
+                        </td>
+                    <?php } ?>
+                    <td><a href="<?php echo esc_url($link) ?>">View Product</a></td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
+<script>
+    function downloadPDF(compoundId, pdfName) {
+        var elementHTML = document.getElementById("compoundModal" + compoundId);
+        const style = document.createElement('style');
+        style.innerHTML = `
+                .toggle-table .column-2 {
+                    max-width: 300px;
+                    width: 300px;
+                }
+                .wp-block-column p, .compoundtablewrap p{
+                    word-break: break-all;
+                    word-wrap: break-all;
+                    page-break-inside: avoid;
+                }
+                thead, th, tr  {
+                    page-break-inside: avoid;
+                }
+            `;
+        elementHTML.appendChild(style);
+
+        var printButton = elementHTML.querySelector(".print-pdf-button");
+        if (printButton) {
+            printButton.style.display = "none";
+        }
+
+        var htmlContent = elementHTML.innerHTML;
+
+        var opt = {
+            margin: 10,
+            filename: `${pdfName}.pdf`,
+            image: {
+                type: 'jpeg',
+                quality: 0.98
+            },
+            pageBreak: {
+                mode: "css",
+                avoid: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong', 'li', 'feild'],
+                before: "5cm",
+                after: "5cm"
+            },
+            html2canvas: {
+                scale: 2,
+                logging: true,
+                dpi: 192,
+                letterRendering: true,
+                useCORS: true,
+                bottom: 20
+            },
+            jsPDF: {
+                unit: 'mm',
+                format: 'a4',
+                orientation: 'portrait',
+                putTotalPages: true,
+                autoPaging: 'text',
+                margin: [12, 8, 15, 8],
+            },
+        };
+        html2pdf().from(htmlContent).set(opt).toPdf().get('pdf').then(function(pdf) {
+            var totalPages = pdf.internal.getNumberOfPages();
+            for (i = 1; i <= totalPages; i++) {
+                pdf.setPage(i);
+                pdf.setFontSize(12);
+            }
+            if (printButton) {
+                printButton.style.display = "block";
+            }
+        }).save();
+    }
+</script>
