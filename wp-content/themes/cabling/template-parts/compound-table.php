@@ -125,9 +125,15 @@ $compounds = get_compound_product($term->term_id);
         var elementHTML = document.getElementById("compoundModal" + compoundId);
         const style = document.createElement('style');
         style.innerHTML = `
+                .print-pdf-button {
+                    display: none;
+                }
                 .toggle-table .column-2 {
                     max-width: 300px;
                     width: 300px;
+                }
+                .toggle-table summary{
+                    list-style-type: none;
                 }
                 .wp-block-column p, .compoundtablewrap p{
                     word-break: break-work;
@@ -139,11 +145,6 @@ $compounds = get_compound_product($term->term_id);
                 }
             `;
         elementHTML.appendChild(style);
-
-        var printButton = elementHTML.querySelector(".print-pdf-button");
-        if (printButton) {
-            printButton.style.display = "none";
-        }
 
         var htmlContent = elementHTML.innerHTML;
 
@@ -161,20 +162,13 @@ $compounds = get_compound_product($term->term_id);
                 letterRendering: true,
             },
             jsPDF: {
-                unit: 'mm',
-                format: 'a4',
+                unit: 'pt',
+                format: 'letter',
                 orientation: 'portrait',
             },
         };
         html2pdf().from(htmlContent).set(opt).toPdf().get('pdf').then(function(pdf) {
-            var totalPages = pdf.internal.getNumberOfPages();
-            for (i = 1; i <= totalPages; i++) {
-                pdf.setPage(i);
-                pdf.setFontSize(12);
-            }
-            if (printButton) {
-                printButton.style.display = "block";
-            }
+            elementHTML.removeChild(style);
         }).save();
     }
 </script>
