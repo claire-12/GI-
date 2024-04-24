@@ -3864,3 +3864,65 @@ table.tablepress-id-52 tr .column-7 {
 .filter-product_compound_single {
   display: none;
 }
+
+/* My Quotations */
+.container-quotations .title {
+  text-align: center;
+}
+.quotations-wrap {
+  background-color: #fafafa;
+  padding: 20px;
+}
+.container-quotations table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.container-quotations th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.container-quotations th {
+  background-color: #f2f2f2;
+}
+.container-quotations th:last-child {
+  border-bottom: 1px solid #dddddd;
+  border: none;
+  background-color: #fff;
+}
+.container-quotations th:nth-last-child(2) {
+  border-bottom: 1px solid #dddddd;
+  border: none;
+  background-color: #fff;
+}
+.container-quotations td:last-child {
+  width: 150px;
+  text-align: center;
+}
+.container-quotations td:nth-last-child(2) {
+  width: 150px;
+  text-align: center;
+}
+.container-quotations .btn-checkout {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.container-quotations .more-detail {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 5px 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+}
+.container-quotations .table-wrap {
+  width: 100%;
+  overflow-x: scroll;
+}
+.container-quotations table {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: scroll;
+  min-width: 1000px;
+}
