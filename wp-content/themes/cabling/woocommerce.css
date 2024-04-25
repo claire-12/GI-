@@ -1449,3 +1449,7 @@ b, strong {
     text-transform: uppercase;
     font-weight: 600 !important;
 }
+.woocommerce .woocommerce-cart-form .qty {
+     width: auto;
+     text-align: left;
+}

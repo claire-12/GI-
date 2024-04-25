@@ -3908,7 +3908,7 @@ table.tablepress-id-52 tr .column-7 {
 }
 
 .container-quotations th,
-td {
+.container-quotations th td {
 	border: 1px solid #dddddd;
 	text-align: left;
 	padding: 8px;
@@ -4046,5 +4046,5 @@ td {
 			left: 0;
 			text-align: center;
 		}
-	
+
 }

@@ -614,10 +614,12 @@
     /*myCollapsible.addEventListener('hidden.bs.collapse', function () {
         console.log('collapse');
     })*/
-    myCollapsible.addEventListener('shown.bs.collapse', function () {
-        $('#same-shipping-address').prop('checked', false);
-        $('#diff-shipping-address').prop('checked', true);
-    });
+    if(myCollapsible) {
+        myCollapsible.addEventListener('shown.bs.collapse', function () {
+            $('#same-shipping-address').prop('checked', false);
+            $('#diff-shipping-address').prop('checked', true);
+        });
+    }
     $(document).on('change', '#same-shipping-address', function () {
         if ($(this).is(':checked')) {
             $('#diff-shipping-address').prop('checked', false);
