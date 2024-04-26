@@ -639,7 +639,37 @@ body #ajaxsearchlite1 .autocomplete {
 .contact-box svg {
 	fill: #a8a8a8
 }
+.header-right {
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	width: 100%;
+	flex-direction: column;
+}
 
+.top-navigation {
+	font-size: 15px;
+}
+
+.header-right .contact-box {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 75px;
+	color: #fff;
+	line-height: 1.4
+}
+.header-cart {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.header-cart a{
+    color: var(--bs-body-color);
+}
+.header-cart a i{
+    color: var(--primary-color);
+}
 .header-right {
 	display: flex;
 	align-items: flex-end;

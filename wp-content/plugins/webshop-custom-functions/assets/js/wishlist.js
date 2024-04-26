@@ -13,7 +13,8 @@ const myWishlist = function (options) {
          * in the class
          */
     let vars = {
-        addWishlistClass: '.add-to-wishlist'
+        addWishlistClass: '.add-to-wishlist',
+        removeWishlistClass: '.remove-wishlist-product',
     };
 
     /*
@@ -32,12 +33,9 @@ const myWishlist = function (options) {
         $.extend(vars, options);
 
         root.addWishlistProduct();
+        root.removeWishlistProduct();
     };
 
-    /*
-     * Public method
-     * Can be called outside class
-     */
     this.addWishlistProduct = function () {
         $(document).on('click', vars.addWishlistClass,function (e) {
             e.preventDefault();
@@ -56,6 +54,32 @@ const myWishlist = function (options) {
                             thisButton.removeClass('has-wishlist');
                         } else {
                             thisButton.addClass('has-wishlist');
+                        }
+                    }
+                },
+                error: function (error) {
+                    console.error('Error adding product to wishlist');
+                }
+            });
+        });
+    };
+
+    this.removeWishlistProduct = function () {
+        $(document).on('click', vars.removeWishlistClass,function (e) {
+            e.preventDefault();
+            const thisButton = $(this);
+            const productId = thisButton.attr('data-product');
+            $.ajax({
+                type: 'POST',
+                url: wishlist_ajax.ajaxurl,
+                data: {
+                    action: 'gi_add_to_wishlist',
+                    product_id: productId
+                },
+                success: function (response) {
+                    if (response.success){
+                        if (response.data === 'remove_wishlist'){
+                            thisButton.closest('.wishlist_item').parent().remove();
                         }
                     }
                 },

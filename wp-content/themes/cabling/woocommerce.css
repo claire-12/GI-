@@ -1466,4 +1466,15 @@ b, strong {
 .wishlist_item .action .add-to-cart-button{
     font-size: .85rem;
     border-radius: 2px;
+    color: #fff;
+    text-decoration: none;
+}
+.wishlist_item a {
+    color: var(--main-blue-color);
+    text-decoration: underline;
+}
+.wishlist-products {
+    padding: 2rem;
+    background: #f1f1f1;
+    margin-bottom: 3rem;
 }

@@ -26,7 +26,7 @@ class GIWishlist
             if ( $wishlist_products ) {
                 wc_get_template('template-parts/wishlist/shortcode-content.php', ['wishlist_products' => $wishlist_products], '', WBC_PLUGIN_DIR);
             } else {
-                echo 'Your wishlist is empty.';
+                echo '<p class="text-center">Your wishlist is empty.</p>';
             }
         }
         return ob_get_clean();
