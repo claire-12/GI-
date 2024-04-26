@@ -227,8 +227,7 @@ function cabling_scripts()
 	wp_enqueue_script('cabling-webshop', get_template_directory_uri() . '/assets/js/webshop.js', array(), null, true);
 	wp_enqueue_script('fancyTable', get_template_directory_uri() . '/assets/js/fancyTable.min.js', array(), null, true);
 	wp_enqueue_script('dataTables', get_template_directory_uri() . '/assets/js/dataTables.min.js', array(), null, true);
-
-
+	wp_enqueue_script('html2pdf', get_template_directory_uri() . '/assets/js/html2pdf.bundle.min.js', array(), null, true);
 
 	$cabling_nonce = wp_create_nonce('cabling-ajax-nonce');
 	wp_localize_script('cabling-theme', 'CABLING', array(
