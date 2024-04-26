@@ -18,7 +18,17 @@ class GIWoocommerce
 
     public function gi_woocommerce_after_add_to_cart_button()
     {
-        echo '<button type="button" class="button add-to-wishlist ms-2" data-product="' . get_the_ID() . '"><i class="fa-light fa-heart me-2"></i>' . __('Add to wishlist', 'cabling') . '</button>';
+        global $product;
+
+        $user_id = get_current_user_id();
+        $wishlist_products = get_user_meta( $user_id, 'wishlist_products', true );
+        $class = '';
+
+        if ( is_array( $wishlist_products ) && in_array( $product->get_id(), $wishlist_products ) ) {
+            $class = 'has-wishlist';
+        }
+
+        echo '<button type="button" class="button add-to-wishlist ms-2 '. $class .'" data-product="' . get_the_ID() . '"><i class="fa-light fa-heart me-2"></i>' . __('Add to wishlist', 'cabling') . '</button>';
     }
 
     public function gi_woocommerce_return_to_shop_redirect()
