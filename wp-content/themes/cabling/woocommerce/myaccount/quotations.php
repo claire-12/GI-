@@ -17,8 +17,8 @@
 					<tbody>
 						<?php foreach ($data as $datum) : ?>
 						<tr>
-							<td class="q_number">
-								#<?php echo $datum->id ?? '*' ?>
+							<td class="q_number text-right">
+								<?php echo $datum->id ?? '*' ?>
 							</td>
 							<td><?php echo date("d/m/Y", strtotime($datum->date)) ?? '' ?></td>
 							<td>4900-90 Nitrile Seals x300</td>
@@ -40,6 +40,9 @@
 												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 											</div>
 											<div class="modal-body">
+												<?php
+                                                        $dataORing = $datum->data_o_ring ? unserialize($datum->data_o_ring) : "";
+                                                        ?>
 												<ul class="list-group list-group-horizontal">
 													<div class="row w-100 px-3">
 														<label class="col-4 text-start">Email</label>
@@ -52,6 +55,45 @@
 														<div class="col-8 text-start"><?php echo $datum->company_sector ?? '' ?></div>
 														<label class="col-4 text-start">Company Address</label>
 														<div class="col-8 text-start"><?php echo $datum->company_address ?? '' ?></div>
+
+														<label class="col-4 text-start">Desired Application</label>
+														<div class="col-8 text-start"><?php echo $dataORing['desired-application'] ?? '' ?></div>
+														<label class="col-4 text-start">Material</label>
+														<div class="col-8 text-start"><?php echo $dataORing['material'] ?? '' ?></div>
+														<label class="col-4 text-start">Hardness</label>
+														<div class="col-8 text-start"><?php echo $dataORing['hardness'] ?? '' ?></div>
+														<label class="col-4 text-start">Temperature</label>
+														<div class="col-8 text-start"><?php echo $dataORing['temperature'] ?? '' ?></div>
+														<label class="col-4 text-start">Coating</label>
+														<div class="col-8 text-start">
+															<?php echo $dataORing['coating'] ?? '' ?>
+														</div>
+														<label class="col-4 text-start"></label>
+														<div class="col-8 text-start">
+															<?php
+                                                                    if (!empty($dataORing[0])) {
+                                                                        $id = $dataORing[0]['id'] ?? "";
+                                                                        $od = $dataORing[0]['od'] ?? "";
+                                                                        $width = $dataORing[0]['width'] ?? "";
+                                                                        $type = $dataORing[0]['type'] ?? "";
+                                                                    }
+                                                                    ?>
+															<ul>
+																<li>
+																	ID: <?php echo $id; ?>
+																</li>
+																<li>
+																	OD: <?php echo $od; ?>
+																</li>
+																<li>
+																	WIDTH: <?php echo $width; ?>
+																</li>
+																<li>
+																	TYPE: <?php echo $type; ?>
+																</li>
+															</ul>
+														</div>
+
 														<label class="col-4 text-start">Cadditional information</label>
 														<div class="col-8 text-start"><?php echo $datum->additional_information ?? '' ?></div>
 														<label class="col-4 text-start">object ID</label>
@@ -115,6 +157,9 @@
 					}
 				}
 			},
+			order: [
+				[0, 'desc']
+			],
 			"columnDefs": [{
 				"orderable": false,
 				"targets": [4, 5]
