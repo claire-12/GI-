@@ -1487,3 +1487,6 @@ b, strong {
     height: 100%;
 
 }
+.wishlist-page .page-header {
+    display: none !important;
+}

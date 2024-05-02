@@ -30,6 +30,8 @@ class GIWishlist
             } else {
                 echo '<p class="text-center">Your wishlist is empty.</p>';
             }
+        } else {
+            wc_get_template('template-parts/wishlist/form-login.php', [], '', WBC_PLUGIN_DIR);
         }
         return ob_get_clean();
     }
