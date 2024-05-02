@@ -14,8 +14,14 @@ $total_data = array();
                             <?php $total_data[$product->get_id()] = 1;  ?>
                             <div class="col-12 col-lg-4 col-md-4">
                                 <div class="wishlist_item">
-                                    <div class="product-image mb-2"><?php echo $product->get_image() ?></div>
-                                    <h4 class="product-name"><?php echo $product->get_name() ?></h4>
+                                    <div class="product-image mb-2">
+                                        <a href="<?php echo $product->get_permalink() ?>">
+                                            <?php echo $product->get_image() ?>
+                                        </a>
+                                    </div>
+                                    <h4 class="product-name">
+                                        <a href="<?php echo $product->get_permalink() ?>"><?php echo $product->get_name() ?></a>
+                                    </h4>
                                     <p class="product-stock"><?php echo $product->is_in_stock() ? 'In Stock' : 'Out of Stock'; ?></p>
                                     <div class="form-group mb-1">
                                         <label for="quantity">Quantity:</label>

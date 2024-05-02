@@ -1487,3 +1487,7 @@ b, strong {
     height: 100%;
 
 }
+.wishlist_item .product-name a {
+    text-decoration: none;
+    color: var(--main-color);
+}
