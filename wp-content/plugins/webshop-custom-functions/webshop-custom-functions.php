@@ -21,6 +21,7 @@ require_once(WBC_PLUGIN_DIR . 'includes/classes/RequestProductQuote.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIEmail.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIWoocommerce.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIWishlist.php');
+require_once(WBC_PLUGIN_DIR . 'includes/functions.php');
 
 $folder_crm = WBC_PLUGIN_DIR . 'includes/classes/CRM/';
 
@@ -37,15 +38,15 @@ function admin_webshop_enqueue_scripts()
 {
     wp_enqueue_style('dataTables-webshop', '//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css');
 
-    wp_enqueue_script('dataTables-webshop', '//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js', array(), null, true);
-    wp_enqueue_script('admin-webshop', WBC_PLUGIN_URL . '/assets/js/admin-webshop.js', array(), null, true);
+    wp_enqueue_script('dataTables-webshop', '//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js', array(), WBC_VERSION, true);
+    wp_enqueue_script('admin-webshop', WBC_PLUGIN_URL . '/assets/js/admin-webshop.js', array(), WBC_VERSION, true);
 }
 
 add_action('admin_enqueue_scripts', 'admin_webshop_enqueue_scripts');
 
 function webshop_enqueue_scripts()
 {
-    wp_enqueue_script('webshop-cuz', WBC_PLUGIN_URL . '/assets/js/webshop.js', array(), null, true);
+    wp_enqueue_script('webshop-cuz', WBC_PLUGIN_URL . '/assets/js/webshop.js', array(), WBC_VERSION, true);
 
     $cabling_nonce = wp_create_nonce('cabling-ajax-nonce');
     wp_localize_script('webshop-cuz', 'CABLING', array(

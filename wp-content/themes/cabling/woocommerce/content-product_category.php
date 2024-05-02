@@ -28,6 +28,14 @@ $filterValues = show_filter_value($fieldList, $product->get_id());
 
 $product_link = get_product_filter_link();
 $col_number = 0;
+
+$user_id = get_current_user_id();
+$wishlist_products = get_user_meta( $user_id, 'wishlist_products', true );
+$class = '';
+
+if ( is_array( $wishlist_products ) && in_array( $product->get_id(), $wishlist_products ) ) {
+    $class = 'has-wishlist';
+}
 ?>
 <tr class="product-row <?php echo implode(' ', $filterValues) ?>">
     <?php foreach ($fieldList as $key => $attribute): $col_number++; ?>
@@ -61,7 +69,7 @@ $col_number = 0;
                 <i class="fa-light fa-shopping-cart me-2"></i>
                 <span><?php echo __('Add to cart', 'cabling'); ?></span>
             </a>
-            <a href="#" class="add-to-cart-button add-to-wishlist ms-2"
+            <a href="#" class="add-to-cart-button add-to-wishlist ms-2 <?php echo $class ?>"
                data-product="<?php echo esc_attr($product->get_id()); ?>">
                 <i class="fa-light fa-heart me-2"></i>
                 <span><?php echo __('Add to wishlist', 'cabling'); ?></span>
