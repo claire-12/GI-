@@ -15,6 +15,8 @@ const myWishlist = function (options) {
     let vars = {
         addWishlistClass: '.add-to-wishlist',
         removeWishlistClass: '.remove-wishlist-product',
+        updateWishlistTotal: '.quantity-update',
+        wishlistToCart: '.wishlist-to-cart',
     };
 
     /*
@@ -34,6 +36,8 @@ const myWishlist = function (options) {
 
         root.addWishlistProduct();
         root.removeWishlistProduct();
+        root.recalculateWishlistTotal();
+        root.wishlistToCart();
     };
 
     this.addWishlistProduct = function () {
@@ -81,6 +85,54 @@ const myWishlist = function (options) {
                         if (response.data === 'remove_wishlist'){
                             thisButton.closest('.wishlist_item').parent().remove();
                         }
+                    }
+                },
+                error: function (error) {
+                    console.error('Error adding product to wishlist');
+                }
+            });
+        });
+    };
+
+    this.recalculateWishlistTotal = function () {
+        $(document).on('click', vars.updateWishlistTotal,function (e) {
+            e.preventDefault();
+            const thisButton = $(this);
+            const data = thisButton.closest('form').serialize();
+            $.ajax({
+                type: 'POST',
+                url: wishlist_ajax.ajaxurl,
+                data: {
+                    action: 'gi_calculate_wishlist_total',
+                    data: data
+                },
+                success: function (response) {
+                    if (response.success){
+                        $('.wishlist-total').find('td[data-title=Total],td[data-title=Subtotal]').html(response.data)
+                    }
+                },
+                error: function (error) {
+                    console.error('Error adding product to wishlist');
+                }
+            });
+        });
+    };
+
+    this.wishlistToCart = function () {
+        $(document).on('click', vars.wishlistToCart, function (e) {
+            e.preventDefault();
+            const thisButton = $(this);
+            const data = thisButton.closest('form').serialize();
+            $.ajax({
+                type: 'POST',
+                url: wishlist_ajax.ajaxurl,
+                data: {
+                    action: 'gi_wishlist_to_cart',
+                    data: data
+                },
+                success: function (response) {
+                    if (response.success){
+                        window.location.href = response.data;
                     }
                 },
                 error: function (error) {

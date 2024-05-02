@@ -21,6 +21,7 @@ require_once(WBC_PLUGIN_DIR . 'includes/classes/RequestProductQuote.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIEmail.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIWoocommerce.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIWishlist.php');
+require_once(WBC_PLUGIN_DIR . 'includes/functions.php');
 
 $folder_crm = WBC_PLUGIN_DIR . 'includes/classes/CRM/';
 

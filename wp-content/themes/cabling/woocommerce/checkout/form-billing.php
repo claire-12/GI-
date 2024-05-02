@@ -58,7 +58,7 @@ $fields = $checkout->get_checkout_fields('billing');
                 </h2>
                 <div id="collapseAddNew" class="accordion-collapse collapse" aria-labelledby="headingOne"
                      data-bs-parent="#accordionAddress">
-                    <div class="accordion-body px-0">
+                    <div class="accordion-body px-2">
                         <?php
 
                         foreach ($fields as $key => $field) {

@@ -209,10 +209,6 @@ function cabling_scripts()
 	wp_enqueue_style('cabling-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
 	wp_enqueue_style('dataTables', get_template_directory_uri() . '/assets/css/dataTables.dataTables.min.css');
 
-
-	if (is_checkout()) {
-		wp_enqueue_script('cabling-checkout', get_template_directory_uri() . '/assets/js/checkout-step.js', array(), null, true);
-	}
 	if (is_page_template('templates/register.php')) {
 		wp_enqueue_script('jquery.validate', get_template_directory_uri() . '/assets/js/jquery.validate.min.js', array(), null, true);
 	}
