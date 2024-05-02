@@ -1491,3 +1491,6 @@ b, strong {
     text-decoration: none;
     color: var(--main-color);
 }
+.wishlist-page .page-header {
+    display: none !important;
+}
