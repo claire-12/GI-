@@ -1039,12 +1039,7 @@ function cabling_get_api_ajax_callback()
             $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
             $user_plant = get_user_meta(get_current_user_id(), 'user_plant', true);
 
-            $data['api']['sapcustomer'] = $sap_no;
-
-            /*if (!empty($data['api']['due_date'])) {
-                $dateTime = new DateTime($data['api']['due_date']);
-                $data['api']['due_date'] = $dateTime->format('Y-d-m\TH:i:s.u');
-            }*/
+            $data['api']['SoldToParty'] = $sap_no;
 
             $bodyParams = array();
             foreach ($data['api'] as $name => $value) {
@@ -1058,72 +1053,67 @@ function cabling_get_api_ajax_callback()
                 );
             }
 
-            $type = 'ZDD_I_SD_PIM_MaterialBacklogCE';
-            $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogCEType';
+            $type = 'ZDD_I_SD_PIM_MaterialBacklog';
+            $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogType';
 
             switch ($data['api_page']) {
                 case 'inventory':
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE';
-                    $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK';
+                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE_CDS';
+                    $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK_CDS';
                     $template = $data['api_page'] . '-item.php';
-                    $parcomaterial = $data['api']['parcomaterial'];
-                    $sapmaterial = $data['api']['sapmaterial'];
-                    $parcocompound = $data['api']['parcocompound'];
+                    $oldMaterialNumber = $data['api']['MaterialOldNumber'];
+                    $material = $data['api']['Material'];
+                    $basicMaterial = $data['api']['BasicMaterial'];
 
                     $stockParams = array(
-                        /*array(
-                            'Field' => 'sapcustomer',
-                            'Value' => $sap_no,
-                            'Operator' => '',
-                        ),*/
                         array(
-                            'Field' => 'Plant',
+                            'Field' => 'SalesOrganization',
                             'Value' => empty($user_plant) ? '2141' : $user_plant,
                             'Operator' => '',
                         ),
                     );
                     $priceParams = array();
 
-                    if (!empty($parcomaterial) && !empty($parcocompound)) {
+                    if (!empty($oldMaterialNumber) && !empty($basicMaterial)) {
                         $priceParams = array(
                             array(
-                                'Field' => 'parcomaterial',
-                                'Value' => $parcomaterial,
+                                'Field' => 'MaterialOldNumber',
+                                'Value' => $oldMaterialNumber,
                                 'Operator' => '',
                             ),
                             array(
-                                'Field' => 'parcocompound',
-                                'Value' => $parcocompound,
+                                'Field' => 'BasicMaterial',
+                                'Value' => $basicMaterial,
                                 'Operator' => '',
                             )
                         );
 
                         $stockParams[] = array(
-                            'Field' => 'parcomaterial',
-                            'Value' => $parcomaterial,
+                            'Field' => 'OldMaterialNumber',
+                            'Value' => $oldMaterialNumber,
                             'Operator' => '',
                         );
                         $stockParams[] = array(
-                            'Field' => 'parcocompound',
-                            'Value' => $parcocompound,
+                            'Field' => 'BasicMaterial',
+                            'Value' => $basicMaterial,
                             'Operator' => '',
                         );
-                    } elseif (!empty($sapmaterial)) {
+                    } elseif (!empty($material)) {
                         $priceParams = array(
                             array(
-                                'Field' => 'sapmaterial',
-                                'Value' => $sapmaterial,
+                                'Field' => 'Material',
+                                'Value' => $material,
                                 'Operator' => '',
                             )
                         );
                         $priceParams[] = array(
-                            'Field' => 'sapcustomer',
+                            'Field' => 'SoldToParty',
                             'Value' => $sap_no,
                             'Operator' => '',
                         );
                         $stockParams[] = array(
-                            'Field' => 'sapmaterial',
-                            'Value' => $sapmaterial,
+                            'Field' => 'Material',
+                            'Value' => $material,
                             'Operator' => '',
                         );
                     }
@@ -1131,8 +1121,8 @@ function cabling_get_api_ajax_callback()
                     $responsePrice = $webServices->makeApiRequest($apiEndpoint, $priceParams);
                     $responseStock = $webServices->makeApiRequest($apiStockEndpoint, $stockParams);
 
-                    $dataPrice = $webServices->getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
-                    $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
+                    $dataPrice = $webServices->getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPrice', 'ZDD_I_SD_PIM_MaterialPriceType');
+                    $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStock', 'ZDD_I_SD_PIM_MaterialStockType');
 
                     $responseData = array(
                         'price' => $dataPrice,
@@ -1145,7 +1135,7 @@ function cabling_get_api_ajax_callback()
 
                     break;
                 default:
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG';
+                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $response = $webServices->makeApiRequest($apiEndpoint, $bodyParams);
 

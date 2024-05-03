@@ -3,26 +3,26 @@
     <p class="form-error-text alert alert-danger mb-4 hidden"><i class="fa-solid fa-triangle-exclamation me-2"></i>Please fill out the filter</p>
     <p class="parcocompound-text alert alert-danger mb-4 hidden"><i class="fa-solid fa-triangle-exclamation me-2"></i>Please fill out the Part Number and Compound Number</p>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[sapcustomer]" id="sapcustomer"
+        <input type="text" class="form-control" name="api[SoldToParty]" id="SoldToParty"
                value="<?php echo get_user_meta(get_current_user_id(), 'sap_customer', true)?>"
                disabled
         >
-        <label for="sapcustomer" class="form-label">Customer</label>
+        <label for="SoldToParty" class="form-label">Customer</label>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[sapMaterial]" id="sapMaterial1">
+        <input type="text" class="form-control" name="api[Material]" id="sapMaterial1">
         <label for="sapMaterial1" class="form-label">Material</label>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[ponumber]" id="ponumber1">
+        <input type="text" class="form-control" name="api[PurchaseOrderByCustomer]" id="ponumber1">
         <label for="ponumber1" class="form-label">Purchase Order</label>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[parcomaterial]" id="parcomaterial1">
+        <input type="text" class="form-control" name="api[OldMaterialNumber]" id="parcomaterial1">
         <label for="parcomaterial1" class="form-label">Part Number</label>
     </div>
     <div class="form-group mb-1">
-        <input type="text" class="form-control" name="api[parcocompound]" id="parcocompound1">
+        <input type="text" class="form-control" name="api[BasicMaterial]" id="parcocompound1">
         <label for="parcocompound1" class="form-label">Compound Number</label>
     </div>
     <!--<div class="form-group hidden">

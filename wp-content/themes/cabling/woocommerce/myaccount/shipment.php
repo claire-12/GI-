@@ -3,26 +3,26 @@
     <p class="form-error-text alert alert-danger mb-4 hidden"><i class="fa-solid fa-triangle-exclamation me-2"></i>Please fill out the filter</p>
     <p class="parcocompound-text alert alert-danger mb-4 hidden"><i class="fa-solid fa-triangle-exclamation me-2"></i>Please fill out the Part Number and Compound Number</p>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[sapcustomer]" id="sapcustomer"
+        <input type="text" class="form-control" name="api[SoldToParty]" id="SoldToParty"
                value="<?php echo get_user_meta(get_current_user_id(), 'sap_customer', true)?>"
                disabled
         >
-        <label for="sapcustomer" class="form-label">Customer</label>
+        <label for="SoldToParty" class="form-label">Customer</label>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[sapMaterial]" id="parcomaterial">
+        <input type="text" class="form-control" name="api[Material]" id="parcomaterial">
         <label for="parcomaterial" class="form-label">Material</label>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[ponumber]" id="ponumber">
+        <input type="text" class="form-control" name="api[PurchaseOrderByCustomer]" id="ponumber">
         <label for="ponumber" class="form-label">Purchase Order</label>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="api[parcomaterial]" id="sapMaterial">
+        <input type="text" class="form-control" name="api[OldMaterialNumber]" id="sapMaterial">
         <label for="sapMaterial" class="form-label">Part Number</label>
     </div>
     <div class="form-group mb-1">
-        <input type="text" class="form-control" name="api[parcocompound]" id="parcocompound">
+        <input type="text" class="form-control" name="api[BasicMaterial]" id="parcocompound">
         <label for="parcocompound" class="form-label">Compound Number</label>
     </div>
     <!--<div class="form-group hidden">

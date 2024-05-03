@@ -444,12 +444,12 @@
         return false;
     });
 
-    $('#api-results').on('click', 'td.ponumber', function () {
+    $('#api-results').on('click', 'td.PurchaseOrderByCustomer', function () {
         $('#sapMaterial1').val('');
         $('#ponumber1').val('');
         $('#parcomaterial1').val('');
         $('#parcocompound1').val('');
-        $('[name="show_ponumber"]').val($(this).attr('data-ponumber'));
+        $('[name="show_ponumber"]').val($(this).attr('data-PurchaseOrderByCustomer'));
 
         $('#webservice-api-form').submit();
     });

@@ -982,7 +982,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: var(--bs-table-bg);
 }
 
-td.ponumber {
+td.PurchaseOrderByCustomer {
     text-decoration: underline;
     cursor: pointer;
 }
