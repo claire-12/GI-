@@ -281,9 +281,7 @@ function cabling_register_new_account_ajax_callback()
             $mailer->send($recipient, $subject, $content, $headers);
         }
 
-        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
-        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the link to log in and explore.', 'cabling') . '</div>';
-		$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the <a href="/my-account/">link</a> to log in and explore.', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the <a href="/my-account/">link</a> to log in and explore.', 'cabling') . '</div>';
         wp_send_json_success($message);
     }
 
@@ -854,7 +852,11 @@ function cabling_reset_password_ajax_callback()
             $user = wp_authenticate($current_user->user_email, $data['old-password']);
 
             if (is_wp_error($user)) {
-                $message = '<div class="woocommerce-error woo-notice" role="alert">' . __('Old password is incorrect.', 'cabling') . '</div>';
+                $message = '<div class="alert woo-notice alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    <div>
+                        ' . __('Old password is incorrect.', 'cabling') . '
+                    </div>
+                </div>';
                 wp_send_json_error($message . $user->get_error_message());
             }
 
@@ -863,7 +865,12 @@ function cabling_reset_password_ajax_callback()
 
             wp_set_auth_cookie($current_user->ID);
 
-            $message = '<div class="woocommerce-message woo-notice" role="alert">' . __('Password updated successfully!', 'cabling') . '</div>';
+            $message = '<div class="alert woo-notice alert-success d-flex align-items-center" role="alert">
+                            <i class="fa-solid fa-circle-check me-2"></i>
+                            <div>
+                                ' . __('Password updated successfully!', 'cabling') . '
+                            </div>
+                        </div>';
             wp_send_json_success($message);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());
@@ -916,7 +923,7 @@ function cabling_get_products_ajax_callback()
                     }
 
                     if (!empty($data['attributes']['product_compound_single'])) {
-                        if (empty($data['attributes']['product_compound'])){
+                        if (empty($data['attributes']['product_compound'])) {
                             $data['attributes']['product_compound'] = $data['attributes']['product_compound_single'];
                         } else {
                             $data['attributes']['product_compound'] = array_merge($data['attributes']['product_compound'], $data['attributes']['product_compound_single']);
