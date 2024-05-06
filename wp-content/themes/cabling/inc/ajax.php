@@ -1114,7 +1114,7 @@ function cabling_get_api_ajax_callback()
                             )
                         );
                         $priceParams[] = array(
-                            'Field' => 'SoldToParty',
+                            'Field' => 'Customer',
                             'Value' => $sap_no,
                             'Operator' => '',
                         );
@@ -1133,6 +1133,10 @@ function cabling_get_api_ajax_callback()
 
                     $responseData = array(
                         'price' => $dataPrice,
+                        /*'response' => [
+                            $responsePrice,
+                            $responseStock,
+                        ],*/
                         'stock' => $dataStock,
                         'data' => [
                             $priceParams,
