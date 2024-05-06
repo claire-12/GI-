@@ -66,60 +66,61 @@
 	                                                            <div class="col-8 text-start">
 	                                                                <?php echo $dataORing['coating'] ?? '' ?>
 	                                                            </div>
-	                                                            <?php if (!empty($dataORing[0])) : ?>< <label class="col-4 text-start"></label>
-	                                                                    <div class="col-8 text-start">
-	                                                                        <?php
-                                                                            $id = $dataORing[0]['id'] ?? "";
-                                                                            $od = $dataORing[0]['od'] ?? "";
-                                                                            $width = $dataORing[0]['width'] ?? "";
-                                                                            $type = $dataORing[0]['type'] ?? "";
+	                                                            <?php if (!empty($dataORing[0])) : ?>
+	                                                                <label class="col-4 text-start"></label>
+	                                                                <div class="col-8 text-start">
+	                                                                    <?php
+                                                                        $id = $dataORing[0]['id'] ?? "";
+                                                                        $od = $dataORing[0]['od'] ?? "";
+                                                                        $width = $dataORing[0]['width'] ?? "";
+                                                                        $type = $dataORing[0]['type'] ?? "";
 
-                                                                            ?>
-	                                                                        <ul>
-	                                                                            <li>
-	                                                                                ID: <?php echo $id; ?>
-	                                                                            </li>
-	                                                                            <li>
-	                                                                                OD: <?php echo $od; ?>
-	                                                                            </li>
-	                                                                            <li>
-	                                                                                WIDTH: <?php echo $width; ?>
-	                                                                            </li>
-	                                                                            <li>
-	                                                                                TYPE: <?php echo $type; ?>
-	                                                                            </li>
-	                                                                        </ul>
-	                                                                    </div>
-	                                                                <?php endif; ?>
+                                                                        ?>
+	                                                                    <ul>
+	                                                                        <li>
+	                                                                            ID: <?php echo $id; ?>
+	                                                                        </li>
+	                                                                        <li>
+	                                                                            OD: <?php echo $od; ?>
+	                                                                        </li>
+	                                                                        <li>
+	                                                                            WIDTH: <?php echo $width; ?>
+	                                                                        </li>
+	                                                                        <li>
+	                                                                            TYPE: <?php echo $type; ?>
+	                                                                        </li>
+	                                                                    </ul>
+	                                                                </div>
+	                                                            <?php endif; ?>
 
-	                                                                <label class="col-4 text-start">Cadditional information</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->additional_information ?? '' ?></div>
-	                                                                <label class="col-4 text-start">object ID</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->object_id ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Company Sector</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->company_sector ?? '' ?></div>
-	                                                                <label class="col-4 text-start">status</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->status ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Product Of Interest</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->product_of_interest ?? '' ?></div>
-	                                                                <label class="col-4 text-start">When Needed</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->when_needed ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Volume</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->volume ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Dimension</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->dimension ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Part Number</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->part_number  ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Country Of Origin</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->country_of_origin  ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Current Suppliers</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->current_suppliers ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Quote Number</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->quote_number  ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Quote Price</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->quote_price  ?? '' ?></div>
-	                                                                <label class="col-4 text-start">Date</label>
-	                                                                <div class="col-8 text-start"><?php echo $datum->date  ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Cadditional information</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->additional_information ?? '' ?></div>
+	                                                            <label class="col-4 text-start">object ID</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->object_id ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Company Sector</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->company_sector ?? '' ?></div>
+	                                                            <label class="col-4 text-start">status</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->status ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Product Of Interest</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->product_of_interest ?? '' ?></div>
+	                                                            <label class="col-4 text-start">When Needed</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->when_needed ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Volume</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->volume ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Dimension</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->dimension ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Part Number</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->part_number  ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Country Of Origin</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->country_of_origin  ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Current Suppliers</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->current_suppliers ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Quote Number</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->quote_number  ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Quote Price</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->quote_price  ?? '' ?></div>
+	                                                            <label class="col-4 text-start">Date</label>
+	                                                            <div class="col-8 text-start"><?php echo $datum->date  ?? '' ?></div>
 	                                                        </div>
 	                                                    </ul>
 	                                                </div>

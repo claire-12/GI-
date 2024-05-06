@@ -2,15 +2,15 @@
 class CRMAccount
 {
 
-    public $company; // mandatory field
-    public $firstname; // mandatory field
-    public $lastname; // mandatory field
-    public $email; //mandatory field
-    public $mobile; //mandatory field
-    public $jobfunction; //mandatory field (Text field)
-    public $vatnumber;
-    public $department;
-    /*
+	public $company; // mandatory field
+	public $firstname; // mandatory field
+	public $lastname; // mandatory field
+	public $email; //mandatory field
+	public $mobile; //mandatory field
+	public $jobfunction; //mandatory field (Text field)
+	public $vatnumber;
+	public $department;
+	/*
     Purchasing Dept.    0001
     Sales Dept. 0002
     Administration Dept.    0003
@@ -39,10 +39,12 @@ class CRMAccount
     Procurement Z36
     Supply Chain Dept.  ZSC
     */
-    public $address;
-    public $city;
-    public $state;
-    public $country;
-    public $postalcode;
-    public $jobtitle;
+	public $address;
+	public $city;
+	public $state;
+	public $country;
+	public $postalcode;
+	public $jobtitle;
+
+	public $agreeTerm;
 }
