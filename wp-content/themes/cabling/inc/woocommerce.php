@@ -716,6 +716,7 @@ function am_woocommerce_catalog_orderby($args)
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+remove_action( 'woocommerce_cart_is_empty','wc_empty_cart_message', 10);
 
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
