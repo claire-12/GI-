@@ -1494,3 +1494,6 @@ b, strong {
 .wishlist-page .page-header {
     display: none !important;
 }
+.woocommerce .quantity .qty {
+    width: 100%;
+}
