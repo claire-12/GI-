@@ -1084,6 +1084,11 @@ function cabling_get_api_ajax_callback()
                     if (!empty($oldMaterialNumber) && !empty($basicMaterial)) {
                         $priceParams = array(
                             array(
+                                'Field' => 'Customer',
+                                'Value' => $sap_no,
+                                'Operator' => '',
+                            ),
+                            array(
                                 'Field' => 'MaterialOldNumber',
                                 'Value' => $oldMaterialNumber,
                                 'Operator' => '',
