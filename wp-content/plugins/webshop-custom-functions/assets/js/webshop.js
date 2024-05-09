@@ -250,6 +250,46 @@
             });
         return false;
     })
+    $(document).on('submit', '#form-change-address', function () {
+        const form = $(this);
+
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'gi_update_shipping_address',
+                data: form.serialize(),
+            },
+            success: function (response) {
+                if (response.success) {
+                    form.html(response.data);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    form.prepend(response.data);
+                }
+            },
+            beforeSend: function () {
+                showLoading();
+
+                form.find('.alert').remove();
+            }
+        })
+            .done(function () {
+                hideLoading();
+            })
+            .error(function () {
+                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    <div>
+                        There was an error while processing the request. Please try again later!
+                    </div>
+                </div>`);
+                hideLoading();
+            });
+        return false;
+    })
 })(jQuery);
 
 function showKeepInformedModal() {
@@ -286,18 +326,29 @@ function showKeepInformedModal() {
         });
 }
 
-function ci_edit_selected_address(e, address_type, address_key) {
+function gi_edit_selected_address(e, address_type, address_key) {
     $ = jQuery.noConflict();
 
     showLoading();
     const address_item = $(e).closest('.address-item');
     const shipping_form = $('.woocommerce-shipping-fields__field-wrapper').clone();
-    const modalElement = document.getElementById('addAddressModal');
+    const modalElement = $('#addAddressModal');
 
-    //const address = JSON.parse(address_item.attr('data-address'));
+    modalElement.find('.form-change-address').html(shipping_form.html());
 
-    //console.log(address_item.attr('data-address'));
+    const address = JSON.parse(address_item.attr('data-address'));
 
-    //new bootstrap.Modal(modalElement).show();
+    if (address) {
+        const addressKeys = Object.keys(address);
+
+        addressKeys.forEach(key => {
+            const value = address[key];
+            modalElement.find(`[name=${key}]`).val(value);
+        });
+
+        modalElement.find('input[name=thmaf_hidden_field_shipping]').val(address_key)
+
+    }
+    new bootstrap.Modal(modalElement).show();
     hideLoading();
 }

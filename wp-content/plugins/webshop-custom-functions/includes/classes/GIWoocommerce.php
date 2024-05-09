@@ -10,6 +10,7 @@ class GIWoocommerce
         add_action('woocommerce_after_add_to_cart_button', array($this, 'gi_woocommerce_after_add_to_cart_button'));
         add_action('woocommerce_cart_is_empty', array($this, 'gi_woocommerce_woocommerce_cart_is_empty'));
         add_action('wp_footer', array($this, 'gi_woocommerce_add_address_modal'));
+        add_action('wp_ajax_gi_update_shipping_address', array($this, 'gi_update_shipping_address_callback'));
 
         add_filter('woocommerce_return_to_shop_redirect', array($this, 'gi_woocommerce_return_to_shop_redirect'));
     }
@@ -24,20 +25,21 @@ class GIWoocommerce
         global $product;
 
         $user_id = get_current_user_id();
-        $wishlist_products = get_user_meta( $user_id, 'wishlist_products', true );
+        $wishlist_products = get_user_meta($user_id, 'wishlist_products', true);
         $class = '';
 
-        if ( is_array( $wishlist_products ) && in_array( $product->get_id(), $wishlist_products ) ) {
+        if (is_array($wishlist_products) && in_array($product->get_id(), $wishlist_products)) {
             $class = 'has-wishlist';
         }
 
-        echo '<button type="button" class="button add-to-wishlist ms-2 '. $class .'" data-product="' . get_the_ID() . '"><i class="fa-light fa-heart me-2"></i>' . __('Add to wishlist', 'cabling') . '</button>';
+        echo '<button type="button" class="button add-to-wishlist ms-2 ' . $class . '" data-product="' . get_the_ID() . '"><i class="fa-light fa-heart me-2"></i>' . __('Add to wishlist', 'cabling') . '</button>';
     }
 
     public function gi_woocommerce_return_to_shop_redirect()
     {
         return home_url('/products-and-services/');
     }
+
     public function gi_woocommerce_woocommerce_cart_is_empty()
     {
         if (is_user_logged_in() && function_exists('wc_empty_cart_message')) {
@@ -46,17 +48,19 @@ class GIWoocommerce
             wc_get_template('template-parts/wishlist/form-login.php', [], '', WBC_PLUGIN_DIR);
         }
     }
+
     public function gi_woocommerce_add_address_modal()
     {
         if (is_checkout()) {
             wc_get_template('template-parts/add-address-popup.php', [], '', WBC_PLUGIN_DIR);
         }
     }
+
     public function gi_create_wishlist_page()
     {
         $page_title = 'My Wishlist';
 
-        $page_check = get_page_by_path( sanitize_title( $page_title ));
+        $page_check = get_page_by_path(sanitize_title($page_title));
 
         if (!$page_check) {
             $page_data = array(
@@ -67,6 +71,53 @@ class GIWoocommerce
             );
 
             $page_id = wp_insert_post($page_data);
+        }
+    }
+
+    public function gi_update_shipping_address_callback()
+    {
+        parse_str($_REQUEST['data'], $cart_shipping_data);
+
+        $user_id = get_current_user_id();
+        $load_address = sanitize_key('shipping');
+        $country = $cart_shipping_data['shipping_country'] ?? '';
+        $address = WC()->countries->get_address_fields(wc_clean(wp_unslash($country)), $load_address . '_');
+
+        $address_data = array();
+        $address_new = array();
+
+        if (!empty($address) && is_array($address)) {
+            foreach ($address as $key => $field) {
+                if (!empty($cart_shipping_data) && is_array($cart_shipping_data)) {
+                    $address_data[$key] = array(
+                        'label' => $field['label'] ?? '',
+                        'value' => $cart_shipping_data[$key] ?? '',
+                        'required' => $field['required'] ?? '',
+                        'type' => $field['type'] ?? '',
+                        'validate' => $field['validate'] ?? ''
+                    );
+                    $address_new[$key] = $cart_shipping_data[$key] ?? '';
+                }
+            }
+        }
+        wp_send_json_error([$user_id, $address_new, 'shipping', $cart_shipping_data['thmaf_hidden_field_shipping'],THMAF_Utils::get_custom_addresses($user_id,'shipping')]);
+        // Validate the form.
+        $true_check = THMAF_Public_Checkout::validate_cart_shipping_addr_data($address_data, $address_new);
+        if ($true_check == 'true') {
+            $address_key = $cart_shipping_data['thmaf_hidden_field_shipping'];
+            THMAF_Utils::update_address_to_user($user_id, $address_new, 'shipping', $address_key);
+
+            $message = '<div class="alert alert-success d-flex align-items-center" role="alert"><i class="fa-solid fa-circle-check me-2"></i>
+                <div>'. __('Address Changed successfully.', 'woocommerce') .'</div>
+            </div>';
+
+            wp_send_json_success($message);
+        } else {
+            $message = '<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <div>'. $true_check .'</div>
+            </div>';
+
+            wp_send_json_error($message);
         }
     }
 }
