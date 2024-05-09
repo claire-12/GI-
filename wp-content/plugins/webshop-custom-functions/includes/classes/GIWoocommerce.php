@@ -8,7 +8,9 @@ class GIWoocommerce
         add_action('init', array($this, 'gi_create_wishlist_page'));
         add_action('woocommerce_after_add_to_cart_quantity', array($this, 'gi_after_add_to_cart_quantity'));
         add_action('woocommerce_after_add_to_cart_button', array($this, 'gi_woocommerce_after_add_to_cart_button'));
-        add_filter('woocommerce_return_to_shop_redirect', array($this, 'gi_woocommerce_return_to_shop_redirect'));;
+        add_action('woocommerce_cart_is_empty', array($this, 'gi_woocommerce_woocommerce_cart_is_empty'));
+
+        add_filter('woocommerce_return_to_shop_redirect', array($this, 'gi_woocommerce_return_to_shop_redirect'));
     }
 
     public function gi_after_add_to_cart_quantity()
@@ -34,6 +36,14 @@ class GIWoocommerce
     public function gi_woocommerce_return_to_shop_redirect()
     {
         return home_url('/products-and-services/');
+    }
+    public function gi_woocommerce_woocommerce_cart_is_empty()
+    {
+        if (is_user_logged_in() && function_exists('wc_empty_cart_message')) {
+            wc_empty_cart_message();
+        } else {
+            wc_get_template('template-parts/wishlist/form-login.php', [], '', WBC_PLUGIN_DIR);
+        }
     }
     public function gi_create_wishlist_page()
     {

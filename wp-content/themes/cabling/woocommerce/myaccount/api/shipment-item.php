@@ -9,7 +9,7 @@ $mainTable = array(
     'OrderQuantity' => __('Quantity', 'cabling'),
     'PurchaseOrderByCustomer' => __('P.O.', 'cabling'),
     'MaterialByCustomer' => __('Customer Part No.', 'cabling'),
-    'delivery' => __('Packing List', 'cabling'),
+    'DeliveryDocument' => __('Packing List', 'cabling'),
 );
 ?>
 <div class="table-responsive">
@@ -35,7 +35,7 @@ $mainTable = array(
         <?php foreach ($data as $datum): ?>
             <tr>
                 <td>
-                    <?php echo show_value_from_api('parcomaterial', $datum['parcomaterial']) ?><br>
+                    <?php echo show_value_from_api('OldMaterialNumber', $datum['OldMaterialNumber']) ?><br>
                     <?php echo show_value_from_api('BasicMaterial', $datum['BasicMaterial']) ?><br>
                     <?php echo show_value_from_api('Material', $datum['Material']) ?>
                 </td>

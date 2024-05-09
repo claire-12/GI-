@@ -14,10 +14,12 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
 $customer_id = get_current_user_id();
 $address_type = "shipping";
 $addresses = $custom_address = THMAF_Utils::get_custom_addresses($customer_id, $address_type);
-//echo '<pre>';var_dump($addresses)
+$custom_addresses = get_user_meta($customer_id, 'thwma_custom_address', true);
+//var_dump($custom_addresses);
 ?>
 <div class="woocommerce-shipping-blocks mt-3">
     <?php if (!empty($addresses)): ?>
@@ -33,13 +35,13 @@ $addresses = $custom_address = THMAF_Utils::get_custom_addresses($customer_id, $
                             <li><?php echo $address['shipping_address_2'] ?></li>
                         <?php endif ?>
                         <li><?php echo $address['shipping_city'] ?></li>
-                        <li><?php echo $address['shipping_state'] . ', ' . $address['shipping_postcode'] ?></li>
+                        <li><?php echo ($address['shipping_state'] ?? '') . ', ' . $address['shipping_postcode'] ?></li>
                         <li><?php echo $address['shipping_country'] ?></li>
                     </ul>
                 </div>
                 <div class="address-actions">
                     <a class="edit-address" href="#"><?php echo __('Edit', 'cabling') ?></a>
-                    <a class="remove-address" href="#" onclick="thmaf_delete_selected_address(this, '<?php echo $address_type ?>', <?php echo $address_key_param ?>)"><?php echo __('Remove', 'cabling') ?></a>
+                    <a class="remove-address" href="#" onclick="ci_delete_selected_address(this, '<?php echo $address_type ?>', <?php echo $address_key_param ?>)"><?php echo __('Remove', 'cabling') ?></a>
                 </div>
             </div>
         <?php endforeach; ?>

@@ -395,7 +395,7 @@ function cabling_account_menu_items()
     $new_items = array(
         'dashboard' => __('Datwyler My Account', 'cabling'),
         'edit-account' => __('Account Information', 'cabling'),
-        //'edit-address' => __('Billing/shipping address', 'cabling'),
+        'edit-address' => __('Billing/shipping address', 'cabling'),
         'setting-account' => __('Keep Me Informed', 'cabling'),
     );
 
@@ -446,7 +446,20 @@ function show_value_from_api($key, $value)
         return '-';
     }
 
-    if (str_contains($key, 'StockQuantity') || str_contains($key, 'ScaleFrom') || str_contains($key, 'ScaleTo')) {
+     if ($key === 'ScaleTo' && $value == '999999.00') {
+        return '-';
+    }
+
+    $numberKeys = array(
+        'OpenConfdDelivQtyInBaseUnit',
+        'StockQuantity',
+        'ScaleFrom',
+        'ScaleTo',
+        'OrderQuantity',
+        'OpenConfdDelivQtyInBaseUnit',
+    );
+
+    if (in_array($key, $numberKeys)) {
         return number_format($value, 0, '.', ' ');
     }
 
@@ -458,13 +471,19 @@ function show_value_from_api($key, $value)
         return $value;
     }
 
-    if (str_contains($key, 'EstimatedShipDate')) {
+    if (str_contains($key, 'Date')) {
         $dateTime = new DateTime($value);
 
         return $dateTime->format("m/d/Y");
     }
 
-    if (str_contains($key, 'price') && $key !== 'NetPriceQuantity') {
+    $priceKeys = array(
+        'NetPriceAmount',
+        'ScalePrice',
+        'MinPrice',
+    );
+
+    if (in_array($key, $priceKeys)) {
         return '$' . number_format($value, 2, '.', ' ');
     }
 
@@ -621,18 +640,7 @@ function cabling_custom_override_checkout_fields($fields)
 add_filter('woocommerce_billing_fields', 'cabling_woocommerce_billing_fields');
 function cabling_woocommerce_billing_fields($fields)
 {
-    /*if (get_customer_type(get_current_user_id()) === MASTER_ACCOUNT) {
-$fields['company_name_responsible'] = array(
-'label' => __('Company Responsible Full Name', 'cabling'),
-'placeholder' => _x('Company Responsible Full Name', 'placeholder', 'cabling'),
-'required' => false,
-'clear' => false,
-'type' => 'text',
-'priority' => 36
-);
-}*/
-
-    $fields['company_cat'] = array(
+    $fields['company_vat'] = array(
         'label' => __('VAT Number', 'cabling'),
         'placeholder' => _x('VAT Number', 'placeholder', 'cabling'),
         'required' => false,
@@ -645,14 +653,20 @@ $fields['company_name_responsible'] = array(
     return $fields;
 }
 
-add_filter('woocommerce_customer_meta_fields', 'cabling_woocommerce_customer_meta_fields');
-function cabling_woocommerce_customer_meta_fields($fields)
+add_filter('woocommerce_shipping_fields', 'cabling_woocommerce_shipping_fields');
+function cabling_woocommerce_shipping_fields($fields)
 {
+    //var_dump($fields);
+    $fields['shipping_address_1']['label'] = __('Address Line 1', 'cabling');
+    $fields['shipping_address_2']['label'] = __('Address Line 2', 'cabling');
 
-    $fields['billing']['fields']['company_name_responsible'] = array(
-        'label' => __('Company Responsible Full Name', 'cabling'),
-        'description' => '',
-    );
+    $fields['shipping_city']['label'] = __('City', 'cabling');
+
+    $fields['shipping_postcode']['label'] = __('Postcode', 'cabling');
+    //$fields['shipping_postcode']['required'] = true;
+
+    $fields['shipping_company']['label'] = __('Company', 'cabling');
+    $fields['shipping_company']['required'] = true;
 
     return $fields;
 }
@@ -671,40 +685,6 @@ function product_widgets_init()
 }
 
 add_action('widgets_init', 'product_widgets_init');
-
-
-/* uptade 07/04 */
-
-/**
- * Pre-populate Woocommerce checkout fields
- * Note that this filter populates shipping_ and billing_ fields with a different meta field eg 'first_name'
- */
-//add_filter('woocommerce_checkout_get_value', function ($input, $key) {
-//
-//    global $current_user;
-//
-//    switch ($key) :
-//        case 'billing_first_name':
-//        case 'shipping_first_name':
-//            return $current_user->first_name;
-//            break;
-//
-//        case 'billing_last_name':
-//        case 'shipping_last_name':
-//            return $current_user->last_name;
-//            break;
-//
-//        case 'billing_email':
-//            return $current_user->user_email;
-//            break;
-//
-//        case 'billing_phone':
-//            return $current_user->phone;
-//            break;
-//
-//    endswitch;
-//
-//}, 10, 2);
 
 /**
  * Dynamically pre-populate Woocommerce checkout fields with exact named meta field
@@ -736,6 +716,7 @@ function am_woocommerce_catalog_orderby($args)
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+remove_action( 'woocommerce_cart_is_empty','wc_empty_cart_message', 10);
 
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);

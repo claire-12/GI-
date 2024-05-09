@@ -1571,5 +1571,8 @@ strong {
 }
 
 .wishlist-page .page-header {
-	display: none !important;
+    display: none !important;
+}
+.woocommerce .quantity .qty {
+    width: 100%;
 }
