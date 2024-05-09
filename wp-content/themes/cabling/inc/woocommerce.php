@@ -412,7 +412,7 @@ function cabling_account_menu_items()
     //$new_items['orders'] = __('Order history', 'cabling');
     //$new_items['products'] = __('Purchases', 'cabling');
 
-    //$new_items['quotations'] = __('My Quotes', 'cabling');
+    $new_items['quotations'] = __('My Quotes', 'cabling');
 
     //$new_items['messages'] = __('Messages', 'cabling');
     $new_items['request-a-quote'] = __('REQUEST A QUOTE', 'cabling');

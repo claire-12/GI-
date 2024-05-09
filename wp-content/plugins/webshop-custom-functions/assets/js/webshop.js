@@ -42,7 +42,7 @@
                     const captcha_element = $(document).find('.quote-recaptcha');
 
                     if (captcha_element.length) {
-                        captcha_element.each(function(){
+                        captcha_element.each(function () {
                             const that = $(this);
                             const sitekey = CABLING.recaptcha_key;
                             grecaptcha.render(that.attr('id'), {
@@ -284,4 +284,20 @@ function showKeepInformedModal() {
             });
             new bootstrap.Modal(modalElement).show();
         });
+}
+
+function ci_edit_selected_address(e, address_type, address_key) {
+    $ = jQuery.noConflict();
+
+    showLoading();
+    const address_item = $(e).closest('.address-item');
+    const shipping_form = $('.woocommerce-shipping-fields__field-wrapper').clone();
+    const modalElement = document.getElementById('addAddressModal');
+
+    //const address = JSON.parse(address_item.attr('data-address'));
+
+    //console.log(address_item.attr('data-address'));
+
+    //new bootstrap.Modal(modalElement).show();
+    hideLoading();
 }

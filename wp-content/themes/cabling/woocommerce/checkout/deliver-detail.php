@@ -18,14 +18,13 @@ defined( 'ABSPATH' ) || exit;
 $customer_id = get_current_user_id();
 $address_type = "shipping";
 $addresses = $custom_address = THMAF_Utils::get_custom_addresses($customer_id, $address_type);
-$custom_addresses = get_user_meta($customer_id, 'thwma_custom_address', true);
 //var_dump($custom_addresses);
 ?>
 <div class="woocommerce-shipping-blocks mt-3">
     <?php if (!empty($addresses)): ?>
         <?php foreach($addresses as $address_key => $address): ?>
             <?php $address_key_param = "'".$address_key."'"; ?>
-            <div class="address-item d-flex p-2 mb-3">
+            <div class="address-item d-flex p-2 mb-3" data-address-key="<?php echo $address_key_param ?>" data-address="<?php echo wp_json_encode($address) ?>" >
                 <input type="radio" value="<?php echo $address_key_param ?>" name="select-shipping-address" class="form-check" data-type="<?php echo $address_type ?>" data-id=<?php echo $address_key_param ?>>
                 <div class="address-details ms-3">
                     <h4><?php echo $address['shipping_company']?></h4>
@@ -40,8 +39,8 @@ $custom_addresses = get_user_meta($customer_id, 'thwma_custom_address', true);
                     </ul>
                 </div>
                 <div class="address-actions">
-                    <a class="edit-address" href="#"><?php echo __('Edit', 'cabling') ?></a>
-                    <a class="remove-address" href="#" onclick="ci_delete_selected_address(this, '<?php echo $address_type ?>', <?php echo $address_key_param ?>)"><?php echo __('Remove', 'cabling') ?></a>
+                    <a class="edit-address" href="#" onclick="ci_edit_selected_address(this, '<?php echo $address_type ?>', <?php echo $address_key_param ?>)"><?php echo __('Edit', 'cabling') ?></a>
+                    <a class="remove-address" href="#" onclick="thmaf_delete_selected_address(this, '<?php echo $address_type ?>', <?php echo $address_key_param ?>)"><?php echo __('Remove', 'cabling') ?></a>
                 </div>
             </div>
         <?php endforeach; ?>
