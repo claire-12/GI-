@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 
 $customer_id = get_current_user_id();
 $address_type = "shipping";
-$addresses = $custom_address = THMAF_Utils::get_custom_addresses($customer_id, $address_type);
+$addresses = THMAF_Utils::get_custom_addresses($customer_id, $address_type);
 //var_dump($custom_addresses);
 ?>
 <div class="woocommerce-shipping-blocks mt-3">

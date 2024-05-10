@@ -100,12 +100,12 @@ class GIWoocommerce
                 }
             }
         }
-        wp_send_json_error([$user_id, $address_new, 'shipping', $cart_shipping_data['thmaf_hidden_field_shipping'],THMAF_Utils::get_custom_addresses($user_id,'shipping')]);
+
         // Validate the form.
         $true_check = THMAF_Public_Checkout::validate_cart_shipping_addr_data($address_data, $address_new);
         if ($true_check == 'true') {
             $address_key = $cart_shipping_data['thmaf_hidden_field_shipping'];
-            THMAF_Utils::update_address_to_user($user_id, $address_new, 'shipping', $address_key);
+            self::update_address_to_user($user_id, $address_new, 'shipping', $address_key);
 
             $message = '<div class="alert alert-success d-flex align-items-center" role="alert"><i class="fa-solid fa-circle-check me-2"></i>
                 <div>'. __('Address Changed successfully.', 'woocommerce') .'</div>
@@ -120,6 +120,37 @@ class GIWoocommerce
             wp_send_json_error($message);
         }
     }
+
+    /**
+         * function for update address to user.
+         *
+         * @param integer $user_id The user id
+         * @param array $address The address
+         * @param string $type The billing or shipping data
+         * @param string $address_key The address key info
+         *
+         */
+        public static function update_address_to_user($user_id, $address, $type, $address_key) {
+            $custom_addresses = get_user_meta($user_id, THMAF_Utils::ADDRESS_KEY, true);
+            $exist_custom = $custom_addresses[$type] ?? '';
+            $custom_address[$address_key] = $address;
+            $exist_custom = is_array($exist_custom) ? $exist_custom :  array();
+            $custom_addresses[$type] = array_merge($exist_custom, $custom_address);
+
+            update_user_meta($user_id, THMAF_Utils::ADDRESS_KEY, $custom_addresses);
+
+            if ($custom_addresses['default_shipping'] === $address_key){
+                foreach($address as $key => $addr){
+                    update_user_meta($user_id, $key, $addr);
+                }
+
+                // Trigger WooCommerce hooks to update internal data
+                do_action( 'woocommerce_customer_save_address', $user_id, 'shipping' );
+                do_action( 'woocommerce_saved_address', $user_id, 'shipping' );
+                do_action( 'woocommerce_customer_save_address', $user_id, 'both' );
+                do_action( 'woocommerce_saved_address', $user_id, 'both' );
+            }
+        }
 }
 
 new GIWoocommerce();
