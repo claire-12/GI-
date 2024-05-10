@@ -30,11 +30,11 @@ $total_data = array();
                                     <div class="mb-3">
                                         <a class="quantity-update" href="#"><?php echo __('recalculate', 'cabling'); ?></a>
                                     </div>
-                                    <div class="product-price amount mb-2">
-                                        <?php echo $product->get_price_html() ?>
+                                    <div class="product-price amount mb-2" style="min-height: 36px">
+                                        <?php echo $product->get_price_html() ?: '--' ?>
                                     </div>
                                     <div class="d-flex action justify-content-between">
-                                        <?php if (empty($product->get_price())): ?>
+                                        <?php if ('' !== $product->get_price()): ?>
                                             <a href="<?php echo esc_url(wc_get_cart_url()); ?>?add-to-cart=<?php echo esc_attr($product->get_id()); ?>"
                                                class="add-to-cart-button">
                                                 <i class="fa-light fa-shopping-cart me-2"></i>
