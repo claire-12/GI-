@@ -56,7 +56,14 @@ if ( is_array( $wishlist_products ) && in_array( $product->get_id(), $wishlist_p
            class="has-text-align-center"
            data-align="center"
         >
-            <?php cabling_add_quote_button($product->get_id()) ?>
+            <div class="d-flex justify-content-center">
+                <?php cabling_add_quote_button($product->get_id()) ?>
+                <a href="#" class="add-to-cart-button add-to-wishlist ms-2 <?php echo $class ?>"
+                   data-product="<?php echo esc_attr($product->get_id()); ?>">
+                    <i class="fa-light fa-heart me-2"></i>
+                    <span><?php echo __('Add to wishlist', 'cabling'); ?></span>
+                </a>
+            </div>
         </td>
     <?php else: ?>
         <td

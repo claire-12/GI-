@@ -121,6 +121,8 @@ const myWishlist = function (options) {
     this.wishlistToCart = function () {
         $(document).on('click', vars.wishlistToCart, function (e) {
             e.preventDefault();
+            $('.loading-wrap').fadeIn();
+            $('body').addClass('has-loading');
             const thisButton = $(this);
             const data = thisButton.closest('form').serialize();
             $.ajax({

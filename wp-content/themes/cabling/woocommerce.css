@@ -374,13 +374,17 @@ input[type="submit"] {
 }
 
 .product-request-button .btn-primary {
-	background-image: url(images/feedback-icon.svg);
-	background-repeat: no-repeat;
-	background-size: 30px;
-	background-position: 15px center;
-	padding-left: 55px;
+    background-image: url(images/feedback-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 15px center;
+    padding-left: 55px;
+    font-size: 16px;
+    border-radius: 4px;
 }
-
+.single-product .add-to-cart-button {
+    margin-bottom: 1.5rem;
+}
 .welcome-text {
 	font-size: 1.25rem;
 	margin-bottom: 5px;
@@ -1575,4 +1579,7 @@ strong {
 }
 .woocommerce .quantity .qty {
     width: 100%;
+}
+.add-cart-row .product-request-button {
+    display: inline-block;
 }

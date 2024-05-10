@@ -446,7 +446,7 @@ function show_value_from_api($key, $value)
         return '-';
     }
 
-     if ($key === 'ScaleTo' && $value == '999999.00') {
+    if ($key === 'ScaleTo' && $value == '999999.00') {
         return '-';
     }
 
@@ -716,7 +716,7 @@ function am_woocommerce_catalog_orderby($args)
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
-remove_action( 'woocommerce_cart_is_empty','wc_empty_cart_message', 10);
+remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
 
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
@@ -1011,8 +1011,29 @@ add_filter('woocommerce_product_add_to_cart_text', 'custom_woocommerce_product_a
 function cabling_add_quote_button($product_id = 0)
 {
     $product_id = is_product() ? get_the_ID() : $product_id;
+    echo '<div class="d-flex align-items-center">';
     echo '<div data-action="' . $product_id . '" class="product-request-button show-product-quote">';
     echo '<a class="btn btn-primary" href="#">' . __('Request a quote', 'cabling') . '</a>';
+    echo '</div>';
+
+    if (is_product()) {
+        $user_id = get_current_user_id();
+        $wishlist_products = get_user_meta($user_id, 'wishlist_products', true);
+        $class = '';
+
+        if (is_array($wishlist_products) && in_array($product_id, $wishlist_products)) {
+            $class = 'has-wishlist';
+        }
+
+        ob_start(); ?>
+        <a href="#" class="add-to-cart-button add-to-wishlist ms-2 <?php echo $class ?>"
+           data-product="<?php echo esc_attr($product_id); ?>">
+            <i class="fa-light fa-heart me-2"></i>
+            <span><?php echo __('Add to wishlist', 'cabling'); ?></span>
+        </a>
+        <?php
+        echo ob_get_clean();
+    }
     echo '</div>';
 }
 

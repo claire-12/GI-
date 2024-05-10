@@ -34,11 +34,13 @@ $total_data = array();
                                         <?php echo $product->get_price_html() ?>
                                     </div>
                                     <div class="d-flex action justify-content-between">
-                                        <a href="<?php echo esc_url(wc_get_cart_url()); ?>?add-to-cart=<?php echo esc_attr($product->get_id()); ?>"
-                                           class="add-to-cart-button">
-                                            <i class="fa-light fa-shopping-cart me-2"></i>
-                                            <span><?php echo __('Add to cart', 'cabling'); ?></span>
-                                        </a>
+                                        <?php if (empty($product->get_price())): ?>
+                                            <a href="<?php echo esc_url(wc_get_cart_url()); ?>?add-to-cart=<?php echo esc_attr($product->get_id()); ?>"
+                                               class="add-to-cart-button">
+                                                <i class="fa-light fa-shopping-cart me-2"></i>
+                                                <span><?php echo __('Add to cart', 'cabling'); ?></span>
+                                            </a>
+                                        <?php endif ?>
                                         <div data-action="<?php echo esc_attr($product->get_id()); ?>" class="product-request-button show-product-quote mb-0">
                                             <a class="btn btn-primary" href="#"><?php echo __('Request a quote', 'cabling'); ?></a>
                                         </div>

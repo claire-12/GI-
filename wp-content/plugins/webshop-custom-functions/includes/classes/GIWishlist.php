@@ -85,7 +85,7 @@ class GIWishlist
             if ( !empty($data['quantity']) ){
                 foreach ($data['quantity'] as $product_id => $quantity){
                     $product = wc_get_product( $product_id );
-                    if ($product) {
+                    if ($product && $product->is_purchasable()) {
                         WC()->cart->add_to_cart($product_id, $quantity);
                     }
                 }
