@@ -331,24 +331,32 @@ function gi_edit_selected_address(e, address_type, address_key) {
 
     showLoading();
     const address_item = $(e).closest('.address-item');
-    const shipping_form = $('.woocommerce-shipping-fields__field-wrapper').clone();
     const modalElement = $('#addAddressModal');
-
-    modalElement.find('.form-change-address').html(shipping_form.html());
-
     const address = JSON.parse(address_item.attr('data-address'));
 
-    if (address) {
-        const addressKeys = Object.keys(address);
-
-        addressKeys.forEach(key => {
-            const value = address[key];
-            modalElement.find(`[name=${key}]`).val(value);
+    $.ajax({
+        url: CABLING.ajax_url,
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            action: 'gi_get_modal_address_content',
+            address_type: address_type,
+            address_key: address_key,
+            address_fields: address,
+        },
+        success: function (response) {
+            if (response.success) {
+                modalElement.find('.form-change-address').html(response.data);
+                $("select#shipping_country").select2({dropdownParent: $('#addAddressModal')});
+                $("select#shipping_state").select2({dropdownParent: $('#addAddressModal')});
+                new bootstrap.Modal(modalElement).show();
+            }
+        },
+        beforeSend: function () {
+            showLoading();
+        }
+    })
+        .done(function () {
+            hideLoading();
         });
-
-        modalElement.find('input[name=thmaf_hidden_field_shipping]').val(address_key)
-
-    }
-    new bootstrap.Modal(modalElement).show();
-    hideLoading();
 }

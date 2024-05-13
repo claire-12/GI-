@@ -749,29 +749,10 @@ input[type="submit"] {
 	display: none
 }
 
-/*.woocommerce-billing-fields h3 {
-    display: none;
-}*/
-
-
-
-#shipping_city_field,
-#shipping_state_field,
-#shipping_postcode_field,
-#shipping_country_field,
-#billing_city_field,
-#billing_state_field,
-#billing_postcode_field,
-#billing_country_field {
-	-webkit-box-flex: 0;
-	-ms-flex: 0 0 50%;
-	flex: 0 0 50%;
-	max-width: 50%;
+.modal-open .select2-container {
+    z-index: 9999;
+    width: 100% !important;
 }
-
-/*.woocommerce-billing-fields.has_shipping_address .form-row:not(#billing_company_field):not(#billing_company_vat_field) {
-    display: none !important
-}*/
 .woocommerce-shipping-fields .woocommerce-shipping-fields__field-wrapper,
 .woocommerce-shipping-fields #ship-to-different-address,
 .woocommerce-shipping-fields #thmaf-enable-multiple-shipping,

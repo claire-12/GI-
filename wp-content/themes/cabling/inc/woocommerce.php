@@ -1867,7 +1867,7 @@ function cabling_change_product_query($query)
         }
         unset($attributes['group-type']);
         $meta_query = get_meta_query_from_attributes($attributes);
-
+        //echo '<pre>';var_dump($attributes, $meta_query);echo '</pre>';
         $query->set('meta_query', array_merge($old_meta_query, $meta_query));
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'product_dash_number');
@@ -1892,11 +1892,14 @@ function get_meta_query_from_attributes($attributes): array
         if (empty($meta_values)) {
             continue;
         }
-        /*if ($meta_key === 'product_compound') {
-//$choices = get_acf_taxonomy_options('compound_certification');
-//var_dump($meta_values, $choices);
-continue;
-}*/
+        if ($meta_key === 'product_compound') {
+            $meta_query[] = array(
+                'key' => $meta_key,
+                'value' => $meta_values,
+                'compare' => 'IN'
+            );
+            continue;
+        }
         if ($meta_key === 'compound_certification') {
             continue;
         }

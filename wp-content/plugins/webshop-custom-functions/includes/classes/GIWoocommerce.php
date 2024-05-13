@@ -11,8 +11,10 @@ class GIWoocommerce
         add_action('woocommerce_cart_is_empty', array($this, 'gi_woocommerce_woocommerce_cart_is_empty'));
         add_action('wp_footer', array($this, 'gi_woocommerce_add_address_modal'));
         add_action('wp_ajax_gi_update_shipping_address', array($this, 'gi_update_shipping_address_callback'));
+        add_action('wp_ajax_gi_get_modal_address_content', array($this, 'gi_get_modal_address_content_callback'));
 
         add_filter('woocommerce_return_to_shop_redirect', array($this, 'gi_woocommerce_return_to_shop_redirect'));
+        add_filter('woocommerce_checkout_must_be_logged_in_message', array($this, 'gi_woocommerce_checkout_is_not_logged'));
     }
 
     public function gi_after_add_to_cart_quantity()
@@ -47,6 +49,12 @@ class GIWoocommerce
         } else {
             wc_get_template('template-parts/wishlist/form-login.php', [], '', WBC_PLUGIN_DIR);
         }
+    }
+    public function gi_woocommerce_checkout_is_not_logged()
+    {
+        ob_start();
+        wc_get_template('template-parts/wishlist/form-login.php', [], '', WBC_PLUGIN_DIR);
+        return ob_get_clean();
     }
 
     public function gi_woocommerce_add_address_modal()
@@ -121,7 +129,7 @@ class GIWoocommerce
         }
     }
 
-    /**
+        /**
          * function for update address to user.
          *
          * @param integer $user_id The user id
@@ -151,6 +159,21 @@ class GIWoocommerce
                 do_action( 'woocommerce_saved_address', $user_id, 'both' );
             }
         }
+    public function gi_get_modal_address_content_callback()
+    {   $address_fields = $_REQUEST['address_fields'];
+        $country      = get_user_meta(get_current_user_id(), 'shipping_country', true);
+        $address = WC()->countries->get_address_fields($country, 'shipping_');
+
+        if(!empty($address) && is_array($address)) {
+            foreach ($address as $key => $field) {
+                $address[ $key ]['value'] = $address_fields[$key] ?? '';
+            }
+        }
+        ob_start();
+        wc_get_template('template-parts/checkout/form-address.php', ['address' => $address, 'address_key' => $_REQUEST['address_key']], '', WBC_PLUGIN_DIR);
+        $content = ob_get_clean();
+        wp_send_json_success($content);
+    }
 }
 
 new GIWoocommerce();

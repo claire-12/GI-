@@ -46,7 +46,7 @@ add_action('admin_enqueue_scripts', 'admin_webshop_enqueue_scripts');
 
 function webshop_enqueue_scripts()
 {
-    wp_enqueue_script('webshop-cuz', WBC_PLUGIN_URL . '/assets/js/webshop.js', array(), WBC_VERSION, true);
+    wp_enqueue_script('webshop-cuz', WBC_PLUGIN_URL . '/assets/js/webshop.js', array('jquery', 'select2',), WBC_VERSION, true);
 
     $cabling_nonce = wp_create_nonce('cabling-ajax-nonce');
     wp_localize_script('webshop-cuz', 'CABLING', array(
