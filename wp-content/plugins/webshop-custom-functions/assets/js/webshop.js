@@ -136,7 +136,7 @@
         }
     })
     $(document).on('change', '#billing_country', function (e) {
-        const stateSelect = $('#billing_state');
+        const stateSelect = $(this).closest('form').find('#billing_state');
         if (stateSelect.length) {
             const country = $(this).val();
             $.ajax({
@@ -149,7 +149,8 @@
                 },
                 success: function (response) {
                     if (response.success) {
-                        stateSelect.html(response.data)
+                        stateSelect.html(response.data);
+                        console.log(stateSelect, response.data)
                     }
                 },
                 beforeSend: function () {
@@ -290,6 +291,8 @@
             });
         return false;
     })
+
+
 })(jQuery);
 
 function showKeepInformedModal() {
@@ -347,8 +350,8 @@ function gi_edit_selected_address(e, address_type, address_key) {
         success: function (response) {
             if (response.success) {
                 modalElement.find('.form-change-address').html(response.data);
-                $("select#shipping_country").select2({dropdownParent: $('#addAddressModal')});
-                $("select#shipping_state").select2({dropdownParent: $('#addAddressModal')});
+                $("#shipping_country").select2({dropdownParent: $('#addAddressModal')});
+                $("#shipping_state").select2({dropdownParent: $('#addAddressModal')});
                 new bootstrap.Modal(modalElement).show();
             }
         },

@@ -2206,6 +2206,7 @@ function product_address_state_field()
 function show_product_field($name, $options = array()): string
 {
     $default = $options['default'] ?? '';
+    $id = $options['id'] ?? $name;
     $required = empty($options['required']) ? '' : 'required';
     $requiredLabel = empty($options['required']) ? '' : '<span class="required">*</span>';
     $option = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
@@ -2214,7 +2215,7 @@ function show_product_field($name, $options = array()): string
         $option .= '<option value="' . esc_attr($selectKey) . '" ' . selected($default, $selectKey, false) . '>' . esc_html($option_text) . '</option>';
     }
 
-    $field = '<select name="' . $name . '" id="' . $name . '" class="select form-select" ' . $required . '>' . $option . '</select>';
+    $field = '<select name="' . $name . '" id="' . $id . '" class="select form-select" ' . $required . '>' . $option . '</select>';
 
     return '<div class="w-100 form-group has-focus' . ($options['class'] ?? '') . '">' . $field . '<label for="' . $name . '">' . $options['label'] . $requiredLabel . '</label></div>';
 }
