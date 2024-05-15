@@ -481,3 +481,29 @@ function add_google_tag() {
 
 }
 add_action('wp_head', 'add_google_tag');
+
+if (!function_exists('cabling_site_icon_meta_tags')) :
+
+	add_action('wp_head', 'cabling_site_icon_meta_tags');
+
+	function cabling_site_icon_meta_tags()
+	{
+		if (!has_site_icon() && !is_customize_preview()) {
+			return;
+		}
+
+		$meta_tags = array();
+
+		if ($icon_16 = get_site_icon_url(16)) {
+			$meta_tags[] = sprintf('<link rel="icon" href="%s" sizes="16x16" type="image/png"/>', esc_url($icon_16));
+			$meta_tags[] = sprintf('<link rel="shortcut icon" href="%s" type="image/png" />', esc_url($icon_16));
+		}
+
+		$meta_tags = apply_filters('site_icon_meta_tags', $meta_tags);
+		$meta_tags = array_filter($meta_tags);
+
+		foreach ($meta_tags as $meta_tag) {
+			echo "$meta_tag\n";
+		}
+	}
+endif;
