@@ -36,7 +36,6 @@
     text-decoration: underline
 }
 
-//fix alignments 
 .alignfull_jm{
 	margin: 0 calc(50% - 50vw) !important;
     max-width: 100vw;
@@ -77,7 +76,7 @@
 	text-align: center;
 	font-size: 18px !important;
 	font-weight:400;
-	
+
     position: relative;
     padding-bottom: 15px;
     line-height: 1;
@@ -91,7 +90,7 @@ content: '';
     width: 48px;
     height: 3px;
     background: var(--background-red);
-    bottom: 0;    
+    bottom: 0;
 }
 
 .media_text  img{
@@ -164,7 +163,7 @@ font-size: 40px !important;
     padding: 22px 0 !important;
 }
 
-.entry-content_jm_reduced .view-product-block 
+.entry-content_jm_reduced .view-product-block
 {
 	padding:24px 0;
 }

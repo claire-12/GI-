@@ -146,8 +146,8 @@ class RequestProductQuote
                     $data['quote_filter'] = json_decode(base64_decode($data['filter-params']));
                 }
 
-                //if (is_user_logged_in_by_email($data['email'])) {
-				if (is_user_logged_in()) {
+//                if (is_user_logged_in_by_email($data['email'])) {
+if (is_user_logged_in()) {
                     $user = wp_get_current_user();
                     $userId = get_master_account_id($user->ID);
 

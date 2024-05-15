@@ -230,29 +230,28 @@ class CRMLead
 
         $rfq["Hardness_KUT"] = $product->hardness ?? "N/A";
 
+        //$rfq["OwnerPartyID"] = "8000000770";  // no brand defined by default
         $rfq["OwnerPartyID"] = "";  // no brand defined by default
 
+	if($rfq["OwnerPartyID"]==""&& $product->product=="005"){
+            $rfq["OwnerPartyID"]='8000001610';
+        }
         if ($crmsalesquote->getBrand() != "") {
             switch (strtolower($crmsalesquote->getBrand())) {
                 case "tst":
-                    //$rfq["OwnerPartyID"] = "8000000820";  // TST
-                    $rfq["OwnerPartyID"] = "8000000734";  // TST
+                    $rfq["OwnerPartyID"] = "8000000762";  // TST
                     break;
                 case "parco":
-                    $rfq["OwnerPartyID"] = "8000000821";  // PARCO
+                    $rfq["OwnerPartyID"] = "8000001610";  // PARCO
                     break;
                 case "doublee":
-                    $rfq["OwnerPartyID"] = "8000000822";  // Double E
+                    $rfq["OwnerPartyID"] = "8000001601";  // Double E
                     break;
                 case "olympian":
-                    //$rfq["OwnerPartyID"] = "8000000823";  // Olympian
-                    $rfq["OwnerPartyID"] = "8000000732";  // Olympian
+                    $rfq["OwnerPartyID"] = "8000000764";  // Olympian
                     break;
             }
         }
-        if($rfq["OwnerPartyID"]==""&& $product->product=="005"){
-            $rfq["OwnerPartyID"]='8000000821';
-        }        
 
         return json_encode($rfq);
     }
@@ -270,6 +269,19 @@ class CRMLead
         $lead["OwnerPartyID"] = "8000000770";  // no brand defined by default
         if ($brand != "") {
             switch (strtolower($brand)) {
+		case "tst":
+                    $rfq["OwnerPartyID"] = "8000000762";  // TST
+                    break;
+                case "parco":
+                    $rfq["OwnerPartyID"] = "8000001610";  // PARCO
+                    break;
+                case "doublee":
+                    $rfq["OwnerPartyID"] = "8000001601";  // Double E
+                    break;
+                case "olympian":
+                    $rfq["OwnerPartyID"] = "8000000764";  // Olympian
+                    break;
+/*
                 case "tst":
                     $lead["OwnerPartyID"] = "8000000820";  // TST
                     break;
@@ -282,6 +294,7 @@ class CRMLead
                 case "olympian":
                     $lead["OwnerPartyID"] = "8000000823";  // Olympian
                     break;
+*/
             }
         }
         $body = json_encode($lead);
@@ -467,8 +480,8 @@ class CRMLead
             case "whatsapp":
                 $option = "ZWA";
                 break;
-            default:
-                $option = "INT";
+default:
+$option = "INT";
         }
         $item = ["CommunicationMediumTypeCode" => $option, "MarketingPermissionCode" => ((int)$subscribe) == 0 ? "2" : "1"];
         return $item;

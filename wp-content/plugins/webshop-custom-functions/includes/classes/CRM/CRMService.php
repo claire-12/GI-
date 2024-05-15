@@ -100,9 +100,9 @@ class CRMService
 
                     $user_id = get_current_user_id();
                     if ($user_id) {
-                        update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed'][0]);
+						update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed'][0]);
                         update_user_meta($user_id, 'contact_marketing_agreed', $posted_data['contact_marketing_agreed'][0]);
-
+						
                         $lead = $this->requestContactCRM($posted_data);
                         $result['lead'] = $lead;
 
@@ -122,6 +122,7 @@ class CRMService
                 //wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());
             }
         }
+
         return $result;
     }
 

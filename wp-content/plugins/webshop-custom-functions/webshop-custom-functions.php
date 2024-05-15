@@ -19,7 +19,6 @@ require_once(WBC_PLUGIN_DIR . 'includes/classes/UserInformed.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/CablingPageTemplate.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/RequestProductQuote.php');
 require_once(WBC_PLUGIN_DIR . 'includes/classes/GIEmail.php');
-require_once(WBC_PLUGIN_DIR . 'includes/classes/GIWoocommerce.php');
 
 $folder_crm = WBC_PLUGIN_DIR . 'includes/classes/CRM/';
 
@@ -49,7 +48,6 @@ function webshop_enqueue_scripts()
     $cabling_nonce = wp_create_nonce('cabling-ajax-nonce');
     wp_localize_script('webshop-cuz', 'CABLING', array(
         'ajax_url' => admin_url('admin-ajax.php'),
-        'crm' => get_the_ID(),
         'nonce' => $cabling_nonce,
     ));
 }

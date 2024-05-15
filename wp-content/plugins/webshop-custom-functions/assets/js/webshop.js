@@ -176,7 +176,6 @@
             data: {
                 action: 'cabling_save_keep_informed_data',
                 data: form.serialize(),
-                brandId: CABLING.crm,
             },
             success: function (response) {
                 if (response.success) {
@@ -215,7 +214,6 @@
 
         const formData = new FormData(this);
         formData.append('action', 'cabling_request_quote');
-        formData.append('brandId', CABLING.crm);
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
