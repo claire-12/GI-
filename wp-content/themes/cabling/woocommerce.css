@@ -438,6 +438,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     text-align: center;
     clear: both;
     overflow: inherit;
+    display: flex;
+	flex-direction: column;
 }
 
 .keep-informed-account .informed-contact h5:before {
@@ -446,8 +448,13 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .keep-informed-account .informed-contact .form-check {
-    width: 33%;
-    float: left;
+	width: 33%;
+	flex: 1;
+	align-self: center;
+}
+.keep-informed-account .informed-contact .form-check .form-check {
+	align-self: flex-start;
+	margin-left: 1.5rem;
 }
 
 .keep-informed-account #informed-recaptcha {
@@ -615,6 +622,11 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     align-items: center;
     line-height: 1.125;
     margin-bottom: .875rem;
+	padding-left: 0;
+}
+
+.keep-informed-account label[for="agree-term-condition"] {
+	text-align: left;
 }
 
 .woocommerce form.login {
