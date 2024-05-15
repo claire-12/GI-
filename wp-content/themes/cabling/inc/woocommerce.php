@@ -1914,6 +1914,14 @@ function get_meta_query_from_attributes($attributes): array
         if ($meta_key === 'compound_certification') {
             continue;
         }
+        if ($meta_key === 'product_compound') {
+            $meta_query[] = array(
+                'key' => $meta_key,
+                'value' => $meta_values,
+                'compare' => 'IN'
+            );
+            continue;
+        }
         if (is_array($meta_values) && sizeof($meta_values)) {
             $meta_array = array();
             foreach ($meta_values as $value) {
