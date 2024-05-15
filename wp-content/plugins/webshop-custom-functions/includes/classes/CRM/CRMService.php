@@ -205,6 +205,14 @@ class CRMService
 
 	public function crm_action_after_saved_user_keep_informed($data)
 	{
+		$postData = explode("&", $_POST['data']);
+		$formData = [];
+		foreach ($postData as $keyPostData => $valuePostData) {
+			$value = explode("=", $valuePostData);
+			$formData[$value[0]] = $value[1];
+		}
+		$marketingAgreed = $formData['kmi_marketing_agreed'] ?? "no";
+		$data['marketing_agreed'] = $marketingAgreed == "no" ? false : true;
 		try {
 			$data['options'] = [];
 			if (!empty($data['category'])) {
