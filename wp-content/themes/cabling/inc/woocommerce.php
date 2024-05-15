@@ -463,25 +463,25 @@ function show_value_from_api($key, $value)
         return '-';
     }
 
-    if (str_contains($key, 'quantity') || str_contains($key, 'scale_from') || str_contains($key, 'scale_to')) {
+    if (str_contains($key, 'StockQuantity') || str_contains($key, 'ScaleFrom') || str_contains($key, 'ScaleTo')) {
         return number_format($value, 0, '.', ' ');
     }
 
-    if ($key === 'remaining_value') {
+    if ($key === 'RemainingValue') {
         return number_format($value, 2, '.', ' ');
     }
 
-    if (str_contains($key, 'cure_date')) {
+    if (str_contains($key, 'CureDate')) {
         return $value;
     }
 
-    if (str_contains($key, 'date')) {
+    if (str_contains($key, 'EstimatedShipDate')) {
         $dateTime = new DateTime($value);
 
         return $dateTime->format("m/d/Y");
     }
 
-    if (str_contains($key, 'price') && $key !== 'price_unit') {
+    if (str_contains($key, 'price') && $key !== 'NetPriceQuantity') {
         return '$' . number_format($value, 2, '.', ' ');
     }
 

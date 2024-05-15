@@ -2,14 +2,14 @@
 if (empty($data))
     return;
 
-usort($data, function ($a, $b) {return strtotime($b['ship_date']) - strtotime($a['ship_date']);});
+usort($data, function ($a, $b) {return strtotime($b['CommittedDeliveryDate']) - strtotime($a['CommittedDeliveryDate']);});
 
 $mainTable = array(
-    'ship_date' => __('Ship Date', 'cabling'),
-    'ordered_quantity' => __('Quantity', 'cabling'),
-    'ponumber' => __('P.O.', 'cabling'),
-    'customer_part_number' => __('Customer Part No.', 'cabling'),
-    'delivery' => __('Packing List', 'cabling'),
+    'CommittedDeliveryDate' => __('Ship Date', 'cabling'),
+    'OrderQuantity' => __('Quantity', 'cabling'),
+    'PurchaseOrderByCustomer' => __('P.O.', 'cabling'),
+    'MaterialByCustomer' => __('Customer Part No.', 'cabling'),
+    'DeliveryDocument' => __('Packing List', 'cabling'),
 );
 ?>
 <div class="table-responsive">
@@ -35,16 +35,16 @@ $mainTable = array(
         <?php foreach ($data as $datum): ?>
             <tr>
                 <td>
-                    <?php echo show_value_from_api('parcomaterial', $datum['parcomaterial']) ?><br>
-                    <?php echo show_value_from_api('parcocompound', $datum['parcocompound']) ?><br>
-                    <?php echo show_value_from_api('sapMaterial', $datum['sapMaterial']) ?>
+                    <?php echo show_value_from_api('OldMaterialNumber', $datum['OldMaterialNumber']) ?><br>
+                    <?php echo show_value_from_api('BasicMaterial', $datum['BasicMaterial']) ?><br>
+                    <?php echo show_value_from_api('Material', $datum['Material']) ?>
                 </td>
                 <?php foreach ($mainTable as $key => $item): ?>
                     <td><?php echo show_value_from_api($key, $datum[$key]) ?></td>
                 <?php endforeach ?>
                 <td>
-                    <?php echo show_value_from_api('lv_shipping_method', $datum['lv_shipping_method']) ?><br>
-                    <?php echo show_value_from_api('tracking_number', $datum['tracking_number']) ?>
+                    <?php echo show_value_from_api('ShippingMethod', $datum['ShippingMethod']) ?><br>
+                    <?php echo show_value_from_api('FATrackingID', $datum['FATrackingID']) ?>
                 </td>
             </tr>
         <?php endforeach ?>

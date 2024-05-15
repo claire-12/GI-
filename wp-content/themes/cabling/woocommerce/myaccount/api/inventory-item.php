@@ -3,23 +3,23 @@ if (empty($data))
     return;
 
 $backlogSingleTable = array(
-    'ordered_quantity' => __('Quantity Ordered', 'cabling'),
-    'open_quantity' => __('Quantity Remaining', 'cabling'),
-    'price_per_unit' => __('Price/Unit', 'cabling'),
-    'price_unit' => __('Price', 'cabling'),
-    'remaining_value' => __('Remaining Value', 'cabling'),
-    'due_date' => __('Due Date', 'cabling'),
-    'lv_shipping_method' => __('Shipping Method', 'cabling'),
+    'OrderQuantity' => __('Quantity Ordered', 'cabling'),
+    'OpenConfdDelivQtyInBaseUnit' => __('Quantity Remaining', 'cabling'),
+    'NetPriceAmount' => __('Price/Unit', 'cabling'),
+    'NetPriceQuantity' => __('Price', 'cabling'),
+    'RemainingValue' => __('Remaining Value', 'cabling'),
+    'RequestedDeliveryDate' => __('Due Date', 'cabling'),
+    'ShippingMethod' => __('Shipping Method', 'cabling'),
 );
 $backlogMainTable = array(
-    'ponumber' => __('Number', 'cabling'),
-    'customer_part_number' => __('Customer Part', 'cabling'),
-    'parcomaterial' => __('Part Number', 'cabling'),
-    'parcocompound' => __('Compound', 'cabling'),
-    'sapMaterial' => __('Material', 'cabling'),
-    'ship_date' => __('Ship Date', 'cabling'),
-    'open_quantity' => __('Quantity Remaining', 'cabling'),
-    'remaining_value' => __('Remaining Value', 'cabling'),
+    'PurchaseOrderByCustomer' => __('Number', 'cabling'),
+    'MaterialByCustomer' => __('Customer Part', 'cabling'),
+    'OldMaterialNumber' => __('Part Number', 'cabling'),
+    'BasicMaterial' => __('Compound', 'cabling'),
+    'Material' => __('Material', 'cabling'),
+    'CommittedDeliveryDate' => __('Ship Date', 'cabling'),
+    'OpenConfdDelivQtyInBaseUnit' => __('Quantity Remaining', 'cabling'),
+    'RemainingValue' => __('Remaining Value', 'cabling'),
 );
 ?>
 <?php if (is_array($data['stock'])): ?>
@@ -43,7 +43,7 @@ $backlogMainTable = array(
                     <?php
                     $totalQty = 0;
                     foreach ($data['stock'] as $s) {
-                        $totalQty += floatval($s['quantity']);
+                        $totalQty += floatval($s['StockQuantity']);
                     }
                     echo $totalQty;
                     ?>
@@ -52,7 +52,7 @@ $backlogMainTable = array(
             </tbody>
         </table>
     </div>
-	<p><strong>Please contact your assigned CSR to confirm material availability to meet your production requirements.</strong></p>
+    <p><strong>Please contact your assigned CSR to confirm material availability to meet your production requirements.</strong></p>
     <div class="row">
         <div class="col-12 col-lg-6">
             <div class="table-responsive">
@@ -67,12 +67,12 @@ $backlogMainTable = array(
                     <tbody>
                     <?php foreach ($data['stock'] as $lead): ?>
                         <?php
-                        if (isset($previous_date) && $lead['estimated_ship_date'] === $previous_date){continue;}
-                        $previous_date = $lead['estimated_ship_date'] ?? null;
+                        if (isset($previous_date) && $lead['EstimatedShipDate'] === $previous_date){continue;}
+                        $previous_date = $lead['EstimatedShipDate'] ?? null;
                         ?>
                         <tr>
-                            <td><?php echo show_value_from_api('lead_time', $lead['lead_time']) ?></td>
-                            <td><?php echo show_value_from_api('estimated_ship_date', $lead['estimated_ship_date']) ?></td>
+                            <td><?php echo show_value_from_api('LeadTimeInWeeks', $lead['LeadTimeInWeeks']) ?></td>
+                            <td><?php echo show_value_from_api('EstimatedShipDate', $lead['EstimatedShipDate']) ?></td>
                         </tr>
                     <?php endforeach ?>
                     </tbody>
@@ -95,12 +95,12 @@ $backlogMainTable = array(
                     <?php $stock = 0; ?>
                     <?php foreach ($data['stock'] as $cure): ?>
                         <?php
-                        $cumulative_quantity = get_cumulative_quantity($stock, $cure['quantity']);
+                        $cumulative_quantity = get_cumulative_quantity($stock, $cure['StockQuantity']);
                         $stock = $cumulative_quantity;
                         ?>
                         <tr>
-                            <td><?php echo show_value_from_api('cure_date', $cure['cure_date']) ?></td>
-                            <td><?php echo show_value_from_api('quantity', $cure['quantity']) ?></td>
+                            <td><?php echo show_value_from_api('CureDate', $cure['CureDate']) ?></td>
+                            <td><?php echo show_value_from_api('StockQuantity', $cure['StockQuantity']) ?></td>
                             <td><?php echo $cumulative_quantity ?></td>
                         </tr>
                     <?php endforeach ?>
@@ -128,10 +128,10 @@ $backlogMainTable = array(
             <tbody>
             <?php foreach ($data['price'] as $datum): ?>
                 <tr>
-                    <td><?php echo show_value_from_api('scale_from', $datum['scale_from']) ?></td>
-                    <td><?php echo show_value_from_api('scale_to', $datum['scale_to']) ?></td>
-                    <td><?php echo show_value_from_api('price100', $datum['price100']) ?></td>
-                    <td><?php echo show_value_from_api('minimum_price', $datum['minimum_price']) ?></td>
+                    <td><?php echo show_value_from_api('ScaleFrom', $datum['ScaleFrom']) ?></td>
+                    <td><?php echo show_value_from_api('ScaleTo', $datum['ScaleTo']) ?></td>
+                    <td><?php echo show_value_from_api('ScalePrice', $datum['ScalePrice']) ?></td>
+                    <td><?php echo show_value_from_api('MinPrice', $datum['MinPrice']) ?></td>
                 </tr>
             <?php endforeach ?>
             </tbody>

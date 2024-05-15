@@ -65,7 +65,7 @@ class GIWebServices
                 return $tokenResult;
             }
             $access_token = $tokenResult['access_token'];
-            $cookies = is_array($tokenResult['cookies']) ? implode(';',$tokenResult['cookies']) : $tokenResult['cookies'];
+            $cookies = is_array($tokenResult['cookies']) ? implode(';', $tokenResult['cookies']) : $tokenResult['cookies'];
 
             $headers = array(
                 'Content-Type: application/json',
@@ -141,5 +141,23 @@ class GIWebServices
         curl_close($curl);
 
         return $result;
+    }
+
+    /**
+     * Get data response from API endpoint
+     * @param array $response
+     * @param string $type
+     * @param string $type_level_2
+     * @return array
+     */
+    public function getDataResponse(array $response, string $type, string $type_level_2): array
+    {
+        $responseData = array();
+        if (isset($response[$type][$type_level_2])) {
+            $responseData = $response[$type][$type_level_2];
+
+            $responseData = is_array($responseData[0]) ? $responseData : [$responseData];
+        }
+        return $responseData;
     }
 }
