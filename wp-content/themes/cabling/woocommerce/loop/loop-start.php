@@ -26,10 +26,11 @@ if (!defined('ABSPATH')) {
     <table class="table table-bordered product-variation-table">
         <thead>
         <tr>
+			<th></th>
             <?php foreach ($product_attributes as $key => $attribute): ?>
                 <th class="has-text-align-center" data-align="center" data-filter="<?php echo $key ?>"><?php echo $attribute ?></th>
             <?php endforeach ?>
-
+            
         </tr>
         </thead>
         <tbody>

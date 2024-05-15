@@ -222,6 +222,7 @@ function cabling_scripts()
     wp_enqueue_script('flickity', get_template_directory_uri() . '/assets/js/flickity/flickity.pkgd.min.js', array(), null, true);
     wp_enqueue_script('cabling-theme', get_template_directory_uri() . '/assets/js/theme.js', array(), null, true);
     wp_enqueue_script('cabling-webshop', get_template_directory_uri() . '/assets/js/webshop.js', array(), null, true);
+	wp_enqueue_script('html2pdf', get_template_directory_uri() . '/assets/js/html2pdf.bundle.min.js', array(), null, true);
 
     $cabling_nonce = wp_create_nonce('cabling-ajax-nonce');
     wp_localize_script('cabling-theme', 'CABLING', array(
@@ -231,7 +232,7 @@ function cabling_scripts()
     wp_localize_script('cabling-webshop', 'CABLING', array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce'   => $cabling_nonce,
-            'crm' => get_the_ID(),
+		    'crm' => get_the_ID(),
             'recaptcha_key' => get_field('gcapcha_sitekey_v2', 'option'),
             'product_page'   => is_tax('product_custom_type') ? get_term_link(get_queried_object()) : home_url('/products-and-services'),
     ));
@@ -459,3 +460,24 @@ function my_acf_json_save_point( $path ) {
     return get_stylesheet_directory() . '/acf-json';
 }
 add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
+
+//add Google Tag Manager or Google Analytics code to header
+function add_google_tag() {
+    //$tag_manager_id = 'G-DXNM0L4ME8';
+    $tag_manager_id = '';
+
+    if (!empty($tag_manager_id)) { ?>
+        <!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id ?>"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', '<?php echo $tag_manager_id ?>');
+		</script>
+		<?php
+    }
+
+}
+add_action('wp_head', 'add_google_tag');

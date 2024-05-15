@@ -430,6 +430,24 @@ function endArray($array)
     return end($array);
 }
 
+/**
+ * get data response from API endpoint
+ * @param array $response
+ * @param string $type
+ * @param string $type_level_2
+ * @return array
+ */
+function getDataResponse(array $response, string $type, string $type_level_2): array
+{
+    $responseData = array();
+    if (isset($response[$type][$type_level_2])) {
+        $responseData = $response[$type][$type_level_2];
+
+        $responseData = is_array($responseData[0]) ? $responseData : [$responseData];
+    }
+    return $responseData;
+}
+
 function get_cumulative_quantity($stock, float $quantity): string
 {
     if (empty($stock)) {
@@ -748,15 +766,19 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
 
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 add_action('woocommerce_before_main_content', 'cabling_woocommerce_breadcrumb', 1);
 add_action('woocommerce_before_single_product_summary', 'cabling_get_brand_product', 4);
-add_action('woocommerce_single_product_summary', 'cabling_add_quote_on_product', 21);
-add_action('woocommerce_single_product_summary', 'cabling_additional_information', 90);
+add_action('woocommerce_single_product_summary', 'cabling_add_quote_button', 21);
+add_action('woocommerce_single_product_summary', 'cabling_additional_information', 22);
+//add_action( 'woocommerce_after_single_product_summary', 'cabling_woocommerce_description', 5 );
+//add_action( 'woocommerce_after_single_product_summary', 'cabling_woocommerce_pdf_export_button', 10 );
 add_action('woocommerce_shop_loop_item_title', 'cabling_product_description', 15);
-add_action('woocommerce_before_shop_loop', 'cabling_product_category_heading');
+add_action('woocommerce_before_shop_loop', 'cabling_product_category_heading', 10);
 add_action('woocommerce_after_my_account', 'cabling_woocommerce_after_my_account_modal', 99);
 
 function cabling_product_category_heading()
@@ -1033,7 +1055,7 @@ function cabling_woocommerce_description()
 // Change Add to Cart text on product archives
 function custom_woocommerce_product_add_to_cart_text($text, $product)
 {
-    return __('Add to cart', 'cabling');
+    return __('FIND OUT MORE', 'cabling');
 }
 
 add_filter('woocommerce_product_add_to_cart_text', 'custom_woocommerce_product_add_to_cart_text', 10, 2);
@@ -1044,16 +1066,6 @@ function cabling_add_quote_button($product_id = 0)
     echo '<div data-action="' . $product_id . '" class="product-request-button show-product-quote">';
     echo '<a class="btn btn-primary" href="#">' . __('Request a quote', 'cabling') . '</a>';
     echo '</div>';
-}
-
-function cabling_add_quote_on_product()
-{
-    global $product;
-
-    // Check if it's a product page and if price is empty
-    if (is_product() && '' === $product->get_price()) {
-        cabling_add_quote_button();
-    }
 }
 
 function cabling_additional_information()
@@ -1463,19 +1475,29 @@ function get_product_ids_by_category($taxonomy = '', $term_id = array(), $attrib
 
     return $posts;
 }
-if(!function_exists('custom_compare')){
-    function custom_compare($a, $b) {
+
+if (!function_exists('custom_compare')) {
+    function custom_compare($a, $b)
+    {
+        if (!is_string($a) || !is_string($b)) {
+            return 0;
+        }
+
         $pattern = '/-?\d+/';
         preg_match_all($pattern, $a, $matches_a);
         preg_match_all($pattern, $b, $matches_b);
+
+        if (empty($matches_a[0]) || empty($matches_b[0])) {
+            return 0;
+        }
 
         $max_a = max($matches_a[0]);
         $max_b = max($matches_b[0]);
 
         return $max_a <=> $max_b;
     }
-}
 
+}
 
 function get_filter_lists($get_options = true): array
 {
@@ -1563,11 +1585,11 @@ function get_filter_lists($get_options = true): array
                 } elseif ($field['type'] === 'post_object') {
                     $choices = get_acf_post_options($field['post_type']);
                     $valueType = 'key';
-                } elseif ($field['name'] === 'product_min'){
+                } elseif ($field['name'] === 'product_min') {
                     $choices = get_all_meta_values_cached($field['name']);
                     usort($choices, 'custom_compare');
                     $run_asort = false;
-                }elseif ($field['name'] === 'product_max'){
+                } elseif ($field['name'] === 'product_max') {
                     $choices = get_all_meta_values_cached($field['name']);
                     usort($choices, 'custom_compare');
                     $run_asort = false;
@@ -1577,7 +1599,7 @@ function get_filter_lists($get_options = true): array
                 } else {
                     $choices = get_all_meta_values_cached($field['name']);
                 }
-                if( $run_asort){
+                if ($run_asort) {
                     asort($choices);
                 }
             }
@@ -1649,12 +1671,9 @@ function get_all_meta_values_cached($meta_key, array $post_ids = [])
     if (!empty($values) && $acf_field['type'] === 'checkbox') {
         $new_values = array();
         foreach ($values as $value) {
-            if (empty($value)) {
-                continue;
-            }
             $unserializedData = unserialize($value);
 
-            if ($unserializedData === false) {
+            if ($unserializedData === false || empty($value)) {
                 continue;
             } else {
                 foreach ($unserializedData as $val) {
@@ -1856,7 +1875,7 @@ function cabling_change_product_query($query)
         if (!empty($attributes['product_compound'])) {
             $attributes['product_compound'] = get_compound_product($attributes['product_compound']);
         }
-        if (!empty($attributes['product_compound_single'])) {
+		if (!empty($attributes['product_compound_single'])) {
             if (empty($attributes['product_compound'])) {
                 $attributes['product_compound'] = $attributes['product_compound_single'];
             } else {
@@ -1892,11 +1911,6 @@ function get_meta_query_from_attributes($attributes): array
         if (empty($meta_values)) {
             continue;
         }
-        /*if ($meta_key === 'product_compound') {
-            //$choices = get_acf_taxonomy_options('compound_certification');
-            //var_dump($meta_values, $choices);
-            continue;
-        }*/
         if ($meta_key === 'compound_certification') {
             continue;
         }
@@ -2037,7 +2051,7 @@ function get_available_attributes(array $product_ids): ?array
             'milimeters_width',
             'product_contact_media',
             'product_min',
-            'product_max',
+			'product_max',
             'product_dash_number',
             'product_colour',
             'product_compound',

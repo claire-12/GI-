@@ -1523,7 +1523,7 @@ function custom_autofill_data($scanned_tag, $replace)
             break;
         case 'your-product':
             $scanned_tag['raw_values'] = CRMConstant::PRODUCT;
-            //$scanned_tag['values'] = CRMConstant::PRODUCT;
+//            $scanned_tag['values'] = CRMConstant::PRODUCT;
             break;
     }
 
@@ -1541,10 +1541,10 @@ add_action('send_headers', 'add_xframe_options_header');
 
 function add_csp_header()
 {
-    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ;  connect-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ;  frame-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ; worker-src 'self' 'unsafe-inline';  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ; img-src 'self' *.gravatar.com https://cdn-cookieyes.com data:;  font-src 'self' https://fonts.gstatic.com data:  ");
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://datwylersealing.com  https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com https://*.googletagmanager.com https://www.google-analytics.com ;  connect-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com https://*.googletagmanager.com https://www.google-analytics.com ;  frame-src 'self' 'unsafe-inline' https://*.cookieyes.com https://cdn-cookieyes.com https://*.cloudflare.com https://*.google.com https://*.gstatic.com ; worker-src 'self' 'unsafe-inline';  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ; img-src 'self' *.gravatar.com https://cdn-cookieyes.com data:;  font-src 'self' https://fonts.gstatic.com data:  ");
 }
 
-add_action('send_headers', 'add_csp_header');
+//add_action('send_headers', 'add_csp_header');
 
 function is_user_logged_in_by_email(string $email): bool
 {

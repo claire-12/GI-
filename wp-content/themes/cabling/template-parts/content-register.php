@@ -162,14 +162,15 @@ $policy_link = "<a style='color: inherit' target='new' href='" . home_url('/priv
                     'key' => true,
                     'default' => $_REQUEST['billing_state'] ?? '',
                 )); ?>
+				<div class="form-group">
                 <div class="text-center agree-term-condition mb-3">
-                    <label for="agree-term-condition">
-                        <!--<input type="checkbox" name="agree-term-condition" id="agree-term-condition" required>-->
-                        <!-- JM 20231002 changed target new -->
+                    
                         <?php //printf(__('By clicking "Register Now" you accept the %s and %s', 'cabling'), $term_link, $policy_link) ?>
+					<label for="agree-term-condition"></label>
 						<input type="checkbox" name="agree-term-condition" id="agree-term-condition" required style="opacity:1;">
-						<?php printf(__('Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your request to access My Account and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found %s'), $policy_link) ?>
-                    </label>
+<?php printf(__('Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your request to access My Account and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found %s'), $policy_link) ?>
+						<?php //printf(__('Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your quote request and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found %s'), $policy_link) ?>
+					</div>
                 </div>
                 <div class="text-center mb-5">
                     <div id="login-recaptcha" class="g-recaptcha d-flex justify-content-center mt-3"

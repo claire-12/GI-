@@ -91,7 +91,7 @@ add_action('wp_ajax_nopriv_get_contact_group', 'get_contact_group');
 function cabling_login_ajax_callback()
 {
     parse_str($_REQUEST['data'], $data);
-
+	
     $verify_recaptcha = cabling_verify_recaptcha($data['g-recaptcha-response']);
 
     $err = false;
@@ -907,7 +907,6 @@ function cabling_get_products_ajax_callback()
 
                 if (!empty($data['attributes'])) {
                     $isSizeFilter = checkFilterHasSize($data['attributes']);
-                    //$product_compound = [];
                     if (!empty($data['attributes']['product_compound'])) {
                         $certifications = $data['attributes']['product_compound'];
                         $data['attributes']['compound_certification'] = array_shift($certifications);
@@ -1000,7 +999,6 @@ function cabling_get_products_ajax_callback()
                 'category' => $category->name ?? '',
                 'results' => $results,
                 'total' => $total,
-                //'data' => $data,
                 'filter_meta' => $resultMetas ?? null,
                 //'$product_ids' => implode(',',$product_ids) ?? null,
                 'isSizeFilter' => $isSizeFilter,
@@ -1030,7 +1028,7 @@ function cabling_get_api_ajax_callback()
             //$apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
             $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
             $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
-            $webServices = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
+            $oauthClient = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
 
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
@@ -1128,11 +1126,11 @@ function cabling_get_api_ajax_callback()
                         );
                     }
 
-                    $responsePrice = $webServices->makeApiRequest($apiEndpoint, $priceParams);
-                    $responseStock = $webServices->makeApiRequest($apiStockEndpoint, $stockParams);
+                    $responsePrice = $oauthClient->makeApiRequest($apiEndpoint, $priceParams);
+                    $responseStock = $oauthClient->makeApiRequest($apiStockEndpoint, $stockParams);
 
-                    $dataPrice = $webServices->getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
-                    $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
+                    $dataPrice = getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPriceCE', 'ZDD_I_SD_PIM_MaterialPriceCEType');
+                    $dataStock = getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStockCE', 'ZDD_I_SD_PIM_MaterialStockCEType');
 
                     $responseData = array(
                         'price' => $dataPrice,
@@ -1147,13 +1145,13 @@ function cabling_get_api_ajax_callback()
                 default:
                     $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG';
                     $template = $data['api_page'] . '-item.php';
-                    $response = $webServices->makeApiRequest($apiEndpoint, $bodyParams);
+                    $response = $oauthClient->makeApiRequest($apiEndpoint, $bodyParams);
 
                     if ($response['error']) {
                         wp_send_json_error('API error: ' . $response['error']);
                     }
 
-                    $responseData = $webServices->getDataResponse($response, $type, $type_level_2);
+                    $responseData = getDataResponse($response, $type, $type_level_2);
                     break;
             }
 

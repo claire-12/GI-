@@ -55,11 +55,10 @@ input[type="text"]:disabled {
 .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     /*max-width: 77.5rem;*/
     max-width: 95vw;
-}
-.site-main > .container {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
 .box-column a .bottom_link {
     background-color: var(--main-blue-color);
     color: #fff;
@@ -637,17 +636,7 @@ body #ajaxsearchlite1 .autocomplete {
     color: #fff;
     line-height: 1.4
 }
-.header-cart {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-}
-.header-cart a{
-    color: var(--bs-body-color);
-}
-.header-cart a i{
-    color: var(--primary-color);
-}
+
 .header-right .contact-box p {
     margin: 0
 }
@@ -3800,7 +3789,7 @@ table.tablepress-id-52 tr .column-7 {
 
 .confirm-msg
 {
-    font-size: 24px;
+	font-size: 24px;
     text-align: center;
     margin-bottom: 100px;
 }

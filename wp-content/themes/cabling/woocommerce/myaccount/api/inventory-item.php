@@ -52,6 +52,7 @@ $backlogMainTable = array(
             </tbody>
         </table>
     </div>
+	<p><strong>Please contact your assigned CSR to confirm material availability to meet your production requirements.</strong></p>
     <div class="row">
         <div class="col-12 col-lg-6">
             <div class="table-responsive">

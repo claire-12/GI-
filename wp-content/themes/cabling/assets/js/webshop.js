@@ -520,25 +520,25 @@
 
 
     const wpcf7Elm = document.querySelector('.wpcf7');
-    if (wpcf7Elm) {
-        wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
-            openModal('modalSuccess');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7spam', function (event) {
-            openModal('modalError');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
-            openModal('modalError');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
-            openModal('modalError');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7submit', function (event) {
-            if (event.detail.status === 'wpcf7invalid') {
-                openModal('modalError');
-            }
-        }, false);
-    }
+	if(wpcf7Elm){
+		wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
+			openModal('modalSuccess');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7spam', function (event) {
+			openModal('modalError');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
+			openModal('modalError');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
+			openModal('modalError');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7submit', function (event) {
+			if (event.detail.status === 'wpcf7invalid') {
+				openModal('modalError');
+			}
+		}, false);
+	}
 })(jQuery);
 
 function sortList(element, name, order) {
@@ -794,7 +794,6 @@ function product_filter_ajax(cat_id) {
             $('.filter-blog').find('.filter-category').each(function () {
                 let that = $(this);
                 let meta_key = that.attr('data-meta-key');
-
                 if (filter_meta !== null) {
                     if (meta_key) {
                         if (filter_meta.hasOwnProperty(meta_key) && filter_meta[meta_key] && filter_meta[meta_key].includes(that.attr('data-value'))) {
