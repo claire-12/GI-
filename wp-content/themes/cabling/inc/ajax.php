@@ -854,7 +854,11 @@ function cabling_reset_password_ajax_callback()
             $user = wp_authenticate($current_user->user_email, $data['old-password']);
 
             if (is_wp_error($user)) {
-                $message = '<div class="woocommerce-error woo-notice" role="alert">' . __('Old password is incorrect.', 'cabling') . '</div>';
+                $message = '<div class="alert woo-notice alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    <div>
+                        ' . __('Old password is incorrect.', 'cabling') . '
+                    </div>
+                </div>';
                 wp_send_json_error($message . $user->get_error_message());
             }
 
@@ -863,7 +867,12 @@ function cabling_reset_password_ajax_callback()
 
             wp_set_auth_cookie($current_user->ID);
 
-            $message = '<div class="woocommerce-message woo-notice" role="alert">' . __('Password updated successfully!', 'cabling') . '</div>';
+            $message = '<div class="alert woo-notice alert-success d-flex align-items-center" role="alert">
+                            <i class="fa-solid fa-circle-check me-2"></i>
+                            <div>
+                                ' . __('Password updated successfully!', 'cabling') . '
+                            </div>
+                        </div>';
             wp_send_json_success($message);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());

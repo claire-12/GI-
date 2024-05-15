@@ -154,9 +154,11 @@ class UserInformed
                 if (!is_user_logged_in()){
                     self::send_confirm_notification($email);
                     $is_sent_confirmed = true;
-                }
 
-                $success = __('Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.', 'cabling');
+                    $success = __('Thanks for reaching out to us. We follow tough standards in how we manage your data at Datwyler. That’s why you’ll now receive an e-mail from us to confirm your request. If you don’t receive a message, please check your junk folder.', 'cabling');
+                } else {
+                    $success = __('Thanks for reaching out to us.', 'cabling');
+                }
             } else {
                 self::remove_informed_channel('email');
             }
