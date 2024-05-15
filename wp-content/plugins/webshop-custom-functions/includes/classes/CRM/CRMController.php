@@ -446,6 +446,9 @@ class CRMController
 			$CRMContact->phone = $data['sms'];
 		}
 
+		if (isset($data['marketing_agreed'])) {
+			$CRMContact->policyAgreed = $data["marketing_agreed"];
+		}
 		/*$communicationOptions = [
             "tel" => false,
             "whatsapp" => (bool)$data['whatsapp'],
@@ -539,6 +542,8 @@ class CRMController
 		$crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
 		$crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
 		$crmquoteproduct->brand = $data['brand'] ?? 'N/A';
+		$crmquoteproduct->policyAgreed = $data['rfq_policy_agreed'];
+		$crmquoteproduct->marketingAgreed = $data['rfq_marketing_agreed'];
 
 		if ($crmquoteproduct->product === '005') {
 			$crmquoteproduct->dimid = $data['dimension_oring']['id'] != "" ? $data['dimension_oring']['id'] : "0";
