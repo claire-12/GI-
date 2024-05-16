@@ -5,7 +5,7 @@ usort($data, function ($a, $b) {return strtotime($a['PurchaseOrderByCustomer']) 
 $backlogMainTable = array(
     'PurchaseOrderByCustomer' => __('Number', 'cabling'),
     'MaterialByCustomer' => __('Customer Part', 'cabling'),
-    'parcomaterial' => __('Part Number', 'cabling'),
+    'OldMaterialNumber' => __('Part Number', 'cabling'),
     'BasicMaterial' => __('Compound', 'cabling'),
     'Material' => __('Material', 'cabling'),
     'CommittedDeliveryDate' => __('Ship Date', 'cabling'),

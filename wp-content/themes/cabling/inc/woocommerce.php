@@ -463,7 +463,20 @@ function show_value_from_api($key, $value)
         return '-';
     }
 
-    if (str_contains($key, 'StockQuantity') || str_contains($key, 'ScaleFrom') || str_contains($key, 'ScaleTo')) {
+     if ($key === 'ScaleTo' && $value == '999999.00') {
+        return '-';
+    }
+
+    $numberKeys = array(
+        'OpenConfdDelivQtyInBaseUnit',
+        'StockQuantity',
+        'ScaleFrom',
+        'ScaleTo',
+        'OrderQuantity',
+        'OpenConfdDelivQtyInBaseUnit',
+    );
+
+    if (in_array($key, $numberKeys)) {
         return number_format($value, 0, '.', ' ');
     }
 
@@ -475,13 +488,19 @@ function show_value_from_api($key, $value)
         return $value;
     }
 
-    if (str_contains($key, 'EstimatedShipDate')) {
+    if (str_contains($key, 'Date')) {
         $dateTime = new DateTime($value);
 
         return $dateTime->format("m/d/Y");
     }
 
-    if (str_contains($key, 'price') && $key !== 'NetPriceQuantity') {
+    $priceKeys = array(
+        'NetPriceAmount',
+        'ScalePrice',
+        'MinPrice',
+    );
+
+    if (in_array($key, $priceKeys)) {
         return '$' . number_format($value, 2, '.', ' ');
     }
 
