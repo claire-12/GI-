@@ -463,31 +463,59 @@ function my_acf_json_save_point($path)
 }
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 
-//add Google Tag Manager or Google Analytics code to header
-function add_google_tag()
-{
-	if (!(function_exists('wp_get_environment_type') && 'production' == wp_get_environment_type())) {
-		return;
-	}
-	$tag_manager_id = 'G-DXNM0L4ME8';
-	if (!empty($tag_manager_id)) { ?>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id ?>"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
+if (!function_exists('add_google_tag')) :
+	add_action('wp_head', 'add_google_tag');
 
-function gtag() {
-	dataLayer.push(arguments);
-}
-gtag('js', new Date());
+	//add Google Tag Manager or Google Analytics code to header
+	function add_google_tag()
+	{
+		if (!(function_exists('wp_get_environment_type') && 'production' == wp_get_environment_type())) {
+			return;
+		}
+		$tag_manager_id = 'G-DXNM0L4ME8';
+		if (!empty($tag_manager_id)) { ?>
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id ?>"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
 
-gtag('config', '<?php echo $tag_manager_id ?>');
-</script>
+				function gtag() {
+					dataLayer.push(arguments);
+				}
+				gtag('js', new Date());
+
+				gtag('config', '<?php echo $tag_manager_id ?>');
+
+				gtag('event', 'download', {
+					'event_category': 'Downloads',
+					'event_label': 'File Type - {{File Type Variable}}'
+				});
+
+				gtag('event', 'share', {
+					'event_category': 'Social',
+					'event_label': '{{Share Platform Variable}}'
+				});
+
+				gtag('event', 'form_start', {
+					'event_category': 'Lead Gen',
+					'event_label': '{{Form Type Variable}} - Start'
+				});
+
+				gtag('event', 'form_complete', {
+					'event_category': 'Lead Gen',
+					'event_label': '{{Form Type Variable}} - Complete',
+					'source': '{{Form Source Variable}}'
+				});
+
+				gtag('event', 'form_interaction', {
+					'form_type': 'KMI',
+					'form_source': 'Source Details'
+				});
+			</script>
 <?php
+		}
 	}
-}
-//add_action('wp_head', 'add_google_tag');
-
+endif;
 
 if (!function_exists('cabling_site_icon_meta_tags')) :
 
