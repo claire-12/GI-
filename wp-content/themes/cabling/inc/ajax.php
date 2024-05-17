@@ -1056,6 +1056,7 @@ function cabling_get_api_ajax_callback()
                 $bodyParams[] = array(
                     'Field' => $name,
                     'Value' => $value,
+                    'Sign' =>  'eq',
                     'Operator' => 'and',
                 );
             }
@@ -1108,15 +1109,24 @@ function cabling_get_api_ajax_callback()
                     } elseif (!empty($material)) {
                         $priceParams = array(
                             array(
-                                'Field' => 'Material',
+                                'Field' => 'MaterialOldNumber',
+                                'Sign' => 'eq',
                                 'Value' => $material,
-                                'Operator' => '',
+                                'Operator' => 'and',
                             )
+                        );
+                        //#ref GT-36
+                        $priceParams[] = array(
+                            'Field' => '(Customer',
+                            'Sign' => 'eq',
+                            'Value' => $sap_no,
+                            'Operator' => 'or',
                         );
                         $priceParams[] = array(
                             'Field' => 'Customer',
-                            'Value' => $sap_no,
-                            'Operator' => '',
+                            'Sign' => 'eq',
+                            'Value' => "",
+                            'Operator' => ')',
                         );
                         $stockParams[] = array(
                             'Field' => 'Material',
