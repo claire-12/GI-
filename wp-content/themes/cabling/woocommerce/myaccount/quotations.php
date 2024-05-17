@@ -15,16 +15,34 @@
 	                        </tr>
 	                    </thead>
 	                    <tbody>
-	                        <?php foreach ($data as $datum) : ?>
+	                        <?php foreach ($data as $datum) : 
+								$quote_price = $datum->quote_price;
+								$quote_price = $quote_price ? "$".number_format($quote_price)." (inc VAT)" : '';
+								$datum_detail = [];
+								if( $datum->product_of_interest && !$datum->object_id ){
+									$datum_detail[] = $datum->product_of_interest;
+								}else{
+									$datum_detail[] = get_the_title($datum->object_id);
+								}
+								if( $datum->volume ){
+									$datum_detail[] = 'x '.$datum->volume;
+								}
+								if( $datum->dimension ){
+									$datum_detail[] = '- '.$datum->dimension;
+								}
+								$datum_detail = implode(' ',$datum_detail);
+								?>
 	                            <tr>
 	                                <td class="q_number text-right">
 	                                    <?php echo $datum->id ?? '*' ?>
 	                                </td>
 	                                <td><?php echo date("d/m/Y", strtotime($datum->date)) ?? '' ?></td>
-	                                <td>4900-90 Nitrile Seals x300</td>
-	                                <td>$26.99 (inc VAT)</td>
+	                                <td><?= $datum_detail; ?></td>
+	                                <td><?= $quote_price; ?></td>
 	                                <td>
-	                                    <button class="btn-checkout"><i class="fa-light fa-shopping-cart me-2"></i> Add To Card</button>
+										<?php if($datum->object_id && $datum->object_type == 'product'):?>
+											<button onclick="window.open(this.getAttribute('data-href'), '_blank')" class="btn-checkout" data-href="<?= home_url('cart');?>?add-to-cart=<?= $datum->object_id; ?>"><i class="fa-light fa-shopping-cart me-2"></i> Add To Cart</button>
+										<?php endif;?>		
 	                                </td>
 	                                <td>
 	                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quote-<?php echo $datum->id ?>" type="button" class="more-detail">More Detail <i class="fa-solid fa-caret-right"></i></a>
