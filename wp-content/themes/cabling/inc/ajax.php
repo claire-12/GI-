@@ -1114,17 +1114,17 @@ function cabling_get_api_ajax_callback()
                             )
                         );
                         $priceParams[] = array(
-                            'Field' => '(Customer',
-                            'Sign' => 'eq',
-                            'Value' => $sap_no,
-                            'Operator' => 'or',
-                        );
-                        $priceParams[] = array(
-                            'Field' => 'Customer',
-                            'Sign' => 'eq',
-                            'Value' => "",
-                            'Operator' => ')',
-                        );
+							'Field' => '(Customer',
+							'Sign' => 'eq',
+							'Value' => $sap_no,
+							'Operator' => 'or',
+						);
+						$priceParams[] = array(
+							'Field' => 'Customer',
+							'Sign' => 'eq',
+							'Value' => "",
+							'Operator' => ')',
+						);
                         $stockParams[] = array(
                             'Field' => 'Material',
                             'Value' => $material,
