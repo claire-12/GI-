@@ -588,11 +588,13 @@ function setActiveCheckbox() {
 
 function showSingleTable(order) {
     const $ = jQuery.noConflict();
-    const tableContent = $(`tr.single-${order}`);
+    // const tableContent = $(`tr.single-${order}`);
+    const tableContent = $('.backlog-row-single[data-order="'+order+'"]');
     const tablePODetails = $('#table-order-detail');
 
     $(`.backlog-row`).removeClass('table-warning').show();
-    $(`.row-${order}`).addClass('table-warning');
+    // $(`.row-${order}`).addClass('table-warning');
+    $('.backlog-row[data-order="'+order+'"]').addClass('table-warning');
 
     tablePODetails.find('.table-heading span').html(order);
     tablePODetails.find('tbody').empty();
