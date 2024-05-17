@@ -498,6 +498,7 @@
                         nonce: CABLING.nonce,
                     },
                     success: function (response) {
+                        gtag('event', 'Account_Creation');
                         hideLoading();
                         if (response.success) {
                             $(form).html(response.data)
@@ -522,6 +523,7 @@
     const wpcf7Elm = document.querySelector('.wpcf7');
 	if(wpcf7Elm){
 		wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
+            gtag('event', 'Lead_Account');
 			openModal('modalSuccess');
 		}, false);
 		wpcf7Elm.addEventListener('wpcf7spam', function (event) {
@@ -537,6 +539,7 @@
 			if (event.detail.status === 'wpcf7invalid') {
 				openModal('modalError');
 			}
+            gtag('event', 'Lead_Account');
 		}, false);
 	}
 })(jQuery);

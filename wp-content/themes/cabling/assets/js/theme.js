@@ -182,6 +182,7 @@
 
             },
             success: function (response) {
+                gtag('event', 'Request_Account_Creation');
                 form.find('input[type="submit"]').prop('disabled', false);
                 form.prepend(response.data);
                 grecaptcha.reset();
@@ -498,6 +499,7 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                 nonce: CABLING.nonce,
             },
             success: function (response) {
+                gtag('event', 'Share_Page');
                 if (response.success) {
                     form.find('button[type="submit"]').prop('disabled', false);
                     form.prepend(response.data.data);
@@ -512,7 +514,6 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                     form.find('input[type="submit"]').prop('disabled', false);
                     return false;
                 }
-
             },
         })
             .fail(function () {

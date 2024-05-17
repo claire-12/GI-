@@ -42,7 +42,7 @@
                     const captcha_element = $(document).find('.quote-recaptcha');
 
                     if (captcha_element.length) {
-                        captcha_element.each(function(){
+                        captcha_element.each(function () {
                             const that = $(this);
                             const sitekey = CABLING.recaptcha_key;
                             grecaptcha.render(that.attr('id'), {
@@ -178,6 +178,8 @@
                 data: form.serialize(),
             },
             success: function (response) {
+                gtag('event', 'Lead_KMI');
+
                 if (response.success) {
                     form.html('<div class="woocommerce-message woo-notice"></div>');
                 } else {
@@ -230,6 +232,7 @@
                 } else {
                     form.prepend(response.data);
                 }
+                gtag('event', 'Lead_RFQ');
             },
             beforeSend: function () {
                 showLoading();
