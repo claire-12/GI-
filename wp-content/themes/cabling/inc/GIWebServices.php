@@ -78,7 +78,11 @@ class GIWebServices
                 $prepareParams = array();
                 $lastItem = endArray($params);
                 foreach ($params as $param) {
-                    $operator = $lastItem === $param ? '' : 'and';
+                    if( !$param['Operator'] ){
+                        $operator = $lastItem === $param ? '' : 'and';
+                    }else{
+                        $operator = $param['Operator'];
+                    }
                     $prepareParams[] = array(
                         'Field' => $param['Field'],
                         'Sign' => 'eq',
