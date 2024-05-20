@@ -40,7 +40,7 @@
 	                                <td><?= $datum_detail; ?></td>
 	                                <td><?= $quote_price; ?></td>
 	                                <td>
-										<?php if($datum->object_id && $datum->object_type == 'product'):?>
+										<?php if($datum->object_id && $datum->object_type == 'product' && $datum->quote_price):?>
 											<button onclick="window.open(this.getAttribute('data-href'), '_blank')" class="btn-checkout" data-href="<?= home_url('cart');?>?add-to-cart=<?= $datum->object_id; ?>"><i class="fa-light fa-shopping-cart me-2"></i> Add To Cart</button>
 										<?php endif;?>		
 	                                </td>
