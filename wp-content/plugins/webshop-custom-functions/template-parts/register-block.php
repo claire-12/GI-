@@ -40,6 +40,7 @@
 						</label>
 					</div>
 					<div class="submit-block d-flex my-3">
+						<input type="hidden" name="rfq_marketing_agreed" value="no">
 						<input class="form-check-input" type="checkbox" id="receive-newsletter" name="rfq_marketing_agreed"
 							value="yes">
 						<label class="form-check-label ms-2" for="receive-newsletter">
