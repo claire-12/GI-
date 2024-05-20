@@ -186,6 +186,8 @@ class CRMLead
 		$rfq["Quantity1UnitCode_KUT"] = $product->quantitycode ?? "N/A";
 
 		$rfq["DesiredApplication_KUT"] = $product->application ?? "N/A";
+
+		$rfq["MarketingConsent_KUT"] = $crmsalesquote->getPolicyAgreed() == "yes" ? true : false;
 		/*
         Chemical Resistant
         Oil Resistant
@@ -335,6 +337,9 @@ class CRMLead
 			}
 			$lead["LeadMarketingPermissionCommTypePermission"] = $options;
 		}
+
+		$lead["MarketingConsent_KUT"] = $crmcontact->policyAgreed;
+
 
 		$body = json_encode($lead);
 		return $body;
