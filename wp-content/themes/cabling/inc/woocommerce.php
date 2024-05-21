@@ -2326,3 +2326,6 @@ function gi_woocommerce_get_terms_and_conditions_checkbox_text($text)
     $text = __('I confirm all details are correct', 'cabling');
     return $text;
 }
+
+#ref GID-1044
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);

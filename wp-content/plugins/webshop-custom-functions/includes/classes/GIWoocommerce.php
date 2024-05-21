@@ -9,6 +9,8 @@ class GIWoocommerce
         add_action('woocommerce_after_add_to_cart_quantity', array($this, 'gi_after_add_to_cart_quantity'));
         add_action('woocommerce_after_add_to_cart_button', array($this, 'gi_woocommerce_after_add_to_cart_button'));
         add_action('woocommerce_cart_is_empty', array($this, 'gi_woocommerce_woocommerce_cart_is_empty'));
+        #ref GID-1044
+        add_action('woocommerce_before_checkout_form', array($this, 'gi_woocommerce_woocommerce_cart_is_empty'));
         add_action('wp_footer', array($this, 'gi_woocommerce_add_address_modal'));
         add_action('wp_ajax_gi_update_shipping_address', array($this, 'gi_update_shipping_address_callback'));
         add_action('wp_ajax_gi_get_modal_address_content', array($this, 'gi_get_modal_address_content_callback'));
@@ -45,7 +47,7 @@ class GIWoocommerce
     public function gi_woocommerce_woocommerce_cart_is_empty()
     {
         if (is_user_logged_in() && function_exists('wc_empty_cart_message')) {
-            wc_empty_cart_message();
+            // wc_empty_cart_message();
         } else {
             wc_get_template('template-parts/wishlist/form-login.php', [], '', WBC_PLUGIN_DIR);
         }
