@@ -422,9 +422,14 @@
             success: function (response) {
                 hideLoading();
                 if (response.success) {
-                    $('#api-results').html(response.data.data);
+                    // Show only hightlight selected
+                    // $('#api-results').html(response.data.data);
+
                     if (show_ponumber !== '') {
                         showSingleTable(show_ponumber);
+                    }else{
+                        // Show full and hightlight selected
+                        $('#api-results').html(response.data.data);
                     }
                 } else {
                     $('#api-results').html("Nothing to show");
