@@ -27,7 +27,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     return;
 }
 $customer_level = get_customer_level(get_current_user_id());
-$customer_level = 1;
+// $customer_level = 1;
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout"
