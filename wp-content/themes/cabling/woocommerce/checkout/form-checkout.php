@@ -27,7 +27,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     return;
 }
 $customer_level = get_customer_level(get_current_user_id());
-$customer_level = 1;
+//$customer_level = 1;
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout"
@@ -93,8 +93,8 @@ $customer_level = 1;
                         <!--single form panel-->
                         <div class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">
-                                <?php 
-                                    $gi_wp_form_9 = apply_filters('woocommerce_checkout_gi_add_wp_form_9', null);  
+                                <?php
+                                    $gi_wp_form_9 = apply_filters('woocommerce_checkout_gi_add_wp_form_9', null);
                                     echo $gi_wp_form_9;
                                 ?>
                             </div>
