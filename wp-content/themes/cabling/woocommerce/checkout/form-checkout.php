@@ -26,7 +26,8 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     echo apply_filters('woocommerce_checkout_must_be_logged_in_message', __('You must be Sign in to checkout.', 'woocommerce'));
     return;
 }
-
+$customer_level = get_customer_level(get_current_user_id());
+$customer_level = 1;
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout"
@@ -45,6 +46,9 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
                             <p class="note"><?php _e('Please note: Delivery only available to the USA', 'cabling') ?></p>
                         </div>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Billing', 'cabling') ?>"><?php _e('Billing', 'cabling') ?></div>
+                        <?php if($customer_level == 1): ?>
+                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
+                        <?php endif; ?>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Order Summary', 'cabling') ?>"><?php _e('Order Summary', 'cabling') ?></div>
                     </div>
                 </div>
@@ -75,6 +79,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
                                 </div>
                             </div>
                         </div>
+
                         <!--single form panel-->
                         <div class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">
@@ -83,6 +88,22 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
                                 </div>
                             </div>
                         </div>
+
+                        <?php if($customer_level == 1): ?>
+                        <!--single form panel-->
+                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                            <div class="multisteps-form__content">
+                                <?php 
+                                    $gi_wp_form_9 = apply_filters('woocommerce_checkout_gi_add_wp_form_9', null);  
+                                    echo $gi_wp_form_9;
+                                ?>
+                            </div>
+                            <div class="wp-block-button button-row block-button-black d-flex">
+                                <button class="wp-element-button ml-auto continue-to-summary" type="button" title="Continue">Continue</button>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+
                         <!--single form panel-->
                         <div class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">

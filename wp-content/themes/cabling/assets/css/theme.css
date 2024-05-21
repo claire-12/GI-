@@ -4026,6 +4026,10 @@ table.tablepress-id-52 tr .column-7 {
 .filter-product_compound_single {
     display: none;
 }
+.woocommerce #payment button.disable{
+	opacity: 0.5;
+	pointer-events: none;
+}
 @media only screen and (max-width: 767px) {
 	.container-quotations .dt-container .dt-layout-cell.dt-start {
 			position: relative;
