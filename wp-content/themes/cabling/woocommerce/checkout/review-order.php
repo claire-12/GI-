@@ -111,4 +111,4 @@ defined( 'ABSPATH' ) || exit;
 
 	</tfoot>
 </table>
-<hr>
+<!-- <hr> -->

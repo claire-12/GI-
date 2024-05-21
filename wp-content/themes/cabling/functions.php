@@ -514,3 +514,117 @@ if (!function_exists('cabling_site_icon_meta_tags')) :
 		}
 	}
 endif;
+
+// w9 form ajax
+function w9_form_ajax() {
+	session_start();
+	$file_name = $_FILES['file']['name'];
+	if(!empty($file_name)){
+		$_SESSION['vat_remove'] = true;
+	}else{
+		$_SESSION['vat_remove'] = false;
+	}
+
+	$return = array(
+	    'success' => $_SESSION['vat_remove']
+	);	 
+
+	wp_send_json($return);
+}
+add_action( 'wp_ajax_w9_form_ajax', 'w9_form_ajax' );
+add_action( 'wp_ajax_nopriv_w9_form_ajax', 'w9_form_ajax' );
+
+// remove vat
+function remove_vat_for_specific_users( $cart ) {
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+	session_start();
+	if(isset($_SESSION['vat_remove']) && $_SESSION['vat_remove'] == true){
+		foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
+			$cart_item['data']->set_tax_class( 'zero-rate' );
+		}
+	} 
+}
+add_action( 'woocommerce_before_calculate_totals', 'remove_vat_for_specific_users' );
+
+// Modify session variable on WooCommerce checkout page
+function modify_session_on_woocommerce_checkout() {
+    if (is_checkout()) {
+        $_SESSION['vat_remove'] = false;
+		unset($_SESSION['attach_id_cabling']);
+    }
+}
+add_action('template_redirect', 'modify_session_on_woocommerce_checkout');
+
+// w9 file upload ajax
+function w9_file_upload_ajax() {
+	session_start();
+	if (!empty($_FILES['file']['name'])) {
+        $uploaded_file = wp_handle_upload($_FILES['file'], array('test_form' => false));
+
+        if (isset($uploaded_file['file'])) {
+            $file_name_and_location = $uploaded_file['file'];
+            $file_title_for_media_library = sanitize_file_name(pathinfo($file_name_and_location, PATHINFO_FILENAME));
+
+            $wp_upload_dir = wp_upload_dir();
+            $attachment = array(
+                'guid' => $wp_upload_dir['url'] . '/' . basename($file_name_and_location),
+                'post_mime_type' => $uploaded_file['type'],
+                'post_title' => $file_title_for_media_library,
+                'post_content' => '',
+                'post_status' => 'inherit'
+            );
+
+            $attach_id = wp_insert_attachment($attachment, $file_name_and_location);
+            require_once( ABSPATH . 'wp-admin/includes/image.php' );
+			require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+            $attach_data = wp_generate_attachment_metadata($attach_id, $file_name_and_location);
+            wp_update_attachment_metadata($attach_id, $attach_data);
+
+			$success = true;
+			$_SESSION['attach_id_cabling'] = $attach_id;
+        } else {
+            $success = false;
+        }
+    } else {
+        $success = false;
+    }
+
+	$return = array(
+	    'success' => $success
+	);	 
+
+	wp_send_json($return);
+}
+add_action( 'wp_ajax_w9_file_upload_ajax', 'w9_file_upload_ajax' );
+add_action( 'wp_ajax_nopriv_w9_file_upload_ajax', 'w9_file_upload_ajax' );
+
+// attach id cabling order
+function attach_id_cabling_order( $order_id, $order ){
+    session_start();
+    $attach_id_cabling = isset($_SESSION['attach_id_cabling']) ? $_SESSION['attach_id_cabling'] : '';
+
+    if($order_id && !empty($attach_id_cabling)){
+        update_post_meta( $order_id, 'attach_id_cabling', $attach_id_cabling );
+		if(get_current_user_id()){
+			update_user_meta( get_current_user_id(), 'attach_id_cabling', $attach_id_cabling );
+		}
+		unset($_SESSION['attach_id_cabling']);
+    }
+}
+add_action( 'woocommerce_new_order', 'attach_id_cabling_order', 10, 2 );
+
+// display the file w9 form in the order admin panel
+function display_file_w9_order_data_in_admin( $order ){  
+	$attach_id_cabling = get_post_meta( $order->id, 'attach_id_cabling', true );
+	if(!empty($attach_id_cabling)){
+		?>
+		<div class="order_data_column">
+			<h4><?php _e( 'File W9 Form' ); ?></h4>
+			<a href="<?php echo wp_get_attachment_url( $attach_id_cabling ); ?>"><?php echo get_the_title( $attach_id_cabling ); ?></a>
+		</div>
+		<?php
+	}
+}
+add_action( 'woocommerce_admin_order_data_after_order_details', 'display_file_w9_order_data_in_admin' );

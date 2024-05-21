@@ -608,7 +608,6 @@
             }
         }
         show_checkout_shipping();
-
     })
     const myCollapsible = document.getElementById('collapseAddNew');
     /*myCollapsible.addEventListener('hidden.bs.collapse', function () {
@@ -625,6 +624,64 @@
             $('#diff-shipping-address').prop('checked', false);
         }
     })
+
+    $(document).on('click', '.continue-to-summary', function () {
+        $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').addClass('disable');
+        var fileInput = $('#formFile')[0].files[0];
+        var formData = new FormData();
+        formData.append('file', fileInput);
+        formData.append('action', 'w9_form_ajax'); 
+        // const $ = jQuery.noConflict();
+        $('.multisteps-form__progress-btn').removeClass('js-active');
+        $('.multisteps-form__panel').removeClass('js-active');
+
+        $('.multisteps-form__progress-btn:nth-child(4)').addClass('js-active');
+        $('.multisteps-form__panel:nth-child(4)').addClass('js-active');
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                if(response.success == true){
+                    $('body').trigger('update_checkout');
+                    $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').addClass('place-order-upload');
+                }
+                $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').removeClass('disable');
+            },
+            error: function(response) {
+                
+            }
+        });
+    })
+
+    $(document).on('click', '.place-order-upload', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        var fileInput = $('#formFile')[0].files[0];
+        var formData = new FormData();
+        formData.append('file', fileInput);
+        formData.append('action', 'w9_file_upload_ajax'); 
+        $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').removeClass('place-order-upload');
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                if(response.success == true){
+                    $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').trigger('click');
+                }
+            },
+            error: function(response) {
+                
+            }
+        });
+    })
+
 })(jQuery);
 
 function show_checkout_shipping() {

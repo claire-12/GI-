@@ -12,11 +12,12 @@ class GIWoocommerce
         add_action('wp_footer', array($this, 'gi_woocommerce_add_address_modal'));
         add_action('wp_ajax_gi_update_shipping_address', array($this, 'gi_update_shipping_address_callback'));
         add_action('wp_ajax_gi_get_modal_address_content', array($this, 'gi_get_modal_address_content_callback'));
-        add_action('woocommerce_checkout_terms_and_conditions', array($this, 'gi_woocommerce_add_wp_form_9'));
+        // add_action('woocommerce_checkout_terms_and_conditions', array($this, 'gi_woocommerce_add_wp_form_9'));
         add_action('woocommerce_checkout_update_order_review', array($this, 'gi_woocommerce_checkout_update_order_meta'));
 
         add_filter('woocommerce_return_to_shop_redirect', array($this, 'gi_woocommerce_return_to_shop_redirect'));
         add_filter('woocommerce_checkout_must_be_logged_in_message', array($this, 'gi_woocommerce_checkout_is_not_logged'));
+        add_filter('woocommerce_checkout_gi_add_wp_form_9', array($this, 'gi_woocommerce_add_wp_form_9'));
     }
 
     public function gi_after_add_to_cart_quantity()
@@ -179,7 +180,7 @@ class GIWoocommerce
     public function gi_woocommerce_add_wp_form_9()
     {
         $customer_level = get_customer_level(get_current_user_id());
-        //$customer_level = 1;
+        $customer_level = 1;
         if ($customer_level === 1) {
             wc_get_template('template-parts/checkout/form-wp9.php', [], '', WBC_PLUGIN_DIR);
         }
