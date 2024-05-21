@@ -177,9 +177,10 @@
             data: {
                 action: 'cabling_save_keep_informed_data',
                 data: form.serialize(),
-                brandId: CABLING.crm,
             },
             success: function (response) {
+                gtag('event', 'Lead_KMI');
+
                 if (response.success) {
                     form.html('<div class="woocommerce-message woo-notice"></div>');
                 } else {
@@ -216,7 +217,6 @@
 
         const formData = new FormData(this);
         formData.append('action', 'cabling_request_quote');
-        formData.append('brandId', CABLING.crm);
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
@@ -233,6 +233,7 @@
                 } else {
                     form.prepend(response.data);
                 }
+                gtag('event', 'Lead_RFQ');
             },
             beforeSend: function () {
                 showLoading();

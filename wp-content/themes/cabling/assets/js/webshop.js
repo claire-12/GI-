@@ -423,9 +423,14 @@
             success: function (response) {
                 hideLoading();
                 if (response.success) {
-                    $('#api-results').html(response.data.data);
+                    // Show only hightlight selected
+                    // $('#api-results').html(response.data.data);
+
                     if (show_ponumber !== '') {
                         showSingleTable(show_ponumber);
+                    }else{
+                        // Show full and hightlight selected
+                        $('#api-results').html(response.data.data);
                     }
                 } else {
                     $('#api-results').html("Nothing to show");
@@ -499,6 +504,7 @@
                         nonce: CABLING.nonce,
                     },
                     success: function (response) {
+                        gtag('event', 'Account_Creation');
                         hideLoading();
                         if (response.success) {
                             $(form).html(response.data)
@@ -521,25 +527,27 @@
 
 
     const wpcf7Elm = document.querySelector('.wpcf7');
-    if (wpcf7Elm) {
-        wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
-            openModal('modalSuccess');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7spam', function (event) {
-            openModal('modalError');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
-            openModal('modalError');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
-            openModal('modalError');
-        }, false);
-        wpcf7Elm.addEventListener('wpcf7submit', function (event) {
-            if (event.detail.status === 'wpcf7invalid') {
-                openModal('modalError');
-            }
-        }, false);
-    }
+	if(wpcf7Elm){
+		wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
+            gtag('event', 'Lead_Account');
+			openModal('modalSuccess');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7spam', function (event) {
+			openModal('modalError');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
+			openModal('modalError');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
+			openModal('modalError');
+		}, false);
+		wpcf7Elm.addEventListener('wpcf7submit', function (event) {
+			if (event.detail.status === 'wpcf7invalid') {
+				openModal('modalError');
+			}
+            gtag('event', 'Lead_Account');
+		}, false);
+	}
 
     $(document).on('change', 'input[name=select-shipping-address]', function () {
         const elm = $(this);
@@ -630,7 +638,7 @@
         var fileInput = $('#formFile')[0].files[0];
         var formData = new FormData();
         formData.append('file', fileInput);
-        formData.append('action', 'w9_form_ajax'); 
+        formData.append('action', 'w9_form_ajax');
         // const $ = jQuery.noConflict();
         $('.multisteps-form__progress-btn').removeClass('js-active');
         $('.multisteps-form__panel').removeClass('js-active');
@@ -651,7 +659,7 @@
                 $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').removeClass('disable');
             },
             error: function(response) {
-                
+
             }
         });
     })
@@ -663,7 +671,7 @@
         var fileInput = $('#formFile')[0].files[0];
         var formData = new FormData();
         formData.append('file', fileInput);
-        formData.append('action', 'w9_file_upload_ajax'); 
+        formData.append('action', 'w9_file_upload_ajax');
         $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').removeClass('place-order-upload');
         $.ajax({
             url: CABLING.ajax_url,
@@ -677,7 +685,7 @@
                 }
             },
             error: function(response) {
-                
+
             }
         });
     })
@@ -747,11 +755,13 @@ function setActiveCheckbox() {
 
 function showSingleTable(order) {
     const $ = jQuery.noConflict();
-    const tableContent = $(`tr.single-${order}`);
+    // const tableContent = $(`tr.single-${order}`);
+    const tableContent = $('.backlog-row-single[data-order="'+order+'"]');
     const tablePODetails = $('#table-order-detail');
 
     $(`.backlog-row`).removeClass('table-warning').show();
-    $(`.row-${order}`).addClass('table-warning');
+    // $(`.row-${order}`).addClass('table-warning');
+    $('.backlog-row[data-order="'+order+'"]').addClass('table-warning');
 
     tablePODetails.find('.table-heading span').html(order);
     tablePODetails.find('tbody').empty();
@@ -956,7 +966,6 @@ function product_filter_ajax(cat_id) {
             $('.filter-blog').find('.filter-category').each(function () {
                 let that = $(this);
                 let meta_key = that.attr('data-meta-key');
-
                 if (filter_meta !== null) {
                     if (meta_key) {
                         if (filter_meta.hasOwnProperty(meta_key) && filter_meta[meta_key] && filter_meta[meta_key].includes(that.attr('data-value'))) {

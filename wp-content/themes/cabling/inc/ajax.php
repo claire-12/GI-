@@ -1048,6 +1048,11 @@ function cabling_get_api_ajax_callback()
 
             $data['api']['SoldToParty'] = $sap_no;
 
+            // Add show_ponumber
+            if( $data['api_page'] == 'backlog' && !empty( $data['show_ponumber'] ) ){
+                $data['api']['PurchaseOrderByCustomer'] = $data['show_ponumber'];
+            }
+
             $bodyParams = array();
             foreach ($data['api'] as $name => $value) {
                 if (empty($value)) {
@@ -1062,7 +1067,6 @@ function cabling_get_api_ajax_callback()
 
             $type = 'ZDD_I_SD_PIM_MaterialBacklog';
             $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogType';
-
             switch ($data['api_page']) {
                 case 'inventory':
                     $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE_CDS';
@@ -1083,11 +1087,6 @@ function cabling_get_api_ajax_callback()
 
                     if (!empty($oldMaterialNumber) && !empty($basicMaterial)) {
                         $priceParams = array(
-                            array(
-                                'Field' => 'Customer',
-                                'Value' => $sap_no,
-                                'Operator' => '',
-                            ),
                             array(
                                 'Field' => 'MaterialOldNumber',
                                 'Value' => $oldMaterialNumber,
@@ -1119,10 +1118,17 @@ function cabling_get_api_ajax_callback()
                             )
                         );
                         $priceParams[] = array(
-                            'Field' => 'Customer',
-                            'Value' => $sap_no,
-                            'Operator' => '',
-                        );
+							'Field' => '(Customer',
+							'Sign' => 'eq',
+							'Value' => $sap_no,
+							'Operator' => 'or',
+						);
+						$priceParams[] = array(
+							'Field' => 'Customer',
+							'Sign' => 'eq',
+							'Value' => "",
+							'Operator' => ')',
+						);
                         $stockParams[] = array(
                             'Field' => 'Material',
                             'Value' => $material,
@@ -1138,10 +1144,6 @@ function cabling_get_api_ajax_callback()
 
                     $responseData = array(
                         'price' => $dataPrice,
-                        /*'response' => [
-                            $responsePrice,
-                            $responseStock,
-                        ],*/
                         'stock' => $dataStock,
                         'data' => [
                             $priceParams,

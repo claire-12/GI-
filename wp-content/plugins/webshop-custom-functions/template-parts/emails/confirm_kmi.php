@@ -14,4 +14,3 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <?php
 do_action( 'woocommerce_email_footer' );
-

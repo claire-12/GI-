@@ -35,7 +35,7 @@ $backlogSingleTable = array(
         </thead>
         <tbody>
         <?php foreach ($data as $datum): ?>
-            <tr class="backlog-row row-<?php echo $datum['PurchaseOrderByCustomer'] ?>">
+            <tr class="backlog-row row-<?php echo $datum['PurchaseOrderByCustomer'] ?>" data-order="<?php echo $datum['PurchaseOrderByCustomer'] ?>">
                 <?php foreach ($backlogMainTable as $key => $item): ?>
                     <td
                         class="<?php echo $key ?>"
@@ -46,7 +46,7 @@ $backlogSingleTable = array(
                     </td>
                 <?php endforeach ?>
             </tr>
-            <tr class="hidden single-<?php echo $datum['PurchaseOrderByCustomer'] ?>">
+            <tr class="hidden backlog-row-single single-<?php echo $datum['PurchaseOrderByCustomer'] ?>" data-order="<?php echo $datum['PurchaseOrderByCustomer'] ?>">
                 <?php foreach ($backlogSingleTable as $keyS => $itemS): ?>
                     <td><?php echo show_value_from_api($keyS, $datum[$keyS]) ?></td>
                 <?php endforeach ?>

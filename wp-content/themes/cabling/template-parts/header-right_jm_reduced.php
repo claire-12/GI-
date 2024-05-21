@@ -1,15 +1,5 @@
 <div class="header-right">
     <div class="top-navigation_jm d-flex text-uppercase mb-3">
-        <div class="header-cart">
-            <a href="<?php echo home_url('/my-wishlist') ?>">
-                <i class="fa-light fa-heart me-2"></i>
-                <?php echo __('MY WISHLIST', 'cabling');?>
-            </a>
-            <a class="ms-2" href="<?php echo esc_url(wc_get_cart_url()); ?>">
-                <i class="fa-light fa-shopping-cart me-2"></i>
-                <?php echo __('My cart', 'cabling'); ?>
-            </a>
-        </div>
         <?php if (is_user_logged_in()): ?>
 		<!--
 			<div class="my-account-item mx-3">
