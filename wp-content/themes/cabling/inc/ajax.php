@@ -1049,9 +1049,9 @@ function cabling_get_api_ajax_callback()
             $data['api']['SoldToParty'] = $sap_no;
 
             // Add show_ponumber
-            if( $data['api_page'] == 'backlog' && !empty( $data['show_ponumber'] ) ){
-                $data['api']['PurchaseOrderByCustomer'] = $data['show_ponumber'];
-            }
+            // if( $data['api_page'] == 'backlog' && !empty( $data['show_ponumber'] ) ){
+            //     $data['api']['PurchaseOrderByCustomer'] = $data['show_ponumber'];
+            // }
 
             $bodyParams = array();
             foreach ($data['api'] as $name => $value) {
