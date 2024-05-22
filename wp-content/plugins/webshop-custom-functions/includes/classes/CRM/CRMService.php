@@ -93,6 +93,9 @@ class CRMService
 		if( isset($posted_data['acceptance-752']) ){
 			$posted_data['contact_marketing_agreed'] = $posted_data['acceptance-752'];
 		}
+        if( !isset($posted_data['contact_marketing_agreed'][0]) ){
+            $posted_data['contact_marketing_agreed'][0] = 0;
+        }
         $result['userExistByEmail'] = $this->userExistByEmail($posted_data['your-email']);
         if ($result['status'] === 'mail_sent') {
             try {
