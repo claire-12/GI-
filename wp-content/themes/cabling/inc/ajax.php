@@ -1083,20 +1083,24 @@ function cabling_get_api_ajax_callback()
                             'Operator' => '',
                         ),
                     );
-                    $priceParams = array();
+                    $priceParams = array(
+                        array(
+                            'Field' => 'SalesOrganization',
+                            'Value' => empty($user_plant) ? '2141' : $user_plant,
+                            'Operator' => 'and',
+                        )
+                    );
 
                     if (!empty($oldMaterialNumber) && !empty($basicMaterial)) {
-                        $priceParams = array(
-                            array(
-                                'Field' => 'MaterialOldNumber',
-                                'Value' => $oldMaterialNumber,
-                                'Operator' => '',
-                            ),
-                            array(
-                                'Field' => 'BasicMaterial',
-                                'Value' => $basicMaterial,
-                                'Operator' => '',
-                            )
+                        $priceParams[] = array(
+                            'Field' => 'MaterialOldNumber',
+                            'Value' => $oldMaterialNumber,
+                            'Operator' => '',
+                        );
+                        $priceParams[] = array(
+                            'Field' => 'BasicMaterial',
+                            'Value' => $basicMaterial,
+                            'Operator' => '',
                         );
 
                         $stockParams[] = array(
@@ -1110,12 +1114,10 @@ function cabling_get_api_ajax_callback()
                             'Operator' => '',
                         );
                     } elseif (!empty($material)) {
-                        $priceParams = array(
-                            array(
-                                'Field' => 'Material',
-                                'Value' => $material,
-                                'Operator' => '',
-                            )
+                        $priceParams[] = array(
+                            'Field' => 'Material',
+                            'Value' => $material,
+                            'Operator' => '',
                         );
                         $priceParams[] = array(
 							'Field' => '(Customer',

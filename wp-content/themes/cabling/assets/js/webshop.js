@@ -424,8 +424,7 @@
                 if (response.success) {
                     // Show only hightlight selected
                     // $('#api-results').html(response.data.data);
-
-                    if (show_ponumber !== '') {
+                    if (typeof show_ponumber != 'undefined' && show_ponumber !== '') {
                         showSingleTable(show_ponumber);
                     }else{
                         // Show full and hightlight selected
