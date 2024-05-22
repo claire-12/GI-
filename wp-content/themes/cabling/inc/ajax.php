@@ -1044,7 +1044,7 @@ function cabling_get_api_ajax_callback()
             }
 
             $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
-            $user_plant = get_user_meta(get_current_user_id(), 'user_plant', true);
+            $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
 
             $data['api']['SoldToParty'] = $sap_no;
 
