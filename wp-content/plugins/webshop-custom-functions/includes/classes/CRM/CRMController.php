@@ -424,8 +424,12 @@ class CRMController
 	{
 		$crmcontact = new CRMContact($contactForm['your-email']);
 		$contact = $this->getContactByEmail($crmcontact->email);
+		$contact_marketing_agreed = $contactForm['contact_marketing_agreed'][0];
+		$contact_marketing_agreed = $contact_marketing_agreed ? true : false;
 		if (!empty($contact)) {
 			$crmcontact->fillContactFromCRMContactObject($contact);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
 		} else {
 			$crmcontact->company = $contactForm['your-company-sector'];
 			$crmcontact->lastname = $contactForm['last-name'];
@@ -434,6 +438,8 @@ class CRMController
 			$crmcontact->jobtitle = $contactForm['job-title'];
 			//$crmcontact->jobfunction = $contactForm['function'];
 			$crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$contactForm['function'][0]);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
 		}
 
 		return $this->createContactUsLead($crmcontact, $contactForm['your-message'], $contactForm['product']);
@@ -499,11 +505,13 @@ class CRMController
 
 	public function processRequestAQuoteSubmit($data)
 	{
-
+		$contact_marketing_agreed = ( $data['rfq_marketing_agreed'] && ($data['rfq_marketing_agreed'] == 1 || $data['rfq_marketing_agreed'] == 'yes') ) ? true : false;
 		$crmcontact = new CRMContact($data['email']);
 		$contact = $this->getContactByEmail($crmcontact->email);
 		if (!empty($contact)) {
 			$crmcontact->fillContactFromCRMContactObject($contact);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
 		} else {
 			$crmcontact->email = $data['email'];
 			$crmcontact->company = $data['company'];
@@ -519,6 +527,8 @@ class CRMController
 			$crmcontact->postalcode = $data['billing_postcode'];
 			$crmcontact->country = $data['billing_country'];
 			$crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
 		}
 
 		$crmquoteproduct = new CRMQuoteProduct();
@@ -543,7 +553,7 @@ class CRMController
 		$crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
 		$crmquoteproduct->brand = $data['brand'] ?? 'N/A';
 		$crmquoteproduct->policyAgreed = $data['rfq_policy_agreed'];
-		$crmquoteproduct->marketingAgreed = $data['rfq_marketing_agreed'];
+		$crmquoteproduct->marketingAgreed = $contact_marketing_agreed;
 
 		if ($crmquoteproduct->product === '005') {
 			$crmquoteproduct->dimid = $data['dimension_oring']['id'] != "" ? $data['dimension_oring']['id'] : "0";

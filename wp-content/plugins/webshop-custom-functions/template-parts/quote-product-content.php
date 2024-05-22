@@ -381,6 +381,7 @@
                     </label>
                 </div>
                 <div class="form-check d-inline-block">
+                    <input type="hidden" name="rfq_marketing_agreed" value="no">
                     <input class="form-check-input" type="checkbox" id="receive-newsletter" name="rfq_marketing_agreed" value="yes">
                     <label class="form-check-label ms-2" for="receive-newsletter">
                         Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your preference at any time in your account settings or by contacting Datwyler at <a href="mailto:suso.ont.sales@datwyler.com">suso.ont.sales@datwyler.com</a>.

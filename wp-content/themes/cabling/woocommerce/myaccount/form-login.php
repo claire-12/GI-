@@ -35,7 +35,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label class="screen-reader-text" for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="log" id="username" autocomplete="username" required value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>" /><?php // @codingStandardsIgnoreLine 
+                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="log" id="username" autocomplete="username" required value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>" /><?php // @codingStandardsIgnoreLine
                                                                                                                                                                                                                                                                                                                                         ?>
                 <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
                     <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" />
@@ -93,6 +93,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                 </label>
             </div>
             <div class="submit-block d-flex my-3">
+                <input type="hidden" name="rfq_marketing_agreed" value="no">
                 <input class="form-check-input" type="checkbox" id="receive-newsletter" name="rfq_marketing_agreed" value="yes" required>
                 <label class="form-check-label ms-2" for="receive-newsletter">
                     Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your
