@@ -3800,3 +3800,9 @@ table.tablepress-id-52 tr .column-7 {
 .filter-product_compound_single{
     display: none;
 }
+
+/* #ref GT-38 */
+.wpcf7-checkbox .wpcf7-list-item {
+    margin-left: 0;
+    font-size: 12px;
+}

@@ -958,3 +958,10 @@ function openModal(modalId) {
     const modalElement = document.getElementById(modalId);
     new bootstrap.Modal(modalElement).show();
 }
+
+// #ref GT-38
+if( jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').length  ){
+    let contact_marketing_agreed_html = jQuery('.contact_marketing_agreed_html p').html();
+    jQuery('.contact_marketing_agreed_html').remove();
+    jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"] .wpcf7-list-item-label').html(contact_marketing_agreed_html);
+}
