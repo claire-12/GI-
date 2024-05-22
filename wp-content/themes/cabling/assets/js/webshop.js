@@ -246,7 +246,8 @@
     })
 
     $(document).on('click', 'a', function () {
-        if ($(this).attr('href').includes('my-account') && $(this).attr('href').includes('customer-logout')) {
+        const href = $(this).attr('href');
+        if (href && href.includes('my-account') && href.includes('customer-logout')) {
             return confirm('Are you sure you want to logout?');
         }
         /*if ($(this).closest('table').length) {
