@@ -33,28 +33,18 @@ do_action('woocommerce_before_customer_login_form'); ?>
             <?php do_action('woocommerce_login_form_start'); ?>
 
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                <label class="screen-reader-text"
-                       for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span
-                            class="required">*</span></label>
-                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="log"
-                       id="username"
-                       autocomplete="username"
-                       required
-                       value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"
-                       placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>"/><?php // @codingStandardsIgnoreLine ?>
+                <label class="screen-reader-text" for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="log" id="username" autocomplete="username" required value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>" /><?php // @codingStandardsIgnoreLine
+                                                                                                                                                                                                                                                                                                                                        ?>
                 <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-                    <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme"
-                           type="checkbox" id="rememberme" value="forever"/>
+                    <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" />
                     <span><?php esc_html_e('Remember Email', 'woocommerce'); ?></span>
                 </label>
             </p>
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label class="screen-reader-text" for="password"><?php esc_html_e('Password', 'woocommerce'); ?>
                     &nbsp;<span class="required">*</span></label>
-                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="pwd"
-                       required
-                       id="password" autocomplete="current-password"
-                       placeholder="<?php esc_html_e('Password*', 'woocommerce'); ?>"/>
+                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="pwd" required id="password" autocomplete="current-password" placeholder="<?php esc_html_e('Password*', 'woocommerce'); ?>" />
             <p class="woocommerce-LostPassword lost_password">
                 <a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgotten Password', 'woocommerce'); ?></a>
             </p>
@@ -64,8 +54,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
             <p class="form-row">
                 <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
-                <button type="submit" class="block-button" name="login"
-                        value="<?php esc_attr_e('Sign In', 'woocommerce'); ?>"><?php esc_html_e('Sign In', 'woocommerce'); ?></button>
+                <button type="submit" class="block-button" name="login" value="<?php esc_attr_e('Sign In', 'woocommerce'); ?>"><?php esc_html_e('Sign In', 'woocommerce'); ?></button>
             </p>
 
             <?php do_action('woocommerce_login_form_end'); ?>
@@ -89,33 +78,30 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
             <div class="form-group">
                 <label class="screen-reader-text" for="register_email"><?php _e('Email', 'cabling') ?></label>
-                <input type="email" class="form-control" placeholder="<?php _e('Email Address*', 'cabling') ?>"
-                       name="register_email"
-                       value="<?php echo $_POST['register_email'] ?? '' ?>"
-                       pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-                       id="register_email" required>
+                <input type="email" class="form-control" placeholder="<?php _e('Email Address*', 'cabling') ?>" name="register_email" value="<?php echo $_POST['register_email'] ?? '' ?>" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" id="register_email" required>
             </div>
             <div class="form-group">
                 <div class="g-recaptcha" data-sitekey="<?php echo get_field('gcapcha_sitekey_v2', 'option'); ?>"></div>
             </div>
             <div class="submit-block d-flex my-3">
-                <input class="form-check-input" type="checkbox" id="share-my-data" value="yes" required>
+                <input class="form-check-input" type="checkbox" id="share-my-data" name="rfq_policy_agreed" value="yes" required>
                 <label class="form-check-label ms-2" for="share-my-data">
-                    Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond to your request to access My Account and to acknowledge that Datwyler shall process your personal data in accordance with its privacy notice, which can be found <a target="_blank"
-                                                                                      href="<?php echo home_url('/privacy') ?>">here</a>.
+                    Please tick this box to confirm that you consent to Datwyler processing your personal data in order to respond
+                    to your request to access My Account and to acknowledge that Datwyler shall process your personal data in
+                    accordance with its privacy notice, which can be found <a target="_blank" href="<?php echo home_url('/privacy') ?>">here</a>.
                 </label>
             </div>
             <div class="submit-block d-flex my-3">
-                <input class="form-check-input" type="checkbox" id="receive-newsletter" value="yes" required>
+                <input type="hidden" name="rfq_marketing_agreed" value="no">
+                <input class="form-check-input" type="checkbox" id="receive-newsletter" name="rfq_marketing_agreed" value="yes" required>
                 <label class="form-check-label ms-2" for="receive-newsletter">
-                    Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your preference at any time in your account settings or by contacting Datwyler at <a
-                            href="mailto:suso.ont.sales@datwyler.com">suso.ont.sales@datwyler.com</a>.
+                    Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your
+                    preference at any time in your account settings or by contacting Datwyler at <a href="mailto:suso.ont.sales@datwyler.com">suso.ont.sales@datwyler.com</a>.
                 </label>
             </div>
             <div class="submit-btn">
                 <?php wp_nonce_field('cabling-register', 'register-nounce'); ?>
-                <button class="block-button" type="submit"
-                        class="submit-register"><?php _e('Register Now', 'cabling') ?></button>
+                <button class="block-button" type="submit" class="submit-register"><?php _e('Register Now', 'cabling') ?></button>
             </div>
 
         </form>

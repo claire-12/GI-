@@ -47,6 +47,8 @@ class CRMSalesQuote
     protected string $contactpostalcode = "";
     protected string $contactstate="";
     protected string $contacthousenumber="";
+	protected $policyAgreed;
+	protected $marketingAgreed;
     protected ?CRMContact $crmcontact = null;
     protected ?CRMQuoteProduct $product = null;
     protected ?array $filepath;
@@ -147,4 +149,15 @@ class CRMSalesQuote
         return $this->filepath;
     }
 
+	public function getPolicyAgreed()
+	{
+		$this->policyAgreed = $this->getProduct()->policyAgreed;
+		return 	$this->policyAgreed;
+	}
+
+	public function getMarketingAgreed()
+	{
+		$this->marketingAgreed = $this->getProduct()->marketingAgreed;
+		return $this->marketingAgreed;
+	}
 }

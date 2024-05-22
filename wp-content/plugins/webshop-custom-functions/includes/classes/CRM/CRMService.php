@@ -90,6 +90,9 @@ class CRMService
     public function crm_action_after_form_submission($result, $submission)
     {
         $posted_data = $submission->get_posted_data();
+		if( isset($posted_data['acceptance-752']) ){
+			$posted_data['contact_marketing_agreed'] = $posted_data['acceptance-752'];
+		}
         $result['userExistByEmail'] = $this->userExistByEmail($posted_data['your-email']);
         if ($result['status'] === 'mail_sent') {
             try {
@@ -102,7 +105,7 @@ class CRMService
                     if ($user_id) {
 						update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed'][0]);
                         update_user_meta($user_id, 'contact_marketing_agreed', $posted_data['contact_marketing_agreed'][0]);
-						
+
                         $lead = $this->requestContactCRM($posted_data);
                         $result['lead'] = $lead;
 
@@ -195,6 +198,11 @@ class CRMService
                     'ContactID' => $lead->ContactID,
                 );
                 $this->saveCRMData($data['user_email'], $dataCRM);
+
+				$user = get_user_by('email', $data['user_email']);
+				if ($user) {
+					update_user_meta($user->ID, 'rfq_marketing_agreed', $data["agree-term-condition"] == "on" ? 1 : 0);
+				}
             }
         } catch (Exception $e) {
             wp_mail('michael.santos@infolabix.com', 'crm_action_after_gi_created_new_customer', $e->getMessage() . '###' . $e->getTraceAsString());
@@ -203,6 +211,14 @@ class CRMService
 
     public function crm_action_after_saved_user_keep_informed($data)
     {
+		$postData = explode("&", $_POST['data']);
+		$formData = [];
+		foreach ($postData as $keyPostData => $valuePostData) {
+			$value = explode("=", $valuePostData);
+			$formData[$value[0]] = $value[1];
+		}
+		$marketingAgreed = $formData['kmi_marketing_agreed'] ?? "no";
+		$data['marketing_agreed'] = !($marketingAgreed == "no");
         try {
             $data['options'] = [];
             if (!empty($data['category'])) {

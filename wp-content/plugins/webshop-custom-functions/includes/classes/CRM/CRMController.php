@@ -424,8 +424,12 @@ class CRMController
     {
         $crmcontact = new CRMContact($contactForm['your-email']);
         $contact = $this->getContactByEmail($crmcontact->email);
+		$contact_marketing_agreed = $contactForm['contact_marketing_agreed'][0];
+		$contact_marketing_agreed = $contact_marketing_agreed ? true : false;
         if (!empty($contact)) {
             $crmcontact->fillContactFromCRMContactObject($contact);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
         } else {
             $crmcontact->company = $contactForm['your-company-sector'];
             $crmcontact->lastname = $contactForm['last-name'];
@@ -434,6 +438,8 @@ class CRMController
             $crmcontact->jobtitle = $contactForm['job-title'];
             //$crmcontact->jobfunction = $contactForm['function'];
             $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$contactForm['function'][0]);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
         }
 
         return $this->createContactUsLead($crmcontact, $contactForm['your-message'], $contactForm['product']);
@@ -446,6 +452,9 @@ class CRMController
             $CRMContact->phone = $data['sms'];
         }
 
+		if (isset($data['marketing_agreed'])) {
+			$CRMContact->policyAgreed = $data["marketing_agreed"];
+		}
         /*$communicationOptions = [
             "tel" => false,
             "whatsapp" => (bool)$data['whatsapp'],
@@ -486,6 +495,8 @@ class CRMController
             $account->state = $data['billing_state'];
             $account->country = $data['billing_country'];
             $account->postalcode = $data['billing_postcode'];
+
+			$account->agreeTerm = $data["agree-term-condition"] == "on" ? true : false;
         }
 
         return $this->createAccountLead($account);
@@ -493,11 +504,13 @@ class CRMController
 
     public function processRequestAQuoteSubmit($data)
     {
-
+		$contact_marketing_agreed = ( $data['rfq_marketing_agreed'] && ($data['rfq_marketing_agreed'] == 1 || $data['rfq_marketing_agreed'] == 'yes') ) ? true : false;
         $crmcontact = new CRMContact($data['email']);
         $contact = $this->getContactByEmail($crmcontact->email);
         if (!empty($contact)) {
             $crmcontact->fillContactFromCRMContactObject($contact);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
         } else {
             $crmcontact->email = $data['email'];
             $crmcontact->company = $data['company'];
@@ -513,6 +526,8 @@ class CRMController
             $crmcontact->postalcode = $data['billing_postcode'];
             $crmcontact->country = $data['billing_country'];
             $crmcontact->jobfunction = $crmcontact->getFunctionCode((string)$data['function']);
+			$crmcontact->policyAgreed = $contact_marketing_agreed;
+			$crmcontact->agreeTerm = $contact_marketing_agreed;
         }
 
         $crmquoteproduct = new CRMQuoteProduct();
@@ -536,6 +551,8 @@ class CRMController
         $crmquoteproduct->temperature = $data['o_ring']['temperature'] ?? '';
         $crmquoteproduct->coating = $data['o_ring']['coating'] ?? '';
         $crmquoteproduct->brand = $data['brand'] ?? 'N/A';
+		$crmquoteproduct->policyAgreed = $data['rfq_policy_agreed'];
+		$crmquoteproduct->marketingAgreed = $contact_marketing_agreed;
 
         if ($crmquoteproduct->product === '005') {
             $crmquoteproduct->dimid = $data['dimension_oring']['id']!=""?$data['dimension_oring']['id']:"0";
@@ -563,233 +580,5 @@ class CRMController
     public function getContactByUserEmail($email)
     {
         return $this->getContactByEmail($email);
-    }
-
-    public function testKMILeadCreation($email)
-    {
-        /** create contact object to use **/
-        $crmcontact = new CRMContact($email);
-        //$crmcontact->setDefault();
-        /** end of create contact object to use **/
-
-        $communicationoptions = ["tel" => true, "whatsapp" => false, "sms" => true];
-        $itemoptions = ["offers" => false, "announcements" => true, "news" => true, "webinars" => true];
-
-        $lead = $this->createKMILead($crmcontact, $communicationoptions, $itemoptions, null);
-        return $lead;
-    }
-
-    public function testSalesQuoteLeadCreation($email, $file = null)
-    {
-        /** create contact object to use **/
-        $crmcontact = new CRMContact($email);
-        $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
-        if (!empty($contact)) {
-            $crmcontact->fillContactFromCRMContactObject($contact); // fill the contact with SAP CRM data
-        } else {
-            $crmcontact->company = "Not provided"; // mandatory field
-            $crmcontact->lastname = "Not provided"; // mandatory field
-            // code...
-        }
-        $crmquoteproduct = new CRMQuoteProduct();
-
-        $crmquoteproduct->quantity = "100"; //sample data
-        $crmquoteproduct->quantitycode = "T3";  // use 1000pc by default
-        $crmquoteproduct->application = "Chemical Resistant"; //options are: Chemical Resistant/Oil Resistant/Water and Steam Resistant
-        $crmquoteproduct->requiredby = "next week"; // free text
-        $diagram = null; // this is a file tbd
-        $crmquoteproduct->partnumber = "xx05"; // free text
-        $crmquoteproduct->comments = "These are the free text comments";  // free text
-        $crmquoteproduct->material = "FLUOROCARBON RUBBER - FKM";
-        /*
-        CHLOROPRENE RUBBER - CR (Neoprene™)
-        ETHYLENE-PROPYLENE-DIENE RUBBER - EPDM
-        FLUOROCARBON RUBBER - FKM
-        FLUOROSILICONE - FVMQ
-        HYDROGENATED NITRILE - HNBR
-        NITRILE BUTADIENE RUBBER - NBR
-        SILICONE RUBBER - VMQ
-        TETRAFLUOROETHYLENE PROPYLENE - TFP (Aflas®)
-        */
-        $crmquoteproduct->hardness = ""; // 70
-        $crmquoteproduct->product = "321"; // product of interest
-        /*
-        Description Internal Code
-        Custom Molded Rubber Seals  141
-        Rubber to Metal Bonded Seals    151
-        Machined Thermoplastic  171
-        None    311
-        O-Ring  321
-        Rubber to Plastic Bonded Seals  331
-        Custom Machined Metal Parts 341
-        Molded Resins   351
-        Surface Production Equipment    361
-        Wearable Sensors    371
-        */
-        $crmquoteproduct->dimensions = "0.10x0.5x0.15 mm";
-        $crmquoteproduct->dimensionscode = "T3"; //1000pc
-        // required in SAP method, but not available in interface
-        $crmquoteproduct->dimid = "0.1";
-        $crmquoteproduct->dimidcode = "INH";
-        $crmquoteproduct->dimod = "0.5";
-        $crmquoteproduct->dimodcode = "INH";
-        $crmquoteproduct->dimwidth = "0.15";
-        $crmquoteproduct->dimwidthcode = "INH";
-        // end of required in SAP method, but not available in interface
-        $crmquoteproduct->compound = "this is the compound";
-        $crmquoteproduct->temperature = "this is temperature range";
-        $crmquoteproduct->coating = "This is coating";
-        $crmquoteproduct->brand = "tst";
-
-        //$file="C://xampp8.0/htdocs/pim-gi/public/storage/productthumbs/ptype_1706791744.png";
-
-        $crmquote = new CRMSalesQuote($crmcontact, $crmquoteproduct, $file);
-        /** end of create contact object to use **/
-        $lead = $this->createSalesQuoteLead($crmquote);
-
-        return $lead;
-    }
-
-    public function testContactUsLead($email)
-    {
-        $crmcontact = new CRMContact($email);
-        $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
-        if (!empty($contact)) {
-            $crmcontact->fillContactFromCRMContactObject($contact); // fill the contact with SAP CRM data
-        } else {
-            $crmcontact->company = "Not provided"; // mandatory field
-            $crmcontact->lastname = "Not provided"; // mandatory field
-            $crmcontact->mobile = '+351 912345678'; //mandatory field
-            $crmcontact->jobtitle = '0001'; //mandatory field
-            /*
-            Ms. 0001
-            Mr. 0002
-            */
-        }
-        $comments = "these are test comments for lead";
-        $productofinterest = "141";
-        /*
-        Description Internal Code
-        Custom Molded Rubber Seals  141
-        Rubber to Metal Bonded Seals    151
-        Machined Thermoplastic  171
-        None    311
-        O-Ring  321
-        Rubber to Plastic Bonded Seals  331
-        Custom Machined Metal Parts 341
-        Molded Resins   351
-        Surface Production Equipment    361
-        Wearable Sensors    371
-        */
-
-        return $this->createContactUsLead($crmcontact, $comments, $productofinterest);
-    }
-
-    public function testAccountCreationLead($email)
-    {
-        $account = new CRMAccount();
-        $crmcontact = new CRMContact($email);
-        $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
-        if (!empty($contact)) {
-            $crmcontact->fillContactFromCRMContactObject($contact); // fill the contact with SAP CRM data
-            return "account already exists SAP account:";
-        } else {
-            $account->company = "This is a test company from Infolabix"; // mandatory field
-            $account->firstname = "John"; // mandatory field
-            $account->lastname = "Doe"; // mandatory field
-            $account->email = 'john.doe@infolablix.com'; //mandatory field
-            $account->mobile = '+351 912345678'; //mandatory field
-            $account->jobfunction = 'Engineer'; //mandatory field (Text field)
-            $account->department = '0001'; //mandatory field from the list below
-            /*
-            Purchasing Dept.    0001
-            Sales Dept. 0002
-            Administration Dept.    0003
-            QA Assurance Dept.  0005
-            Secretary's Office  0006
-            Financial Dept. 0007
-            Legal Dept. 0008
-            R&D Dept.   0018
-            Product Dev Dept.   0019
-            Executive Board Z020
-            Packaging Dev Dept. Z021
-            Production Dept.    Z022
-            Quality Control Dept    Z023
-            Logistics Dept. Z024
-            Operations Dept.    Z025
-            Advanced Pur Dept.  Z026
-            Consulting Dept.    Z027
-            IT Dept.    Z28
-            Marketing Dept. Z29
-            Customer Ser Dept.  Z30
-            Audit Dept. Z31
-            HR Dept.    Z32
-            Engineering Z33
-            Project Management  Z34
-            Laboratory  Z35
-            Procurement Z36
-            Supply Chain Dept.  ZSC
-            */
-
-            $account->address = 'Av. Something'; //mandatory field (Text Field)
-            $account->city = 'Dream City'; //mandatory field
-            $account->state = ''; // State ISO code
-            $account->country = 'PT'; //Country ISO Code
-            $account->postalcode = '1000-100'; // Postal Code
-        }
-        return $this->createAccountLead($account);
-    }
-
-    public function testAddFileToSalesQuoteLead(CRMLead $lead, $filepath)
-    {
-        return $this->addFileToLead($lead, $filepath);
-    }
-
-    public function CRMTester()
-    {
-        //$email='hliu@summitbiosciences.com';
-        //$email='jmartins123@infolabix.com';
-        $email = 'john.doe@infolablix.com';
-
-        $lead = $this->testKMILeadCreation($email);
-        //dd($lead);
-        $file = "C://xampp8.0/htdocs/pim-gi/public/storage/productthumbs/ptype_1706791744.png";
-        $lead = $this->testSalesQuoteLeadCreation($email, $file);
-        //dd($lead);
-
-        //$lead=$this->testContactUsLead($email);
-        //dd($lead);
-
-        $lead = $this->testAccountCreationLead($email);
-        //dd($lead);
-
-        $file = "C://xampp8.0/htdocs/pim-gi/public/storage/productthumbs/ptype_1706791744.png";
-        $res = $this->testAddFileToSalesQuoteLead($lead, $file);
-        //dd($res);
-
-        $lead = new CRMLead();
-        //$lead->createFileLeadBody(1,"dsjkfh","/storage/productthumbs/ptype_1706791744.png");
-        //$res=$lead->createFileLeadBody($lead->leadid,$lead->leadparentobjectid,$file);
-        //dd($res);
-
-
-        //print_r($this->getAccountCollection($token,1000618));
-
-        //$account=$this->createAccount($token);
-        //$accountid=$account->d->results->AccountID; // id to use on sales quote
-        $accountid = "1032212";
-
-        //dd($this->getAccountCollection($token,$accountid));
-
-        //$rfq=$this->createSalesQuote($token,$accountid);
-        //$rfqid=$rfq->d->results->ID; // id from salesquote
-
-        //$quote=$this->getSalesQuoteCollectionByID($token,$rfqid); //sales quote by id
-        //$quotedetail=$quote->d->results;
-
-        //$quotelist=$this->getSalesQuoteCollectionByBuyerID($token,$accountid);
-        //$quotelistdetail=$quotelist->d->results;
-
-        return 'OK ->';
     }
 }

@@ -21,8 +21,10 @@ class CRMContact
     public $street="";
     public $housenumber="";
     public $state="";
+	public $agreeTerm = true;
+	public $policyAgreed;
+	public $marketingAgreed;
 
-    
 
     public function __construct(string $email = "")
     {
@@ -116,6 +118,7 @@ class CRMContact
             $this->contactid = $contact->ContactID;
             $this->accountid = $contact->AccountID;
             $this->sapAccountId = $contact->ExternalID;
+			$this->agreeTerm = $contact->MarketingConsent_KUT ?? false;
         }
     }
 }

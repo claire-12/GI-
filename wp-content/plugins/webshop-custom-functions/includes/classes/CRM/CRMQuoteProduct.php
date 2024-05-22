@@ -26,4 +26,6 @@ class CRMQuoteProduct
     public $temperature = "";
     public $coating = "";
     public $brand;
+	public $policyAgreed;
+	public $marketingAgreed;
 }
