@@ -267,7 +267,7 @@ class CRMLead
 	 */
 	public function createMarketingLeadBody($crmcontact, $brand = "")
 	{
-		$lead = $contactcrm->toArray();
+		$lead = $crmcontact->toArray();
 		$lead["LeadLifecycle_KUT"] = "111";    // Marketing Qualified Lead
 		$lead["LeadType_KUT"] = "105";         // GI Lead – always send this data
 		$lead["Segment"] = "GI";               // GI Business – always send this data

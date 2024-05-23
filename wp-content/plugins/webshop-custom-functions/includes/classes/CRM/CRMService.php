@@ -93,8 +93,11 @@ class CRMService
 		if( isset($posted_data['acceptance-752']) ){
 			$posted_data['contact_marketing_agreed'] = $posted_data['acceptance-752'];
 		}
+        if( !isset($posted_data['contact_marketing_agreed'][0]) ){
+            $posted_data['contact_marketing_agreed'][0] = 0;
+        }
         $result['userExistByEmail'] = $this->userExistByEmail($posted_data['your-email']);
-        if ($result['status'] === 'mail_sent' || true) {
+        if ($result['status'] === 'mail_sent') {
             try {
                 $product = get_product_of_interests($posted_data['your-product'][0]);
                 if (!empty($product)) {
@@ -198,6 +201,11 @@ class CRMService
                     'ContactID' => $lead->ContactID,
                 );
                 $this->saveCRMData($data['user_email'], $dataCRM);
+
+				$user = get_user_by('email', $data['user_email']);
+				if ($user) {
+					update_user_meta($user->ID, 'rfq_marketing_agreed', $data["agree-term-condition"] == "on" ? 1 : 0);
+				}
             }
         } catch (Exception $e) {
             wp_mail('michael.santos@infolabix.com', 'crm_action_after_gi_created_new_customer', $e->getMessage() . '###' . $e->getTraceAsString());
@@ -206,6 +214,14 @@ class CRMService
 
     public function crm_action_after_saved_user_keep_informed($data)
     {
+		$postData = explode("&", $_POST['data']);
+		$formData = [];
+		foreach ($postData as $keyPostData => $valuePostData) {
+			$value = explode("=", $valuePostData);
+			$formData[$value[0]] = $value[1];
+		}
+		$marketingAgreed = $formData['kmi_marketing_agreed'] ?? "no";
+		$data['marketing_agreed'] = !($marketingAgreed == "no");
         try {
             $data['options'] = [];
             if (!empty($data['category'])) {
