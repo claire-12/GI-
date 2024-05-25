@@ -1102,6 +1102,18 @@ function cabling_get_api_ajax_callback()
                             'Value' => $basicMaterial,
                             'Operator' => '',
                         );
+                        $priceParams[] = array(
+                            'Field' => '(Customer',
+                            'Sign' => 'eq',
+                            'Value' => $sap_no,
+                            'Operator' => 'or',
+                        );
+                        $priceParams[] = array(
+                            'Field' => 'Customer',
+                            'Sign' => 'eq',
+                            'Value' => "",
+                            'Operator' => ')',
+                        );
 
                         $stockParams[] = array(
                             'Field' => 'OldMaterialNumber',

@@ -101,7 +101,7 @@ $backlogMainTable = array(
                         <tr>
                             <td><?php echo show_value_from_api('CureDate', $cure['CureDate']) ?></td>
                             <td><?php echo show_value_from_api('StockQuantity', $cure['StockQuantity']) ?></td>
-                            <td><?php echo $cumulative_quantity ?></td>
+                            <td><?php echo number_format($cumulative_quantity, 0, '.', ' ') ?></td>
                         </tr>
                     <?php endforeach ?>
                     </tbody>

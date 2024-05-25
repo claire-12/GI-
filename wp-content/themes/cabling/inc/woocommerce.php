@@ -454,7 +454,8 @@ function get_cumulative_quantity($stock, float $quantity): string
         $stock = 0;
     }
     $qty = $stock + $quantity;
-    return number_format($qty, 0, '.', ' ');
+    return $qty;
+    //return number_format($qty, 0, '.', ' ');
 }
 
 function show_value_from_api($key, $value)
