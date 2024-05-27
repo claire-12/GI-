@@ -619,6 +619,53 @@
             }
         }
         show_checkout_shipping();
+
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'cabling_get_api_ajax_checkout',
+                data: 'api%5BMaterialOldNumber%5D=&api%5BBasicMaterial%5D=&api_service=GET_DATA_PRICE&api_page=inventory',
+                nonce: CABLING.nonce,
+            },
+            success: function (response) {
+                hideLoading();
+                if (response.success) {
+                    const rawData = response.data.raw;
+                    let status = '';
+                    let flag = false;
+                    if(rawData.length > 0){
+                        $('.cart_item').each(function(index){
+                            const stockData = rawData[index].stock;
+                            const quantity = rawData[index].quantity;
+                            if(stockData[0] && stockData[0].TotalStockQuantity){
+                                const percent = (stockData[0].TotalStockQuantity / 100) * 80;
+                                const _this = $(this);
+                                if(quantity < percent){
+                                    status = 'In Stock: We estimate to have the products ready for shipping in the next 24 hours.';
+                                }
+                                else{
+                                    status = 'Out of Stock: We estimate to have the products ready for shipping in the next 7 days.';
+                                    flag = true;
+                                }
+                                _this.find('.product-stock').text(status);
+                                $('.stock-total-checkout').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
+                            }
+                            else{
+                                $('.woocommerce-checkout-review-order-table').addClass('removeSize')
+                            }
+
+                        });
+                    }
+
+                }
+            },
+            beforeSend: function () {
+                showLoading();
+            }
+        })
+        $('.woocommerce-shipping-totals.shipping td').attr('colspan', '2');
     })
     const myCollapsible = document.getElementById('collapseAddNew');
     /*myCollapsible.addEventListener('hidden.bs.collapse', function () {
