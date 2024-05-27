@@ -3935,6 +3935,22 @@ table.tablepress-id-52 tr .column-7 {
 	opacity: 0.5;
 	pointer-events: none;
 }
+
+.multisteps-form__content .product-stock{
+    width: 390px;
+}
+.stock-total-checkout{
+    font-weight: normal !important;
+}
+.order-review-wrap{
+    overflow-x: auto;
+}
+.woocommerce-checkout-review-order-table{
+    min-width: 600px;
+}
+.removeSize{
+    min-width: inherit;
+}
 @media only screen and (max-width: 767px) {
 	.container-quotations .dt-container .dt-layout-cell.dt-start {
 			position: relative;
