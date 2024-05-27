@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WooCommerce Compatibility File
  *
@@ -394,7 +395,7 @@ function cabling_account_menu_items()
     $new_items = array(
         'dashboard' => __('Datwyler My Account', 'cabling'),
         'edit-account' => __('Account Information', 'cabling'),
-        //'edit-address' => __('Billing/shipping address', 'cabling'),
+        'edit-address' => __('Billing/shipping address', 'cabling'),
         'setting-account' => __('Keep Me Informed', 'cabling'),
     );
 
@@ -411,7 +412,7 @@ function cabling_account_menu_items()
     //$new_items['orders'] = __('Order history', 'cabling');
     //$new_items['products'] = __('Purchases', 'cabling');
 
-    //$new_items['quotations'] = __('My Quotes', 'cabling');
+    $new_items['quotations'] = __('My Quotes', 'cabling');
 
     //$new_items['messages'] = __('Messages', 'cabling');
     $new_items['request-a-quote'] = __('REQUEST A QUOTE', 'cabling');
@@ -430,24 +431,6 @@ function endArray($array)
     return end($array);
 }
 
-/**
- * get data response from API endpoint
- * @param array $response
- * @param string $type
- * @param string $type_level_2
- * @return array
- */
-function getDataResponse(array $response, string $type, string $type_level_2): array
-{
-    $responseData = array();
-    if (isset($response[$type][$type_level_2])) {
-        $responseData = $response[$type][$type_level_2];
-
-        $responseData = is_array($responseData[0]) ? $responseData : [$responseData];
-    }
-    return $responseData;
-}
-
 function get_cumulative_quantity($stock, float $quantity): string
 {
     if (empty($stock)) {
@@ -464,7 +447,7 @@ function show_value_from_api($key, $value)
         return '-';
     }
 
-     if ($key === 'ScaleTo' && $value == '999999.00') {
+    if ($key === 'ScaleTo' && $value == '999999.00') {
         return '-';
     }
 
@@ -589,7 +572,7 @@ add_action('woocommerce_account_products_endpoint', 'cabling_products_endpoint_c
 function cabling_quotations_endpoint_content()
 {
     $user = wp_get_current_user();
-    $data = RequestProductQuote::get(['email' => $user->user_email]);
+    $data = RequestProductQuote::get(['email' => $user->user_email, 'order' => 'desc']);
     wc_get_template('myaccount/quotations.php', ['data' => $data]);
 }
 
@@ -625,82 +608,66 @@ function cabling_get_user_by_customer($user_id)
     return get_users($args);
 }
 
-add_filter('woocommerce_thankyou_order_received_text', 'cabling_custome_thankyou_text', 10, 2);
-function cabling_custome_thankyou_text($var, $order)
-{
-    return sprintf(__('Thank you. Your order has been received. Tracking order number %d has been successfully saved. One of our sales representative will get back to you shortly once the order is confirmed', 'cabling'), $order->get_id());
-}
-
 //Custom check-out field
 add_filter('woocommerce_checkout_fields', 'cabling_custom_override_checkout_fields');
 function cabling_custom_override_checkout_fields($fields)
 {
-    $fields['billing']['billing_company']['custom_attributes'] = array('readonly' => 'readonly');
-    $fields['billing']['billing_country']['custom_attributes'] = array('disabled' => 'disabled');
-    $fields['shipping']['shipping_country']['custom_attributes'] = array('disabled' => 'disabled');
+    $fields['billing']['billing_address_1']['label'] = __('Address Line 1', 'cabling');
+    $fields['billing']['billing_address_1']['class'] = array('form-row-first');
 
-    $fields['order']['order_comments']['label'] = '';
-    $fields['order']['order_comments']['placeholder'] = __('Shipping Notes', 'cabling');
+    $fields['billing']['billing_address_2']['class'] = array('form-row-last');
+    $fields['billing']['billing_address_2']['label'] = __('Address Line 2', 'cabling');
 
-    $fields['billing']['billing_country']['priority'] = 95;
-    $fields['shipping']['shipping_country']['priority'] = 95;
+    $fields['billing']['billing_city']['label'] = __('City', 'cabling');
+    $fields['billing']['billing_city']['class'] = array('form-row-last');
 
-    $fields['billing']['billing_company']['placeholder'] = __('Company', 'cabling');
-    $fields['billing']['billing_address_1']['placeholder'] = __('Address 1', 'cabling');
-    $fields['billing']['billing_address_2']['placeholder'] = __('Address 2', 'cabling');
-    $fields['billing']['billing_city']['placeholder'] = __('City', 'cabling');
-    $fields['billing']['billing_postcode']['placeholder'] = __('Zip Code', 'cabling');
-    $fields['billing']['billing_state']['placeholder'] = __('State', 'cabling');
-    $fields['billing']['billing_email']['placeholder'] = __('Email', 'cabling');
-    $fields['billing']['billing_phone']['placeholder'] = __('Phone', 'cabling');
+    $fields['billing']['billing_postcode']['label'] = __('Postcode', 'cabling');
+    $fields['billing']['billing_postcode']['required'] = true;
+    $fields['billing']['billing_postcode']['class'] = array('form-row-first');
 
-    $fields['shipping']['shipping_address_1']['placeholder'] = __('Address 1', 'cabling');
-    $fields['shipping']['shipping_address_2']['placeholder'] = __('Address 2', 'cabling');
-    $fields['shipping']['shipping_city']['placeholder'] = __('City', 'cabling');
-    $fields['shipping']['shipping_postcode']['placeholder'] = __('Zip Code', 'cabling');
-    $fields['shipping']['shipping_state']['placeholder'] = __('State', 'cabling');
-    $fields['shipping']['shipping_email']['placeholder'] = __('Email', 'cabling');
-    $fields['shipping']['shipping_phone']['placeholder'] = __('Phone', 'cabling');
+    $fields['billing']['billing_company']['label'] = __('Company', 'cabling');
+    $fields['billing']['billing_company']['required'] = true;
+    $fields['billing']['billing_company']['class'] = array('form-row-first');
+
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_state']);
+    unset($fields['billing']['billing_email']);
+    unset($fields['billing']['billing_phone']);
 
     return $fields;
 }
-
 
 //add Company Responsible Full Name field to billing address
 add_filter('woocommerce_billing_fields', 'cabling_woocommerce_billing_fields');
 function cabling_woocommerce_billing_fields($fields)
 {
-    if (get_customer_type(get_current_user_id()) === MASTER_ACCOUNT) {
-        $fields['company_name_responsible'] = array(
-            'label' => __('Company Responsible Full Name', 'cabling'),
-            'placeholder' => _x('Company Responsible Full Name', 'placeholder', 'cabling'),
-            'required' => false,
-            'clear' => false,
-            'type' => 'text',
-            'priority' => 36
-        );
-    }
-
-    $fields['company_name_responsible'] = array(
-        'label' => __('Company Responsible Full Name1', 'cabling'),
-        'placeholder' => _x('Company Responsible Full Name1', 'placeholder', 'cabling'),
+    $fields['company_vat'] = array(
+        'label' => __('VAT Number', 'cabling'),
+        'placeholder' => _x('VAT Number', 'placeholder', 'cabling'),
         'required' => false,
         'clear' => false,
         'type' => 'text',
+        'class' => array('form-row-last'),
         'priority' => 36
     );
 
     return $fields;
 }
 
-add_filter('woocommerce_customer_meta_fields', 'cabling_woocommerce_customer_meta_fields');
-function cabling_woocommerce_customer_meta_fields($fields)
+add_filter('woocommerce_shipping_fields', 'cabling_woocommerce_shipping_fields');
+function cabling_woocommerce_shipping_fields($fields)
 {
+    //var_dump($fields);
+    $fields['shipping_address_1']['label'] = __('Address Line 1', 'cabling');
+    $fields['shipping_address_2']['label'] = __('Address Line 2', 'cabling');
 
-    $fields['billing']['fields']['company_name_responsible'] = array(
-        'label' => __('Company Responsible Full Name', 'cabling'),
-        'description' => '',
-    );
+    $fields['shipping_city']['label'] = __('City', 'cabling');
+
+    $fields['shipping_postcode']['label'] = __('Postcode', 'cabling');
+    //$fields['shipping_postcode']['required'] = true;
+
+    $fields['shipping_company']['label'] = __('Company', 'cabling');
+    $fields['shipping_company']['required'] = true;
 
     return $fields;
 }
@@ -719,40 +686,6 @@ function product_widgets_init()
 }
 
 add_action('widgets_init', 'product_widgets_init');
-
-
-/* uptade 07/04 */
-
-/**
- * Pre-populate Woocommerce checkout fields
- * Note that this filter populates shipping_ and billing_ fields with a different meta field eg 'first_name'
- */
-add_filter('woocommerce_checkout_get_value', function ($input, $key) {
-
-    global $current_user;
-
-    switch ($key) :
-        case 'billing_first_name':
-        case 'shipping_first_name':
-            return $current_user->first_name;
-            break;
-
-        case 'billing_last_name':
-        case 'shipping_last_name':
-            return $current_user->last_name;
-            break;
-
-        case 'billing_email':
-            return $current_user->user_email;
-            break;
-
-        case 'billing_phone':
-            return $current_user->phone;
-            break;
-
-    endswitch;
-
-}, 10, 2);
 
 /**
  * Dynamically pre-populate Woocommerce checkout fields with exact named meta field
@@ -784,21 +717,18 @@ function am_woocommerce_catalog_orderby($args)
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
 
 
-//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 add_action('woocommerce_before_main_content', 'cabling_woocommerce_breadcrumb', 1);
 add_action('woocommerce_before_single_product_summary', 'cabling_get_brand_product', 4);
-add_action('woocommerce_single_product_summary', 'cabling_add_quote_button', 21);
-add_action('woocommerce_single_product_summary', 'cabling_additional_information', 22);
-//add_action( 'woocommerce_after_single_product_summary', 'cabling_woocommerce_description', 5 );
-//add_action( 'woocommerce_after_single_product_summary', 'cabling_woocommerce_pdf_export_button', 10 );
+add_action('woocommerce_single_product_summary', 'cabling_add_quote_on_product', 21);
+add_action('woocommerce_single_product_summary', 'cabling_additional_information', 90);
 add_action('woocommerce_shop_loop_item_title', 'cabling_product_description', 15);
-add_action('woocommerce_before_shop_loop', 'cabling_product_category_heading', 10);
+add_action('woocommerce_before_shop_loop', 'cabling_product_category_heading');
 add_action('woocommerce_after_my_account', 'cabling_woocommerce_after_my_account_modal', 99);
 
 function cabling_product_category_heading()
@@ -1029,18 +959,17 @@ function cabling_woocommerce_description()
     if ($product && $product->is_type('variable')) {
         /*$heading = $product->get_name();
 
-        $variations = get_children(array(
-            'post_parent' => $product->get_id(),
-            'post_type' => 'product_variation',
-        ));
-        if ($variations) {
-            $product_attributes = cabling_get_product_attributes($product->get_id());
-            wc_get_template('single-product/product-variation-table.php', [
-                'variations' => $variations,
-                'attributes' => $product_attributes,
-            ]);
-        }*/
-
+$variations = get_children(array(
+'post_parent' => $product->get_id(),
+'post_type' => 'product_variation',
+));
+if ($variations) {
+$product_attributes = cabling_get_product_attributes($product->get_id());
+wc_get_template('single-product/product-variation-table.php', [
+    'variations' => $variations,
+    'attributes' => $product_attributes,
+]);
+}*/
     } else {
         $key_benefits = get_field('key_benefits', $product->get_id());
         $use_with = get_field('use_with', $product->get_id());
@@ -1075,7 +1004,7 @@ function cabling_woocommerce_description()
 // Change Add to Cart text on product archives
 function custom_woocommerce_product_add_to_cart_text($text, $product)
 {
-    return __('FIND OUT MORE', 'cabling');
+    return __('Add to cart', 'cabling');
 }
 
 add_filter('woocommerce_product_add_to_cart_text', 'custom_woocommerce_product_add_to_cart_text', 10, 2);
@@ -1083,9 +1012,40 @@ add_filter('woocommerce_product_add_to_cart_text', 'custom_woocommerce_product_a
 function cabling_add_quote_button($product_id = 0)
 {
     $product_id = is_product() ? get_the_ID() : $product_id;
+    echo '<div class="d-flex align-items-center">';
     echo '<div data-action="' . $product_id . '" class="product-request-button show-product-quote">';
     echo '<a class="btn btn-primary" href="#">' . __('Request a quote', 'cabling') . '</a>';
     echo '</div>';
+
+    if (is_product()) {
+        $user_id = get_current_user_id();
+        $wishlist_products = get_user_meta($user_id, 'wishlist_products', true);
+        $class = '';
+
+        if (is_array($wishlist_products) && in_array($product_id, $wishlist_products)) {
+            $class = 'has-wishlist';
+        }
+
+        ob_start(); ?>
+        <a href="#" class="add-to-cart-button add-to-wishlist ms-2 <?php echo $class ?>"
+           data-product="<?php echo esc_attr($product_id); ?>">
+            <i class="fa-light fa-heart me-2"></i>
+            <span><?php echo __('Add to wishlist', 'cabling'); ?></span>
+        </a>
+        <?php
+        echo ob_get_clean();
+    }
+    echo '</div>';
+}
+
+function cabling_add_quote_on_product()
+{
+    global $product;
+
+    // Check if it's a product page and if price is empty
+    if (is_product() && '' === $product->get_price()) {
+        cabling_add_quote_button();
+    }
 }
 
 function cabling_additional_information()
@@ -1317,7 +1277,6 @@ function cabling_save_verify_cookie()
 
         $expiration_time = time() + 30 * 60; // 30 minutes in seconds
         setcookie('verify_customer_cabling_' . $_REQUEST['id'], $_REQUEST['key'], $expiration_time);
-
     }
 }
 
@@ -1516,8 +1475,8 @@ if (!function_exists('custom_compare')) {
 
         return $max_a <=> $max_b;
     }
-
 }
+
 
 function get_filter_lists($get_options = true): array
 {
@@ -1691,9 +1650,12 @@ function get_all_meta_values_cached($meta_key, array $post_ids = [])
     if (!empty($values) && $acf_field['type'] === 'checkbox') {
         $new_values = array();
         foreach ($values as $value) {
+            if (empty($value)) {
+                continue;
+            }
             $unserializedData = unserialize($value);
 
-            if ($unserializedData === false || empty($value)) {
+            if ($unserializedData === false) {
                 continue;
             } else {
                 foreach ($unserializedData as $val) {
@@ -1708,8 +1670,8 @@ function get_all_meta_values_cached($meta_key, array $post_ids = [])
     }
 
     /* if ($meta_key === 'product_complance') {
-         var_dump($values);
-     }*/
+var_dump($values);
+}*/
     sort($values);
 
     return $values;
@@ -1772,8 +1734,8 @@ function get_term_ids_by_attributes(array $product_ids, string $taxonomy = 'prod
 
     $terms = get_terms_by_product($taxonomy, $product_ids);
     /*if ($taxonomy == 'compound_certification') {
-        var_dump($product_ids);
-    }*/
+var_dump($product_ids);
+}*/
     return $terms;
 }
 
@@ -1797,8 +1759,8 @@ function get_terms_by_product(string $taxonomy, array $product_ids): array
 
     $results = $wpdb->get_results($sql);
     /*if ($taxonomy == 'compound_certification') {
-        var_dump($sql);
-    }*/
+var_dump($sql);
+}*/
     if ($wpdb->last_error) {
         error_log('Database error: ' . $wpdb->last_error);
         return [];
@@ -1895,7 +1857,7 @@ function cabling_change_product_query($query)
         if (!empty($attributes['product_compound'])) {
             $attributes['product_compound'] = get_compound_product($attributes['product_compound']);
         }
-		if (!empty($attributes['product_compound_single'])) {
+        if (!empty($attributes['product_compound_single'])) {
             if (empty($attributes['product_compound'])) {
                 $attributes['product_compound'] = $attributes['product_compound_single'];
             } else {
@@ -1906,7 +1868,7 @@ function cabling_change_product_query($query)
         }
         unset($attributes['group-type']);
         $meta_query = get_meta_query_from_attributes($attributes);
-
+        //echo '<pre>';var_dump($attributes, $meta_query);echo '</pre>';
         $query->set('meta_query', array_merge($old_meta_query, $meta_query));
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'product_dash_number');
@@ -1931,15 +1893,15 @@ function get_meta_query_from_attributes($attributes): array
         if (empty($meta_values)) {
             continue;
         }
-        if ($meta_key === 'compound_certification') {
-            continue;
-        }
         if ($meta_key === 'product_compound') {
             $meta_query[] = array(
                 'key' => $meta_key,
                 'value' => $meta_values,
                 'compare' => 'IN'
             );
+            continue;
+        }
+        if ($meta_key === 'compound_certification') {
             continue;
         }
         if (is_array($meta_values) && sizeof($meta_values)) {
@@ -2079,7 +2041,7 @@ function get_available_attributes(array $product_ids): ?array
             'milimeters_width',
             'product_contact_media',
             'product_min',
-			'product_max',
+            'product_max',
             'product_dash_number',
             'product_colour',
             'product_compound',
@@ -2128,7 +2090,6 @@ function get_available_attributes(array $product_ids): ?array
                     $resultMetas[$meta['meta_key']][] = $val;
                 }
             }
-
         }
         //we must get the certifications of compound
         //$resultMetas['product_compound'] = $data['compound_certification'];
@@ -2246,6 +2207,7 @@ function product_address_state_field()
 function show_product_field($name, $options = array()): string
 {
     $default = $options['default'] ?? '';
+    $id = $options['id'] ?? $name;
     $required = empty($options['required']) ? '' : 'required';
     $requiredLabel = empty($options['required']) ? '' : '<span class="required">*</span>';
     $option = '<option value="">' . __('Choose an option', 'woocommerce') . '</option>';
@@ -2254,9 +2216,39 @@ function show_product_field($name, $options = array()): string
         $option .= '<option value="' . esc_attr($selectKey) . '" ' . selected($default, $selectKey, false) . '>' . esc_html($option_text) . '</option>';
     }
 
-    $field = '<select name="' . $name . '" id="' . $name . '" class="select form-select" ' . $required . '>' . $option . '</select>';
+    $field = '<select name="' . $name . '" id="' . $id . '" class="select form-select" ' . $required . '>' . $option . '</select>';
 
     return '<div class="w-100 form-group has-focus' . ($options['class'] ?? '') . '">' . $field . '<label for="' . $name . '">' . $options['label'] . $requiredLabel . '</label></div>';
+}
+
+function show_input_field($name, $options = array())
+{
+    $type = $options['type'] ?? 'text';
+    switch ($type) {
+        case 'country':
+        case 'state':
+            break;
+        case 'hidden';
+            $options['return'] = true;
+            $field = woocommerce_form_field($name, $options);
+            break;
+        default:
+            $value = empty($options['value']) ? '' : $options['value'];
+            $required = empty($options['required']) ? '' : 'required';
+            $requiredLabel = empty($options['required']) ? '' : '<span class="required">*</span>';
+            $class = is_array($options['class']) ? implode(' ', $options['class']) : ' ';
+
+            $input = '<input type="' . $type . '" name="' . $name . '" id="' . $name . '"" value="' . $value . '" class="form-control" ' . $required . '/>';
+
+            $field = '<div class="form-group mb-3 ' . $class . '">' . $input . '<label for="' . $name . '">' . $options['label'] . '&nbsp;' . $requiredLabel . '</label></div>';
+            break;
+    }
+    if (empty($options['return'])) {
+        echo $field;
+    } else {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        return $field;
+    }
 }
 
 function debug_log($subject, $body)
@@ -2328,3 +2320,13 @@ function gi_custom_reset_password_heading($title)
     $title = __('Datwyler Sealing Solutions: Password Reset Request', 'cabling');
     return $title;
 }
+
+add_filter('woocommerce_get_terms_and_conditions_checkbox_text', 'gi_woocommerce_get_terms_and_conditions_checkbox_text');
+function gi_woocommerce_get_terms_and_conditions_checkbox_text($text)
+{
+    $text = __('I confirm all details are correct', 'cabling');
+    return $text;
+}
+
+#ref GID-1044
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);

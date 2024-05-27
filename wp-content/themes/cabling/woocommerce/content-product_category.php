@@ -27,10 +27,18 @@ $fieldList = cabling_get_product_table_attributes();
 $filterValues = show_filter_value($fieldList, $product->get_id());
 
 $product_link = get_product_filter_link();
+$col_number = 0;
+
+$user_id = get_current_user_id();
+$wishlist_products = get_user_meta( $user_id, 'wishlist_products', true );
+$class = '';
+
+if ( is_array( $wishlist_products ) && in_array( $product->get_id(), $wishlist_products ) ) {
+    $class = 'has-wishlist';
+}
 ?>
-<tr class="<?php echo implode(' ', $filterValues) ?>">
-    <td><?php cabling_add_quote_button($product->get_id()) ?></td>
-    <?php foreach ($fieldList as $key => $attribute): ?>
+<tr class="product-row <?php echo implode(' ', $filterValues) ?>">
+    <?php foreach ($fieldList as $key => $attribute): $col_number++; ?>
         <?php $value = get_product_field($key, $product->get_id()); ?>
         <?php if ($key === '_sku'): ?>
             <td><a href="<?php echo esc_url($product_link); ?>"><?php echo $value ?? '---' ?></td>
@@ -40,5 +48,39 @@ $product_link = get_product_filter_link();
                 data-align="center"><?php echo $value ?? '---' ?></td>
         <?php endif ?>
     <?php endforeach ?>
-    <!--    <td><?php cabling_add_quote_button($product->get_id()) ?></td> -->
+</tr>
+<tr class="add-cart-row">
+    <?php if (empty($product->get_price())): ?>
+        <td
+           colspan="<?php echo $col_number ?>"
+           class="has-text-align-center"
+           data-align="center"
+        >
+            <div class="d-flex justify-content-center">
+                <?php cabling_add_quote_button($product->get_id()) ?>
+                <a href="#" class="add-to-cart-button add-to-wishlist ms-2 <?php echo $class ?>"
+                   data-product="<?php echo esc_attr($product->get_id()); ?>">
+                    <i class="fa-light fa-heart me-2"></i>
+                    <span><?php echo __('Add to wishlist', 'cabling'); ?></span>
+                </a>
+            </div>
+        </td>
+    <?php else: ?>
+        <td
+           colspan="<?php echo $col_number ?>"
+           class="has-text-align-center"
+           data-align="center"
+        >
+            <a href="<?php echo esc_url(wc_get_cart_url()); ?>?add-to-cart=<?php echo esc_attr($product->get_id()); ?>"
+               class="add-to-cart-button">
+                <i class="fa-light fa-shopping-cart me-2"></i>
+                <span><?php echo __('Add to cart', 'cabling'); ?></span>
+            </a>
+            <a href="#" class="add-to-cart-button add-to-wishlist ms-2 <?php echo $class ?>"
+               data-product="<?php echo esc_attr($product->get_id()); ?>">
+                <i class="fa-light fa-heart me-2"></i>
+                <span><?php echo __('Add to wishlist', 'cabling'); ?></span>
+            </a>
+        </td>
+    <?php endif ?>
 </tr>

@@ -15,33 +15,41 @@
  * @version 3.5.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+    exit;
 }
 
-do_action( 'woocommerce_before_checkout_form', $checkout );
+do_action('woocommerce_before_checkout_form', $checkout);
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
-if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
-	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be Sign in to checkout.', 'woocommerce' ) ) );
-	return;
+if (!$checkout->is_registration_enabled() && $checkout->is_registration_required() && !is_user_logged_in()) {
+    echo apply_filters('woocommerce_checkout_must_be_logged_in_message', __('You must be Sign in to checkout.', 'woocommerce'));
+    return;
 }
-
+$customer_level = get_customer_level(get_current_user_id());
+//$customer_level = 1;
 ?>
 
-<form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+<form name="checkout" method="post" class="checkout woocommerce-checkout"
+      action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
 
-	<?php if ( $checkout->get_checkout_fields() ) : ?>
+    <?php if ($checkout->get_checkout_fields()) : ?>
 
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+        <?php do_action('woocommerce_checkout_before_customer_details'); ?>
         <div class="multisteps-form">
             <!--progress bar-->
             <div class="row">
                 <div class="col-12">
                     <div class="multisteps-form__progress">
-                        <span class="multisteps-form__progress-btn js-active" type="button" title="<?php _e('Shipping Details', 'cabling') ?>"><?php _e('Shipping Details', 'cabling') ?></span>
-                        <span class="multisteps-form__progress-btn" type="button" title="<?php _e('Additional Infomation', 'cabling') ?>"><?php _e('Additional Infomation', 'cabling') ?></span>
-                        <span class="multisteps-form__progress-btn" type="button" title="<?php _e('Review & Place Order', 'cabling') ?>"><?php _e('Review & Place Order', 'cabling') ?></span>
+                        <div class="multisteps-form__progress-btn js-active" type="button" title="<?php _e('Shipping Details', 'cabling') ?>">
+                            <span><?php _e('Delivery Details', 'cabling') ?></span>
+                            <p class="note"><?php _e('Please note: Delivery only available to the USA', 'cabling') ?></p>
+                        </div>
+                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Billing', 'cabling') ?>"><?php _e('Billing', 'cabling') ?></div>
+                        <?php if($customer_level == 1): ?>
+                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
+                        <?php endif; ?>
+                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Order Summary', 'cabling') ?>"><?php _e('Order Summary', 'cabling') ?></div>
                     </div>
                 </div>
             </div>
@@ -50,91 +58,75 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                 <div class="col-12">
                     <div class="multisteps-form__form" id="customer_details">
                         <!--single form panel-->
-                        <div class="multisteps-form__panel shadow js-active" data-animation="scaleIn">
-                            <div class="multisteps-form__content">
-                                <div class="row">
-                                    <div class="col-sm-6 col-xs-12">
-                                        <?php do_action( 'woocommerce_checkout_billing' ); ?>
-                                        <?php do_action( 'woocommerce_checkout_shipping' ); ?>
-                                    </div>
-                                    <div class="col-sm-6 col-xs-12">
-                                        <?php woocommerce_order_review(); ?>
-                                    </div>
-                                </div>
-                                <div class="button-row d-flex mt-4">
-                                    <button class="btn ml-auto js-btn-next" type="button" title="<?php _e('Next', 'cabling') ?>"><?php _e('Next', 'cabling') ?></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!--single form panel-->
-                        <div class="multisteps-form__panel shadow" data-animation="scaleIn">
-                            <div class="multisteps-form__content">
-                                <div class="row">
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="woocommerce-additional-fields">
-                                            <?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
-
-                                            <?php if ( apply_filters( 'woocommerce_enable_order_notes_field', 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' ) ) ) : ?>
-
-                                                <?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
-
-                                                    <h3><?php esc_html_e( 'Shipping Notes', 'woocommerce' ); ?></h3>
-
-                                                <?php endif; ?>
-
-                                                <div class="woocommerce-additional-fields__field-wrapper">
-                                                    <?php foreach ( $checkout->get_checkout_fields( 'order' ) as $key => $field ) : ?>
-                                                        <?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
-                                                    <?php endforeach; ?>
-                                                </div>
-
-                                            <?php endif; ?>
-
-                                            <?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-xs-12">
-                                        <?php woocommerce_order_review(); ?>
-                                    </div>
-                                </div>
-                                <div class="button-row d-flex mt-4">
-                                    <button class="btn js-btn-prev" type="button" title="<?php _e('Prev', 'cabling') ?>"><?php _e('Prev', 'cabling') ?></button>
-                                    <button class="btn ml-auto js-btn-next" type="button" title="<?php _e('Next', 'cabling') ?>"><?php _e('Next', 'cabling') ?></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!--single form panel-->
-                        <div class="multisteps-form__panel shadow" data-animation="scaleIn">
-                            <div class="multisteps-form__content">
+                        <div class="multisteps-form__panel js-active" data-animation="scaleIn">
+                            <div class="multisteps-form__content shipping-address-content">
                                 <div class="row">
                                     <div class="col-12">
-                                        <?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>                                        
-                                       
-                                        <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-                                        <div id="order_review" class="woocommerce-checkout-review-order">
-                                            <?php do_action( 'woocommerce_checkout_order_review' ); ?>
-                                        </div>
-
-                                        <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+                                        <a class="add-new-address-checkout"
+                                           onclick="thmaf_add_new_shipping_address(event, this,'shipping')">Add a new
+                                            address</a>
+                                        <?php do_action('woocommerce_checkout_shipping'); ?>
+                                        <?php wc_get_template_part('checkout/deliver', 'detail'); ?>
                                     </div>
+                                    <!--<div class="col-sm-6 col-xs-12">
+                                        <?php /*woocommerce_order_review(); */ ?>
+                                    </div>-->
                                 </div>
-                                <div class="row">
-                                    <div class="button-row d-flex mt-4 col-12">
-                                        <button class="btn js-btn-prev" type="button" title="<?php _e('Prev', 'cabling') ?>"><?php _e('Prev', 'cabling') ?></button>
-                                    </div>
+                                <div class="button-row wp-block-button block-button-black d-flex mt-4">
+                                    <button class="ml-auto js-btn-next submit-shipping-step wp-element-button"
+                                            type="button"
+                                            title="<?php _e('Continue', 'cabling') ?>"><?php _e('Continue', 'cabling') ?></button>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!--single form panel-->
+                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                            <div class="multisteps-form__content">
+                                <div class="woocommerce-billing-details">
+                                    <?php do_action('woocommerce_checkout_billing'); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php if($customer_level == 1): ?>
+                        <!--single form panel-->
+                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                            <div class="multisteps-form__content">
+                                <?php
+                                    $gi_wp_form_9 = apply_filters('woocommerce_checkout_gi_add_wp_form_9', null);
+                                    echo $gi_wp_form_9;
+                                ?>
+                            </div>
+                            <div class="wp-block-button button-row block-button-black d-flex">
+                                <button class="wp-element-button ml-auto continue-to-summary" type="button" title="Continue">Continue</button>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+
+                        <!--single form panel-->
+                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                            <div class="multisteps-form__content">
+                                <?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
+
+                                <?php do_action('woocommerce_checkout_before_order_review'); ?>
+
+                                <div id="order_review" class="woocommerce-checkout-review-order">
+                                    <?php do_action('woocommerce_checkout_order_review'); ?>
+                                </div>
+
+                                <?php do_action('woocommerce_checkout_after_order_review'); ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+        <?php do_action('woocommerce_checkout_after_customer_details'); ?>
 
-	<?php endif; ?>	
-	
+    <?php endif; ?>
+
 
 </form>
 
-<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+<?php do_action('woocommerce_after_checkout_form', $checkout); ?>

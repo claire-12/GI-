@@ -281,9 +281,7 @@ function cabling_register_new_account_ajax_callback()
             $mailer->send($recipient, $subject, $content, $headers);
         }
 
-        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
-        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the link to log in and explore.', 'cabling') . '</div>';
-		$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the <a href="/my-account/">link</a> to log in and explore.', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the <a href="/my-account/">link</a> to log in and explore.', 'cabling') . '</div>';
         wp_send_json_success($message);
     }
 
@@ -916,6 +914,7 @@ function cabling_get_products_ajax_callback()
 
                 if (!empty($data['attributes'])) {
                     $isSizeFilter = checkFilterHasSize($data['attributes']);
+                    //$product_compound = [];
                     if (!empty($data['attributes']['product_compound'])) {
                         $certifications = $data['attributes']['product_compound'];
                         $data['attributes']['compound_certification'] = array_shift($certifications);
@@ -924,7 +923,7 @@ function cabling_get_products_ajax_callback()
                     }
 
                     if (!empty($data['attributes']['product_compound_single'])) {
-                        if (empty($data['attributes']['product_compound'])){
+                        if (empty($data['attributes']['product_compound'])) {
                             $data['attributes']['product_compound'] = $data['attributes']['product_compound_single'];
                         } else {
                             $data['attributes']['product_compound'] = array_merge($data['attributes']['product_compound'], $data['attributes']['product_compound_single']);
@@ -1008,6 +1007,7 @@ function cabling_get_products_ajax_callback()
                 'category' => $category->name ?? '',
                 'results' => $results,
                 'total' => $total,
+                //'data' => $data,
                 'filter_meta' => $resultMetas ?? null,
                 //'$product_ids' => implode(',',$product_ids) ?? null,
                 'isSizeFilter' => $isSizeFilter,

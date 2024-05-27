@@ -136,7 +136,7 @@
         }
     })
     $(document).on('change', '#billing_country', function (e) {
-        const stateSelect = $('#billing_state');
+        const stateSelect = $(this).closest('form').find('#billing_state');
         if (stateSelect.length) {
             const country = $(this).val();
             $.ajax({
@@ -149,7 +149,8 @@
                 },
                 success: function (response) {
                     if (response.success) {
-                        stateSelect.html(response.data)
+                        stateSelect.html(response.data);
+                        console.log(stateSelect, response.data)
                     }
                 },
                 beforeSend: function () {
@@ -251,6 +252,48 @@
             });
         return false;
     })
+    $(document).on('submit', '#form-change-address', function () {
+        const form = $(this);
+
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'gi_update_shipping_address',
+                data: form.serialize(),
+            },
+            success: function (response) {
+                if (response.success) {
+                    form.html(response.data);
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    form.prepend(response.data);
+                }
+            },
+            beforeSend: function () {
+                showLoading();
+
+                form.find('.alert').remove();
+            }
+        })
+            .done(function () {
+                hideLoading();
+            })
+            .error(function () {
+                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    <div>
+                        There was an error while processing the request. Please try again later!
+                    </div>
+                </div>`);
+                hideLoading();
+            });
+        return false;
+    })
+
+
 })(jQuery);
 
 function showKeepInformedModal() {
@@ -284,5 +327,40 @@ function showKeepInformedModal() {
                 'sitekey': sitekey,
             });
             new bootstrap.Modal(modalElement).show();
+        });
+}
+
+function gi_edit_selected_address(e, address_type, address_key) {
+    $ = jQuery.noConflict();
+
+    showLoading();
+    const address_item = $(e).closest('.address-item');
+    const modalElement = $('#addAddressModal');
+    const address = JSON.parse(address_item.attr('data-address'));
+
+    $.ajax({
+        url: CABLING.ajax_url,
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            action: 'gi_get_modal_address_content',
+            address_type: address_type,
+            address_key: address_key,
+            address_fields: address,
+        },
+        success: function (response) {
+            if (response.success) {
+                modalElement.find('.form-change-address').html(response.data);
+                $("#shipping_country").select2({dropdownParent: $('#addAddressModal')});
+                $("#shipping_state").select2({dropdownParent: $('#addAddressModal')});
+                new bootstrap.Modal(modalElement).show();
+            }
+        },
+        beforeSend: function () {
+            showLoading();
+        }
+    })
+        .done(function () {
+            hideLoading();
         });
 }
