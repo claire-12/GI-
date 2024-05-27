@@ -73,10 +73,14 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-                new bootstrap.Modal(modalElement).show();
-            });
+        .done(function () {
+            hideLoading();
+            new bootstrap.Modal(modalElement).show();
+        })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+        });
 
         return false;
     })
@@ -121,6 +125,10 @@
                 showLoading();
             }
         })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+        });
     });
 
 
@@ -156,9 +164,13 @@
                     showLoading();
                 }
             })
-                .done(function () {
-                    hideLoading();
-                });
+            .done(function () {
+                hideLoading();
+            })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+            });
         }
     })
 
@@ -196,16 +208,16 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
-            .error(function () {
-                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
-                    <div>
-                        There was an error while processing the request. Please try again later!
-                    </div>
-                </div>`);
-                hideLoading();
+        .done(function () {
+            hideLoading();
+        })
+        .error(function () {
+            form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <div>
+                    There was an error while processing the request. Please try again later!
+                </div>
+            </div>`);
+            hideLoading();
             });
 
         return false;
@@ -238,17 +250,17 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
-            .error(function () {
-                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
-                    <div>
-                        There was an error while processing the request. Please try again later!
-                    </div>
-                </div>`);
-                hideLoading();
-            });
+        .done(function () {
+            hideLoading();
+        })
+        .error(function () {
+            form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <div>
+                    There was an error while processing the request. Please try again later!
+                </div>
+            </div>`);
+            hideLoading();
+        });
         return false;
     })
 })(jQuery);
@@ -275,14 +287,18 @@ function showKeepInformedModal() {
             showLoading();
         }
     })
-        .done(function () {
-            hideLoading();
-            //generateCaptchaElement('informed-recaptcha');
-            const recaptcha_element = $('#informed-recaptcha');
-            const sitekey = recaptcha_element.attr('data-sitekey');
-            grecaptcha.render('informed-recaptcha', {
-                'sitekey': sitekey,
-            });
-            new bootstrap.Modal(modalElement).show();
+    .done(function () {
+        hideLoading();
+        //generateCaptchaElement('informed-recaptcha');
+        const recaptcha_element = $('#informed-recaptcha');
+        const sitekey = recaptcha_element.attr('data-sitekey');
+        grecaptcha.render('informed-recaptcha', {
+            'sitekey': sitekey,
         });
+        new bootstrap.Modal(modalElement).show();
+    })
+    .error(function () {
+        hideLoading();
+        alert('Something went wrong');
+    });
 }

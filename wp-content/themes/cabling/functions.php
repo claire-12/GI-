@@ -463,9 +463,7 @@ add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
 
 //add Google Tag Manager or Google Analytics code to header
 function add_google_tag() {
-    //$tag_manager_id = 'G-DXNM0L4ME8';
-    $tag_manager_id = '';
-
+    $tag_manager_id = get_field('tag_manager_id', 'option');
     if (!empty($tag_manager_id)) { ?>
         <!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id ?>"></script>

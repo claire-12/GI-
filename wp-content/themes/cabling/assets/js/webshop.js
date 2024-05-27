@@ -97,12 +97,13 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
-            .fail(function () {
-                console.log("error");
-            });
+        .done(function () {
+            hideLoading();
+        })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+        });
     })
 
     $(document).on('submit', 'form[name=update-customer-lv1]', function () {
@@ -127,12 +128,13 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
-            .fail(function () {
-                console.log("error");
-            });
+        .done(function () {
+            hideLoading();
+        })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+        });
         return false;
     })
 
@@ -162,12 +164,13 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
-            .fail(function () {
-                console.log("error");
-            });
+        .done(function () {
+            hideLoading();
+        })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+        });
         return false;
     })
 
@@ -238,9 +241,11 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
-            });
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+            btn_submit.prop('disabled', false);
+        });
 
         return false;
     })
@@ -438,9 +443,10 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
-            });
+        .error(function () {
+            hideLoading();
+            $('#api-results').html("Something wrong !");
+        });
 
         return false;
     });
@@ -512,9 +518,10 @@
                         showLoading();
                     }
                 })
-                    .fail(function () {
-                        console.log("error");
-                    });
+                .error(function () {
+                    hideLoading();
+                    alert('Something went wrong');
+                });
 
                 return false;
             }
@@ -727,9 +734,10 @@ function blog_filter_ajax(load_more = false) {
             showLoading();
         }
     })
-        .fail(function () {
-            console.log("error");
-        });
+    .error(function () {
+        hideLoading();
+        alert('Something went wrong');
+    });
 }
 
 function product_filter_init() {
