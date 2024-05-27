@@ -100,8 +100,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
             });
     })
 
@@ -130,8 +131,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
             });
         return false;
     })
@@ -165,8 +167,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
             });
         return false;
     })
@@ -238,8 +241,10 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+            btn_submit.prop('disabled', false);
             });
 
         return false;
@@ -438,8 +443,9 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
+        .error(function () {
+            hideLoading();
+            $('#api-results').html("Something wrong !");
             });
 
         return false;
@@ -512,8 +518,9 @@
                         showLoading();
                     }
                 })
-                    .fail(function () {
-                        console.log("error");
+                .error(function () {
+                    hideLoading();
+                    alert('Something went wrong');
                     });
 
                 return false;
@@ -727,8 +734,9 @@ function blog_filter_ajax(load_more = false) {
             showLoading();
         }
     })
-        .fail(function () {
-            console.log("error");
+    .error(function () {
+        hideLoading();
+        alert('Something went wrong');
         });
 }
 

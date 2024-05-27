@@ -76,6 +76,10 @@
             .done(function () {
                 hideLoading();
                 new bootstrap.Modal(modalElement).show();
+        })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
             });
 
         return false;
@@ -121,6 +125,10 @@
                 showLoading();
             }
         })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+        });
     });
 
 
@@ -158,6 +166,10 @@
             })
                 .done(function () {
                     hideLoading();
+            })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
                 });
         }
     })
@@ -284,5 +296,9 @@ function showKeepInformedModal() {
                 'sitekey': sitekey,
             });
             new bootstrap.Modal(modalElement).show();
+    })
+    .error(function () {
+        hideLoading();
+        alert('Something went wrong');
         });
 }
