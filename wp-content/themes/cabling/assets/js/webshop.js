@@ -100,8 +100,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
     })
 
@@ -130,8 +131,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
         return false;
     })
@@ -165,8 +167,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
         return false;
     })
@@ -238,8 +241,10 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+                btn_submit.prop('disabled', false);
             });
 
         return false;
@@ -438,8 +443,9 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                $('#api-results').html("Something wrong !");
             });
 
         return false;
@@ -512,8 +518,9 @@
                         showLoading();
                     }
                 })
-                    .fail(function () {
-                        console.log("error");
+                    .error(function () {
+                        hideLoading();
+                        alert('Something went wrong');
                     });
 
                 return false;
@@ -523,27 +530,27 @@
 
 
     const wpcf7Elm = document.querySelector('.wpcf7');
-	if(wpcf7Elm){
-		wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
+    if (wpcf7Elm) {
+        wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
             gtag('event', 'Lead_Account');
-			openModal('modalSuccess');
-		}, false);
-		wpcf7Elm.addEventListener('wpcf7spam', function (event) {
-			openModal('modalError');
-		}, false);
-		wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
-			openModal('modalError');
-		}, false);
-		wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
-			openModal('modalError');
-		}, false);
-		wpcf7Elm.addEventListener('wpcf7submit', function (event) {
-			if (event.detail.status === 'wpcf7invalid') {
-				openModal('modalError');
-			}
+            openModal('modalSuccess');
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7spam', function (event) {
+            openModal('modalError');
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7invalid', function (event) {
+            openModal('modalError');
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7mailfailed', function (event) {
+            openModal('modalError');
+        }, false);
+        wpcf7Elm.addEventListener('wpcf7submit', function (event) {
+            if (event.detail.status === 'wpcf7invalid') {
+                openModal('modalError');
+            }
             gtag('event', 'Lead_Account');
-		}, false);
-	}
+        }, false);
+    }
 
     $(document).on('change', 'input[name=select-shipping-address]', function () {
         const elm = $(this);
@@ -598,15 +605,15 @@
             $('input[name=billing_postcode]').val(shipping_postcode);
         }
 
-        if ($(this).hasClass('new-address')){
+        if ($(this).hasClass('new-address')) {
             let isCompleteBilling = true;
             $('#accordionAddress').find('.form-control').each(function () {
-                if ($(this).val() == ''){
+                if ($(this).val() == '') {
                     isCompleteBilling = false;
                 }
             })
 
-            if( !isCompleteBilling ){
+            if (!isCompleteBilling) {
                 $('.woocommerce-billing-details').prepend('<div class="alert alert-danger d-flex align-items-center woo-notice" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i><span>Please complete Billing Address.</span></div>');
                 return false;
             }
@@ -617,7 +624,7 @@
     /*myCollapsible.addEventListener('hidden.bs.collapse', function () {
         console.log('collapse');
     })*/
-    if(myCollapsible) {
+    if (myCollapsible) {
         myCollapsible.addEventListener('shown.bs.collapse', function () {
             $('#same-shipping-address').prop('checked', false);
             $('#diff-shipping-address').prop('checked', true);
@@ -647,14 +654,14 @@
             data: formData,
             contentType: false,
             processData: false,
-            success: function(response) {
-                if(response.success == true){
+            success: function (response) {
+                if (response.success == true) {
                     $('body').trigger('update_checkout');
                     $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').addClass('place-order-upload');
                 }
                 $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').removeClass('disable');
             },
-            error: function(response) {
+            error: function (response) {
 
             }
         });
@@ -675,12 +682,12 @@
             data: formData,
             contentType: false,
             processData: false,
-            success: function(response) {
-                if(response.success == true){
+            success: function (response) {
+                if (response.success == true) {
                     $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').trigger('click');
                 }
             },
-            error: function(response) {
+            error: function (response) {
 
             }
         });
@@ -752,12 +759,12 @@ function setActiveCheckbox() {
 function showSingleTable(order) {
     const $ = jQuery.noConflict();
     // const tableContent = $(`tr.single-${order}`);
-    const tableContent = $('.backlog-row-single[data-order="'+order+'"]');
+    const tableContent = $('.backlog-row-single[data-order="' + order + '"]');
     const tablePODetails = $('#table-order-detail');
 
     $(`.backlog-row`).removeClass('table-warning').show();
     // $(`.row-${order}`).addClass('table-warning');
-    $('.backlog-row[data-order="'+order+'"]').addClass('table-warning');
+    $('.backlog-row[data-order="' + order + '"]').addClass('table-warning');
 
     tablePODetails.find('.table-heading span').html(order);
     tablePODetails.find('tbody').empty();
@@ -888,8 +895,9 @@ function blog_filter_ajax(load_more = false) {
             showLoading();
         }
     })
-        .fail(function () {
-            console.log("error");
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
         });
 }
 
@@ -1121,7 +1129,7 @@ function openModal(modalId) {
 }
 
 // #ref GT-38
-if( jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').length  ){
+if (jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').length) {
     let contact_marketing_agreed_html = jQuery('.contact_marketing_agreed_html p').html();
     jQuery('.contact_marketing_agreed_html').remove();
     jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"] .wpcf7-list-item-label').html(contact_marketing_agreed_html);

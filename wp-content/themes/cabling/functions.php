@@ -466,27 +466,25 @@ add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 //add Google Tag Manager or Google Analytics code to header
 function add_google_tag()
 {
-	if (!(function_exists('wp_get_environment_type') && 'production' == wp_get_environment_type())) {
-		return;
-	}
-	$tag_manager_id = 'G-DXNM0L4ME8';
+	//$tag_manager_id = 'G-DXNM0L4ME8';
+	$tag_manager_id = get_field('tag_manager_id', 'option');
 	if (!empty($tag_manager_id)) { ?>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id ?>"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $tag_manager_id ?>"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
 
-function gtag() {
-	dataLayer.push(arguments);
-}
-gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-gtag('config', '<?php echo $tag_manager_id ?>');
-</script>
-<?php
+        gtag('config', '<?php echo $tag_manager_id ?>');
+        </script>
+        <?php
 	}
 }
-//add_action('wp_head', 'add_google_tag');
+add_action('wp_head', 'add_google_tag');
 
 
 if (!function_exists('cabling_site_icon_meta_tags')) :
@@ -527,7 +525,7 @@ function w9_form_ajax() {
 
 	$return = array(
 	    'success' => $_SESSION['vat_remove']
-	);	 
+	);
 
 	wp_send_json($return);
 }
@@ -542,7 +540,7 @@ function remove_vat_for_specific_users( $cart ) {
 		foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
 			$cart_item['data']->set_tax_class( 'zero-rate' );
 		}
-	} 
+	}
 }
 add_action( 'woocommerce_before_calculate_totals', 'remove_vat_for_specific_users' );
 
@@ -593,7 +591,7 @@ function w9_file_upload_ajax() {
 
 	$return = array(
 	    'success' => $success
-	);	 
+	);
 
 	wp_send_json($return);
 }
@@ -616,7 +614,7 @@ function attach_id_cabling_order( $order_id, $order ){
 add_action( 'woocommerce_new_order', 'attach_id_cabling_order', 10, 2 );
 
 // display the file w9 form in the order admin panel
-function display_file_w9_order_data_in_admin( $order ){  
+function display_file_w9_order_data_in_admin( $order ){
 	$attach_id_cabling = get_post_meta( $order->id, 'attach_id_cabling', true );
 	if(!empty($attach_id_cabling)){
 		?>

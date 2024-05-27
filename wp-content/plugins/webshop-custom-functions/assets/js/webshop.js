@@ -76,6 +76,10 @@
             .done(function () {
                 hideLoading();
                 new bootstrap.Modal(modalElement).show();
+            })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
 
         return false;
@@ -121,6 +125,10 @@
                 showLoading();
             }
         })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+            });
     });
 
 
@@ -159,6 +167,10 @@
             })
                 .done(function () {
                     hideLoading();
+                })
+                .error(function () {
+                    hideLoading();
+                    alert('Something went wrong');
                 });
         }
     })
@@ -177,6 +189,7 @@
             data: {
                 action: 'cabling_save_keep_informed_data',
                 data: form.serialize(),
+                brandId: CABLING.crm,
             },
             success: function (response) {
                 gtag('event', 'Lead_KMI');
@@ -217,6 +230,7 @@
 
         const formData = new FormData(this);
         formData.append('action', 'cabling_request_quote');
+        formData.append('brandId', CABLING.crm);
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
@@ -327,6 +341,10 @@ function showKeepInformedModal() {
                 'sitekey': sitekey,
             });
             new bootstrap.Modal(modalElement).show();
+        })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
         });
 }
 
