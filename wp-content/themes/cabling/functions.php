@@ -477,6 +477,14 @@ function add_google_tag() {
 		  gtag('config', '<?php echo $tag_manager_id ?>');
 		</script>
 		<?php
+    }else{
+        ?>
+        <script>
+            function gtag(key = '',value = ''){
+                console.log(key,value);
+            }
+        </script>
+        <?php
     }
 
 }
