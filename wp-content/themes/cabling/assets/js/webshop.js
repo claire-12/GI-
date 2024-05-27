@@ -626,7 +626,7 @@
             dataType: 'json',
             data: {
                 action: 'cabling_get_api_ajax_checkout',
-                data: 'api%5BMaterialOldNumber%5D=&api%5BBasicMaterial%5D=&api_service=GET_DATA_PRICE&api_page=inventory',
+                data: 'api_service=GET_DATA_PRICE&api_page=inventory',
                 nonce: CABLING.nonce,
             },
             success: function (response) {
@@ -634,7 +634,7 @@
                 if (response.success) {
                     const rawData = response.data.raw;
                     let status = '';
-                    let flag = false;
+                    let flag = 1;
                     if(rawData.length > 0){
                         $('.cart_item').each(function(index){
                             const stockData = rawData[index].stock;
@@ -647,10 +647,15 @@
                                 }
                                 else{
                                     status = 'Out of Stock: We estimate to have the products ready for shipping in the next 7 days.';
-                                    flag = true;
+                                    flag = 2;
                                 }
                                 _this.find('.product-stock').text(status);
-                                $('.stock-total-checkout').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
+                                if(flag == 1){
+                                    $('.stock-total-checkout').text('In Stock: We estimate to have the products ready for shipping in the next 24 hours.');
+                                }
+                                else{
+                                    $('.stock-total-checkout').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
+                                }
                             }
                             else{
                                 $('.woocommerce-checkout-review-order-table').addClass('removeSize')

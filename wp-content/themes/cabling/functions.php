@@ -515,7 +515,6 @@ endif;
 
 // w9 form ajax
 function w9_form_ajax() {
-	session_start();
 	$file_name = $_FILES['file']['name'];
 	if(!empty($file_name)){
 		$_SESSION['vat_remove'] = true;
@@ -535,7 +534,6 @@ add_action( 'wp_ajax_nopriv_w9_form_ajax', 'w9_form_ajax' );
 // remove vat
 function remove_vat_for_specific_users( $cart ) {
     if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
-	session_start();
 	if(isset($_SESSION['vat_remove']) && $_SESSION['vat_remove'] == true){
 		foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
 			$cart_item['data']->set_tax_class( 'zero-rate' );
@@ -555,7 +553,6 @@ add_action('template_redirect', 'modify_session_on_woocommerce_checkout');
 
 // w9 file upload ajax
 function w9_file_upload_ajax() {
-	session_start();
 	if (!empty($_FILES['file']['name'])) {
         $uploaded_file = wp_handle_upload($_FILES['file'], array('test_form' => false));
 
@@ -600,7 +597,6 @@ add_action( 'wp_ajax_nopriv_w9_file_upload_ajax', 'w9_file_upload_ajax' );
 
 // attach id cabling order
 function attach_id_cabling_order( $order_id, $order ){
-    session_start();
     $attach_id_cabling = isset($_SESSION['attach_id_cabling']) ? $_SESSION['attach_id_cabling'] : '';
 
     if($order_id && !empty($attach_id_cabling)){
