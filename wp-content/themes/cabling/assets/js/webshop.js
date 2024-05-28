@@ -660,10 +660,9 @@
                             else{
                                 $('.woocommerce-checkout-review-order-table').addClass('removeSize')
                             }
-
                         });
+                        $('body').trigger('update_checkout');
                     }
-
                 }
             },
             beforeSend: function () {
