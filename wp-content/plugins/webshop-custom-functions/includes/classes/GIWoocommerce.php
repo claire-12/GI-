@@ -9,7 +9,7 @@ class GIWoocommerce
         add_action('woocommerce_after_add_to_cart_quantity', array($this, 'gi_after_add_to_cart_quantity'));
         add_action('woocommerce_after_add_to_cart_button', array($this, 'gi_woocommerce_after_add_to_cart_button'));
         add_action('woocommerce_cart_is_empty', array($this, 'gi_woocommerce_woocommerce_cart_is_empty'));
-        #ref GID-1044
+        #ref GID-1044: p1
         add_action('woocommerce_before_checkout_form', array($this, 'gi_woocommerce_woocommerce_cart_is_empty'));
         add_action('wp_footer', array($this, 'gi_woocommerce_add_address_modal'));
         add_action('wp_ajax_gi_update_shipping_address', array($this, 'gi_update_shipping_address_callback'));
@@ -18,7 +18,8 @@ class GIWoocommerce
         add_action('woocommerce_checkout_update_order_review', array($this, 'gi_woocommerce_checkout_update_order_meta'));
 
         add_filter('woocommerce_return_to_shop_redirect', array($this, 'gi_woocommerce_return_to_shop_redirect'));
-        add_filter('woocommerce_checkout_must_be_logged_in_message', array($this, 'gi_woocommerce_checkout_is_not_logged'));
+        #ref GID-1044: m1
+        // add_filter('woocommerce_checkout_must_be_logged_in_message', array($this, 'gi_woocommerce_checkout_is_not_logged'));
         add_filter('woocommerce_checkout_gi_add_wp_form_9', array($this, 'gi_woocommerce_add_wp_form_9'));
     }
 
