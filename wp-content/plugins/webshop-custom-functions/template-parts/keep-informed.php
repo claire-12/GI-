@@ -2,6 +2,11 @@
     <h2 class="text-center"><?php _e('Keep Me Informed', 'cabling'); ?></h2>
     <h4 class="text-center"><?php _e('Please keep me informed about the following', 'cabling'); ?></h4>
 </div>
+<?php
+$current_user = wp_get_current_user();
+$user_email = @$current_user->user_email ? $current_user->user_email : '';
+$kmi_marketing_agreed = get_option($user_email . '_rfq_policy_agreed');
+?>
 <form id="keep-informed-form" class="keep-informed-account" method="post">
     <div class="informed-categories">
         <?php if (false) { ?>
@@ -120,7 +125,9 @@
         </div>-->
         <?php //if (!is_user_logged_in()): ?>
             <div class="mb-3 d-flex" style="text-align: left; font-size: 12px">
-                <input type="checkbox" id="agree-term-condition" name="kmi_marketing_agreed" value="yes" required>
+                <input type="checkbox" id="agree-term-condition" name="kmi_marketing_agreed" value="yes" required
+                <?= $kmi_marketing_agreed ? 'checked' : '';?>
+                >
                 <label class="ps-2" for="agree-term-condition">
                     <?php
                     printf(__('Please tick this box if you would like to receive electronic newsletters from Datwyler. You can change your preference at any time in your account settings or by contacting Datwyler at %s . Datwyler shall process your personal data in accordance with its privacy notice, which can be found %s.', 'cabling'),
