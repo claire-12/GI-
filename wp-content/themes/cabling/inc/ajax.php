@@ -1229,10 +1229,11 @@ function cabling_get_api_ajax_callback_checkout()
                 case 'inventory':
                     $material = [];
                     foreach ( WC()->cart->get_cart() as $cart_key => $cart_item ) {
+
                         $product_id = $cart_item['product_id'];
-                        $productObj = wc_get_product($product_id);
+                        $sku = get_post_meta($product_id, '_sku', true);
                         $material[] = [
-                            $productObj->sku,
+                            $sku,
                             $cart_item['quantity'],
                             $cart_key
                         ];
@@ -1287,8 +1288,8 @@ function cabling_get_api_ajax_callback_checkout()
                             $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStock', 'ZDD_I_SD_PIM_MaterialStockType');
 
                             $rawData[] = array(
-                                'stock' => $dataStock,
-                                'price' => $dataPrice,
+                                'stock' => reset($dataStock),
+                                //'price' => $dataPrice,
                                 'quantity' => $material_value[1]
                             );
                             if(!empty($dataPrice)){
@@ -1324,9 +1325,7 @@ function cabling_get_api_ajax_callback_checkout()
                     break;
             }
 
-            wp_send_json_success([
-                'raw' => $rawData
-            ]);
+            wp_send_json_success($rawData);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());
         }

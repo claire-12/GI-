@@ -632,36 +632,37 @@
             success: function (response) {
                 hideLoading();
                 if (response.success) {
-                    const rawData = response.data.raw;
+                    const rawData = response.data;
                     let status = '';
                     let flag = 1;
-                    if(rawData.length > 0){
-                        $('.cart_item').each(function(index){
+                    if (rawData.length > 0) {
+                        $('.cart_item').each(function (index) {
+                            const _this = $(this);
                             const stockData = rawData[index].stock;
                             const quantity = rawData[index].quantity;
-                            if(stockData[0] && stockData[0].TotalStockQuantity){
-                                const percent = (stockData[0].TotalStockQuantity / 100) * 80;
-                                const _this = $(this);
-                                if(quantity < percent){
+                            if (stockData && stockData.TotalStockQuantity) {
+                                const percent = (stockData.TotalStockQuantity / 100) * 80;
+                                if (quantity < percent) {
                                     status = 'In Stock: We estimate to have the products ready for shipping in the next 24 hours.';
-                                }
-                                else{
+                                } else {
                                     status = 'Out of Stock: We estimate to have the products ready for shipping in the next 7 days.';
                                     flag = 2;
                                 }
                                 _this.find('.product-stock').text(status);
-                                if(flag == 1){
-                                    $('.stock-total-checkout').text('In Stock: We estimate to have the products ready for shipping in the next 24 hours.');
-                                }
-                                else{
-                                    $('.stock-total-checkout').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
-                                }
-                            }
-                            else{
+                            } else {
+                                flag = 2;
+                                _this.find('.product-stock').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
                                 $('.woocommerce-checkout-review-order-table').addClass('removeSize')
                             }
+
+
+                            if (flag == 1) {
+                                $('.stock-total-checkout').text('In Stock: We estimate to have the products ready for shipping in the next 24 hours.');
+                            } else {
+                                $('.stock-total-checkout').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
+                            }
                         });
-                        $('body').trigger('update_checkout');
+                        //$('body').trigger('update_checkout');
                     }
                 }
             },
