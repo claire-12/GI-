@@ -1229,11 +1229,13 @@ function cabling_get_api_ajax_callback_checkout()
                 case 'inventory':
                     $material = [];
                     foreach ( WC()->cart->get_cart() as $cart_key => $cart_item ) {
+
                         $product_id = $cart_item['product_id'];
-                        $productObj = wc_get_product($product_id);
+                        $sku = get_post_meta($product_id, '_sku', true);
                         $material[] = [
-                            $productObj->sku,
-                            $cart_item['quantity']
+                            $sku,
+                            $cart_item['quantity'],
+                            $cart_key
                         ];
                     }
                     $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE_CDS';
@@ -1279,12 +1281,36 @@ function cabling_get_api_ajax_callback_checkout()
                                 )
                             ];
 
+                            $responsePrice = $webServices->makeApiRequest($apiEndpoint, $priceParams);
                             $responseStock = $webServices->makeApiRequest($apiStockEndpoint, $stockParams);
+
+                            $dataPrice = $webServices->getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPrice', 'ZDD_I_SD_PIM_MaterialPriceType');
                             $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStock', 'ZDD_I_SD_PIM_MaterialStockType');
+
                             $rawData[] = array(
-                                'stock' => $dataStock,
+                                'stock' => reset($dataStock),
+                                //'price' => $dataPrice,
                                 'quantity' => $material_value[1]
                             );
+                            if(!empty($dataPrice)){
+                                foreach (WC()->cart->get_cart() as $cart_item_key_loop => $cart_item) {
+                                    $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key_loop );
+                                    $sku = $_product->sku;
+                                    if(WC()->cart->set_quantity($cart_item_key_loop, $cart_item['quantity'])){
+                                        $line_subtotal = floatval(500);
+                                        wc_price($line_subtotal);
+                                    }
+//                                    if($material_val[0] == $sku){
+////                                        $new_price = $dataPrice[0]['Price100']/100;
+////                                        if( $material_value[1] > $dataPrice[0]['ScaleTo'] ){
+////                                            $new_price = $dataPrice[1]['Price100']/100;
+////                                        }
+//                                        $cart_item['data']->set_price(2);
+//                                        WC()->cart->set_session();
+//                                        WC()->cart->calculate_totals();
+//                                    }
+                                }
+                            }
                         }
                     }
                     break;
@@ -1299,9 +1325,7 @@ function cabling_get_api_ajax_callback_checkout()
                     break;
             }
 
-            wp_send_json_success([
-                'raw' => $rawData
-            ]);
+            wp_send_json_success($rawData);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());
         }
