@@ -128,13 +128,13 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
+        .done(function () {
+            hideLoading();
+        })
         .error(function () {
             hideLoading();
             alert('Something went wrong');
-            });
+        });
         return false;
     })
 
@@ -164,13 +164,13 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
+        .done(function () {
+            hideLoading();
+        })
         .error(function () {
             hideLoading();
             alert('Something went wrong');
-            });
+        });
         return false;
     })
 
@@ -245,7 +245,7 @@
             hideLoading();
             alert('Something went wrong');
             btn_submit.prop('disabled', false);
-            });
+        });
 
         return false;
     })
@@ -446,7 +446,7 @@
         .error(function () {
             hideLoading();
             $('#api-results').html("Something wrong !");
-            });
+        });
 
         return false;
     });
@@ -521,7 +521,7 @@
                 .error(function () {
                     hideLoading();
                     alert('Something went wrong');
-                    });
+                });
 
                 return false;
             }
@@ -737,7 +737,7 @@ function blog_filter_ajax(load_more = false) {
     .error(function () {
         hideLoading();
         alert('Something went wrong');
-        });
+    });
 }
 
 function product_filter_init() {
