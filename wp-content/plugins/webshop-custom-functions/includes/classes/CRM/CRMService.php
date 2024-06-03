@@ -367,19 +367,17 @@ class CRMService
 
     public static function check_user_sap_number($username, $user)
     {
-        $user->data->user_email = 'specseal@sbcglobal.net';
-        var_dump($user);
-        die();
-        $sapNumber = get_user_meta($user->ID, 'sap_customer', true);
-        $user_plant = get_user_meta($user->ID, 'sales_org', true);
-        $AccountID = get_user_meta($user->ID, 'AccountID', true);
+        $current_user_id = $user->ID;
+        $sapNumber = get_user_meta($current_user_id, 'sap_customer', true);
+        $user_plant = get_user_meta($current_user_id, 'sales_org', true);
+        $AccountID = get_user_meta($current_user_id, 'AccountID', true);
         $crm = new CRMController();
         if (empty($sapNumber)) {
             $lead = $crm->getContactByUserEmail($user->data->user_email);
             $leadaccoutncoll = $crm->getAccount($lead->AccountID);
             //AccountID
             if (!empty($leadaccoutncoll->ExternalID)) {
-                update_user_meta($user->ID, 'sap_customer', $leadaccoutncoll->ExternalID);
+                update_user_meta($current_user_id, 'sap_customer', $leadaccoutncoll->ExternalID);
             }
         }
 
