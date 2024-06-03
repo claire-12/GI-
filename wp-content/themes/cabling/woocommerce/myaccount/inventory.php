@@ -14,7 +14,7 @@
         <input type="text" class="form-control" name="api[Material]" id="parcomaterial">
         <label for="parcomaterial" class="form-label">Material</label>
     </div>
-    <p><strong>Or search both Part and Compound Numbers</strong></p>
+    <p><strong>Or search both Part and Compound Numbers. If the part number is for a Parco</strong></p>
     <div class="form-group">
         <input type="text" class="form-control" name="api[MaterialOldNumber]" id="sapMaterial">
         <label for="sapmaterial" class="form-label">Part Number</label>

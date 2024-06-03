@@ -367,6 +367,9 @@ class CRMService
 
     public static function check_user_sap_number($username, $user)
     {
+        $user->data->user_email = 'specseal@sbcglobal.net';
+        var_dump($user);
+        die();
         $sapNumber = get_user_meta($user->ID, 'sap_customer', true);
         $user_plant = get_user_meta($user->ID, 'sales_org', true);
         $AccountID = get_user_meta($user->ID, 'AccountID', true);
