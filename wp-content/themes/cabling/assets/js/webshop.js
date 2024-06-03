@@ -638,10 +638,10 @@
                     if (rawData.length > 0) {
                         $('.cart_item').each(function (index) {
                             const _this = $(this);
-                            const stockData = rawData[index].stock;
+                            const stock = rawData[index].stock;
                             const quantity = rawData[index].quantity;
-                            if (stockData && stockData.TotalStockQuantity) {
-                                const percent = (stockData.TotalStockQuantity / 100) * 80;
+                            if (stock && stock > 0) {
+                                const percent = (stock / 100) * 80;
                                 if (quantity < percent) {
                                     status = 'In Stock: We estimate to have the products ready for shipping in the next 24 hours.';
                                 } else {

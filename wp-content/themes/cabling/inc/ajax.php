@@ -1031,13 +1031,13 @@ function cabling_get_api_ajax_callback()
         try {
             parse_str($_REQUEST['data'], $data);
 
-            //$oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
+            /*//$oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
             //$apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
             $oauthTokenUrl = 'https://oauthasservices-a3c9ce896.hana.ondemand.com/oauth2/api/v1/token';
             $apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
             $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
-            $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
-            $webServices = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
+            $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';*/
+            $webServices = new GIWebServices();
 
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
@@ -1069,8 +1069,8 @@ function cabling_get_api_ajax_callback()
             $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogType';
             switch ($data['api_page']) {
                 case 'inventory':
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE_CDS';
-                    $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK_CDS';
+                    $apiEndpoint = 'GET_DATA_PRICE_CDS';
+                    $apiStockEndpoint = 'GET_DATA_STOCK_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $oldMaterialNumber = $data['api']['MaterialOldNumber'];
                     $material = $data['api']['Material'];
@@ -1120,17 +1120,17 @@ function cabling_get_api_ajax_callback()
                             'Operator' => '',
                         );
                         $priceParams[] = array(
-							'Field' => '(Customer',
-							'Sign' => 'eq',
-							'Value' => $sap_no,
-							'Operator' => 'or',
-						);
-						$priceParams[] = array(
-							'Field' => 'Customer',
-							'Sign' => 'eq',
-							'Value' => "",
-							'Operator' => ')',
-						);
+                            'Field' => '(Customer',
+                            'Sign' => 'eq',
+                            'Value' => $sap_no,
+                            'Operator' => 'or',
+                        );
+                        $priceParams[] = array(
+                            'Field' => 'Customer',
+                            'Sign' => 'eq',
+                            'Value' => "",
+                            'Operator' => ')',
+                        );
                         $stockParams[] = array(
                             'Field' => 'Material',
                             'Value' => $material,
@@ -1155,7 +1155,7 @@ function cabling_get_api_ajax_callback()
 
                     break;
                 default:
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG_CDS';
+                    $apiEndpoint = 'GET_DATA_BACKLOG_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $response = $webServices->makeApiRequest($apiEndpoint, $bodyParams);
 
@@ -1189,143 +1189,45 @@ function cabling_get_api_ajax_callback()
 add_action('wp_ajax_cabling_get_api_ajax', 'cabling_get_api_ajax_callback');
 add_action('wp_ajax_nopriv_cabling_get_api_ajax', 'cabling_get_api_ajax_callback');
 
-
-
 function cabling_get_api_ajax_callback_checkout()
 {
     if (isset($_REQUEST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], 'cabling-ajax-nonce')) {
         try {
             parse_str($_REQUEST['data'], $data);
-            $oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
-            $apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
-            $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
-            $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
-            $webServices = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
+
+            $webServices = new GIWebServices();
 
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
             }
 
-            $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
             $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
 
-            $data['api']['SoldToParty'] = $sap_no;
+            $data = [];
+            foreach ( WC()->cart->get_cart() as $cart_item ) {
+                $sku = get_post_meta($cart_item['product_id'], '_sku', true);
+                $stockParams = [
+                    array('Field' => 'SalesOrganization',
+                        'Value' => empty($user_plant) ? '2141' : $user_plant,
+                        'Operator' => '',
+                    ),
+                    array(
+                        'Field' => 'Material',
+                        'Value' => $sku,
+                        'Operator' => '',
+                    )
+                ];
 
-            $bodyParams = array();
-            foreach ($data['api'] as $name => $value) {
-                if (empty($value)) {
-                    continue;
-                }
-                $bodyParams[] = array(
-                    'Field' => $name,
-                    'Value' => $value,
-                    'Operator' => 'and',
+                $responseStock = $webServices->makeApiRequest('GET_DATA_STOCK_CDS', $stockParams);
+                $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStock', 'ZDD_I_SD_PIM_MaterialStockType');
+
+                $data[] = array(
+                    'stock' => $dataStock[0]['TotalStockQuantity'] ?? 0,
+                    'quantity' => $cart_item['quantity']
                 );
             }
-            $skuData = [];
-            $type = 'ZDD_I_SD_PIM_MaterialBacklog';
-            $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogType';
-            switch ($data['api_page']) {
-                case 'inventory':
-                    $material = [];
-                    foreach ( WC()->cart->get_cart() as $cart_key => $cart_item ) {
 
-                        $product_id = $cart_item['product_id'];
-                        $sku = get_post_meta($product_id, '_sku', true);
-                        $material[] = [
-                            $sku,
-                            $cart_item['quantity'],
-                            $cart_key
-                        ];
-                    }
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE_CDS';
-                    $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK_CDS';
-                    $rawData = [];
-                    if (!empty($material)) {
-                        foreach ($material as $material_value){
-                            $material_val = $material_value[0];
-                            $priceParams = [
-                                array(
-                                    'Field' => 'SalesOrganization',
-                                    'Value' => empty($user_plant) ? '2141' : $user_plant,
-                                    'Operator' => 'and',
-                                ),
-                                array(
-                                    'Field' => 'Material',
-                                    'Value' => $material_val,
-                                    'Operator' => '',
-                                ),
-                                array(
-                                    'Field' => '(Customer',
-                                    'Sign' => 'eq',
-                                    'Value' => $sap_no,
-                                    'Operator' => 'or',
-                                ),
-                                array(
-                                    'Field' => 'Customer',
-                                    'Sign' => 'eq',
-                                    'Value' => "",
-                                    'Operator' => ')',
-                                )
-                            ];
-                            $stockParams = [
-                                array(
-                                    'Field' => 'SalesOrganization',
-                                    'Value' => empty($user_plant) ? '2141' : $user_plant,
-                                    'Operator' => '',
-                                ),
-                                array(
-                                    'Field' => 'Material',
-                                    'Value' => $material_val,
-                                    'Operator' => '',
-                                )
-                            ];
-
-                            $responsePrice = $webServices->makeApiRequest($apiEndpoint, $priceParams);
-                            $responseStock = $webServices->makeApiRequest($apiStockEndpoint, $stockParams);
-
-                            $dataPrice = $webServices->getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPrice', 'ZDD_I_SD_PIM_MaterialPriceType');
-                            $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStock', 'ZDD_I_SD_PIM_MaterialStockType');
-
-                            $rawData[] = array(
-                                'stock' => reset($dataStock),
-                                //'price' => $dataPrice,
-                                'quantity' => $material_value[1]
-                            );
-                            if(!empty($dataPrice)){
-                                foreach (WC()->cart->get_cart() as $cart_item_key_loop => $cart_item) {
-                                    $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key_loop );
-                                    $sku = $_product->sku;
-                                    if(WC()->cart->set_quantity($cart_item_key_loop, $cart_item['quantity'])){
-                                        $line_subtotal = floatval(500);
-                                        wc_price($line_subtotal);
-                                    }
-//                                    if($material_val[0] == $sku){
-////                                        $new_price = $dataPrice[0]['Price100']/100;
-////                                        if( $material_value[1] > $dataPrice[0]['ScaleTo'] ){
-////                                            $new_price = $dataPrice[1]['Price100']/100;
-////                                        }
-//                                        $cart_item['data']->set_price(2);
-//                                        WC()->cart->set_session();
-//                                        WC()->cart->calculate_totals();
-//                                    }
-                                }
-                            }
-                        }
-                    }
-                    break;
-                default:
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG_CDS';
-                    $response = $webServices->makeApiRequest($apiEndpoint, $bodyParams);
-
-                    if ($response['error']) {
-                        wp_send_json_error('API error: ' . $response['error']);
-                    }
-                    $rawData = $webServices->getDataResponse($response, $type, $type_level_2);
-                    break;
-            }
-
-            wp_send_json_success($rawData);
+            wp_send_json_success($data);
         } catch (Exception $e) {
             wp_send_json_error($e->getMessage());
         }
