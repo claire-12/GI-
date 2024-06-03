@@ -1050,7 +1050,7 @@ function cabling_get_api_ajax_callback()
             if(!$user_plant){
                 $crm = new CRMController();
                 if(!$AccountID){
-                    $contact = $this->getContactByUserEmail($user->data->user_email);
+                    $contact = $crm->getContactByUserEmail($user->data->user_email);
                     $AccountID = $contact->AccountID;
                     if($AccountID){
                         update_user_meta($current_user_id, 'AccountID', $AccountID);
