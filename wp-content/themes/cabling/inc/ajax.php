@@ -1042,9 +1042,27 @@ function cabling_get_api_ajax_callback()
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
             }
-
-            $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
-            $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
+            $user = wp_get_current_user();
+            $current_user_id = $user->ID;
+            $sap_no = get_user_meta($current_user_id, 'sap_customer', true);
+            $user_plant = get_user_meta($current_user_id, 'sales_org', true);
+            $AccountID = get_user_meta($current_user_id, 'AccountID', true);
+            if(!$user_plant){
+                $crm = new CRMController();
+                if(!$AccountID){
+                    $contact = $crm->getContactByUserEmail($user->data->user_email);
+                    $AccountID = $contact->AccountID;
+                    if($AccountID){
+                        update_user_meta($current_user_id, 'AccountID', $AccountID);
+                    }
+                }
+                if($AccountID){
+                    $user_plant = $crm->getSalesOrganization($AccountID);
+                    if($user_plant){
+                        update_user_meta($current_user_id, 'sales_org', $user_plant);
+                    }
+                }
+            }
 
             $data['api']['SoldToParty'] = $sap_no;
 
