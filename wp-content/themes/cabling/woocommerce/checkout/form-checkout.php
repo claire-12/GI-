@@ -27,7 +27,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     return;
 }
 $customer_level = get_customer_level(get_current_user_id());
-//$customer_level = 1;
+$user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout"
@@ -46,7 +46,7 @@ $customer_level = get_customer_level(get_current_user_id());
                             <p class="note"><?php _e('Please note: Delivery only available to the USA', 'cabling') ?></p>
                         </div>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Billing', 'cabling') ?>"><?php _e('Billing', 'cabling') ?></div>
-                        <?php if($customer_level == 1): ?>
+                        <?php if($customer_level == 1 && !$user_wp9_form): ?>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
                         <?php endif; ?>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Order Summary', 'cabling') ?>"><?php _e('Order Summary', 'cabling') ?></div>
@@ -89,7 +89,7 @@ $customer_level = get_customer_level(get_current_user_id());
                             </div>
                         </div>
 
-                        <?php if($customer_level == 1): ?>
+                        <?php if($customer_level == 1 && !$user_wp9_form): ?>
                         <!--single form panel-->
                         <div class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">

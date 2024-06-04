@@ -190,7 +190,8 @@ class GIWoocommerce
     }
     public function gi_woocommerce_checkout_update_order_meta()
     {
-        if (!empty($_FILES['form-w9']['name'])) {
+        $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
+        if ( !empty($_FILES['form-w9']['name']) || $user_wp9_form) {
             WC()->cart->remove_taxes();
             /*$upload = wp_upload_bits($_FILES['form-w9']['name'], null, file_get_contents($_FILES['form-w9']['tmp_name']));
             if(isset($upload['error']) && $upload['error'] != 0) {

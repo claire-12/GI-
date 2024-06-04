@@ -526,6 +526,7 @@ function w9_form_ajax() {
 	$file_name = $_FILES['file']['name'];
 	if(!empty($file_name)){
 		$_SESSION['vat_remove'] = true;
+		update_user_meta( get_current_user_id(), 'user_wp9_form', 1 );
 	}else{
 		$_SESSION['vat_remove'] = false;
 	}
