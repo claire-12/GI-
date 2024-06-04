@@ -52,7 +52,7 @@ $backlogMainTable = array(
             </tbody>
         </table>
     </div>
-    <p><strong>Please contact your assigned CSR to confirm material availability to meet your production requirements.</strong></p>
+    <p><strong>Looking for a specific cure date? Please contact your assigned CSR to confirm material availability to meet your production requirements.</strong></p>
     <div class="row">
         <div class="col-12 col-lg-6">
             <div class="table-responsive">
@@ -101,7 +101,7 @@ $backlogMainTable = array(
                         <tr>
                             <td><?php echo show_value_from_api('CureDate', $cure['CureDate']) ?></td>
                             <td><?php echo show_value_from_api('StockQuantity', $cure['StockQuantity']) ?></td>
-                            <td><?php echo $cumulative_quantity ?></td>
+                            <td><?php echo number_format($cumulative_quantity, 0, '.', ' ') ?></td>
                         </tr>
                     <?php endforeach ?>
                     </tbody>

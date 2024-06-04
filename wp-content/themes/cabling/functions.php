@@ -1,5 +1,4 @@
 <?php
-
 /**
  * cabling functions and definitions
  *
@@ -14,99 +13,99 @@ define('LOG_DB_NAME', 'customer_change_logs');
 
 
 if (!function_exists('cabling_setup')) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function cabling_setup()
-	{
-		/*
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * Note that this function is hooked into the after_setup_theme hook, which
+     * runs before the init hook. The init hook is too late for some features, such
+     * as indicating support for post thumbnails.
+     */
+    function cabling_setup()
+    {
+        /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
          * If you're building a theme based on cabling, use a find and replace
          * to change 'cabling' to the name of your theme in all the template files.
          */
-		load_theme_textdomain('cabling', get_template_directory() . '/languages');
+        load_theme_textdomain('cabling', get_template_directory() . '/languages');
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support('automatic-feed-links');
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support('automatic-feed-links');
 
-		/*
+        /*
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
          * hard-coded <title> tag in the document head, and expect WordPress to
          * provide it for us.
          */
-		add_theme_support('title-tag');
+        add_theme_support('title-tag');
 
-		/*
+        /*
          * Enable support for Post Thumbnails on posts and pages.
          *
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
-		add_theme_support('post-thumbnails');
+        add_theme_support('post-thumbnails');
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(array(
-			'menu-1' => esc_html__('Primary', 'cabling'),
-			'top-header' => esc_html__('Top Header', 'cabling'),
-			'footer-copyright' => esc_html__('Footer Copyright', 'cabling'),
-			'footer-link' => esc_html__('Footer Links', 'cabling'),
-		));
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus(array(
+            'menu-1' => esc_html__('Primary', 'cabling'),
+            'top-header' => esc_html__('Top Header', 'cabling'),
+            'footer-copyright' => esc_html__('Footer Copyright', 'cabling'),
+            'footer-link' => esc_html__('Footer Links', 'cabling'),
+        ));
 
-		/*
+        /*
          * Switch default core markup for search form, comment form, and comments
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
          */
-		add_theme_support('html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		));
+        add_theme_support('html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ));
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background', apply_filters('cabling_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		)));
+        // Set up the WordPress core custom background feature.
+        add_theme_support('custom-background', apply_filters('cabling_custom_background_args', array(
+            'default-color' => 'ffffff',
+            'default-image' => '',
+        )));
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support('customize-selective-refresh-widgets');
+        // Add theme support for selective refresh for widgets.
+        add_theme_support('customize-selective-refresh-widgets');
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support('custom-logo', array(
-			'height' => 250,
-			'width' => 250,
-			'flex-width' => true,
-			'flex-height' => true,
-		));
-	}
+        /**
+         * Add support for core custom logo.
+         *
+         * @link https://codex.wordpress.org/Theme_Logo
+         */
+        add_theme_support('custom-logo', array(
+            'height' => 250,
+            'width' => 250,
+            'flex-width' => true,
+            'flex-height' => true,
+        ));
+    }
 endif;
 add_action('after_setup_theme', 'cabling_setup');
 
 add_action('init', 'start_session', 1);
 function start_session()
 {
-	if (!session_id()) {
-		session_start();
-	}
+    if (!session_id()) {
+        session_start();
+    }
 }
 
 add_action('wp_logout', 'end_session');
 add_action('wp_login', 'end_session');
 function end_session()
 {
-	session_destroy();
+    session_destroy();
 }
 
 /**
@@ -118,10 +117,10 @@ function end_session()
  */
 function cabling_content_width()
 {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters('cabling_content_width', 640);
+    // This variable is intended to be overruled from themes.
+    // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+    $GLOBALS['content_width'] = apply_filters('cabling_content_width', 640);
 }
 
 add_action('after_setup_theme', 'cabling_content_width', 0);
@@ -133,63 +132,63 @@ add_action('after_setup_theme', 'cabling_content_width', 0);
  */
 function cabling_widgets_init()
 {
-	register_sidebar(array(
-		'name' => esc_html__('Sidebar', 'cabling'),
-		'id' => 'sidebar-1',
-		'description' => esc_html__('Add widgets here.', 'cabling'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	));
+    register_sidebar(array(
+        'name' => esc_html__('Sidebar', 'cabling'),
+        'id' => 'sidebar-1',
+        'description' => esc_html__('Add widgets here.', 'cabling'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-	register_sidebar(array(
-		'name' => esc_html__('Footer Brands', 'cabling'),
-		'id' => 'footer-brand',
-		'description' => esc_html__('Add widgets here.', 'cabling'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	));
+    register_sidebar(array(
+        'name' => esc_html__('Footer Brands', 'cabling'),
+        'id' => 'footer-brand',
+        'description' => esc_html__('Add widgets here.', 'cabling'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-	register_sidebar(array(
-		'name' => esc_html__('Footer Links', 'cabling'),
-		'id' => 'footer-2',
-		'description' => esc_html__('Add widgets here.', 'cabling'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	));
+    register_sidebar(array(
+        'name' => esc_html__('Footer Links', 'cabling'),
+        'id' => 'footer-2',
+        'description' => esc_html__('Add widgets here.', 'cabling'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-	register_sidebar(array(
-		'name' => esc_html__('Footer Copyright', 'cabling'),
-		'id' => 'footer-copyright',
-		'description' => esc_html__('Add widgets here.', 'cabling'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	));
+    register_sidebar(array(
+        'name' => esc_html__('Footer Copyright', 'cabling'),
+        'id' => 'footer-copyright',
+        'description' => esc_html__('Add widgets here.', 'cabling'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-	register_sidebar(array(
-		'name' => esc_html__('Blog Sidebar', 'cabling'),
-		'id' => 'blog-sidebar',
-		'description' => esc_html__('Add widgets here.', 'cabling'),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	));
+    register_sidebar(array(
+        'name' => esc_html__('Blog Sidebar', 'cabling'),
+        'id' => 'blog-sidebar',
+        'description' => esc_html__('Add widgets here.', 'cabling'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-	register_sidebar(array(
-		'name' => esc_html__('Forum Sidebar', 'cabling'),
-		'id' => 'forum-sidebar',
-		'description' => esc_html__('Add widgets here.', 'cabling'),
-		'before_widget' => '<div id="%1$s" class="header-widget %2$s">',
-		'after_widget' => '</div>',
-	));
+    register_sidebar(array(
+        'name' => esc_html__('Forum Sidebar', 'cabling'),
+        'id' => 'forum-sidebar',
+        'description' => esc_html__('Add widgets here.', 'cabling'),
+        'before_widget' => '<div id="%1$s" class="header-widget %2$s">',
+        'after_widget' => '</div>',
+    ));
 }
 
 add_action('widgets_init', 'cabling_widgets_init');
@@ -244,6 +243,7 @@ function cabling_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 	wp_dequeue_script('wc-lost-password');
+
 }
 
 add_action('wp_enqueue_scripts', 'cabling_scripts');
@@ -360,32 +360,32 @@ function get_customer_log($user_id)
 
 function cabling_show_footer_contact()
 {
-	$country = cabling_get_country();
-	//$contact = get_field('field_5fc8ed86b7b65','options_language');
-	$contact = get_field('footer_contact', 'options');
-	$contact = empty($contact) ? get_field('field_5fc8ed86b7b65', 'options_language') : $contact;
-	$content = [];
-	if ($contact) {
-		foreach ($contact as $key => $c) {
-			$content['contact_link'] = $c['contact_link'];
+    $country = cabling_get_country();
+    //$contact = get_field('field_5fc8ed86b7b65','options_language');
+    $contact = get_field('footer_contact', 'options');
+    $contact = empty($contact) ? get_field('field_5fc8ed86b7b65', 'options_language') : $contact;
+    $content = [];
+    if ($contact) {
+        foreach ($contact as $key => $c) {
+            $content['contact_link'] = $c['contact_link'];
 
-			if ($key === 0) {
-				$content[1] = $c['content'] ?: '';
-				$content[2] = $c['content_2'] ?: '';
-				$content[3] = $c['content_3'] ?: '';
-				$content[4] = $c['content_4'] ?: '';
-			}
+            if ($key === 0) {
+                $content[1] = $c['content'] ?: '';
+                $content[2] = $c['content_2'] ?: '';
+                $content[3] = $c['content_3'] ?: '';
+                $content[4] = $c['content_4'] ?: '';
+            }
 
-			if ($country['code'] === $c['country_code']) {
-				$content[1] = $c['content'] ?: '';
-				$content[2] = $c['content_2'] ?: '';
-				$content[3] = $c['content_3'] ?: '';
-				$content[4] = $c['content_4'] ?: '';
-				break;
-			}
-		}
-	}
-	return $content;
+            if ($country['code'] === $c['country_code']) {
+                $content[1] = $c['content'] ?: '';
+                $content[2] = $c['content_2'] ?: '';
+                $content[3] = $c['content_3'] ?: '';
+                $content[4] = $c['content_4'] ?: '';
+                break;
+            }
+        }
+    }
+    return $content;
 }
 
 function password_change_email_admin($email, $user, $blogname)

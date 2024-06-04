@@ -128,6 +128,32 @@ class CRMController
         return $response;
     }
 
+    private function getSalesOrg($objectid)
+    {
+        //$client = new Client(); //GuzzleHttp\Client
+        $url=$this->baseURL."CorporateAccountCollection('".$objectid."')/CorporateAccountSalesData";
+        $url=$url.'?$format=json';
+        $response = $this->makeGetRequest($url);
+        return $response;
+    }    
+
+    public function getSalesOrganization($accountid)
+    {
+        $res=$this->getAccount($accountid);
+        if (isset($res->ObjectID)){
+            $objectid=$res->ObjectID;
+            $salesres=$this->getSalesOrg($objectid);
+            if(isset($salesres->SalesOrganisationID))
+            {
+                if(isset(CRMConstant::SALESORGS[$salesres->SalesOrganisationID]))
+                    return CRMConstant::SALESORGS[$salesres->SalesOrganisationID];
+            }
+        }
+        return "2141";
+    } 
+
+
+
     private function getContactByEmail($email)
     {
         $url = $this->baseURL . "ContactCollection";

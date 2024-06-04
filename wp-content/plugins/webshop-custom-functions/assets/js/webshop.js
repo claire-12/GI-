@@ -210,16 +210,16 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
-            .error(function () {
-                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
-                    <div>
-                        There was an error while processing the request. Please try again later!
-                    </div>
-                </div>`);
-                hideLoading();
+        .done(function () {
+            hideLoading();
+        })
+        .error(function () {
+            form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <div>
+                    There was an error while processing the request. Please try again later!
+                </div>
+            </div>`);
+            hideLoading();
             });
 
         return false;
@@ -253,17 +253,17 @@
                 showLoading();
             }
         })
-            .done(function () {
-                hideLoading();
-            })
-            .error(function () {
-                form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
-                    <div>
-                        There was an error while processing the request. Please try again later!
-                    </div>
-                </div>`);
-                hideLoading();
-            });
+        .done(function () {
+            hideLoading();
+        })
+        .error(function () {
+            form.html(`<div class="alert alert-danger d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <div>
+                    There was an error while processing the request. Please try again later!
+                </div>
+            </div>`);
+            hideLoading();
+        });
         return false;
     })
     $(document).on('submit', '#form-change-address', function () {
@@ -332,20 +332,20 @@ function showKeepInformedModal() {
             showLoading();
         }
     })
-        .done(function () {
-            hideLoading();
-            //generateCaptchaElement('informed-recaptcha');
-            const recaptcha_element = $('#informed-recaptcha');
-            const sitekey = recaptcha_element.attr('data-sitekey');
-            grecaptcha.render('informed-recaptcha', {
-                'sitekey': sitekey,
-            });
-            new bootstrap.Modal(modalElement).show();
-        })
-        .error(function () {
-            hideLoading();
-            alert('Something went wrong');
+    .done(function () {
+        hideLoading();
+        //generateCaptchaElement('informed-recaptcha');
+        const recaptcha_element = $('#informed-recaptcha');
+        const sitekey = recaptcha_element.attr('data-sitekey');
+        grecaptcha.render('informed-recaptcha', {
+            'sitekey': sitekey,
         });
+        new bootstrap.Modal(modalElement).show();
+    })
+    .error(function () {
+        hideLoading();
+        alert('Something went wrong');
+        })
 }
 
 function gi_edit_selected_address(e, address_type, address_key) {
@@ -380,5 +380,5 @@ function gi_edit_selected_address(e, address_type, address_key) {
     })
         .done(function () {
             hideLoading();
-        });
+    });
 }

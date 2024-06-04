@@ -79,7 +79,8 @@ class GIWebServices
             $headers = array(
                 'Content-Type: application/json',
                 'Authorization: Bearer ' . $access_token,
-                'Cookie: ' . $cookies
+                'Cookie: ' . $cookies,
+                'Expect: ',
             );
 
             $bodyParams = array();
@@ -140,6 +141,7 @@ class GIWebServices
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_POSTFIELDS => json_encode($body),
             CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ));
 
         $response = curl_exec($curl);

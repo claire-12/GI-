@@ -367,15 +367,33 @@ class CRMService
 
     public static function check_user_sap_number($username, $user)
     {
-        $sapNumber = get_user_meta($user->ID, 'sap_customer', true);
+        $current_user_id = $user->ID;
+        $sapNumber = get_user_meta($current_user_id, 'sap_customer', true);
+        $user_plant = get_user_meta($current_user_id, 'sales_org', true);
+        $AccountID = get_user_meta($current_user_id, 'AccountID', true);
+        $crm = new CRMController();
         if (empty($sapNumber)) {
-            $crm = new CRMController();
             $lead = $crm->getContactByUserEmail($user->data->user_email);
             $leadaccoutncoll = $crm->getAccount($lead->AccountID);
             //AccountID
-
             if (!empty($leadaccoutncoll->ExternalID)) {
-                update_user_meta($user->ID, 'sap_customer', $leadaccoutncoll->ExternalID);
+                update_user_meta($current_user_id, 'sap_customer', $leadaccoutncoll->ExternalID);
+            }
+        }
+
+        if(!$user_plant){
+            if(!$AccountID){
+                $contact = $crm->getContactByUserEmail($user->data->user_email);
+                $AccountID = $contact->AccountID;
+                if($AccountID){
+                    update_user_meta($current_user_id, 'AccountID', $AccountID);
+                }
+            }
+            if($AccountID){
+                $user_plant = $crm->getSalesOrganization($AccountID);
+                if($user_plant){
+                    update_user_meta($current_user_id, 'sales_org', $user_plant);
+                }
             }
         }
     }

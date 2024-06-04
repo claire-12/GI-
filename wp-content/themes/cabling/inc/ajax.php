@@ -1042,9 +1042,27 @@ function cabling_get_api_ajax_callback()
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
             }
-
-            $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
-            $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
+            $user = wp_get_current_user();
+            $current_user_id = $user->ID;
+            $sap_no = get_user_meta($current_user_id, 'sap_customer', true);
+            $user_plant = get_user_meta($current_user_id, 'sales_org', true);
+            $AccountID = get_user_meta($current_user_id, 'AccountID', true);
+            if(!$user_plant){
+                $crm = new CRMController();
+                if(!$AccountID){
+                    $contact = $crm->getContactByUserEmail($user->data->user_email);
+                    $AccountID = $contact->AccountID;
+                    if($AccountID){
+                        update_user_meta($current_user_id, 'AccountID', $AccountID);
+                    }
+                }
+                if($AccountID){
+                    $user_plant = $crm->getSalesOrganization($AccountID);
+                    if($user_plant){
+                        update_user_meta($current_user_id, 'sales_org', $user_plant);
+                    }
+                }
+            }
 
             $data['api']['SoldToParty'] = $sap_no;
 
@@ -1058,12 +1076,16 @@ function cabling_get_api_ajax_callback()
                 if (empty($value)) {
                     continue;
                 }
+                if($name=='OldMaterialNumber'){
+                    $value=str_pad(str_replace('-','',$value),7,'0568',STR_PAD_LEFT);
+                }
                 $bodyParams[] = array(
                     'Field' => $name,
                     'Value' => $value,
                     'Operator' => 'and',
                 );
             }
+
 
             $type = 'ZDD_I_SD_PIM_MaterialBacklog';
             $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogType';
@@ -1073,6 +1095,8 @@ function cabling_get_api_ajax_callback()
                     $apiStockEndpoint = 'GET_DATA_STOCK_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $oldMaterialNumber = $data['api']['MaterialOldNumber'];
+                    //JM 20240603 allow search by dashnumber
+                    $oldMaterialNumber= str_pad(str_replace('-','',$oldMaterialNumber),7,'0568',STR_PAD_LEFT);
                     $material = $data['api']['Material'];
                     $basicMaterial = $data['api']['BasicMaterial'];
 
@@ -1101,6 +1125,18 @@ function cabling_get_api_ajax_callback()
                             'Field' => 'BasicMaterial',
                             'Value' => $basicMaterial,
                             'Operator' => '',
+                        );
+                        $priceParams[] = array(
+                            'Field' => '(Customer',
+                            'Sign' => 'eq',
+                            'Value' => $sap_no,
+                            'Operator' => 'or',
+                        );
+                        $priceParams[] = array(
+                            'Field' => 'Customer',
+                            'Sign' => 'eq',
+                            'Value' => "",
+                            'Operator' => ')',
                         );
 
                         $stockParams[] = array(
