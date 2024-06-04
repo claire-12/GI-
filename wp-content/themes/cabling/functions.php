@@ -641,7 +641,7 @@ function add_custom_tax_fee() {
     $cart_subtotal = $cart->get_subtotal();
 	if($cart_subtotal < $min_price){
 		$custom_tax = $min_price - $cart_subtotal ;
-		$cart->add_fee(__('Handling Tax', 'webstore'), $custom_tax, true, 'standard');
+		$cart->add_fee(__('Handling Fee', 'webstore'), $custom_tax, true, 'standard');
 	}
 }
 add_action('woocommerce_cart_calculate_fees', 'add_custom_tax_fee');
@@ -651,7 +651,7 @@ function add_custom_tax_to_order($cart) {
 	$min_price = get_field('min_price','option');
 	if($cart->subtotal < $min_price){
 		$custom_tax = $min_price - $cart->subtotal ;
-		$cart->add_fee(__('Handling Tax', 'webstore'), $custom_tax, true, 'standard');
+		$cart->add_fee(__('Handling Fee', 'webstore'), $custom_tax, true, 'standard');
 	}
 }
 add_action('woocommerce_checkout_create_order', 'add_custom_tax_to_order', 10, 1);
