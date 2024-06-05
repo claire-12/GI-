@@ -1,7 +1,9 @@
 <?php
 $thisLink = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $initial_message = "Hi,<br><br>
-I was checking out the Datwyler Sealing site and wanted to share this: <a href='" . $thisLink . "'>" . $thisLink . "</a>.<br><br>Let me know what you think!<br><br>";
+I wanted to share this interesting link with you: <a href='" . $thisLink . "'>" . $thisLink . "</a>. I think you'll find it interesting.<br><br>
+Feel free to check it out when you have some time. Let me know what you think!<br><br>
+Best regards,";
 $initial_content = "<a href='" . $thisLink . "'>" . $thisLink . "</a>";
 $editor_id = 'message';
 $settings = array(
@@ -10,7 +12,6 @@ $settings = array(
     'tinymce' => true,
 );
 ?>
-
 <div class="show-email-share show-quote-button show-product-quote" data-action="<?php echo is_product() ? get_the_ID() : 0 ?>"></div>
 <div class="dropdown show-email-share">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

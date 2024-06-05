@@ -9,8 +9,10 @@ class GIWebServices
 
     public function __construct()
     {
-        $oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
-        $apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
+        //$oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
+        //$apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
+        $oauthTokenUrl = 'https://oauthasservices-a3c9ce896.hana.ondemand.com/oauth2/api/v1/token';
+        $apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';		
         $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
         $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
 
@@ -79,8 +81,7 @@ class GIWebServices
             $headers = array(
                 'Content-Type: application/json',
                 'Authorization: Bearer ' . $access_token,
-                'Cookie: ' . $cookies,
-                'Expect: ',
+                'Cookie: ' . $cookies
             );
 
             $bodyParams = array();
@@ -141,7 +142,6 @@ class GIWebServices
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_POSTFIELDS => json_encode($body),
             CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ));
 
         $response = curl_exec($curl);

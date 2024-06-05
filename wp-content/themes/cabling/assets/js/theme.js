@@ -445,6 +445,7 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                     form.find('input[type="submit"]').prop('disabled', false);
                     return false;
                 }
+
             },
         })
             .fail(function () {

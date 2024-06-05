@@ -43,7 +43,7 @@ $product_categories = get_field('_product_category_menu', 'options');
                         <?php endforeach; ?>
                     </ul>
                 <?php endif ?>
-				<?php if ($sustainable_nav = get_field('_sustainable', 'options')): ?>
+                <?php if ($sustainable_nav = get_field('_sustainable', 'options')): ?>
                     <ul>
                         <?php foreach ($sustainable_nav as $item_sustainable): ?>
                             <li>
