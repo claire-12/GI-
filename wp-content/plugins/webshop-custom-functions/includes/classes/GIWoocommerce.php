@@ -15,7 +15,10 @@ class GIWoocommerce
         add_action('wp_ajax_gi_update_shipping_address', array($this, 'gi_update_shipping_address_callback'));
         add_action('wp_ajax_gi_get_modal_address_content', array($this, 'gi_get_modal_address_content_callback'));
         // add_action('woocommerce_checkout_terms_and_conditions', array($this, 'gi_woocommerce_add_wp_form_9'));
+        
+        // Check condition to remove tax follow customer level
         add_action('woocommerce_checkout_update_order_review', array($this, 'gi_woocommerce_checkout_update_order_meta'));
+        add_filter( 'woocommerce_cart_get_taxes', array($this, 'gi_woocommerce_remove_taxes_on_cart_page'));
 
         add_filter('woocommerce_return_to_shop_redirect', array($this, 'gi_woocommerce_return_to_shop_redirect'));
         #ref GID-1044: m1
@@ -191,18 +194,48 @@ class GIWoocommerce
     public function gi_woocommerce_checkout_update_order_meta()
     {
         $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
-        if ( !empty($_FILES['form-w9']['name']) || $user_wp9_form) {
-            WC()->cart->remove_taxes();
-            /*$upload = wp_upload_bits($_FILES['form-w9']['name'], null, file_get_contents($_FILES['form-w9']['tmp_name']));
-            if(isset($upload['error']) && $upload['error'] != 0) {
-                return;
-            } else {
-                update_post_meta($order_id, 'user_wp9_form', $upload);
-                // Remove all tax calculations
-                remove_all_actions('woocommerce_calc_tax');
-                remove_all_actions('woocommerce_after_order_total_tax');
-            }*/
+        $customer_level = get_customer_level(get_current_user_id());
+         // If customer_level 1 checkif he uploaded user_wp9_form or not
+        $remove_tax = false;
+        if(  $customer_level == 1 ){
+            if( !empty($_FILES['form-w9']['name']) ){
+                $remove_tax = true;
+            }
+            if( $user_wp9_form ){
+                $remove_tax = true;
+            }
         }
+        // If customer_level 2 remove tax
+        if(  $customer_level == 2 ){
+            $remove_tax = true;
+        }
+
+        if($remove_tax){
+            WC()->cart->remove_taxes();
+        }
+    }
+
+    public function gi_woocommerce_remove_taxes_on_cart_page($taxes){
+        $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
+        $customer_level = get_customer_level(get_current_user_id());
+         // If customer_level 1 checkif he uploaded user_wp9_form or not
+        $remove_tax = false;
+        if(  $customer_level == 1 ){
+            if( !empty($_FILES['form-w9']['name']) ){
+                $remove_tax = true;
+            }
+            if( $user_wp9_form ){
+                $remove_tax = true;
+            }
+        }
+        // If customer_level 2 remove tax
+        if(  $customer_level == 2 ){
+            $remove_tax = true;
+        }
+        if($remove_tax){
+            $taxes = [];
+        }
+        return $taxes;
     }
 }
 

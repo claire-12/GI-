@@ -47,7 +47,7 @@ $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
                         </div>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Billing', 'cabling') ?>"><?php _e('Billing', 'cabling') ?></div>
                         <?php if($customer_level == 1 && !$user_wp9_form): ?>
-                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
+                            <div class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
                         <?php endif; ?>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Order Summary', 'cabling') ?>"><?php _e('Order Summary', 'cabling') ?></div>
                     </div>
