@@ -149,7 +149,8 @@ class CRMController
                     return CRMConstant::SALESORGS[$salesres->SalesOrganisationID];
             }
         }
-        return "2141";
+        //return "2141";
+        return "";
     } 
 
 
