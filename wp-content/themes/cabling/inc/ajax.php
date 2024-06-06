@@ -1095,8 +1095,14 @@ function cabling_get_api_ajax_callback()
                     $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $oldMaterialNumber = $data['api']['MaterialOldNumber'];
-                    //JM 20240603 allow search by dashnumber
-                    $oldMaterialNumber= str_pad(str_replace('-','',$oldMaterialNumber),7,'0568',STR_PAD_LEFT);
+                    $oldMaterialNumber=str_replace('-','',$oldMaterialNumber);
+                    //JM 20240606 allow search by dashnumber for 3 and 4 chars srting length
+                    if(strlen($oldMaterialNumber)==4){
+                        $oldMaterialNumber=str_pad($oldMaterialNumber,8,'0568',STR_PAD_LEFT);   
+                    }else{
+                        $oldMaterialNumber=str_pad($oldMaterialNumber,7,'0568',STR_PAD_LEFT);   
+                    }
+                    //$oldMaterialNumber=str_pad(str_replace('-','',$oldMaterialNumber),7,'0568',STR_PAD_LEFT);
                     $material = $data['api']['Material'];
                     $basicMaterial = $data['api']['BasicMaterial'];
 
