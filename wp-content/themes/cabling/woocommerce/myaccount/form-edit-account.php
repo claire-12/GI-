@@ -190,6 +190,14 @@ do_action('woocommerce_before_edit_account_form'); ?>
             'key' => true,
             'default' => esc_attr(get_user_meta($user->ID, 'billing_state', true)),
         )); ?>
+
+        <div class="clear"></div>
+
+        <p class="form-group mb-3">
+            <input type="file" class="woocommerce-Input input-text" name="user_wp9_form" id="user_wp9_form" />
+            <label for="user_wp9_form"><?php esc_html_e('W9 form', 'user_wp9_form'); ?></label>
+        </p>
+        
         <div class="clear"></div>
     </fieldset>
 
