@@ -35,6 +35,12 @@ $settings = array(
                 <?php echo __('Keep me informed', 'cabling'); ?>
             </a>
         </li>
+        <li>
+            <a class="dropdown-item chat-with-us-modal" href="#">
+                <i class="fa fa-message me-1"></i>
+                <?php echo __('Chat with us', 'cabling'); ?>
+            </a>
+        </li>
     </ul>
 </div>
 
@@ -78,6 +84,24 @@ $settings = array(
                         </p>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal chat -->
+<div class="modal fade" id="chatWithUsModal" tabindex="-1" aria-labelledby="chatWithUsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><?php _e('Chat with us', 'cabling') ?></h4>
+                <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <?php echo do_shortcode('[mwai_chatbot id="default"]');?>
             </div>
         </div>
     </div>
