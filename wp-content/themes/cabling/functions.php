@@ -494,9 +494,21 @@ endif;
 // w9 form ajax
 function w9_form_ajax() {
 	$file_name = $_FILES['file']['name'];
+	$user_id = get_current_user_id();
 	if(!empty($file_name)){
+		$file_info = $_FILES['file'];
+		if ($file_info['error'] === 0) {
+			$extension = pathinfo($file_info['name'], PATHINFO_EXTENSION);
+			$file_info['name'] = $user_id.'-fw9.'.$extension;
+			$uploaded_file = wp_handle_upload($file_info, array('test_form' => false));
+			if ($uploaded_file && !isset($uploaded_file['error'])) {
+				update_user_meta( $user_id, 'user_wp9_form_uploaded_file_url', $uploaded_file['url'] );
+				update_user_meta( $user_id, 'user_wp9_form_uploaded_file_path', $uploaded_file['file'] );
+			}
+		}
 		$_SESSION['vat_remove'] = true;
-		update_user_meta( get_current_user_id(), 'user_wp9_form', 1 );
+		update_user_meta($user_id, 'user_wp9_form', 1 );
+
 	}else{
 		$_SESSION['vat_remove'] = false;
 	}

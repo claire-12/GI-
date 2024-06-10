@@ -128,5 +128,4 @@ $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
 
 
 </form>
-
 <?php do_action('woocommerce_after_checkout_form', $checkout); ?>

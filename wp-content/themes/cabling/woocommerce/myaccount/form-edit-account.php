@@ -228,4 +228,26 @@ do_action('woocommerce_before_edit_account_form'); ?>
     <?php do_action('woocommerce_edit_account_form_end'); ?>
 </form>
 
+<?php 
+$customer_level = get_customer_level(get_current_user_id());
+$user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
+$user_wp9_form_uploaded_file_url = get_user_meta(get_current_user_id(),'user_wp9_form_uploaded_file_url',true);
+if($customer_level == 1): ?>
+<!--single form panel-->
+<div class="multisteps-form__panel js-active" data-animation="scaleIn">
+    <div class="multisteps-form__content">
+        <?php
+            $gi_wp_form_9 = apply_filters('woocommerce_checkout_gi_add_wp_form_9', null);
+            echo $gi_wp_form_9;
+        ?>
+        <?php if($user_wp9_form_uploaded_file_url):?>
+        <p class="help-text">Uploaded file: <a target="_blank" href="<?= $user_wp9_form_uploaded_file_url; ?>"><?= $user_wp9_form_uploaded_file_url; ?></a></p>
+        <?php endif;?>
+    </div>
+    <div class="wp-block-button button-row block-button-black d-flex">
+        <button class="wp-element-button ml-auto user-edit-account-upload-wp_form_9" type="button" title="Save">Save</button>
+    </div>
+</div>
+<?php endif; ?>
+
 <?php do_action('woocommerce_after_edit_account_form'); ?>
