@@ -718,6 +718,28 @@
             }
         });
     })
+    $(document).on('click', '.user-edit-account-upload-wp_form_9', function () {
+        var fileInput = $('#formFile')[0].files[0];
+        var formData = new FormData();
+        formData.append('file', fileInput);
+        formData.append('action', 'w9_form_ajax');
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.success == true) {
+                    alert('Uploaded');
+                    window.location.reload();
+                }
+            },
+            error: function (response) {
+
+            }
+        });
+    })
 
     $(document).on('click', '.place-order-upload', function (e) {
         e.stopPropagation();

@@ -354,6 +354,7 @@ function get_customer_level($userId): int
     if ('true' == $has_approved || $customer_level === '2')
         $level = 2;
 
+    return 1;
     return $level;
 }
 
