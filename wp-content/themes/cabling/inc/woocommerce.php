@@ -1303,7 +1303,7 @@ function add_btn_add_shipping_address()
         $myaccount_page = get_permalink(get_option('woocommerce_myaccount_page_id'));
         $custom_address = THMAF_Utils::get_custom_addresses($user_id, 'shipping');
 
-        if (empty($custom_address) || (sizeof($custom_address) < 3)) {
+        if (empty($custom_address) || (sizeof($custom_address) <= 5)) {
             echo '<a href="' . $myaccount_page . 'edit-address/shipping/?atype=add-address" class="button primary is-outline">
                <i class="fa fa-plus"></i>
                Add new address
