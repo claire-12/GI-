@@ -1564,3 +1564,7 @@ strong {
 .add-cart-row .product-request-button {
     display: inline-block;
 }
+.woocommerce-checkout #payment .form-row.place-order {
+    padding-left: 0;
+    padding-right: 0;
+}

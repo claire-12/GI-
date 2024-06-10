@@ -117,7 +117,7 @@ class CRMLead
 		$contact["Segment"] = "GI";  // Always send
 		$contact["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
 
-		$body["MarketingConsent_KUT"] = $crmcontact->agreeTerm;
+		$contact["MarketingConsent_KUT"] = $crmcontact->agreeTerm;
 
 		$contact["Note"] = $comments;
 		if (empty($prodofinterest) || ($prodofinterest == "Array")) {
@@ -187,7 +187,7 @@ class CRMLead
 
 		$rfq["DesiredApplication_KUT"] = $product->application ?? "N/A";
 
-		$rfq["MarketingConsent_KUT"] = $crmsalesquote->getPolicyAgreed() == "yes" ? true : false;
+		$rfq["MarketingConsent_KUT"] = $crmsalesquote->getMarketingAgreed() == "yes" || $crmsalesquote->getMarketingAgreed() == 1;
 		/*
         Chemical Resistant
         Oil Resistant
@@ -267,7 +267,7 @@ class CRMLead
 	 */
 	public function createMarketingLeadBody($crmcontact, $brand = "")
 	{
-		$lead = $contactcrm->toArray();
+		$lead = $crmcontact->toArray();
 		$lead["LeadLifecycle_KUT"] = "111";    // Marketing Qualified Lead
 		$lead["LeadType_KUT"] = "105";         // GI Lead – always send this data
 		$lead["Segment"] = "GI";               // GI Business – always send this data
@@ -338,7 +338,7 @@ class CRMLead
 			$lead["LeadMarketingPermissionCommTypePermission"] = $options;
 		}
 
-		$lead["MarketingConsent_KUT"] = $crmcontact->policyAgreed;
+		$lead["MarketingConsent_KUT"] = $crmcontact->agreeTerm;
 
 
 		$body = json_encode($lead);

@@ -76,6 +76,10 @@
             .done(function () {
                 hideLoading();
                 new bootstrap.Modal(modalElement).show();
+            })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
 
         return false;
@@ -121,6 +125,10 @@
                 showLoading();
             }
         })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+            });
     });
 
 
@@ -159,6 +167,10 @@
             })
                 .done(function () {
                     hideLoading();
+                })
+                .error(function () {
+                    hideLoading();
+                    alert('Something went wrong');
                 });
         }
     })
@@ -180,6 +192,8 @@
                 brandId: CABLING.crm,
             },
             success: function (response) {
+                gtag('event', 'Lead_KMI');
+
                 if (response.success) {
                     form.html('<div class="woocommerce-message woo-notice"></div>');
                 } else {
@@ -233,6 +247,7 @@
                 } else {
                     form.prepend(response.data);
                 }
+                gtag('event', 'Lead_RFQ');
             },
             beforeSend: function () {
                 showLoading();
@@ -326,6 +341,10 @@ function showKeepInformedModal() {
                 'sitekey': sitekey,
             });
             new bootstrap.Modal(modalElement).show();
+        })
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
         });
 }
 

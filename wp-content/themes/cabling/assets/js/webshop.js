@@ -100,8 +100,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
     })
 
@@ -130,8 +131,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
         return false;
     })
@@ -165,8 +167,9 @@
             .done(function () {
                 hideLoading();
             })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
         return false;
     })
@@ -238,8 +241,10 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+                btn_submit.prop('disabled', false);
             });
 
         return false;
@@ -423,8 +428,9 @@
             success: function (response) {
                 hideLoading();
                 if (response.success) {
+                    // Show only hightlight selected
                     $('#api-results').html(response.data.data);
-                    if (show_ponumber !== '') {
+                    if (typeof show_ponumber != 'undefined' && show_ponumber !== '') {
                         showSingleTable(show_ponumber);
                     }
                 } else {
@@ -437,8 +443,9 @@
                 showLoading();
             }
         })
-            .fail(function () {
-                console.log("error");
+            .error(function () {
+                hideLoading();
+                $('#api-results').html("Something wrong !");
             });
 
         return false;
@@ -499,6 +506,7 @@
                         nonce: CABLING.nonce,
                     },
                     success: function (response) {
+                        gtag('event', 'Account_Creation');
                         hideLoading();
                         if (response.success) {
                             $(form).html(response.data)
@@ -510,8 +518,9 @@
                         showLoading();
                     }
                 })
-                    .fail(function () {
-                        console.log("error");
+                    .error(function () {
+                        hideLoading();
+                        alert('Something went wrong');
                     });
 
                 return false;
@@ -523,6 +532,7 @@
     const wpcf7Elm = document.querySelector('.wpcf7');
     if (wpcf7Elm) {
         wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
+            gtag('event', 'Lead_Account');
             openModal('modalSuccess');
         }, false);
         wpcf7Elm.addEventListener('wpcf7spam', function (event) {
@@ -538,6 +548,7 @@
             if (event.detail.status === 'wpcf7invalid') {
                 openModal('modalError');
             }
+            gtag('event', 'Lead_Account');
         }, false);
     }
 
@@ -594,27 +605,78 @@
             $('input[name=billing_postcode]').val(shipping_postcode);
         }
 
-        if ($(this).hasClass('new-address')){
+        if ($(this).hasClass('new-address')) {
             let isCompleteBilling = true;
             $('#accordionAddress').find('.form-control').each(function () {
-                if ($(this).val() == ''){
+                if ($(this).val() == '') {
                     isCompleteBilling = false;
                 }
             })
 
-            if( !isCompleteBilling ){
+            if (!isCompleteBilling) {
                 $('.woocommerce-billing-details').prepend('<div class="alert alert-danger d-flex align-items-center woo-notice" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i><span>Please complete Billing Address.</span></div>');
                 return false;
             }
         }
         show_checkout_shipping();
 
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'cabling_get_api_ajax_checkout',
+                data: 'api_service=GET_DATA_PRICE&api_page=inventory',
+                nonce: CABLING.nonce,
+            },
+            success: function (response) {
+                hideLoading();
+                if (response.success) {
+                    const rawData = response.data;
+                    let status = '';
+                    let flag = 1;
+                    if (rawData.length > 0) {
+                        $('.cart_item').each(function (index) {
+                            const _this = $(this);
+                            const stock = rawData[index].stock;
+                            const quantity = rawData[index].quantity;
+                            if (stock && stock > 0) {
+                                const percent = (stock / 100) * 80;
+                                if (quantity < percent) {
+                                    status = 'In Stock: We estimate to have the products ready for shipping in the next 24 hours.';
+                                } else {
+                                    status = 'Out of Stock: We estimate to have the products ready for shipping in the next 7 days.';
+                                    flag = 2;
+                                }
+                                _this.find('.product-stock').text(status);
+                            } else {
+                                flag = 2;
+                                _this.find('.product-stock').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
+                                $('.woocommerce-checkout-review-order-table').addClass('removeSize')
+                            }
+
+
+                            if (flag == 1) {
+                                $('.stock-total-checkout').text('In Stock: We estimate to have the products ready for shipping in the next 24 hours.');
+                            } else {
+                                $('.stock-total-checkout').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
+                            }
+                        });
+                        //$('body').trigger('update_checkout');
+                    }
+                }
+            },
+            beforeSend: function () {
+                showLoading();
+            }
+        })
+        $('.woocommerce-shipping-totals.shipping td').attr('colspan', '2');
     })
     const myCollapsible = document.getElementById('collapseAddNew');
     /*myCollapsible.addEventListener('hidden.bs.collapse', function () {
         console.log('collapse');
     })*/
-    if(myCollapsible) {
+    if (myCollapsible) {
         myCollapsible.addEventListener('shown.bs.collapse', function () {
             $('#same-shipping-address').prop('checked', false);
             $('#diff-shipping-address').prop('checked', true);
@@ -625,6 +687,64 @@
             $('#diff-shipping-address').prop('checked', false);
         }
     })
+
+    $(document).on('click', '.continue-to-summary', function () {
+        $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').addClass('disable');
+        var fileInput = $('#formFile')[0].files[0];
+        var formData = new FormData();
+        formData.append('file', fileInput);
+        formData.append('action', 'w9_form_ajax');
+        // const $ = jQuery.noConflict();
+        $('.multisteps-form__progress-btn').removeClass('js-active');
+        $('.multisteps-form__panel').removeClass('js-active');
+
+        $('.multisteps-form__progress-btn:nth-child(4)').addClass('js-active');
+        $('.multisteps-form__panel:nth-child(4)').addClass('js-active');
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.success == true) {
+                    $('body').trigger('update_checkout');
+                    $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').addClass('place-order-upload');
+                }
+                $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').removeClass('disable');
+            },
+            error: function (response) {
+
+            }
+        });
+    })
+
+    $(document).on('click', '.place-order-upload', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        var fileInput = $('#formFile')[0].files[0];
+        var formData = new FormData();
+        formData.append('file', fileInput);
+        formData.append('action', 'w9_file_upload_ajax');
+        $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').removeClass('place-order-upload');
+        $.ajax({
+            url: CABLING.ajax_url,
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.success == true) {
+                    $('.woocommerce #payment #place_order, .woocommerce-page #payment #place_order').trigger('click');
+                }
+            },
+            error: function (response) {
+
+            }
+        });
+    })
+
 })(jQuery);
 
 function show_checkout_shipping() {
@@ -690,11 +810,13 @@ function setActiveCheckbox() {
 
 function showSingleTable(order) {
     const $ = jQuery.noConflict();
-    const tableContent = $(`tr.single-${order}`);
+    // const tableContent = $(`tr.single-${order}`);
+    const tableContent = $('.backlog-row-single[data-order="' + order + '"]');
     const tablePODetails = $('#table-order-detail');
 
     $(`.backlog-row`).removeClass('table-warning').show();
-    $(`.row-${order}`).addClass('table-warning');
+    // $(`.row-${order}`).addClass('table-warning');
+    $('.backlog-row[data-order="' + order + '"]').addClass('table-warning');
 
     tablePODetails.find('.table-heading span').html(order);
     tablePODetails.find('tbody').empty();
@@ -825,8 +947,9 @@ function blog_filter_ajax(load_more = false) {
             showLoading();
         }
     })
-        .fail(function () {
-            console.log("error");
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
         });
 }
 
@@ -899,7 +1022,6 @@ function product_filter_ajax(cat_id) {
             $('.filter-blog').find('.filter-category').each(function () {
                 let that = $(this);
                 let meta_key = that.attr('data-meta-key');
-
                 if (filter_meta !== null) {
                     if (meta_key) {
                         if (filter_meta.hasOwnProperty(meta_key) && filter_meta[meta_key] && filter_meta[meta_key].includes(that.attr('data-value'))) {
@@ -1056,4 +1178,11 @@ function showLoading() {
 function openModal(modalId) {
     const modalElement = document.getElementById(modalId);
     new bootstrap.Modal(modalElement).show();
+}
+
+// #ref GT-38
+if (jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').length) {
+    let contact_marketing_agreed_html = jQuery('.contact_marketing_agreed_html p').html();
+    jQuery('.contact_marketing_agreed_html').remove();
+    jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"] .wpcf7-list-item-label').html(contact_marketing_agreed_html);
 }

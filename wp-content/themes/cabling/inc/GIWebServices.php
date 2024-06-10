@@ -5,10 +5,17 @@ class GIWebServices
     private string $tokenEndpoint;
     private string $clientId;
     private string $clientSecret;
+    private string $apiEndpointBasic;
 
-    public function __construct($tokenEndpoint, $clientId, $clientSecret)
+    public function __construct()
     {
-        $this->tokenEndpoint = $tokenEndpoint;
+        $oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
+        $apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
+        $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
+        $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
+
+        $this->tokenEndpoint = $oauthTokenUrl;
+        $this->apiEndpointBasic = $apiEndpointBasic;
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
     }
@@ -67,6 +74,8 @@ class GIWebServices
             $access_token = $tokenResult['access_token'];
             $cookies = is_array($tokenResult['cookies']) ? implode(';', $tokenResult['cookies']) : $tokenResult['cookies'];
 
+            $endpoint = $this->apiEndpointBasic . $apiEndpoint;
+
             $headers = array(
                 'Content-Type: application/json',
                 'Authorization: Bearer ' . $access_token,
@@ -78,7 +87,16 @@ class GIWebServices
                 $prepareParams = array();
                 $lastItem = endArray($params);
                 foreach ($params as $param) {
-                    $operator = $lastItem === $param ? '' : 'and';
+                    if( $lastItem === $param && $param['Operator'] != ')' ){
+                        $operator = $lastItem === $param ? '' : 'and';
+                    }else{
+                        if( !$param['Operator'] ){
+                            $operator = $lastItem === $param ? '' : 'and';
+                        }else{
+                            $operator = $param['Operator'];
+                        }
+                    }
+
                     $prepareParams[] = array(
                         'Field' => $param['Field'],
                         'Sign' => 'eq',
@@ -93,7 +111,7 @@ class GIWebServices
                 );
             }
 
-            $response = $this->curl($apiEndpoint, $bodyParams, $headers);
+            $response = $this->curl($endpoint, $bodyParams, $headers);
 
             return $response['success'] ?? $response;
         } catch (Exception $e) {

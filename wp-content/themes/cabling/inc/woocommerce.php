@@ -2326,3 +2326,69 @@ function gi_woocommerce_get_terms_and_conditions_checkbox_text($text)
     $text = __('I confirm all details are correct', 'cabling');
     return $text;
 }
+
+#ref GID-1044
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
+
+add_action( 'woocommerce_before_calculate_totals', 'custom_change_cart_item_prices', 10, 1 );
+function custom_change_cart_item_prices( $cart ) {
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
+        return;
+    }
+
+    if ( WC()->cart->is_empty() ) {
+        return;
+    }
+
+    if ( is_cart() ) {
+        return;
+    }
+
+    $webServices = new GIWebServices();
+    $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
+    $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
+
+    foreach ( $cart->get_cart() as $cart_item ) {
+        $priceParams = array(
+            array(
+                'Field' => 'SalesOrganization',
+                'Value' => empty($user_plant) ? '2141' : $user_plant,
+                'Operator' => 'and',
+            ),
+            array(
+                'Field' => 'Material',
+                'Value' => $cart_item['data']->get_sku(),
+                'Operator' => '',
+            ),
+            array(
+                'Field' => '(Customer',
+                'Sign' => 'eq',
+                'Value' => $sap_no,
+                'Operator' => 'or',
+            ),
+            array(
+                'Field' => 'Customer',
+                'Sign' => 'eq',
+                'Value' => "",
+                'Operator' => ')',
+            )
+        );
+
+        $responsePrice = $webServices->makeApiRequest('GET_DATA_PRICE_CDS', $priceParams);
+        $dataPrice = $webServices->getDataResponse($responsePrice, 'ZDD_I_SD_PIM_MaterialPrice', 'ZDD_I_SD_PIM_MaterialPriceType');
+
+        if ($dataPrice){
+            $price = floatval($dataPrice[0]['Price100']) / 100;
+            foreach ($dataPrice as $priceAPI){
+                $scaleFrom = intval($priceAPI['ScaleFrom']);
+                $scaleTo = intval($priceAPI['ScaleTo']);
+
+                if(($cart_item['quantity'] <= $scaleTo) && ($cart_item['quantity'] >= $scaleFrom)){
+                    $price = floatval($priceAPI['Price100']) / 100;
+                }
+            }
+
+            $cart_item['data']->set_price( $price  );
+        }
+    }
+}

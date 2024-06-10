@@ -40,6 +40,7 @@
 						</label>
 					</div>
 					<div class="submit-block d-flex my-3">
+						<input type="hidden" name="rfq_marketing_agreed" value="no">
 						<input class="form-check-input" type="checkbox" id="receive-newsletter" name="rfq_marketing_agreed"
 							value="yes">
 						<label class="form-check-label ms-2" for="receive-newsletter">
@@ -75,7 +76,7 @@
 					<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="log" id="username"
 						autocomplete="username" required
 						value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"
-						placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>" /><?php // @codingStandardsIgnoreLine 
+						placeholder="<?php esc_html_e('Email Address*', 'woocommerce'); ?>" /><?php // @codingStandardsIgnoreLine
                                                                                                                                                                                                                                                                                                                                             ?>
 				</p>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">

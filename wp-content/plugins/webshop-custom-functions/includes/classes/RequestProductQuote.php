@@ -146,8 +146,8 @@ class RequestProductQuote
                     $data['quote_filter'] = json_decode(base64_decode($data['filter-params']));
                 }
 
-                //if (is_user_logged_in_by_email($data['email'])) {
-				if (is_user_logged_in()) {
+//                if (is_user_logged_in_by_email($data['email'])) {
+if (is_user_logged_in()) {
                     $user = wp_get_current_user();
                     $userId = get_master_account_id($user->ID);
 
@@ -228,7 +228,13 @@ class RequestProductQuote
             'quote_filter' => serialize($data['quote_filter']),
             'status' => 'Pending'
         );
-
+        $data_to_insert['product_of_interest'] = $data['product-of-interest'];
+        #ref GID-853
+        if( $data['object_type'] == 'product' && $data['object_id'] ){
+            $_product = wc_get_product( $data['object_id'] );
+            $quote_price = $_product->get_price();
+            $data_to_insert['quote_price'] = $quote_price;
+        }
         $wpdb->insert($table_name, $data_to_insert);
 
         return $wpdb->insert_id;

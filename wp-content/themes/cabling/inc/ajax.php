@@ -1031,22 +1031,27 @@ function cabling_get_api_ajax_callback()
         try {
             parse_str($_REQUEST['data'], $data);
 
-            $oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
-            $apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
-            //$oauthTokenUrl = 'https://oauthasservices-a3c9ce896.hana.ondemand.com/oauth2/api/v1/token';
-            //$apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
+            /*//$oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
+            //$apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
+            $oauthTokenUrl = 'https://oauthasservices-a3c9ce896.hana.ondemand.com/oauth2/api/v1/token';
+            $apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
             $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
-            $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
-            $webServices = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
+            $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';*/
+            $webServices = new GIWebServices();
 
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
             }
 
             $sap_no = get_user_meta(get_current_user_id(), 'sap_customer', true);
-            $user_plant = get_user_meta(get_current_user_id(), 'user_plant', true);
+            $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
 
             $data['api']['SoldToParty'] = $sap_no;
+
+            // Add show_ponumber
+            // if( $data['api_page'] == 'backlog' && !empty( $data['show_ponumber'] ) ){
+            //     $data['api']['PurchaseOrderByCustomer'] = $data['show_ponumber'];
+            // }
 
             $bodyParams = array();
             foreach ($data['api'] as $name => $value) {
@@ -1062,11 +1067,10 @@ function cabling_get_api_ajax_callback()
 
             $type = 'ZDD_I_SD_PIM_MaterialBacklog';
             $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogType';
-
             switch ($data['api_page']) {
                 case 'inventory':
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE_CDS';
-                    $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK_CDS';
+                    $apiEndpoint = 'GET_DATA_PRICE_CDS';
+                    $apiStockEndpoint = 'GET_DATA_STOCK_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $oldMaterialNumber = $data['api']['MaterialOldNumber'];
                     $material = $data['api']['Material'];
@@ -1079,25 +1083,24 @@ function cabling_get_api_ajax_callback()
                             'Operator' => '',
                         ),
                     );
-                    $priceParams = array();
+                    $priceParams = array(
+                        array(
+                            'Field' => 'SalesOrganization',
+                            'Value' => empty($user_plant) ? '2141' : $user_plant,
+                            'Operator' => 'and',
+                        )
+                    );
 
                     if (!empty($oldMaterialNumber) && !empty($basicMaterial)) {
-                        $priceParams = array(
-                            array(
-                                'Field' => 'Customer',
-                                'Value' => $sap_no,
-                                'Operator' => '',
-                            ),
-                            array(
-                                'Field' => 'MaterialOldNumber',
-                                'Value' => $oldMaterialNumber,
-                                'Operator' => '',
-                            ),
-                            array(
-                                'Field' => 'BasicMaterial',
-                                'Value' => $basicMaterial,
-                                'Operator' => '',
-                            )
+                        $priceParams[] = array(
+                            'Field' => 'MaterialOldNumber',
+                            'Value' => $oldMaterialNumber,
+                            'Operator' => '',
+                        );
+                        $priceParams[] = array(
+                            'Field' => 'BasicMaterial',
+                            'Value' => $basicMaterial,
+                            'Operator' => '',
                         );
 
                         $stockParams[] = array(
@@ -1111,17 +1114,22 @@ function cabling_get_api_ajax_callback()
                             'Operator' => '',
                         );
                     } elseif (!empty($material)) {
-                        $priceParams = array(
-                            array(
-                                'Field' => 'Material',
-                                'Value' => $material,
-                                'Operator' => '',
-                            )
+                        $priceParams[] = array(
+                            'Field' => 'Material',
+                            'Value' => $material,
+                            'Operator' => '',
+                        );
+                        $priceParams[] = array(
+                            'Field' => '(Customer',
+                            'Sign' => 'eq',
+                            'Value' => $sap_no,
+                            'Operator' => 'or',
                         );
                         $priceParams[] = array(
                             'Field' => 'Customer',
-                            'Value' => $sap_no,
-                            'Operator' => '',
+                            'Sign' => 'eq',
+                            'Value' => "",
+                            'Operator' => ')',
                         );
                         $stockParams[] = array(
                             'Field' => 'Material',
@@ -1138,10 +1146,6 @@ function cabling_get_api_ajax_callback()
 
                     $responseData = array(
                         'price' => $dataPrice,
-                        /*'response' => [
-                            $responsePrice,
-                            $responseStock,
-                        ],*/
                         'stock' => $dataStock,
                         'data' => [
                             $priceParams,
@@ -1151,7 +1155,7 @@ function cabling_get_api_ajax_callback()
 
                     break;
                 default:
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG_CDS';
+                    $apiEndpoint = 'GET_DATA_BACKLOG_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $response = $webServices->makeApiRequest($apiEndpoint, $bodyParams);
 
@@ -1184,3 +1188,54 @@ function cabling_get_api_ajax_callback()
 
 add_action('wp_ajax_cabling_get_api_ajax', 'cabling_get_api_ajax_callback');
 add_action('wp_ajax_nopriv_cabling_get_api_ajax', 'cabling_get_api_ajax_callback');
+
+function cabling_get_api_ajax_callback_checkout()
+{
+    if (isset($_REQUEST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], 'cabling-ajax-nonce')) {
+        try {
+            parse_str($_REQUEST['data'], $data);
+
+            $webServices = new GIWebServices();
+
+            if (empty($data['api_service'])) {
+                wp_send_json_error('Missing API Service');
+            }
+
+            $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
+
+            $data = [];
+            foreach ( WC()->cart->get_cart() as $cart_item ) {
+                $sku = get_post_meta($cart_item['product_id'], '_sku', true);
+                $stockParams = [
+                    array('Field' => 'SalesOrganization',
+                        'Value' => empty($user_plant) ? '2141' : $user_plant,
+                        'Operator' => '',
+                    ),
+                    array(
+                        'Field' => 'Material',
+                        'Value' => $sku,
+                        'Operator' => '',
+                    )
+                ];
+
+                $responseStock = $webServices->makeApiRequest('GET_DATA_STOCK_CDS', $stockParams);
+                $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStock', 'ZDD_I_SD_PIM_MaterialStockType');
+
+                $data[] = array(
+                    'stock' => $dataStock[0]['TotalStockQuantity'] ?? 0,
+                    'quantity' => $cart_item['quantity']
+                );
+            }
+
+            wp_send_json_success($data);
+        } catch (Exception $e) {
+            wp_send_json_error($e->getMessage());
+        }
+    } else {
+        wp_send_json_error('Invalid nonce.');
+    }
+    wp_die();
+}
+
+add_action('wp_ajax_cabling_get_api_ajax_checkout', 'cabling_get_api_ajax_callback_checkout');
+add_action('wp_ajax_nopriv_cabling_get_api_ajax_checkout', 'cabling_get_api_ajax_callback_checkout');
