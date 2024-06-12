@@ -95,7 +95,7 @@ wp-config.php
 
 /wp-content/plugins/taxonomy-terms-order/
 
-/wp-content/plugins/themehigh-multiple-addresses/
+# /wp-content/plugins/themehigh-multiple-addresses/
 
 /wp-content/plugins/tinymce-advanced/
 
