@@ -26,8 +26,9 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     echo apply_filters('woocommerce_checkout_must_be_logged_in_message', __('You must be Sign in to checkout.', 'woocommerce'));
     return;
 }
-$customer_level = get_customer_level(get_current_user_id());
-$user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
+$user_id = get_current_user_id();
+$customer_level = get_customer_level($user_id);
+$user_wp9_form = get_user_meta($user_id,'user_wp9_form_uploaded_file_url',true);
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout"

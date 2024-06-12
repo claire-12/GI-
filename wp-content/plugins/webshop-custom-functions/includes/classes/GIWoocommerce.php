@@ -186,19 +186,21 @@ class GIWoocommerce
     public function gi_woocommerce_add_wp_form_9()
     {
         $customer_level = get_customer_level(get_current_user_id());
-        $customer_level = 1;
         if ($customer_level === 1) {
             wc_get_template('template-parts/checkout/form-wp9.php', [], '', WBC_PLUGIN_DIR);
         }
     }
     public function gi_woocommerce_checkout_update_order_meta()
     {
-        $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
-        $customer_level = get_customer_level(get_current_user_id());
+        $user_id = get_current_user_id();
+        $user_wp9_form = get_user_meta($user_id,'user_wp9_form_uploaded_file_url',true);
+        $customer_level = get_customer_level($user_id);
          // If customer_level 1 checkif he uploaded user_wp9_form or not
         $remove_tax = false;
         if(  $customer_level == 1 ){
             if( !empty($_FILES['form-w9']['name']) ){
+                $file_info = $_FILES['form-w9'];
+                w9_form_handle_upload($file_info,$user_id);
                 $remove_tax = true;
             }
             if( $user_wp9_form ){
@@ -216,12 +218,15 @@ class GIWoocommerce
     }
 
     public function gi_woocommerce_remove_taxes_on_cart_page($taxes){
-        $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
-        $customer_level = get_customer_level(get_current_user_id());
+        $user_id = get_current_user_id();
+        $user_wp9_form = get_user_meta($user_id,'user_wp9_form',true);
+        $customer_level = get_customer_level($user_id);
          // If customer_level 1 checkif he uploaded user_wp9_form or not
         $remove_tax = false;
         if(  $customer_level == 1 ){
             if( !empty($_FILES['form-w9']['name']) ){
+                $file_info = $_FILES['form-w9'];
+                w9_form_handle_upload($file_info,$user_id);
                 $remove_tax = true;
             }
             if( $user_wp9_form ){

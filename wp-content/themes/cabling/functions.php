@@ -492,23 +492,31 @@ if (!function_exists('cabling_site_icon_meta_tags')) :
 endif;
 
 // w9 form ajax
+function w9_form_handle_upload($file_info,$user_id){
+	if ($file_info['error'] === 0) {
+		$extension = pathinfo($file_info['name'], PATHINFO_EXTENSION);
+		$file_info['name'] = $user_id.'-fw9.'.$extension;
+		$uploaded_file = wp_handle_upload($file_info, array('test_form' => false));
+		if ($uploaded_file && !isset($uploaded_file['error'])) {
+			$attachment = array(
+				'guid'           => $uploaded_file['url'],
+				'post_mime_type' => $uploaded_file['type'],
+				'post_title'     => sanitize_file_name($file_info['name']),
+				'post_content'   => '',
+				'post_status'    => 'inherit'
+			);
+			$attachment_id = wp_insert_attachment($attachment, $uploaded_file['file']);
+			update_user_meta($user_id,'user_wp9_form',$attachment_id);
+		}
+	}
+}
 function w9_form_ajax() {
 	$file_name = $_FILES['file']['name'];
 	$user_id = get_current_user_id();
 	if(!empty($file_name)){
 		$file_info = $_FILES['file'];
-		if ($file_info['error'] === 0) {
-			$extension = pathinfo($file_info['name'], PATHINFO_EXTENSION);
-			$file_info['name'] = $user_id.'-fw9.'.$extension;
-			$uploaded_file = wp_handle_upload($file_info, array('test_form' => false));
-			if ($uploaded_file && !isset($uploaded_file['error'])) {
-				update_user_meta( $user_id, 'user_wp9_form_uploaded_file_url', $uploaded_file['url'] );
-				update_user_meta( $user_id, 'user_wp9_form_uploaded_file_path', $uploaded_file['file'] );
-			}
-		}
+		w9_form_handle_upload($file_info,$user_id);
 		$_SESSION['vat_remove'] = true;
-		update_user_meta($user_id, 'user_wp9_form', 1 );
-
 	}else{
 		$_SESSION['vat_remove'] = false;
 	}
@@ -516,7 +524,6 @@ function w9_form_ajax() {
 	$return = array(
 	    'success' => $_SESSION['vat_remove']
 	);
-
 	wp_send_json($return);
 }
 add_action( 'wp_ajax_w9_form_ajax', 'w9_form_ajax' );

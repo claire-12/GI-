@@ -231,7 +231,7 @@ do_action('woocommerce_before_edit_account_form'); ?>
 <?php 
 $customer_level = get_customer_level(get_current_user_id());
 $user_wp9_form = get_user_meta(get_current_user_id(),'user_wp9_form',true);
-$user_wp9_form_uploaded_file_url = get_user_meta(get_current_user_id(),'user_wp9_form_uploaded_file_url',true);
+$user_wp9_form_uploaded_file_url = wp_get_attachment_url($user_wp9_form);
 if($customer_level == 1): ?>
 <!--single form panel-->
 <div class="multisteps-form__panel js-active" data-animation="scaleIn">
