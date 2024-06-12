@@ -46,6 +46,7 @@ $user_wp9_form = get_user_meta($user_id,'user_wp9_form_uploaded_file_url',true);
                             <span><?php _e('Delivery Details', 'cabling') ?></span>
                             <p class="note"><?php _e('Please note: Delivery only available to the USA', 'cabling') ?></p>
                         </div>
+                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Shipping', 'cabling') ?>"><?php _e('Shipping', 'cabling') ?></div>
                         <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Billing', 'cabling') ?>"><?php _e('Billing', 'cabling') ?></div>
                         <?php if($customer_level == 1 && !$user_wp9_form): ?>
                             <div class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
