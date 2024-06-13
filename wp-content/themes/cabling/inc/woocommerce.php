@@ -409,7 +409,7 @@ function cabling_account_menu_items()
         $new_items['inventory'] = __('Inventory, Lead Time and Pricing', 'cabling');
         $new_items['shipment'] = __('Shipments Last 12 Months ', 'cabling');
     }
-    //$new_items['orders'] = __('Order history', 'cabling');
+    $new_items['orders'] = __('My Orders', 'cabling');
     //$new_items['products'] = __('Purchases', 'cabling');
 
     $new_items['quotations'] = __('My Quotes', 'cabling');
