@@ -18,7 +18,9 @@ defined( 'ABSPATH' ) || exit;
 $customer_id = get_current_user_id();
 $address_type = "shipping";
 $addresses = THMAF_Utils::get_custom_addresses($customer_id, $address_type);
-$firstIndex = array_keys($addresses)[0];
+if (is_array($addresses)) {
+    $firstIndex = array_keys($addresses)[0];
+}
 
 $default_shipping = $firstIndex;
 $custom_address = get_user_meta($customer_id, THMAF_Utils::ADDRESS_KEY);
