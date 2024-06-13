@@ -18,6 +18,8 @@ defined( 'ABSPATH' ) || exit;
 $customer_id = get_current_user_id();
 $address_type = "shipping";
 $addresses = THMAF_Utils::get_custom_addresses($customer_id, $address_type);
+
+$firstIndex = '';
 if (is_array($addresses)) {
     $firstIndex = array_keys($addresses)[0];
 }
