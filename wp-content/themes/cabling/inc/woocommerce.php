@@ -353,7 +353,7 @@ function get_customer_level($userId): int
     $customer_level = get_user_meta($userId, 'customer_level', true);
     if ('true' == $has_approved || $customer_level === '2')
         $level = 2;
-
+    return 1;
     return $level;
 }
 
