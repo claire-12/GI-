@@ -914,7 +914,6 @@ function cabling_get_products_ajax_callback()
 
                 if (!empty($data['attributes'])) {
                     $isSizeFilter = checkFilterHasSize($data['attributes']);
-                    //$product_compound = [];
                     if (!empty($data['attributes']['product_compound'])) {
                         $certifications = $data['attributes']['product_compound'];
                         $data['attributes']['compound_certification'] = array_shift($certifications);
@@ -923,7 +922,7 @@ function cabling_get_products_ajax_callback()
                     }
 
                     if (!empty($data['attributes']['product_compound_single'])) {
-                        if (empty($data['attributes']['product_compound'])) {
+                        if (empty($data['attributes']['product_compound'])){
                             $data['attributes']['product_compound'] = $data['attributes']['product_compound_single'];
                         } else {
                             $data['attributes']['product_compound'] = array_merge($data['attributes']['product_compound'], $data['attributes']['product_compound_single']);
@@ -1007,7 +1006,6 @@ function cabling_get_products_ajax_callback()
                 'category' => $category->name ?? '',
                 'results' => $results,
                 'total' => $total,
-                //'data' => $data,
                 'filter_meta' => $resultMetas ?? null,
                 //'$product_ids' => implode(',',$product_ids) ?? null,
                 'isSizeFilter' => $isSizeFilter,
@@ -1031,18 +1029,17 @@ function cabling_get_api_ajax_callback()
         try {
             parse_str($_REQUEST['data'], $data);
 
-            /*//$oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
-            //$apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
-            $oauthTokenUrl = 'https://oauthasservices-a3c9ce896.hana.ondemand.com/oauth2/api/v1/token';
-            $apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
+            $oauthTokenUrl = 'https://oauthasservices-a4b9bd800.hana.ondemand.com/oauth2/api/v1/token';
+            $apiEndpointBasic = 'https://e2515-iflmap.hcisbt.eu1.hana.ondemand.com/http/GICHANNELS/';
+            //$oauthTokenUrl = 'https://oauthasservices-a3c9ce896.hana.ondemand.com/oauth2/api/v1/token';
+            //$apiEndpointBasic = 'https://l2515-iflmap.hcisbp.eu1.hana.ondemand.com/http/GICHANNELS/';
             $clientId = 'e27dfb2c-9961-3756-9720-32c99ec819ac';
-            $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';*/
-            $webServices = new GIWebServices();
+            $clientSecret = '9ad9a0c8-02ef-3253-993b-8faa20d6965b';
+            $webServices = new GIWebServices($oauthTokenUrl, $clientId, $clientSecret);
 
             if (empty($data['api_service'])) {
                 wp_send_json_error('Missing API Service');
             }
-
             $user = wp_get_current_user();
             $current_user_id = $user->ID;
             $sap_no = get_user_meta($current_user_id, 'sap_customer', true);
@@ -1095,7 +1092,14 @@ function cabling_get_api_ajax_callback()
                     $apiStockEndpoint = 'GET_DATA_STOCK_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $oldMaterialNumber = $data['api']['MaterialOldNumber'];
-					$oldMaterialNumber=str_pad(str_replace('-','',$oldMaterialNumber),7,'0568',STR_PAD_LEFT);
+                    $oldMaterialNumber=str_replace('-','',$oldMaterialNumber);
+                    //JM 20240606 allow search by dashnumber for 3 and 4 chars srting length
+                    if(strlen($oldMaterialNumber)==4){
+                        $oldMaterialNumber=str_pad($oldMaterialNumber,8,'0568',STR_PAD_LEFT);
+                    }else{
+                        $oldMaterialNumber=str_pad($oldMaterialNumber,7,'0568',STR_PAD_LEFT);
+                    }
+                    //$oldMaterialNumber=str_pad(str_replace('-','',$oldMaterialNumber),7,'0568',STR_PAD_LEFT);
                     $material = $data['api']['Material'];
                     $basicMaterial = $data['api']['BasicMaterial'];
 

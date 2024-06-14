@@ -149,7 +149,8 @@ class CRMController
                     return CRMConstant::SALESORGS[$salesres->SalesOrganisationID];
             }
         }
-        return "2141";
+        //return "2141";
+        return "";
     } 
 
 
@@ -481,6 +482,8 @@ class CRMController
 		if (isset($data['marketing_agreed'])) {
 			$CRMContact->policyAgreed = $data["marketing_agreed"];
 		}
+        // KMI POST
+        $CRMContact->agreeTerm = $data['marketing_agreed'] ? true : false;
         /*$communicationOptions = [
             "tel" => false,
             "whatsapp" => (bool)$data['whatsapp'],
