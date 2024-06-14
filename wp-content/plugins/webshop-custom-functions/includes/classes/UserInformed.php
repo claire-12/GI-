@@ -121,6 +121,10 @@ class UserInformed
             if (is_user_logged_in()){
                 $user = wp_get_current_user();
 
+                if (!empty($data["kmi_marketing_agreed"])){
+                    update_user_meta($user->ID, 'kmi_marketing_agreed', $data['kmi_marketing_agreed'] == 'yes' ? 1 : 0);
+                }
+
                 $email = $user->user_email;
                 $sms = get_user_phone_number($user->ID);
                 $whatsapp = $sms;
@@ -143,7 +147,9 @@ class UserInformed
             }
 
             if (!empty($data["kmi_marketing_agreed"])){
-                update_option($email . '_rfq_policy_agreed', 'kmi_marketing_agreed', $data['kmi_marketing_agreed']);
+                $informedData['kmi_marketing_agreed'] = $data["kmi_marketing_agreed"];
+                update_option($email . '_kmi_marketing_agreed', $data['kmi_marketing_agreed']);
+                // update_option($email . '_kmi_marketing_agreed', 'kmi_marketing_agreed', $data['kmi_marketing_agreed']);
             }
 
             $informedData['email'] = $email;
