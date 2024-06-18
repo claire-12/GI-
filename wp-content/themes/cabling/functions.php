@@ -644,4 +644,8 @@ function add_custom_tax_to_order($cart) {
 		$cart->add_fee(__('Handling Fee', 'webstore'), $custom_tax, true, 'standard');
 	}
 }
-add_action('woocommerce_checkout_create_order', 'add_custom_tax_to_order', 10, 1);
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_default_address_fields' );
+function custom_override_default_address_fields( $fields ) {
+    $fields['billing']['billing_postcode']['validate'] = array();
+    return $fields;
+}
