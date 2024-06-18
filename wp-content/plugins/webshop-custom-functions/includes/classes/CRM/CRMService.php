@@ -220,8 +220,8 @@ class CRMService
 			$value = explode("=", $valuePostData);
 			$formData[$value[0]] = $value[1];
 		}
-		$marketingAgreed = $formData['kmi_marketing_agreed'] ?? "no";
-		$data['marketing_agreed'] = !($marketingAgreed == "no");
+		$marketingAgreed = $formData['kmi_marketing_agreed'];
+		$data['marketing_agreed'] = $marketingAgreed;
         
         try {
             $data['options'] = [];
