@@ -8,7 +8,7 @@ $compounds = get_compound_product($term->term_id);
     <table class="table table-bordered product-variation-table">
         <thead>
             <tr>
-                <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
+                <?php ((false) && if ($term->slug == 'masen' || $term->slug == 'qplen')) { ?>
                     <th class="has-text-align-center" data-align="center">Part Number Format</th>
                     <th class="has-text-align-center" data-align="center">Drawing</th>
                     <th class="has-text-align-center" data-align="center">Material Specification</th>
@@ -35,7 +35,7 @@ $compounds = get_compound_product($term->term_id);
                 $link = add_query_arg('data-history', $data, home_url('/products-and-services/'));
                 ?>
                 <tr>
-                    <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
+                    <?php if ((false) && ($term->slug == 'masen' || $term->slug == 'qplen')) { ?>
                         <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_number_format', $compound) ?></td>
                         <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_drawing', $compound) ?></td>
                         <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_material_specification', $compound) ?></td>
