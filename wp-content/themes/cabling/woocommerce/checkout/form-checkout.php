@@ -28,7 +28,12 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 }
 $user_id = get_current_user_id();
 $customer_level = get_customer_level($user_id);
-$user_wp9_form = get_user_meta($user_id,'user_wp9_form_uploaded_file_url',true);
+$user_wp9_form = get_user_meta($user_id,'user_wp9_form',true);
+if( isset( $_GET['debug'] ) ){
+    var_dump('customer_level: '.$customer_level);
+    var_dump('user_wp9_form: '.$user_wp9_form);
+    var_dump('$customer_level == 1 && !$user_wp9_form: '.$customer_level == 1 && !$user_wp9_form);
+}
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout"

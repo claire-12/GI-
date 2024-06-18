@@ -5,7 +5,7 @@
 <?php
 $current_user = wp_get_current_user();
 $user_email = @$current_user->user_email ? $current_user->user_email : '';
-$kmi_marketing_agreed = get_option($user_email . '_rfq_policy_agreed');
+$kmi_marketing_agreed = get_option($user_email . '_kmi_marketing_agreed');
 ?>
 <form id="keep-informed-form" class="keep-informed-account" method="post">
     <div class="informed-categories">
@@ -125,8 +125,9 @@ $kmi_marketing_agreed = get_option($user_email . '_rfq_policy_agreed');
         </div>-->
         <?php //if (!is_user_logged_in()): ?>
             <div class="mb-3 d-flex" style="text-align: left; font-size: 12px">
-                <input type="checkbox" id="agree-term-condition" name="kmi_marketing_agreed" value="yes" required
-                <?= $kmi_marketing_agreed ? 'checked' : '';?>
+                <input type="hidden" name="kmi_marketing_agreed" value="no">
+                <input type="checkbox" id="agree-term-condition" name="kmi_marketing_agreed" value="yes"
+                <?= $kmi_marketing_agreed == 'yes' || $kmi_marketing_agreed == 1 ? 'checked' : '';?>
                 >
                 <label class="ps-2" for="agree-term-condition">
                     <?php

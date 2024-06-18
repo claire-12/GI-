@@ -167,8 +167,8 @@ class CRMService
                 $success = true;
                 $this->send_confirm_email($quote['email'], $quote, 'request_quote');
 
-                update_option($quote['email'] . '_rfq_marketing_agreed', 'rfq_marketing_agreed', $quote['rfq_marketing_agreed']);
-                update_option($quote['email'] . '_rfq_policy_agreed', 'rfq_policy_agreed', $quote['rfq_policy_agreed']);
+                update_option($quote['email'] . '_rfq_marketing_agreed',  $quote['rfq_marketing_agreed']);
+                update_option($quote['email'] . '_rfq_policy_agreed', $quote['rfq_policy_agreed']);
             }
         } catch (\Exception $e) {
             wp_mail('michael.santos@infolabix.com', 'crm_action_after_form_submission', $e->getMessage() . '###' . $e->getTraceAsString());

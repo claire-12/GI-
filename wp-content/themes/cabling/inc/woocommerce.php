@@ -353,7 +353,6 @@ function get_customer_level($userId): int
     $customer_level = get_user_meta($userId, 'customer_level', true);
     if ('true' == $has_approved || $customer_level === '2')
         $level = 2;
-
     return $level;
 }
 
@@ -409,7 +408,7 @@ function cabling_account_menu_items()
         $new_items['inventory'] = __('Inventory, Lead Time and Pricing', 'cabling');
         $new_items['shipment'] = __('Shipments Last 12 Months ', 'cabling');
     }
-    //$new_items['orders'] = __('Order history', 'cabling');
+    $new_items['orders'] = __('My Orders', 'cabling');
     //$new_items['products'] = __('Purchases', 'cabling');
 
     $new_items['quotations'] = __('My Quotes', 'cabling');

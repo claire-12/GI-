@@ -741,6 +741,8 @@
         });
     })
 
+    //Already upload w9 file so not need do this: ref to GID-1072
+    /*
     $(document).on('click', '.place-order-upload', function (e) {
         e.stopPropagation();
         e.preventDefault();
@@ -766,6 +768,7 @@
             }
         });
     })
+    */
 
 })(jQuery);
 
