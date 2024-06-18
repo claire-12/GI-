@@ -29,13 +29,27 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 $user_id = get_current_user_id();
 $customer_level = get_customer_level($user_id);
 $user_wp9_form = get_user_meta($user_id,'user_wp9_form',true);
-if( isset( $_GET['debug'] ) ){
-    var_dump('customer_level: '.$customer_level);
-    var_dump('user_wp9_form: '.$user_wp9_form);
-    var_dump('$customer_level == 1 && !$user_wp9_form: '.$customer_level == 1 && !$user_wp9_form);
-}
+$carriers = array(
+    '1017279' => 'FEDEX',
+    '1017278' => 'UPS',
+    '1017280' => 'DHL',
+    '1017281' => 'SAIA',
+    '1017284' => 'HOLLYWOOD DELIVERY',
+    '1008701' => 'FED EX FREIGHT'
+);
 ?>
-
+<style>
+    select.form-select {
+        border-width: 1px !important;
+        border-color: #ccc;
+        box-shadow: unset;
+        border-radius: 4px;
+        width: 100%;
+    }
+    .ml-2 {
+        margin-left:10px;
+    }
+</style>
 <form name="checkout" method="post" class="checkout woocommerce-checkout"
       action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
 
@@ -84,6 +98,44 @@ if( isset( $_GET['debug'] ) ){
                                             type="button"
                                             title="<?php _e('Continue', 'cabling') ?>"><?php _e('Continue', 'cabling') ?></button>
                                 </div>
+                            </div>
+                        </div>
+
+
+                        <!--single form panel-->
+                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                            <div class="multisteps-form__content">
+                                <div class="woocommerce-billing-details">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="ml-2 mb-3">
+                                                <h4>Transportation company supplier by Datwyler</h4>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type" value="fedex" checked>
+                                                    <label class="form-check-label" for="carrier_type">
+                                                        FEDEX
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 mb-3">
+                                                <h4>Transport company provided by the client</h4>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type">
+                                                    <label class="form-check-label" for="carrier_type">
+                                                        <select class="form-select mt-1" name="carrier_id">
+                                                            <?php foreach( $carriers as $carrier_id => $carrier_name ):?>
+                                                            <option value="<?= $carrier_id; ?>"><?= $carrier_name; ?></option>
+                                                            <?php endforeach;?>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-row wp-block-button block-button-black d-flex mt-4">
+                                <button class="ml-auto js-btn-next submit-shipping-step wp-element-button" type="button" title="Continue">Continue</button>
                             </div>
                         </div>
 
