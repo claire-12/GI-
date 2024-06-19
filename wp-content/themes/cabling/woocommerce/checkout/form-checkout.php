@@ -34,7 +34,19 @@ $carriers = [];
 foreach( $transportation_companies as $transportation_companie ){
     $carriers[$transportation_companie['transportation']['carrier_id']] = $transportation_companie['transportation']['carrier_name'];
 }
+
+// Ref GID-1050 - Handle carrier
+$fedex_method = 'wf_fedex_woocommerce_shipping:FEDEX_GROUND';
+$free_shipping = 'free_shipping:5';
+// Local
+// $fedex_method = 'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT';
+// $free_shipping = 'free_shipping:9';
 ?>
+<script>
+    // Ref GID-1050 - Handle carrier
+    var fedex_method = '<?= $fedex_method; ?>';
+    var free_shipping = '<?= $free_shipping; ?>';
+</script>
 <style>
     select.form-select {
         border-width: 1px !important;
@@ -58,16 +70,16 @@ foreach( $transportation_companies as $transportation_companie ){
             <div class="row">
                 <div class="col-12">
                     <div class="multisteps-form__progress">
-                        <div class="multisteps-form__progress-btn js-active" type="button" title="<?php _e('Shipping Details', 'cabling') ?>">
+                        <div id="shipping-step-progress" class="multisteps-form__progress-btn js-active" type="button" title="<?php _e('Shipping Details', 'cabling') ?>">
                             <span><?php _e('Delivery Details', 'cabling') ?></span>
                             <p class="note"><?php _e('Please note: Delivery only available to the USA', 'cabling') ?></p>
                         </div>
-                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Shipping', 'cabling') ?>"><?php _e('Shipping', 'cabling') ?></div>
-                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Billing', 'cabling') ?>"><?php _e('Billing', 'cabling') ?></div>
+                        <div id="carrier-step-progress" class="multisteps-form__progress-btn" type="button" title="<?php _e('Shipping', 'cabling') ?>"><?php _e('Shipping', 'cabling') ?></div>
+                        <div id="billing-step-progress" class="multisteps-form__progress-btn" type="button" title="<?php _e('Billing', 'cabling') ?>"><?php _e('Billing', 'cabling') ?></div>
                         <?php if($customer_level == 1 && !$user_wp9_form): ?>
-                            <div class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
+                            <div id="user_wp9_form-step-progress" class="multisteps-form__progress-btn" type="button" title="<?php _e('W9 Form', 'cabling') ?>"><?php _e('W9 Form', 'cabling') ?></div>
                         <?php endif; ?>
-                        <div class="multisteps-form__progress-btn" type="button" title="<?php _e('Order Summary', 'cabling') ?>"><?php _e('Order Summary', 'cabling') ?></div>
+                        <div id="order_review-step-progress" class="multisteps-form__progress-btn" type="button" title="<?php _e('Order Summary', 'cabling') ?>"><?php _e('Order Summary', 'cabling') ?></div>
                     </div>
                 </div>
             </div>
@@ -107,7 +119,7 @@ foreach( $transportation_companies as $transportation_companie ){
                                             <div class="ml-2 mb-3">
                                                 <h4>Transportation company supplier by Datwyler</h4>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type_fedex" value="fedex" checked>
+                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type_fedex" value="<?= $fedex_method; ?>" checked>
                                                     <label class="form-check-label" for="carrier_type_fedex">
                                                         FEDEX
                                                     </label>
@@ -117,7 +129,7 @@ foreach( $transportation_companies as $transportation_companie ){
                                             <div class="ml-2 mb-3">
                                                 <h4>Transport company provided by the client</h4>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type_free">
+                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type_free" value="<?= $free_shipping; ?>">
                                                     <label class="form-check-label" for="carrier_type_free">
                                                         <select class="form-select mt-1" name="carrier_id">
                                                             <?php foreach( $carriers as $carrier_id => $carrier_name ):?>

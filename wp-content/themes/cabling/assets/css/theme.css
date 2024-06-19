@@ -3968,6 +3968,12 @@ table.tablepress-id-52 tr .column-7 {
     font-size: 12px;
 }
 /* #ref GID-1050 */
-tr.woocommerce-shipping-totals.shipping {
+body.woocommerce-cart tr.woocommerce-shipping-totals.shipping {
     display: none;
+}
+body.woocommerce-checkout #shipping_method input.shipping_method:not(:checked)~ label {
+    display: none !important;
+}
+body.woocommerce-checkout #shipping_method .shipping_method {
+    display: none !important;
 }

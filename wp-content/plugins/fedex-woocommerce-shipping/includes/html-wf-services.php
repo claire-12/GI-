@@ -1,0 +1,98 @@
+<tr valign="top" id="service_options" class="fedex_rates_tab">
+	<td class="titledesc" colspan="2" style="padding-left:0px">
+	<strong><?php _e( 'Services', 'ph-fedex-woocommerce-shipping' ); ?></strong><br><br>
+
+		<p><strong style="color:red">*</strong>&nbsp;&nbsp;&nbsp;<?php _e( '<b>FedEx Ground®</b> - used to ship to Commercial/Business addresses', 'ph-fedex-woocommerce-shipping') ?><br><strong style="color:red">**</strong>&nbsp;<?php _e( '<b>FedEx Home Delivery®</b> - a ground service used to ship to Residential addresses', 'ph-fedex-woocommerce-shipping') ?></p>
+		<br>
+		<table class="fedex_services widefat">
+			<thead>
+				<th class="sort">&nbsp;</th>
+				<th><?php _e( 'Service Code', 'ph-fedex-woocommerce-shipping' ); ?></th>
+				<th><?php _e( 'Name', 'ph-fedex-woocommerce-shipping' ); ?></th>
+				<th>
+					<label for="fedexSelectAll" style="width: 100px;
+    height: 30px;">
+						<input type="checkbox" id="fedexSelectAll" style="float: left; margin: 3px 10px 0 -2px;"/><?php _e( 'Enabled', 'ph-fedex-woocommerce-shipping' ); ?>
+					</label>
+				</th>
+				<th><?php echo sprintf( __( 'Price Adjustment (%s)', 'ph-fedex-woocommerce-shipping' ), get_woocommerce_currency_symbol() ); ?></th>
+				<th><?php _e( 'Price Adjustment (%)', 'ph-fedex-woocommerce-shipping' ); ?></th>
+			</thead>
+			<tbody>
+				<?php
+					$sort = 0;
+					$this->ordered_services = array();
+
+					$this->custom_services = $this->get_option( 'services', array( ));
+
+					foreach ( $this->services as $code => $name ) {
+
+						if ( isset( $this->custom_services[ $code ]['order'] ) ) {
+							$sort = $this->custom_services[ $code ]['order'];
+						}
+
+						while ( isset( $this->ordered_services[ $sort ] ) )
+							$sort++;
+
+						$this->ordered_services[ $sort ] = array( $code, $name );
+
+						$sort++;
+					}
+
+					ksort( $this->ordered_services );
+
+					foreach ( $this->ordered_services as $value ) {
+						$code = $value[0];
+						$name = $value[1];
+						?>
+						<tr>
+							<td class="sort"><input type="hidden" class="order" name="fedex_service[<?php echo $code; ?>][order]" value="<?php echo isset( $this->custom_services[ $code ]['order'] ) ? $this->custom_services[ $code ]['order'] : ''; ?>" /></td>
+							<td>
+								<strong style="color:red">
+								<?php
+
+									if ($code == 'FEDEX_GROUND') {
+
+										echo '*';
+									} else if ( $code == 'GROUND_HOME_DELIVERY' ) {
+
+										echo '**';
+									}
+								?>
+								</strong>
+								<strong><?php echo $code; ?></strong>
+							</td>
+							<td><input type="text" name="fedex_service[<?php echo $code; ?>][name]" placeholder="<?php echo $name; ?>" value="<?php echo isset( $this->custom_services[ $code ]['name'] ) ? $this->custom_services[ $code ]['name'] : ''; ?>" size="35" /></td>
+							<td><input type="checkbox" name="fedex_service[<?php echo $code; ?>][enabled]" class="checkBoxClass" <?php checked( ( ! isset( $this->custom_services[ $code ]['enabled'] ) || ! empty( $this->custom_services[ $code ]['enabled'] ) ), true ); ?> size="3" /></td>
+							<td><input type="number" step="any" style="padding-left: 6px;padding-right: 2px; width: 168px"  name="fedex_service[<?php echo $code; ?>][adjustment]" placeholder="0" value="<?php echo isset( $this->custom_services[ $code ]['adjustment'] ) ? $this->custom_services[ $code ]['adjustment'] : ''; ?>"/></td>
+							<td><input type="number" step="any" style="padding-left: 6px;padding-right: 2px; width: 168px; margin-right:5px; "  name="fedex_service[<?php echo $code; ?>][adjustment_percent]" placeholder="0"  value="<?php echo isset( $this->custom_services[ $code ]['adjustment_percent'] ) ? $this->custom_services[ $code ]['adjustment_percent'] : ''; ?>"/></td>
+						</tr>
+						<?php
+					}
+				?>
+			</tbody>
+		</table>
+		<script type="text/javascript">	
+
+			jQuery(document).ready(function () {
+
+				if (jQuery('.checkBoxClass:checked').length == jQuery('.checkBoxClass').length) {		
+					jQuery("#fedexSelectAll").prop("checked",true);
+				}
+				jQuery("#fedexSelectAll").click(function () {
+					jQuery(".checkBoxClass").prop('checked', jQuery(this).prop('checked'));
+				});
+
+				jQuery(".checkBoxClass").change(function(){
+					if (!jQuery(this).prop("checked")){
+						jQuery("#fedexSelectAll").prop("checked",false);
+					}
+					if (jQuery('.checkBoxClass:checked').length == jQuery('.checkBoxClass').length) {
+						jQuery("#fedexSelectAll").prop("checked",true);
+					}
+				});
+			});
+
+		</script>
+	</td>
+</tr>

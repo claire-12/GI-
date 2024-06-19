@@ -565,12 +565,12 @@
         }
         return false;
     })
-    // Ref GID-1050 - Handle carrier
-    var fedex_method = 'wf_fedex_woocommerce_shipping:FEDEX_GROUND';
-    var free_shipping = 'free_shipping:5';
+    
     $(document).on('click', '.submit-carrier-step', function () {
         $('.multisteps-form').find('.woo-notice').remove();
         $('.multisteps-form__panel').removeClass('js-active');
+        $('.multisteps-form__progress-btn').removeClass('js-active');
+        $('#carrier-step-progress').addClass('js-active');
         $('#carrier-step').addClass('js-active');
         // Set default fedex method
         updateShippingMethod(fedex_method);
@@ -652,6 +652,14 @@
             success: function (response) {
                 hideLoading();
                 if (response.success) {
+                    // SET selected shipping method
+                    var selectedShipping = $('input[name="carrier_type"]:checked').val();
+                    $('body').find('.shipping_method').prop('checked',false);
+                    $('body').find('.shipping_method[value="'+selectedShipping+'"]').prop('checked',true);
+                    $('body').find('.shipping_method[name="shipping_method[0]"]').val(selectedShipping);
+                    $('body').trigger('update_checkout');
+
+                    
                     const rawData = response.data;
                     let status = '';
                     let flag = 1;
@@ -682,7 +690,6 @@
                                 $('.stock-total-checkout').text('Out of Stock: We estimate to have the products ready for shipping in the next 7 days.');
                             }
                         });
-                        //$('body').trigger('update_checkout');
                     }
                 }
             },
@@ -718,7 +725,7 @@
         $('.multisteps-form__progress-btn').removeClass('js-active');
         $('.multisteps-form__panel').removeClass('js-active');
 
-        $('.multisteps-form__progress-btn:nth-child(4)').addClass('js-active');
+        $('#order_review-step-progress').addClass('js-active');
         $('#order_review-step').addClass('js-active');
         $.ajax({
             url: CABLING.ajax_url,
@@ -799,8 +806,10 @@ function show_checkout_shipping() {
     $('.multisteps-form__panel').removeClass('js-active');
 
     if($('#user_wp9_form-step').length){
+        $('#user_wp9_form-step-progress').addClass('js-active');
         $('#user_wp9_form-step').addClass('js-active');
     }else{
+        $('#order_review-step-progress').addClass('js-active');
         $('#order_review-step').addClass('js-active');
     }
 }
@@ -811,6 +820,7 @@ function show_checkout_billing() {
     $('.multisteps-form__panel').removeClass('js-active');
 
     // $('.multisteps-form__progress-btn:nth-child(3)').addClass('js-active');
+    $('#billing-step-progress').addClass('js-active');
     $('#billing-step').addClass('js-active');
 }
 
