@@ -79,7 +79,7 @@ $carriers = array(
                 <div class="col-12">
                     <div class="multisteps-form__form" id="customer_details">
                         <!--single form panel-->
-                        <div class="multisteps-form__panel js-active" data-animation="scaleIn">
+                        <div id="shipping-step" class="multisteps-form__panel js-active" data-animation="scaleIn">
                             <div class="multisteps-form__content shipping-address-content">
                                 <div class="row">
                                     <div class="col-12">
@@ -94,34 +94,34 @@ $carriers = array(
                                     </div>-->
                                 </div>
                                 <div class="button-row wp-block-button block-button-black d-flex mt-4">
-                                    <button class="ml-auto js-btn-next submit-shipping-step wp-element-button"
+                                    <button class="ml-auto js-btn-next submit-carrier-step wp-element-button"
                                             type="button"
                                             title="<?php _e('Continue', 'cabling') ?>"><?php _e('Continue', 'cabling') ?></button>
                                 </div>
                             </div>
                         </div>
 
-
                         <!--single form panel-->
-                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                        <div id="carrier-step" class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">
-                                <div class="woocommerce-billing-details">
+                                <div class="woocommerce-carrier-details">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="ml-2 mb-3">
                                                 <h4>Transportation company supplier by Datwyler</h4>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type" value="fedex" checked>
-                                                    <label class="form-check-label" for="carrier_type">
+                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type_fedex" value="fedex" checked>
+                                                    <label class="form-check-label" for="carrier_type_fedex">
                                                         FEDEX
                                                     </label>
                                                 </div>
                                             </div>
+                                            <?php if($customer_level == 2): ?>
                                             <div class="ml-2 mb-3">
                                                 <h4>Transport company provided by the client</h4>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type">
-                                                    <label class="form-check-label" for="carrier_type">
+                                                    <input class="form-check-input" type="radio" name="carrier_type" id="carrier_type_free">
+                                                    <label class="form-check-label" for="carrier_type_free">
                                                         <select class="form-select mt-1" name="carrier_id">
                                                             <?php foreach( $carriers as $carrier_id => $carrier_name ):?>
                                                             <option value="<?= $carrier_id; ?>"><?= $carrier_name; ?></option>
@@ -130,17 +130,18 @@ $carriers = array(
                                                     </label>
                                                 </div>
                                             </div>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="button-row wp-block-button block-button-black d-flex mt-4">
-                                <button class="ml-auto js-btn-next submit-shipping-step wp-element-button" type="button" title="Continue">Continue</button>
+                                <button class="ml-auto js-btn-next submit-billing-step wp-element-button" type="button" title="Continue">Continue</button>
                             </div>
                         </div>
 
                         <!--single form panel-->
-                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                        <div id="billing-step" class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">
                                 <div class="woocommerce-billing-details">
                                     <?php do_action('woocommerce_checkout_billing'); ?>
@@ -150,7 +151,7 @@ $carriers = array(
 
                         <?php if($customer_level == 1 && !$user_wp9_form): ?>
                         <!--single form panel-->
-                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                        <div id="user_wp9_form-step" class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">
                                 <?php
                                     $gi_wp_form_9 = apply_filters('woocommerce_checkout_gi_add_wp_form_9', null);
@@ -164,7 +165,7 @@ $carriers = array(
                         <?php endif; ?>
 
                         <!--single form panel-->
-                        <div class="multisteps-form__panel" data-animation="scaleIn">
+                        <div id="order_review-step" class="multisteps-form__panel" data-animation="scaleIn">
                             <div class="multisteps-form__content">
                                 <?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
 

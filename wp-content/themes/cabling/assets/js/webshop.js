@@ -556,7 +556,7 @@
         const elm = $(this);
         thmaf_address.populate_selected_address(elm, elm.attr('data-type'), elm.attr('data-id'));
     })
-    $(document).on('click', '.submit-shipping-step', function () {
+    $(document).on('click', '.submit-billing-step', function () {
         $('.multisteps-form').find('.woo-notice').remove();
         if ($('input[name=select-shipping-address]:checked').length) {
             show_checkout_billing();
@@ -565,6 +565,25 @@
         }
         return false;
     })
+    // Ref GID-1050 - Handle carrier
+    var fedex_method = 'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT';
+    $(document).on('click', '.submit-carrier-step', function () {
+        $('.multisteps-form').find('.woo-notice').remove();
+        $('.multisteps-form__panel').removeClass('js-active');
+        $('#carrier-step').addClass('js-active');
+        // Set default fedex method
+        updateShippingMethod(fedex_method);
+        return false;
+    })
+    $(document).on('click', '#carrier_type_fedex', function () {
+        updateShippingMethod(fedex_method);
+    })
+    $(document).on('click', '#carrier_type_free', function () {
+        updateShippingMethod('free_shipping:9');
+    })
+    // End GID-1050
+
+    // Handle billing-step next
     $(document).on('click', '.continue-to-order', function () {
         $('.woocommerce-billing-details').find('.woo-notice').remove();
 
@@ -699,7 +718,7 @@
         $('.multisteps-form__panel').removeClass('js-active');
 
         $('.multisteps-form__progress-btn:nth-child(4)').addClass('js-active');
-        $('.multisteps-form__panel:nth-child(4)').addClass('js-active');
+        $('#order_review-step').addClass('js-active');
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
@@ -778,8 +797,11 @@ function show_checkout_shipping() {
     $('.multisteps-form__progress-btn').removeClass('js-active');
     $('.multisteps-form__panel').removeClass('js-active');
 
-    $('.multisteps-form__progress-btn:nth-child(3)').addClass('js-active');
-    $('.multisteps-form__panel:nth-child(3)').addClass('js-active');
+    if($('#user_wp9_form-step').length){
+        $('#user_wp9_form-step').addClass('js-active');
+    }else{
+        $('#order_review-step').addClass('js-active');
+    }
 }
 
 function show_checkout_billing() {
@@ -787,8 +809,8 @@ function show_checkout_billing() {
     $('.multisteps-form__progress-btn').removeClass('js-active');
     $('.multisteps-form__panel').removeClass('js-active');
 
-    $('.multisteps-form__progress-btn:nth-child(2)').addClass('js-active');
-    $('.multisteps-form__panel:nth-child(2)').addClass('js-active');
+    // $('.multisteps-form__progress-btn:nth-child(3)').addClass('js-active');
+    $('#billing-step').addClass('js-active');
 }
 
 function sortList(element, name, order) {
@@ -1210,4 +1232,24 @@ if (jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').len
     let contact_marketing_agreed_html = jQuery('.contact_marketing_agreed_html p').html();
     jQuery('.contact_marketing_agreed_html').remove();
     jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"] .wpcf7-list-item-label').html(contact_marketing_agreed_html);
+}
+// Trigger AJAX update of shipping method
+function updateShippingMethod(methodId) {
+    showLoading()
+    var data = {
+        'shipping_method': methodId,
+        'action': 'cabling_update_shipping_method'
+    };
+    jQuery.ajax({
+        type: 'POST',
+        url: wc_checkout_params.ajax_url,
+        data: data,
+        success: function (response) {
+            hideLoading()
+            console.log(response);
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
 }

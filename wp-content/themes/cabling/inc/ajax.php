@@ -1278,3 +1278,21 @@ function cabling_get_api_ajax_callback_checkout()
 
 add_action('wp_ajax_cabling_get_api_ajax_checkout', 'cabling_get_api_ajax_callback_checkout');
 add_action('wp_ajax_nopriv_cabling_get_api_ajax_checkout', 'cabling_get_api_ajax_callback_checkout');
+
+function cabling_update_shipping_method() {
+    // Get the selected shipping method
+    $shipping_method = sanitize_text_field($_POST['shipping_method']);
+    // Update the shipping method in the session
+    WC()->session->set('chosen_shipping_methods', array($shipping_method));
+    // Recalculate the cart totals
+    WC()->cart->calculate_totals();
+    // Send a response back
+    $response = array(
+        'success' => true,
+        'data' => wc_price(WC()->cart->get_shipping_total()) // Return the updated shipping total
+    );
+    wp_send_json($response);
+    wp_die();
+}
+add_action('wp_ajax_cabling_update_shipping_method', 'cabling_update_shipping_method');
+add_action('wp_ajax_nopriv_cabling_update_shipping_method', 'cabling_update_shipping_method');
