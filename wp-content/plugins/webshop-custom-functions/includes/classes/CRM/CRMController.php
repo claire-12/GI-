@@ -482,6 +482,7 @@ class CRMController
 		$CRMContact->policyAgreed = $data["marketing_agreed"] == 'yes' ? true : false;
         // KMI POST
         $CRMContact->agreeTerm = $data['marketing_agreed'] == 'yes' ? true : false;
+        $CRMContact->marketingAgreed = $data['marketing_agreed'] == 'yes' ? true : false;
         /*$communicationOptions = [
             "tel" => false,
             "whatsapp" => (bool)$data['whatsapp'],

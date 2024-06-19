@@ -117,7 +117,7 @@ class CRMLead
 		$contact["Segment"] = "GI";  // Always send
 		$contact["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
 
-		$contact["MarketingConsent_KUT"] = $crmcontact->agreeTerm;
+		$contact["MarketingConsent_KUT"] = $crmcontact->marketingAgreed;
 
 		$contact["Note"] = $comments;
 		if (empty($prodofinterest) || ($prodofinterest == "Array")) {
@@ -338,7 +338,7 @@ class CRMLead
 			$lead["LeadMarketingPermissionCommTypePermission"] = $options;
 		}
 
-		$lead["MarketingConsent_KUT"] = $crmcontact->agreeTerm;
+		$lead["MarketingConsent_KUT"] = $crmcontact->marketingAgreed;
 
 
 		$body = json_encode($lead);
