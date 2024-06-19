@@ -345,7 +345,6 @@ class CRMController
             $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
             $crmcontact->fillContactFromCRMContactObject($contact); // fill the contact with SAP CRM data
         }
-
         $lead = new CRMLead();
         $body = $lead->createKMILeadBody($crmcontact, $communicationoptions, $itemoptions);
         $url = $this->baseURL . "LeadCollection";

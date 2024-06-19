@@ -222,7 +222,10 @@ class CRMService
 		}
 		$marketingAgreed = $formData['kmi_marketing_agreed'];
 		$data['marketing_agreed'] = $marketingAgreed;
-        
+        if( empty($data['marketing_agreed']) ){
+            $data['marketing_agreed'] = 'yes';
+        }
+
         try {
             $data['options'] = [];
             if (!empty($data['category'])) {
