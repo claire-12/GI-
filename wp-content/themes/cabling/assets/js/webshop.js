@@ -566,7 +566,8 @@
         return false;
     })
     // Ref GID-1050 - Handle carrier
-    var fedex_method = 'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT';
+    var fedex_method = 'wf_fedex_woocommerce_shipping:FEDEX_GROUND';
+    var free_shipping = 'free_shipping:5';
     $(document).on('click', '.submit-carrier-step', function () {
         $('.multisteps-form').find('.woo-notice').remove();
         $('.multisteps-form__panel').removeClass('js-active');
@@ -579,7 +580,7 @@
         updateShippingMethod(fedex_method);
     })
     $(document).on('click', '#carrier_type_free', function () {
-        updateShippingMethod('free_shipping:9');
+        updateShippingMethod(free_shipping);
     })
     // End GID-1050
 

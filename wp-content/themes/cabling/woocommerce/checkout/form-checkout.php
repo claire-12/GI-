@@ -29,14 +29,11 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 $user_id = get_current_user_id();
 $customer_level = get_customer_level($user_id);
 $user_wp9_form = get_user_meta($user_id,'user_wp9_form',true);
-$carriers = array(
-    '1017279' => 'FEDEX',
-    '1017278' => 'UPS',
-    '1017280' => 'DHL',
-    '1017281' => 'SAIA',
-    '1017284' => 'HOLLYWOOD DELIVERY',
-    '1008701' => 'FED EX FREIGHT'
-);
+$transportation_companies = get_field('transportation_companies','option');
+$carriers = [];
+foreach( $transportation_companies as $transportation_companie ){
+    $carriers[$transportation_companie['transportation']['carrier_id']] = $transportation_companie['transportation']['carrier_name'];
+}
 ?>
 <style>
     select.form-select {

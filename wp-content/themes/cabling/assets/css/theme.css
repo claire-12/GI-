@@ -3967,3 +3967,7 @@ table.tablepress-id-52 tr .column-7 {
     margin-left: 0;
     font-size: 12px;
 }
+/* #ref GID-1050 */
+tr.woocommerce-shipping-totals.shipping {
+    display: none;
+}
