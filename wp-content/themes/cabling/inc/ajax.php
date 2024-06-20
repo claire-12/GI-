@@ -1286,6 +1286,7 @@ function cabling_update_shipping_method() {
     WC()->session->set( 'chosen_shipping_methods', array($shipping_method) );
     if (strpos($shipping_method, "fedex") !== false) {
         WC()->session->set('allow_fedex_calculate_shipping', 1);
+        WC()->cart->calculate_totals();
     }else{
         WC()->session->set('allow_fedex_calculate_shipping', 0);
     }

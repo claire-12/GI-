@@ -1246,7 +1246,6 @@ if (jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').len
 }
 // Trigger AJAX update of shipping method
 function updateShippingMethod(methodId) {
-    showLoading()
     var data = {
         'shipping_method': methodId,
         'action': 'cabling_update_shipping_method'
@@ -1256,7 +1255,6 @@ function updateShippingMethod(methodId) {
         url: wc_checkout_params.ajax_url,
         data: data,
         success: function (response) {
-            hideLoading()
             console.log(response);
         },
         error: function (error) {

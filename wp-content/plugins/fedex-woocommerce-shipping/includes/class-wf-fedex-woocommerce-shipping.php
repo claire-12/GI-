@@ -3155,12 +3155,21 @@ class wf_fedex_woocommerce_shipping_method extends WC_Shipping_Method {
 	}
 
 	public function calculate_shipping( $package = array() ) {
+		$keys = array_keys($package['contents']);
+		$cartKey = isset($keys[0]) ? $keys[0] : '';
+
 		// #GID-1050 only calculate_shipping when website allow
 		//not calculate at cart page and only final step at checkout page
 		if( is_cart() ){
 			WC()->session->set('allow_fedex_calculate_shipping',0);
 		}
 		if( !WC()->session->get('allow_fedex_calculate_shipping') || is_cart()){
+			return;
+		}
+		// If alrady add_found_rates for cartKey we dont need handle anymore
+		if( WC()->session->get('found_rates_'.$cartKey) ){
+			$this->found_rates =  WC()->session->get('found_rates_'.$cartKey);
+			$this->add_found_rates();
 			return;
 		}
 		// Clear rates
@@ -3278,7 +3287,7 @@ class wf_fedex_woocommerce_shipping_method extends WC_Shipping_Method {
 				}
 			}
 		}
-
+		WC()->session->set('found_rates_'.$cartKey,$this->found_rates);
 		$this->add_found_rates();		
 	}
 
