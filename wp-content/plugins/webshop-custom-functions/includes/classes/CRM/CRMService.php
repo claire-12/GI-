@@ -90,9 +90,9 @@ class CRMService
     public function crm_action_after_form_submission($result, $submission)
     {
         $posted_data = $submission->get_posted_data();
-		if( isset($posted_data['acceptance-752']) ){
-			$posted_data['contact_marketing_agreed'] = $posted_data['acceptance-752'];
-		}
+        if( isset($posted_data['acceptance-752']) ){
+            $posted_data['contact_marketing_agreed'] = $posted_data['acceptance-752'];
+        }
         if( !isset($posted_data['contact_marketing_agreed'][0]) ){
             $posted_data['contact_marketing_agreed'][0] = 0;
         }
@@ -106,7 +106,7 @@ class CRMService
 
                     $user_id = get_current_user_id();
                     if ($user_id) {
-						update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed'][0]);
+                        update_user_meta($user_id, 'contact_policy_agreed', $posted_data['contact_policy_agreed'][0]);
                         update_user_meta($user_id, 'contact_marketing_agreed', $posted_data['contact_marketing_agreed'][0]);
 
                         $lead = $this->requestContactCRM($posted_data);
@@ -202,10 +202,10 @@ class CRMService
                 );
                 $this->saveCRMData($data['user_email'], $dataCRM);
 
-				$user = get_user_by('email', $data['user_email']);
-				if ($user) {
-					update_user_meta($user->ID, 'rfq_marketing_agreed', $data["agree-term-condition"] == "on" ? 1 : 0);
-				}
+                $user = get_user_by('email', $data['user_email']);
+                if ($user) {
+                    update_user_meta($user->ID, 'rfq_marketing_agreed', $data["agree-term-condition"] == "on" ? 1 : 0);
+                }
             }
         } catch (Exception $e) {
             wp_mail('michael.santos@infolabix.com', 'crm_action_after_gi_created_new_customer', $e->getMessage() . '###' . $e->getTraceAsString());
@@ -214,15 +214,19 @@ class CRMService
 
     public function crm_action_after_saved_user_keep_informed($data)
     {
-		$postData = explode("&", $_POST['data']);
-		$formData = [];
-		foreach ($postData as $keyPostData => $valuePostData) {
-			$value = explode("=", $valuePostData);
-			$formData[$value[0]] = $value[1];
-		}
-		$marketingAgreed = $formData['kmi_marketing_agreed'];
-		$data['marketing_agreed'] = $marketingAgreed;
-        
+        $postData = explode("&", $_POST['data']);
+        $formData = [];
+        foreach ($postData as $keyPostData => $valuePostData) {
+            $value = explode("=", $valuePostData);
+            $formData[$value[0]] = $value[1];
+        }
+        $marketingAgreed = $formData['kmi_marketing_agreed'];
+        $data['marketing_agreed'] = $marketingAgreed;
+        if( empty($data['marketing_agreed']) ){
+            $email = $data['email'];
+            $data['marketing_agreed'] = get_option($email . '_kmi_marketing_agreed');
+        }
+
         try {
             $data['options'] = [];
             if (!empty($data['category'])) {
