@@ -246,10 +246,10 @@ class CRMLead
 				case "parco":
 					$rfq["OwnerPartyID"] = "8000000821";  // PARCO
 					break;
-				case "doublee":
+				case "double-e":
 					$rfq["OwnerPartyID"] = "8000000822";  // Double E
 					break;
-				case "olympian":
+				case "olympian-machine":
 					//$rfq["OwnerPartyID"] = "8000000823";  // Olympian
 					$rfq["OwnerPartyID"] = "8000000732";  // Olympian
 					break;
@@ -281,10 +281,10 @@ class CRMLead
 				case "parco":
 					$lead["OwnerPartyID"] = "8000000821";  // PARCO
 					break;
-				case "doublee":
+				case "double-e":
 					$lead["OwnerPartyID"] = "8000000822";  // Double E
 					break;
-				case "olympian":
+				case "olympian-machine":
 					$lead["OwnerPartyID"] = "8000000823";  // Olympian
 					break;
 			}

@@ -515,3 +515,12 @@ if (!function_exists('cabling_site_icon_meta_tags')) :
 		}
 	}
 endif;
+
+// Add page id into session brand
+function set_brand_id_session() {
+    if (is_page()) {
+        $page_id = get_queried_object_id();
+        $_SESSION['brandId'] = $page_id;
+    }
+}
+add_action('wp', 'set_brand_id_session');
