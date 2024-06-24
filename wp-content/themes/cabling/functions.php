@@ -608,6 +608,7 @@ function attach_id_cabling_order( $order_id, $order ){
 add_action( 'woocommerce_new_order', 'attach_id_cabling_order', 10, 2 );
 
 // display the file w9 form in the order admin panel
+/*
 function display_file_w9_order_data_in_admin( $order ){
 	$attach_id_cabling = get_post_meta( $order->id, 'attach_id_cabling', true );
 	if(!empty($attach_id_cabling)){
@@ -620,7 +621,7 @@ function display_file_w9_order_data_in_admin( $order ){
 	}
 }
 add_action( 'woocommerce_admin_order_data_after_order_details', 'display_file_w9_order_data_in_admin' );
-
+*/
 // Function to add custom tax to cart
 function add_custom_tax_fee() {
     if (is_admin() && !defined('DOING_AJAX')) {
@@ -649,3 +650,11 @@ function custom_override_default_address_fields( $fields ) {
     $fields['billing']['billing_postcode']['validate'] = array();
     return $fields;
 }
+// Add page id into session brand
+function set_brand_id_session() {
+    if (is_page()) {
+        $page_id = get_queried_object_id();
+        $_SESSION['brandId'] = $page_id;
+    }
+}
+add_action('wp', 'set_brand_id_session');

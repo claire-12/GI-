@@ -14,6 +14,7 @@
         <form id="form-request-quote" class="form-request-quote <?php echo $is_user_logged_in ? '' : 'hidden' ?>"
               action="<?php echo home_url(); ?>" method="post"
               enctype="multipart/form-data">
+            <input type="hidden" name="brandId" value="<?= $_SESSION['brandId'];?>">
             <?php if (!$is_user_logged_in): ?>
                 <div class="login-wrapper-non d-flex justify-content-center mb-5" style="opacity: 0">
                     <a style="color: inherit" href="<?php echo wc_get_account_endpoint_url('') ?>">

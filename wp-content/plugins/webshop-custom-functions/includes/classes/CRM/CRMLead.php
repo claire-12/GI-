@@ -237,61 +237,61 @@ class CRMLead
 
         $rfq["OwnerPartyID"] = "";  // no brand defined by default
 
-        if ($crmsalesquote->getBrand() != "") {
-            switch (strtolower($crmsalesquote->getBrand())) {
-                case "tst":
-                    //$rfq["OwnerPartyID"] = "8000000820";  // TST
-                    $rfq["OwnerPartyID"] = "8000000734";  // TST
-                    break;
-                case "parco":
-                    $rfq["OwnerPartyID"] = "8000000821";  // PARCO
-                    break;
-                case "doublee":
-                    $rfq["OwnerPartyID"] = "8000000822";  // Double E
-                    break;
-                case "olympian":
-                    //$rfq["OwnerPartyID"] = "8000000823";  // Olympian
-                    $rfq["OwnerPartyID"] = "8000000732";  // Olympian
-                    break;
-            }
-        }
-        if ($rfq["OwnerPartyID"] == "" && $product->product == "005") {
-            $rfq["OwnerPartyID"] = '8000000821';
-        }
+		if ($crmsalesquote->getBrand() != "") {
+			switch (strtolower($crmsalesquote->getBrand())) {
+				case "tst":
+					//$rfq["OwnerPartyID"] = "8000000820";  // TST
+					$rfq["OwnerPartyID"] = "8000000734";  // TST
+					break;
+				case "parco":
+					$rfq["OwnerPartyID"] = "8000000821";  // PARCO
+					break;
+				case "double-e":
+					$rfq["OwnerPartyID"] = "8000000822";  // Double E
+					break;
+				case "olympian-machine":
+					//$rfq["OwnerPartyID"] = "8000000823";  // Olympian
+					$rfq["OwnerPartyID"] = "8000000732";  // Olympian
+					break;
+			}
+		}
+		if ($rfq["OwnerPartyID"] == "" && $product->product == "005") {
+			$rfq["OwnerPartyID"] = '8000000821';
+		}
 
         return json_encode($rfq);
     }
 
-    /***
-     * Create lead Marketing body based on contact details
-     */
-    public function createMarketingLeadBody($crmcontact, $brand = "")
-    {
-        $lead = $contactcrm->toArray();
-        $lead["LeadLifecycle_KUT"] = "111";    // Marketing Qualified Lead
-        $lead["LeadType_KUT"] = "105";         // GI Lead – always send this data
-        $lead["Segment"] = "GI";               // GI Business – always send this data
-        $lead["OriginTypeCode"] = "Z11";        // Website – always send this data
-        $lead["OwnerPartyID"] = "8000000770";  // no brand defined by default
-        if ($brand != "") {
-            switch (strtolower($brand)) {
-                case "tst":
-                    $lead["OwnerPartyID"] = "8000000820";  // TST
-                    break;
-                case "parco":
-                    $lead["OwnerPartyID"] = "8000000821";  // PARCO
-                    break;
-                case "doublee":
-                    $lead["OwnerPartyID"] = "8000000822";  // Double E
-                    break;
-                case "olympian":
-                    $lead["OwnerPartyID"] = "8000000823";  // Olympian
-                    break;
-            }
-        }
-        $body = json_encode($lead);
-        return $body;
-    }
+	/***
+	 * Create lead Marketing body based on contact details
+	 */
+	public function createMarketingLeadBody($crmcontact, $brand = "")
+	{
+		$lead = $crmcontact->toArray();
+		$lead["LeadLifecycle_KUT"] = "111";    // Marketing Qualified Lead
+		$lead["LeadType_KUT"] = "105";         // GI Lead – always send this data
+		$lead["Segment"] = "GI";               // GI Business – always send this data
+		$lead["OriginTypeCode"] = "Z11";        // Website – always send this data
+		$lead["OwnerPartyID"] = "8000000770";  // no brand defined by default
+		if ($brand != "") {
+			switch (strtolower($brand)) {
+				case "tst":
+					$lead["OwnerPartyID"] = "8000000820";  // TST
+					break;
+				case "parco":
+					$lead["OwnerPartyID"] = "8000000821";  // PARCO
+					break;
+				case "double-e":
+					$lead["OwnerPartyID"] = "8000000822";  // Double E
+					break;
+				case "olympian-machine":
+					$lead["OwnerPartyID"] = "8000000823";  // Olympian
+					break;
+			}
+		}
+		$body = json_encode($lead);
+		return $body;
+	}
 
     /***
      * Create KMI lead body based on contact details, and list of communications and subscriptions
