@@ -2392,3 +2392,10 @@ function custom_change_cart_item_prices( $cart ) {
         }
     }
 }
+
+
+add_action('woocommerce_checkout_update_order_review', 'cabling_woocommerce_checkout_update_order_review');
+function cabling_woocommerce_checkout_update_order_review($posted_data){
+    $chosen_shipping_methods = WC()->session->get( 'chosen_shipping_methods');
+    $_POST['shipping_method'] = $chosen_shipping_methods;
+}

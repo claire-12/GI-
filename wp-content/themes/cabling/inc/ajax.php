@@ -1283,6 +1283,10 @@ add_action('wp_ajax_nopriv_cabling_get_api_ajax_checkout', 'cabling_get_api_ajax
 
 function cabling_update_shipping_method() {
     $shipping_method = sanitize_text_field($_POST['shipping_method']);
+    if(!$shipping_method){
+        $shipping_method = WC()->session->get( 'chosen_shipping_methods');
+        $shipping_method = $shipping_method[0];
+    }
     WC()->session->set( 'chosen_shipping_methods', array($shipping_method) );
     if (strpos($shipping_method, "fedex") !== false) {
         WC()->session->set('allow_fedex_calculate_shipping', 1);

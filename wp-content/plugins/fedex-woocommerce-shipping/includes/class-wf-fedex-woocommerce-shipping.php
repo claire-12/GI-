@@ -3160,12 +3160,7 @@ class wf_fedex_woocommerce_shipping_method extends WC_Shipping_Method {
 
 		// #GID-1050 only calculate_shipping when website allow
 		//not calculate at cart page and only final step at checkout page
-		if( is_cart() ){
-			WC()->session->set('allow_fedex_calculate_shipping',0);
-		}
-		if( !WC()->session->get('allow_fedex_calculate_shipping') || is_cart()){
-			return;
-		}
+	
 		// If alrady add_found_rates for cartKey we dont need handle anymore
 		if( WC()->session->get('found_rates_'.$cartKey) ){
 			$this->found_rates =  WC()->session->get('found_rates_'.$cartKey);

@@ -580,8 +580,11 @@
         updateShippingMethod(fedex_method);
     })
     $(document).on('click', '#carrier_type_free', function () {
-        updateShippingMethod(free_shipping);
+        updateShippingMethod(fedex_method);
     })
+    // if( $('body').hasClass('woocommerce-checkout') ){
+    //     updateShippingMethod(fedex_method);
+    // }
     // End GID-1050
 
     // Handle billing-step next
@@ -1255,7 +1258,7 @@ function updateShippingMethod(methodId) {
         url: wc_checkout_params.ajax_url,
         data: data,
         success: function (response) {
-            console.log(response);
+            jQuery('body').trigger('update_checkout');
         },
         error: function (error) {
             console.error(error);

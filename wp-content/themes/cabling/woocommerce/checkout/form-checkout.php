@@ -41,6 +41,8 @@ $free_shipping = 'free_shipping:5';
 // Local
 // $fedex_method = 'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT';
 // $free_shipping = 'free_shipping:9';
+
+WC()->session->set( 'chosen_shipping_methods', array($fedex_method) );
 ?>
 <script>
     // Ref GID-1050 - Handle carrier
