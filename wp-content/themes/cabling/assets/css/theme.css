@@ -3977,3 +3977,10 @@ body.woocommerce-checkout #shipping_method input.shipping_method:not(:checked)~ 
 body.woocommerce-checkout #shipping_method .shipping_method {
     display: none !important;
 }
+/* #ref GID-1078 */
+button#supportai-chat-icon {
+    display: none !important;
+}
+div#supportai-chat-tooltip {
+    display: none;
+}

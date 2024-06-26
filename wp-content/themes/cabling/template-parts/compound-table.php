@@ -8,11 +8,14 @@ $compounds = get_compound_product($term->term_id);
     <table class="table table-bordered product-variation-table">
         <thead>
             <tr>
-                <?php ((false) && if ($term->slug == 'masen' || $term->slug == 'qplen')) { ?>
+                <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
+                    <th class="has-text-align-center" data-align="center">Elastomer</th>
                     <th class="has-text-align-center" data-align="center">Part Number Format</th>
                     <th class="has-text-align-center" data-align="center">Drawing</th>
                     <th class="has-text-align-center" data-align="center">Material Specification</th>
                     <th class="has-text-align-center" data-align="center">Compound</th>
+                    <th class="has-text-align-center" data-align="center">Durometer</th>
+                    <th class="has-text-align-center" data-align="center">Color</th>
                     <th class="has-text-align-center" data-align="center"></th>
                 <?php } else { ?>
                     <th class="has-text-align-center" data-align="center">Elastomer</th>
@@ -35,7 +38,8 @@ $compounds = get_compound_product($term->term_id);
                 $link = add_query_arg('data-history', $data, home_url('/products-and-services/'));
                 ?>
                 <tr>
-                    <?php if ((false) && ($term->slug == 'masen' || $term->slug == 'qplen')) { ?>
+                    <?php if ($term->slug == 'masen' || $term->slug == 'qplen') { ?>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_elastomer', $compound) ?></td>
                         <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_number_format', $compound) ?></td>
                         <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_drawing', $compound) ?></td>
                         <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_compound_material_specification', $compound) ?></td>
@@ -55,6 +59,9 @@ $compounds = get_compound_product($term->term_id);
                             }
                             ?>
                         </td>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_durometer', $compound) ?></td>
+                        <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_colour', $compound) ?></td>
+
                     <?php } else { ?>
                         <td class="has-text-align-center" data-align="center"><?php echo get_product_field('_elastomer', $compound) ?></td>
                         <td class="has-text-align-center" data-align="center">

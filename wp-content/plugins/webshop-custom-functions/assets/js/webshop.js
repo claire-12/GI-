@@ -308,7 +308,7 @@
     })
 
     $(document).on('click', '.chat-with-us-modal', function () {
-        $('#chatWithUsModal').modal('show');
+        jQuery('button#supportai-chat-icon').trigger('click');
     })
 
 
