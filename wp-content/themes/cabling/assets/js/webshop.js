@@ -580,7 +580,7 @@
         updateShippingMethod(fedex_method);
     })
     $(document).on('click', '#carrier_type_free', function () {
-        updateShippingMethod(fedex_method);
+        updateShippingMethod(free_shipping);
     })
     // if( $('body').hasClass('woocommerce-checkout') ){
     //     updateShippingMethod(fedex_method);
