@@ -240,23 +240,26 @@ class CRMLead
 		if ($crmsalesquote->getBrand() != "") {
 			switch (strtolower($crmsalesquote->getBrand())) {
 				case "tst":
-					//$rfq["OwnerPartyID"] = "8000000820";  // TST
-					$rfq["OwnerPartyID"] = "8000000734";  // TST
+					//$rfq["OwnerPartyID"] = "8000000734";  // DEV TST
+					$rfq["OwnerPartyID"] = "8000000763";  // PROD TST
 					break;
 				case "parco":
-					$rfq["OwnerPartyID"] = "8000000821";  // PARCO
+					//$rfq["OwnerPartyID"] = "8000000821";  // DEV PARCO
+					$rfq["OwnerPartyID"] = "8000001610";  // PROD PARCO
 					break;
 				case "double-e":
-					$rfq["OwnerPartyID"] = "8000000822";  // Double E
+					//$rfq["OwnerPartyID"] = "8000000822";  // DEV Double E
+					$rfq["OwnerPartyID"] = "8000001601";  // PROD Double E
 					break;
 				case "olympian-machine":
-					//$rfq["OwnerPartyID"] = "8000000823";  // Olympian
-					$rfq["OwnerPartyID"] = "8000000732";  // Olympian
+					//$rfq["OwnerPartyID"] = "8000000732";  // DEV Olympian
+					$rfq["OwnerPartyID"] = "8000000762";  // PROD Olympian
 					break;
 			}
 		}
 		if ($rfq["OwnerPartyID"] == "" && $product->product == "005") {
-			$rfq["OwnerPartyID"] = '8000000821';
+			//$rfq["OwnerPartyID"] = "8000000821";  // DEV PARCO
+			$rfq["OwnerPartyID"] = "8000001610";  // PROD PARCO
 		}
 
 		return json_encode($rfq);
@@ -276,16 +279,20 @@ class CRMLead
 		if ($brand != "") {
 			switch (strtolower($brand)) {
 				case "tst":
-					$lead["OwnerPartyID"] = "8000000820";  // TST
+					//$rfq["OwnerPartyID"] = "8000000734";  // DEV TST
+					$rfq["OwnerPartyID"] = "8000000763";  // PROD TST
 					break;
 				case "parco":
-					$lead["OwnerPartyID"] = "8000000821";  // PARCO
+					//$lead["OwnerPartyID"] = "8000000821";  // DEV PARCO
+					$lead["OwnerPartyID"] = "8000001610";  // PROD PARCO
 					break;
 				case "double-e":
-					$lead["OwnerPartyID"] = "8000000822";  // Double E
+					//$rfq["OwnerPartyID"] = "8000000822";  // DEV Double E
+					$rfq["OwnerPartyID"] = "8000001601";  // PROD Double E
 					break;
 				case "olympian-machine":
-					$lead["OwnerPartyID"] = "8000000823";  // Olympian
+					//$rfq["OwnerPartyID"] = "8000000732";  // DEV Olympian
+					$rfq["OwnerPartyID"] = "8000000762";  // PROD Olympian
 					break;
 			}
 		}
