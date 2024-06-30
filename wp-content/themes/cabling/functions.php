@@ -524,3 +524,7 @@ function set_brand_id_session() {
     }
 }
 add_action('wp', 'set_brand_id_session');
+
+if( file_exists(get_template_directory().'/inc/ga_crm.php') ){
+    require_once get_template_directory().'/inc/ga_crm.php';
+}
