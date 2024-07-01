@@ -319,75 +319,6 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
 // Default Billing Disable Fields
 (function ($) {
 
-    $(".woocommerce-billing-fields").each(function () {
-        $(this).find(':input').prop("readonly", true);
-        $(this).find(':input').css('background-color', '#f1f1f1');
-        $(this).find('span').css('background-color', '#f1f1f1');
-        //console.log('teste');
-        //<-- Should return all input elements in that specific form.
-    });
-    // $('#billing_country').prop('disabled', true);
-
-    $('.woocommerce-checkout').on('submit', function () {
-        $('#billing_country').prop('disabled', false);
-    });
-
-    /*$(document).on('input', '#registerStep input[type=password]', function () {
-        const btnSubmit = $(this).closest('form').find('button[type="submit"]');
-        const password = $(this).val();
-        let strength = 0;
-        btnSubmit.prop('disabled', true);
-
-        $(this).css('border-color', '#dc3545');
-        // Check the length of the password
-        if (password.length >= 8) {
-            strength += 1;
-        }
-
-        // Check for both uppercase and lowercase characters
-        if (/[a-z]/.test(password) && /[A-Z]/.test(password)) {
-            strength += 1;
-        }
-
-        // Check for at least one digit
-        if (/\d/.test(password)) {
-            strength += 1;
-        }
-
-        // Check for at least one special character
-        if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
-            strength += 1;
-        }
-
-        // Display the password strength
-        let strengthText = "";
-        switch (strength) {
-            case 0:
-            case 1:
-                strengthText = "Weak";
-                break;
-            case 2:
-                strengthText = "Moderate";
-                break;
-            case 3:
-                strengthText = "Strong";
-                break;
-            case 4:
-                strengthText = "Very Strong";
-                btnSubmit.prop('disabled', false);
-                $(this).css('border-color', '#28a745');
-                break;
-        }
-
-        if ($(this).is('input[name="re-password"]')) {
-            if ($(this).val() === $('input[name="password"]').val()) {
-                $(this).css('border-color', '#28a745');
-            } else {
-                $(this).css('border-color', '#dc3545');
-            }
-        }
-    })*/
-
     // JM 20230914
     $(document).on('input', 'input[name=password_2]', function () {
         const btnSubmit1 = $(this).closest('form').find('button[type="submit"]');
@@ -514,6 +445,7 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                     form.find('input[type="submit"]').prop('disabled', false);
                     return false;
                 }
+
             },
         })
             .fail(function () {

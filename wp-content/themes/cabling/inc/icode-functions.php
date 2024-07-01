@@ -881,6 +881,40 @@ function get_user_phone_number($user): string
     return sprintf('+%s%s', $phone_code, remove_zero_number($phone));
 }
 
+function my_custom_login_recaptcha() {
+    ?>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <div class="g-recaptcha" data-sitekey="<?php echo get_field('gcapcha_sitekey_v2', 'option'); ?>" data-size="normal"></div>
+    <?php
+}
+add_action('login_form', 'my_custom_login_recaptcha');
+
+function verify_recaptcha_response($user, $password) {
+    if (isset($_POST['g-recaptcha-response'])) {
+        $verify_recaptcha = cabling_verify_recaptcha($_POST['g-recaptcha-response']);
+        if(empty($verify_recaptcha)){
+            return new WP_Error('recaptcha_error', __('<strong>ERROR</strong>: reCAPTCHA verification failed.'));
+        }
+    }
+    return $user;
+}
+add_filter('authenticate', 'verify_recaptcha_response', 21, 2);
+
+function my_custom_login_styles() {
+    ?>
+    <style>
+        .login .g-recaptcha {
+            transform: scale(0.89);
+            transform-origin: 0 0;
+        }
+        .login .g-recaptcha iframe {
+            max-width: 100% !important;
+        }
+    </style>
+    <?php
+}
+add_action('login_head', 'my_custom_login_styles');
+
 add_filter('login_form_middle', 'cabling_login_form_middle');
 function cabling_login_form_middle($content)
 {
@@ -1523,7 +1557,7 @@ function custom_autofill_data($scanned_tag, $replace)
             break;
         case 'your-product':
             $scanned_tag['raw_values'] = CRMConstant::PRODUCT;
-//            $scanned_tag['values'] = CRMConstant::PRODUCT;
+            //$scanned_tag['values'] = CRMConstant::PRODUCT;
             break;
     }
 

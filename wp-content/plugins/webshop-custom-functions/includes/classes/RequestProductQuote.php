@@ -228,7 +228,13 @@ if (is_user_logged_in()) {
             'quote_filter' => serialize($data['quote_filter']),
             'status' => 'Pending'
         );
-
+        $data_to_insert['product_of_interest'] = $data['product-of-interest'];
+        #ref GID-853
+        if( $data['object_type'] == 'product' && $data['object_id'] ){
+            $_product = wc_get_product( $data['object_id'] );
+            $quote_price = $_product->get_price();
+            $data_to_insert['quote_price'] = $quote_price;
+        }
         $wpdb->insert($table_name, $data_to_insert);
 
         return $wpdb->insert_id;
