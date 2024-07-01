@@ -8,6 +8,14 @@ class CRMLead
 	public $status;
 	public $accountid;
 	public $contactid;
+	public $campaignid;
+
+    public $campaignid;
+
+    public function __construct($campaignid="")
+    {
+        $this->campaignid=$campaignid;
+    }
 
 	public function loadLead($data)
 	{
@@ -85,8 +93,14 @@ class CRMLead
 		$body["LeadLifecycle_KUT"] = "161"; //FIXED VALUE -> New account Creation
 		$body["LeadType_KUT"] = "105"; //FIXED VALUE -> GI
 		$body["Segment"] = "GI"; //FIXED VALUE -> GI
-		$body["OriginTypeCode"] = "Z38"; //FIXED VALUE -> GI
-
+		
+		$body["CampaignID"]=$this->campaignid;
+		if ($this->campaignid!=""){
+			$body["OriginTypeCode"]= "Z48"  // new source GI Advt
+		}else
+		{
+			$body["OriginTypeCode"] = "Z38"; //FIXED VALUE -> GI
+		}
 		return json_encode($body);
 	}
 
@@ -115,7 +129,7 @@ class CRMLead
 
 		$contact["Business_KUT"] = "141";    // Always send this 141 is GI
 		$contact["Segment"] = "GI";  // Always send
-		$contact["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
+		//$contact["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
 
 		$contact["MarketingConsent_KUT"] = $crmcontact->agreeTerm;
 
@@ -135,7 +149,13 @@ class CRMLead
         TETRAFLUOROETHYLENE PROPYLENE - TFP (Aflas®)
         */
 
-
+		$contact["CampaignID"]=$this->campaignid;
+		if ($this->campaignid!=""){
+			$body["OriginTypeCode"]= "Z48"  // new source GI Advt
+		}else
+		{
+			$body["OriginTypeCode"] = "Z38"; //FIXED VALUE -> GI
+		}
 		return json_encode($contact);
 	}
 
@@ -152,6 +172,13 @@ class CRMLead
 
 
 		$rfq["Name"] = $crmsalesquote->getName();
+		$rfq["CampaignID"]=$this->campaignid;
+		if ($this->campaignid!=""){
+			$body["OriginTypeCode"]= "Z48"  // new source GI Advt
+		}else
+		{
+			$body["OriginTypeCode"] = "Z38"; //FIXED VALUE -> GI
+		}
 
 		//$rfq["Segment_KUT"]= "GI";
 		//$rfq["LeadType_KUT"]= "105";
@@ -160,7 +187,7 @@ class CRMLead
 
 		$rfq["Business_KUT"] = "141";    // Always send this 141 is GI
 		$rfq["Segment"] = "GI";  // Always send
-		$rfq["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
+		//$rfq["OriginTypeCode"] = "Z38";  // Always send this Z38 is GI Website
 
 
 		$rfq["Company"] = $crmsalesquote->getCompany();
@@ -315,7 +342,7 @@ class CRMLead
 			"LeadLifecycle_KUT" => "131",  //  Always send this for KMI Scenario
 			"LeadType_KUT" => "105",  //   Always send this 105  is GI
 			"Segment" => "GI",  // Always send
-			"OriginTypeCode" => "Z38",  // Always send this Z38 is GI Website
+			//"OriginTypeCode" => "Z38",  // Always send this Z38 is GI Website
 			//"ProductofInterest_KUT"=> "321,351,371", we don't have this in our interface
 		];
 		if ($crmcontact->contactid != "") { // specific fields for existing contacts
@@ -347,7 +374,13 @@ class CRMLead
 
 		$lead["MarketingConsent_KUT"] = $crmcontact->agreeTerm;
 
-
+		$lead["CampaignID"]=$this->campaignid;
+		if ($this->campaignid!=""){
+			$body["OriginTypeCode"]= "Z48"  // new source GI Advt
+		}else
+		{
+			$body["OriginTypeCode"] = "Z38"; //FIXED VALUE -> GI
+		}
 		$body = json_encode($lead);
 		return $body;
 	}
