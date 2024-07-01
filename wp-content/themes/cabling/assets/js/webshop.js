@@ -495,7 +495,7 @@
                 }
 
                 let formData = $(form).serialize();
-
+                gtag('event', 'Account_Creation_Engagement');
                 $.ajax({
                     url: CABLING.ajax_url,
                     type: 'POST',
@@ -506,7 +506,7 @@
                         nonce: CABLING.nonce,
                     },
                     success: function (response) {
-                        gtag('event', 'Account_Creation');
+                        gtag('event', 'Account_Creation_Completed');
                         hideLoading();
                         if (response.success) {
                             $(form).html(response.data)
@@ -532,7 +532,7 @@
     const wpcf7Elm = document.querySelector('.wpcf7');
 	if(wpcf7Elm){
 		wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
-            gtag('event', 'Lead_Account');
+            gtag('event', 'Lead_Account_Completed');
 			openModal('modalSuccess');
 		}, false);
 		wpcf7Elm.addEventListener('wpcf7spam', function (event) {
@@ -548,7 +548,7 @@
 			if (event.detail.status === 'wpcf7invalid') {
 				openModal('modalError');
 			}
-            gtag('event', 'Lead_Account');
+            gtag('event', 'Lead_Account_Engagement');
 		}, false);
 	}
 })(jQuery);

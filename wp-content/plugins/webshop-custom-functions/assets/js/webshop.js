@@ -180,7 +180,7 @@
         const form = $(this);
         form.find('.woo-notice').empty().removeClass('woocommerce-error woocommerce-message').hide();
         form.find('button[type="submit"]').prop('disabled', true);
-
+        gtag('event', 'Lead_KMI_Engagement');
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
@@ -190,7 +190,7 @@
                 data: form.serialize(),
             },
             success: function (response) {
-                gtag('event', 'Lead_KMI');
+                gtag('event', 'Lead_KMI_Completed');
 
                 if (response.success) {
                     form.html('<div class="woocommerce-message woo-notice"></div>');
@@ -225,7 +225,7 @@
     $(document).on('submit', '#form-request-quote', function () {
         const form = $(this);
         const phoneValidate = $('#mobile-phone-validate');
-
+        gtag('event', 'Lead_RFQ_Engagement');
         const formData = new FormData(this);
         formData.append('action', 'cabling_request_quote');
         $.ajax({
@@ -244,7 +244,7 @@
                 } else {
                     form.prepend(response.data);
                 }
-                gtag('event', 'Lead_RFQ');
+                gtag('event', 'Lead_RFQ_Completed');
             },
             beforeSend: function () {
                 showLoading();

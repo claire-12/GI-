@@ -171,7 +171,7 @@
         form.find('.woo-notice').remove();
         form.find('input[type="submit"]').prop('disabled', true);
 
-
+        gtag('event', 'Request_Account_Creation_Engagement');
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
@@ -182,7 +182,7 @@
 
             },
             success: function (response) {
-                gtag('event', 'Request_Account_Creation');
+                gtag('event', 'Request_Account_Creation_Completed');
                 form.find('input[type="submit"]').prop('disabled', false);
                 form.prepend(response.data);
                 grecaptcha.reset();
@@ -488,7 +488,7 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
         form.find('.woo-notice').remove();
         form.find('button[type="submit"]').prop('disabled', true);
 
-
+        gtag('event', 'Share_Page_Engagement');
         $.ajax({
             url: CABLING.ajax_url,
             type: 'POST',
@@ -499,7 +499,7 @@ function cabling_search_ajax(ajaxSearch, paged = 1) {
                 nonce: CABLING.nonce,
             },
             success: function (response) {
-                gtag('event', 'Share_Page');
+                gtag('event', 'Share_Page_Completed');
                 if (response.success) {
                     form.find('button[type="submit"]').prop('disabled', false);
                     form.prepend(response.data.data);
