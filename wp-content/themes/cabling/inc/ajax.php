@@ -281,9 +281,7 @@ function cabling_register_new_account_ajax_callback()
             $mailer->send($recipient, $subject, $content, $headers);
         }
 
-        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Your account has been created. You can use standard features in the webshop. Meanwhile, you will be contacted by the Datwyler to extend the experience in the webshop, in order to become a Level 2 user with full access to the webshop.', 'cabling') . '</div>';
-        //$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the link to log in and explore.', 'cabling') . '</div>';
-		$message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the <a href="/my-account/">link</a> to log in and explore.', 'cabling') . '</div>';
+        $message = '<div class="alert woo-notice alert-success" role="alert"><i class="fa-solid fa-circle-check me-2"></i>' . __('Thanks for signing up to My Account – just click on the <a href="/my-account/">link</a> to log in and explore.', 'cabling') . '</div>';
         wp_send_json_success($message);
     }
 
@@ -1077,9 +1075,9 @@ function cabling_get_api_ajax_callback()
                 if (empty($value)) {
                     continue;
                 }
-                if($name=='OldMaterialNumber'){
-                    $value=str_pad(str_replace('-','',$value),7,'0568',STR_PAD_LEFT);
-                }
+				if($name=='OldMaterialNumber'){
+					$value=str_pad(str_replace('-','',$value),7,'0568',STR_PAD_LEFT);
+				}
                 $bodyParams[] = array(
                     'Field' => $name,
                     'Value' => $value,
@@ -1087,21 +1085,20 @@ function cabling_get_api_ajax_callback()
                 );
             }
 
-
             $type = 'ZDD_I_SD_PIM_MaterialBacklog';
             $type_level_2 = 'ZDD_I_SD_PIM_MaterialBacklogType';
             switch ($data['api_page']) {
                 case 'inventory':
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_PRICE_CDS';
-                    $apiStockEndpoint = $apiEndpointBasic . 'GET_DATA_STOCK_CDS';
+                    $apiEndpoint = 'GET_DATA_PRICE_CDS';
+                    $apiStockEndpoint = 'GET_DATA_STOCK_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $oldMaterialNumber = $data['api']['MaterialOldNumber'];
                     $oldMaterialNumber=str_replace('-','',$oldMaterialNumber);
                     //JM 20240606 allow search by dashnumber for 3 and 4 chars srting length
                     if(strlen($oldMaterialNumber)==4){
-                        $oldMaterialNumber=str_pad($oldMaterialNumber,8,'0568',STR_PAD_LEFT);   
+                        $oldMaterialNumber=str_pad($oldMaterialNumber,8,'0568',STR_PAD_LEFT);
                     }else{
-                        $oldMaterialNumber=str_pad($oldMaterialNumber,7,'0568',STR_PAD_LEFT);   
+                        $oldMaterialNumber=str_pad($oldMaterialNumber,7,'0568',STR_PAD_LEFT);
                     }
                     //$oldMaterialNumber=str_pad(str_replace('-','',$oldMaterialNumber),7,'0568',STR_PAD_LEFT);
                     $material = $data['api']['Material'];
@@ -1163,17 +1160,17 @@ function cabling_get_api_ajax_callback()
                             'Operator' => '',
                         );
                         $priceParams[] = array(
-							'Field' => '(Customer',
-							'Sign' => 'eq',
-							'Value' => $sap_no,
-							'Operator' => 'or',
-						);
-						$priceParams[] = array(
-							'Field' => 'Customer',
-							'Sign' => 'eq',
-							'Value' => "",
-							'Operator' => ')',
-						);
+                            'Field' => '(Customer',
+                            'Sign' => 'eq',
+                            'Value' => $sap_no,
+                            'Operator' => 'or',
+                        );
+                        $priceParams[] = array(
+                            'Field' => 'Customer',
+                            'Sign' => 'eq',
+                            'Value' => "",
+                            'Operator' => ')',
+                        );
                         $stockParams[] = array(
                             'Field' => 'Material',
                             'Value' => $material,
@@ -1198,7 +1195,7 @@ function cabling_get_api_ajax_callback()
 
                     break;
                 default:
-                    $apiEndpoint = $apiEndpointBasic . 'GET_DATA_BACKLOG_CDS';
+                    $apiEndpoint = 'GET_DATA_BACKLOG_CDS';
                     $template = $data['api_page'] . '-item.php';
                     $response = $webServices->makeApiRequest($apiEndpoint, $bodyParams);
 
@@ -1231,3 +1228,80 @@ function cabling_get_api_ajax_callback()
 
 add_action('wp_ajax_cabling_get_api_ajax', 'cabling_get_api_ajax_callback');
 add_action('wp_ajax_nopriv_cabling_get_api_ajax', 'cabling_get_api_ajax_callback');
+
+function cabling_get_api_ajax_callback_checkout()
+{
+    if (isset($_REQUEST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], 'cabling-ajax-nonce')) {
+        try {
+            parse_str($_REQUEST['data'], $data);
+
+            $webServices = new GIWebServices();
+
+            if (empty($data['api_service'])) {
+                wp_send_json_error('Missing API Service');
+            }
+
+            $user_plant = get_user_meta(get_current_user_id(), 'sales_org', true);
+
+            $data = [];
+            foreach ( WC()->cart->get_cart() as $cart_item ) {
+                $sku = get_post_meta($cart_item['product_id'], '_sku', true);
+                $stockParams = [
+                    array('Field' => 'SalesOrganization',
+                        'Value' => empty($user_plant) ? '2141' : $user_plant,
+                        'Operator' => '',
+                    ),
+                    array(
+                        'Field' => 'Material',
+                        'Value' => $sku,
+                        'Operator' => '',
+                    )
+                ];
+
+                $responseStock = $webServices->makeApiRequest('GET_DATA_STOCK_CDS', $stockParams);
+                $dataStock = $webServices->getDataResponse($responseStock, 'ZDD_I_SD_PIM_MaterialStock', 'ZDD_I_SD_PIM_MaterialStockType');
+
+                $data[] = array(
+                    'stock' => $dataStock[0]['TotalStockQuantity'] ?? 0,
+                    'quantity' => $cart_item['quantity']
+                );
+            }
+
+            WC()->cart->calculate_totals();
+
+            wp_send_json_success($data);
+        } catch (Exception $e) {
+            wp_send_json_error($e->getMessage());
+        }
+    } else {
+        wp_send_json_error('Invalid nonce.');
+    }
+    wp_die();
+}
+
+add_action('wp_ajax_cabling_get_api_ajax_checkout', 'cabling_get_api_ajax_callback_checkout');
+add_action('wp_ajax_nopriv_cabling_get_api_ajax_checkout', 'cabling_get_api_ajax_callback_checkout');
+
+function cabling_update_shipping_method() {
+    $shipping_method = sanitize_text_field($_POST['shipping_method']);
+    if(!$shipping_method){
+        $shipping_method = WC()->session->get( 'chosen_shipping_methods');
+        $shipping_method = $shipping_method[0];
+    }
+    WC()->session->set( 'chosen_shipping_methods', array($shipping_method) );
+    if (strpos($shipping_method, "fedex") !== false) {
+        WC()->session->set('allow_fedex_calculate_shipping', 1);
+        $packages = WC()->cart->get_shipping_packages();
+        WC()->shipping->calculate_shipping($packages);
+    }else{
+        WC()->session->set('allow_fedex_calculate_shipping', 0);
+    }
+    // Send a response back
+    $response = array(
+        'success' => true,
+    );
+    wp_send_json($response);
+    wp_die();
+}
+add_action('wp_ajax_cabling_update_shipping_method', 'cabling_update_shipping_method');
+add_action('wp_ajax_nopriv_cabling_update_shipping_method', 'cabling_update_shipping_method');

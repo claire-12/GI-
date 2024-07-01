@@ -100,9 +100,9 @@
             .done(function () {
                 hideLoading();
             })
-        .error(function () {
-            hideLoading();
-            alert('Something went wrong');
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
             });
     })
 
@@ -128,13 +128,13 @@
                 showLoading();
             }
         })
-        .done(function () {
-            hideLoading();
-        })
-        .error(function () {
-            hideLoading();
-            alert('Something went wrong');
-        });
+            .done(function () {
+                hideLoading();
+            })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+            });
         return false;
     })
 
@@ -164,13 +164,13 @@
                 showLoading();
             }
         })
-        .done(function () {
-            hideLoading();
-        })
-        .error(function () {
-            hideLoading();
-            alert('Something went wrong');
-        });
+            .done(function () {
+                hideLoading();
+            })
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+            });
         return false;
     })
 
@@ -241,11 +241,11 @@
                 showLoading();
             }
         })
-        .error(function () {
-            hideLoading();
-            alert('Something went wrong');
-            btn_submit.prop('disabled', false);
-        });
+            .error(function () {
+                hideLoading();
+                alert('Something went wrong');
+                btn_submit.prop('disabled', false);
+            });
 
         return false;
     })
@@ -443,10 +443,10 @@
                 showLoading();
             }
         })
-        .error(function () {
-            hideLoading();
-            $('#api-results').html("Something wrong !");
-        });
+            .error(function () {
+                hideLoading();
+                $('#api-results').html("Something wrong !");
+            });
 
         return false;
     });
@@ -518,10 +518,10 @@
                         showLoading();
                     }
                 })
-                .error(function () {
-                    hideLoading();
-                    alert('Something went wrong');
-                });
+                    .error(function () {
+                        hideLoading();
+                        alert('Something went wrong');
+                    });
 
                 return false;
             }
@@ -552,6 +552,31 @@
 		}, false);
 	}
 })(jQuery);
+
+function show_checkout_shipping() {
+    const $ = jQuery.noConflict();
+    $('.multisteps-form').find('.woo-notice').remove();
+    $('.multisteps-form__progress-btn').removeClass('js-active');
+    $('.multisteps-form__panel').removeClass('js-active');
+
+    if($('#user_wp9_form-step').length){
+        $('#user_wp9_form-step-progress').addClass('js-active');
+        $('#user_wp9_form-step').addClass('js-active');
+    }else{
+        $('#order_review-step-progress').addClass('js-active');
+        $('#order_review-step').addClass('js-active');
+    }
+}
+
+function show_checkout_billing() {
+    const $ = jQuery.noConflict();
+    $('.multisteps-form__progress-btn').removeClass('js-active');
+    $('.multisteps-form__panel').removeClass('js-active');
+
+    // $('.multisteps-form__progress-btn:nth-child(3)').addClass('js-active');
+    $('#billing-step-progress').addClass('js-active');
+    $('#billing-step').addClass('js-active');
+}
 
 function sortList(element, name, order) {
     const $ = jQuery.noConflict();
@@ -598,12 +623,12 @@ function setActiveCheckbox() {
 function showSingleTable(order) {
     const $ = jQuery.noConflict();
     // const tableContent = $(`tr.single-${order}`);
-    const tableContent = $('.backlog-row-single[data-order="'+order+'"]');
+    const tableContent = $('.backlog-row-single[data-order="' + order + '"]');
     const tablePODetails = $('#table-order-detail');
 
     $(`.backlog-row`).removeClass('table-warning').show();
     // $(`.row-${order}`).addClass('table-warning');
-    $('.backlog-row[data-order="'+order+'"]').addClass('table-warning');
+    $('.backlog-row[data-order="' + order + '"]').addClass('table-warning');
 
     tablePODetails.find('.table-heading span').html(order);
     tablePODetails.find('tbody').empty();
@@ -734,10 +759,10 @@ function blog_filter_ajax(load_more = false) {
             showLoading();
         }
     })
-    .error(function () {
-        hideLoading();
-        alert('Something went wrong');
-    });
+        .error(function () {
+            hideLoading();
+            alert('Something went wrong');
+        });
 }
 
 function product_filter_init() {
@@ -968,8 +993,26 @@ function openModal(modalId) {
 }
 
 // #ref GT-38
-if( jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').length  ){
+if (jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"]').length) {
     let contact_marketing_agreed_html = jQuery('.contact_marketing_agreed_html p').html();
     jQuery('.contact_marketing_agreed_html').remove();
     jQuery('.wpcf7-form-control-wrap[data-name="contact_marketing_agreed"] .wpcf7-list-item-label').html(contact_marketing_agreed_html);
+}
+// Trigger AJAX update of shipping method
+function updateShippingMethod(methodId) {
+    var data = {
+        'shipping_method': methodId,
+        'action': 'cabling_update_shipping_method'
+    };
+    jQuery.ajax({
+        type: 'POST',
+        url: wc_checkout_params.ajax_url,
+        data: data,
+        success: function (response) {
+            jQuery('body').trigger('update_checkout');
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
 }

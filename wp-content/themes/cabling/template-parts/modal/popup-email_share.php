@@ -1,7 +1,9 @@
 <?php
 $thisLink = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $initial_message = "Hi,<br><br>
-I was checking out the Datwyler Sealing site and wanted to share this: <a href='" . $thisLink . "'>" . $thisLink . "</a>.<br><br>Let me know what you think!<br><br>";
+I wanted to share this interesting link with you: <a href='" . $thisLink . "'>" . $thisLink . "</a>. I think you'll find it interesting.<br><br>
+Feel free to check it out when you have some time. Let me know what you think!<br><br>
+Best regards,";
 $initial_content = "<a href='" . $thisLink . "'>" . $thisLink . "</a>";
 $editor_id = 'message';
 $settings = array(
@@ -10,7 +12,6 @@ $settings = array(
     'tinymce' => true,
 );
 ?>
-
 <div class="show-email-share show-quote-button show-product-quote" data-action="<?php echo is_product() ? get_the_ID() : 0 ?>"></div>
 <div class="dropdown show-email-share">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,6 +34,12 @@ $settings = array(
             <a class="dropdown-item keep-informed-modal" href="#">
                 <i class="fa-light fa-rectangle-list me-1"></i>
                 <?php echo __('Keep me informed', 'cabling'); ?>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item chat-with-us-modal" href="#">
+                <i class="fa fa-message me-1"></i>
+                <?php echo __('Chat with us', 'cabling'); ?>
             </a>
         </li>
     </ul>
@@ -78,6 +85,24 @@ $settings = array(
                         </p>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal chat -->
+<div class="modal fade" id="chatWithUsModal" tabindex="-1" aria-labelledby="chatWithUsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><?php _e('Chat with us', 'cabling') ?></h4>
+                <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <?php echo do_shortcode('[mwai_chatbot id="default"]');?>
             </div>
         </div>
     </div>

@@ -345,7 +345,6 @@ class CRMController
             $contact = $this->getContactByEmail($crmcontact->email); // get contact from crm
             $crmcontact->fillContactFromCRMContactObject($contact); // fill the contact with SAP CRM data
         }
-
         $lead = new CRMLead();
         $body = $lead->createKMILeadBody($crmcontact, $communicationoptions, $itemoptions);
         $url = $this->baseURL . "LeadCollection";
@@ -479,11 +478,10 @@ class CRMController
             $CRMContact->phone = $data['sms'];
         }
 
-		if (isset($data['marketing_agreed'])) {
-			$CRMContact->policyAgreed = $data["marketing_agreed"];
-		}
+		$CRMContact->policyAgreed = $data["marketing_agreed"] == 'yes' ? true : false;
         // KMI POST
-        $CRMContact->agreeTerm = $data['marketing_agreed'] ? true : false;
+        $CRMContact->agreeTerm = $data['marketing_agreed'] == 'yes' ? true : false;
+        $CRMContact->marketingAgreed = $data['marketing_agreed'] == 'yes' ? true : false;
         /*$communicationOptions = [
             "tel" => false,
             "whatsapp" => (bool)$data['whatsapp'],

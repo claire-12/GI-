@@ -28,7 +28,7 @@ $page_id = get_the_ID(); ?>
                                     <div class="hero-content">
                                         <div class="hero-content-main">
                                             <h2><?php the_sub_field('title_hero'); ?></h2>
-                                            <div class="pre-heading"><?php the_sub_field('description_hero'); ?></div>
+                                            <div class="pre-heading heading-center"><?php the_sub_field('description_hero'); ?></div>
                                             <?php
                                             if ($link_banner):
                                                 ?>

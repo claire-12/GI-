@@ -1,0 +1,4170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FedEx\n"
+"POT-Creation-Date: 2016-11-24 18:45+0530\n"
+"PO-Revision-Date: 2023-03-06 09:39+0000\n"
+"Last-Translator: Jay\n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco"
+"X-Poedit-SearchPath-0: .\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.6.3; wp-6.1.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;"
+
+#: includes/class-wf-admin-options.php:597
+msgid " Pre packed product"
+msgstr "Producto previamente empaquetado"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1911
+msgid ")"
+msgstr ")"
+
+#: includes/wf-automatic-label-generation.php:46
+msgid ". Automatic label generation has been suspended (Fedex)."
+msgstr ". La generación automática de etiquetas ha sido suspendida (FedEx)."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1655
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1789
+msgid "1"
+msgstr "1"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1664
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1798
+msgid "10"
+msgstr "10"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1665
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1799
+msgid "11"
+msgstr "11"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1666
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1800
+msgid "12"
+msgstr "12"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1667
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1801
+msgid "13"
+msgstr "13"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1668
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1802
+msgid "14"
+msgstr "14"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1669
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1803
+msgid "15"
+msgstr "15"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1670
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1804
+msgid "16"
+msgstr "16"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1671
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1805
+msgid "17"
+msgstr "17"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1672
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1806
+msgid "18"
+msgstr "18"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1673
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1807
+msgid "19"
+msgstr "19"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1656
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1790
+msgid "2"
+msgstr "2"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1674
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1808
+msgid "20"
+msgstr "20"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1675
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1809
+msgid "21"
+msgstr "21"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1676
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1810
+msgid "22"
+msgstr "22"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1677
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1811
+msgid "23"
+msgstr "23"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1678
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1812
+msgid "24"
+msgstr "24"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1679
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1813
+msgid "25"
+msgstr "25"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1657
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1791
+#: includes/class-wf-admin-options.php:279
+#: includes/class-wf-admin-options.php:721
+msgid "3"
+msgstr "3"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1658
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1792
+msgid "4"
+msgstr "4"
+
+#: includes/data-wf-settings.php:1130
+msgid "4x6 output format best fit with type PNG"
+msgstr "Formato de salida 4x6 El mejor ajuste con el tipo de PNG"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1659
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1793
+msgid "5"
+msgstr "5"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1660
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1794
+msgid "6"
+msgstr "6"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1661
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1795
+msgid "7"
+msgstr "7"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1662
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1796
+msgid "8"
+msgstr "8"
+
+#: includes/data-wf-settings.php:1121
+msgid "8.5x11 indicates paper and 4x6 indicates thermal size."
+msgstr "8.5x11 indica papel y 4x6 indica un tamaño térmico."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1663
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1797
+msgid "9"
+msgstr "9"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:4293
+msgid "<br> Package weight is missing. Aborting."
+msgstr "<br>Peso del paquete es falta. Abortar."
+
+#: includes/data-wf-settings.php:938
+msgid ""
+"<small>Base Shipping Cost: Shipping Cost without any discounts, taxes & "
+"surcharges.<br/>Total Net Shipping Cost without Tax: Shipping Cost with "
+"discount & surcharges.<br/>Total Net Shipping Cost: Shipping Cost with "
+"discount, surcharges & transportation taxes.<br/>Total Net Shipping Cost "
+"With Duties & Taxes: Shipping Cost with discount, surcharges, transportation "
+"taxes & all other international taxes.</small>"
+msgstr ""
+"<small>Costo de envío base: Costo de envío sin descuentos, impuestos ni "
+"recargos.<br/>Costo de envío neto total sin impuestos: Costo de envío con "
+"descuento y recargos.<br/>Costo de envío neto total: Costo de envío con "
+"descuento, recargos e impuestos de transporte.<br/>Costo de envío neto total "
+"con aranceles e impuestos: Costo de envío con descuento, recargos, impuestos "
+"de transporte y todos los demás impuestos internacionales.</small>"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2018
+msgid "<tr><td> Delivery Signature "
+msgstr "<tr><td> Firma de entrega"
+
+#: includes/data-wf-settings.php:1415
+msgid "A button will be available for downloading the label and printing"
+msgstr "Un botón estará disponible para descargar la etiqueta e imprimir"
+
+#: includes/data-wf-settings.php:901
+msgid "Accepts Cash"
+msgstr "Acepta efectivo"
+
+#: includes/class-wf-admin-options.php:229
+#: includes/class-wf-admin-options.php:662
+msgid "Accessible"
+msgstr "Accesible"
+
+#: includes/class-wf-admin-options.php:225
+#: includes/class-wf-admin-options.php:658
+msgid ""
+"ACCESSIBLE - Dangerous Goods shipments must be accessible to the flight crew "
+"in-flight."
+msgstr ""
+"Accesible: los envíos de mercancías peligrosas deben ser accesibles para la "
+"tripulación de vuelo en vuelo."
+
+#: includes/data-wf-settings.php:930
+msgid "Account Rates"
+msgstr "Tipos de cuenta"
+
+#: includes/class-wf-admin-options.php:270
+#: includes/class-wf-admin-options.php:710
+msgid "Acetal"
+msgstr "Acetal"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1427
+msgid "Activity"
+msgstr "Actividad"
+
+#: includes/html-wf-box-packing.php:70
+msgid "Add Box"
+msgstr "Añadir caja"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:113
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:130
+msgid "Add Package"
+msgstr "Agregar paquete"
+
+#: includes/data-wf-settings.php:849
+msgid ""
+"Additional charges will be applied on Shipping Rates on enabling this service"
+msgstr ""
+"Se aplicarán cargos adicionales sobre las tarifas de envío para habilitar "
+"este servicio"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:120
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:127
+msgid "Additional Label"
+msgstr "Etiqueta adicional"
+
+#: includes/data-wf-settings.php:1836
+msgid "Address line"
+msgstr "Linea de dirección"
+
+#: includes/data-wf-settings.php:377
+msgid "Address Line 1"
+msgstr "Línea de Dirección 1"
+
+#: includes/data-wf-settings.php:387
+msgid "Address Line 2"
+msgstr "Línea de Dirección 1"
+
+#: includes/data-wf-settings.php:823
+msgid ""
+"Adjust number of days to get the estimated delivery accordingly (Numeric "
+"Only)."
+msgstr ""
+"Ajuste el número de días para obtener la entrega estimada en consecuencia "
+"(solo numérica)."
+
+#: includes/data-wf-settings.php:981
+msgid "Adjustment"
+msgstr "Ajustamiento"
+
+#: includes/class-wf-admin-options.php:213
+#: includes/class-wf-admin-options.php:644
+msgid "ADR"
+msgstr "ADR"
+
+#: includes/class-wf-admin-options.php:209
+#: includes/class-wf-admin-options.php:640
+msgid ""
+"ADR - European Agreement concerning the International Carriage of Dangerous "
+"Goods by Road."
+msgstr ""
+"ADR - Acuerdo europeo sobre el transporte internacional de productos "
+"peligrosos por carretera."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2010
+#: includes/data-wf-settings.php:545 includes/class-wf-admin-options.php:152
+#: includes/class-wf-admin-options.php:582
+msgid "Adult"
+msgstr "Adulto"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:806
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: includes/html-ph-help-and-support.php:135
+msgid "After enabling Debug Mode, please try recreating your issue(s)"
+msgstr ""
+"Después de habilitar el modo de depuración, intente recrear su (s) problema "
+"(s)"
+
+#: includes/class-wf-admin-options.php:123
+#: includes/class-wf-admin-options.php:550
+msgid "Alcohol "
+msgstr "Alcohol"
+
+#: includes/class-wf-admin-options.php:132
+#: includes/class-wf-admin-options.php:560
+msgid "Alcohol Recipient type"
+msgstr "Tipo de receptor de alcohol"
+
+#: includes/data-wf-settings.php:890
+msgid "All"
+msgstr "Todo"
+
+#: includes/data-wf-settings.php:790
+msgid "All Countries"
+msgstr "Todos los paises"
+
+#: includes/data-wf-settings.php:1413
+msgid "Allow customers to print label from their My Account->Orders page"
+msgstr ""
+"Permitir a los clientes imprimir etiqueta desde su página de my cuenta-> "
+"pedidos"
+
+#: includes/data-wf-settings.php:1274
+msgid ""
+"Allow customers to provide the reason for return before generating a return "
+"label"
+msgstr ""
+"Permitir a los clientes proporcionar el motivo de la devolución antes de "
+"generar una etiqueta de regreso"
+
+#: includes/data-wf-settings.php:902
+msgid "Already Open"
+msgstr "Ya abierto"
+
+#: includes/data-wf-settings.php:467
+msgid "Alternate Return Address Line"
+msgstr "Línea de dirección de devolución alternativa"
+
+#: includes/data-wf-settings.php:435
+msgid ""
+"Alternate return address option that allows you to display different address "
+"on the shipping label. For example, if you send a package that is "
+"undeliverable, you may use this option to display your returns processing "
+"facility address so that FedEx will return the package to that address "
+"instead of your shipping facility address."
+msgstr ""
+"Opción de dirección de devolución alternativa que le permite mostrar "
+"diferentes direcciones en la etiqueta de envío. Por ejemplo, si envía un "
+"paquete que no se puede entregar, puede usar esta opción para mostrar la "
+"dirección de su instalación de procesamiento de devoluciones para que FedEx "
+"devuelva el paquete a esa dirección en lugar de la dirección de su "
+"instalación de envío."
+
+#: includes/data-wf-settings.php:473
+msgid "Alternate Return City"
+msgstr "Ciudad de regreso alternativa"
+
+#: includes/data-wf-settings.php:455
+msgid "Alternate Return Company Name"
+msgstr "Nombre de la empresa de devolución alternativa"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:763
+msgid "Alternate Return Country"
+msgstr "País de regreso alternativo"
+
+#: includes/data-wf-settings.php:449
+msgid "Alternate Return Person Name"
+msgstr "Nombre de la persona de retorno alternativa"
+
+#: includes/data-wf-settings.php:461
+msgid "Alternate Return Phone Number"
+msgstr "Número de teléfono de devolución alternativo"
+
+#: includes/data-wf-settings.php:482
+msgid "Alternate Return State Code"
+msgstr "Código de estado de retorno alternativo"
+
+#: includes/data-wf-settings.php:488
+msgid "Alternate Return Zipcode"
+msgstr "Código postal de retorno alternativo"
+
+#: includes/data-wf-settings.php:1769
+msgid "Aluminum"
+msgstr "Aluminio"
+
+#: includes/data-wf-settings.php:1209
+msgid "ANY"
+msgstr "CUALQUIERA"
+
+#: includes/data-wf-settings.php:876
+msgid "Any"
+msgstr "Cualquier"
+
+#: includes/data-wf-settings.php:1514
+msgid "Any comments that need to be communicated about this shipment."
+msgstr "Cualquier comentario que deba comunicarse sobre este envío."
+
+#: includes/data-wf-settings.php:1314
+msgid "Applicable for International Shipments"
+msgstr "Aplicable para envíos internacionales"
+
+#: includes/data-wf-settings.php:566
+msgid ""
+"Applicable only for SmartPost. Ex: Parcel Select option requires weight of "
+"at-least 1LB. Automatic will choose PRESORTED STANDARD if the weight is less "
+"than 1lb and PARCEL SELECT if the weight is more than 1lb"
+msgstr ""
+"Aplicable solo para SmartPost. Ej: La opción de selección de paquetes "
+"requiere peso de 1 lb. Automático elegirá estándar presorgado si el peso es "
+"inferior a 1 lb y la parcela seleccione si el peso es más de 1 lb"
+
+#: includes/data-wf-settings.php:1159
+msgid "Applicable only for ZPLII Type"
+msgstr "Aplicable solo para el tipo ZPLII"
+
+#: includes/data-wf-settings.php:748
+msgid "Appointment"
+msgstr "Cita"
+
+#: includes/data-wf-settings.php:885
+msgid "Attribute Type"
+msgstr "Tipo de atributo"
+
+#: includes/data-wf-settings.php:1322
+msgid "Authorized Dealer code is normally given by the Bank."
+msgstr ""
+"El código del concesionario autorizado normalmente es dado por el banco."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1591
+msgid "Auto generate packages."
+msgstr "Paso 1: Generar automáticamente los paquetes."
+
+#: includes/data-wf-settings.php:575
+msgid "AUTOMATIC"
+msgstr "AUTOMATICO"
+
+#: includes/data-wf-settings.php:1688
+#, php-format
+msgid ""
+"Automatically change packing method when the products are packed in a box "
+"and the filled up space is less less than 44% of the box volume"
+msgstr ""
+"Cambia automáticamente el método de empaque cuando los productos se "
+"empaquetan en una caja y el espacio lleno es menos del 44% del volumen de la "
+"caja"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2046
+msgid "B13A Authentication Code Number"
+msgstr "Número de código de autenticación B13A"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2046
+msgid "B13A Export compliance for shippment from Canada"
+msgstr "B13A Cumplimiento de la exportación para el envío de Canadá"
+
+#: includes/data-wf-settings.php:1755
+msgid "Bag"
+msgstr "Bolsa"
+
+#: includes/data-wf-settings.php:1318
+msgid "Bank AD Code"
+msgstr "Código de anuncios del banco"
+
+#: includes/data-wf-settings.php:940
+msgid "Base Shipping Cost"
+msgstr "Costo de envío base"
+
+#: includes/data-wf-settings.php:1681
+msgid "Based on Volume Used * Item Count"
+msgstr "Basado en el volumen utilizado * Recuento de elementos"
+
+#: includes/class-wf-admin-options.php:197
+#: includes/class-wf-admin-options.php:626
+msgid "Battery"
+msgstr "Batería"
+
+#: includes/class-wf-admin-options.php:314
+#: includes/class-wf-admin-options.php:763
+msgid "Battery Material Type "
+msgstr "Tipo de material de la batería"
+
+#: includes/class-wf-admin-options.php:326
+#: includes/class-wf-admin-options.php:777
+msgid "Battery Packing Type "
+msgstr "Tipo de embalaje de batería"
+
+#: includes/class-wf-admin-options.php:304
+#: includes/class-wf-admin-options.php:751
+msgid "Battery Product "
+msgstr "Producto de batería"
+
+#: includes/data-wf-settings.php:1641
+msgid ""
+"Begin date of the blanket period. It is the date upon which the Certificate "
+"becomes applicable to the good covered by the blanket Certificate (it may be "
+"prior to the date of signing this Certificate)"
+msgstr ""
+"Comience la fecha del período de la manta. Es la fecha en que el certificado "
+"se aplica al bien cubierto por el certificado general (puede ser antes de la "
+"fecha de firmar este certificado)"
+
+#: includes/data-wf-settings.php:442
+msgid "Billing Address as Alternate Return Address"
+msgstr "Dirección de facturación como dirección de devolución alternativa"
+
+#: includes/data-wf-settings.php:1926
+msgid "Billing City"
+msgstr "Ciudad de facturación"
+
+#: includes/data-wf-settings.php:1944
+msgid "Billing Country Code"
+msgstr "País de facturación"
+
+#: includes/data-wf-settings.php:1932
+msgid "Billing State Code"
+msgstr "Provincia Factura"
+
+#: includes/data-wf-settings.php:1914
+msgid "Billing Street Address"
+msgstr "Facturación: Dirección"
+
+#: includes/data-wf-settings.php:1920
+msgid "Billing Street Address 2"
+msgstr "Facturación: Dirección 2"
+
+#: includes/data-wf-settings.php:1938
+msgid "Billing Zipcode"
+msgstr "Código postal de facturación"
+
+#: includes/data-wf-settings.php:1636
+msgid "Blanket Period Begin Date"
+msgstr "Fecha de inicio del período de la manta"
+
+#: includes/data-wf-settings.php:1645
+msgid "Blanket Period End Date"
+msgstr "Fecha de finalización del período general"
+
+#: includes/data-wf-settings.php:1342
+msgid "BOND"
+msgstr "VÍNCULO"
+
+#: includes/data-wf-settings.php:1172
+msgid "Bottom Edge of Text First"
+msgstr "Borde inferior del texto primero"
+
+#: includes/data-wf-settings.php:1754
+msgid "Box"
+msgstr "Caja"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1604
+msgid "Box Name"
+msgstr "Nombre de la caja"
+
+#: includes/html-wf-box-packing.php:3
+msgid "Box Sizes"
+msgstr "Sizes"
+
+#: includes/html-wf-box-packing.php:62
+msgid "Box Weight"
+msgstr "Peso"
+
+#: includes/data-wf-settings.php:636
+msgid "Brocker Email Address"
+msgstr "Dirección de correo electrónico de Brocker"
+
+#: includes/data-wf-settings.php:604
+msgid "Broker Account number"
+msgstr "Número de cuenta de corredor"
+
+#: includes/data-wf-settings.php:609
+msgid "Broker account number"
+msgstr "Número de cuenta de corredor"
+
+#: includes/data-wf-settings.php:643
+msgid "Broker Address"
+msgstr "Dirección de corredor"
+
+#: includes/data-wf-settings.php:650
+msgid "Broker City"
+msgstr "Ciudad del corredor"
+
+#: includes/data-wf-settings.php:625
+msgid "Broker Company Name"
+msgstr "Nombre de la compañía de corredores"
+
+#: includes/data-wf-settings.php:620
+msgid "Broker Company name"
+msgstr "Nombre de la compañía de corredores"
+
+#: includes/data-wf-settings.php:612 includes/data-wf-settings.php:617
+msgid "Broker name"
+msgstr "Nombre del corredor"
+
+#: includes/data-wf-settings.php:628 includes/data-wf-settings.php:633
+msgid "Broker phone number"
+msgstr "Número de teléfono del corredor"
+
+#: includes/data-wf-settings.php:657
+msgid "Broker State"
+msgstr "Estado de corredor"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:1337
+#: includes/class-wf-fedex-woocommerce-shipping.php:1876
+msgid "Business Address"
+msgstr "Dirección de la Empresa"
+
+#: includes/data-wf-settings.php:1258
+#| msgid "BUSINESS_NATIONAL"
+msgid "BUSINESS NATIONAL"
+msgstr "EMPRESA NACIONAL"
+
+#: includes/data-wf-settings.php:685
+msgid "Business Service Center"
+msgstr "Centro de servicio de negocios"
+
+#: includes/data-wf-settings.php:1257
+#| msgid "BUSINESS_STATE"
+msgid "BUSINESS STATE"
+msgstr "ESTADO DEL NEGOCIO"
+
+#: includes/data-wf-settings.php:1259
+#| msgid "BUSINESS_UNION"
+msgid "BUSINESS UNION"
+msgstr "UNIÓN EMPRESARIAL"
+
+#: includes/data-wf-settings.php:1275
+msgid ""
+"By enabling this customer will be able to generate return label only after "
+"providing the reason. Reason will be displayed in order notes."
+msgstr ""
+"Al habilitar este cliente, podrá generar la etiqueta de devolución solo "
+"después de proporcionar el motivo. La razón se mostrará en las notas de "
+"orden."
+
+#: includes/data-wf-settings.php:528
+msgid ""
+"By enabling this option you can delete the shipment from the order page and "
+"thereby recreate the shipping labels."
+msgstr ""
+"Al habilitar esta opción, puede eliminar el envío de la página del pedido y, "
+"por lo tanto, recrear las etiquetas de envío."
+
+#: includes/data-wf-settings.php:1266
+msgid ""
+"By enabling this the customers can generate the return label themself from "
+"my account page"
+msgstr ""
+"Al habilitar esto, los clientes pueden generar la etiqueta de devolución "
+"desde la página de mi cuenta"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:115
+msgid "Calculate Cost"
+msgstr "Calcular el costo"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:124
+msgid "Calculate the Shipping cost"
+msgstr "Calcule el costo de envío"
+
+#: includes/class-wf-fedex-pickup-admin.php:75
+#: includes/class-wf-fedex-pickup-admin.php:76
+msgid "Cancel FedEx Pickup"
+msgstr "Cancelar recolección de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1979
+#: includes/data-wf-settings.php:1549
+msgid "Carraige Insurance Paid"
+msgstr "Seguro de carraige pagado"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1980
+#: includes/data-wf-settings.php:1550
+msgid "Carriage Paid To"
+msgstr "Carro pagado a"
+
+#: includes/data-wf-settings.php:1210
+msgid "CASH"
+msgstr "EFECTIVO"
+
+#: includes/data-wf-settings.php:1605
+msgid "Certifier Specification"
+msgstr "Especificación de certificador"
+
+#: includes/data-wf-settings.php:240
+msgid ""
+"Change the preference of Ship From Address printed on the label. You can "
+"make  use of Billing Address from Order admin page, if you ship from a "
+"different location other than shipment origin address given below."
+msgstr ""
+"Cambiar la preferencia de buque según dirección impresa en la etiqueta. "
+"Usted puede hacer uso de la dirección de facturación del orden de las "
+"páginas del administrador, si usted envía desde una ubicación diferente que "
+"no sea origen del envío dirección indicada a continuación."
+
+#: includes/class-wf-admin-options.php:164
+msgid ""
+"Check this if the item comes in boxes. It will consider as a separate "
+"package and ship in its own box."
+msgstr ""
+"Marque esto si el artículo viene en casillas. Considerará como un paquete y "
+"envío separados en su propia caja."
+
+#: includes/class-wf-admin-options.php:598
+msgid ""
+"Check this if the item comes in boxes. It will override global product "
+"settings"
+msgstr ""
+"Marque esto si el artículo viene en casillas. Anulará la configuración del "
+"producto global"
+
+#: includes/class-wf-admin-options.php:609
+msgid ""
+"Check this if the product belongs to Non Standard Container. Non-Stantard "
+"product will be charged heigher"
+msgstr ""
+"Verifique esto si el producto pertenece al contenedor no estándar. El "
+"producto no stantard se le cobrará al tanto"
+
+#: includes/class-wf-admin-options.php:172
+msgid ""
+"Check this if the product belongs to Non Standard Container. Non-Stantard "
+"product will be charged higher"
+msgstr ""
+"Verifique esto si el producto pertenece al contenedor no estándar. El "
+"producto no stantard se cobrará más alto"
+
+#: includes/data-wf-settings.php:1363
+msgid ""
+"Check this option to show all services in create label drop down(FEDEX)."
+msgstr ""
+"Verifique esta opción para mostrar todos los servicios en Crear etiqueta "
+"desplegable (FedEx)."
+
+#: includes/data-wf-settings.php:1733
+msgid "Check this to load Speciality Boxes with boxes."
+msgstr "Marque esto para cargar casillas especiales con casillas."
+
+#: includes/class-wf-admin-options.php:305
+#: includes/class-wf-admin-options.php:753
+#| msgid "Check this to mark the product as a dangerous goods."
+msgid "Check this to mark the product as a Battery Product."
+msgstr "Verifique esto para marcar el producto como un producto de batería."
+
+#: includes/data-wf-settings.php:1804
+msgid "Check this to set a defferent store address to pick up from"
+msgstr "Mira para configurar una dirección de tienda de defferent a recoger de"
+
+#: includes/data-wf-settings.php:1781
+msgid "Choose Packaging Material"
+msgstr "Elija material de embalaje"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1916
+msgid ""
+"Choose Shipping Methods</b> - Select this option to choose FedEx services "
+"for each package (Shipping rates will be applied accordingly)."
+msgstr ""
+"Elegir métodos de envío</b>: seleccione esta opción para elegir los "
+"servicios de FedEx para cada paquete (se aplicarán las tarifas de envío "
+"correspondientes)."
+
+#: includes/data-wf-settings.php:1658
+msgid "Choose the packing options suitable for your store here."
+msgstr "Elija las opciones de embalaje adecuadas para su tienda aquí."
+
+#: includes/data-wf-settings.php:1423
+msgid "Choose the recipient who will get the shipping label(s) via Email."
+msgstr ""
+"Elija el destinatario que obtendrá las etiquetas de envío por correo "
+"electrónico."
+
+#: includes/data-wf-settings.php:1760
+msgid "Choose Type of Packaging"
+msgstr "Elija tipo de embalaje"
+
+#: includes/data-wf-settings.php:932
+msgid ""
+"Choose whether to return List or Account (discounted) rates from the API."
+msgstr "Elegir si devolver lista o cuenta (descuentos) de la API."
+
+#: includes/data-wf-settings.php:322
+msgid ""
+"Choose who is going to pay shipping and customs charges. Please fill Third "
+"Party settings below if Third Party is choosen. It will override freight "
+"shipement also"
+msgstr ""
+"Elija quién va a pagar los cargos de envío y aduanas. Llene la configuración "
+"de terceros a continuación si se elige a un tercero. Anulará el envío de "
+"carga también"
+
+#: includes/data-wf-settings.php:395 includes/data-wf-settings.php:1844
+msgid "City"
+msgstr "Ciudad de Origen (Barco De Ciudad)"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:117
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:131
+msgid "Clear Data"
+msgstr "Borrar datos"
+
+#: includes/data-wf-settings.php:522
+msgid "Clear Data & Recreate Shipment"
+msgstr "Datos claros y recrear envío"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:118
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:132
+msgid "Clear History"
+msgstr "Borrar historial"
+
+#: includes/data-wf-settings.php:903
+msgid "Clearance Services"
+msgstr "Servicios de autorización"
+
+#: includes/html-ph-help-and-support.php:126
+msgid ""
+"Click the button to visit the PluginHive Support page and submit your query. "
+"The support team will get back to you within 1 business day."
+msgstr ""
+"Haga clic en el botón para visitar la página de soporte de pluginhive y "
+"envíe su consulta. El equipo de soporte se pondrá en contacto con usted "
+"dentro de 1 día hábil."
+
+#: includes/html-ph-help-and-support.php:137
+msgid ""
+"Clicking on Send button will send Debug Log Details and Plugin Settings to "
+"PluginHive Support Team automatically"
+msgstr ""
+"Haga clic en el botón Enviar los detalles del registro de depuración y la "
+"configuración del complemento para completar el equipo de soporte "
+"automáticamente"
+
+#: includes/data-wf-settings.php:1202
+msgid "COD Collection Type"
+msgstr "Tipo de colección de bacalao"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1953
+msgid "Collect On Delivery"
+msgstr "Recoger en la entrega"
+
+#: includes/class-wf-tracking-admin.php:221
+msgid "Comma separated, in case of multiple shipment ids for this order."
+msgstr ""
+"Separados por comas, en el caso de múltiples identificadores de envío para "
+"este pedido."
+
+#: includes/data-wf-settings.php:1509
+msgid "Comments"
+msgstr "Comentario"
+
+#: includes/data-wf-settings.php:1459
+msgid "Commercial Invoice"
+msgstr "﻿factura comercial"
+
+#: includes/data-wf-settings.php:1453
+msgid "Commercial Invoice Settings"
+msgstr "Configuración de factura comercial"
+
+#: includes/class-wf-admin-options.php:75
+msgid "Commodity Description"
+msgstr "Descripcion comoda"
+
+#: includes/class-wf-admin-options.php:78
+msgid "Commodity Description [3 to 450 characters required]"
+msgstr "Descripción de los productos básicos [3 a 450 caracteres requeridos]"
+
+#: includes/data-wf-settings.php:351
+msgid "Company"
+msgstr "Introduzca el nombre de su empresa"
+
+#: includes/data-wf-settings.php:1211
+msgid "COMPANY CHECK"
+msgstr "Cheque de la compañía"
+
+#: includes/data-wf-settings.php:1884
+msgid "Company Close Time"
+msgstr "Empresa Tiempo de Cierre"
+
+#: includes/data-wf-settings.php:1562
+msgid "Company Logo"
+msgstr "Logo de la compañía"
+
+#: includes/data-wf-settings.php:1756
+msgid "Composite Package"
+msgstr "Paquete compuesto"
+
+#: includes/data-wf-settings.php:535
+msgid "Configure special services related setting."
+msgstr "Configurar la configuración de servicios especiales relacionados."
+
+#: includes/data-wf-settings.php:1456
+msgid "Configure the commercial invoice related settings here."
+msgstr "Configure la configuración relacionada con la factura comercial aquí."
+
+#: includes/data-wf-settings.php:1039
+msgid "Configure the label and tracking related settings here."
+msgstr ""
+"Configure la etiqueta y el seguimiento de la configuración relacionada aquí."
+
+#: includes/data-wf-settings.php:1792
+msgid "Configure the pickup options here to avail FedEx pickup for your orders"
+msgstr ""
+"Configure las opciones de recolección aquí para aprovechar la recolección de "
+"FedEx para sus pedidos"
+
+#: includes/data-wf-settings.php:767
+msgid ""
+"Configure the rate related settings here. You can enable the desired FedEx "
+"services and other rate options."
+msgstr ""
+"Configurar la configuración relacionada con la tarifa aquí. Puede habilitar "
+"los servicios de FedEx deseados y otras opciones de tarifas."
+
+#: includes/class-wf-admin-options.php:138
+#: includes/class-wf-admin-options.php:567
+msgid "Consumer"
+msgstr "Consumidor"
+
+#: includes/class-wf-admin-options.php:133
+#: includes/class-wf-admin-options.php:562
+msgid "CONSUMER - Select, if no license is required for recipient."
+msgstr ""
+"Consumidor: seleccione, si no se requiere licencia para el destinatario."
+
+#: includes/data-wf-settings.php:367
+msgid "Contact Email"
+msgstr "Correo Electrónico de Contacto"
+
+#: includes/data-wf-settings.php:359
+msgid "Contact Number"
+msgstr "Número de contacto"
+
+#: includes/data-wf-settings.php:1828
+msgid "Contact number"
+msgstr "Número de contacto"
+
+#: includes/data-wf-settings.php:341
+msgid "Contact Person"
+msgstr "Persona de contacto"
+
+#: includes/data-wf-settings.php:1811
+msgid "Contact Person Name"
+msgstr "Nombre de la persona de contacto"
+
+#: includes/data-wf-settings.php:1812
+msgid "Contact person name"
+msgstr "Nombre de la persona de contacto"
+
+#: includes/html-ph-help-and-support.php:128
+msgid "Contact Us"
+msgstr "Contáctenos"
+
+#: includes/class-wf-admin-options.php:330
+#: includes/class-wf-admin-options.php:782
+msgid "Contained In Equipment"
+msgstr "Contenido en equipos"
+
+#: includes/data-wf-settings.php:972
+msgid "Conversion Rate"
+msgstr "Tasa de Conversión"
+
+#: includes/data-wf-settings.php:990
+msgid "Convert FedEx returned rates to base currency."
+msgstr "Convertir FedEx volvió tarifas a la base de la moneda."
+
+#: includes/data-wf-settings.php:1685
+msgid "Convert Stack First to Volume Based"
+msgstr "Convertir la pila primero a volumen basado en el volumen"
+
+#: includes/data-wf-settings.php:904
+msgid "Copy and Print Services"
+msgstr "Copiar e imprimir servicios"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1911
+msgid "Cost ("
+msgstr "Costo ("
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1972
+#: includes/data-wf-settings.php:1542
+msgid "Cost And Freight"
+msgstr "Coste y cargo"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1973
+#: includes/data-wf-settings.php:1543
+msgid "Cost Insurance and Freight"
+msgstr "Costo, Seguro y Flete"
+
+#: includes/data-wf-settings.php:423
+msgid "Country"
+msgstr "Válida si el país de origen es Estados Unidos."
+
+#: includes/data-wf-settings.php:671 includes/class-wf-admin-options.php:87
+msgid "Country Code"
+msgstr "Código de país"
+
+#: includes/data-wf-settings.php:1868
+msgid "Country code Eg: US"
+msgstr "Código Eg: U.S."
+
+#: includes/class-wf-admin-options.php:85
+msgid "Country Code of Manufacture"
+msgstr "Código de fabricación de país"
+
+#: includes/class-wf-admin-options.php:84
+#| msgid "Country of manufacture"
+msgid "Country of Manufacture"
+msgstr "país de fabricación"
+
+#: includes/data-wf-settings.php:1289
+msgid "COURTESY_RETURN_LABEL"
+msgstr "COURTESY_RETURN_LABEL"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:441
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:442
+msgid "Create FedEx label"
+msgstr "Crear etiqueta de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:114
+msgid "Create Shipment"
+msgstr "Crear un envío"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:125
+msgid "Create shipment for the packages"
+msgstr "Crear envío para los paquetes"
+
+#: includes/data-wf-settings.php:1309
+msgid "CSB V International Shipments - India"
+msgstr "Envíos internacionales CSB v - India"
+
+#: includes/data-wf-settings.php:967
+msgid ""
+"Currency used to Communicate with FedEx. Conversion Rate required from store "
+"to FedEx Currency if it is different from Store Currency"
+msgstr ""
+"Moneda utilizada para comunicarse con FedEx. La tasa de conversión requerida "
+"de la moneda de la tienda a FedEx si es diferente de la moneda de la tienda"
+
+#: includes/data-wf-settings.php:891
+#| msgid "Customer"
+msgid "Custom"
+msgstr "Costumbre"
+
+#: includes/class-wf-admin-options.php:180
+msgid "Custom Declared Value "
+msgstr "Valor declarado personalizado"
+
+#: includes/data-wf-settings.php:1149
+msgid "Custom Scaling (%)"
+msgstr "Escala personalizada (%)"
+
+#: includes/data-wf-settings.php:1192
+msgid "Custom Shipment Message"
+msgstr "Mensaje de envío personalizado"
+
+#: includes/data-wf-settings.php:1063
+msgid "Custom Value"
+msgstr "Valor personalizado"
+
+#: includes/data-wf-settings.php:581
+msgid "Customs Duties Payer"
+msgstr "Pagador de derechos de aduana"
+
+#: includes/data-wf-settings.php:1302
+msgid "Customs Options Description"
+msgstr "Descripción de las opciones aduaneras"
+
+#: includes/data-wf-settings.php:1282
+msgid "Customs Options Type"
+msgstr "Tipo de opciones aduaneras"
+
+#: includes/data-wf-settings.php:826
+msgid "Cut-Off Time"
+msgstr "Cortar el tiempo"
+
+#: includes/class-wf-admin-options.php:224
+#: includes/class-wf-admin-options.php:656
+msgid "Dangerous Goods Accessibility "
+msgstr "Accesibilidad de mercancías peligrosas"
+
+#: includes/class-wf-admin-options.php:669
+msgid "Dangerous Goods Cargo Aircraft Only"
+msgstr "Aeronaves de carga de mercancías peligrosas solamente"
+
+#: includes/class-wf-admin-options.php:236
+msgid "Dangerous Goods Cargo Aircraft Only "
+msgstr "Aeronaves de carga de mercancías peligrosas solamente"
+
+#: includes/class-wf-admin-options.php:189
+#: includes/class-wf-admin-options.php:618
+msgid "Dangerous Goods Option Type "
+msgstr "Tipo de opción de mercancías peligrosas"
+
+#: includes/class-wf-admin-options.php:208
+#: includes/class-wf-admin-options.php:638
+msgid "Dangerous Goods Regulation "
+msgstr "Regulación de mercancías peligrosas"
+
+#: includes/data-wf-settings.php:905
+msgid "Dangerous Goods Services"
+msgstr "Servicios de mercancías peligrosas"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1426
+msgid "Date"
+msgstr "Fecha"
+
+#: includes/data-wf-settings.php:749
+msgid "Date Certain"
+msgstr "Fecha cierta"
+
+#: includes/html-ph-help-and-support.php:99
+msgid "Debug FedEx Rates Mismatch"
+msgstr "Depurar las tasas de fedex no coinciden"
+
+#: includes/data-wf-settings.php:185
+msgid "Debug Mode"
+msgstr "Modo depuración"
+
+#: includes/data-wf-settings.php:1487
+msgid "Declared"
+msgstr "Declarado"
+
+#: includes/class-wf-admin-options.php:257
+#: includes/class-wf-admin-options.php:538
+#: includes/class-wf-admin-options.php:695
+#: includes/class-wf-fedex-freight-mapping.php:33
+#: includes/class-wf-fedex-freight-mapping.php:62
+msgid "Default"
+msgstr "Defecto"
+
+#: includes/data-wf-settings.php:1408
+msgid "Default - When the order is placed successfully"
+msgstr "Predeterminado: cuando el pedido se realiza con éxito"
+
+#: includes/data-wf-settings.php:1951
+msgid "Default Freight Class"
+msgstr "Clase de carga por defecto"
+
+#: includes/data-wf-settings.php:1217
+msgid "Default Service for Domestic Shipment"
+msgstr "Servicio predeterminado para envío nacional"
+
+#: includes/data-wf-settings.php:1226
+msgid "Default Service for International Shipment"
+msgstr "Servicio predeterminado para envío internacional"
+
+#: includes/data-wf-settings.php:217
+msgid "Default to residential delivery."
+msgstr "Por defecto a la entrega residencial."
+
+#: includes/data-wf-settings.php:1679
+msgid "Default: Volume Based Packing"
+msgstr "Valor predeterminado: Embalaje basado en volumen"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:709
+msgid ""
+"Define your own email html here. Use the place holder tag [DOWNLOAD LINK] to "
+"get the label dowload link. Supported tag holders - [DOWNLOAD LINK], [ORDER "
+"NO], [ORDER AMOUNT], [PRODUCTS ID], [PRODUCTS SKU], [PRODUCTS NAME], "
+"[CUSTOMER EMAIL], [CUSTOMER NAME], [ADDITIONAL LABELS], [PRODUCT_INFO] - "
+"Print Product details as table."
+msgstr ""
+"Defina su propio correo electrónico HTML aquí. Use la etiqueta del soporte "
+"de lugar [DOWNLOAD LINK] para obtener el enlace de la etiqueta DowLoad. "
+"Titulares de etiquetas compatibles - [DOWNLOAD LINK], [ORDER NO], [ORDER "
+"AMOUNT], [PRODUCTS ID], [PRODUCTS SKU], [PRODUCTS NAME], [CUSTOMER EMAIL], "
+"[CUSTOMER NAME], [ADDITIONAL LABELS], [PRODUCT_INFO] - Imprimir detalles del "
+"producto como tabla."
+
+#: includes/data-wf-settings.php:1195
+msgid ""
+"Define your own shipment message. Use the place holder tags [ID], [SERVICE] "
+"and [DATE] for Shipment Id, Shipment Service and Shipment Date respectively. "
+"Leave it empty for default message.<br>"
+msgstr ""
+"Defina su propio mensaje de envío. Use las etiquetas del titular del lugar "
+"[ID], [SERVICE] y [DATE] para la identificación de envío, el servicio de "
+"envío y la fecha de envío, respectivamente. Déjalo vacío para un mensaje "
+"predeterminado.<br>"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1981
+#: includes/data-wf-settings.php:1551
+msgid "Delivered At Place"
+msgstr "Entregado en el lugar"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1974
+#: includes/data-wf-settings.php:1544
+msgid "Delivered At Terminal"
+msgstr "Entregado en la terminal"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1975
+#: includes/data-wf-settings.php:1545
+msgid "Delivered Duty Paid"
+msgstr "Impuesto entregado pagado"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1976
+#: includes/data-wf-settings.php:1546
+msgid "Delivered Duty Unpaid"
+msgstr "trabajo entregado sin pagar"
+
+#: includes/data-wf-settings.php:538 includes/class-wf-admin-options.php:147
+#: includes/class-wf-admin-options.php:576
+msgid "Delivery Signature"
+msgstr "Firma de entrega"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1910
+msgid "Delivery Time"
+msgstr "El tiempo de entrega"
+
+#: includes/data-wf-settings.php:699
+msgid "Derived"
+msgstr "Derivado"
+
+#: includes/class-wf-admin-options.php:315
+#: includes/class-wf-admin-options.php:765
+msgid "Describes the material composition of a battery or cell."
+msgstr "Describe la composición del material de una batería o celda."
+
+#: includes/class-wf-admin-options.php:327
+#: includes/class-wf-admin-options.php:779
+msgid ""
+"Describes the packing arrangement of a battery or cell with respect to other "
+"items within the same package."
+msgstr ""
+"Describe la disposición de embalaje de una batería o celda con respecto a "
+"otros elementos dentro del mismo paquete."
+
+#: includes/data-wf-settings.php:1283
+msgid ""
+"Details the return reason used for clearance processing of international "
+"dutiable outbound and international dutiable return shipments."
+msgstr ""
+"Detalla el motivo de retorno utilizado para el procesamiento de autorización "
+"de envíos internacionales de salida y devolución de regreso internacional."
+
+#: includes/data-wf-settings.php:1671
+msgid "Determine how items are packed before being sent to FedEx."
+msgstr "Determinar cómo los artículos se embalan antes de ser enviado a FedEx."
+
+#: includes/data-wf-settings.php:1569
+msgid "Digital Signature"
+msgstr "Firma digital"
+
+#: includes/data-wf-settings.php:203
+msgid "Dimension/Weight Unit"
+msgstr "Unidad de dimensión/peso"
+
+#: includes/data-wf-settings.php:1064
+msgid "Dimensions"
+msgstr "Dimensiones"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2011
+#: includes/data-wf-settings.php:546 includes/class-wf-admin-options.php:153
+#: includes/class-wf-admin-options.php:583
+msgid "Direct"
+msgstr "Directo"
+
+#: includes/data-wf-settings.php:906
+msgid "Direct Mail Services"
+msgstr "Servicios de correo directo"
+
+#: includes/data-wf-settings.php:1048
+msgid "Disable"
+msgstr "Desactivar"
+
+#: includes/data-wf-settings.php:1185
+msgid ""
+"Disable the tracking message sent to the customers via Email and on the My "
+"Account page"
+msgstr ""
+"Deshabilite el mensaje de seguimiento enviado a los clientes por correo "
+"electrónico y en la página de mi cuenta"
+
+#: includes/data-wf-settings.php:1051
+msgid ""
+"Disable this to hide FedEx meta boxes (Generate label and tracking meta box) "
+"on order page)."
+msgstr ""
+"Deshabilite esto para ocultar los meta cuadros de FedEx (generar etiqueta y "
+"seguimiento de meta casilla) en la página de pedido)."
+
+#: includes/data-wf-settings.php:1184
+msgid "Disable Tracking for Customers"
+msgstr "Deshabilitar el seguimiento para los clientes"
+
+#: includes/data-wf-settings.php:1485
+msgid "Discounted"
+msgstr "Con descuento"
+
+#: includes/data-wf-settings.php:433
+msgid "Display Alternate Return Address on Label"
+msgstr "Muestra la dirección de retorno alternativa en la etiqueta"
+
+#: includes/data-wf-settings.php:808
+msgid "Display Delivery Date"
+msgstr "Mostrar fecha de entrega"
+
+#: includes/data-wf-settings.php:754
+msgid "Display FedEx Live Tracking Details"
+msgstr "Mostrar detalles de seguimiento en vivo de FedEx"
+
+#: includes/data-wf-settings.php:1140
+msgid "Display Labels in Browser for Individual Order"
+msgstr "Mostrar etiquetas en el navegador para orden individual"
+
+#: includes/data-wf-settings.php:1158
+msgid "Doc Tab Content"
+msgstr "Contenido de la pestaña de doc"
+
+#: includes/data-wf-settings.php:1166
+msgid "Doc Tab Orientation"
+msgstr "Orientación de la pestaña doctor"
+
+#: includes/data-wf-settings.php:693
+msgid "Document Content"
+msgstr "Documentar contenido"
+
+#: fedex-woocommerce-shipping.php:243
+msgid "Documentation"
+msgstr "Documentación"
+
+#: includes/data-wf-settings.php:700
+msgid "Documents Only"
+msgstr "Solo documentos"
+
+#: includes/data-wf-settings.php:907
+msgid "Domestic Shipping Services"
+msgstr "Servicios de envío doméstico"
+
+#: includes/class-wf-admin-options.php:212
+#: includes/class-wf-admin-options.php:643
+msgid "DOT"
+msgstr "PUNTO"
+
+#: includes/class-wf-admin-options.php:209
+#: includes/class-wf-admin-options.php:640
+msgid ""
+"DOT - U.S. Department of Transportation has primary responsibility for "
+"overseeing the transportation in commerce of hazardous materials, commonly "
+"called \"HazMats\"."
+msgstr ""
+"DOT - El Departamento de Transporte de los EE. UU. Tiene la responsabilidad "
+"principal de supervisar el transporte en el comercio de materiales "
+"peligrosos, comúnmente llamados \"peligros\"."
+
+#: includes/class-wf-admin-options.php:294
+#: includes/class-wf-admin-options.php:740
+msgid ""
+"DOT diamond hazard label type. Can also include limited quantity or "
+"exemption number."
+msgstr ""
+"Tipo de etiqueta de peligro de diamantes de Dot. También puede incluir "
+"cantidad limitada o número de exención."
+
+#: includes/class-wf-admin-options.php:277
+#: includes/class-wf-admin-options.php:719
+msgid "DOT hazardous material class or division."
+msgstr "DOT Clase o división de material peligroso."
+
+#: includes/data-wf-settings.php:686 includes/data-wf-settings.php:908
+msgid "Drop Box"
+msgstr "Buzón"
+
+#: includes/data-wf-settings.php:678
+msgid "Dropoff Type"
+msgstr "Tipo de caída"
+
+#: includes/data-wf-settings.php:1751
+msgid "Drum"
+msgstr "Tambor"
+
+#: includes/class-wf-admin-options.php:94
+msgid "Dry Ice"
+msgstr "Hielo seco"
+
+#: includes/class-wf-admin-options.php:102
+#: includes/class-wf-admin-options.php:105
+msgid "Dry Ice Weight"
+msgstr "Peso de hielo seco"
+
+#: includes/data-wf-settings.php:1065
+msgid "Duties And Taxes Payor Account Number"
+msgstr "Deberes e impuestos Número de cuenta del pagador"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:708
+msgid "Email Format"
+msgstr "Formato de Correo Electrónico"
+
+#: includes/data-wf-settings.php:1103
+msgid "Email Notification"
+msgstr "Notificación por correo"
+
+#: includes/data-wf-settings.php:1431
+msgid "Email Subject"
+msgstr "Asunto del email"
+
+#: includes/data-wf-settings.php:186 includes/data-wf-settings.php:195
+#: includes/data-wf-settings.php:313 includes/data-wf-settings.php:434
+#: includes/data-wf-settings.php:443 includes/data-wf-settings.php:523
+#: includes/data-wf-settings.php:772 includes/data-wf-settings.php:809
+#: includes/data-wf-settings.php:818 includes/data-wf-settings.php:844
+#: includes/data-wf-settings.php:853 includes/data-wf-settings.php:862
+#: includes/data-wf-settings.php:1047 includes/data-wf-settings.php:1104
+#: includes/data-wf-settings.php:1310 includes/data-wf-settings.php:1359
+#: includes/data-wf-settings.php:1368 includes/data-wf-settings.php:1377
+#: includes/data-wf-settings.php:1386 includes/data-wf-settings.php:1395
+#: includes/data-wf-settings.php:1414 includes/data-wf-settings.php:1440
+#: includes/data-wf-settings.php:1460 includes/data-wf-settings.php:1469
+#: includes/data-wf-settings.php:1492 includes/data-wf-settings.php:1578
+#: includes/data-wf-settings.php:1588 includes/data-wf-settings.php:1597
+#: includes/data-wf-settings.php:1637 includes/data-wf-settings.php:1646
+#: includes/data-wf-settings.php:1728 includes/data-wf-settings.php:1901
+#: includes/data-wf-settings.php:1973 includes/data-wf-settings.php:1981
+#: includes/data-wf-settings.php:1989 includes/data-wf-settings.php:1997
+#: includes/data-wf-settings.php:2012
+msgid "Enable"
+msgstr "Habilitar"
+
+#: includes/data-wf-settings.php:835
+#, php-format
+#| msgid "Enable %sFedex One Rates%s"
+msgid "Enable %sFedEx One Rates%s"
+msgstr "Habilitar %sfedex una tasas %s"
+
+#: includes/data-wf-settings.php:190
+msgid "Enable debug mode to show debugging information on the cart/checkout."
+msgstr ""
+"Activar el modo de depuración para mostrar información de depuración en la "
+"compra / pago y envío."
+
+#: includes/data-wf-settings.php:1795
+msgid "Enable FedEx Pickup"
+msgstr "Habilitar la recolección de FedEx"
+
+#: includes/class-wf-admin-options.php:95
+msgid "Enable if this product requires Dry Ice shipment."
+msgstr "Habilite si este producto requiere envío de hielo seco."
+
+#: includes/data-wf-settings.php:226
+msgid "Enable Insurance"
+msgstr "Habilitar Seguros"
+
+#: includes/data-wf-settings.php:1265
+msgid "Enable Return Label in My Account Page"
+msgstr "Habilitar la etiqueta de devolución en la página de mi cuenta"
+
+#: includes/data-wf-settings.php:1177
+msgid "Enable Shipment Tracking for your WooCommerce Orders"
+msgstr "Habilitar el seguimiento de envío para sus órdenes de WooCommerce"
+
+#: includes/data-wf-settings.php:199
+msgid ""
+"Enable silent debug mode to create debug information without showing "
+"debugging information on the cart/checkout."
+msgstr ""
+"Habilite el modo de depuración silenciosa para crear información de "
+"depuración sin mostrar información de depuración en el carrito/pago."
+
+#: includes/data-wf-settings.php:2015
+msgid ""
+"Enable this option & provide a default phone number that FedEx will use on "
+"the shipping labels."
+msgstr ""
+"Habilite esta opción y proporcione un número de teléfono predeterminado que "
+"FedEx usará en las etiquetas de envío."
+
+#: includes/data-wf-settings.php:1739
+msgid "Enable this option if you are shipping Hazardous Materials"
+msgstr "Habilite esta opción si envía materiales peligrosos"
+
+#: includes/data-wf-settings.php:738
+msgid ""
+"Enable this option to select from various FedEx Premium delivery services"
+msgstr ""
+"Habilite esta opción para seleccionar de varios servicios de entrega de "
+"FedEx Premium"
+
+#: includes/data-wf-settings.php:721
+msgid "Enable this to activate dry ice option to product level"
+msgstr "Habilitarla activar la opción de hielo seco a nivel del producto"
+
+#: includes/data-wf-settings.php:1796
+msgid "Enable this to setup pickup request"
+msgstr "Activar esta solicitud de recogida de configuración"
+
+#: includes/data-wf-settings.php:1692
+msgid "Enable Volumetric weight"
+msgstr "Habilitar peso volumétrico"
+
+#: includes/html-wf-box-packing.php:64 includes/html-wf-services.php:12
+msgid "Enabled"
+msgstr "Abilitata"
+
+#: includes/data-wf-settings.php:222
+msgid ""
+"Enables Residential Delivery and validates the shipping address "
+"automatically (if your FedEx Account has this functionality enabled)."
+msgstr ""
+"Habilita la entrega residencial y valida la dirección de envío "
+"automáticamente (si su cuenta de FedEx tiene esta funcionalidad habilitada)."
+
+#: includes/data-wf-settings.php:1445
+msgid ""
+"Enabling this option will send the ZPL label content as a plain text email "
+"to the shipper, recipient or the vendors, as per the plugin settings."
+msgstr ""
+"Habilitar esta opción enviará el contenido de la etiqueta ZPL como un correo "
+"electrónico de texto sin formato al remitente, el destinatario o los "
+"proveedores, según la configuración del complemento."
+
+#: includes/data-wf-settings.php:1144
+msgid ""
+"Enabling this will display the label in the browser instead of downloading "
+"it. Useful if your downloaded file is getting currupted because of PHP BOM "
+"(ByteOrderMark)."
+msgstr ""
+"Habilitar esto mostrará la etiqueta en el navegador en lugar de descargarla. "
+"Útil si su archivo descargado se está curupando debido a PHP BOM "
+"(Byteordermark)."
+
+#: includes/data-wf-settings.php:1650
+msgid ""
+"End Date of the blanket period. It is the date upon which the blanket period "
+"expires"
+msgstr ""
+"Fecha de finalización del período de la manta. Es la fecha en que expira el "
+"período general"
+
+#: includes/class-wf-admin-options.php:76
+msgid ""
+"Enter Commodity Description <br/> NOTE: Commodity description should match "
+"the Harmonized Code"
+msgstr ""
+"Ingrese la descripción de los productos básicos Nota: Descripción del "
+"producto debe coincidir con el código armonizado"
+
+#: includes/data-wf-settings.php:2020
+msgid "Enter Phone Number"
+msgstr "Ingresa número telefónico"
+
+#: includes/data-wf-settings.php:248
+msgid "Enter postcode for the <strong>Shipper</strong>."
+msgstr "Introduzca Código postal por el <strong>remitente</strong>."
+
+#: includes/data-wf-settings.php:985
+msgid ""
+"Enter the conversion amount in case you have a different currency set up "
+"comparing to the currency of origin location. This amount will be multiplied "
+"with the shipping rates. Leave it empty if no conversion required."
+msgstr ""
+"Introduzca la cantidad de conversión en caso de tener una moneda diferente "
+"estableció en comparación con la moneda de origen localización. Esta "
+"cantidad se multiplica por las tarifas de envío. Déjelo vacío si se requiere "
+"ninguna conversión."
+
+#: includes/data-wf-settings.php:976
+msgid ""
+"Enter the conversion amount in case you have a different currency set up in "
+"store comparing to the currency of FedEx Account. This amount will be "
+"multiplied with all the cost of Store."
+msgstr ""
+"Ingrese el monto de conversión en caso de que tenga una moneda diferente "
+"configurada en la tienda en comparación con la moneda de la cuenta FedEx. "
+"Esta cantidad se multiplicará con todo el costo de la tienda."
+
+#: includes/class-wf-admin-options.php:103
+msgid "Enter the weight of Dry Ice."
+msgstr "Ingrese el peso del hielo seco."
+
+#: includes/class-wf-tracking-admin.php:220
+msgid "Enter Tracking IDs"
+msgstr "Introduzca el ID de seguimiento"
+
+#: includes/data-wf-settings.php:1135
+msgid "EPL2"
+msgstr "EPL2"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:3005
+msgid "Est delivery: "
+msgstr "EST Entrega:"
+
+#: includes/data-wf-settings.php:830
+msgid ""
+"Estimated delivery will be adjusted to the next day if any Rate Request is "
+"made after cut off time. Use 24 hour format (Hour:Minute). Example - 23:00."
+msgstr ""
+"La entrega estimada se ajustará al día siguiente si se realiza una solicitud "
+"de tasa después del tiempo de corte. Use formato de 24 horas (hora: minuto). "
+"Ejemplo - 23:00."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1963
+#: includes/data-wf-settings.php:1468
+msgid "ETD - Electronic Trade Documents"
+msgstr "ETD - Documentos comerciales electrónicos"
+
+#: includes/data-wf-settings.php:750
+msgid "Evening"
+msgstr "Noche"
+
+#: includes/data-wf-settings.php:995
+msgid ""
+"Ex: FedEx returned rates in USD and would like to convert to the base "
+"currency EUR. Convertion happens only FedEx API provide the exchange rate."
+msgstr ""
+"Ej: FedEx devolvió las tasas en USD y le gustaría convertir a la moneda base "
+"EUR. La converción ocurre solo la API de FedEx proporciona el tipo de cambio."
+
+#: includes/data-wf-settings.php:728
+msgid "Exclude Tax"
+msgstr "Impuestos No Incluidos"
+
+#: includes/data-wf-settings.php:1290
+msgid "EXHIBITION_TRADE_SHOW"
+msgstr "EXHIBITION_TRADE_SHOW"
+
+#: includes/data-wf-settings.php:1610
+msgid "Exporter"
+msgstr "Exportador"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1977
+#: includes/data-wf-settings.php:1547
+msgid "ExWorks"
+msgstr "Exworks"
+
+#: includes/data-wf-settings.php:1023
+msgid "Fallback"
+msgstr "Retroceder"
+
+#: includes/data-wf-settings.php:1291
+msgid "FAULTY_ITEM"
+msgstr "ARTÍCULO DEFECTUOSO"
+
+#: includes/data-wf-settings.php:780 includes/class-wf-tracking-admin.php:217
+#: includes/class-wf-fedex-woocommerce-shipping.php:63
+msgid "FedEx"
+msgstr "FedEx"
+
+#: includes/third-party-plugin-support/ph-fedex-woocommerce-mixed-and-match-product-support.php:89
+msgid ""
+"FedEx - Mixed and Matched Products found in this order. Skipped Products :"
+msgstr ""
+"FedEx: productos mixtos y combinados que se encuentran en este orden. "
+"Productos omitidos:"
+
+#: includes/wf-automatic-label-generation.php:54
+msgid "Fedex - No product Found. Please check the products in order."
+msgstr ""
+"FedEx - No se encuentra ningún producto. Consulte los productos en orden."
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:1408
+#, php-format
+msgid ""
+"FedEx - Product Dimensions Missing, Aborting! Product Id - %d, Product Name -"
+" %s."
+msgstr ""
+"FedEx - ¡Faltan las dimensiones del producto, abortando! ID de producto - %d,"
+" nombre del producto - %s."
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:1102
+#: includes/class-wf-fedex-woocommerce-shipping.php:1195
+#: includes/class-wf-fedex-woocommerce-shipping.php:1616
+#, php-format
+msgid ""
+"FedEx - Product Weight Missing, Aborting! Product Id - %d, Product Name - %s."
+msgstr ""
+"FedEx - ¡Falta el peso del producto, abortando! ID de producto - %d, nombre "
+"del producto - %s."
+
+#: includes/data-wf-settings.php:140
+msgid "FedEx Account Number"
+msgstr "Su número de cuenta de FedEx:"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2504
+msgid "FedEx Additional Label"
+msgstr "Etiqueta adicional de FedEx"
+
+#: includes/data-wf-settings.php:2004
+msgid "FedEx Advanced Settings"
+msgstr "Configuración avanzada de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:678
+msgid ""
+"FedEx API returns the rates in USD. Please enable Rates in base currency "
+"option in the plugin. Conversion happens only if FedEx API provide the "
+"exchange rates."
+msgstr ""
+"FedEx devuelve las tarifas en USD. Por favor habilita tasas en opción en el "
+"plugin de divisa base. Conversión sucede sólo si FedEx API proporciona los "
+"tipos de cambio."
+
+#: includes/data-wf-settings.php:843
+msgid "FedEx COD"
+msgstr "Bacalao de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1490
+#, php-format
+#| msgid "Fedex Create Shipment Error:%s"
+msgid "FedEx Create Shipment Error:<br/>%s"
+msgstr "FedEx Crear error de envío:%s"
+
+#: includes/data-wf-settings.php:962
+msgid "FedEx Currency"
+msgstr "Moneda de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:3391
+#: includes/class-wf-fedex-woocommerce-shipping.php:2904
+msgid ""
+"FEDEX debug mode is on - to hide these messages, turn debug mode off in the "
+"settings."
+msgstr ""
+"Modo de depuración FEDEX es-para ocultar estos mensajes, desactivar el modo "
+"de depuración en la configuración."
+
+#: includes/data-wf-settings.php:803
+msgid "FedEx Estimated Delivery Date"
+msgstr "Fecha de entrega estimada de FedEx"
+
+#: includes/data-wf-settings.php:877
+msgid "FedEx Express"
+msgstr "FedEx Express"
+
+#: includes/data-wf-settings.php:879 includes/data-wf-settings.php:1900
+msgid "FedEx Freight"
+msgstr "flete <g id=\"1\">Fedex </g>"
+
+#: includes/class-wf-fedex-freight-mapping.php:31
+#: includes/class-wf-fedex-freight-mapping.php:59
+#: includes/class-wf-fedex-freight-mapping.php:91
+msgid "Fedex Freight Class"
+msgstr "Clase de carga de Fedex"
+
+#: includes/class-wf-admin-options.php:114
+#| msgid "Freight class for shipping calculation."
+msgid "FedEx Freight class for shipping calculation."
+msgstr "Clase de flete de FedEx para el cálculo del envío."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2019
+#: includes/data-wf-settings.php:551 includes/class-wf-admin-options.php:148
+#: includes/class-wf-admin-options.php:578
+msgid ""
+"FedEx Freight services are not eligible for Signature Service. Hence, "
+"Signature option will be ignored for Freight Shipments."
+msgstr ""
+"Los servicios de flete de FedEx no son elegibles para el servicio de firma. "
+"Por lo tanto, la opción de firma se ignorará para los envíos de carga."
+
+#: includes/data-wf-settings.php:1967
+msgid "FEDEX FREIGHT STRAIGHT BILL OF LADING"
+msgstr "FedEx Freight Bill Bill de embarque"
+
+#: includes/data-wf-settings.php:878
+msgid "FedEx Ground"
+msgstr "Tierra de fedex"
+
+#: includes/data-wf-settings.php:861
+#: includes/class-ph-fedex-woocommerce-location-finder.php:269
+msgid "FedEx Hold at Location"
+msgstr "FedEx Hold en la ubicación"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:684
+msgid "FedEx is enabled, but the origin postcode has not been set."
+msgstr ""
+"FedEx está habilitado, pero el código postal de origen no se ha establecido."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1081
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2611
+msgid "Fedex label generation Suspended. Label has been already generated."
+msgstr ""
+"Generación de etiquetas de FedEx suspendida. La etiqueta ya ha sido generada."
+
+#: includes/data-wf-settings.php:1043
+msgid "FedEx Label Printing"
+msgstr "Impresión de la etiqueta de FedEx"
+
+#: includes/data-wf-settings.php:1218
+msgid ""
+"FedEx labels will be generated for this Domestic Service if no FedEx "
+"Shipping Method is selected on the cart page and the shipping address is a "
+"Domestic Address"
+msgstr ""
+"Se generarán etiquetas de FedEx para este servicio nacional si no se "
+"selecciona ningún método de envío de FedEx en la página del carrito y la "
+"dirección de envío es una dirección nacional"
+
+#: includes/data-wf-settings.php:1227
+msgid ""
+"FedEx labels will be generated for this International Service if no FedEx "
+"Shipping Method is selected on the cart page and the shipping address is a "
+"International Address"
+msgstr ""
+"Se generarán etiquetas de FedEx para este servicio internacional si no se "
+"selecciona ningún método de envío de FedEx en la página del carrito y la "
+"dirección de envío es una dirección internacional"
+
+#: includes/data-wf-settings.php:1894
+msgid "FedEx LTL Freight Settings"
+msgstr "Configuración de carga FedEx LTL"
+
+#: includes/data-wf-settings.php:147
+#| msgid "Fedex Meter Number"
+msgid "FedEx Meter Number"
+msgstr "Número de medidor de FedEx"
+
+#: includes/data-wf-settings.php:834
+msgid "FedEx One Rate"
+msgstr "FedEx una tarifa"
+
+#: includes/data-wf-settings.php:840
+#| msgid ""
+#| "Fedex One Rates will be offered if the items are packed into a valid "
+#| "Fedex One box, and the origin and destination is the US. For other "
+#| "countries this option will enable FedEx packing. Note: All FedEx boxes "
+#| "are not available for all countries, disable this option or disable "
+#| "different boxes if you are not receiving any shipping services."
+msgid ""
+"FedEx One Rates will be offered if the items are packed into a valid FedEx "
+"One box, and the origin and destination is the US. For other countries this "
+"option will enable FedEx packing. Note: All FedEx boxes are not available "
+"for all countries, disable this option or disable different boxes if you are "
+"not receiving any shipping services."
+msgstr ""
+"Las tarifas de FedEx One se ofrecerán si los artículos están empaquetados en "
+"una caja de FedEx One Valid, y el origen y el destino son los EE. UU. Para "
+"otros países, esta opción habilitará el embalaje de FedEx. Nota: Todas las "
+"cajas de FedEx no están disponibles para todos los países, deshabilitan esta "
+"opción o deshabilitan diferentes cajas si no recibe ningún servicio de envío."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2498
+msgid "Fedex Print Label"
+msgstr "Etiqueta de impresión de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2401
+msgid "Fedex Rate Request Failed - Weight is missing in the pacakge. Aborting."
+msgstr ""
+"La solicitud de tasa de FedEx falló: falta el peso en el Pacakge. Aborto."
+
+#: includes/class-xa-my-account-order-return.php:128
+#: includes/class-xa-my-account-order-return.php:133
+msgid "FedEx Return Label has already been generated for this Shipment "
+msgstr "La etiqueta de regreso de FedEx ya se ha generado para este envío"
+
+#: includes/data-wf-settings.php:852 includes/data-wf-settings.php:1367
+msgid "FedEx Saturday Delivery"
+msgstr "Entrega del sábado de FedEx"
+
+#: includes/data-wf-settings.php:870
+msgid "FedEx Service"
+msgstr "Servicio FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1227
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1233
+msgid "FedEx services missing. Label generation has been terminated."
+msgstr ""
+"Falta de servicios de FedEx. La generación de etiquetas ha sido terminado."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1304
+msgid "FedEx Shipment Label"
+msgstr "Etiqueta de envío de FedEx"
+
+#: includes/data-wf-settings.php:1176
+msgid "FedEx Shipment Tracking"
+msgstr "Seguimiento de envío de FedEx"
+
+#: includes/html-ph-help-and-support.php:113
+msgid "FedEx Shipping Rates Adjustment"
+msgstr "Ajuste de tarifas de envío de FedEx"
+
+#: includes/data-wf-settings.php:554
+#| msgid "Fedex SmartPost Hub"
+msgid "FedEx SmartPost Hub"
+msgstr "FedEx SmartPost Hub"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1951
+msgid "FedEx Special Services"
+msgstr "Servicios especiales de FedEx"
+
+#: includes/third-party-plugin-support/wf-fedex-woocommerce-product-bundle-support.php:39
+msgid ""
+"FedEx Warning! One or more Ordered Products have been deleted from the Order."
+" Please check these Products- "
+msgstr ""
+"¡Advertencia de FedEx! Se han eliminado uno o más productos ordenados del "
+"pedido. Consulte estos productos"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:2913
+msgid "FedEx: City not yet supplied. Rates not requested."
+msgstr "FedEx: Ciudad aún no se suministra. Tarifas no solicitadas."
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:2907
+msgid "FedEx: Country not yet supplied. Rates not requested."
+msgstr "FedEx: el país aún no se suministra. Tarifas no solicitadas."
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:3457
+msgid "FedEx: Using Fallback Setting."
+msgstr "FedEx: Uso de la configuración de alojamiento."
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:2918
+msgid "FedEx: Zip not yet supplied. Rates not requested."
+msgstr "FedEx: Zip aún no se suministra. Tarifas no solicitadas."
+
+#: includes/data-wf-settings.php:1773
+msgid "Fiberboard"
+msgstr "Fibra vulcanizada"
+
+#: includes/class-wf-admin-options.php:296
+#: includes/class-wf-admin-options.php:742
+msgid "FLAMMABLE LIQUID"
+msgstr "LIQUIDO INFLAMABLE"
+
+#: includes/class-wf-tracking-admin.php:106
+msgid "Follow link for detailed status."
+msgstr "Siga el enlace de estado detallada."
+
+#: includes/data-wf-settings.php:1292
+msgid "FOLLOWING_REPAIR"
+msgstr "SIGUIENTE_REPARACIÓN"
+
+#: includes/data-wf-settings.php:1293
+msgid "FOR_REPAIR"
+msgstr "PARA REPARAR"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1978
+#: includes/data-wf-settings.php:1548
+msgid "Free Carrier"
+msgstr "Libre transportista"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1971
+#: includes/data-wf-settings.php:1541
+msgid "Free On Board"
+msgstr "Gratis a bordo"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:805
+msgid "Freight"
+msgstr "Transporte"
+
+#: includes/data-wf-settings.php:1907
+msgid "Freight Account Number"
+msgstr "Número de cuenta de la carga"
+
+#: includes/class-wf-admin-options.php:112
+msgid "Freight Class"
+msgstr "Clase de carga"
+
+#: includes/class-wf-admin-options.php:536
+msgid "Freight Class "
+msgstr "Clase de flete"
+
+#: includes/data-wf-settings.php:1961
+msgid "Freight Document Type"
+msgstr "Tipo de documento de flete"
+
+#: includes/data-wf-settings.php:1066
+msgid "Freight payer Account Number"
+msgstr "Número de cuenta del pagador de carga"
+
+#: includes/data-wf-settings.php:507
+msgid "Friday"
+msgstr "Viernes"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:798
+msgid "General"
+msgstr "General"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:133
+msgid "Generate all the packages"
+msgstr "Generar todos los paquetes"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:116
+msgid "Generate Packages"
+msgstr "generar Paquetes"
+
+#: includes/data-wf-settings.php:1385
+msgid "Generate Packages Automatically After Order Received"
+msgstr "Genere paquetes automáticamente después de recibir el pedido"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:111
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:129
+#: includes/class-xa-my-account-order-return.php:76
+#: includes/class-xa-my-account-order-return.php:81
+#: includes/class-xa-my-account-order-return.php:81
+msgid "Generate return label"
+msgstr "Generar etiqueta de retorno"
+
+#: includes/data-wf-settings.php:1394
+msgid "Generate Shipping Labels Automatically After Order Received"
+msgstr ""
+"Generar etiquetas de envío automáticamente después de recibir el pedido"
+
+#: includes/data-wf-settings.php:134
+msgid "Generic API Settings"
+msgstr "Configuración API genéricos"
+
+#: fedex-woocommerce-shipping.php:245
+msgid "Get Started"
+msgstr "Empezar"
+
+#: includes/data-wf-settings.php:136
+msgid ""
+"Get your <a href=\"https://www.pluginhive.com/register-fedex-account-get-"
+"developer-test-credentials/\" target=\"_blank\"><strong>FedEx Developer "
+"Key</strong></a> and <a href=\"https://www.pluginhive.com/get-fedex-"
+"production-credentials-enable-shipping-labels/\" target=\"_blank\"><strong>"
+"FedEx Production Key</strong></a> to use this plugin."
+msgstr ""
+"Obtenga su <a href=\"https://www.pluginhive.com/register-fedex-account-get-"
+"developer-test-credentials/\" target=\"_blank\"><strong>Clave de "
+"desarrollador de FedEx</strong></ a> y <a href=\"https://www.pluginhive."
+"com/get-fedex-production-credentials-enable-shipping-labels/\" "
+"target=\"_blank\"><strong>Clave de producción de FedEx</strong>< /a> para "
+"usar este complemento."
+
+#: includes/data-wf-settings.php:1094
+msgid "Gift"
+msgstr "Regalo"
+
+#: includes/data-wf-settings.php:1778
+msgid "Glass, Porcelain or Stoneware"
+msgstr "Vidrio, porcelana o gres"
+
+#: includes/class-xa-my-account-order-return.php:134
+#: includes/class-xa-my-account-order-return.php:158
+#: includes/class-xa-my-account-order-return.php:162
+msgid "Go Back"
+msgstr "Regresa"
+
+#: includes/data-wf-settings.php:1213
+#| msgid "GUARANTEED_FUNDS"
+msgid "GUARANTEED FUNDS"
+msgstr "Fondos garantizados"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1609
+msgid "H"
+msgstr "H"
+
+#: includes/class-wf-admin-options.php:69
+#: includes/class-wf-admin-options.php:528
+msgid "Harmonized Code"
+msgstr "Codigo armonizado"
+
+#: includes/class-wf-admin-options.php:276
+#: includes/class-wf-admin-options.php:717
+msgid "Hazard Class "
+msgstr "Nivel de riesgo"
+
+#: includes/class-wf-admin-options.php:254
+#: includes/class-wf-admin-options.php:692
+msgid "Hazardous material packaging group."
+msgstr "Grupo de embalaje de material peligroso."
+
+#: includes/class-wf-admin-options.php:268
+#: includes/class-wf-admin-options.php:708
+msgid ""
+"Hazardous material proper shipping name. Up to three description lines of 50 "
+"characters each are allowed for a HazMat shipment. These description "
+"elements are formatted on the OP950 form in 25-character columns (up to 6 "
+"printed lines)."
+msgstr ""
+"Material peligroso Nombre de envío adecuado. Se permiten hasta tres líneas "
+"de descripción de 50 caracteres cada una para un envío de peligro. Estos "
+"elementos de descripción están formateados en el formulario OP950 en "
+"columnas de 25 caracteres (hasta 6 líneas impresas)."
+
+#: includes/class-wf-admin-options.php:245
+#: includes/class-wf-admin-options.php:681
+msgid ""
+"Hazardous material regulatory commodity identifier referred to as Department "
+"of Transportation (DOT) location ID number (UN or NA)."
+msgstr ""
+"Identificador de productos regulatorios de material peligroso denominado "
+"número de identificación de ubicación del Departamento de Transporte (DOT) "
+"(ONU o NA)."
+
+#: includes/class-wf-admin-options.php:286
+#: includes/class-wf-admin-options.php:730
+msgid "Hazardous material subsidiary classes."
+msgstr "Clases subsidiarias de material peligroso."
+
+#: includes/class-wf-admin-options.php:196
+#: includes/class-wf-admin-options.php:625
+msgid "Hazardous Materials"
+msgstr "Materiales peligrosos"
+
+#: includes/data-wf-settings.php:1738
+msgid "Hazardous(HazMat) Packaging"
+msgstr "Embalaje peligroso (peligro)"
+
+#: includes/html-wf-box-packing.php:58
+msgid "Height"
+msgstr "Altura"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:807
+msgid "Help & Support"
+msgstr "Servicio de asistencia"
+
+#: includes/class-ph-fedex-woocommerce-location-finder.php:535
+msgid "Hold At Location:  "
+msgstr "Mantener en la ubicación:"
+
+#: includes/data-wf-settings.php:736
+msgid "Home Delivery Premium"
+msgstr "Premio de entrega a domicilio"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2057
+msgid "Home Delivery Premium - Date Certain"
+msgstr "Premio de entrega a domicilio - Fecha cierta"
+
+#: includes/data-wf-settings.php:742
+msgid "Home Delivery Premium Types"
+msgstr "Tipos de primas de entrega a domicilio"
+
+#: includes/html-ph-help-and-support.php:71
+msgid "How to print FedEx Shipping Labels in bulk?"
+msgstr "¿Cómo imprimir las etiquetas de envío de FedEx a granel?"
+
+#: includes/html-ph-help-and-support.php:59
+msgid "How to Set Up WooCommerce FedEx Shipping Plugin?"
+msgstr "¿Cómo configurar el complemento de envío de WooCommerce FedEx?"
+
+#: includes/html-ph-help-and-support.php:79
+msgid "How to Track FedEx Shipments & Schedule Pickups?"
+msgstr "¿Cómo rastrear los envíos de FedEx y las recolectas de programación?"
+
+#: includes/html-ph-help-and-support.php:63
+msgid "How to Troubleshoot WooCommerce FedEx Shipping plugin?"
+msgstr "¿Cómo solucionar el complemento de envío de WooCommerce FedEx?"
+
+#: includes/html-ph-help-and-support.php:75
+msgid "How to use FedEx Standard Boxes?"
+msgstr "¿Cómo usar cajas estándar de FedEx?"
+
+#: includes/class-wf-admin-options.php:67
+#: includes/class-wf-admin-options.php:526
+#| msgid ""
+#| "HS is a standardized system of names and numbers to classify products."
+msgid ""
+"HS Code is a standardized system of names and numbers to classify products."
+msgstr ""
+"El código HS es un sistema estandarizado de nombres y números para "
+"clasificar los productos."
+
+#: includes/class-wf-admin-options.php:66
+#: includes/class-wf-admin-options.php:524
+msgid "HS Tariff Number"
+msgstr "Número de tarifa HS"
+
+#: includes/data-wf-settings.php:1555
+msgid "HS Tariff Number "
+msgstr "Número de tarifa HS"
+
+#. Author URI of the plugin
+msgid "http://pluginhive.com/about/"
+msgstr "http://pluginhive.com/about/"
+
+#. URI of the plugin
+msgid ""
+"https://www.pluginhive.com/product/woocommerce-fedex-shipping-plugin-with-"
+"print-label/"
+msgstr ""
+"https://www.pluginhive.com/product/woocommerce-fedex-shipping-plugin-with-"
+"print-label/"
+
+#: includes/class-wf-admin-options.php:258
+#: includes/class-wf-admin-options.php:696
+msgid "I"
+msgstr "I"
+
+#: includes/class-wf-admin-options.php:214
+#: includes/class-wf-admin-options.php:645
+msgid "IATA"
+msgstr "IATA"
+
+#: includes/class-wf-admin-options.php:209
+#: includes/class-wf-admin-options.php:640
+msgid "IATA - International Air Transport Association Dangerous Goods."
+msgstr ""
+"IATA - Asociación Internacional de Transporte Aéreo de mercancías peligrosas."
+
+#: includes/class-wf-admin-options.php:244
+#: includes/class-wf-admin-options.php:679
+msgid "Identificaton No. "
+msgstr "Identificaton No."
+
+#: includes/data-wf-settings.php:1205
+msgid ""
+"Identifies the type of funds FedEx should collect upon shipment delivery."
+msgstr ""
+"Identifica el tipo de fondos que FedEx debe recolectar tras la entrega de "
+"envío."
+
+#: includes/data-wf-settings.php:1028
+msgid ""
+"If FedEx returns no matching rates, offer this amount for shipping so that "
+"the user can still checkout. Leave blank to disable."
+msgstr ""
+"Si FedEx no devuelve tarifas de correspondencia, ofrezca esta cantidad para "
+"el envío para que el usuario aún pueda pagar. Deja en blanco para "
+"deshabilitar."
+
+#: includes/data-wf-settings.php:1019
+msgid ""
+"If rates returned by FedEx API will be greater than Maximun Shipping Cost "
+"then Customer will be charged Maximum Shipping Cost."
+msgstr ""
+"Si las tarifas devueltas por la API de FedEx serán mayores que el costo de "
+"envío de Maximun, entonces el cliente se le cobrará el costo de envío máximo."
+
+#: includes/data-wf-settings.php:1011
+msgid ""
+"If rates returned by FedEx API will be less than Minimum Shipping Cost then "
+"Customer will be charged Minimum Shipping Cost."
+msgstr ""
+"Si las tarifas devueltas por la API de FedEx serán inferiores al costo de "
+"envío mínimo, entonces se le cobrará el cliente un costo de envío mínimo."
+
+#: includes/data-wf-settings.php:177
+msgid ""
+"If this is a production API key and not a developer key, check this box."
+msgstr ""
+"Si se trata de una clave de API de producción y no una llave de "
+"desarrollador, marque esta casilla."
+
+#: includes/class-wf-admin-options.php:259
+#: includes/class-wf-admin-options.php:697
+msgid "II"
+msgstr "II"
+
+#: includes/class-wf-admin-options.php:260
+#: includes/class-wf-admin-options.php:698
+msgid "III"
+msgstr "III"
+
+#: includes/data-wf-settings.php:1126
+msgid "Image Type"
+msgstr "Tipo Imagen"
+
+#: includes/html-ph-help-and-support.php:55
+msgid "Important Links"
+msgstr "Links importantes"
+
+#: includes/data-wf-settings.php:1611
+msgid "Importer"
+msgstr "Importador"
+
+#: includes/data-wf-settings.php:1626
+msgid "Importer Specification"
+msgstr "Especificación del importador"
+
+#: includes/class-wf-admin-options.php:228
+#: includes/class-wf-admin-options.php:661
+msgid "Inaccessible"
+msgstr "Inaccesible"
+
+#: includes/class-wf-admin-options.php:225
+#: includes/class-wf-admin-options.php:658
+msgid ""
+"INACCESSIBLE - Inaccessible Dangerous Goods (IDG) do not need to be loaded "
+"so they are accessible to the flight crew in-flight."
+msgstr ""
+"INACCESIBLE: no es necesario cargar las mercancías peligrosas inaccesibles "
+"(IDG) para que estén accesibles para la tripulación de vuelo durante el "
+"vuelo."
+
+#: includes/data-wf-settings.php:1727
+msgid "Include Speciality Boxes"
+msgstr "Incluir cajas especializadas"
+
+#: includes/data-wf-settings.php:563
+msgid "Indicia"
+msgstr "Indicios"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2012
+#: includes/data-wf-settings.php:547 includes/class-wf-admin-options.php:154
+#: includes/class-wf-admin-options.php:584
+msgid "Indirect"
+msgstr "Indirecto"
+
+#: includes/html-wf-box-packing.php:61
+msgid "Inner Height"
+msgstr "Altura interior"
+
+#: includes/html-wf-box-packing.php:59
+msgid "Inner Length"
+msgstr "Longitud interior"
+
+#: includes/html-wf-box-packing.php:60
+msgid "Inner Width"
+msgstr "Ancho interior"
+
+#: includes/data-wf-settings.php:1988
+msgid "Inside Delivery"
+msgstr "Entrega interna"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:492
+msgid "Inside delivery"
+msgstr "Entrega interna"
+
+#: includes/data-wf-settings.php:1996
+msgid "Inside Pickup"
+msgstr "Recogida interior"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1610
+msgid "Insur."
+msgstr "Insur."
+
+#: includes/data-wf-settings.php:225
+msgid "Insurance"
+msgstr "Seguros solicitud para ser incluido."
+
+#: includes/class-wf-admin-options.php:183
+msgid "Insurance amount FedEx"
+msgstr "Monto del seguro FedEx"
+
+#: includes/data-wf-settings.php:1067
+msgid "Insured Value"
+msgstr "Valor asegurado"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:801
+msgid "International Forms"
+msgstr "Formas internacionales"
+
+#: includes/data-wf-settings.php:909
+msgid "International Shipping Services"
+msgstr "Servicios de envío internacionales"
+
+#: includes/data-wf-settings.php:1325
+msgid "Is GST"
+msgstr "Es GST"
+
+#: includes/data-wf-settings.php:1235
+msgid "Item Description"
+msgstr "Descripción del Artículo"
+
+#: includes/data-wf-settings.php:1294
+msgid "ITEM_FOR_LOAN"
+msgstr "ITEM_FOR_LOAN"
+
+#: includes/html-wf-box-packing.php:75
+msgid ""
+"Items will be packed into these boxes depending based on item dimensions and "
+"volume. Dimensions will be passed to FedEx and used for packing. Items not "
+"fitting into boxes will be packed individually."
+msgstr ""
+"Los artículos serán embalados en estas cajas dependiendo según artículo "
+"dimensiones y volumen. Dimensiones serán pasadas a FedEx y utilizadas para "
+"el embalaje. No instalar en cajas los artículos serán embalados "
+"individualmente."
+
+#: includes/data-wf-settings.php:1876
+msgid "Items will be ready for pickup by this time from shop"
+msgstr ""
+"Los productos estarán listos para su recogida por este tiempo de tienda"
+
+#: includes/data-wf-settings.php:1753
+msgid "Jerrican"
+msgstr "Jerrican"
+
+#: includes/data-wf-settings.php:212
+msgid "Kilograms & Centimeters"
+msgstr "Kilogramos y centímetros"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1607
+msgid "L"
+msgstr "L"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:800
+msgid "Label Generation"
+msgstr "Generación de etiquetas"
+
+#: includes/data-wf-settings.php:1036
+msgid "Label Settings"
+msgstr "Configuración de la etiqueta"
+
+#: includes/class-wf-admin-options.php:293
+#: includes/class-wf-admin-options.php:738
+msgid "Label Text "
+msgstr "Texto de la etiqueta"
+
+#: includes/class-wf-admin-options.php:539
+#| msgid "Leaving default will inherit parent product freight class."
+msgid "Leaving default will inherit parent FedEx Freight class."
+msgstr ""
+"Permitir el valor predeterminado heredará la clase de flete de FedEx matriz."
+
+#: includes/html-wf-box-packing.php:56
+msgid "Length"
+msgstr "Largo"
+
+#: includes/data-wf-settings.php:1343
+msgid "Letter of Undertaking"
+msgstr "Carta de compromiso"
+
+#: includes/class-wf-admin-options.php:137
+#: includes/class-wf-admin-options.php:566
+msgid "Licensee"
+msgstr "Concesionario"
+
+#: includes/class-wf-admin-options.php:133
+#: includes/class-wf-admin-options.php:562
+msgid "LICENSEE - Select, if license is required for recipient."
+msgstr ""
+"Licencia de licencia: seleccione, si se requiere licencia para el "
+"destinatario."
+
+#: includes/data-wf-settings.php:1972
+msgid "Lift Gate Delivery"
+msgstr "Entrega de puerta de elevación"
+
+#: includes/data-wf-settings.php:1980
+msgid "Lift Gate Pickup"
+msgstr "Recogida de la puerta de elevación"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:482
+msgid "Lift gate required on delivery"
+msgstr "Puerta de elevación requerida en la entrega"
+
+#: includes/class-wf-admin-options.php:195
+#: includes/class-wf-admin-options.php:624
+msgid "Limited Quantities Commodities"
+msgstr "Comodidades de cantidades limitadas"
+
+#: includes/data-wf-settings.php:929
+msgid "List Rates"
+msgstr "Tarifas"
+
+#: includes/class-wf-admin-options.php:318
+#: includes/class-wf-admin-options.php:768
+msgid "Lithium Ion"
+msgstr "Litio"
+
+#: includes/class-wf-admin-options.php:319
+#: includes/class-wf-admin-options.php:769
+msgid "Lithium Metal"
+msgstr "Metal de litio"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1425
+msgid "Location"
+msgstr "Ubicación"
+
+#: includes/data-wf-settings.php:895
+msgid "Location Attributes"
+msgstr "Atributos de ubicación"
+
+#: includes/data-wf-settings.php:910
+msgid "Location is in Airport"
+msgstr "La ubicación está en el aeropuerto"
+
+#: includes/data-wf-settings.php:1056
+msgid "Masking Data on the Shipping Labels"
+msgstr "Enmascarar datos sobre las etiquetas de envío"
+
+#: includes/data-wf-settings.php:1700
+msgid "Max Package Weight"
+msgstr "Peso del paquete máximo"
+
+#: includes/html-wf-box-packing.php:63
+msgid "Max Weight"
+msgstr "Peso Max"
+
+#: includes/data-wf-settings.php:1015
+msgid "Maximum Shipping Cost"
+msgstr "Costo de envío máximo"
+
+#: includes/data-wf-settings.php:1705
+msgid "Maximum weight allowed for single box."
+msgstr "El peso máximo permitido para un solo cuadro."
+
+#: includes/data-wf-settings.php:570
+msgid "MEDIA MAIL"
+msgstr "LOS MEDIOS DE COMUNICACIÓN CORREO"
+
+#: includes/data-wf-settings.php:1353
+msgid "MEIS"
+msgstr "MEIS"
+
+#: includes/data-wf-settings.php:1348
+msgid "MEIS Shipments"
+msgstr "Envíos de MEIS"
+
+#: includes/data-wf-settings.php:1777
+msgid "Metal"
+msgstr "Metal"
+
+#: includes/data-wf-settings.php:785
+msgid "Method Available to"
+msgstr "Método disponible para"
+
+#: includes/data-wf-settings.php:777
+msgid "Method Title"
+msgstr "Título del método"
+
+#: includes/data-wf-settings.php:998
+msgid "Minimum Order Amount"
+msgstr "Cantidad mínima de pedido"
+
+#: includes/data-wf-settings.php:1007
+msgid "Minimum Shipping Cost"
+msgstr "Costo de envío mínimo"
+
+#: includes/data-wf-settings.php:503
+msgid "Monday"
+msgstr "Lunes"
+
+#: includes/html-wf-box-packing.php:55 includes/html-wf-services.php:8
+msgid "Name"
+msgstr "Nombre"
+
+#: includes/data-wf-settings.php:1820
+msgid "Name of the company"
+msgstr "Nombre de la compania"
+
+#: includes/data-wf-settings.php:1057
+msgid ""
+"Names for data elements / areas which may be masked from printing on the "
+"shipping labels."
+msgstr ""
+"Nombres de elementos / áreas de datos que pueden ser enmascaradas de la "
+"impresión en las etiquetas de envío."
+
+#: includes/data-wf-settings.php:1770
+msgid "Natural Wood"
+msgstr "Madera natural"
+
+#: includes/data-wf-settings.php:1333
+msgid "No"
+msgstr "No"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:483
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:543
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:606
+msgid "No FedEx label found on selected order"
+msgstr "No se encuentra la etiqueta de FedEx en el orden seleccionado"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:648
+msgid "No Fedex label found on selected order"
+msgstr "No se encuentra la etiqueta de FedEx en el orden seleccionado"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2014
+#: includes/data-wf-settings.php:548 includes/class-wf-admin-options.php:155
+#: includes/class-wf-admin-options.php:585
+msgid "No Signature Required"
+msgstr "Firma Requerida"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1602
+msgid "No. of Packages</br>(Max. 25)"
+msgstr "No. de paquetes (Max. 25)"
+
+#: includes/data-wf-settings.php:701
+msgid "Non Documents"
+msgstr "No Documentos"
+
+#: includes/data-wf-settings.php:1354
+msgid "Non MEIS"
+msgstr "No MEIS"
+
+#: includes/class-wf-admin-options.php:171
+#: includes/class-wf-admin-options.php:607
+msgid "Non-Standard product "
+msgstr "Producto no estándar"
+
+#: includes/data-wf-settings.php:1344
+msgid "NONE"
+msgstr "NINGUNA"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1970
+#: includes/data-wf-settings.php:544 includes/data-wf-settings.php:698
+#: includes/data-wf-settings.php:1109 includes/data-wf-settings.php:1540
+#: includes/class-wf-tracking-admin.php:216
+#: includes/class-wf-admin-options.php:194
+#: includes/class-wf-admin-options.php:623
+msgid "None"
+msgstr "Ninguna"
+
+#: includes/class-wf-fedex-pickup-admin.php:37
+msgid "Not Requested"
+msgstr "No requerido"
+
+#: includes/data-wf-settings.php:1095
+msgid "Not Sold"
+msgstr "No vendido"
+
+#: includes/data-wf-settings.php:911
+msgid "Notary Services"
+msgstr "Servicios de notario"
+
+#: includes/data-wf-settings.php:912
+msgid "Observes Day Light Saving Times"
+msgstr "Observa los tiempos de ahorro de luz del día"
+
+#: includes/data-wf-settings.php:948
+msgid "Offer Rates"
+msgstr "Tarifas de Ofertas de Servidos de Programas"
+
+#: includes/data-wf-settings.php:954
+msgid "Offer the customer all returned rates"
+msgstr "Ofrecer al cliente Todos los precios devueltas"
+
+#: includes/data-wf-settings.php:955
+msgid "Offer the customer the cheapest rate only, anonymously"
+msgstr "Ofrecer al cliente la tarifa más barata sólo, de forma anónima"
+
+#: includes/data-wf-settings.php:1465
+msgid ""
+"On enabling this option Commercial Invoice will be received as an additional "
+"label. Applicable for international shipping only."
+msgstr ""
+"Al habilitar esta opción, la factura comercial se recibirá como una etiqueta "
+"adicional. Aplicable solo para envío internacional."
+
+#: includes/data-wf-settings.php:1583
+msgid ""
+"On enabling this option PRO FORMA INVOICE will be received as an additional "
+"label. Applicable for international shipping only."
+msgstr ""
+"Al habilitar esta opción, la factura pro forma se recibirá como una etiqueta "
+"adicional. Aplicable solo para envío internacional."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1964
+#: includes/data-wf-settings.php:1474
+msgid ""
+"On enabling this option the shipment details will be sent electronically and "
+"ETD will be printed in the Shipping Label"
+msgstr ""
+"Al habilitar esta opción, los detalles de envío se enviarán electrónicamente "
+"y ETD se imprimirá en la etiqueta de envío"
+
+#: includes/data-wf-settings.php:1593
+msgid ""
+"On enabling this option USMCA Certificate will be received as an additional "
+"label. Applicable for international shipping only."
+msgstr ""
+"Al habilitar esta opción, el certificado USMCA se recibirá como una etiqueta "
+"adicional. Aplicable solo para envío internacional."
+
+#: includes/data-wf-settings.php:1602
+msgid ""
+"On enabling this option USMCA Commercial Invoice Certification Of Origin "
+"will be received as an additional label. Applicable for international "
+"shipping only."
+msgstr ""
+"Al habilitar esta opción, la certificación de origen de la factura comercial "
+"USMCA se recibirá como una etiqueta adicional. Aplicable solo para envío "
+"internacional."
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:2677
+msgid "Only $100 amount will be insured for smartpost."
+msgstr "Solo se asegurarán una cantidad de $ 100 para SmartPost."
+
+#: includes/data-wf-settings.php:557
+msgid "Only required if using SmartPost."
+msgstr "Sólo se requiere si usa SmartPost."
+
+#: fedex-woocommerce-shipping.php:46
+msgid ""
+"Oops! You tried installing the premium version without deactivating and "
+"deleting the basic version. Kindly deactivate and delete FedEx(Basic) "
+"Woocommerce Extension and then try again"
+msgstr ""
+"¡Uy! Has probado instalando la versión premium sin desactivar y eliminar la "
+"versión básica. Por favor desactivar y eliminar FedEx(Basic) Woocommerce "
+"extensión y vuelva a intentarlo"
+
+#: includes/data-wf-settings.php:913
+msgid "Open Twenty Four Hours"
+msgstr "Abrir veinticuatro horas"
+
+#: includes/data-wf-settings.php:1500
+msgid "Order Currency in Commercial Invoice"
+msgstr "Pedir moneda en factura comercial"
+
+#: includes/data-wf-settings.php:21
+msgid "Origin Address"
+msgstr "Origen Dirección"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:734
+msgid "Origin Country and State"
+msgstr "País de origen y estado"
+
+#: includes/data-wf-settings.php:244
+#| msgid "Origin Postcode"
+msgid "Origin Zipcode"
+msgstr "Código postal de origen"
+
+#: includes/class-wf-admin-options.php:198
+#: includes/class-wf-admin-options.php:627
+msgid "ORM D"
+msgstr "ORM D"
+
+#: includes/class-wf-admin-options.php:215
+#: includes/class-wf-admin-options.php:646
+msgid "ORMD"
+msgstr "ORMD"
+
+#: includes/class-wf-admin-options.php:209
+#: includes/class-wf-admin-options.php:640
+msgid "ORMD - Other Regulated Materials for Domestic transport only."
+msgstr "ORMD - Otros materiales regulados solo para transporte doméstico."
+
+#: includes/data-wf-settings.php:1295
+msgid "OTHER"
+msgstr "OTRA"
+
+#: includes/data-wf-settings.php:915
+msgid "Pack and Ship"
+msgstr "Paquete y envío"
+
+#: includes/data-wf-settings.php:1715
+msgid "Pack heavier items first"
+msgstr "Envolver los objetos más pesados ​​primero"
+
+#: includes/data-wf-settings.php:1667
+msgid "Pack into boxes with weights and dimensions"
+msgstr "Empacar en cajas con pesas y dimensiones"
+
+#: includes/data-wf-settings.php:1666
+msgid "Pack items individually"
+msgstr "Por defecto: objetos de los discos de forma individual"
+
+#: includes/data-wf-settings.php:1716
+msgid "Pack lighter items first."
+msgstr "Envolver los objetos más ligeros en primer lugar."
+
+#: includes/data-wf-settings.php:1717
+msgid "Pack purely divided by weight."
+msgstr "Empaque puramente dividido por el peso."
+
+#: includes/data-wf-settings.php:1068
+msgid "Package Sequence And Count"
+msgstr "Empaque puramente dividido por peso."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1599
+msgid "Package(s)"
+msgstr "Paquete (s)"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:803
+msgid "Packaging"
+msgstr "embalaje"
+
+#: includes/class-wf-admin-options.php:253
+#: includes/class-wf-admin-options.php:690
+msgid "Packaging Group "
+msgstr "Grupo de embalaje"
+
+#: includes/data-wf-settings.php:1764
+msgid "Packaging Material"
+msgstr "Material de embalaje"
+
+#: includes/data-wf-settings.php:1655
+msgid "Packaging Settings"
+msgstr "Configuración de embalaje"
+
+#: includes/data-wf-settings.php:914
+msgid "Packaging Supplies"
+msgstr "Suministros de embalaje"
+
+#: includes/class-wf-admin-options.php:331
+#: includes/class-wf-admin-options.php:783
+msgid "Packed With Equipment"
+msgstr "Repleto de equipos"
+
+#: includes/data-wf-settings.php:1674
+msgid "Packing Algorithm"
+msgstr "Algoritmo de embalaje"
+
+#: includes/data-wf-settings.php:1710
+msgid "Packing Process"
+msgstr "proceso de envasado"
+
+#: includes/data-wf-settings.php:1776
+msgid "Paper, Multi-wall"
+msgstr "Papel, múltiples paredes"
+
+#: includes/data-wf-settings.php:75 includes/data-wf-settings.php:97
+msgid "PAPER_4X6"
+msgstr "PAPER_4X6"
+
+#: includes/data-wf-settings.php:76 includes/data-wf-settings.php:98
+msgid "PAPER_4X6.75"
+msgstr "PAPER_4X6.75"
+
+#: includes/data-wf-settings.php:77 includes/data-wf-settings.php:99
+msgid "PAPER_4X8"
+msgstr "PAPER_4X8"
+
+#: includes/data-wf-settings.php:78 includes/data-wf-settings.php:100
+msgid "PAPER_4X9"
+msgstr "PAPER_4X9"
+
+#: includes/data-wf-settings.php:79 includes/data-wf-settings.php:101
+msgid "PAPER_7X4.75"
+msgstr "PAPER_7X4.75"
+
+#: includes/data-wf-settings.php:80 includes/data-wf-settings.php:102
+msgid "PAPER_8.5X11_BOTTOM_HALF_LABEL"
+msgstr "PAPER_8.5X11_BOTTOM_HALF_LABEL"
+
+#: includes/data-wf-settings.php:81 includes/data-wf-settings.php:103
+msgid "PAPER_8.5X11_TOP_HALF_LABEL"
+msgstr "PAPER_8.5X11_TOP_HALF_LABEL"
+
+#: includes/data-wf-settings.php:82 includes/data-wf-settings.php:104
+msgid "PAPER_LETTER"
+msgstr "PAPER_LETTER"
+
+#: includes/data-wf-settings.php:1661
+msgid "Parcel Packing Method"
+msgstr "Método de embalaje de paquetes"
+
+#: includes/html-ph-help-and-support.php:67
+msgid "Parcel Packing Methods used in FedEx Shipping plugin"
+msgstr ""
+"Métodos de embalaje de paquetes utilizados en el complemento de envío de "
+"FedEx"
+
+#: includes/data-wf-settings.php:571
+msgid "PARCEL RETURN"
+msgstr "DEVOLUCIÓN DE LA PARCELA"
+
+#: includes/data-wf-settings.php:572
+msgid "PARCEL SELECT"
+msgstr "SELECCIÓN DE LA PARCELA"
+
+#: includes/data-wf-settings.php:916
+msgid "Passport Photo Services"
+msgstr "Servicios de fotos de pasaporte"
+
+#: includes/data-wf-settings.php:1526
+msgid "Payment Terms"
+msgstr "Términos de pago"
+
+#: includes/data-wf-settings.php:1133
+msgid "PDF"
+msgstr "PDF"
+
+#: includes/data-wf-settings.php:1212
+msgid "PERSONAL CHECK"
+msgstr "CHEQUE PERSONAL"
+
+#: includes/data-wf-settings.php:1096
+msgid "Personal effects"
+msgstr "efectos personales"
+
+#: includes/data-wf-settings.php:1260
+#| msgid "PERSONAL_NATIONAL"
+msgid "PERSONAL NATIONAL"
+msgstr "PERSONAL NACIONAL"
+
+#: includes/data-wf-settings.php:1261
+#| msgid "PERSONAL_STATE"
+msgid "PERSONAL STATE"
+msgstr "ESTADO PERSONAL"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:804
+msgid "Pickup"
+msgstr "Levantar"
+
+#: includes/data-wf-settings.php:1835
+msgid "Pickup Address"
+msgstr "Dirección de recogida"
+
+#: includes/data-wf-settings.php:1843
+msgid "Pickup City"
+msgstr "Recogida"
+
+#: includes/data-wf-settings.php:1819
+msgid "Pickup Company Name"
+msgstr "Nombre de la empresa de recolección"
+
+#: includes/data-wf-settings.php:1867
+msgid "Pickup Country Code"
+msgstr "Código de país de recogida"
+
+#: includes/data-wf-settings.php:1827
+msgid "Pickup Phone Number"
+msgstr "Número de teléfono de recogida"
+
+#: includes/data-wf-settings.php:1789
+msgid "Pickup Settings"
+msgstr "Configuración de recogida"
+
+#: includes/data-wf-settings.php:1875
+msgid "Pickup Start Time"
+msgstr "Recoger Hora de inicio"
+
+#: includes/data-wf-settings.php:1851
+msgid "Pickup State Code"
+msgstr "Código de estado de la recolección de"
+
+#: includes/data-wf-settings.php:1859
+#| msgid "Pickup Zip Code"
+msgid "Pickup Zipcode"
+msgstr "Código postal de recogida"
+
+#: includes/class-ph-fedex-woocommerce-location-finder.php:270
+msgctxt "placeholder"
+msgid ""
+msgstr "marcador de posición"
+
+#: includes/data-wf-settings.php:1774
+msgid "Plastic"
+msgstr "El plastico"
+
+#: includes/html-ph-help-and-support.php:156
+msgid "Please enter a valid reference ticket number."
+msgstr "Ingrese un número de boleto de referencia válido."
+
+#: includes/data-wf-settings.php:1081
+msgid ""
+"Please enter a value in this field, if you want to change the shipment time "
+"while Label Printing. Enter a negetive value to reduce the time."
+msgstr ""
+"Ingrese un valor en este campo, si desea cambiar el tiempo de envío mientras "
+"la impresión de etiquetas. Ingrese un valor negetivo para reducir el tiempo."
+
+#: includes/html-ph-help-and-support.php:162
+msgid ""
+"Please enter the correct reference ticket number. The information sent with "
+"an Incorrect or Invalid ticket number will be discarded."
+msgstr ""
+"Ingrese el número de ticket de referencia correcto. La información enviada "
+"con un número de boleto incorrecto o no válido se descartará."
+
+#: includes/data-wf-settings.php:1897
+msgid ""
+"Please enter your FedEx Freight Account Details & Shipper’s Address below."
+"<br><b>Note:</b> The City field of the Shipping Address is mandatory to "
+"display FedEx Freight Rates."
+msgstr ""
+"Ingrese los detalles de su cuenta de FedEx Freight y la dirección del "
+"remitente a continuación.<br><b>Nota:</b> El campo Ciudad de la Dirección de "
+"envío es obligatorio para mostrar las tarifas de FedEx Freight."
+
+#: includes/html-ph-help-and-support.php:134
+msgid "Please enusre that the Debug Mode is enabled"
+msgstr "Por favor, enusre que el modo de depuración esté habilitado"
+
+#: includes/html-ph-help-and-support.php:147
+msgid ""
+"Please read the instructions & agree to proceed by selecting the checkbox"
+msgstr ""
+"Lea las instrucciones y acepte continuar seleccionando la casilla de "
+"verificación"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:508
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:549
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:612
+msgid "Please select atleast one order"
+msgstr "Seleccione al menos un pedido"
+
+#. Author of the plugin
+msgid "PluginHive"
+msgstr "PluginHive"
+
+#: includes/data-wf-settings.php:1771
+msgid "Plywood"
+msgstr "Madera contrachapada"
+
+#: includes/data-wf-settings.php:1134
+msgid "PNG"
+msgstr "PNG"
+
+#: includes/data-wf-settings.php:413
+msgid "Postal Code"
+msgstr "Código postal"
+
+#: includes/data-wf-settings.php:1860
+msgid "Postal code"
+msgstr "Código postal"
+
+#: includes/data-wf-settings.php:211
+msgid "Pounds & Inches"
+msgstr "Libras y pulgadas"
+
+#: includes/class-wf-admin-options.php:163
+msgid "Pre packed product "
+msgstr "Producto previamente empaquetado"
+
+#: includes/data-wf-settings.php:573
+msgid "PRESORTED BOUND PRINTED MATTER"
+msgstr "PRESORTED IMPRESO ENCUADERNADO"
+
+#: includes/data-wf-settings.php:574
+msgid "PRESORTED STANDARD"
+msgstr "PRESORTED STANDARD"
+
+#: includes/data-wf-settings.php:1757
+msgid "Pressure Receptacle"
+msgstr "Receptáculo a presión"
+
+#: includes/html-wf-services.php:16
+msgid "Price Adjustment (%)"
+msgstr "Ajuste de precios"
+
+#: includes/html-wf-services.php:15
+#, php-format
+msgid "Price Adjustment (%s)"
+msgstr "AJUSTE DE PRECIOS (%s)"
+
+#: includes/data-wf-settings.php:1478
+msgid "Price Value"
+msgstr "Valor del precio"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:438
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:439
+msgid "Print FedEx Commercial Invoice (PDF)"
+msgstr "Imprimir la factura comercial de FedEx (PDF)"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:425
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:426
+msgid "Print FedEx label"
+msgstr "Imprimir etiqueta de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:434
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:435
+msgid "Print FedEx Shipping + Additional Label (PDF)"
+msgstr "Imprima el envío de FedEx + etiqueta adicional (PDF)"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:431
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:432
+msgid "Print FedEx Shipping Label (PDF)"
+msgstr "Imprimir la etiqueta de envío de FedEx (PDF)"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:109
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:126
+msgid "Print Label"
+msgstr "Imprimir etiqueta"
+
+#: includes/data-wf-settings.php:1118
+msgid "Print Label Size"
+msgstr "Tamaño de la etiqueta de la impresión"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:119
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:134
+#: includes/class-xa-my-account-order-return.php:49
+#: includes/class-xa-my-account-order-return.php:49
+msgid "Print Return Label"
+msgstr "Etiqueta de retorno de impresión"
+
+#: includes/html-ph-help-and-support.php:91
+msgid "Print Sample Labels with Test Account"
+msgstr "Imprimir etiquetas de muestra con cuenta de prueba"
+
+#: includes/data-wf-settings.php:1577
+msgid "Pro Forma Invoice"
+msgstr "Factura de proforma"
+
+#: includes/data-wf-settings.php:1612
+msgid "Producer"
+msgstr "Productor"
+
+#: includes/data-wf-settings.php:1616
+msgid "Producer Specification"
+msgstr "Especificación de productor"
+
+#: includes/data-wf-settings.php:1486
+msgid "Product"
+msgstr "Producto"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:524
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:1154
+msgid "Product # is missing weight. Aborting."
+msgstr "Producto #%d falta de peso. Abortar."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:507
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:697
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:941
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:1146
+#: includes/class-wf-fedex-woocommerce-shipping.php:1085
+#: includes/class-wf-fedex-woocommerce-shipping.php:1187
+#: includes/class-wf-fedex-woocommerce-shipping.php:1358
+#: includes/class-wf-fedex-woocommerce-shipping.php:1579
+#| msgid "Product # is virtual. Skipping."
+msgid "Product #%d is virtual. Skipping."
+msgstr "El producto #%d es virtual. Salto a la comba."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:748
+#, php-format
+msgid "Product #%s is missing weight or dimensions. Aborting."
+msgstr "El producto #%s tiene peso o dimensiones. Aborto."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:978
+#, php-format
+#| msgid "Product #%s is missing dimensions. Aborting."
+msgid "Product #%s is missing weight. Aborting."
+msgstr "El producto #%s no le falta peso. Aborto."
+
+#: includes/data-wf-settings.php:209
+msgid ""
+"Product dimensions and weight will be converted to the selected unit and "
+"will be passed to FedEx."
+msgstr ""
+"Las dimensiones y el peso del producto se convertirán en la unidad "
+"seleccionada y se pasarán a FedEx."
+
+#: includes/data-wf-settings.php:171
+msgid "Production Key"
+msgstr "Clave de producción"
+
+#: includes/class-wf-admin-options.php:267
+#: includes/class-wf-admin-options.php:706
+msgid "Proper Shipping Name "
+msgstr "Nombre de envío adecuado"
+
+#: includes/data-wf-settings.php:1153
+msgid ""
+"Provide a percentage value to scale the shipping label image based on your "
+"preference for bulk printing."
+msgstr ""
+"Proporcione un valor porcentual para escalar la imagen de la etiqueta de "
+"envío en función de su preferencia por la impresión a granel."
+
+#: includes/data-wf-settings.php:1087
+msgid "Purpose of Shipment"
+msgstr "FINALIDAD DEL TRASLADO"
+
+#: includes/data-wf-settings.php:764
+msgid "Rate Settings"
+msgstr "Configuración de tarifas"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:799
+msgid "Rates & Services"
+msgstr "Tarifas y servicios"
+
+#: includes/data-wf-settings.php:989
+msgid "Rates in Base Currency"
+msgstr "Tarifas en moneda Base"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:123
+msgid "Re-generate all packages"
+msgstr "Reinterpretar todos los paquetes"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:112
+msgid "Re-Generate Package(s)"
+msgstr "Reinterpretar (s) paquete (s)"
+
+#: includes/html-ph-help-and-support.php:60
+#: includes/html-ph-help-and-support.php:64
+#: includes/html-ph-help-and-support.php:68
+#: includes/html-ph-help-and-support.php:72
+#: includes/html-ph-help-and-support.php:76
+#: includes/html-ph-help-and-support.php:80
+msgid "Read More"
+msgstr "Leer más"
+
+#: includes/data-wf-settings.php:770
+#| msgid "Realtime Rates"
+msgid "Real-time Rates"
+msgstr "Tarifas en tiempo real"
+
+#: includes/data-wf-settings.php:1273
+msgid "Reason for Return Label"
+msgstr "Razón para la etiqueta de retorno"
+
+#: includes/data-wf-settings.php:28 includes/data-wf-settings.php:589
+#: includes/data-wf-settings.php:1110
+msgid "Recipient"
+msgstr "Beneficiario"
+
+#: includes/data-wf-settings.php:1112
+msgid "Recipient and Shipper"
+msgstr "Destinatario y remitente"
+
+#: includes/data-wf-settings.php:2011
+msgid "Recipient Phone Number"
+msgstr "Número de teléfono del destinatario"
+
+#: includes/data-wf-settings.php:1668
+msgid "Recommended: Weight based, calculate shipping based on weight"
+msgstr "Recomendado: Basado en peso, calcule el envío basado en el peso"
+
+#: includes/data-wf-settings.php:1772
+msgid "Reconstituted Wood"
+msgstr "Madera reconstituida"
+
+#: includes/html-ph-help-and-support.php:152
+msgid "Reference Ticket Number"
+msgstr "Número de boleto de referencia"
+
+#: includes/data-wf-settings.php:687
+msgid "Regular Pickup"
+msgstr "Recogida regular"
+
+#: includes/data-wf-settings.php:1296
+msgid "REJECTED"
+msgstr "RECHAZADA"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1616
+msgid "Remove"
+msgstr "Eliminar"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1617
+msgid "Remove FedEx generated packages (Beta Version)."
+msgstr "Eliminar paquetes generados por FedEx (versión beta)."
+
+#: includes/html-wf-box-packing.php:71
+msgid "Remove selected box(es)"
+msgstr "Retire la caja seleccionada (s)"
+
+#: includes/data-wf-settings.php:1376
+msgid "Remove Special Characters from Product Name"
+msgstr "Eliminar caracteres especiales del nombre del producto"
+
+#: includes/data-wf-settings.php:1097
+msgid "Repair and return"
+msgstr "Reparar y volver"
+
+#: includes/data-wf-settings.php:1297
+msgid "REPLACEMENT"
+msgstr "REEMPLAZO"
+
+#: includes/data-wf-settings.php:688
+msgid "Request Courier"
+msgstr "Solicitar mensajería"
+
+#: includes/class-wf-fedex-pickup-admin.php:60
+#: includes/class-wf-fedex-pickup-admin.php:61
+msgid "Request FedEx Pickup"
+msgstr "Solicitar recolección de FedEx"
+
+#: includes/data-wf-settings.php:923
+msgid "Request Type"
+msgstr "Tipo de solicitud"
+
+#: includes/class-wf-fedex-pickup-admin.php:35
+msgid "Requested"
+msgstr "Solicitado"
+
+#: includes/data-wf-settings.php:257 includes/data-wf-settings.php:265
+#: includes/data-wf-settings.php:273
+msgid "Required for label Printing"
+msgstr "Requerido para la impresión de etiquetas"
+
+#: includes/data-wf-settings.php:290 includes/data-wf-settings.php:298
+#: includes/data-wf-settings.php:306
+msgid ""
+"Required for label Printing. And should be filled if LTL Freight is enabled."
+msgstr ""
+"Requerido para la impresión de etiquetas. Y debe llenarse si la carga LTL "
+"está habilitada."
+
+#: includes/data-wf-settings.php:281
+msgid "Required for sending email notification"
+msgstr "Requerido para enviar notificaciones por correo electrónico"
+
+#: includes/data-wf-settings.php:1237
+msgid ""
+"Required for UAE; Otherwise: Optional – This element is for the customer to "
+"describe the content of the package for customs clearance purposes. This "
+"applies to intra-UAE, intra-Columbia and intra-Brazil shipments."
+msgstr ""
+"Requerido para EAU; De lo contrario: Opcional: este elemento es que el "
+"cliente describa el contenido del paquete para fines de despacho de aduanas. "
+"Esto se aplica a los envíos intra-columbia e intra-brasil."
+
+#: includes/html-wf-box-packing.php:72
+msgid "Reset box(es)"
+msgstr "Box de reinicio (es)"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2283
+msgid "Residential Address"
+msgstr "Dirección residencial"
+
+#: includes/data-wf-settings.php:216
+msgid "Residential Delivery"
+msgstr "Entrega residencial"
+
+#: includes/data-wf-settings.php:917
+msgid "Returns Services"
+msgstr "Devolución de servicios"
+
+#: includes/data-wf-settings.php:1621
+msgid "Same as Exporter"
+msgstr "Igual que el exportador"
+
+#: includes/data-wf-settings.php:1098
+msgid "Sample"
+msgstr "Muestra"
+
+#: includes/data-wf-settings.php:508
+msgid "Saturday"
+msgstr "Sábado"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1956
+msgid "Saturday Delivery"
+msgstr "Entrega en sábado"
+
+#: includes/class-wf-tracking-admin.php:228
+msgid "Save/Show Tracking Info"
+msgstr "Guardar / Mostrar información de seguimiento"
+
+#: includes/data-wf-settings.php:1069
+msgid "Secondary Barcode"
+msgstr "Código de barras secundario"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2009
+#: includes/class-wf-admin-options.php:151
+#: includes/class-wf-admin-options.php:581
+msgid "Select Anyone"
+msgstr "Seleccionar cualquiera"
+
+#: includes/class-wf-admin-options.php:190
+#: includes/class-wf-admin-options.php:620
+msgid "Select Dangerous Goods Option Type."
+msgstr "Seleccione el tipo de opción de mercancías peligrosas."
+
+#: includes/class-ph-fedex-woocommerce-location-finder.php:277
+#: includes/class-ph-fedex-woocommerce-location-finder.php:297
+msgid "Select FedEx Hold at Location"
+msgstr "Seleccione la retención de FedEx en la ubicación"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:286
+msgid "Select Hold At Location"
+msgstr "Seleccione Hold en la ubicación"
+
+#: includes/data-wf-settings.php:1223 includes/data-wf-settings.php:1232
+msgid "Select one"
+msgstr "Seleccione uno"
+
+#: includes/data-wf-settings.php:1090
+msgid "Select purpose of shipment"
+msgstr "Propósito seleccionado de envío"
+
+#: includes/data-wf-settings.php:1115
+msgid ""
+"Select recipients for email notifications regarding the shipment from FedEx"
+msgstr ""
+"Seleccionar a los destinatarios para notificaciones por correo electrónico "
+"sobre el envío de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1612
+msgid "Select Service"
+msgstr "Seleccionar servicio"
+
+#: includes/data-wf-settings.php:1534
+msgid "Select Terms of Sale for International Shipments."
+msgstr "Términos de venta seleccionados para envíos internacionales."
+
+#: includes/class-wf-admin-options.php:225
+#: includes/class-wf-admin-options.php:658
+msgid "Select the accessibility type ."
+msgstr "Seleccione el tipo de accesibilidad."
+
+#: includes/class-wf-admin-options.php:133
+#: includes/class-wf-admin-options.php:562
+msgid "Select the Alcohol Recipient types if applicable ."
+msgstr "Seleccione los tipos de destinatario de alcohol si corresponde."
+
+#: includes/data-wf-settings.php:881
+msgid ""
+"Select the FedEx Service based on which the hold at location will be "
+"displayed at the cart & checkout page."
+msgstr ""
+"Seleccione el servicio FedEx en función del cual se mostrará la ubicación de "
+"retención en la ubicación en la página CART & CHEGOUT."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1613
+msgid "Select the FedEx service."
+msgstr "Seleccione el servicio FedEx."
+
+#: includes/class-wf-admin-options.php:209
+#: includes/class-wf-admin-options.php:640
+msgid "Select the regulation ."
+msgstr "Seleccione la regulación."
+
+#: includes/data-wf-settings.php:497
+msgid ""
+"Select the Working Days. This will be used for Shipping Rates, Labels and "
+"Pickup."
+msgstr ""
+"Seleccione los días hábiles. Esto se utilizará para tarifas de envío, "
+"etiquetas y camionetas."
+
+#: includes/data-wf-settings.php:1482
+msgid ""
+"Select whether you want to display the discounted price, original product "
+"price or the declared value to be printed on the commercial invoice."
+msgstr ""
+"Seleccione si desea mostrar el precio con descuento, el precio del producto "
+"original o el valor declarado que se imprimirá en la factura comercial."
+
+#: includes/data-wf-settings.php:1720
+msgid "Select your packing order."
+msgstr "Seleccione su pedido de embalaje."
+
+#: includes/html-ph-help-and-support.php:105
+msgid "Send FedEx Tracking Details to Customers"
+msgstr "Enviar detalles de seguimiento de FedEx a los clientes"
+
+#: includes/data-wf-settings.php:1422
+msgid "Send Shipping Label To"
+msgstr "Enviar etiqueta de envío a"
+
+#: includes/data-wf-settings.php:1439
+msgid "Send ZPL Label content via email"
+msgstr "Enviar contenido de la etiqueta ZPL por correo electrónico"
+
+#: includes/data-wf-settings.php:326 includes/data-wf-settings.php:588
+msgid "Sender"
+msgstr "Remitente"
+
+#: includes/data-wf-settings.php:231
+msgid ""
+"Sends the package value to FedEx for insurance. SmartPost shipments will "
+"cover upto $100 only."
+msgstr ""
+"Envía el valor del paquete a FedEx para un seguro. Los envíos de SmartPost "
+"cubrirán hasta $ 100 solamente."
+
+#: includes/html-wf-services.php:7
+msgid "Service Code"
+msgstr "Código de servicio"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:2013
+#: includes/data-wf-settings.php:549 includes/class-wf-admin-options.php:156
+#: includes/class-wf-admin-options.php:586
+msgid "Service Default"
+msgstr "Servicio predeterminado"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1909
+msgid "Service Name"
+msgstr "Nombre del Servicio"
+
+#: includes/html-wf-services.php:3
+msgid "Services"
+msgstr "UPS está activado, pero no existen servicios habilitados."
+
+#: fedex-woocommerce-shipping.php:242
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/data-wf-settings.php:720
+#| msgid "Ship dry ice"
+msgid "Ship Dry Ice"
+msgstr "Barco de hielo seco"
+
+#: includes/data-wf-settings.php:235
+msgid "Ship From Address Preference"
+msgstr "Enviar desde Preferencia Dirección"
+
+#: includes/class-wf-tracking-admin.php:106
+msgid "Shipment ID"
+msgstr "ID del env&iacute;o"
+
+#: includes/data-wf-settings.php:1435
+#: includes/wf-automatic-label-generation.php:197
+msgid "Shipment Label For Your Order"
+msgstr "Etiqueta de envío para su pedido"
+
+#: includes/data-wf-settings.php:1337
+msgid "Shipments under BOND"
+msgstr "Envíos bajo fianza"
+
+#: includes/data-wf-settings.php:27 includes/data-wf-settings.php:1111
+msgid "Shipper"
+msgstr "Transportista"
+
+#: includes/data-wf-settings.php:1070
+msgid "Shipper Account Number"
+msgstr "Número de cuenta del remitente"
+
+#: includes/data-wf-settings.php:312
+msgid "Shipper Address is Residential"
+msgstr "Dirección de remitente es residencial"
+
+#: includes/data-wf-settings.php:301
+msgid "Shipper City"
+msgstr "Transportista"
+
+#: includes/data-wf-settings.php:260
+msgid "Shipper Company Name"
+msgstr "Nombre de la empresa remitente"
+
+#: includes/data-wf-settings.php:276
+msgid "Shipper Email"
+msgstr "Correo electrónico del remitente"
+
+#: includes/data-wf-settings.php:1071
+msgid "Shipper Information"
+msgstr "Información del remitente"
+
+#: includes/data-wf-settings.php:252
+msgid "Shipper Person Name"
+msgstr "Nombre de la persona remitente"
+
+#: includes/data-wf-settings.php:268
+msgid "Shipper Phone Number"
+msgstr "Número de teléfono del remitente"
+
+#: includes/data-wf-settings.php:285
+msgid "Shipper Street Address"
+msgstr "Dirección de remitente"
+
+#: includes/data-wf-settings.php:293
+msgid "Shipper Street Address 2"
+msgstr "Dirección de remitente 2"
+
+#: includes/data-wf-settings.php:22
+msgid "Shipping Address"
+msgstr "Dirección de envío"
+
+#: includes/data-wf-settings.php:319
+msgid "Shipping Charges"
+msgstr "Gastos de envío"
+
+#: includes/data-wf-settings.php:1491
+msgid "Shipping Charges in Commercial Invoice"
+msgstr "Pagos de envío en factura comercial"
+
+#: includes/class-wf-tracking-admin.php:64
+msgid "Shipping Detail"
+msgstr "Detalle del envío"
+
+#: includes/data-wf-settings.php:935
+msgid "Shipping Quote Type"
+msgstr "Tipo de cotización de envío"
+
+#: includes/data-wf-settings.php:817
+msgid "Shipping Time Adjustment"
+msgstr "Ajuste de tiempo de envío"
+
+#: includes/data-wf-settings.php:1358
+msgid "Show All Services In Order Edit Page"
+msgstr "Mostrar todos los servicios en orden Página de edición"
+
+#: includes/data-wf-settings.php:814
+msgid ""
+"Show delivery information on the cart/checkout. Applicable for US "
+"destinations only."
+msgstr ""
+"Mostrar información de entrega en el carrito/pago. Aplicable solo para "
+"destinos estadounidenses."
+
+#: includes/data-wf-settings.php:918
+msgid "Signs and Banners Service"
+msgstr "Servicio de letreros y banners"
+
+#: includes/data-wf-settings.php:194
+msgid "Silent Debug Mode"
+msgstr "Modo de depuración silenciosa"
+
+#: includes/wf-automatic-label-generation.php:46
+msgid "Since Order Status is "
+msgstr "Dado que el estado del pedido es"
+
+#: includes/data-wf-settings.php:516
+msgid ""
+"Skip all the products belonging to the selected Shipping Classes while "
+"fetching rates and creating Shipping Label."
+msgstr ""
+"Omita todos los productos que pertenecen a las clases de envío seleccionadas "
+"mientras obtienen tarifas y crean etiqueta de envío."
+
+#: includes/data-wf-settings.php:513
+msgid "Skip Products"
+msgstr "Saltar productos"
+
+#: includes/class-wf-admin-options.php:199
+#: includes/class-wf-admin-options.php:628
+msgid "Small Quantity Exception"
+msgstr "Excepción de pequeña cantidad"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:1329
+msgid "SoapFault while residential_address_validation."
+msgstr "SoapFault mientras residential_address_validation."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:3787
+msgid "SoapFault while run_package_request."
+msgstr "SoapFault mientras run_package_request."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin-helper.php:3343
+msgid "SoapFault while void_shipment."
+msgstr "SoapFault mientras void_shipment."
+
+#: includes/data-wf-settings.php:1099
+msgid "Sold"
+msgstr "Preventa"
+
+#: includes/class-ph-fedex-woocommerce-location-finder.php:193
+msgid "Something Went Wrong while Fetching Search Loactions Request & Response"
+msgstr ""
+"Algo salió mal mientras busca la solicitud y respuesta de loacciones de "
+"búsqueda"
+
+#: includes/data-wf-settings.php:919
+msgid "Sony Picture Station"
+msgstr "Estación de imagen de Sony"
+
+#: includes/class-wf-tracking-admin.php:150
+msgid "Sorry, Unable to proceed."
+msgstr "Lo sentimos, no se puede proceder."
+
+#: includes/data-wf-settings.php:1518
+msgid "Special Instructions"
+msgstr "instrucciones especiales"
+
+#: includes/data-wf-settings.php:532
+#: includes/class-wf-fedex-woocommerce-shipping.php:802
+msgid "Special Services"
+msgstr "Servicios especiales"
+
+#: includes/data-wf-settings.php:791 includes/data-wf-settings.php:795
+msgid "Specific Countries"
+msgstr "Países específicos"
+
+#: includes/data-wf-settings.php:1306
+msgid ""
+"Specifies additional description about customs options. This is a required "
+"field when the customs options type is \"OTHER\"."
+msgstr ""
+"Especifica una descripción adicional sobre las opciones de aduanas. Este es "
+"un campo requerido cuando el tipo de opciones de aduanas es \"otro\"."
+
+#: includes/data-wf-settings.php:1326
+msgid "Specifies Shipment has a GST Invoice or not"
+msgstr "Especifica que el envío tiene una factura de GST o no"
+
+#: includes/data-wf-settings.php:1528
+msgid "Specify Payment Terms for Commercial Invoice."
+msgstr "Especifique los términos de pago para la factura comercial."
+
+#: includes/data-wf-settings.php:1520
+msgid "Specify Special Instructions for Commercial Invoice."
+msgstr "Especifique instrucciones especiales para la factura comercial."
+
+#: includes/data-wf-settings.php:1680
+msgid "Stack First Packing"
+msgstr "Pila primero embalaje"
+
+#: includes/data-wf-settings.php:403
+msgid "State Code"
+msgstr "Código de provincia"
+
+#: includes/data-wf-settings.php:1852
+msgid "State code. Eg: CA"
+msgstr "Código de estado. Por ejemplo: CA"
+
+#: includes/data-wf-settings.php:689
+msgid "Station"
+msgstr "Estación"
+
+#: includes/class-wf-tracking-admin.php:107
+msgid "Status"
+msgstr "Estatus"
+
+#: includes/data-wf-settings.php:1768
+msgid "Steel"
+msgstr "Acero"
+
+#: includes/data-wf-settings.php:87 includes/data-wf-settings.php:105
+msgid "STOCK_4X6 (For Thermal Printer Only)"
+msgstr "STOCK_4X6 (para impresora térmica)"
+
+#: includes/data-wf-settings.php:106
+msgid "STOCK_4X6.75 (For Thermal Printer Only)"
+msgstr "STOCK_4X6.75 (solo para impresora térmica)"
+
+#: includes/data-wf-settings.php:88
+msgid "STOCK_4X6.75_LEADING_DOC_TAB (For Thermal Printer Only)"
+msgstr "STOCK_4X6.75_LEADING_DOC_TAB (para la impresora térmica solamente)"
+
+#: includes/data-wf-settings.php:89
+msgid "STOCK_4X6.75_TRAILING_DOC_TAB (For Thermal Printer Only)"
+msgstr "STOCK_4X6.75_TRAILING_DOC_TAB (para impresora térmica)"
+
+#: includes/data-wf-settings.php:90 includes/data-wf-settings.php:107
+msgid "STOCK_4X8 (For Thermal Printer Only)"
+msgstr "STOCK_4X8 (para impresora térmica)"
+
+#: includes/data-wf-settings.php:108
+msgid "STOCK_4X9 (For Thermal Printer Only)"
+msgstr "STOCK_4X9 (solo para impresora térmica)"
+
+#: includes/data-wf-settings.php:91
+msgid "STOCK_4X9_LEADING_DOC_TAB (For Thermal Printer Only)"
+msgstr "STOCK_4X9_LEADING_DOC_TAB (para impresora térmica)"
+
+#: includes/data-wf-settings.php:92
+msgid "STOCK_4X9_TRAILING_DOC_TAB (For Thermal Printer Only)"
+msgstr "STOCK_4X9_TRAILING_DOC_TAB (para impresora térmica)"
+
+#: includes/data-wf-settings.php:1432
+msgid ""
+"Subject of Email sent for FedEx Label. Supported Tags : [ORDER NO] - Order "
+"Number."
+msgstr ""
+"Asunto del correo electrónico enviado para la etiqueta FedEx. Etiquetas "
+"compatibles: [Orden no] - Número de pedido."
+
+#: includes/html-ph-help-and-support.php:132
+msgid "Submit a Diagnostic Report"
+msgstr "Enviar un informe de diagnóstico"
+
+#: includes/html-ph-help-and-support.php:136
+msgid "Submit Diagnostic Report only when asked by the PluginHive Support Team"
+msgstr ""
+"Envíe el informe de diagnóstico solo cuando el equipo de soporte de "
+"pluginhive lo solicite"
+
+#: includes/html-ph-help-and-support.php:124
+msgid "Submit Your Query"
+msgstr "Envíe su consulta"
+
+#: includes/class-wf-admin-options.php:285
+#: includes/class-wf-admin-options.php:728
+msgid "Subsidiary Classes "
+msgstr "Clases subsidiarias"
+
+#: includes/data-wf-settings.php:502
+msgid "Sunday"
+msgstr "Domingo"
+
+#: includes/data-wf-settings.php:1072
+msgid "Supplemental Label Doc Tab"
+msgstr "Pestaña doctor de etiqueta suplementaria"
+
+#: fedex-woocommerce-shipping.php:244
+msgid "Support"
+msgstr "Apoyo"
+
+#: includes/data-wf-settings.php:1501
+msgid "Supports only WOOCS Multi-Currency"
+msgstr "Admite solo WOOCS multi-monedas"
+
+#: includes/data-wf-settings.php:729
+msgid "Taxes will be excluded from product prices while generating label"
+msgstr "Impuestos se excluirán del precios de los productos al generar sello"
+
+#: includes/data-wf-settings.php:1073
+msgid "Terms And Conditions"
+msgstr "Términos y condiciones"
+
+#: includes/data-wf-settings.php:1533
+msgid "Terms of Sale"
+msgstr "Condiciones de venta"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1983
+msgid "Terms of Sale "
+msgstr "Condiciones de venta"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1984
+msgid "Terms of Sale."
+msgstr "Condiciones de venta."
+
+#: includes/data-wf-settings.php:1775
+msgid "Textile"
+msgstr "Textil"
+
+#: includes/data-wf-settings.php:1251
+msgid "The category of the taxpayer identification"
+msgstr "La categoría de identificación del contribuyente"
+
+#: includes/html-ph-help-and-support.php:138
+msgid ""
+"The details sent to PluginHive will include FedEx Account Details for "
+"debugging purposes only"
+msgstr ""
+"Los detalles enviados a Pluginhive incluirán detalles de la cuenta de FedEx "
+"solo para fines de depuración"
+
+#: includes/data-wf-settings.php:328 includes/data-wf-settings.php:591
+msgid "Third Party"
+msgstr "Terceros"
+
+#: includes/data-wf-settings.php:590
+msgid "Third Party (Broker)"
+msgstr "Tercero (corredor)"
+
+#: includes/data-wf-settings.php:596
+msgid "Third Party Account number"
+msgstr "Número de cuenta de terceros"
+
+#: includes/data-wf-settings.php:332
+msgid "Third party Account Number"
+msgstr "Número de cuenta de terceros"
+
+#: includes/data-wf-settings.php:338
+msgid "Third Party Account Number. Required if third party payment selected"
+msgstr ""
+"Número de cuenta de terceros. Requerido si el pago de terceros seleccionado"
+
+#: includes/data-wf-settings.php:714
+msgid "Third Party Consignee"
+msgstr "Consignatario de terceros"
+
+#: includes/data-wf-settings.php:381
+msgid ""
+"Third Party Payer Address Line 1. Required if third party payment selected"
+msgstr ""
+"Dirección del pagador de terceros Línea 1. Requerido si el pago de terceros "
+"seleccionado"
+
+#: includes/data-wf-settings.php:391
+msgid ""
+"Third Party Payer Address Line 2. Required if third party payment selected"
+msgstr ""
+"Dirección del pagador de terceros Línea 2. Requerido si el pago de terceros "
+"seleccionado"
+
+#: includes/data-wf-settings.php:399
+msgid "Third Party Payer City. Required if third party payment selected"
+msgstr ""
+"Ciudad de pagador de terceros. Requerido si el pago de terceros seleccionado"
+
+#: includes/data-wf-settings.php:355
+msgid "Third Party Payer Company. Required if third party payment selected"
+msgstr ""
+"Compañía pagadora de terceros. Requerido si el pago de terceros seleccionado"
+
+#: includes/data-wf-settings.php:371
+msgid ""
+"Third Party Payer Contact Email. Required if third party payment selected"
+msgstr ""
+"Correo electrónico de contacto de terceros. Requerido si el pago de terceros "
+"seleccionado"
+
+#: includes/data-wf-settings.php:363
+msgid ""
+"Third Party Payer Contact Number. Required if third party payment selected"
+msgstr ""
+"Número de contacto de terceros pagador. Requerido si el pago de terceros "
+"seleccionado"
+
+#: includes/data-wf-settings.php:345
+msgid ""
+"Third Party Payer Contact Person. Required if third party payment selected"
+msgstr ""
+"Persona de contacto de terceros pagador. Requerido si el pago de terceros "
+"seleccionado"
+
+#: includes/data-wf-settings.php:428
+msgid "Third Party Payer Country. Required if third party payment selected"
+msgstr ""
+"País de pagadores de terceros. Requerido si el pago de terceros seleccionado"
+
+#: includes/data-wf-settings.php:417
+msgid "Third Party Payer Postal Code. Required if third party payment selected"
+msgstr ""
+"Código postal de terceros pagador. Requerido si el pago de terceros "
+"seleccionado"
+
+#: includes/data-wf-settings.php:407
+msgid "Third Party Payer State Code. Required if third party payment selected"
+msgstr ""
+"Código de estado del pagador de terceros. Requerido si el pago de terceros "
+"seleccionado"
+
+#: includes/class-wf-admin-options.php:181
+msgid ""
+"This amount will be reimbursed from FedEx if products get damaged and you "
+"have opt for Insurance."
+msgstr ""
+"Esta cantidad se reembolsará de FedEx si los productos se dañan y usted opta "
+"por un seguro."
+
+#: includes/data-wf-settings.php:779
+msgid "This controls the title which the user sees during checkout."
+msgstr "Esto controla el título que el usuario ve durante la comprobación."
+
+#: includes/class-wf-tracking-admin.php:224
+msgid "This field is Optional."
+msgstr "Este campo es OPCIONAL."
+
+#: includes/data-wf-settings.php:1557
+msgid ""
+"This HS Code will be used for Commercial Invoice, when Product Level HS Code "
+"is not available."
+msgstr ""
+"Este código HS se utilizará para la factura comercial, cuando el código HS "
+"de nivel de producto no esté disponible."
+
+#: includes/data-wf-settings.php:172
+#| msgid "This is a production key"
+msgid "This is a FedEx Production Key"
+msgstr "Esta es una clave de producción de FedEx"
+
+#: includes/data-wf-settings.php:1953
+#, php-format
+msgid ""
+"This is the default freight class for shipments. This can be overridden "
+"using <a href=\"%s\">shipping classes</a>"
+msgstr ""
+"Esta es la clase de carga por defecto para los envíos. Esto puede cambiarse "
+"mediante <a href=\"%s\">envío de clases</a>"
+
+#: includes/data-wf-settings.php:1695
+msgid ""
+"This option will calculate the volumetric weight. Then a comparison is made "
+"on the total weight of cart to the volumetric weight.</br>The higher weight "
+"of the two will be sent in the request."
+msgstr ""
+"Esta opción calculará el peso volumétrico. Luego, se realiza una comparación "
+"con el peso total del CART con el peso volumétrico. El mayor peso de los dos "
+"se enviará en la solicitud."
+
+#: includes/data-wf-settings.php:867
+msgid ""
+"This option will enable FedEx Hold at Location service. If it is enabled, "
+"customers can select any hold at location while checkout. FedEx will then "
+"hold the shipment at the selected location and the customers will have to "
+"pick their shipment from that location ."
+msgstr ""
+"Esta opción habilitará FedEx Hold en el servicio de ubicación. Si está "
+"habilitado, los clientes pueden seleccionar cualquier retención en la "
+"ubicación en el pago. FedEx luego realizará el envío en la ubicación "
+"seleccionada y los clientes deberán elegir su envío de ese lugar."
+
+#: includes/data-wf-settings.php:1372
+msgid ""
+"This option will enable Saturday Delivery Shipping Services, It will effect "
+"for all orders."
+msgstr ""
+"Esta opción habilitará los servicios de envío de entrega del sábado, "
+"afectará todos los pedidos."
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1957
+#: includes/data-wf-settings.php:858
+msgid "This option will enable Saturday Delivery Shipping Services."
+msgstr "Esta opción habilitará los servicios de envío de entrega del sábado."
+
+#. Description of the plugin
+msgid ""
+"This plugin helps you completely automate FedEx shipping. It displays live "
+"shipping rates on WooCommerce cart page, helps you pay postage & print "
+"labels from within WooCommerce, and track your shipments."
+msgstr ""
+"Este complemento le ayuda a automatizar completamente el envío de FedEx. "
+"Muestra tarifas de envío en vivo en la página de WooCommerce Cart, le ayuda "
+"a pagar las etiquetas de franqueo e impresión desde WooCommerce y rastrear "
+"sus envíos."
+
+#: includes/data-wf-settings.php:204
+msgid "This unit will be passed to FedEx."
+msgstr "Esta unidad se pasará a FedEx."
+
+#: includes/data-wf-settings.php:1387
+msgid ""
+"This will generate packages automatically after order is received and "
+"payment is successful"
+msgstr ""
+"Esto generará paquetes automáticamente después de que se reciba el pedido y "
+"el pago sea exitoso"
+
+#: includes/data-wf-settings.php:1396
+msgid ""
+"This will generate shipping labels automatically after order is received and "
+"payment is successful"
+msgstr ""
+"Esto generará etiquetas de envío automáticamente después de que se reciba el "
+"pedido y el pago sea exitoso"
+
+#: includes/data-wf-settings.php:506
+msgid "Thursday"
+msgstr "Jueves"
+
+#: includes/data-wf-settings.php:1079
+msgid "Time Zone Offset (Minutes)"
+msgstr "Desplazamiento de la zona horaria (minutos)"
+
+#: includes/data-wf-settings.php:1242 includes/data-wf-settings.php:1244
+msgid "TIN number"
+msgstr "Número de lata"
+
+#: includes/data-wf-settings.php:1245
+msgid "TIN or VAT number ."
+msgstr "Número de lata o IVA."
+
+#: includes/data-wf-settings.php:1250
+msgid "TIN type"
+msgstr "Tipo de lata"
+
+#: includes/data-wf-settings.php:1171
+msgid "Top Edge of Text First"
+msgstr "El borde superior del texto primero"
+
+#: includes/data-wf-settings.php:942
+msgid "Total Net Shipping Cost"
+msgstr "Costo total de envío neto"
+
+#: includes/data-wf-settings.php:943
+msgid "Total Net Shipping Cost With Duties & Taxes"
+msgstr "Costo total de envío neto con aranceles e impuestos"
+
+#: includes/data-wf-settings.php:941
+msgid "Total Net Shipping Cost without Tax"
+msgstr "Costo total de envío neto sin impuestos"
+
+#: includes/data-wf-settings.php:1074
+msgid "Total Weight"
+msgstr "Peso total"
+
+#: includes/class-wf-tracking-admin.php:165
+msgid "Tracking Data is reset to default."
+msgstr "Datos de seguimiento se restablece al valor predeterminado."
+
+#: includes/class-wf-tracking-admin.php:162
+msgid "Tracking is unset."
+msgstr "Seguimiento está desactivado."
+
+#: includes/data-wf-settings.php:1075
+msgid "Transportation Charges Payor Account Number"
+msgstr "Número de cuenta del pagador de cargos de transporte"
+
+#: includes/data-wf-settings.php:1298
+msgid "TRIAL"
+msgstr "ENSAYO"
+
+#: includes/data-wf-settings.php:1403
+msgid "Trigger Automatic Label Generation"
+msgstr "Activar la generación de etiquetas automáticas"
+
+#: includes/data-wf-settings.php:504
+msgid "Tuesday"
+msgstr "Martes"
+
+#: includes/data-wf-settings.php:1747
+msgid "Type of Packaging"
+msgstr "Tipo de embalaje"
+
+#: includes/class-wf-admin-options.php:247
+#: includes/class-wf-admin-options.php:683
+msgid "UN1088"
+msgstr "UN1088"
+
+#: includes/class-wf-tracking-admin.php:153
+msgid ""
+"Unable to track the shipment. Please cross check shipment id or try after "
+"some time."
+msgstr ""
+"No se puede rastrear el envío. Por favor Cruz id de envío de cheque o probar "
+"después de algún tiempo."
+
+#: includes/class-wf-tracking-admin.php:117
+msgid ""
+"Unable to update real time status at this point of time. Please follow the "
+"link on shipment id to check status."
+msgstr ""
+"No se puede actualizar en tiempo real estado en este punto del tiempo. Por "
+"favor siga el enlace id envío para comprobar estado."
+
+#: includes/class-wf-tracking-admin.php:271
+#: includes/track/class-wf-tracking-util.php:244
+msgid "Unable to update tracking info."
+msgstr "No se puede actualizar su información de seguimiento."
+
+#: includes/data-wf-settings.php:1631
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: includes/data-wf-settings.php:1803
+msgid "Use Different Pickup Address"
+msgstr "Utilice otra dirección de recogida"
+
+#: includes/data-wf-settings.php:1003
+msgid "Users will need to spend this amount to get this shipping available."
+msgstr ""
+"Los usuarios tendrán que pasar esta cantidad para obtener este envío "
+"disponible."
+
+#: includes/data-wf-settings.php:1587
+msgid "USMCA Certificate"
+msgstr "Certificado de USMCA"
+
+#: includes/data-wf-settings.php:1596
+msgid "USMCA Commercial Invoice Certificate"
+msgstr "Certificado de factura comercial de USMCA"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:848
+msgid "Validate Credentials"
+msgstr "Validar las credenciales"
+
+#: includes/data-wf-settings.php:1622 includes/data-wf-settings.php:1632
+msgid "Various"
+msgstr "Varios"
+
+#: includes/data-wf-settings.php:1966
+msgid "VICS BILL OF LADING"
+msgstr "Vics Bill Bill of Laño"
+
+#: includes/html-ph-help-and-support.php:86
+msgid "Video Tutorials"
+msgstr "Tutoriales en vídeo"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1308
+msgid "View FedEx Live Tracking Details"
+msgstr "Ver detalles de seguimiento en vivo de FedEx"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:110
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:128
+msgid "Void Shipment"
+msgstr "Envío"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1494
+#, php-format
+msgid "Void Shipment Error:%s"
+msgstr "Anular envío Error: %s"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1608
+msgid "W"
+msgstr "W"
+
+#: includes/data-wf-settings.php:155
+msgid "Web Services Key"
+msgstr "servicios Web"
+
+#: includes/data-wf-settings.php:163
+msgid "Web Services Password"
+msgstr "Clave de servicios Web"
+
+#: includes/data-wf-settings.php:505
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#: includes/data-wf-settings.php:1409
+msgid "When the payment is confirmed"
+msgstr "Cuando se confirma el pago"
+
+#: includes/data-wf-settings.php:1381
+msgid ""
+"While passing product details in request to the FedEx API, remove special "
+"characters from product name."
+msgstr ""
+"Mientras pasa los detalles del producto en solicitud a la API de FedEx, "
+"elimine los caracteres especiales del nombre del producto."
+
+#: includes/html-wf-box-packing.php:57
+msgid "Width"
+msgstr "Ancho"
+
+#. Name of the plugin
+msgid "WooCommerce FedEx Shipping Plugin with Print Label"
+msgstr "Plugin de envío de WooCommerce FedEx con etiqueta de impresión"
+
+#: includes/class-wf-fedex-woocommerce-shipping.php:64
+msgid "WooCommerce FedEx Shipping Plugin with Print Label by PluginHive"
+msgstr ""
+"Plugin de envío de WooCommerce FedEx con etiqueta impresa por pluginhive"
+
+#: includes/data-wf-settings.php:1752
+msgid "Wooden Barrel"
+msgstr "Barril de madera"
+
+#: includes/data-wf-settings.php:494
+msgid "Working Days"
+msgstr "v"
+
+#: includes/class-wf-fedex-woocommerce-shipping-admin.php:1606
+msgid "Wt."
+msgstr "Wt."
+
+#: includes/data-wf-settings.php:1332
+msgid "Yes"
+msgstr "Sí"
+
+#: includes/html-ph-help-and-support.php:145
+msgid ""
+"Yes, I have read the above points and agreed to send the details mentioned "
+"above for debugging purposess."
+msgstr ""
+"Sí, he leído los puntos anteriores y acordé enviar los detalles mencionados "
+"anteriormente para la proposión de depuración."
+
+#: includes/class-wf-tracking-admin.php:246
+msgid "You don't have admin privileges to view this page."
+msgstr "No tienes privilegios de administrador para ver esta página."
+
+#: includes/data-wf-settings.php:1885
+msgid "Your shop closing time. It must be greater than company open time"
+msgstr ""
+"Su tienda de la hora de cierre. Se debe ser mayor que el tiempo de apertura "
+"empresa"
+
+#: includes/data-wf-settings.php:664
+msgid "Zip Code"
+msgstr "Código postal"
+
+#: includes/data-wf-settings.php:1136
+msgid "ZPLII"
+msgstr "ZPLII"
